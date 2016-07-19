@@ -1,0 +1,73 @@
+1.为了生存的图形用户界面具有良好的平台无关性，提供了布局管理器，而不直接使用组件位置和大小。
+2.LayoutManager,根据运行平台调整组件大小，程序员只是为容器选择合适的布局管理器。
+3.为容器指定布局管理器setLayout(LayoutManager im)
+4.AWT提供了 : FlowLayout、BorderLayout、GridLayout、GridBagLayout、CardLayout  5个常用的布局管理器
+  Swing还提供了一个BoxLayout布局管理器。
+  
+  1.FlowLayout:组件向流水写字一样，向某方排列，遇到障碍折返到下一行。
+  	Panel 和Apple 默认使用FlowLayout布局。
+  
+  2.BorderLayout: 将容器分为EAST SOUTH WEST NORTH CENTER 五个区域。
+   	默认添加的组件为中心
+   	向同一个区域放入多个组件，后加入的会覆盖之前的
+   	Frame、Dialog、ScrollPane 默认使用的布局管理器。
+  3.GridLayout :将容器分割纵横线分隔的网格，每个网格所占用区域的大小相同。默认从左到右，从上到下
+            与FlowLayout不同，GridLayout中的组件大小由组件所处的区域来决定，每个组件将自动沾满整个区域。
+  4.GridBagLayout:功能强大，复杂，一个组件可跨越一个或多个网格，并可设置网格大小互不相同。
+    java提供GridBagConstraints对象与特定的GUI组件关联，用于控制GUI组件的大小、跨越性。
+     1.创建GridBagLayout布局管理器，并指定GUI容器使用该布局管理器
+        GridBagLayout gb = new GridBagLayout();
+        constainer.setLayout(gb);
+     2.创建GridBagConstraints对象，并设置属性
+       GridBagConstraints gbc = new GridBagConstraints();
+       gbc.gridx =2 //设置GUI组件位于网格的横向索引
+       gbc.gridx=1 //设置GUI组件位于网格的纵向索引
+     3.调用GridBagLayout 对象的方法来创建GridBagConstraints对象，和受控制的组件之间的关联
+       gb.setConstraints(c,gbc)
+     4.添加组件，与采用普通布局管理器添加组件的方法完全一样。
+       constainer.add(c);
+  5.CardLayout ，使用时间而非空间管理组件，它将加入的容器的所有组件看成一叠卡片，每次只有最上面的那个Component才可见。像一幅扑克牌。
+  
+  6.BoxLayout布局管理器：GridBagLayout强大，但太复杂，所以Swing引入新的BoxLayout,
+             可以再垂直和水平方向摆放GUI组件
+  
+  
+5.绝对定位：
+		1.将容器Container的布局管理器设置为null,setLayout(null)
+		2.向容器添加组件时，先调用setBounds()或setSize 设置组件大小、位置、或者直接创建GUI通过构造参数指定大小位置，然后将组件添加到容器。
+		3.将丧失跨平台特性。
+       
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,27 @@
+一、相对于程序所在角度的输入输出
+1.输入：InputStream(字节流)->抽象基类 Reader(字符流)
+2.输出：OutputStream(字节流)->抽象基类Writer(字符流)
+
+二、字节流、字符流
+字节流: InputStream->FileInputStream
+      OutputStream->FileOutputStream
+字符流: Reader ->FileReader
+	  Writer ->FileWriter
+
+三、按流的角色分：节点流、处理流(装饰器设计模式，包装流),只需要关闭上层资源，下层自动关闭。
+1.InputStream->FileInputStream、ByteArrayInputStream、PipedInputStream、BufferedInputStream、ObjectInputStream....
+2.OutputStream->FileOut.......
+3.Reader->FileReader、CharArrayReader、PipedReader....
+4.Writer->FileWriter、CharArrayWriter、PipedWriter.....
+
+
+二、
+Runtime对象的exec()方法启动平台的其他程序，产生一个Process对象，代表由java程序启动的子程序。
+ 1.InputStream getErrorStream();
+ 2.InputStream getInputStream();
+ 3.OutputStream getOutputStream();
+
+ 三、RandomAccessFile，只能读写文件，不能读写其他IO
+  1.getFilePointer()返回当前指针位置。
+  2.void seek(long pos) 将记录指针定位到pos位置。
+ 

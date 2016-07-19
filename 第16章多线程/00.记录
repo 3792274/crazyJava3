@@ -1,0 +1,89 @@
+一.继承Thread类创建线程类:不能共享实例对象的实例变量
+	1.定义类，继承Thread类，实现run()方法。线程执行体
+	2.创建定义类的实例，即创建了线程对象。
+	3.调用线程对象的start()方法来启动线程。
+	
+二、实现Runnable接口创建线程类：能共享实例对象的实例变量
+	1.定义实现类，实现Runnable接口，并重写run方法。
+	2.创建实现类实例，并作为Thread的target来创建Thread对象，该THread对象才是真正的线程对象。
+		SecondThread st = new SecondThread();
+		new Thread();
+	3.调用线程对象的start()方法，启动线程。
+三、使用Callable 和 Future(Java5开始)
+	1.创建Callable接口的实现类，并实现call()方法，线程执行体，该方法有返回值，再创建Callable实现类的实例，Java8开始支持Lambda创建。
+	2.使用FutureTask包装Callable对象，该对象封装了Callable对象的call()方法的返回值。
+	3.调用FutureTask对象作为Thread对象的target创建并启动新线程
+	4.调用FutureTask对象的get()方法获得子线程执行结束后的返回值。
+
+四、线程的5种状态
+	1.新建(new)	只能对处于新建状态的调用start()方法
+	2.就绪(Runnable).start()调用后进入就绪状态，就绪状态下JVM创建方法调用栈和程序计数器。并没有运行，合适运行取决于jvm中线程调度器
+	3.运行(Running)，如果需要当前线程立即运行而不是jvm随机等待，在调用Thread.sleep(1)
+	4.阻塞(Blocked)
+	5.死亡(Dead),方法执行完成、抛出一个未捕获异常、调用线程stop方法，判断线程是否死亡isAlive().
+	
+	新建->就绪：start()
+	就绪->运行:得到处理器资源，Jvm自动分配。
+	运行->就绪：yield()
+	运行->阻塞：sleep()、IO阻塞、等待同步锁、等待通知、suspend()
+	阻塞->就绪：sleep()、IO方法返回、获得同步锁、收到通知、resume()
+	运行->死亡：stop()容易死锁、Error或Exception、run()/call()执行完成。
+	
+五、线程的控制
+	1.Thread提供了一个让一个线程等待另一个线程执行完成的方法：	join(),线程将被阻塞。	
+	2.后台线程：daemon Thread,例如垃圾回收线程。	前台线程死亡，后台线程死亡。Thread对象的setDeamon(true)将线程设置为后台线程，必须在线程启动前设置。
+	3.前台线程创建的线程默认都是前台线程，后台线程创建的线程默认就是后台线程。
+	4.让线程让步，单不阻塞线程。yield.暂停线程sleep阻塞线程
+	5.改变线程的优先级：Thread类提供setPriority(int new Priority),1 5 10
+	6.子线与创建他的主线拥有相同的优先级。
+	
+六、线程同步
+	synchronized(obj){
+	}	
+	obj是同步监视器，含义：线程开始执行同步代码之前，必须先获得对同步监视器的锁定。
+	任何时刻只有一个线程可以获得对同步监视器的锁定，同步代码执行完成以后会释放对该同步监视器的锁定。
+	建议将可能被病房访问的共享资源充当同步监视器
+七、同步方法
+	1.与同步代码块对应，提供synchronized修饰实例方法，非static方法，无需显示指定同步监视器，默认为this,也就是调用该方法的对象
+		该类的对象可以被多个线程安全的方法。
+		每个线程调用对象的任意方法后都得到正确的结果
+		每个线程调用对象的任意方法后该对象依然保持合理状态。
+八、同步锁
+	1.java5->
+		独占访问锁： Lock -- >ReentrantLock(可重入锁)
+		并发访问锁： ReadWriteLock -->ReentrantReadWriteLock(为读写操作提供三种模式：Writing、ReadingOptimistic、Reading)
+	2.java8 ->StampedLock 可完全替代 ReentrantReadWriteLock
+	
+九、死锁
+	在系统中出现多个同步监视器的情况下，会发生死锁。
+	
+十、传统的线程通信
+	1.Object 类的wait()释放锁、notify()没有锁的同步监视器才能唤醒、notifyAll(),必须由同步监视器对象滴啊用。
+
+十一、使用Condition控制线程通信
+	1.如果程序不使用synchronized保证同步，而是使用Lock对象保证同步，则系统中不存在“隐式”的同步监视器，也就不能使用wait()/notify()/notifyAll()
+	2.Condition实例被绑定在一个Lock对象上，Lock.newCondition()获得。
+	3.Condition方法：await()/signal()、signalAll()
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
