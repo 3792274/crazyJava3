@@ -1,4 +1,4 @@
-## RHSocketKit
+## 《疯狂java讲义》 (第三版) - Code
 [![License](https://img.shields.io/cocoapods/l/RHSocketKit.svg)](http://www.apache.org/licenses/)
 
 疯狂java讲义第三版-代码</br> 
