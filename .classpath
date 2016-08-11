@@ -18,11 +18,11 @@
 	<classpathentry kind="src" path="第16章多线程"/>
 	<classpathentry kind="src" path="第17章网络编程"/>
 	<classpathentry kind="src" path="第18章类加载机制与反射"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/mysql-connector-java-5.1.39"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/mysql-connector-java-5.1.39"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/commons-dbcp2-2.1.1"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/commons-pool2-2.4.2"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/commons-logging-1.2"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/c3p0-0.9.5.2"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/commons-dbcp2-2.1.1"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/commons-pool2-2.4.2"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/commons-logging-1.2"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
