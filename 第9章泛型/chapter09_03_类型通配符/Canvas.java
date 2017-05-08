@@ -1,10 +1,10 @@
-package chapter09_03_ÀàĞÍÍ¨Åä·û;
+package chapter09_03_ç±»å‹é€šé…ç¬¦;
 
 
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,7 +14,7 @@ import java.util.*;
  */
 public class Canvas
 {
-//	// Í¬Ê±ÔÚ»­²¼ÉÏ»æÖÆ¶à¸öĞÎ×´
+//	// åŒæ—¶åœ¨ç”»å¸ƒä¸Šç»˜åˆ¶å¤šä¸ªå½¢çŠ¶
 //	public void drawAll(List<Shape> shapes)
 //	{
 //		for (Shape s : shapes)
@@ -30,7 +30,7 @@ public class Canvas
 //			s.draw(this);
 //		}
 //	}
-	// Í¬Ê±ÔÚ»­²¼ÉÏ»æÖÆ¶à¸öĞÎ×´£¬Ê¹ÓÃ±»ÏŞÖÆµÄ·ºĞÍÍ¨Åä·û
+	// åŒæ—¶åœ¨ç”»å¸ƒä¸Šç»˜åˆ¶å¤šä¸ªå½¢çŠ¶ï¼Œä½¿ç”¨è¢«é™åˆ¶çš„æ³›å‹é€šé…ç¬¦
 	public void drawAll(List<? extends Shape> shapes)
 	{
 		for (Shape s : shapes)
@@ -45,8 +45,8 @@ public class Canvas
 		circleList.add(new Circle());
 		
 		Canvas c = new Canvas();
-		// ÓÉÓÚList<Circle>²¢²»ÊÇList<Shape>µÄ×ÓÀàĞÍ,
-		// ËùÒÔÏÂÃæ´úÂëÒı·¢±àÒë´íÎó
+		// ç”±äºList<Circle>å¹¶ä¸æ˜¯List<Shape>çš„å­ç±»å‹,
+		// æ‰€ä»¥ä¸‹é¢ä»£ç å¼•å‘ç¼–è¯‘é”™è¯¯
 		c.drawAll(circleList);
 	}
 }

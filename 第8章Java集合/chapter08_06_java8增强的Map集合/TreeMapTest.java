@@ -1,14 +1,14 @@
-package chapter08_06_java8ÔöÇ¿µÄMap¼¯ºÏ;
+package chapter08_06_java8å¢å¼ºçš„Mapé›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * 1.ÓëSet½Ó¿ÚÅÉÉúµÄ SortedSet--->TreeSet
+ * 1.ä¸Setæ¥å£æ´¾ç”Ÿçš„ SortedSet--->TreeSet
  * 2.Map--->treeMap
- * 3.treeMap¾ÍÊÇÒ»¸öºìºÚÊ÷Êı¾İ½á¹¹£¬Ã¿¸ökey-value¶ÔºìºÚÊ÷Ò»¸ö½Úµã£¬¸ù¾İkeyÅÅĞò
- * 4.×ÔÈ»ÅÅĞò£¬keyÊµÏÖComparable½Ó¿Ú£¬¶¼ÊôÓÚÍ¬Ò»¸öÀà
- * 5.¶¨ÖÆÅÅĞò£¬´«ÈëÒ»¸öComparator¶ÔÏó¡£
+ * 3.treeMapå°±æ˜¯ä¸€ä¸ªçº¢é»‘æ ‘æ•°æ®ç»“æ„ï¼Œæ¯ä¸ªkey-valueå¯¹çº¢é»‘æ ‘ä¸€ä¸ªèŠ‚ç‚¹ï¼Œæ ¹æ®keyæ’åº
+ * 4.è‡ªç„¶æ’åºï¼Œkeyå®ç°Comparableæ¥å£ï¼Œéƒ½å±äºåŒä¸€ä¸ªç±»
+ * 5.å®šåˆ¶æ’åºï¼Œä¼ å…¥ä¸€ä¸ªComparatorå¯¹è±¡ã€‚
  */
 class R implements Comparable
 {
@@ -21,7 +21,7 @@ class R implements Comparable
 	{
 		return "R[count:" + count + "]";
 	}
-	// ¸ù¾İcountÀ´ÅĞ¶ÏÁ½¸ö¶ÔÏóÊÇ·ñÏàµÈ¡£
+	// æ ¹æ®countæ¥åˆ¤æ–­ä¸¤ä¸ªå¯¹è±¡æ˜¯å¦ç›¸ç­‰ã€‚
 	public boolean equals(Object obj)
 	{
 		if (this == obj)
@@ -33,7 +33,7 @@ class R implements Comparable
 		}
 		return false;
 	}
-	// ¸ù¾İcountÊôĞÔÖµÀ´ÅĞ¶ÏÁ½¸ö¶ÔÏóµÄ´óĞ¡¡£
+	// æ ¹æ®countå±æ€§å€¼æ¥åˆ¤æ–­ä¸¤ä¸ªå¯¹è±¡çš„å¤§å°ã€‚
 	public int compareTo(Object obj)
 	{
 		R r = (R)obj;
@@ -46,24 +46,24 @@ public class TreeMapTest
 	public static void main(String[] args)
 	{
 		TreeMap tm = new TreeMap();
-		tm.put(new R(3) , "ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
-		tm.put(new R(-5) , "·è¿ñJava½²Òå");
-		tm.put(new R(9) , "·è¿ñAndroid½²Òå");
+		tm.put(new R(3) , "è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
+		tm.put(new R(-5) , "ç–¯ç‹‚Javaè®²ä¹‰");
+		tm.put(new R(9) , "ç–¯ç‹‚Androidè®²ä¹‰");
 		System.out.println(tm);
 	
-		// ·µ»Ø¸ÃTreeMapµÄµÚÒ»¸öEntry¶ÔÏó
+		// è¿”å›è¯¥TreeMapçš„ç¬¬ä¸€ä¸ªEntryå¯¹è±¡
 		System.out.println(tm.firstEntry());
 		
-		// ·µ»Ø¸ÃTreeMapµÄ×îºóÒ»¸ökeyÖµ
+		// è¿”å›è¯¥TreeMapçš„æœ€åä¸€ä¸ªkeyå€¼
 		System.out.println(tm.lastKey());
 		
-		// ·µ»Ø¸ÃTreeMapµÄ±Ènew R(2)´óµÄ×îĞ¡keyÖµ¡£
+		// è¿”å›è¯¥TreeMapçš„æ¯”new R(2)å¤§çš„æœ€å°keyå€¼ã€‚
 		System.out.println(tm.higherKey(new R(2)));
 		
-		// ·µ»Ø¸ÃTreeMapµÄ±Ènew R(2)Ğ¡µÄ×î´óµÄkey-value¶Ô¡£
+		// è¿”å›è¯¥TreeMapçš„æ¯”new R(2)å°çš„æœ€å¤§çš„key-valueå¯¹ã€‚
 		System.out.println(tm.lowerEntry(new R(2)));
 	
-		// ·µ»Ø¸ÃTreeMapµÄ×ÓTreeMap
+		// è¿”å›è¯¥TreeMapçš„å­TreeMap
 		System.out.println(tm.subMap(new R(-1) , new R(4)));
 	}
 }

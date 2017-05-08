@@ -1,10 +1,10 @@
-package chapter09_02_ÉîÈë·ºĞÍ;
+package chapter09_02_æ·±å…¥æ³›å‹;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,11 +14,11 @@ package chapter09_02_ÉîÈë·ºĞÍ;
  */
 public class A2 extends Apple
 {
-	// ÖØĞ´¸¸ÀàµÄ·½·¨
+	// é‡å†™çˆ¶ç±»çš„æ–¹æ³•
 	public String getInfo()
 	{
-		// super.getInfo()·½·¨·µ»ØÖµÊÇObjectÀàĞÍ£¬
-		// ËùÒÔ¼ÓtoString()²Å·µ»ØStringÀàĞÍ
+		// super.getInfo()æ–¹æ³•è¿”å›å€¼æ˜¯Objectç±»å‹ï¼Œ
+		// æ‰€ä»¥åŠ toString()æ‰è¿”å›Stringç±»å‹
 		return super.getInfo().toString();
 	}
 }

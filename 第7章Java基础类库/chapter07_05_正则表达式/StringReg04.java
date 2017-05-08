@@ -1,8 +1,8 @@
-package chapter07_05_ÕıÔò±í´ïÊ½;
+package chapter07_05_æ­£åˆ™è¡¨è¾¾å¼;
 
 import java.util.*;
 /**
- * Ìæ»»¡£
+ * æ›¿æ¢ã€‚
  */
 public class StringReg04
 {
@@ -16,7 +16,7 @@ public class StringReg04
 		};
 		for (String msg : msgs)
 		{
-			System.out.println(msg.replaceFirst("re\\w*" , "¹ş¹ş:)"));
+			System.out.println(msg.replaceFirst("re\\w*" , "å“ˆå“ˆ:)"));
 			System.out.println(Arrays.toString(msg.split(" ")));
 		}
 	}

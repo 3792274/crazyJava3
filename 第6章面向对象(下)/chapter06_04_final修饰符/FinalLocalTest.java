@@ -1,10 +1,10 @@
-package chapter06_04_finalĞŞÊÎ·û;
+package chapter06_04_finalä¿®é¥°ç¬¦;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,7 +16,7 @@ public class FinalLocalTest
 {
 	public static void main(String[] args)
 	{
-		// ¶¨ÒåÒ»¸öÆÕÍ¨¾Ö²¿±äÁ¿
+		// å®šä¹‰ä¸€ä¸ªæ™®é€šå±€éƒ¨å˜é‡
 		final int a = 5;
 		System.out.println(a);
 	}

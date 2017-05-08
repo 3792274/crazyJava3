@@ -1,99 +1,99 @@
-package chapter07_04_java8µÄÈÕÆÚÊ±¼äÀà;
+package chapter07_04_java8çš„æ—¥æœŸæ—¶é—´ç±»;
 
 import java.time.*;
 /**
- * Description:java8ĞÂÔöµÄjava.time°ü
- * 1.Clock:»ñÈ¡Ö¸¶¨Ê§È¥µÄµ±Ç°ÈÕÆÚ¡¢Ê±¼ä¡£
- * 2.Duration:´ú±í³ÖĞøÊ±¼ä£¬¿ÉÒÔ·½±ãµÄ»ñÈ¡Ò»¶ÎÊ±¼ä¡£
- * 3.Instant£º´ú±íÒ»¸ö¾ßÌåµÄÊ±¿Ì£¬¾«È·µ½ÄÉÃë£¬now()»ñÈ¡µ±Ç°Ê±¿Ì£¬now(Clock c)clock¶ÔÓ¦Ê±¿ÌminusXxx() plusXxx
- * 4.LocalDate:²»´øÊ§È¥µÄÈÕÆÚ£¬ÀıÈç2007-12-03,now()»ñÈ¡µ±Ç°ÈÕÆÚ
- * 5.LocalTime:²»´øÊ±ÇøµÄÊ±¼ä£¬ÀıÈç10:15:30,now()»ñÈ¡µ±Ç°Ê±¼ä
- * 6.LocalDateTime:²»´øÊ±ÇøµÄÈÕÆÚÊ±¼ä£¬ÀıÈç2007-01-01T10:34:34,now()»ñÈ¡µ±Ç°ÈÕÆÚÊ±¼ä¡£
- * 7.MonthDay:½ö´ú±íÔÂÈÕ£¬ÀıÈç--04-12£¬now()»ñÈ¡µ±Ç°ÔÂÈÕ
- * 8.Year,½ö´ú±íÄê£¬ÀıÈç2016£¬now()»ñÈ¡µ±Ç°Äê·İ
- * 9.YearMonth£º½ö´ú±íÄêÔÂ£¬ÀıÈç2016-07.now()£¬»ñÈ¡µ±Ç°ÄêÔÂ£¬now(Clock c)»ñÈ¡clock¶ÔÓ¦µÄÄêÔÂ¡£minuxXxx()¼õÈ¥¼¸Äê¼¸ÔÂ£¬plusXxx¼ÓÉÏ¡£
- * 10.ZonedDateTime:´ú±íÒ»¸öÊ±Çø»¯µÄÈÕÆÚ¡¢Ê±¼ä
- * 11.ZoneId:´ú±íÒ»¸öÊ±Çø¡£
- * 12.DayOfWeek:Ã¶¾ÙÀà£¬¶¨ÒåÁËÖÜÈÕµ½ÖÜÁùµÄÃ¶¾ÙÖµ
- * 13.Month:Ã¶¾ÙÀà£¬¶¨ÒåÁËÒ»ÔÂµ½12ÔÂµÄÃ¶¾ÙÖµ
+ * Description:java8æ–°å¢çš„java.timeåŒ…
+ * 1.Clock:è·å–æŒ‡å®šå¤±å»çš„å½“å‰æ—¥æœŸã€æ—¶é—´ã€‚
+ * 2.Duration:ä»£è¡¨æŒç»­æ—¶é—´ï¼Œå¯ä»¥æ–¹ä¾¿çš„è·å–ä¸€æ®µæ—¶é—´ã€‚
+ * 3.Instantï¼šä»£è¡¨ä¸€ä¸ªå…·ä½“çš„æ—¶åˆ»ï¼Œç²¾ç¡®åˆ°çº³ç§’ï¼Œnow()è·å–å½“å‰æ—¶åˆ»ï¼Œnow(Clock c)clockå¯¹åº”æ—¶åˆ»minusXxx() plusXxx
+ * 4.LocalDate:ä¸å¸¦å¤±å»çš„æ—¥æœŸï¼Œä¾‹å¦‚2007-12-03,now()è·å–å½“å‰æ—¥æœŸ
+ * 5.LocalTime:ä¸å¸¦æ—¶åŒºçš„æ—¶é—´ï¼Œä¾‹å¦‚10:15:30,now()è·å–å½“å‰æ—¶é—´
+ * 6.LocalDateTime:ä¸å¸¦æ—¶åŒºçš„æ—¥æœŸæ—¶é—´ï¼Œä¾‹å¦‚2007-01-01T10:34:34,now()è·å–å½“å‰æ—¥æœŸæ—¶é—´ã€‚
+ * 7.MonthDay:ä»…ä»£è¡¨æœˆæ—¥ï¼Œä¾‹å¦‚--04-12ï¼Œnow()è·å–å½“å‰æœˆæ—¥
+ * 8.Year,ä»…ä»£è¡¨å¹´ï¼Œä¾‹å¦‚2016ï¼Œnow()è·å–å½“å‰å¹´ä»½
+ * 9.YearMonthï¼šä»…ä»£è¡¨å¹´æœˆï¼Œä¾‹å¦‚2016-07.now()ï¼Œè·å–å½“å‰å¹´æœˆï¼Œnow(Clock c)è·å–clockå¯¹åº”çš„å¹´æœˆã€‚minuxXxx()å‡å»å‡ å¹´å‡ æœˆï¼ŒplusXxxåŠ ä¸Šã€‚
+ * 10.ZonedDateTime:ä»£è¡¨ä¸€ä¸ªæ—¶åŒºåŒ–çš„æ—¥æœŸã€æ—¶é—´
+ * 11.ZoneId:ä»£è¡¨ä¸€ä¸ªæ—¶åŒºã€‚
+ * 12.DayOfWeek:æšä¸¾ç±»ï¼Œå®šä¹‰äº†å‘¨æ—¥åˆ°å‘¨å…­çš„æšä¸¾å€¼
+ * 13.Month:æšä¸¾ç±»ï¼Œå®šä¹‰äº†ä¸€æœˆåˆ°12æœˆçš„æšä¸¾å€¼
  */
 public class NewDatePackageTest05
 {
 	public static void main(String[] args)
 	{
-		// -----ÏÂÃæÊÇ¹ØÓÚClockµÄÓÃ·¨-----
-		// »ñÈ¡µ±Ç°Clock
+		// -----ä¸‹é¢æ˜¯å…³äºClockçš„ç”¨æ³•-----
+		// è·å–å½“å‰Clock
 		Clock clock = Clock.systemUTC();
-		// Í¨¹ıClock»ñÈ¡µ±Ç°Ê±¿Ì
-		System.out.println("µ±Ç°Ê±¿ÌÎª£º" + clock.instant());
-		// »ñÈ¡clock¶ÔÓ¦µÄºÁÃëÊı£¬ÓëSystem.currentTimeMillis()Êä³öÏàÍ¬
+		// é€šè¿‡Clockè·å–å½“å‰æ—¶åˆ»
+		System.out.println("å½“å‰æ—¶åˆ»ä¸ºï¼š" + clock.instant());
+		// è·å–clockå¯¹åº”çš„æ¯«ç§’æ•°ï¼Œä¸System.currentTimeMillis()è¾“å‡ºç›¸åŒ
 		System.out.println(clock.millis());
 		System.out.println(System.currentTimeMillis());
-		// -----ÏÂÃæÊÇ¹ØÓÚDurationµÄÓÃ·¨-----
+		// -----ä¸‹é¢æ˜¯å…³äºDurationçš„ç”¨æ³•-----
 		Duration d = Duration.ofSeconds(6000);
-		System.out.println("6000ÃëÏàµ±ÓÚ" + d.toMinutes() + "·Ö");
-		System.out.println("6000ÃëÏàµ±ÓÚ" + d.toHours() + "Ğ¡Ê±");
-		System.out.println("6000ÃëÏàµ±ÓÚ" + d.toDays() + "Ìì");
-		// ÔÚclock»ù´¡ÉÏÔö¼Ó6000Ãë£¬·µ»ØĞÂµÄClock
+		System.out.println("6000ç§’ç›¸å½“äº" + d.toMinutes() + "åˆ†");
+		System.out.println("6000ç§’ç›¸å½“äº" + d.toHours() + "å°æ—¶");
+		System.out.println("6000ç§’ç›¸å½“äº" + d.toDays() + "å¤©");
+		// åœ¨clockåŸºç¡€ä¸Šå¢åŠ 6000ç§’ï¼Œè¿”å›æ–°çš„Clock
 		Clock clock2 = Clock.offset(clock, d);
-		// ¿É¿´µ½clock2Óëclock1Ïà²î1Ğ¡Ê±40·Ö
-		System.out.println("µ±Ç°Ê±¿Ì¼Ó6000ÃëÎª£º" +clock2.instant());
-		// -----ÏÂÃæÊÇ¹ØÓÚInstantµÄÓÃ·¨-----
-		// »ñÈ¡µ±Ç°Ê±¼ä
+		// å¯çœ‹åˆ°clock2ä¸clock1ç›¸å·®1å°æ—¶40åˆ†
+		System.out.println("å½“å‰æ—¶åˆ»åŠ 6000ç§’ä¸ºï¼š" +clock2.instant());
+		// -----ä¸‹é¢æ˜¯å…³äºInstantçš„ç”¨æ³•-----
+		// è·å–å½“å‰æ—¶é—´
 		Instant instant = Instant.now();
 		System.out.println(instant);
-		// instantÌí¼Ó6000Ãë£¨¼´100·ÖÖÓ£©£¬·µ»ØĞÂµÄInstant
+		// instantæ·»åŠ 6000ç§’ï¼ˆå³100åˆ†é’Ÿï¼‰ï¼Œè¿”å›æ–°çš„Instant
 		Instant instant2 = instant.plusSeconds(6000);
 		System.out.println(instant2);
-		// ¸ù¾İ×Ö·û´®ÖĞ½âÎöInstant¶ÔÏó
+		// æ ¹æ®å­—ç¬¦ä¸²ä¸­è§£æInstantå¯¹è±¡
 		Instant instant3 = Instant.parse("2014-02-23T10:12:35.342Z");
 		System.out.println(instant3);
-		// ÔÚinstant3µÄ»ù´¡ÉÏÌí¼Ó5Ğ¡Ê±4·ÖÖÓ
+		// åœ¨instant3çš„åŸºç¡€ä¸Šæ·»åŠ 5å°æ—¶4åˆ†é’Ÿ
 		Instant instant4 = instant3.plus(Duration
 			.ofHours(5).plusMinutes(4));
 		System.out.println(instant4);
-		// »ñÈ¡instant4µÄ5ÌìÒÔÇ°µÄÊ±¿Ì
+		// è·å–instant4çš„5å¤©ä»¥å‰çš„æ—¶åˆ»
 		Instant instant5 = instant4.minus(Duration.ofDays(5));
 		System.out.println(instant5);
-		// -----ÏÂÃæÊÇ¹ØÓÚLocalDateµÄÓÃ·¨-----
+		// -----ä¸‹é¢æ˜¯å…³äºLocalDateçš„ç”¨æ³•-----
 		LocalDate localDate = LocalDate.now();
 		System.out.println(localDate);
-		// »ñµÃ2014ÄêµÄµÚ146Ìì
+		// è·å¾—2014å¹´çš„ç¬¬146å¤©
 		localDate = LocalDate.ofYearDay(2014, 146);
 		System.out.println(localDate); // 2014-05-26
-		// ÉèÖÃÎª2014Äê5ÔÂ21ÈÕ
+		// è®¾ç½®ä¸º2014å¹´5æœˆ21æ—¥
 		localDate = LocalDate.of(2014, Month.MAY, 21);
 		System.out.println(localDate); // 2014-05-21
-		// -----ÏÂÃæÊÇ¹ØÓÚLocalTimeµÄÓÃ·¨-----
-		// »ñÈ¡µ±Ç°Ê±¼ä
+		// -----ä¸‹é¢æ˜¯å…³äºLocalTimeçš„ç”¨æ³•-----
+		// è·å–å½“å‰æ—¶é—´
 		LocalTime localTime = LocalTime.now();
-		// ÉèÖÃÎª22µã33·Ö
+		// è®¾ç½®ä¸º22ç‚¹33åˆ†
 		localTime = LocalTime.of(22, 33);
 		System.out.println(localTime); // 22:33
-		// ·µ»ØÒ»ÌìÖĞµÄµÚ5503Ãë
+		// è¿”å›ä¸€å¤©ä¸­çš„ç¬¬5503ç§’
 		localTime = LocalTime.ofSecondOfDay(5503);
 		System.out.println(localTime); // 01:31:43
-		// -----ÏÂÃæÊÇ¹ØÓÚlocalDateTimeµÄÓÃ·¨-----
-		// »ñÈ¡µ±Ç°ÈÕÆÚ¡¢Ê±¼ä
+		// -----ä¸‹é¢æ˜¯å…³äºlocalDateTimeçš„ç”¨æ³•-----
+		// è·å–å½“å‰æ—¥æœŸã€æ—¶é—´
 		LocalDateTime localDateTime = LocalDateTime.now();
-		// µ±Ç°ÈÕÆÚ¡¢Ê±¼ä¼ÓÉÏ25Ğ¡Ê±£³·ÖÖÓ
+		// å½“å‰æ—¥æœŸã€æ—¶é—´åŠ ä¸Š25å°æ—¶ï¼“åˆ†é’Ÿ
 		LocalDateTime future = localDateTime.plusHours(25).plusMinutes(3);
-		System.out.println("µ±Ç°ÈÕÆÚ¡¢Ê±¼äµÄ25Ğ¡Ê±3·ÖÖ®ºó£º" + future);
-		// ÏÂÃæÊÇ¹ØÓÚYear¡¢YearMonth¡¢MonthDayµÄÓÃ·¨Ê¾Àı-----
-		Year year = Year.now(); // »ñÈ¡µ±Ç°µÄÄê·İ
-		System.out.println("µ±Ç°Äê·İ£º" + year); // Êä³öµ±Ç°Äê·İ
-		year = year.plusYears(5); // µ±Ç°Äê·İÔÙ¼Ó5Äê
-		System.out.println("µ±Ç°Äê·İÔÙ¹ı5Äê£º" + year);
-		// ¸ù¾İÖ¸¶¨ÔÂ·İ»ñÈ¡YearMonth
+		System.out.println("å½“å‰æ—¥æœŸã€æ—¶é—´çš„25å°æ—¶3åˆ†ä¹‹åï¼š" + future);
+		// ä¸‹é¢æ˜¯å…³äºYearã€YearMonthã€MonthDayçš„ç”¨æ³•ç¤ºä¾‹-----
+		Year year = Year.now(); // è·å–å½“å‰çš„å¹´ä»½
+		System.out.println("å½“å‰å¹´ä»½ï¼š" + year); // è¾“å‡ºå½“å‰å¹´ä»½
+		year = year.plusYears(5); // å½“å‰å¹´ä»½å†åŠ 5å¹´
+		System.out.println("å½“å‰å¹´ä»½å†è¿‡5å¹´ï¼š" + year);
+		// æ ¹æ®æŒ‡å®šæœˆä»½è·å–YearMonth
 		YearMonth ym = year.atMonth(10);
-		System.out.println("yearÄê10ÔÂ£º" + ym); // Êä³öXXXX-10£¬XXXX´ú±íµ±Ç°Äê·İ
-		// µ±Ç°ÄêÔÂÔÙ¼Ó5Äê£¬¼õ3¸öÔÂ
+		System.out.println("yearå¹´10æœˆï¼š" + ym); // è¾“å‡ºXXXX-10ï¼ŒXXXXä»£è¡¨å½“å‰å¹´ä»½
+		// å½“å‰å¹´æœˆå†åŠ 5å¹´ï¼Œå‡3ä¸ªæœˆ
 		ym = ym.plusYears(5).minusMonths(3);
-		System.out.println("yearÄê10ÔÂÔÙ¼Ó5Äê¡¢¼õ3¸öÔÂ£º" + ym);
+		System.out.println("yearå¹´10æœˆå†åŠ 5å¹´ã€å‡3ä¸ªæœˆï¼š" + ym);
 		MonthDay md = MonthDay.now();
-		System.out.println("µ±Ç°ÔÂÈÕ£º" + md); // Êä³ö--XX-XX£¬´ú±í¼¸ÔÂ¼¸ÈÕ
-		// ÉèÖÃÎª5ÔÂ23ÈÕ
+		System.out.println("å½“å‰æœˆæ—¥ï¼š" + md); // è¾“å‡º--XX-XXï¼Œä»£è¡¨å‡ æœˆå‡ æ—¥
+		// è®¾ç½®ä¸º5æœˆ23æ—¥
 		MonthDay md2 = md.with(Month.MAY).withDayOfMonth(23);
-		System.out.println("5ÔÂ23ÈÕÎª£º" + md2); // Êä³ö--05-23
+		System.out.println("5æœˆ23æ—¥ä¸ºï¼š" + md2); // è¾“å‡º--05-23
 	}
 }

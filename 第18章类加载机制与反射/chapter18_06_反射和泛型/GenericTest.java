@@ -1,10 +1,10 @@
-package chapter18_06_·´ÉäºÍ·ºĞÍ;
+package chapter18_06_åå°„å’Œæ³›å‹;
 
 import java.util.*;
 import java.lang.reflect.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,31 +20,31 @@ public class GenericTest
 	{
 		Class<GenericTest> clazz = GenericTest.class;
 		Field f = clazz.getDeclaredField("score");
-		// Ö±½ÓÊ¹ÓÃgetType()È¡³öµÄÀàĞÍÖ»¶ÔÆÕÍ¨ÀàĞÍµÄ³ÉÔ±±äÁ¿ÓĞĞ§
+		// ç›´æ¥ä½¿ç”¨getType()å–å‡ºçš„ç±»å‹åªå¯¹æ™®é€šç±»å‹çš„æˆå‘˜å˜é‡æœ‰æ•ˆ
 		Class<?> a = f.getType();
-		// ÏÂÃæ½«¿´µ½½öÊä³öjava.util.Map
-		System.out.println("scoreµÄÀàĞÍÊÇ:" + a);
-		// »ñµÃ³ÉÔ±±äÁ¿fµÄ·ºĞÍÀàĞÍ
+		// ä¸‹é¢å°†çœ‹åˆ°ä»…è¾“å‡ºjava.util.Map
+		System.out.println("scoreçš„ç±»å‹æ˜¯:" + a);
+		// è·å¾—æˆå‘˜å˜é‡fçš„æ³›å‹ç±»å‹
 		Type gType = f.getGenericType();
-		// Èç¹ûgTypeÀàĞÍÊÇParameterizedType¶ÔÏó
+		// å¦‚æœgTypeç±»å‹æ˜¯ParameterizedTypeå¯¹è±¡
 		if(gType instanceof ParameterizedType)
 		{
-			// Ç¿ÖÆÀàĞÍ×ª»»
+			// å¼ºåˆ¶ç±»å‹è½¬æ¢
 			ParameterizedType pType = (ParameterizedType)gType;
-			// »ñÈ¡Ô­Ê¼ÀàĞÍ
+			// è·å–åŸå§‹ç±»å‹
 			Type rType = pType.getRawType();
-			System.out.println("Ô­Ê¼ÀàĞÍÊÇ£º" + rType);
-			// È¡µÃ·ºĞÍÀàĞÍµÄ·ºĞÍ²ÎÊı
+			System.out.println("åŸå§‹ç±»å‹æ˜¯ï¼š" + rType);
+			// å–å¾—æ³›å‹ç±»å‹çš„æ³›å‹å‚æ•°
 			Type[] tArgs = pType.getActualTypeArguments();
-			System.out.println("·ºĞÍĞÅÏ¢ÊÇ:");
+			System.out.println("æ³›å‹ä¿¡æ¯æ˜¯:");
 			for (int i = 0; i < tArgs.length; i++)
 			{
-				System.out.println("µÚ" + i + "¸ö·ºĞÍÀàĞÍÊÇ£º" + tArgs[i]);
+				System.out.println("ç¬¬" + i + "ä¸ªæ³›å‹ç±»å‹æ˜¯ï¼š" + tArgs[i]);
 			}
 		}
 		else
 		{
-			System.out.println("»ñÈ¡·ºĞÍÀàĞÍ³ö´í£¡");
+			System.out.println("è·å–æ³›å‹ç±»å‹å‡ºé”™ï¼");
 		}
 	}
 }

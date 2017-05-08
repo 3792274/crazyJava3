@@ -1,4 +1,4 @@
-package chapter13_05_¹ÜÀí½á¹û¼¯;
+package chapter13_05_ç®¡ç†ç»“æœé›†;
 
 
 import java.awt.*;
@@ -9,8 +9,8 @@ import java.util.*;
 import java.io.*;
 import java.sql.*;
 /**
- * Description:Ê¹ÓÃResultSetMetaData·ÖÎö½á¹û¼¯
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:ä½¿ç”¨ResultSetMetaDataåˆ†æç»“æœé›†
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,27 +20,27 @@ import java.sql.*;
  */
 public class QueryExecutor
 {
-	JFrame jf = new JFrame("²éÑ¯Ö´ĞĞÆ÷");
+	JFrame jf = new JFrame("æŸ¥è¯¢æ‰§è¡Œå™¨");
 	private JScrollPane scrollPane;
-	private JButton execBn = new JButton("²éÑ¯");
-	// ÓÃÓÚÊäÈë²éÑ¯Óï¾äµÄÎÄ±¾¿ò
+	private JButton execBn = new JButton("æŸ¥è¯¢");
+	// ç”¨äºè¾“å…¥æŸ¥è¯¢è¯­å¥çš„æ–‡æœ¬æ¡†
 	private JTextField sqlField = new JTextField(45);
 	private static Connection conn;
 	private static Statement stmt;
-	// ²ÉÓÃ¾²Ì¬³õÊ¼»¯¿éÀ´³õÊ¼»¯Connection¡¢Statement¶ÔÏó
+	// é‡‡ç”¨é™æ€åˆå§‹åŒ–å—æ¥åˆå§‹åŒ–Connectionã€Statementå¯¹è±¡
 	static
 	{
 		try
 		{
 			Properties props = new Properties();
-			props.load(new FileInputStream("resource\\chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½\\mysql.ini"));
+			props.load(new FileInputStream("resource\\chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼\\mysql.ini"));
 			String drivers = props.getProperty("driver");
 			String url = props.getProperty("url");
 			String username = props.getProperty("user");
 			String password = props.getProperty("pass");
-			// ¼ÓÔØÊı¾İ¿âÇı¶¯
+			// åŠ è½½æ•°æ®åº“é©±åŠ¨
 			Class.forName(drivers);
-			// È¡µÃÊı¾İ¿âÁ¬½Ó
+			// å–å¾—æ•°æ®åº“è¿æ¥
 			conn = DriverManager.getConnection(url, username, password);
 			stmt = conn.createStatement();
 		}
@@ -49,14 +49,14 @@ public class QueryExecutor
 			e.printStackTrace();
 		}
 	}
-	// --------³õÊ¼»¯½çÃæµÄ·½·¨---------
+	// --------åˆå§‹åŒ–ç•Œé¢çš„æ–¹æ³•---------
 	public void init()
 	{
 		JPanel top = new JPanel();
-		top.add(new JLabel("ÊäÈë²éÑ¯Óï¾ä£º"));
+		top.add(new JLabel("è¾“å…¥æŸ¥è¯¢è¯­å¥ï¼š"));
 		top.add(sqlField);
 		top.add(execBn);
-		// ÎªÖ´ĞĞ°´Å¥¡¢µ¥ĞĞÎÄ±¾¿òÌí¼ÓÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºæ‰§è¡ŒæŒ‰é’®ã€å•è¡Œæ–‡æœ¬æ¡†æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
 		execBn.addActionListener(new ExceListener());
 		sqlField.addActionListener(new ExceListener());
 		jf.add(top , BorderLayout.NORTH);
@@ -66,30 +66,30 @@ public class QueryExecutor
 		
 		sqlField.setText("select * from student_table");
 	}
-	// ¶¨Òå¼àÌıÆ÷
+	// å®šä¹‰ç›‘å¬å™¨
 	class ExceListener implements ActionListener
 	{
 		public void actionPerformed(ActionEvent evt)
 		{
-			// É¾³ıÔ­À´µÄJTable(JTableÊ¹ÓÃscrollPaneÀ´°ü×°)
+			// åˆ é™¤åŸæ¥çš„JTable(JTableä½¿ç”¨scrollPaneæ¥åŒ…è£…)
 			if (scrollPane != null)
 			{
 				jf.remove(scrollPane);
 			}
 			try(
-				// ¸ù¾İÓÃ»§ÊäÈëµÄSQLÖ´ĞĞ²éÑ¯
+				// æ ¹æ®ç”¨æˆ·è¾“å…¥çš„SQLæ‰§è¡ŒæŸ¥è¯¢
 				ResultSet rs = stmt.executeQuery(sqlField.getText()))
 			{
-				// È¡³öResultSetµÄMetaData
+				// å–å‡ºResultSetçš„MetaData
 				ResultSetMetaData rsmd = rs.getMetaData();
 				Vector<String> columnNames =  new Vector<>();
 				Vector<Vector<String>> data = new Vector<>();
-				// °ÑResultSetµÄËùÓĞÁĞÃûÌí¼Óµ½VectorÀï
+				// æŠŠResultSetçš„æ‰€æœ‰åˆ—åæ·»åŠ åˆ°Vectoré‡Œ
 				for (int i = 0 ; i < rsmd.getColumnCount(); i++ )
 				{
 					columnNames.add(rsmd.getColumnName(i + 1));
 				}
-				// °ÑResultSetµÄËùÓĞ¼ÇÂ¼Ìí¼Óµ½VectorÀï
+				// æŠŠResultSetçš„æ‰€æœ‰è®°å½•æ·»åŠ åˆ°Vectoré‡Œ
 				while (rs.next())
 				{
 					Vector<String> v = new Vector<>();
@@ -99,12 +99,12 @@ public class QueryExecutor
 					}
 					data.add(v);
 				}
-				// ´´½¨ĞÂµÄJTable
+				// åˆ›å»ºæ–°çš„JTable
 				JTable table = new JTable(data , columnNames);
 				scrollPane = new JScrollPane(table);
-				// Ìí¼ÓĞÂµÄTable
+				// æ·»åŠ æ–°çš„Table
 				jf.add(scrollPane);
-				// ¸üĞÂÖ÷´°¿Ú
+				// æ›´æ–°ä¸»çª—å£
 				jf.validate();
 			}
 			catch (Exception e)

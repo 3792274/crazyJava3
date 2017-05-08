@@ -1,12 +1,12 @@
-package chapter08_06_java8ÔöÇ¿µÄMap¼¯ºÏ;
+package chapter08_06_java8å¢å¼ºçš„Mapé›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * 1.hashMap,Í¨¹ıequalÅĞ¶ÏÁ½¸ö¶ÔÏóÏàÍ¬
- * 2.identityHashMap Í¨¹ıµØÖ· ==ÅĞ¶Ï2¸ö¶ÔÏóÏàÍ¬¡£
- * 3.Á½Õß¶¼ÊÇÎŞĞòµÄ¡£
+ * 1.hashMap,é€šè¿‡equalåˆ¤æ–­ä¸¤ä¸ªå¯¹è±¡ç›¸åŒ
+ * 2.identityHashMap é€šè¿‡åœ°å€ ==åˆ¤æ–­2ä¸ªå¯¹è±¡ç›¸åŒã€‚
+ * 3.ä¸¤è€…éƒ½æ˜¯æ— åºçš„ã€‚
  */
 public class IdentityHashMapTest
 {
@@ -14,11 +14,11 @@ public class IdentityHashMapTest
 	{
 		IdentityHashMap ihm = new IdentityHashMap();
 	
-		// ÏÂÃæÁ½ĞĞ´úÂë½«»áÏòIdentityHashMap¶ÔÏóÖĞÌí¼ÓÁ½¸ökey-value¶Ô
-		ihm.put(new String("ÓïÎÄ") , 89);
-		ihm.put(new String("ÓïÎÄ") , 78);
+		// ä¸‹é¢ä¸¤è¡Œä»£ç å°†ä¼šå‘IdentityHashMapå¯¹è±¡ä¸­æ·»åŠ ä¸¤ä¸ªkey-valueå¯¹
+		ihm.put(new String("è¯­æ–‡") , 89);
+		ihm.put(new String("è¯­æ–‡") , 78);
 	
-		// ÏÂÃæÁ½ĞĞ´úÂëÖ»»áÏòIdentityHashMap¶ÔÏóÖĞÌí¼ÓÒ»¸ökey-value¶Ô
+		// ä¸‹é¢ä¸¤è¡Œä»£ç åªä¼šå‘IdentityHashMapå¯¹è±¡ä¸­æ·»åŠ ä¸€ä¸ªkey-valueå¯¹
 		ihm.put("java" , 93);
 		ihm.put("java" , 98);
 		System.out.println(ihm);

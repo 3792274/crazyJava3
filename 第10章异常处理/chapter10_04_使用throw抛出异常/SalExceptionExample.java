@@ -1,4 +1,4 @@
-package chapter10_04_Ê¹ÓÃthrowÅ×³öÒì³£;
+package chapter10_04_ä½¿ç”¨throwæŠ›å‡ºå¼‚å¸¸;
 
 import java.sql.Connection;
 import java.sql.Driver;
@@ -10,25 +10,25 @@ import java.sql.SQLException;
 public class SalExceptionExample {
 
 	 /**
-	  * Ò»¸öÊµÏÖ¼ÆËã¹¤×ÊµÄ·½·¨
+	  * ä¸€ä¸ªå®ç°è®¡ç®—å·¥èµ„çš„æ–¹æ³•
 	  */
 	public void calSal() throws SalException{
 		
 		
 		try {
 			Connection connection = DriverManager.getConnection("");
-			//ÊµÏÖ½áËã¹¤×ÊµÄÒµÎñÂß¼­
+			//å®ç°ç»“ç®—å·¥èµ„çš„ä¸šåŠ¡é€»è¾‘
 		} catch (SQLException sqle) {
-			 //°ÑÔ­Ê¼Òì³£¼ÇÂ¼ÏÂÀ´£¬Áô¸ø¹ÜÀíÔ±....
-			    new SalException(sqle); //±£´æÔ­Ê¼µÄ´íÎóÕ»ĞÅÏ¢
-			//ÏÂÃæµÄÒì³£messageÊÇ¶ÔÓÃ»§µÄÌáÊ¾
+			 //æŠŠåŸå§‹å¼‚å¸¸è®°å½•ä¸‹æ¥ï¼Œç•™ç»™ç®¡ç†å‘˜....
+			    new SalException(sqle); //ä¿å­˜åŸå§‹çš„é”™è¯¯æ ˆä¿¡æ¯
+			//ä¸‹é¢çš„å¼‚å¸¸messageæ˜¯å¯¹ç”¨æˆ·çš„æç¤º
 			
-			throw new SalException("·ÃÎÊÊı¾İ¿â³ö´í¡£");
+			throw new SalException("è®¿é—®æ•°æ®åº“å‡ºé”™ã€‚");
 		}catch(Exception e){
-			//°ÑÔ­Ê¼Òì³£¼ÇÂ¼ÏÂÀ´£¬Áô¸ø¹ÜÀíÔ±....
-			 new SalException(e); //±£´æÔ­Ê¼µÄ´íÎóÕ»ĞÅÏ¢
-			//ÏÂÃæµÄÒì³£messageÊÇ¶ÔÓÃ»§µÄÌáÊ¾
-			throw new SalException("ÏµÍ³³öÏÖÎ´Öª´íÎó");
+			//æŠŠåŸå§‹å¼‚å¸¸è®°å½•ä¸‹æ¥ï¼Œç•™ç»™ç®¡ç†å‘˜....
+			 new SalException(e); //ä¿å­˜åŸå§‹çš„é”™è¯¯æ ˆä¿¡æ¯
+			//ä¸‹é¢çš„å¼‚å¸¸messageæ˜¯å¯¹ç”¨æˆ·çš„æç¤º
+			throw new SalException("ç³»ç»Ÿå‡ºç°æœªçŸ¥é”™è¯¯");
 			
 		}
 	}

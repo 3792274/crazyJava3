@@ -1,29 +1,29 @@
-package chapter03_01_×¢ÊÍ;
+package chapter03_01_æ³¨é‡Š;
 /**
  * Description:
- * <br>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br>This program is protected by copyright laws.
  * <br>Program Name:
  * <br>Date:
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
- * @see "²Î¼û" ÓÃÓÚÖ¸¶¨½»²æ²Î¿¼µÄÄÚÈİ
+ * @see "å‚è§" ç”¨äºæŒ‡å®šäº¤å‰å‚è€ƒçš„å†…å®¹
  * 
  */
 public class JavadocTagTest04
 {
 	/**
-	 * Ò»¸öµÃµ½´òÕĞºô×Ö·û´®µÄ·½·¨¡£
-	 * @param name ¸Ã²ÎÊıÖ¸¶¨ÏòË­´òÕĞºô¡£
-	 * @return ·µ»Ø´òÕĞºôµÄ×Ö·û´®¡£
-	 * @deprecated ¹ıÊ±µÄ£¬²»ÍÆ¼öÊ¹ÓÃµÄ·½·¨
-	 * @see "²Î¼û" ÓÃÓÚÖ¸¶¨½»²æ²Î¿¼µÄÄÚÈİ
-	 * @exception Å×³öÒì³£µÄÀàĞÍ
-	 * @throws Å×³öÒì³££¬ºÍ@exception Í¬Òå¡£
+	 * ä¸€ä¸ªå¾—åˆ°æ‰“æ‹›å‘¼å­—ç¬¦ä¸²çš„æ–¹æ³•ã€‚
+	 * @param name è¯¥å‚æ•°æŒ‡å®šå‘è°æ‰“æ‹›å‘¼ã€‚
+	 * @return è¿”å›æ‰“æ‹›å‘¼çš„å­—ç¬¦ä¸²ã€‚
+	 * @deprecated è¿‡æ—¶çš„ï¼Œä¸æ¨èä½¿ç”¨çš„æ–¹æ³•
+	 * @see "å‚è§" ç”¨äºæŒ‡å®šäº¤å‰å‚è€ƒçš„å†…å®¹
+	 * @exception æŠ›å‡ºå¼‚å¸¸çš„ç±»å‹
+	 * @throws æŠ›å‡ºå¼‚å¸¸ï¼Œå’Œ@exception åŒä¹‰ã€‚
 	 */
 	public String hello(String name)
 	{
-		return name + "£¬ÄãºÃ£¡";
+		return name + "ï¼Œä½ å¥½ï¼";
 	}
 }

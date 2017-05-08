@@ -1,4 +1,4 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.NoBlock;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.NoBlock;
 
 import java.util.*;
 import java.net.*;
@@ -8,7 +8,7 @@ import java.nio.channels.*;
 import java.nio.charset.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -18,53 +18,53 @@ import java.nio.charset.*;
  */
 public class NClient
 {
-	// ¶¨Òå¼ì²âSocketChannelµÄSelector¶ÔÏó
+	// å®šä¹‰æ£€æµ‹SocketChannelçš„Selectorå¯¹è±¡
 	private Selector selector = null;
 	static final int PORT = 30000;
-	// ¶¨Òå´¦Àí±àÂëºÍ½âÂëµÄ×Ö·û¼¯
+	// å®šä¹‰å¤„ç†ç¼–ç å’Œè§£ç çš„å­—ç¬¦é›†
 	private Charset charset = Charset.forName("UTF-8");
-	// ¿Í»§¶ËSocketChannel
+	// å®¢æˆ·ç«¯SocketChannel
 	private SocketChannel sc = null;
 	public void init()throws IOException
 	{
 		selector = Selector.open();
 		InetSocketAddress isa = new InetSocketAddress("127.0.0.1", PORT);
-		// µ÷ÓÃopen¾²Ì¬·½·¨´´½¨Á¬½Óµ½Ö¸¶¨Ö÷»úµÄSocketChannel
+		// è°ƒç”¨opené™æ€æ–¹æ³•åˆ›å»ºè¿æ¥åˆ°æŒ‡å®šä¸»æœºçš„SocketChannel
 		sc = SocketChannel.open(isa);
-		// ÉèÖÃ¸ÃscÒÔ·Ç×èÈû·½Ê½¹¤×÷
+		// è®¾ç½®è¯¥scä»¥éé˜»å¡æ–¹å¼å·¥ä½œ
 		sc.configureBlocking(false);
-		// ½«SocketChannel¶ÔÏó×¢²áµ½Ö¸¶¨Selector
+		// å°†SocketChannelå¯¹è±¡æ³¨å†Œåˆ°æŒ‡å®šSelector
 		sc.register(selector, SelectionKey.OP_READ);
-		// Æô¶¯¶ÁÈ¡·şÎñÆ÷¶ËÊı¾İµÄÏß³Ì
+		// å¯åŠ¨è¯»å–æœåŠ¡å™¨ç«¯æ•°æ®çš„çº¿ç¨‹
 		new ClientThread().start();
-		// ´´½¨¼üÅÌÊäÈëÁ÷
+		// åˆ›å»ºé”®ç›˜è¾“å…¥æµ
 		Scanner scan = new Scanner(System.in);
 		while (scan.hasNextLine())
 		{
-			// ¶ÁÈ¡¼üÅÌÊäÈë
+			// è¯»å–é”®ç›˜è¾“å…¥
 			String line = scan.nextLine();
-			// ½«¼üÅÌÊäÈëµÄÄÚÈİÊä³öµ½SocketChannelÖĞ
+			// å°†é”®ç›˜è¾“å…¥çš„å†…å®¹è¾“å‡ºåˆ°SocketChannelä¸­
 			sc.write(charset.encode(line));
 		}
 	}
-	// ¶¨Òå¶ÁÈ¡·şÎñÆ÷Êı¾İµÄÏß³Ì
+	// å®šä¹‰è¯»å–æœåŠ¡å™¨æ•°æ®çš„çº¿ç¨‹
 	private class ClientThread extends Thread
 	{
 		public void run()
 		{
 			try
 			{
-				while (selector.select() > 0)    // ¢Ù
+				while (selector.select() > 0)    // â‘ 
 				{
-					// ±éÀúÃ¿¸öÓĞ¿ÉÓÃIO²Ù×÷Channel¶ÔÓ¦µÄSelectionKey
+					// éå†æ¯ä¸ªæœ‰å¯ç”¨IOæ“ä½œChannelå¯¹åº”çš„SelectionKey
 					for (SelectionKey sk : selector.selectedKeys())
 					{
-						// É¾³ıÕıÔÚ´¦ÀíµÄSelectionKey
+						// åˆ é™¤æ­£åœ¨å¤„ç†çš„SelectionKey
 						selector.selectedKeys().remove(sk);
-						// Èç¹û¸ÃSelectionKey¶ÔÓ¦µÄChannelÖĞÓĞ¿É¶ÁµÄÊı¾İ
+						// å¦‚æœè¯¥SelectionKeyå¯¹åº”çš„Channelä¸­æœ‰å¯è¯»çš„æ•°æ®
 						if (sk.isReadable())
 						{
-							// Ê¹ÓÃNIO¶ÁÈ¡ChannelÖĞµÄÊı¾İ
+							// ä½¿ç”¨NIOè¯»å–Channelä¸­çš„æ•°æ®
 							SocketChannel sc = (SocketChannel)sk.channel();
 							ByteBuffer buff = ByteBuffer.allocate(1024);
 							String content = "";
@@ -74,9 +74,9 @@ public class NClient
 								buff.flip();
 								content += charset.decode(buff);
 							}
-							// ´òÓ¡Êä³ö¶ÁÈ¡µÄÄÚÈİ
-							System.out.println("ÁÄÌìĞÅÏ¢£º" + content);
-							// ÎªÏÂÒ»´Î¶ÁÈ¡×÷×¼±¸
+							// æ‰“å°è¾“å‡ºè¯»å–çš„å†…å®¹
+							System.out.println("èŠå¤©ä¿¡æ¯ï¼š" + content);
+							// ä¸ºä¸‹ä¸€æ¬¡è¯»å–ä½œå‡†å¤‡
 							sk.interestOps(SelectionKey.OP_READ);
 						}
 					}

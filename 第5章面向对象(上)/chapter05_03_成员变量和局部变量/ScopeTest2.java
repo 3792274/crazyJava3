@@ -1,10 +1,10 @@
-package chapter05_03_³ÉÔ±±äÁ¿ºÍ¾Ö²¿±äÁ¿;
+package chapter05_03_æˆå‘˜å˜é‡å’Œå±€éƒ¨å˜é‡;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,7 +16,7 @@ public class ScopeTest2
 {
 	public static void main(String[] args)
 	{
-		// ¶¨ÒåÒ»¸ö·½·¨¾Ö²¿±äÁ¿×÷ÎªÑ­»·±äÁ¿
+		// å®šä¹‰ä¸€ä¸ªæ–¹æ³•å±€éƒ¨å˜é‡ä½œä¸ºå¾ªç¯å˜é‡
 		int i;
 		for ( i = 0 ; i < 10 ; i++)
 		{

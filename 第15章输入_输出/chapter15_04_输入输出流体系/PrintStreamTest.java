@@ -1,9 +1,9 @@
-package chapter15_04_ÊäÈëÊä³öÁ÷ÌåÏµ;
+package chapter15_04_è¾“å…¥è¾“å‡ºæµä½“ç³»;
 
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -19,9 +19,9 @@ public class PrintStreamTest
 			FileOutputStream fos = new FileOutputStream("test.txt");
 			PrintStream ps = new PrintStream(fos))
 		{
-			// Ê¹ÓÃPrintStreamÖ´ĞĞÊä³ö
-			ps.println("ÆÕÍ¨×Ö·û´®");
-			// Ö±½ÓÊ¹ÓÃPrintStreamÊä³ö¶ÔÏó
+			// ä½¿ç”¨PrintStreamæ‰§è¡Œè¾“å‡º
+			ps.println("æ™®é€šå­—ç¬¦ä¸²");
+			// ç›´æ¥ä½¿ç”¨PrintStreamè¾“å‡ºå¯¹è±¡
 			ps.println(new PrintStreamTest());
 		}
 		catch (IOException ioe)

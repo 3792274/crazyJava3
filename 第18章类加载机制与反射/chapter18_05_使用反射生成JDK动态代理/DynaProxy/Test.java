@@ -1,9 +1,9 @@
-package chapter18_05_Ê¹ÓÃ·´ÉäÉú³ÉJDK¶¯Ì¬´úÀí.DynaProxy;
+package chapter18_05_ä½¿ç”¨åå°„ç”ŸæˆJDKåŠ¨æ€ä»£ç†.DynaProxy;
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,9 +16,9 @@ public class Test
 	public static void main(String[] args)
 		throws Exception
 	{
-		// ´´½¨Ò»¸öÔ­Ê¼µÄGunDog¶ÔÏó£¬×÷Îªtarget
+		// åˆ›å»ºä¸€ä¸ªåŸå§‹çš„GunDogå¯¹è±¡ï¼Œä½œä¸ºtarget
 		Dog target = new GunDog();
-		// ÒÔÖ¸¶¨µÄtargetÀ´´´½¨¶¯Ì¬´úÀí
+		// ä»¥æŒ‡å®šçš„targetæ¥åˆ›å»ºåŠ¨æ€ä»£ç†
 		Dog dog = (Dog)MyProxyFactory.getProxy(target);
 		dog.info();
 		dog.run();

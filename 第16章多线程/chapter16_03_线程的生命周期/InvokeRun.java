@@ -1,4 +1,4 @@
-package chapter16_03_Ïß³ÌµÄÉúÃüÖÜÆÚ;
+package chapter16_03_çº¿ç¨‹çš„ç”Ÿå‘½å‘¨æœŸ;
 
 public class InvokeRun  extends Thread{
 	
@@ -7,9 +7,9 @@ public class InvokeRun  extends Thread{
 	@Override
 	public void run() {
 		for(;i<100;i++){
-			//Ö±½Óµ÷ÓÃrun()·½·¨£¬ThreadµÄthis.getName()·µ»ØµÄÊÇ¸Ã¶ÔÏóÃû×Ö
-			//¶ø²»ÊÇµ±Ç°Ïß³ÌµÄÃû×Ö
-			//Ê¹ÓÃThread.currentThread().getName()ÖØÊÓ»ñÈ¡µ±Ç°Ïß³ÌµÄÃû×Ö
+			//ç›´æ¥è°ƒç”¨run()æ–¹æ³•ï¼ŒThreadçš„this.getName()è¿”å›çš„æ˜¯è¯¥å¯¹è±¡åå­—
+			//è€Œä¸æ˜¯å½“å‰çº¿ç¨‹çš„åå­—
+			//ä½¿ç”¨Thread.currentThread().getName()é‡è§†è·å–å½“å‰çº¿ç¨‹çš„åå­—
 			System.out.println(Thread.currentThread().getName()+" "+i);
 		}
 	}
@@ -18,12 +18,12 @@ public class InvokeRun  extends Thread{
 
 	public static void main(String[] args) {
 		for(int i=0;i<100;i++){
-			//µ÷ÓÃThreadµÄcurrentThread()»ñÈ¡µ±Ç°Ïß³Ì
+			//è°ƒç”¨Threadçš„currentThread()è·å–å½“å‰çº¿ç¨‹
 			System.out.println(Thread.currentThread().getName()+" "+i);
 			if(i==20){
-				//Ö±½Óµ÷ÓÃ¶ÔÏóµÄrun·½·¨
-				//ÏµÍ³»á°Ñµ±Ç°¶ÔÏóµ±³ÉÆÕÍ¨¶ÔÏó£¬²¢°Ñrun()·½·¨µ±³ÉÆÕÍ¨·½·¨
-				//ËùÒÔÏÂÃæÁ½ĞĞ´úÂë²¢²»»áÆô¶¯Ïß³Ì£¬¶øÊÇÖ´ĞĞÁ½¸örun()·½·¨£¬»á×èÈûÖ÷Ïß³Ì
+				//ç›´æ¥è°ƒç”¨å¯¹è±¡çš„runæ–¹æ³•
+				//ç³»ç»Ÿä¼šæŠŠå½“å‰å¯¹è±¡å½“æˆæ™®é€šå¯¹è±¡ï¼Œå¹¶æŠŠrun()æ–¹æ³•å½“æˆæ™®é€šæ–¹æ³•
+				//æ‰€ä»¥ä¸‹é¢ä¸¤è¡Œä»£ç å¹¶ä¸ä¼šå¯åŠ¨çº¿ç¨‹ï¼Œè€Œæ˜¯æ‰§è¡Œä¸¤ä¸ªrun()æ–¹æ³•ï¼Œä¼šé˜»å¡ä¸»çº¿ç¨‹
 				new InvokeRun().run();
 				new InvokeRun().run();
 			}

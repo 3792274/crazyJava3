@@ -1,44 +1,44 @@
-package chapter08_02_CollectionºÍIterator½Ó¿Ú;
+package chapter08_02_Collectionå’ŒIteratoræ¥å£;
 
 import java.util.*;
 import java.util.function.*;
 /**
  * Description:
- * ¶ÔÓÚÒÔÇ°µÄÀı×Ó£¬¶îÍâ¶¨ÒåÒ»¸öcalAll()·½·¨À´±éÀú¼¯ºÏÔªËØ£¬È»ºóÒÀ´Î¶ÔÃ¿¸ö¼¯ºÏÔªËØ½øĞĞÅĞ¶Ï£¬Ì«Âé·³¡£
- * Èç¹ûÊ¹ÓÃStream,¼´¿ÉÖ±½Ó¶Ô¼¯ºÏÖĞËùÓĞµÄÔªËØ½øĞĞÅúÁ¿²Ù×÷¡£
+ * å¯¹äºä»¥å‰çš„ä¾‹å­ï¼Œé¢å¤–å®šä¹‰ä¸€ä¸ªcalAll()æ–¹æ³•æ¥éå†é›†åˆå…ƒç´ ï¼Œç„¶åä¾æ¬¡å¯¹æ¯ä¸ªé›†åˆå…ƒç´ è¿›è¡Œåˆ¤æ–­ï¼Œå¤ªéº»çƒ¦ã€‚
+ * å¦‚æœä½¿ç”¨Stream,å³å¯ç›´æ¥å¯¹é›†åˆä¸­æ‰€æœ‰çš„å…ƒç´ è¿›è¡Œæ‰¹é‡æ“ä½œã€‚
  
  */
 public class CollectionStream10
 {
 	public static void main(String[] args)
 	{
-		// ´´½¨books¼¯ºÏ¡¢Îªbooks¼¯ºÏÌí¼ÓÔªËØµÄ´úÂëÓë8.2.5Ğ¡½ÚµÄ³ÌĞòÏàÍ¬¡£
+		// åˆ›å»ºbooksé›†åˆã€ä¸ºbooksé›†åˆæ·»åŠ å…ƒç´ çš„ä»£ç ä¸8.2.5å°èŠ‚çš„ç¨‹åºç›¸åŒã€‚
 		Collection books = new HashSet();
-		books.add(new String("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½"));
-		books.add(new String("·è¿ñJava½²Òå"));
-		books.add(new String("·è¿ñiOS½²Òå"));
-		books.add(new String("·è¿ñAjax½²Òå"));
-		books.add(new String("·è¿ñAndroid½²Òå"));
+		books.add(new String("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜"));
+		books.add(new String("ç–¯ç‹‚Javaè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚iOSè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚Ajaxè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚Androidè®²ä¹‰"));
 		
-		// Í³¼ÆÊéÃû°üº¬¡°·è¿ñ¡±×Ó´®µÄÍ¼ÊéÊıÁ¿
+		// ç»Ÿè®¡ä¹¦ååŒ…å«â€œç–¯ç‹‚â€å­ä¸²çš„å›¾ä¹¦æ•°é‡
 		System.out.println(books.stream()
-			.filter(ele->((String)ele).contains("·è¿ñ"))
-			.count()); // Êä³ö4
+			.filter(ele->((String)ele).contains("ç–¯ç‹‚"))
+			.count()); // è¾“å‡º4
 		
-		// Í³¼ÆÊéÃû°üº¬¡°Java¡±×Ó´®µÄÍ¼ÊéÊıÁ¿
+		// ç»Ÿè®¡ä¹¦ååŒ…å«â€œJavaâ€å­ä¸²çš„å›¾ä¹¦æ•°é‡
 		System.out.println(books.stream()
 			.filter(ele->((String)ele).contains("Java") )
-			.count()); // Êä³ö2
+			.count()); // è¾“å‡º2
 		
-		// Í³¼ÆÊéÃû×Ö·û´®³¤¶È´óÓÚ10µÄÍ¼ÊéÊıÁ¿
+		// ç»Ÿè®¡ä¹¦åå­—ç¬¦ä¸²é•¿åº¦å¤§äº10çš„å›¾ä¹¦æ•°é‡
 		System.out.println(books.stream()
 			.filter(ele->((String)ele).length() > 10)
-			.count()); // Êä³ö2
+			.count()); // è¾“å‡º2
 		
-		// ÏÈµ÷ÓÃCollection¶ÔÏóµÄstream()·½·¨½«¼¯ºÏ×ª»»ÎªStream,
-		// ÔÙµ÷ÓÃStreamµÄmapToInt()·½·¨»ñÈ¡Ô­ÓĞµÄStream¶ÔÓ¦µÄIntStream
+		// å…ˆè°ƒç”¨Collectionå¯¹è±¡çš„stream()æ–¹æ³•å°†é›†åˆè½¬æ¢ä¸ºStream,
+		// å†è°ƒç”¨Streamçš„mapToInt()æ–¹æ³•è·å–åŸæœ‰çš„Streamå¯¹åº”çš„IntStream
 		books.stream().mapToInt(ele -> ((String)ele).length())
-			// µ÷ÓÃforEach()·½·¨±éÀúIntStreamÖĞÃ¿¸öÔªËØ
-			.forEach(System.out::println);// Êä³ö8  11  16  7  8
+			// è°ƒç”¨forEach()æ–¹æ³•éå†IntStreamä¸­æ¯ä¸ªå…ƒç´ 
+			.forEach(System.out::println);// è¾“å‡º8  11  16  7  8
 	}
 }

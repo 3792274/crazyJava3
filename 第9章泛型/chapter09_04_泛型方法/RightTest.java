@@ -1,10 +1,10 @@
-package chapter09_04_泛型方法;
+package chapter09_04_娉涘瀷鏂规硶;
 
 
 import java.util.*;
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,7 +14,7 @@ import java.util.*;
  */
 public class RightTest
 {
-	// 声明一个泛型方法，该泛型方法中带一个T形参
+	// 澹版槑涓�涓硾鍨嬫柟娉曪紝璇ユ硾鍨嬫柟娉曚腑甯︿竴涓猅褰㈠弬
 	static <T> void test(Collection<? extends T> from , Collection<T> to)
 	{
 		for (T ele : from)
@@ -27,7 +27,7 @@ public class RightTest
 		List<Object> ao = new ArrayList<>();
 		List<String> as = new ArrayList<>();
 	
-		// 下面代码完全正常
+		// 涓嬮潰浠ｇ爜瀹屽叏姝ｅ父
 		test(as , ao);
 	}
 }

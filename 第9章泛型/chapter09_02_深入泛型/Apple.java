@@ -1,10 +1,10 @@
-package chapter09_02_ÉîÈë·ºĞÍ;
+package chapter09_02_æ·±å…¥æ³›å‹;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -12,14 +12,14 @@ package chapter09_02_ÉîÈë·ºĞÍ;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// ¶¨ÒåAppleÀàÊ±Ê¹ÓÃÁË·ºĞÍÉùÃ÷
+// å®šä¹‰Appleç±»æ—¶ä½¿ç”¨äº†æ³›å‹å£°æ˜
 public class Apple<T>
 {
-	// Ê¹ÓÃTÀàĞÍĞÎ²Î¶¨ÒåÊµÀı±äÁ¿
+	// ä½¿ç”¨Tç±»å‹å½¢å‚å®šä¹‰å®ä¾‹å˜é‡
 	private T info;
 	public Apple(){}
 	
-	// ÏÂÃæ·½·¨ÖĞÊ¹ÓÃTÀàĞÍĞÎ²ÎÀ´¶¨Òå¹¹ÔìÆ÷
+	// ä¸‹é¢æ–¹æ³•ä¸­ä½¿ç”¨Tç±»å‹å½¢å‚æ¥å®šä¹‰æ„é€ å™¨
 	public Apple(T info)
 	{
 		this.info = info;
@@ -37,11 +37,11 @@ public class Apple<T>
 	
 	public static void main(String[] args)
 	{
-		// ÓÉÓÚ´«¸øTĞÎ²ÎµÄÊÇString£¬ËùÒÔ¹¹ÔìÆ÷²ÎÊıÖ»ÄÜÊÇString
-		Apple<String> a1 = new Apple<>("Æ»¹û");
+		// ç”±äºä¼ ç»™Tå½¢å‚çš„æ˜¯Stringï¼Œæ‰€ä»¥æ„é€ å™¨å‚æ•°åªèƒ½æ˜¯String
+		Apple<String> a1 = new Apple<>("è‹¹æœ");
 		System.out.println(a1.getInfo());
 		
-		// ÓÉÓÚ´«¸øTĞÎ²ÎµÄÊÇDouble£¬ËùÒÔ¹¹ÔìÆ÷²ÎÊıÖ»ÄÜÊÇDouble»òdouble
+		// ç”±äºä¼ ç»™Tå½¢å‚çš„æ˜¯Doubleï¼Œæ‰€ä»¥æ„é€ å™¨å‚æ•°åªèƒ½æ˜¯Doubleæˆ–double
 		Apple<Double> a2 = new Apple<>(5.67);
 		System.out.println(a2.getInfo());
 	}

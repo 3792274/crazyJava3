@@ -1,11 +1,11 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.HalfClose;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.HalfClose;
 
 import java.io.*;
 import java.net.*;
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -21,11 +21,11 @@ public class Server
 		ServerSocket ss = new ServerSocket(30000);
 		Socket socket = ss.accept();
 		PrintStream ps = new PrintStream(socket.getOutputStream());
-		ps.println("·şÎñÆ÷µÄµÚÒ»ĞĞÊı¾İ");
-		ps.println("·şÎñÆ÷µÄµÚ¶şĞĞÊı¾İ");
-		// ¹Ø±ÕsocketµÄÊä³öÁ÷£¬±íÃ÷Êä³öÊı¾İÒÑ¾­½áÊø
+		ps.println("æœåŠ¡å™¨çš„ç¬¬ä¸€è¡Œæ•°æ®");
+		ps.println("æœåŠ¡å™¨çš„ç¬¬äºŒè¡Œæ•°æ®");
+		// å…³é—­socketçš„è¾“å‡ºæµï¼Œè¡¨æ˜è¾“å‡ºæ•°æ®å·²ç»ç»“æŸ
 		socket.shutdownOutput();
-		// ÏÂÃæÓï¾ä½«Êä³öfalse£¬±íÃ÷socket»¹Î´¹Ø±Õ¡£
+		// ä¸‹é¢è¯­å¥å°†è¾“å‡ºfalseï¼Œè¡¨æ˜socketè¿˜æœªå…³é—­ã€‚
 		System.out.println(socket.isClosed());
 		Scanner scan = new Scanner(socket.getInputStream());
 		while (scan.hasNextLine())

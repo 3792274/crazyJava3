@@ -1,10 +1,10 @@
-package chapter08_02_CollectionºÍIterator½Ó¿Ú;
+package chapter08_02_Collectionå’ŒIteratoræ¥å£;
 
 import java.util.stream.*;
 /**
- * Description:Java8ĞÂÔöµÄStream²Ù×÷¼¯ºÏ
- * Stream¡¢IntStream¡¢LongStream¡¢DoubleStream µÈÁ÷Ê½API,´ú±í¶à¸öÖ§³Ö´®ĞĞºÍ²¢ĞĞ¾Û¼¯²Ù×÷µÄÔªËØ¡£
- * Stream.Builder¡¢IntStream.Builder¡¢LongStream.Builder¡¢DoubleStream.Builder.
+ * Description:Java8æ–°å¢çš„Streamæ“ä½œé›†åˆ
+ * Streamã€IntStreamã€LongStreamã€DoubleStream ç­‰æµå¼API,ä»£è¡¨å¤šä¸ªæ”¯æŒä¸²è¡Œå’Œå¹¶è¡Œèšé›†æ“ä½œçš„å…ƒç´ ã€‚
+ * Stream.Builderã€IntStream.Builderã€LongStream.Builderã€DoubleStream.Builder.
  * 
  */
 public class IntStreamTest9
@@ -18,19 +18,19 @@ public class IntStreamTest9
 			.add(18)
 			.build();
 		
-		// ÏÂÃæµ÷ÓÃ¾Û¼¯·½·¨µÄ´úÂëÃ¿´ÎÖ»ÄÜÖ´ĞĞÒ»¸ö
-		System.out.println("isËùÓĞÔªËØµÄ×î´óÖµ£º" + is.max().getAsInt());
-		System.out.println("isËùÓĞÔªËØµÄ×îĞ¡Öµ£º" + is.min().getAsInt());
-		System.out.println("isËùÓĞÔªËØµÄ×ÜºÍ£º" + is.sum());
-		System.out.println("isËùÓĞÔªËØµÄ×ÜÊı£º" + is.count());
-		System.out.println("isËùÓĞÔªËØµÄÆ½¾ùÖµ£º" + is.average());
-		System.out.println("isËùÓĞÔªËØµÄÆ½·½ÊÇ·ñ¶¼´óÓÚ20:" + is.allMatch(ele -> ele * ele > 20));
-		System.out.println("isÊÇ·ñ°üº¬ÈÎºÎÔªËØµÄÆ½·½´óÓÚ20:" + is.anyMatch(ele -> ele * ele > 20));
+		// ä¸‹é¢è°ƒç”¨èšé›†æ–¹æ³•çš„ä»£ç æ¯æ¬¡åªèƒ½æ‰§è¡Œä¸€ä¸ª
+		System.out.println("isæ‰€æœ‰å…ƒç´ çš„æœ€å¤§å€¼ï¼š" + is.max().getAsInt());
+		System.out.println("isæ‰€æœ‰å…ƒç´ çš„æœ€å°å€¼ï¼š" + is.min().getAsInt());
+		System.out.println("isæ‰€æœ‰å…ƒç´ çš„æ€»å’Œï¼š" + is.sum());
+		System.out.println("isæ‰€æœ‰å…ƒç´ çš„æ€»æ•°ï¼š" + is.count());
+		System.out.println("isæ‰€æœ‰å…ƒç´ çš„å¹³å‡å€¼ï¼š" + is.average());
+		System.out.println("isæ‰€æœ‰å…ƒç´ çš„å¹³æ–¹æ˜¯å¦éƒ½å¤§äº20:" + is.allMatch(ele -> ele * ele > 20));
+		System.out.println("isæ˜¯å¦åŒ…å«ä»»ä½•å…ƒç´ çš„å¹³æ–¹å¤§äº20:" + is.anyMatch(ele -> ele * ele > 20));
 		
-		// ½«isÓ³Éä³ÉÒ»¸öĞÂStream£¬ĞÂStreamµÄÃ¿¸öÔªËØÊÇÔ­StreamÔªËØµÄ2±¶+1
+		// å°†isæ˜ å°„æˆä¸€ä¸ªæ–°Streamï¼Œæ–°Streamçš„æ¯ä¸ªå…ƒç´ æ˜¯åŸStreamå…ƒç´ çš„2å€+1
 		IntStream newIs = is.map(ele -> ele * 2 + 1);
 	
-		// Ê¹ÓÃ·½·¨ÒıÓÃµÄ·½Ê½À´±éÀú¼¯ºÏÔªËØ
-		newIs.forEach(System.out::println); // Êä³ö41 27 -3 37
+		// ä½¿ç”¨æ–¹æ³•å¼•ç”¨çš„æ–¹å¼æ¥éå†é›†åˆå…ƒç´ 
+		newIs.forEach(System.out::println); // è¾“å‡º41 27 -3 37
 	}
 }

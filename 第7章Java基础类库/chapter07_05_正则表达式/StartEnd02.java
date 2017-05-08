@@ -1,10 +1,10 @@
-package chapter07_05_ÕıÔò±í´ïÊ½;
+package chapter07_05_æ­£åˆ™è¡¨è¾¾å¼;
 
 import java.util.regex.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,12 +15,12 @@ import java.util.regex.*;
  */
 public class StartEnd02 {
 	public static void main(String[] args) {
-		// ´´½¨Ò»¸öPattern¶ÔÏó£¬²¢ÓÃËü½¨Á¢Ò»¸öMatcher¶ÔÏó
+		// åˆ›å»ºä¸€ä¸ªPatternå¯¹è±¡ï¼Œå¹¶ç”¨å®ƒå»ºç«‹ä¸€ä¸ªMatcherå¯¹è±¡
 		String regStr = "Java is very easy!";
-		System.out.println("Ä¿±ê×Ö·û´®ÊÇ£º" + regStr);
+		System.out.println("ç›®æ ‡å­—ç¬¦ä¸²æ˜¯ï¼š" + regStr);
 		Matcher m = Pattern.compile("\\w+").matcher(regStr);
 		while (m.find()) {
-			System.out.println(m.group() + "×Ó´®µÄÆğÊ¼Î»ÖÃ£º" + m.start() + "£¬Æä½áÊøÎ»ÖÃ£º" + m.end());
+			System.out.println(m.group() + "å­ä¸²çš„èµ·å§‹ä½ç½®ï¼š" + m.start() + "ï¼Œå…¶ç»“æŸä½ç½®ï¼š" + m.end());
 		}
 	}
 }

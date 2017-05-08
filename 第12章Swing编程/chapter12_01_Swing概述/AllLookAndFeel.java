@@ -1,11 +1,11 @@
-package chapter12_01_Swing概述;
+package chapter12_01_Swing姒傝堪;
 
 
 import javax.swing.*;
 
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,7 +17,7 @@ public class AllLookAndFeel
 {
 	public static void main(String[] args)
 	{
-		System.out.println("当前系统可用的所有LAF:");
+		System.out.println("褰撳墠绯荤粺鍙敤鐨勬墍鏈塋AF:");
 		for (UIManager.LookAndFeelInfo info :
 			UIManager.getInstalledLookAndFeels())
 		{

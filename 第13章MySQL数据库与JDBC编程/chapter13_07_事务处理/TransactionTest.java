@@ -1,4 +1,4 @@
-package chapter13_07_ÊÂÎñ´¦Àí;
+package chapter13_07_äº‹åŠ¡å¤„ç†;
 
 
 import java.sql.*;
@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -22,7 +22,7 @@ public class TransactionTest
 	private String pass;
 	public void initParam(String paramFile)throws Exception
 	{
-		// Ê¹ÓÃPropertiesÀàÀ´¼ÓÔØÊôĞÔÎÄ¼ş
+		// ä½¿ç”¨Propertiesç±»æ¥åŠ è½½å±æ€§æ–‡ä»¶
 		Properties props = new Properties();
 		props.load(new FileInputStream(paramFile));
 		driver = props.getProperty("driver");
@@ -32,38 +32,38 @@ public class TransactionTest
 	}
 	public void insertInTransaction(String[] sqls) throws Exception
 	{
-		// ¼ÓÔØÇı¶¯
+		// åŠ è½½é©±åŠ¨
 		Class.forName(driver);
 		try(
 			Connection conn = DriverManager.getConnection(url , user , pass))
 		{
-			// ¹Ø±Õ×Ô¶¯Ìá½»£¬¿ªÆôÊÂÎñ
+			// å…³é—­è‡ªåŠ¨æäº¤ï¼Œå¼€å¯äº‹åŠ¡
 			conn.setAutoCommit(false);
 			try(
-				// Ê¹ÓÃConnectionÀ´´´½¨Ò»¸öStatment¶ÔÏó
+				// ä½¿ç”¨Connectionæ¥åˆ›å»ºä¸€ä¸ªStatmentå¯¹è±¡
 				Statement stmt = conn.createStatement())
 			{
-				// Ñ­»·¶à´ÎÖ´ĞĞSQLÓï¾ä
+				// å¾ªç¯å¤šæ¬¡æ‰§è¡ŒSQLè¯­å¥
 				for (String sql : sqls)
 				{
 					stmt.executeUpdate(sql);
 				}
 			}
-			// Ìá½»ÊÂÎñ
+			// æäº¤äº‹åŠ¡
 			conn.commit();
 		}
 	}
 	public static void main(String[] args) throws Exception
 	{
 		TransactionTest tt = new TransactionTest();
-		tt.initParam("resource\\chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½\\mysql.ini");
+		tt.initParam("resource\\chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼\\mysql.ini");
 		String[] sqls = new String[]{
 			"insert into student_table values(null , 'aaa' ,1)",
 			"insert into student_table values(null , 'bbb' ,1)",
 			"insert into student_table values(null , 'ccc' ,1)",
-			// ÏÂÃæÕâÌõSQLÓï¾ä½«»áÎ¥·´Íâ¼üÔ¼Êø£¬
-			// ÒòÎªteacher_tableÖĞÃ»ÓĞIDÎª5µÄ¼ÇÂ¼¡£
-			"insert into student_table values(null , 'ccc' ,5)" //¢Ù
+			// ä¸‹é¢è¿™æ¡SQLè¯­å¥å°†ä¼šè¿åå¤–é”®çº¦æŸï¼Œ
+			// å› ä¸ºteacher_tableä¸­æ²¡æœ‰IDä¸º5çš„è®°å½•ã€‚
+			"insert into student_table values(null , 'ccc' ,5)" //â‘ 
 		};
 		tt.insertInTransaction(sqls);
 	}

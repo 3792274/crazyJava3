@@ -1,4 +1,4 @@
-package chapter13_05_¹ÜÀí½á¹û¼¯;
+package chapter13_05_ç®¡ç†ç»“æœé›†;
 
 
 import java.util.*;
@@ -6,7 +6,7 @@ import java.io.*;
 import java.sql.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -22,7 +22,7 @@ public class ResultSetTest
 	private String pass;
 	public void initParam(String paramFile)throws Exception
 	{
-		// Ê¹ÓÃPropertiesÀàÀ´¼ÓÔØÊôĞÔÎÄ¼ş
+		// ä½¿ç”¨Propertiesç±»æ¥åŠ è½½å±æ€§æ–‡ä»¶
 		Properties props = new Properties();
 		props.load(new FileInputStream(paramFile));
 		driver = props.getProperty("driver");
@@ -32,13 +32,13 @@ public class ResultSetTest
 	}
 	public void query(String sql)throws Exception
 	{
-		// ¼ÓÔØÇı¶¯
+		// åŠ è½½é©±åŠ¨
 		Class.forName(driver);
 		try(
-			// »ñÈ¡Êı¾İ¿âÁ¬½Ó
+			// è·å–æ•°æ®åº“è¿æ¥
 			Connection conn = DriverManager.getConnection(url , user , pass);
-			// Ê¹ÓÃConnectionÀ´´´½¨Ò»¸öPreparedStatement¶ÔÏó
-			// ´«Èë¿ØÖÆ½á¹û¼¯¿É¹ö¶¯£¬¿É¸üĞÂµÄ²ÎÊı¡£
+			// ä½¿ç”¨Connectionæ¥åˆ›å»ºä¸€ä¸ªPreparedStatementå¯¹è±¡
+			// ä¼ å…¥æ§åˆ¶ç»“æœé›†å¯æ»šåŠ¨ï¼Œå¯æ›´æ–°çš„å‚æ•°ã€‚
 			PreparedStatement pstmt = conn.prepareStatement(sql
 				, ResultSet.TYPE_SCROLL_INSENSITIVE
 				, ResultSet.CONCUR_UPDATABLE);
@@ -51,9 +51,9 @@ public class ResultSetTest
 				rs.absolute(i);
 				System.out.println(rs.getString(1) + "\t"
 					+ rs.getString(2) + "\t" + rs.getString(3));
-				// ĞŞ¸Ä¼ÇÂ¼Ö¸ÕëËùÓĞ¼ÇÂ¼¡¢µÚ2ÁĞµÄÖµ
-				rs.updateString(2 , "Ñ§ÉúÃû" + i);
-				// Ìá½»ĞŞ¸Ä
+				// ä¿®æ”¹è®°å½•æŒ‡é’ˆæ‰€æœ‰è®°å½•ã€ç¬¬2åˆ—çš„å€¼
+				rs.updateString(2 , "å­¦ç”Ÿå" + i);
+				// æäº¤ä¿®æ”¹
 				rs.updateRow();
 			}
 		}
@@ -61,7 +61,7 @@ public class ResultSetTest
 	public static void main(String[] args) throws Exception
 	{
 		ResultSetTest rt = new ResultSetTest();
-		rt.initParam("resource\\chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½\\mysql.ini");
+		rt.initParam("resource\\chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼\\mysql.ini");
 		rt.query("select * from student_table");
 	}
 }

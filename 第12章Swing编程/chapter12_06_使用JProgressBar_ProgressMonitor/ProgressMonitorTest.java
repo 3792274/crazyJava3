@@ -1,4 +1,4 @@
-package chapter12_06_Ê¹ÓÃJProgressBar_ProgressMonitor;
+package chapter12_06_ä½¿ç”¨JProgressBar_ProgressMonitor;
 
 
 import java.awt.*;
@@ -6,7 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,22 +20,22 @@ public class ProgressMonitorTest
 	public void init()
 	{
 		final SimulatedActivity target = new SimulatedActivity(1000);
-		// ÒÔÆô¶¯Ò»ÌõÏß³ÌµÄ·½Ê½À´Ö´ĞĞÒ»¸öºÄÊ±µÄÈÎÎñ
+		// ä»¥å¯åŠ¨ä¸€æ¡çº¿ç¨‹çš„æ–¹å¼æ¥æ‰§è¡Œä¸€ä¸ªè€—æ—¶çš„ä»»åŠ¡
 		final Thread targetThread = new Thread(target);
 		targetThread.start();
 		final ProgressMonitor dialog = new ProgressMonitor(null
-			, "µÈ´ıÈÎÎñÍê³É" , "ÒÑÍê³É£º" , 0 , target.getAmount());
+			, "ç­‰å¾…ä»»åŠ¡å®Œæˆ" , "å·²å®Œæˆï¼š" , 0 , target.getAmount());
 		timer = new Timer(300 , e -> {
-			// ÒÔÈÎÎñµÄµ±Ç°Íê³ÉÁ¿ÉèÖÃ½ø¶È¶Ô»°¿òµÄÍê³É±ÈÀı
+			// ä»¥ä»»åŠ¡çš„å½“å‰å®Œæˆé‡è®¾ç½®è¿›åº¦å¯¹è¯æ¡†çš„å®Œæˆæ¯”ä¾‹
 			dialog.setProgress(target.getCurrent());
-			// Èç¹ûÓÃ»§µ¥»÷ÁË½ø¶È¶Ô»°¿òµÄ"È¡Ïû"°´Å¥
+			// å¦‚æœç”¨æˆ·å•å‡»äº†è¿›åº¦å¯¹è¯æ¡†çš„"å–æ¶ˆ"æŒ‰é’®
 			if (dialog.isCanceled())
 			{
-				// Í£Ö¹¼ÆÊ±Æ÷
+				// åœæ­¢è®¡æ—¶å™¨
 				timer.stop();
-				// ÖĞ¶ÏÈÎÎñµÄÖ´ĞĞÏß³Ì
-				targetThread.interrupt();    // ¢Ù
-				// ÏµÍ³ÍË³ö
+				// ä¸­æ–­ä»»åŠ¡çš„æ‰§è¡Œçº¿ç¨‹
+				targetThread.interrupt();    // â‘ 
+				// ç³»ç»Ÿé€€å‡º
 				System.exit(0);
 			}
 		});

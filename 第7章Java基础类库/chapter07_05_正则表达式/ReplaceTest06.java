@@ -1,9 +1,9 @@
-package chapter07_05_ÕıÔò±í´ïÊ½;
+package chapter07_05_æ­£åˆ™è¡¨è¾¾å¼;
 
 import java.util.regex.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -33,7 +33,7 @@ public class ReplaceTest06
 			{
 				matcher.reset(msgs[i]);
 			}
-			System.out.println(matcher.replaceAll("¹ş¹ş:)"));
+			System.out.println(matcher.replaceAll("å“ˆå“ˆ:)"));
 		}
 	}
 }

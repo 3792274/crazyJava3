@@ -1,11 +1,11 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.MultiThread.server;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.MultiThread.server;
 
 import java.io.*;
 import java.net.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -14,26 +14,26 @@ import java.net.*;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// ¸ºÔğ´¦ÀíÃ¿¸öÏß³ÌÍ¨ĞÅµÄÏß³ÌÀà
+// è´Ÿè´£å¤„ç†æ¯ä¸ªçº¿ç¨‹é€šä¿¡çš„çº¿ç¨‹ç±»
 public class ServerThread implements Runnable {
-	// ¶¨Òåµ±Ç°Ïß³ÌËù´¦ÀíµÄSocket
+	// å®šä¹‰å½“å‰çº¿ç¨‹æ‰€å¤„ç†çš„Socket
 	Socket s = null;
-	// ¸ÃÏß³ÌËù´¦ÀíµÄSocketËù¶ÔÓ¦µÄÊäÈëÁ÷
+	// è¯¥çº¿ç¨‹æ‰€å¤„ç†çš„Socketæ‰€å¯¹åº”çš„è¾“å…¥æµ
 	BufferedReader br = null;
 
 	public ServerThread(Socket s) throws IOException {
 		this.s = s;
-		// ³õÊ¼»¯¸ÃSocket¶ÔÓ¦µÄÊäÈëÁ÷
+		// åˆå§‹åŒ–è¯¥Socketå¯¹åº”çš„è¾“å…¥æµ
 		br = new BufferedReader(new InputStreamReader(s.getInputStream()));
 	}
 
 	public void run() {
 		try {
 			String content = null;
-			// ²ÉÓÃÑ­»·²»¶Ï´ÓSocketÖĞ¶ÁÈ¡¿Í»§¶Ë·¢ËÍ¹ıÀ´µÄÊı¾İ
+			// é‡‡ç”¨å¾ªç¯ä¸æ–­ä»Socketä¸­è¯»å–å®¢æˆ·ç«¯å‘é€è¿‡æ¥çš„æ•°æ®
 			while ((content = readFromClient()) != null) {
-				// ±éÀúsocketListÖĞµÄÃ¿¸öSocket£¬
-				// ½«¶Áµ½µÄÄÚÈİÏòÃ¿¸öSocket·¢ËÍÒ»´Î
+				// éå†socketListä¸­çš„æ¯ä¸ªSocketï¼Œ
+				// å°†è¯»åˆ°çš„å†…å®¹å‘æ¯ä¸ªSocketå‘é€ä¸€æ¬¡
 				for (Socket s : MyServer.socketList) {
 					PrintStream ps = new PrintStream(s.getOutputStream());
 					ps.println(content);
@@ -44,15 +44,15 @@ public class ServerThread implements Runnable {
 		}
 	}
 
-	// ¶¨Òå¶ÁÈ¡¿Í»§¶ËÊı¾İµÄ·½·¨
+	// å®šä¹‰è¯»å–å®¢æˆ·ç«¯æ•°æ®çš„æ–¹æ³•
 	private String readFromClient() {
 		try {
 			return br.readLine();
 		}
-		// Èç¹û²¶×½µ½Òì³££¬±íÃ÷¸ÃSocket¶ÔÓ¦µÄ¿Í»§¶ËÒÑ¾­¹Ø±Õ
+		// å¦‚æœæ•æ‰åˆ°å¼‚å¸¸ï¼Œè¡¨æ˜è¯¥Socketå¯¹åº”çš„å®¢æˆ·ç«¯å·²ç»å…³é—­
 		catch (IOException e) {
-			// É¾³ı¸ÃSocket¡£
-			MyServer.socketList.remove(s); // ¢Ù
+			// åˆ é™¤è¯¥Socketã€‚
+			MyServer.socketList.remove(s); // â‘ 
 		}
 		return null;
 	}

@@ -1,8 +1,8 @@
-package chapter09_02_ÉîÈë·ºÐÍ;
+package chapter09_02_æ·±å…¥æ³›åž‹;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -12,16 +12,16 @@ package chapter09_02_ÉîÈë·ºÐÍ;
  */
 public class R<T>
 {
-	// ÏÂÃæ´úÂë´íÎó£¬²»ÄÜÔÚ¾²Ì¬±äÁ¿ÉùÃ÷ÖÐÊ¹ÓÃÀàÐÍÐÎ²Î
+	// ä¸‹é¢ä»£ç é”™è¯¯ï¼Œä¸èƒ½åœ¨é™æ€å˜é‡å£°æ˜Žä¸­ä½¿ç”¨ç±»åž‹å½¢å‚
 //	static T info;
 	T age;
 	public void foo(T msg){}
-	// ÏÂÃæ´úÂë´íÎó£¬²»ÄÜÔÚ¾²Ì¬·½·¨ÉùÃ÷ÖÐÊ¹ÓÃÀàÐÍÐÎ²Î
+	// ä¸‹é¢ä»£ç é”™è¯¯ï¼Œä¸èƒ½åœ¨é™æ€æ–¹æ³•å£°æ˜Žä¸­ä½¿ç”¨ç±»åž‹å½¢å‚
 //	public static void bar(T msg){}
 
 	
 	
-		//ÏµÍ³ÖÐ²»´æÔÚÕæÕýÉú³É·ºÐÍÀà£¬ËùÒÔinstancesofÔËËã·ûºó²»ÄÜÊ¹ÓÃ·ºÐÍ£¬ÒÔÏÂ´úÂëÎª´íÎó
+		//ç³»ç»Ÿä¸­ä¸å­˜åœ¨çœŸæ­£ç”Ÿæˆæ³›åž‹ç±»ï¼Œæ‰€ä»¥instancesofè¿ç®—ç¬¦åŽä¸èƒ½ä½¿ç”¨æ³›åž‹ï¼Œä»¥ä¸‹ä»£ç ä¸ºé”™è¯¯
 //		java.util.Collection<String> cs=new java.util.ArrayList<>();
 //		if(cs instances of java.util.ArrayList<String>)	{...}
 }

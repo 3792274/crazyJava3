@@ -1,11 +1,11 @@
-package chapter17_05_Ê¹ÓÃ´úÀí·şÎñÆ÷;
+package chapter17_05_ä½¿ç”¨ä»£ç†æœåŠ¡å™¨;
 
 import java.io.*;
 import java.net.*;
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,34 +15,34 @@ import java.util.*;
  */
 public class ProxyTest
 {
-	// ÏÂÃæÊÇ´úÀí·şÎñÆ÷µÄµØÖ·ºÍ¶Ë¿Ú£¬
-	// »»³ÉÊµ¼ÊÓĞĞ§µÄ´úÀí·şÎñÆ÷µÄµØÖ·ºÍ¶Ë¿Ú
+	// ä¸‹é¢æ˜¯ä»£ç†æœåŠ¡å™¨çš„åœ°å€å’Œç«¯å£ï¼Œ
+	// æ¢æˆå®é™…æœ‰æ•ˆçš„ä»£ç†æœåŠ¡å™¨çš„åœ°å€å’Œç«¯å£
 	final String PROXY_ADDR = "129.82.12.188";
 	final int PROXY_PORT = 3124;
-	// ¶¨ÒåĞèÒª·ÃÎÊµÄÍøÕ¾µØÖ·
+	// å®šä¹‰éœ€è¦è®¿é—®çš„ç½‘ç«™åœ°å€
 	String urlStr = "http://www.crazyit.org";
 	public void init()
 		throws IOException , MalformedURLException
 	{
 		URL url = new URL(urlStr);
-		// ´´½¨Ò»¸ö´úÀí·şÎñÆ÷¶ÔÏó
+		// åˆ›å»ºä¸€ä¸ªä»£ç†æœåŠ¡å™¨å¯¹è±¡
 		Proxy proxy = new Proxy(Proxy.Type.HTTP
 			, new InetSocketAddress(PROXY_ADDR , PROXY_PORT));
-		// Ê¹ÓÃÖ¸¶¨µÄ´úÀí·şÎñÆ÷´ò¿ªÁ¬½Ó
+		// ä½¿ç”¨æŒ‡å®šçš„ä»£ç†æœåŠ¡å™¨æ‰“å¼€è¿æ¥
 		URLConnection conn = url.openConnection(proxy);
-		// ÉèÖÃ³¬Ê±Ê±³¤¡£
+		// è®¾ç½®è¶…æ—¶æ—¶é•¿ã€‚
 		conn.setConnectTimeout(5000);
 		try(
-			// Í¨¹ı´úÀí·şÎñÆ÷¶ÁÈ¡Êı¾İµÄScanner
+			// é€šè¿‡ä»£ç†æœåŠ¡å™¨è¯»å–æ•°æ®çš„Scanner
 			Scanner scan = new Scanner(conn.getInputStream(), "utf-8");
 			PrintStream ps = new PrintStream("index.htm"))
 		{
 			while (scan.hasNextLine())
 			{
 				String line = scan.nextLine();
-				// ÔÚ¿ØÖÆÌ¨Êä³öÍøÒ³×ÊÔ´ÄÚÈİ
+				// åœ¨æ§åˆ¶å°è¾“å‡ºç½‘é¡µèµ„æºå†…å®¹
 				System.out.println(line);
-				// ½«ÍøÒ³×ÊÔ´ÄÚÈİÊä³öµ½Ö¸¶¨Êä³öÁ÷
+				// å°†ç½‘é¡µèµ„æºå†…å®¹è¾“å‡ºåˆ°æŒ‡å®šè¾“å‡ºæµ
 				ps.println(line);
 			}
 		}

@@ -1,11 +1,11 @@
-package chapter11_05_ÊÂ¼ş´¦Àí;
+package chapter11_05_äº‹ä»¶å¤„ç†;
 
 
 import java.awt.*;
 import java.awt.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,18 +15,18 @@ import java.awt.event.*;
  */
 public class MultiListener
 {
-	private Frame f = new Frame("²âÊÔ");
+	private Frame f = new Frame("æµ‹è¯•");
 	private TextArea ta = new TextArea(6 , 40);
-	private Button b1 = new Button("°´Å¥Ò»");
-	private Button b2 = new Button("°´Å¥¶ş");
+	private Button b1 = new Button("æŒ‰é’®ä¸€");
+	private Button b2 = new Button("æŒ‰é’®äºŒ");
 	public void init()
 	{
-		// ´´½¨FirstListener¼àÌıÆ÷µÄÊµÀı
+		// åˆ›å»ºFirstListenerç›‘å¬å™¨çš„å®ä¾‹
 		FirstListener fl = new FirstListener();
-		// ¸øb1°´Å¥×¢²áÁ½¸öÊÂ¼ş¼àÌıÆ÷
+		// ç»™b1æŒ‰é’®æ³¨å†Œä¸¤ä¸ªäº‹ä»¶ç›‘å¬å™¨
 		b1.addActionListener(fl);
 		b1.addActionListener(new SecondListener());
-		// ½«f1ÊÂ¼ş¼àÌıÆ÷×¢²á¸øb2°´Å¥
+		// å°†f1äº‹ä»¶ç›‘å¬å™¨æ³¨å†Œç»™b2æŒ‰é’®
 		b2.addActionListener(fl);
 		f.add(ta);
 		Panel p = new Panel();
@@ -40,7 +40,7 @@ public class MultiListener
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			ta.append("µÚÒ»¸öÊÂ¼ş¼àÌıÆ÷±»´¥·¢,ÊÂ¼şÔ´ÊÇ£º"
+			ta.append("ç¬¬ä¸€ä¸ªäº‹ä»¶ç›‘å¬å™¨è¢«è§¦å‘,äº‹ä»¶æºæ˜¯ï¼š"
 				+ e.getActionCommand() + "\n");
 		}
 	}
@@ -48,8 +48,8 @@ public class MultiListener
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			ta.append("µ¥»÷ÁË¡°"
-				+ e.getActionCommand() + "¡±°´Å¥\n");
+			ta.append("å•å‡»äº†â€œ"
+				+ e.getActionCommand() + "â€æŒ‰é’®\n");
 		}
 	}
 	public static void main(String[] args)

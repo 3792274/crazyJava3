@@ -1,7 +1,7 @@
-package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
+package chapter06_06_Java8æ”¹è¿›çš„æ¥å£;
 /**
- * Description: ÃüÁîÄ£Ê½£¬¶¯Ì¬Éú³ÉÒ»¸ö´úÂë£¬´«Èë·½·¨ÖĞ¡£
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description: å‘½ä»¤æ¨¡å¼ï¼ŒåŠ¨æ€ç”Ÿæˆä¸€ä¸ªä»£ç ï¼Œä¼ å…¥æ–¹æ³•ä¸­ã€‚
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -11,7 +11,7 @@ package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
  */
 public interface Command
 {
-	// ½Ó¿ÚÀï¶¨ÒåµÄprocess()·½·¨ÓÃÓÚ·â×°¡°´¦ÀíĞĞÎª¡±,Ã»ÓĞ·½·¨Ìå£¬ÏÖÔÚ»¹²»È·¶¨´¦ÀíĞĞÎª
+	// æ¥å£é‡Œå®šä¹‰çš„process()æ–¹æ³•ç”¨äºå°è£…â€œå¤„ç†è¡Œä¸ºâ€,æ²¡æœ‰æ–¹æ³•ä½“ï¼Œç°åœ¨è¿˜ä¸ç¡®å®šå¤„ç†è¡Œä¸º
 	void process(int[] target);
 }
 

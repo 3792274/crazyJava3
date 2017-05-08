@@ -1,10 +1,10 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.MultiThread.client;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.MultiThread.client;
 
 import java.io.*;
 import java.net.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,9 +14,9 @@ import java.net.*;
  */
 public class ClientThread implements Runnable
 {
-	// ¸ÃÏß³Ì¸ºÔğ´¦ÀíµÄSocket
+	// è¯¥çº¿ç¨‹è´Ÿè´£å¤„ç†çš„Socket
 	private Socket s;
-	// ¸ÃÏß³ÌËù´¦ÀíµÄSocketËù¶ÔÓ¦µÄÊäÈëÁ÷
+	// è¯¥çº¿ç¨‹æ‰€å¤„ç†çš„Socketæ‰€å¯¹åº”çš„è¾“å…¥æµ
 	BufferedReader br = null;
 	public ClientThread(Socket s)
 		throws IOException
@@ -30,7 +30,7 @@ public class ClientThread implements Runnable
 		try
 		{
 			String content = null;
-			// ²»¶Ï¶ÁÈ¡SocketÊäÈëÁ÷ÖĞµÄÄÚÈİ£¬²¢½«ÕâĞ©ÄÚÈİ´òÓ¡Êä³ö
+			// ä¸æ–­è¯»å–Socketè¾“å…¥æµä¸­çš„å†…å®¹ï¼Œå¹¶å°†è¿™äº›å†…å®¹æ‰“å°è¾“å‡º
 			while ((content = br.readLine()) != null)
 			{
 				System.out.println(content);

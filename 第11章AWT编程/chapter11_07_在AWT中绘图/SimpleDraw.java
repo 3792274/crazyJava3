@@ -1,4 +1,4 @@
-package chapter11_07_ÔÚAWTÖĞ»æÍ¼;
+package chapter11_07_åœ¨AWTä¸­ç»˜å›¾;
 
 
 import java.awt.*;
@@ -6,7 +6,7 @@ import java.awt.event.*;
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -18,27 +18,27 @@ public class SimpleDraw
 {
 	private final String RECT_SHAPE = "rect";
 	private final String OVAL_SHAPE = "oval";
-	private Frame f = new Frame("¼òµ¥»æÍ¼");
-	private Button rect = new Button("»æÖÆ¾ØĞÎ");
-	private Button oval = new Button("»æÖÆÔ²ĞÎ");
+	private Frame f = new Frame("ç®€å•ç»˜å›¾");
+	private Button rect = new Button("ç»˜åˆ¶çŸ©å½¢");
+	private Button oval = new Button("ç»˜åˆ¶åœ†å½¢");
 	private MyCanvas drawArea = new MyCanvas();
-	// ÓÃÓÚ±£´æĞèÒª»æÖÆÊ²Ã´Í¼ĞÎµÄ±äÁ¿
+	// ç”¨äºä¿å­˜éœ€è¦ç»˜åˆ¶ä»€ä¹ˆå›¾å½¢çš„å˜é‡
 	private String shape = "";
 	public void init()
 	{
 		Panel p = new Panel();
 		rect.addActionListener(e ->
 		{
-			// ÉèÖÃshape±äÁ¿ÎªRECT_SHAPE
+			// è®¾ç½®shapeå˜é‡ä¸ºRECT_SHAPE
 			shape = RECT_SHAPE;
-			// ÖØ»­MyCanvas¶ÔÏó£¬¼´µ÷ÓÃËüµÄrepaint()·½·¨
+			// é‡ç”»MyCanvaså¯¹è±¡ï¼Œå³è°ƒç”¨å®ƒçš„repaint()æ–¹æ³•
 			drawArea.repaint();
 		});
 		oval.addActionListener(e ->
 		{
-			// ÉèÖÃshape±äÁ¿ÎªOVAL_SHAPE
+			// è®¾ç½®shapeå˜é‡ä¸ºOVAL_SHAPE
 			shape = OVAL_SHAPE;
-			// ÖØ»­MyCanvas¶ÔÏó£¬¼´µ÷ÓÃËüµÄrepaint()·½·¨
+			// é‡ç”»MyCanvaså¯¹è±¡ï¼Œå³è°ƒç”¨å®ƒçš„repaint()æ–¹æ³•
 			drawArea.repaint();
 		});
 		p.add(rect);
@@ -55,23 +55,23 @@ public class SimpleDraw
 	}
 	class MyCanvas extends Canvas
 	{
-		// ÖØĞ´CanvasµÄpaint·½·¨£¬ÊµÏÖ»æ»­
+		// é‡å†™Canvasçš„paintæ–¹æ³•ï¼Œå®ç°ç»˜ç”»
 		public void paint(Graphics g)
 		{
 			Random rand = new Random();
 			if (shape.equals(RECT_SHAPE))
 			{
-				// ÉèÖÃ»­±ÊÑÕÉ«
+				// è®¾ç½®ç”»ç¬”é¢œè‰²
 				g.setColor(new Color(220, 100, 80));
-				// Ëæ»úµØ»æÖÆÒ»¸ö¾ØĞÎ¿ò
+				// éšæœºåœ°ç»˜åˆ¶ä¸€ä¸ªçŸ©å½¢æ¡†
 				g.drawRect( rand.nextInt(200)
 					, rand.nextInt(120) , 40 , 60);
 			}
 			if (shape.equals(OVAL_SHAPE))
 			{
-				// ÉèÖÃ»­±ÊÑÕÉ«
+				// è®¾ç½®ç”»ç¬”é¢œè‰²
 				g.setColor(new Color(80, 100, 200));
-				// Ëæ»úµØÌî³äÒ»¸öÊµĞÄÔ²ĞÎ
+				// éšæœºåœ°å¡«å……ä¸€ä¸ªå®å¿ƒåœ†å½¢
 				g.fillOval( rand.nextInt(200)
 					, rand.nextInt(120) , 50 , 40);
 			}

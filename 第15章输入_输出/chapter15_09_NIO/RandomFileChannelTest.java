@@ -6,9 +6,9 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
 /**
- * Description:RandomAccessFileµÃµ½µÄChannel()ÊÇÖ»¶ÁµÄ»¹ÊÇ¿É¶ÁĞ´µÄ£¬
- * È¡¾öÓÚRandomAccessFileÎÄ¼şµÄ´ò¿ª·½Ê½¡£ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:RandomAccessFileå¾—åˆ°çš„Channel()æ˜¯åªè¯»çš„è¿˜æ˜¯å¯è¯»å†™çš„ï¼Œ
+ * å–å†³äºRandomAccessFileæ–‡ä»¶çš„æ‰“å¼€æ–¹å¼ã€‚ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -24,19 +24,19 @@ public class RandomFileChannelTest {
 		File f = new File("D:/a.txt");
 		
 		try (
-				// ´´½¨Ò»¸öRandomAccessFile¶ÔÏó
+				// åˆ›å»ºä¸€ä¸ªRandomAccessFileå¯¹è±¡
 				RandomAccessFile raf = new RandomAccessFile(f, "rw");
 
-				// »ñÈ¡RandomAccessFile¶ÔÓ¦µÄChannel
+				// è·å–RandomAccessFileå¯¹åº”çš„Channel
 				FileChannel randomChannel = raf.getChannel()) {
 
-			// ½«ChannelÖĞËùÓĞÊı¾İÓ³Éä³ÉByteBuffer
+			// å°†Channelä¸­æ‰€æœ‰æ•°æ®æ˜ å°„æˆByteBuffer
 			ByteBuffer buffer = randomChannel.map(FileChannel.MapMode.READ_ONLY, 0, f.length());
 
-			// °ÑChannelµÄ¼ÇÂ¼Ö¸ÕëÒÆ¶¯µ½×îºó
+			// æŠŠChannelçš„è®°å½•æŒ‡é’ˆç§»åŠ¨åˆ°æœ€å
 			randomChannel.position(f.length());
 
-			// ½«bufferÖĞËùÓĞÊı¾İÊä³ö
+			// å°†bufferä¸­æ‰€æœ‰æ•°æ®è¾“å‡º
 			randomChannel.write(buffer);
 		}
 

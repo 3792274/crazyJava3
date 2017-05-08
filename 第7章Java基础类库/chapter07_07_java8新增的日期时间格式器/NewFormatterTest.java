@@ -1,4 +1,4 @@
-package chapter07_07_java8ĞÂÔöµÄÈÕÆÚÊ±¼ä¸ñÊ½Æ÷;
+package chapter07_07_java8æ–°å¢çš„æ—¥æœŸæ—¶é—´æ ¼å¼å™¨;
 
 import java.text.Format;
 import java.time.LocalDateTime;
@@ -6,11 +6,11 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 
 /**
- * Java8ĞÂÔöµÄÈÕÆÚÊ±¼äAPI Instant¡¢ LocalDate¡¢LocalDateTime¡¢LocalTime
- * 1.java.time.format:DateTimeFormatter¸ñÊ½Æ÷Àà¡£ ÈÕÆÚ¡¢Ê±¼ä¡¢×Ö·û´®Ïà»¥×ª
- * 2.Ö±½ÓÊ¹ÓÃ¾²Ì¬³£Á¿´´½¨DateTimeFormatter¸ñÊ½Æ÷¡£ISO_LOCAL_DATE¡¢ISO_LOCAL_TIME¡¢LOCAL_DATE_TIMEµÈ¾²Ì¬³£Á¿
- * 3.Ê¹ÓÃ´ú±í²»Í¬·ç¸ñµÄÃ¶¾ÙÖµÀ´´´½¨DateTimeFormatter¸ñÊ½Æ÷¡£FormatStyleÃ¶¾ÙÀà¶¨ÒåFULL¡¢LONG¡¢MEDIUM¡¢SHORTËÄ¸ö¡£
- * 4.¸ù¾İ×Ö·û´®À´´´½¨£¬ÀàËÆSimpleDateFormat
+ * Java8æ–°å¢çš„æ—¥æœŸæ—¶é—´API Instantã€ LocalDateã€LocalDateTimeã€LocalTime
+ * 1.java.time.format:DateTimeFormatteræ ¼å¼å™¨ç±»ã€‚ æ—¥æœŸã€æ—¶é—´ã€å­—ç¬¦ä¸²ç›¸äº’è½¬
+ * 2.ç›´æ¥ä½¿ç”¨é™æ€å¸¸é‡åˆ›å»ºDateTimeFormatteræ ¼å¼å™¨ã€‚ISO_LOCAL_DATEã€ISO_LOCAL_TIMEã€LOCAL_DATE_TIMEç­‰é™æ€å¸¸é‡
+ * 3.ä½¿ç”¨ä»£è¡¨ä¸åŒé£æ ¼çš„æšä¸¾å€¼æ¥åˆ›å»ºDateTimeFormatteræ ¼å¼å™¨ã€‚FormatStyleæšä¸¾ç±»å®šä¹‰FULLã€LONGã€MEDIUMã€SHORTå››ä¸ªã€‚
+ * 4.æ ¹æ®å­—ç¬¦ä¸²æ¥åˆ›å»ºï¼Œç±»ä¼¼SimpleDateFormat
  * 5.DateFormat
  * 
  *
@@ -20,30 +20,30 @@ public class NewFormatterTest {
 	public static void main(String[] args) {
 		
 		
-		//´´½¨6¸öDateTimeFormatter¶ÔÏó
+		//åˆ›å»º6ä¸ªDateTimeFormatterå¯¹è±¡
 		DateTimeFormatter [] formatters = new DateTimeFormatter[]{
-			//Ö±½ÓÊ¹ÓÃ³£Á¿´´½¨DateTimeFormatter¸ñÊ½Æ÷
+			//ç›´æ¥ä½¿ç”¨å¸¸é‡åˆ›å»ºDateTimeFormatteræ ¼å¼å™¨
 				DateTimeFormatter.ISO_LOCAL_DATE,
 				DateTimeFormatter.ISO_LOCAL_TIME,
 				DateTimeFormatter.ISO_LOCAL_DATE_TIME,
 				
-			//Ê¹ÓÃ±¾µØ»¯µÄ·ç¸ñ´´½¨
+			//ä½¿ç”¨æœ¬åœ°åŒ–çš„é£æ ¼åˆ›å»º
 				DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL,FormatStyle.MEDIUM),
 				DateTimeFormatter.ofLocalizedTime(FormatStyle.LONG),
 				
-			//¸ù¾İ×Ö·û´®À´´´½¨
+			//æ ¹æ®å­—ç¬¦ä¸²æ¥åˆ›å»º
 				DateTimeFormatter.ofPattern("Gyyyy%%MMM%%dd HH:mm:ss")
 		};
 		
 		
 		LocalDateTime dateTime=LocalDateTime.now();
-		//ÒÀ´ÎÊ¹ÓÃ²»Í¬µÄ¸ñÊ½Æ÷¶ÔLocalDateTime½øĞĞ¸ñÊ½»¯
+		//ä¾æ¬¡ä½¿ç”¨ä¸åŒçš„æ ¼å¼å™¨å¯¹LocalDateTimeè¿›è¡Œæ ¼å¼åŒ–
 		for(int i=0;i<formatters.length;i++){
-			//ÏÂÃæÁ½ĞĞ´úÂë×÷ÓÃÏàÍ¬
+			//ä¸‹é¢ä¸¤è¡Œä»£ç ä½œç”¨ç›¸åŒ
 			System.out.println(dateTime.format(formatters[i]));
 			System.out.println(formatters[i].format(dateTime));
 			
-			//Èç¹ûĞèÒª´«Í³µÄDateFormat£¬¿É°´ÈçÏÂ×ª»»¡£
+			//å¦‚æœéœ€è¦ä¼ ç»Ÿçš„DateFormatï¼Œå¯æŒ‰å¦‚ä¸‹è½¬æ¢ã€‚
 			Format df = formatters[i].toFormat();
 		}
 		

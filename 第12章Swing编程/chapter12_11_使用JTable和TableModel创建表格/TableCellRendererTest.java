@@ -1,4 +1,4 @@
-package chapter12_11_Ê¹ÓÃJTableºÍTableModel´´½¨±í¸ñ;
+package chapter12_11_ä½¿ç”¨JTableå’ŒTableModelåˆ›å»ºè¡¨æ ¼;
 
 
 import java.awt.*;
@@ -6,7 +6,7 @@ import javax.swing.*;
 import javax.swing.table.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,39 +16,39 @@ import javax.swing.table.*;
  */
 public class TableCellRendererTest
 {
-	JFrame jf = new JFrame("Ê¹ÓÃµ¥Ôª¸ñ»æÖÆÆ÷");
+	JFrame jf = new JFrame("ä½¿ç”¨å•å…ƒæ ¼ç»˜åˆ¶å™¨");
 	JTable table;
-	// ¶¨Òå¶şÎ¬Êı×é×÷Îª±í¸ñÊı¾İ
+	// å®šä¹‰äºŒç»´æ•°ç»„ä½œä¸ºè¡¨æ ¼æ•°æ®
 	Object[][] tableData =
 	{
-		new Object[]{"ÀîÇåÕÕ" , 29 , "Å®"
+		new Object[]{"ææ¸…ç…§" , 29 , "å¥³"
 			, new ImageIcon("icon/3.gif") , true},
-		new Object[]{"ËÕ¸ñÀ­µ×", 56 , "ÄĞ"
+		new Object[]{"è‹æ ¼æ‹‰åº•", 56 , "ç”·"
 			, new ImageIcon("icon/1.gif") , false},
-		new Object[]{"Àî°×", 35 , "ÄĞ"
+		new Object[]{"æç™½", 35 , "ç”·"
 			, new ImageIcon("icon/4.gif") , true},
-		new Object[]{"ÅªÓñ", 18 , "Å®"
+		new Object[]{"å¼„ç‰", 18 , "å¥³"
 			, new ImageIcon("icon/2.gif") , true},
-		new Object[]{"»¢Í·" , 2 , "ÄĞ"
+		new Object[]{"è™å¤´" , 2 , "ç”·"
 			, new ImageIcon("icon/5.gif") , false}
 	};
-	// ¶¨ÒåÒ»Î¬Êı¾İ×÷ÎªÁĞ±êÌâ
-	String[] columnTitle = {"ĞÕÃû" , "ÄêÁä" , "ĞÔ±ğ"
-		, "Ö÷Í·Ïñ" , "ÊÇ·ñÖĞ¹úÈË"};
+	// å®šä¹‰ä¸€ç»´æ•°æ®ä½œä¸ºåˆ—æ ‡é¢˜
+	String[] columnTitle = {"å§“å" , "å¹´é¾„" , "æ€§åˆ«"
+		, "ä¸»å¤´åƒ" , "æ˜¯å¦ä¸­å›½äºº"};
 	public void init()
 	{
-		// ÒÔ¶şÎ¬Êı×éºÍÒ»Î¬Êı×éÀ´´´½¨Ò»¸öExtendedTableModel¶ÔÏó
+		// ä»¥äºŒç»´æ•°ç»„å’Œä¸€ç»´æ•°ç»„æ¥åˆ›å»ºä¸€ä¸ªExtendedTableModelå¯¹è±¡
 		ExtendedTableModel01 model = new ExtendedTableModel01(columnTitle
 			, tableData);
-		// ÒÔExtendedTableModelÀ´´´½¨JTable
+		// ä»¥ExtendedTableModelæ¥åˆ›å»ºJTable
 		table = new JTable( model);
 		table.setRowSelectionAllowed(false);
 		table.setRowHeight(40);
-		// »ñÈ¡µÚÈıÁĞ
+		// è·å–ç¬¬ä¸‰åˆ—
 		TableColumn lastColumn = table.getColumnModel().getColumn(2);
-		// ¶ÔµÚÈıÁĞ²ÉÓÃ×Ô¶¨ÒåµÄµ¥Ôª¸ñ»æÖÆÆ÷
+		// å¯¹ç¬¬ä¸‰åˆ—é‡‡ç”¨è‡ªå®šä¹‰çš„å•å…ƒæ ¼ç»˜åˆ¶å™¨
 		lastColumn.setCellRenderer(new GenderTableCellRenderer());
-		// ½«JTable¶ÔÏó·ÅÔÚJScrollPaneÖĞ£¬²¢½«¸ÃJScrollPaneÏÔÊ¾³öÀ´
+		// å°†JTableå¯¹è±¡æ”¾åœ¨JScrollPaneä¸­ï¼Œå¹¶å°†è¯¥JScrollPaneæ˜¾ç¤ºå‡ºæ¥
 		jf.add(new JScrollPane(table));
 		jf.pack();
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,23 +61,23 @@ public class TableCellRendererTest
 }
 class ExtendedTableModel01 extends DefaultTableModel
 {
-	// ÖØĞÂÌá¹©Ò»¸ö¹¹ÔìÆ÷£¬¸Ã¹¹ÔìÆ÷µÄÊµÏÖÎ¯ÍĞ¸øDefaultTableModel¸¸Àà
+	// é‡æ–°æä¾›ä¸€ä¸ªæ„é€ å™¨ï¼Œè¯¥æ„é€ å™¨çš„å®ç°å§”æ‰˜ç»™DefaultTableModelçˆ¶ç±»
 	public ExtendedTableModel01(String[] columnNames , Object[][] cells)
 	{
 		super(cells , columnNames);
 	}
-	// ÖØĞ´getColumnClass·½·¨£¬¸ù¾İÃ¿ÁĞµÄµÚÒ»¸öÖµÀ´·µ»ØÆäÕæÊµµÄÊı¾İÀàĞÍ
+	// é‡å†™getColumnClassæ–¹æ³•ï¼Œæ ¹æ®æ¯åˆ—çš„ç¬¬ä¸€ä¸ªå€¼æ¥è¿”å›å…¶çœŸå®çš„æ•°æ®ç±»å‹
 	public Class getColumnClass(int c)
 	{
 		return getValueAt(0 , c).getClass();
 	}
 }
-// ¶¨Òå×Ô¶¨ÒåµÄµ¥Ôª¸ñ»æÖÆÆ÷
+// å®šä¹‰è‡ªå®šä¹‰çš„å•å…ƒæ ¼ç»˜åˆ¶å™¨
 class GenderTableCellRenderer extends JPanel
 	implements TableCellRenderer
 {
 	private String cellValue;
-	// ¶¨ÒåÍ¼±êµÄ¿í¶ÈºÍ¸ß¶È
+	// å®šä¹‰å›¾æ ‡çš„å®½åº¦å’Œé«˜åº¦
 	final int ICON_WIDTH = 23;
 	final int ICON_HEIGHT = 21;
 	public Component getTableCellRendererComponent(JTable table
@@ -85,7 +85,7 @@ class GenderTableCellRenderer extends JPanel
 		, int row , int column)
 	{
 		cellValue = (String)value;
-		// ÉèÖÃÑ¡ÖĞ×´Ì¬ÏÂ»æÖÆ±ß¿ò
+		// è®¾ç½®é€‰ä¸­çŠ¶æ€ä¸‹ç»˜åˆ¶è¾¹æ¡†
 		if (hasFocus)
 		{
 			setBorder(UIManager.getBorder("Table.focusCellHighlightBorder"));
@@ -96,23 +96,23 @@ class GenderTableCellRenderer extends JPanel
 		}
 		return this;
 	}
-	// ÖØĞ´paint()·½·¨£¬¸ºÔğ»æÖÆ¸Ãµ¥Ôª¸ñÄÚÈİ
+	// é‡å†™paint()æ–¹æ³•ï¼Œè´Ÿè´£ç»˜åˆ¶è¯¥å•å…ƒæ ¼å†…å®¹
 	public void paint(Graphics g)
 	{
-		// Èç¹û±í¸ñÖµÎª"ÄĞ"»ò"male"£¬Ôò»æÖÆÒ»¸öÄĞĞÔÍ¼±ê
-		if (cellValue.equalsIgnoreCase("ÄĞ")
+		// å¦‚æœè¡¨æ ¼å€¼ä¸º"ç”·"æˆ–"male"ï¼Œåˆ™ç»˜åˆ¶ä¸€ä¸ªç”·æ€§å›¾æ ‡
+		if (cellValue.equalsIgnoreCase("ç”·")
 			|| cellValue.equalsIgnoreCase("male"))
 		{
 			drawImage(g , new ImageIcon("icon/male.gif").getImage());
 		}
-		// Èç¹û±í¸ñÖµÎª"Å®"»ò"female"£¬Ôò»æÖÆÒ»¸öÅ®ĞÔÍ¼±ê
-		if (cellValue.equalsIgnoreCase("Å®")
+		// å¦‚æœè¡¨æ ¼å€¼ä¸º"å¥³"æˆ–"female"ï¼Œåˆ™ç»˜åˆ¶ä¸€ä¸ªå¥³æ€§å›¾æ ‡
+		if (cellValue.equalsIgnoreCase("å¥³")
 			|| cellValue.equalsIgnoreCase("female"))
 		{
 			drawImage(g , new ImageIcon("icon/female.gif").getImage());
 		}
 	}
-	// »æÖÆÍ¼±êµÄ·½·¨
+	// ç»˜åˆ¶å›¾æ ‡çš„æ–¹æ³•
 	private void drawImage(Graphics g , Image image)
 	{
 		g.drawImage(image, (getWidth() - ICON_WIDTH ) / 2

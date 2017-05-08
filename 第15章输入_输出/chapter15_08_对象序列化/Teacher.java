@@ -1,8 +1,8 @@
-package chapter15_08_¶ÔÏóĞòÁĞ»¯;
+package chapter15_08_å¯¹è±¡åºåˆ—åŒ–;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -20,7 +20,7 @@ public class Teacher implements java.io.Serializable {
 		this.student = student;
 	}
 
-	// nameµÄsetterºÍgetter·½·¨
+	// nameçš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -29,7 +29,7 @@ public class Teacher implements java.io.Serializable {
 		return this.name;
 	}
 
-	// studentµÄsetterºÍgetter·½·¨
+	// studentçš„setterå’Œgetteræ–¹æ³•
 	public void setStudent(Person student) {
 		this.student = student;
 	}

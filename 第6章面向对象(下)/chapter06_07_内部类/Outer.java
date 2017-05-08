@@ -1,8 +1,8 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 /**
- * Description:·ÃÎÊ·Ç¾²Ì¬ÄÚ²¿ÀàµÄ³ÉÔ±
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:è®¿é—®éé™æ€å†…éƒ¨ç±»çš„æˆå‘˜
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -18,25 +18,25 @@ public class Outer
 		private int inProp = 5;
 		public void acessOuterProp()
 		{
-			// ·Ç¾²Ì¬ÄÚ²¿Àà¿ÉÒÔÖ±½Ó·ÃÎÊÍâ²¿ÀàµÄprivate³ÉÔ±±äÁ¿
-			System.out.println("Íâ²¿ÀàµÄoutPropÖµ:"+ outProp);
+			// éé™æ€å†…éƒ¨ç±»å¯ä»¥ç›´æ¥è®¿é—®å¤–éƒ¨ç±»çš„privateæˆå‘˜å˜é‡
+			System.out.println("å¤–éƒ¨ç±»çš„outPropå€¼:"+ outProp);
 		}
 	}
 	
 	public void accessInnerProp()
 	{
-		// Íâ²¿Àà²»ÄÜÖ±½Ó·ÃÎÊ·Ç¾²Ì¬ÄÚ²¿ÀàµÄÊµÀı±äÁ¿,ÏÂÃæ´úÂë³öÏÖ±àÒë´íÎó
-		// System.out.println("ÄÚ²¿ÀàµÄinPropÖµ:" + inProp);
+		// å¤–éƒ¨ç±»ä¸èƒ½ç›´æ¥è®¿é—®éé™æ€å†…éƒ¨ç±»çš„å®ä¾‹å˜é‡,ä¸‹é¢ä»£ç å‡ºç°ç¼–è¯‘é”™è¯¯
+		// System.out.println("å†…éƒ¨ç±»çš„inPropå€¼:" + inProp);
 		
 		
-		// ÈçĞè·ÃÎÊÄÚ²¿ÀàµÄÊµÀı±äÁ¿£¬±ØĞëÏÔÊ½´´½¨ÄÚ²¿Àà¶ÔÏó
-		System.out.println("ÄÚ²¿ÀàµÄinPropÖµ:"+ new Inner().inProp);
+		// å¦‚éœ€è®¿é—®å†…éƒ¨ç±»çš„å®ä¾‹å˜é‡ï¼Œå¿…é¡»æ˜¾å¼åˆ›å»ºå†…éƒ¨ç±»å¯¹è±¡
+		System.out.println("å†…éƒ¨ç±»çš„inPropå€¼:"+ new Inner().inProp);
 	}
 	
 	public static void main(String[] args)
 	{
-		// Ö´ĞĞÏÂÃæ´úÂë£¬Ö»´´½¨ÁËÍâ²¿Àà¶ÔÏó£¬»¹Î´´´½¨ÄÚ²¿Àà¶ÔÏó
-		Outer out = new Outer();      //¢Ù
+		// æ‰§è¡Œä¸‹é¢ä»£ç ï¼Œåªåˆ›å»ºäº†å¤–éƒ¨ç±»å¯¹è±¡ï¼Œè¿˜æœªåˆ›å»ºå†…éƒ¨ç±»å¯¹è±¡
+		Outer out = new Outer();      //â‘ 
 		out.accessInnerProp();
 	}
 }

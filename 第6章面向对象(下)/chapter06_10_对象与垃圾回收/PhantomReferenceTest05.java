@@ -1,12 +1,12 @@
-package chapter06_10_¶ÔÏóÓëÀ¬»ø»ØÊÕ;
+package chapter06_10_å¯¹è±¡ä¸åƒåœ¾å›æ”¶;
 
 import java.lang.ref.*;
 
 /**
- * Description:ĞéÒıÓÃÒıÓÃ×Ö·û´®
+ * Description:è™šå¼•ç”¨å¼•ç”¨å­—ç¬¦ä¸²
  * 
  * <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -18,27 +18,27 @@ import java.lang.ref.*;
 public class PhantomReferenceTest05 {
 	public static void main(String[] args) throws Exception {
 		
-		// ´´½¨Ò»¸ö×Ö·û´®¶ÔÏó
-		String str = new String("·è¿ñJava½²Òå");
+		// åˆ›å»ºä¸€ä¸ªå­—ç¬¦ä¸²å¯¹è±¡
+		String str = new String("ç–¯ç‹‚Javaè®²ä¹‰");
 		
-		// ´´½¨Ò»¸öÒıÓÃ¶ÓÁĞ
+		// åˆ›å»ºä¸€ä¸ªå¼•ç”¨é˜Ÿåˆ—
 		ReferenceQueue rq = new ReferenceQueue();
 		
-		// ´´½¨Ò»¸öĞéÒıÓÃ£¬ÈÃ´ËĞéÒıÓÃÒıÓÃµ½"·è¿ñJava½²Òå"×Ö·û´®£¬´´½¨ĞéÒıÓÃĞèÒªÌá¹©ÒıÓÃ¶ÓÁĞ
+		// åˆ›å»ºä¸€ä¸ªè™šå¼•ç”¨ï¼Œè®©æ­¤è™šå¼•ç”¨å¼•ç”¨åˆ°"ç–¯ç‹‚Javaè®²ä¹‰"å­—ç¬¦ä¸²ï¼Œåˆ›å»ºè™šå¼•ç”¨éœ€è¦æä¾›å¼•ç”¨é˜Ÿåˆ—
 		PhantomReference pr = new PhantomReference(str, rq);
 		
-		// ÇĞ¶ÏstrÒıÓÃºÍ"·è¿ñJava½²Òå"×Ö·û´®Ö®¼äµÄÒıÓÃ
+		// åˆ‡æ–­strå¼•ç”¨å’Œ"ç–¯ç‹‚Javaè®²ä¹‰"å­—ç¬¦ä¸²ä¹‹é—´çš„å¼•ç”¨
 		str = null;
 		
-		// È¡³öĞéÒıÓÃËùÒıÓÃµÄ¶ÔÏó£¬²¢²»ÄÜÍ¨¹ıĞéÒıÓÃ»ñÈ¡±»ÒıÓÃµÄ¶ÔÏó£¬ËùÒÔ´Ë´¦Êä³önull
-		System.out.println(pr.get()); // ¢Ù
+		// å–å‡ºè™šå¼•ç”¨æ‰€å¼•ç”¨çš„å¯¹è±¡ï¼Œå¹¶ä¸èƒ½é€šè¿‡è™šå¼•ç”¨è·å–è¢«å¼•ç”¨çš„å¯¹è±¡ï¼Œæ‰€ä»¥æ­¤å¤„è¾“å‡ºnull
+		System.out.println(pr.get()); // â‘ 
 		
-		// Ç¿ÖÆÀ¬»ø»ØÊÕ
+		// å¼ºåˆ¶åƒåœ¾å›æ”¶
 		System.gc();
 		System.runFinalization();
 		
-		// À¬»ø»ØÊÕÖ®ºó£¬ĞéÒıÓÃ½«±»·ÅÈëÒıÓÃ¶ÓÁĞÖĞ
-		// È¡³öÒıÓÃ¶ÓÁĞÖĞ×îÏÈ½øÈë¶ÓÁĞÖĞµÄÒıÓÃÓëpr½øĞĞ±È½Ï  true
-		System.out.println(rq.poll() == pr); // ¢Ú
+		// åƒåœ¾å›æ”¶ä¹‹åï¼Œè™šå¼•ç”¨å°†è¢«æ”¾å…¥å¼•ç”¨é˜Ÿåˆ—ä¸­
+		// å–å‡ºå¼•ç”¨é˜Ÿåˆ—ä¸­æœ€å…ˆè¿›å…¥é˜Ÿåˆ—ä¸­çš„å¼•ç”¨ä¸prè¿›è¡Œæ¯”è¾ƒ  true
+		System.out.println(rq.poll() == pr); // â‘¡
 	}
 }

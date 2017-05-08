@@ -1,14 +1,14 @@
-package chapter16_02_Ïß³ÌµÄ´´½¨ºÍÆô¶¯;
+package chapter16_02_çº¿ç¨‹çš„åˆ›å»ºå’Œå¯åŠ¨;
 
 public class SecondThread implements Runnable {
 
 	private int i;
 	
-	//run·½·¨ÎªÏß³ÌµÄÖ´ĞĞÌå
+	//runæ–¹æ³•ä¸ºçº¿ç¨‹çš„æ‰§è¡Œä½“
 	@Override
 	public void run() {
 		for(;i<100;i++){
-			//µ±Ïß³ÌÊµÏÖ½Ó¿ÚÊ±£¬»ñµÃµ±Ç°Ïß³ÌÖ»ÄÜÊ¹ÓÃThread.currentThread()
+			//å½“çº¿ç¨‹å®ç°æ¥å£æ—¶ï¼Œè·å¾—å½“å‰çº¿ç¨‹åªèƒ½ä½¿ç”¨Thread.currentThread()
 			System.out.println(Thread.currentThread().getName() + " "+i);
 		}
 	}
@@ -19,9 +19,9 @@ public class SecondThread implements Runnable {
 			
 				if(i ==20 ){
 					SecondThread sThread= new SecondThread();
-					//Í¨¹ınew Thread(target,name)·½·¨´´½¨²¢Æô¶¯Ïß³Ì
-					new Thread(sThread,"ĞÂÏß³Ì1").start();
-					new Thread(sThread,"ĞÂÏß³Ì2").start();
+					//é€šè¿‡new Thread(target,name)æ–¹æ³•åˆ›å»ºå¹¶å¯åŠ¨çº¿ç¨‹
+					new Thread(sThread,"æ–°çº¿ç¨‹1").start();
+					new Thread(sThread,"æ–°çº¿ç¨‹2").start();
 				}
 			}
 	}

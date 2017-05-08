@@ -1,4 +1,4 @@
-package chapter12_05_java7ĞÂÔöµÄSwing¹¦ÄÜ;
+package chapter12_05_java7æ–°å¢çš„SwingåŠŸèƒ½;
 
 
 import java.beans.*;
@@ -11,7 +11,7 @@ import javax.swing.plaf.LayerUI;
 import java.awt.geom.Point2D;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -25,14 +25,14 @@ class FirstLayerUI extends LayerUI<JComponent>
 	{
 		super.paint(g, c);
 		Graphics2D g2 = (Graphics2D) g.create();
-		// ÉèÖÃÍ¸Ã÷Ğ§¹û
+		// è®¾ç½®é€æ˜æ•ˆæœ
 		g2.setComposite(AlphaComposite.getInstance(
 			AlphaComposite.SRC_OVER, .5f));
-		// Ê¹ÓÃ½¥±ä»­±Ê»æÍ¼
+		// ä½¿ç”¨æ¸å˜ç”»ç¬”ç»˜å›¾
 		g2.setPaint(new GradientPaint(0 , 0 , Color.RED
 			, 0 , c.getHeight() , Color.BLUE));
-		// »æÖÆÒ»¸öÓë±»×°ÊÎ×é¼şÏàÍ¬´óĞ¡µÄ¾ØĞÎ
-		g2.fillRect(0, 0, c.getWidth(), c.getHeight());    // ¢Ù
+		// ç»˜åˆ¶ä¸€ä¸ªä¸è¢«è£…é¥°ç»„ä»¶ç›¸åŒå¤§å°çš„çŸ©å½¢
+		g2.fillRect(0, 0, c.getWidth(), c.getHeight());    // â‘ 
 		g2.dispose();
 	}
 }
@@ -43,14 +43,14 @@ class BlurLayerUI extends LayerUI<JComponent>
 	public BlurLayerUI()
 	{
 		float ninth = 1.0f / 9.0f;
-		// ¶¨ÒåÄ£ºı²ÎÊı
+		// å®šä¹‰æ¨¡ç³Šå‚æ•°
 		float[] blurKernel = {
 			ninth, ninth, ninth,
 			ninth, ninth, ninth,
 			ninth, ninth, ninth
 		};
-		// ConvolveOp´ú±íÒ»¸öÄ£ºı´¦Àí£¬Ëü½«Ô­Í¼Æ¬µÄÃ¿Ò»¸öÏñËØÓëÖÜÎ§
-		// ÏñËØµÄÑÕÉ«½øĞĞ»ìºÏ£¬´Ó¶ø¼ÆËã³öµ±Ç°ÏñËØµÄÑÕÉ«Öµ£¬
+		// ConvolveOpä»£è¡¨ä¸€ä¸ªæ¨¡ç³Šå¤„ç†ï¼Œå®ƒå°†åŸå›¾ç‰‡çš„æ¯ä¸€ä¸ªåƒç´ ä¸å‘¨å›´
+		// åƒç´ çš„é¢œè‰²è¿›è¡Œæ··åˆï¼Œä»è€Œè®¡ç®—å‡ºå½“å‰åƒç´ çš„é¢œè‰²å€¼ï¼Œ
 		operation = new ConvolveOp(
 			new Kernel(3, 3, blurKernel),
 			ConvolveOp.EDGE_NO_OP, null);
@@ -59,25 +59,25 @@ class BlurLayerUI extends LayerUI<JComponent>
 	{
 		int w = c.getWidth();
 		int h = c.getHeight();
-		// Èç¹û±»×°ÊÎ´°¿Ú´óĞ¡Îª0X0,Ö±½Ó·µ»Ø
+		// å¦‚æœè¢«è£…é¥°çª—å£å¤§å°ä¸º0X0,ç›´æ¥è¿”å›
 		if (w == 0 || h == 0)
 			return;
-		// Èç¹ûscreenBlurImageÃ»ÓĞ³õÊ¼»¯£¬»òËüµÄ³ß´ç²»¶Ô¡£
+		// å¦‚æœscreenBlurImageæ²¡æœ‰åˆå§‹åŒ–ï¼Œæˆ–å®ƒçš„å°ºå¯¸ä¸å¯¹ã€‚
 		if (screenBlurImage == null
 			|| screenBlurImage.getWidth() != w
 			|| screenBlurImage.getHeight() != h)
 		{
-			// ÖØĞÂ´´½¨ĞÂµÄBufferdImage
+			// é‡æ–°åˆ›å»ºæ–°çš„BufferdImage
 			screenBlurImage = new BufferedImage(w
 				, h , BufferedImage.TYPE_INT_RGB);
 		}
 		Graphics2D ig2 = screenBlurImage.createGraphics();
-		// °Ñ±»×°ÊÎ×é¼şµÄ½çÃæ»æÖÆµ½µ±Ç°screenBlurImageÉÏ
+		// æŠŠè¢«è£…é¥°ç»„ä»¶çš„ç•Œé¢ç»˜åˆ¶åˆ°å½“å‰screenBlurImageä¸Š
 		ig2.setClip(g.getClip());
 		super.paint(ig2, c);
 		ig2.dispose();
 		Graphics2D g2 = (Graphics2D)g;
-		// ¶ÔJLayer×°ÊÎµÄ×é¼ş½øĞĞÄ£ºı´¦Àí
+		// å¯¹JLayerè£…é¥°çš„ç»„ä»¶è¿›è¡Œæ¨¡ç³Šå¤„ç†
 		g2.drawImage(screenBlurImage, operation, 0, 0);
 	}
 }
@@ -90,14 +90,14 @@ class SpotlightLayerUI extends LayerUI<JComponent>
 	{
 		super.installUI(c);
 		JLayer layer = (JLayer)c;
-		// ÉèÖÃJLayer¿ÉÒÔÏìÓ¦Êó±ê¡¢Êó±ê¶¯×÷ÊÂ¼ş
+		// è®¾ç½®JLayerå¯ä»¥å“åº”é¼ æ ‡ã€é¼ æ ‡åŠ¨ä½œäº‹ä»¶
 		layer.setLayerEventMask(AWTEvent.MOUSE_EVENT_MASK
 			| AWTEvent.MOUSE_MOTION_EVENT_MASK);
 	}
 	public void uninstallUI(JComponent c)
 	{
 		JLayer layer = (JLayer)c;
-		// ÉèÖÃJLayer²»ÏìÓ¦ÈÎºÎÊÂ¼ş
+		// è®¾ç½®JLayerä¸å“åº”ä»»ä½•äº‹ä»¶
 		layer.setLayerEventMask(0);
 		super.uninstallUI(c);
 	}
@@ -105,28 +105,28 @@ class SpotlightLayerUI extends LayerUI<JComponent>
 	{
 		Graphics2D g2 = (Graphics2D)g.create();
 		super.paint (g2, c);
-		// Èç¹û´¦ÓÚ¼¤»î×´Ì¬
+		// å¦‚æœå¤„äºæ¿€æ´»çŠ¶æ€
 		if (active)
 		{
-			// ¶¨ÒåÒ»¸öcx¡¢cyÎ»ÖÃµÄµã
+			// å®šä¹‰ä¸€ä¸ªcxã€cyä½ç½®çš„ç‚¹
 			Point2D center = new Point2D.Float(cx, cy);
 			float radius = 72;
 			float[] dist = {0.0f, 1.0f};
 			Color[] colors = {Color.YELLOW , Color.BLACK};
-			// ÒÔcenterÎªÖĞĞÄ¡¢colorsÎªÑÕÉ«Êı×é´´½¨»·ĞÎ½¥±ä
+			// ä»¥centerä¸ºä¸­å¿ƒã€colorsä¸ºé¢œè‰²æ•°ç»„åˆ›å»ºç¯å½¢æ¸å˜
 			RadialGradientPaint p = new RadialGradientPaint(center
 				, radius , dist , colors);
 			g2.setPaint(p);
-			// ÉèÖÃ½¥±äĞ§¹û
+			// è®¾ç½®æ¸å˜æ•ˆæœ
 			g2.setComposite(AlphaComposite.getInstance(
 				AlphaComposite.SRC_OVER, .6f));
-			// »æÖÆ¾ØĞÎ
+			// ç»˜åˆ¶çŸ©å½¢
 			g2.fillRect(0, 0, c.getWidth(), c.getHeight());
 		}
 		g2.dispose();
 	}
 
-	// ´¦ÀíÊó±êÊÂ¼şµÄ·½·¨
+	// å¤„ç†é¼ æ ‡äº‹ä»¶çš„æ–¹æ³•
 	public void processMouseEvent(MouseEvent e, JLayer layer)
 	{
 		if (e.getID() == MouseEvent.MOUSE_ENTERED)
@@ -135,12 +135,12 @@ class SpotlightLayerUI extends LayerUI<JComponent>
 			active = false;
 		layer.repaint();
 	}
-	// ´¦ÀíÊó±ê¶¯×÷ÊÂ¼şµÄ·½·¨
+	// å¤„ç†é¼ æ ‡åŠ¨ä½œäº‹ä»¶çš„æ–¹æ³•
 	public void processMouseMotionEvent(MouseEvent e, JLayer layer)
 	{
 		Point p = SwingUtilities.convertPoint(
 			e.getComponent(), e.getPoint(), layer);
-		// »ñÈ¡Êó±ê¶¯×÷ÊÂ¼şµÄ·¢ÉúµãµÄ×ø±ê
+		// è·å–é¼ æ ‡åŠ¨ä½œäº‹ä»¶çš„å‘ç”Ÿç‚¹çš„åæ ‡
 		cx = p.x;
 		cy = p.y;
 		layer.repaint();
@@ -150,29 +150,29 @@ public class JLayerTest
 {
 	public void init()
 	{
-		JFrame f = new JFrame("JLayer²âÊÔ");
+		JFrame f = new JFrame("JLayeræµ‹è¯•");
 		JPanel p = new JPanel();
 		ButtonGroup group = new ButtonGroup();
 		JRadioButton radioButton;
-		// ´´½¨3¸öRadioButton£¬²¢½«ËüÃÇÌí¼Ó³ÉÒ»×é
-		p.add(radioButton = new JRadioButton("Íø¹º¹ºÂò", true));
+		// åˆ›å»º3ä¸ªRadioButtonï¼Œå¹¶å°†å®ƒä»¬æ·»åŠ æˆä¸€ç»„
+		p.add(radioButton = new JRadioButton("ç½‘è´­è´­ä¹°", true));
 		group.add(radioButton);
-		p.add(radioButton = new JRadioButton("Êéµê¹ºÂò"));
+		p.add(radioButton = new JRadioButton("ä¹¦åº—è´­ä¹°"));
 		group.add(radioButton);
-		p.add(radioButton = new JRadioButton("Í¼Êé¹İ½èÔÄ"));
+		p.add(radioButton = new JRadioButton("å›¾ä¹¦é¦†å€Ÿé˜…"));
 		group.add(radioButton);
-		// Ìí¼Ó3¸öJCheckBox
-		p.add(new JCheckBox("·è¿ñJava½²Òå"));
-		p.add(new JCheckBox("·è¿ñAndroid½²Òå"));
-		p.add(new JCheckBox("·è¿ñAjax½²Òå"));
-		p.add(new JCheckBox("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃ"));
-		JButton orderButton = new JButton("Í¶Æ±");
+		// æ·»åŠ 3ä¸ªJCheckBox
+		p.add(new JCheckBox("ç–¯ç‹‚Javaè®²ä¹‰"));
+		p.add(new JCheckBox("ç–¯ç‹‚Androidè®²ä¹‰"));
+		p.add(new JCheckBox("ç–¯ç‹‚Ajaxè®²ä¹‰"));
+		p.add(new JCheckBox("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨"));
+		JButton orderButton = new JButton("æŠ•ç¥¨");
 		p.add(orderButton);
-		// ´´½¨LayerUI¶ÔÏó
-		LayerUI<JComponent> layerUI = new SpotlightLayerUI();     // ¢Ú
-		// Ê¹ÓÃlayerUIÀ´×°ÊÎÖ¸¶¨µÄJPanel×é¼ş
+		// åˆ›å»ºLayerUIå¯¹è±¡
+		LayerUI<JComponent> layerUI = new SpotlightLayerUI();     // â‘¡
+		// ä½¿ç”¨layerUIæ¥è£…é¥°æŒ‡å®šçš„JPanelç»„ä»¶
 		JLayer<JComponent> layer = new JLayer<JComponent>(p, layerUI);
-		// ½«×°ÊÎºóµÄJPanel×é¼şÌí¼Óµ½ÈİÆ÷ÖĞ
+		// å°†è£…é¥°åçš„JPanelç»„ä»¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 		f.add(layer);
 		f.setSize(300, 170);
 		f.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);

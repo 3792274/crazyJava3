@@ -1,10 +1,10 @@
-package chapter05_01_ÀàºÍ¶ÔÏó;
+package chapter05_01_ç±»å’Œå¯¹è±¡;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,21 +16,21 @@ public class PersonTest
 {
 	public static void main(String[] args)
 	{
-		// Ê¹ÓÃPeronÀà¶¨ÒåÒ»¸öPersonÀàĞÍµÄ±äÁ¿
+		// ä½¿ç”¨Peronç±»å®šä¹‰ä¸€ä¸ªPersonç±»å‹çš„å˜é‡
 		Person p;
-		// Í¨¹ınew¹Ø¼ü×Öµ÷ÓÃPersonÀàµÄ¹¹ÔìÆ÷£¬·µ»ØÒ»¸öPersonÊµÀı£¬
-		// ½«¸ÃPersonÊµÀı¸³¸øp±äÁ¿¡£
+		// é€šè¿‡newå…³é”®å­—è°ƒç”¨Personç±»çš„æ„é€ å™¨ï¼Œè¿”å›ä¸€ä¸ªPersonå®ä¾‹ï¼Œ
+		// å°†è¯¥Personå®ä¾‹èµ‹ç»™på˜é‡ã€‚
 		p = new Person();
 
-		// ·ÃÎÊpµÄnameÊµÀı±äÁ¿£¬Ö±½ÓÎª¸Ã±äÁ¿¸³Öµ¡£
-		p.name = "Àî¸Õ";
-		// µ÷ÓÃpµÄsay·½·¨£¬ÉùÃ÷say()·½·¨Ê±¶¨ÒåÁËÒ»¸öĞÎ²Î£¬
-		// µ÷ÓÃ¸Ã·½·¨±ØĞëÎªĞÎ²ÎÖ¸¶¨Ò»¸öÖµ
-		p.say("JavaÓïÑÔºÜ¼òµ¥£¬Ñ§Ï°ºÜÈİÒ×£¡");
-		// Ö±½ÓÊä³öpµÄnameÊµÀı±äÁ¿£¬½«Êä³ö Àî¸Õ
+		// è®¿é—®pçš„nameå®ä¾‹å˜é‡ï¼Œç›´æ¥ä¸ºè¯¥å˜é‡èµ‹å€¼ã€‚
+		p.name = "æåˆš";
+		// è°ƒç”¨pçš„sayæ–¹æ³•ï¼Œå£°æ˜say()æ–¹æ³•æ—¶å®šä¹‰äº†ä¸€ä¸ªå½¢å‚ï¼Œ
+		// è°ƒç”¨è¯¥æ–¹æ³•å¿…é¡»ä¸ºå½¢å‚æŒ‡å®šä¸€ä¸ªå€¼
+		p.say("Javaè¯­è¨€å¾ˆç®€å•ï¼Œå­¦ä¹ å¾ˆå®¹æ˜“ï¼");
+		// ç›´æ¥è¾“å‡ºpçš„nameå®ä¾‹å˜é‡ï¼Œå°†è¾“å‡º æåˆš
 		System.out.println(p.name);
 
-		// ½«p±äÁ¿µÄÖµ¸³Öµ¸øp2±äÁ¿
+		// å°†på˜é‡çš„å€¼èµ‹å€¼ç»™p2å˜é‡
 		Person p2 = p;
 	}
 }

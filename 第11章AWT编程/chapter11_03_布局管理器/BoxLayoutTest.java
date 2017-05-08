@@ -1,20 +1,20 @@
-package chapter11_03_²¼¾Ö¹ÜÀíÆ÷;
+package chapter11_03_å¸ƒå±€ç®¡ç†å™¨;
 
 
 import java.awt.*;
 import javax.swing.*;
 /**
- * Description:SwingÌá¹©µÄGridBagLayout
+ * Description:Swingæä¾›çš„GridBagLayout
  */
 public class BoxLayoutTest
 {
-	private Frame f = new Frame("²âÊÔ");
+	private Frame f = new Frame("æµ‹è¯•");
 	public void init()
 	{
 		f.setLayout(new BoxLayout(f , BoxLayout.Y_AXIS));
-		// ÏÂÃæ°´Å¥½«»á´¹Ö±ÅÅÁĞ
-		f.add(new Button("µÚÒ»¸ö°´Å¥"));
-		f.add(new Button("°´Å¥¶ş"));
+		// ä¸‹é¢æŒ‰é’®å°†ä¼šå‚ç›´æ’åˆ—
+		f.add(new Button("ç¬¬ä¸€ä¸ªæŒ‰é’®"));
+		f.add(new Button("æŒ‰é’®äºŒ"));
 		f.pack();
 		f.setVisible(true);
 	}

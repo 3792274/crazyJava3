@@ -1,11 +1,11 @@
-package chapter11_05_ÊÂ¼ş´¦Àí;
+package chapter11_05_äº‹ä»¶å¤„ç†;
 
 
 import java.awt.*;
 import java.awt.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,17 +15,17 @@ import java.awt.event.*;
  */
 public class AnonymousEventHandler
 {
-	private Frame f = new Frame("²âÊÔ");
+	private Frame f = new Frame("æµ‹è¯•");
 	private TextArea ta = new TextArea(6 , 40);
 	public void init()
 	{
-		// ÒÔÄäÃûÄÚ²¿ÀàµÄĞÎÊ½À´´´½¨ÊÂ¼ş¼àÌıÆ÷¶ÔÏó
+		// ä»¥åŒ¿åå†…éƒ¨ç±»çš„å½¢å¼æ¥åˆ›å»ºäº‹ä»¶ç›‘å¬å™¨å¯¹è±¡
 		f.addWindowListener(new WindowAdapter()
 		{
-			// ÊµÏÖÊÂ¼ş´¦Àí·½·¨
+			// å®ç°äº‹ä»¶å¤„ç†æ–¹æ³•
 			public void windowClosing(WindowEvent e)
 			{
-				System.out.println("ÓÃ»§ÊÔÍ¼¹Ø±Õ´°¿Ú£¡\n");
+				System.out.println("ç”¨æˆ·è¯•å›¾å…³é—­çª—å£ï¼\n");
 				System.exit(0);
 			}
 		});

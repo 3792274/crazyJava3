@@ -1,4 +1,4 @@
-package chapter12_02_Swing»ù±¾×é¼şµÄÓÃ·¨;
+package chapter12_02_SwingåŸºæœ¬ç»„ä»¶çš„ç”¨æ³•;
 
 
 import javax.swing.*;
@@ -6,7 +6,7 @@ import javax.swing.border.*;
 import java.awt.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,35 +16,35 @@ import java.awt.*;
  */
 public class BorderTest
 {
-	private JFrame jf = new JFrame("²âÊÔ±ß¿ò");
+	private JFrame jf = new JFrame("æµ‹è¯•è¾¹æ¡†");
 	public void init()
 	{
 		jf.setLayout(new GridLayout(2, 4));
-		// Ê¹ÓÃ¾²Ì¬¹¤³§·½·¨´´½¨BevelBorder
+		// ä½¿ç”¨é™æ€å·¥å‚æ–¹æ³•åˆ›å»ºBevelBorder
 		Border bb = BorderFactory.createBevelBorder(
 			BevelBorder.RAISED , Color.RED, Color.GREEN
 			, Color.BLUE, Color.GRAY);
 		jf.add(getPanelWithBorder(bb , "BevelBorder"));
-		// Ê¹ÓÃ¾²Ì¬¹¤³§·½·¨´´½¨LineBorder
+		// ä½¿ç”¨é™æ€å·¥å‚æ–¹æ³•åˆ›å»ºLineBorder
 		Border lb = BorderFactory.createLineBorder(Color.ORANGE, 10);
 		jf.add(getPanelWithBorder(lb , "LineBorder"));
-		// Ê¹ÓÃ¾²Ì¬¹¤³§·½·¨´´½¨EmptyBorder£¬EmptyBorder¾ÍÊÇÔÚ×é¼şËÄÖÜÁô¿Õ
+		// ä½¿ç”¨é™æ€å·¥å‚æ–¹æ³•åˆ›å»ºEmptyBorderï¼ŒEmptyBorderå°±æ˜¯åœ¨ç»„ä»¶å››å‘¨ç•™ç©º
 		Border eb = BorderFactory.createEmptyBorder(20, 5, 10, 30);
 		jf.add(getPanelWithBorder(eb , "EmptyBorder"));
-		// Ê¹ÓÃ¾²Ì¬¹¤³§·½·¨´´½¨EtchedBorder
+		// ä½¿ç”¨é™æ€å·¥å‚æ–¹æ³•åˆ›å»ºEtchedBorder
 		Border etb = BorderFactory.createEtchedBorder(EtchedBorder.RAISED,
 		Color.RED, Color.GREEN);
 		jf.add(getPanelWithBorder(etb , "EtchedBorder"));
-		// Ö±½Ó´´½¨TitledBorder£¬TitledBorder±ß¿ò¾ÍÊÇÎªÔ­ÓĞµÄ±ß¿òÔö¼Ó±êÌâ
-		TitledBorder tb = new TitledBorder(lb , "²âÊÔ±êÌâ"
+		// ç›´æ¥åˆ›å»ºTitledBorderï¼ŒTitledBorderè¾¹æ¡†å°±æ˜¯ä¸ºåŸæœ‰çš„è¾¹æ¡†å¢åŠ æ ‡é¢˜
+		TitledBorder tb = new TitledBorder(lb , "æµ‹è¯•æ ‡é¢˜"
 			, TitledBorder.LEFT , TitledBorder.BOTTOM
 			, new Font("StSong" , Font.BOLD , 18), Color.BLUE);
 		jf.add(getPanelWithBorder(tb , "TitledBorder"));
-		// Ö±½Ó´´½¨MatteBorder£¬MatteBorder±ß¿òÊÇEmptyBorderµÄ×ÓÀà£¬
-		// Ëü¿ÉÒÔÖ¸¶¨Áô¿ÕÇøÓòµÄÑÕÉ«»ò±³¾°£¬´Ë´¦ÊÇÖ¸¶¨ÑÕÉ«
+		// ç›´æ¥åˆ›å»ºMatteBorderï¼ŒMatteBorderè¾¹æ¡†æ˜¯EmptyBorderçš„å­ç±»ï¼Œ
+		// å®ƒå¯ä»¥æŒ‡å®šç•™ç©ºåŒºåŸŸçš„é¢œè‰²æˆ–èƒŒæ™¯ï¼Œæ­¤å¤„æ˜¯æŒ‡å®šé¢œè‰²
 		MatteBorder mb = new MatteBorder(20, 5, 10, 30, Color.GREEN);
 		jf.add(getPanelWithBorder(mb , "MatteBorder"));
-		// Ö±½Ó´´½¨CompoundBorder£¬CompoundBorder±ß¿ò½«Á½¸ö±ß¿ò×éºÏ³ÉĞÂ±ß¿ò
+		// ç›´æ¥åˆ›å»ºCompoundBorderï¼ŒCompoundBorderè¾¹æ¡†å°†ä¸¤ä¸ªè¾¹æ¡†ç»„åˆæˆæ–°è¾¹æ¡†
 		CompoundBorder cb = new CompoundBorder(new LineBorder(
 			Color.RED, 8) , tb);
 		jf.add(getPanelWithBorder(cb , "CompoundBorder"));
@@ -59,7 +59,7 @@ public class BorderTest
 	{
 		JPanel p = new JPanel();
 		p.add(new JLabel(BorderName));
-		// ÎªPanel×é¼şÉèÖÃ±ß¿ò
+		// ä¸ºPanelç»„ä»¶è®¾ç½®è¾¹æ¡†
 		p.setBorder(b);
 		return p;
 	}

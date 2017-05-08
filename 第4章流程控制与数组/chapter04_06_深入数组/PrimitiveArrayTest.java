@@ -1,8 +1,8 @@
-package chapter04_06_ÉîÈëÊı×é;
+package chapter04_06_æ·±å…¥æ•°ç»„;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,13 +14,13 @@ public class PrimitiveArrayTest
 {
 	public static void main(String[] args)
 	{
-		// ¶¨ÒåÒ»¸öint[]ÀàĞÍµÄÊı×é±äÁ¿
+		// å®šä¹‰ä¸€ä¸ªint[]ç±»å‹çš„æ•°ç»„å˜é‡
 		int[] iArr;
 		
-		// ¶¯Ì¬³õÊ¼»¯Êı×é£¬Êı×é³¤¶ÈÎª5
+		// åŠ¨æ€åˆå§‹åŒ–æ•°ç»„ï¼Œæ•°ç»„é•¿åº¦ä¸º5
 		iArr = new int[5];
 		
-		// ²ÉÓÃÑ­»··½Ê½ÎªÃ¿¸öÊı×éÔªËØ¸³Öµ¡£
+		// é‡‡ç”¨å¾ªç¯æ–¹å¼ä¸ºæ¯ä¸ªæ•°ç»„å…ƒç´ èµ‹å€¼ã€‚
 		for (int i = 0; i <iArr.length ; i++ )
 		{
 			iArr[i] = i + 10;

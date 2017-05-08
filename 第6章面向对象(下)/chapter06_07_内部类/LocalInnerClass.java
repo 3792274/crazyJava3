@@ -1,10 +1,10 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,21 +16,21 @@ public class LocalInnerClass
 {
 	public static void main(String[] args)
 	{
-		// ¶¨Òå¾Ö²¿ÄÚ²¿Àà
+		// å®šä¹‰å±€éƒ¨å†…éƒ¨ç±»
 		class InnerBase
 		{
 			int a;
 		}
-		// ¶¨Òå¾Ö²¿ÄÚ²¿ÀàµÄ×ÓÀà
+		// å®šä¹‰å±€éƒ¨å†…éƒ¨ç±»çš„å­ç±»
 		class InnerSub extends InnerBase
 		{
 			int b;
 		}
-		// ´´½¨¾Ö²¿ÄÚ²¿ÀàµÄ¶ÔÏó
+		// åˆ›å»ºå±€éƒ¨å†…éƒ¨ç±»çš„å¯¹è±¡
 		InnerSub is = new InnerSub();
 		is.a = 5;
 		is.b = 8;
-		System.out.println("InnerSub¶ÔÏóµÄaºÍbÊµÀı±äÁ¿ÊÇ£º"
+		System.out.println("InnerSubå¯¹è±¡çš„aå’Œbå®ä¾‹å˜é‡æ˜¯ï¼š"
 			+ is.a + "," + is.b);
 	}
 }

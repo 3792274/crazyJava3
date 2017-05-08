@@ -1,11 +1,11 @@
-package chapter05_04_Òş²ØºÍ·â×°;
+package chapter05_04_éšè—å’Œå°è£…;
 
 
 import static java.lang.System.*;
 import static java.lang.Math.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -18,10 +18,10 @@ public class StaticImportTest
 {
 	public static void main(String[] args)
 	{
-		// outÊÇjava.lang.SystemÀàµÄ¾²Ì¬³ÉÔ±±äÁ¿£¬´ú±í±ê×¼Êä³ö
-		// PIÊÇjava.lang.MathÀàµÄ¾²Ì¬³ÉÔ±±äÁ¿£¬±íÊ¾¦Ğ³£Á¿
+		// outæ˜¯java.lang.Systemç±»çš„é™æ€æˆå‘˜å˜é‡ï¼Œä»£è¡¨æ ‡å‡†è¾“å‡º
+		// PIæ˜¯java.lang.Mathç±»çš„é™æ€æˆå‘˜å˜é‡ï¼Œè¡¨ç¤ºÏ€å¸¸é‡
 		out.println(PI);
-		// Ö±½Óµ÷ÓÃMathÀàµÄsqrt¾²Ì¬·½·¨
+		// ç›´æ¥è°ƒç”¨Mathç±»çš„sqrté™æ€æ–¹æ³•
 		out.println(sqrt(256));
 	}
 }

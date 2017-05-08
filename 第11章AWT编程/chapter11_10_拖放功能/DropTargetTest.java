@@ -1,4 +1,4 @@
-package chapter11_10_ÍÏ·Å¹¦ÄÜ;
+package chapter11_10_æ‹–æ”¾åŠŸèƒ½;
 
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.awt.datatransfer.*;
 import javax.swing.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -26,20 +26,20 @@ public class DropTargetTest
 	final int DESKTOP_WIDTH = 480;
 	final int DESKTOP_HEIGHT = 360;
 	final int FRAME_DISTANCE = 30;
-	JFrame jf = new JFrame("²âÊÔÍÏ·ÅÄ¿±ê¡ª¡ª°ÑÍ¼Æ¬ÎÄ¼şÍÏÈë¸Ã´°¿Ú");
-	// ¶¨ÒåÒ»¸öĞéÄâ×ÀÃæ
+	JFrame jf = new JFrame("æµ‹è¯•æ‹–æ”¾ç›®æ ‡â€”â€”æŠŠå›¾ç‰‡æ–‡ä»¶æ‹–å…¥è¯¥çª—å£");
+	// å®šä¹‰ä¸€ä¸ªè™šæ‹Ÿæ¡Œé¢
 	private JDesktopPane desktop = new JDesktopPane();
-	// ±£´æÏÂÒ»¸öÄÚ²¿´°¿ÚµÄ×ø±êµã
+	// ä¿å­˜ä¸‹ä¸€ä¸ªå†…éƒ¨çª—å£çš„åæ ‡ç‚¹
 	private int nextFrameX;
 	private int nextFrameY;
-	// ¶¨ÒåÄÚ²¿´°¿ÚÎªĞéÄâ×ÀÃæµÄ1/2´óĞ¡
+	// å®šä¹‰å†…éƒ¨çª—å£ä¸ºè™šæ‹Ÿæ¡Œé¢çš„1/2å¤§å°
 	private int width = DESKTOP_WIDTH / 2;
 	private int height = DESKTOP_HEIGHT / 2;
 	public void init()
 	{
 		desktop.setPreferredSize(new Dimension(DESKTOP_WIDTH
 			, DESKTOP_HEIGHT));
-		// ½«µ±Ç°´°¿Ú´´½¨³ÉÍÏ·ÅÄ¿±ê
+		// å°†å½“å‰çª—å£åˆ›å»ºæˆæ‹–æ”¾ç›®æ ‡
 		new DropTarget(jf, DnDConstants.ACTION_COPY
 			, new ImageDropTargetListener());
 		jf.add(desktop);
@@ -51,26 +51,26 @@ public class DropTargetTest
 	{
 		public void drop(DropTargetDropEvent event)
 		{
-			// ½ÓÊÜ¸´ÖÆ²Ù×÷
+			// æ¥å—å¤åˆ¶æ“ä½œ
 			event.acceptDrop(DnDConstants.ACTION_COPY);
-			// »ñÈ¡ÍÏ·ÅµÄÄÚÈİ
+			// è·å–æ‹–æ”¾çš„å†…å®¹
 			Transferable transferable = event.getTransferable();
 			DataFlavor[] flavors = transferable.getTransferDataFlavors();
-			// ±éÀúÍÏ·ÅÄÚÈİÀïµÄËùÓĞÊı¾İ¸ñÊ½
+			// éå†æ‹–æ”¾å†…å®¹é‡Œçš„æ‰€æœ‰æ•°æ®æ ¼å¼
 			for (int i = 0; i < flavors.length; i++)
 			{
 				DataFlavor d = flavors[i];
 				try
 				{
-					// Èç¹ûÍÏ·ÅÄÚÈİµÄÊı¾İ¸ñÊ½ÊÇÎÄ¼şÁĞ±í
+					// å¦‚æœæ‹–æ”¾å†…å®¹çš„æ•°æ®æ ¼å¼æ˜¯æ–‡ä»¶åˆ—è¡¨
 					if (d.equals(DataFlavor.javaFileListFlavor))
 					{
-						// È¡³öÍÏ·Å²Ù×÷ÀïµÄÎÄ¼şÁĞ±í
+						// å–å‡ºæ‹–æ”¾æ“ä½œé‡Œçš„æ–‡ä»¶åˆ—è¡¨
 						List fileList = (List)transferable
 							.getTransferData(d);
 						for (Object f : fileList)
 						{
-							// ÏÔÊ¾Ã¿¸öÎÄ¼ş
+							// æ˜¾ç¤ºæ¯ä¸ªæ–‡ä»¶
 							showImage((File)f , event);
 						}
 					}
@@ -79,36 +79,36 @@ public class DropTargetTest
 				{
 					e.printStackTrace();
 				}
-				// Ç¿ÖÆÍÏ·Å²Ù×÷½áÊø£¬Í£Ö¹×èÈûÍÏ·ÅÄ¿±ê
-				event.dropComplete(true);    // ¢Ù
+				// å¼ºåˆ¶æ‹–æ”¾æ“ä½œç»“æŸï¼Œåœæ­¢é˜»å¡æ‹–æ”¾ç›®æ ‡
+				event.dropComplete(true);    // â‘ 
 			}
 		}
-		// ÏÔÊ¾Ã¿¸öÎÄ¼şµÄ¹¤¾ß·½·¨
+		// æ˜¾ç¤ºæ¯ä¸ªæ–‡ä»¶çš„å·¥å…·æ–¹æ³•
 		private void showImage(File f , DropTargetDropEvent event)
 			throws IOException
 		{
 			Image image = ImageIO.read(f);
 			if (image == null)
 			{
-				// Ç¿ÖÆÍÏ·Å²Ù×÷½áÊø£¬Í£Ö¹×èÈûÍÏ·ÅÄ¿±ê
-				event.dropComplete(true);     // ¢Ú
+				// å¼ºåˆ¶æ‹–æ”¾æ“ä½œç»“æŸï¼Œåœæ­¢é˜»å¡æ‹–æ”¾ç›®æ ‡
+				event.dropComplete(true);     // â‘¡
 				JOptionPane.showInternalMessageDialog(desktop
-					, "ÏµÍ³²»Ö§³ÖÕâÖÖÀàĞÍµÄÎÄ¼ş");
-				// ·½·¨·µ»Ø£¬²»»á¼ÌĞø²Ù×÷
+					, "ç³»ç»Ÿä¸æ”¯æŒè¿™ç§ç±»å‹çš„æ–‡ä»¶");
+				// æ–¹æ³•è¿”å›ï¼Œä¸ä¼šç»§ç»­æ“ä½œ
 				return;
 			}
 			ImageIcon icon = new ImageIcon(image);
-			// ´´½¨ÄÚ²¿´°¿ÚÏÔÊ¾¸ÃÍ¼Æ¬
+			// åˆ›å»ºå†…éƒ¨çª—å£æ˜¾ç¤ºè¯¥å›¾ç‰‡
 			JInternalFrame iframe = new JInternalFrame(f.getName()
 				, true , true , true , true);
 			JLabel imageLabel = new JLabel(icon);
 			iframe.add(new JScrollPane(imageLabel));
 			desktop.add(iframe);
-			// ÉèÖÃÄÚ²¿´°¿ÚµÄÔ­Ê¼Î»ÖÃ£¨ÄÚ²¿´°¿ÚÄ¬ÈÏ´óĞ¡ÊÇ0X0£¬·ÅÔÚ0,0Î»ÖÃ£©
+			// è®¾ç½®å†…éƒ¨çª—å£çš„åŸå§‹ä½ç½®ï¼ˆå†…éƒ¨çª—å£é»˜è®¤å¤§å°æ˜¯0X0ï¼Œæ”¾åœ¨0,0ä½ç½®ï¼‰
 			iframe.reshape(nextFrameX, nextFrameY, width, height);
-			// Ê¹¸Ã´°¿Ú¿É¼û£¬²¢³¢ÊÔÑ¡ÖĞËü
+			// ä½¿è¯¥çª—å£å¯è§ï¼Œå¹¶å°è¯•é€‰ä¸­å®ƒ
 			iframe.show();
-			// ¼ÆËãÏÂÒ»¸öÄÚ²¿´°¿ÚµÄÎ»ÖÃ
+			// è®¡ç®—ä¸‹ä¸€ä¸ªå†…éƒ¨çª—å£çš„ä½ç½®
 			nextFrameX += FRAME_DISTANCE;
 			nextFrameY += FRAME_DISTANCE;
 			if (nextFrameX + width > desktop.getWidth())

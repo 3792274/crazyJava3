@@ -1,17 +1,17 @@
-package chapter08_03_Set¼¯ºÏ;
+package chapter08_03_Seté›†åˆ;
 
 import java.util.*;
 /**
- * Description:HashSet ÅĞ¶ÏÁ½¸ö¶ÔÏóÏàµÈµÄ±ê×¼£¬×¢Òâ£ºequals&&hashCode¶¼Ò»Ñù²ÅĞĞ
- * 1.HashSet°´HashËã·¨´æ´¢¼¯ºÏÔªËØ£¬¾ßÓĞºÜºÃµÄ´æÈ¡ºÍ²éÕÒĞÔÄÜ¡£
- * 2.²»ÄÜ±£Ö¤ÔªËØÅÅÁĞË³Ğò
- * 3.²»ÊÇÍ¬²½µÄ£¬Èç¹û¶àÏß³ÌĞŞ¸ÄHashSet¼¯ºÏ£¬ĞèÒªÍ¨¹ı´úÂë±£Ö¤Í¬²½
- * 3.¼¯ºÏÔªËØ¿ÉÒÔÎªnull
+ * Description:HashSet åˆ¤æ–­ä¸¤ä¸ªå¯¹è±¡ç›¸ç­‰çš„æ ‡å‡†ï¼Œæ³¨æ„ï¼šequals&&hashCodeéƒ½ä¸€æ ·æ‰è¡Œ
+ * 1.HashSetæŒ‰Hashç®—æ³•å­˜å‚¨é›†åˆå…ƒç´ ï¼Œå…·æœ‰å¾ˆå¥½çš„å­˜å–å’ŒæŸ¥æ‰¾æ€§èƒ½ã€‚
+ * 2.ä¸èƒ½ä¿è¯å…ƒç´ æ’åˆ—é¡ºåº
+ * 3.ä¸æ˜¯åŒæ­¥çš„ï¼Œå¦‚æœå¤šçº¿ç¨‹ä¿®æ”¹HashSeté›†åˆï¼Œéœ€è¦é€šè¿‡ä»£ç ä¿è¯åŒæ­¥
+ * 3.é›†åˆå…ƒç´ å¯ä»¥ä¸ºnull
  * 
- * 4.Èç¹ûÒª±£´æÔªËØ£¬ÔªËØµÄequalsºÍhashCodeÒªºÏÀí£¬·ñÔòÒıÆğĞÔÄÜÎÊÌâ
+ * 4.å¦‚æœè¦ä¿å­˜å…ƒç´ ï¼Œå…ƒç´ çš„equalså’ŒhashCodeè¦åˆç†ï¼Œå¦åˆ™å¼•èµ·æ€§èƒ½é—®é¢˜
  */
 
-// ÀàAµÄequals·½·¨×ÜÊÇ·µ»Øtrue£¬µ«Ã»ÓĞÖØĞ´ÆähashCode()·½·¨
+// ç±»Açš„equalsæ–¹æ³•æ€»æ˜¯è¿”å›trueï¼Œä½†æ²¡æœ‰é‡å†™å…¶hashCode()æ–¹æ³•
 class A
 {
 	public boolean equals(Object obj)
@@ -19,7 +19,7 @@ class A
 		return true;
 	}
 }
-// ÀàBµÄhashCode()·½·¨×ÜÊÇ·µ»Ø1£¬µ«Ã»ÓĞÖØĞ´Æäequals()·½·¨£¬»áÊ¹ÓÃÁ´±íÊ½±£´æÁ½¸öÏàÍ¬hashCode¶ÔÏó¡£
+// ç±»Bçš„hashCode()æ–¹æ³•æ€»æ˜¯è¿”å›1ï¼Œä½†æ²¡æœ‰é‡å†™å…¶equals()æ–¹æ³•ï¼Œä¼šä½¿ç”¨é“¾è¡¨å¼ä¿å­˜ä¸¤ä¸ªç›¸åŒhashCodeå¯¹è±¡ã€‚
 class B
 {
 	public int hashCode()
@@ -27,7 +27,7 @@ class B
 		return 1;
 	}
 }
-// ÀàCµÄhashCode()·½·¨×ÜÊÇ·µ»Ø2£¬ÇÒÖØĞ´Æäequals()·½·¨×ÜÊÇ·µ»Øtrue
+// ç±»Cçš„hashCode()æ–¹æ³•æ€»æ˜¯è¿”å›2ï¼Œä¸”é‡å†™å…¶equals()æ–¹æ³•æ€»æ˜¯è¿”å›true
 class C
 {
 	public int hashCode()
@@ -45,7 +45,7 @@ public class HashSetTest1
 	{
 		HashSet books = new HashSet();
 		
-		// ·Ö±ğÏòbooks¼¯ºÏÖĞÌí¼ÓÁ½¸öA¶ÔÏó£¬Á½¸öB¶ÔÏó£¬Á½¸öC¶ÔÏó
+		// åˆ†åˆ«å‘booksé›†åˆä¸­æ·»åŠ ä¸¤ä¸ªAå¯¹è±¡ï¼Œä¸¤ä¸ªBå¯¹è±¡ï¼Œä¸¤ä¸ªCå¯¹è±¡
 		books.add(new A());
 		books.add(new A());
 		books.add(new B());
@@ -56,7 +56,7 @@ public class HashSetTest1
 	}
 	
 	
-	//HashSet¡¢TreeSet¡¢EnumSet¶¼ÊÇÏß³Ì²»°²È«µÄ£¬Í¨³£Í¨¹ıCollections¹¤¾ßÀàµÄsynchronizedSortedSet·½·¨À´°ü×°
+	//HashSetã€TreeSetã€EnumSetéƒ½æ˜¯çº¿ç¨‹ä¸å®‰å…¨çš„ï¼Œé€šå¸¸é€šè¿‡Collectionså·¥å…·ç±»çš„synchronizedSortedSetæ–¹æ³•æ¥åŒ…è£…
 	SortedSet set= Collections.synchronizedSortedSet(new TreeSet());
 	
 	

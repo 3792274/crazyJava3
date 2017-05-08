@@ -1,10 +1,10 @@
-package chapter09_04_·ºĞÍ·½·¨;
+package chapter09_04_æ³›å‹æ–¹æ³•;
 
 
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,8 +15,8 @@ import java.util.*;
 public class GenericMethodTest
 {
 	
-	// ÉùÃ÷Ò»¸ö·ºĞÍ·½·¨£¬¸Ã·ºĞÍ·½·¨ÖĞ´øÒ»¸öTÀàĞÍĞÎ²Î£¬
-	//Ê¹ÓÃCollection<?>²»¿ÉĞĞ£¬ÒòÎªjava²»ÔÊĞí°Ñ¶ÔÏó·Å½øÒ»¸öÎ´ÖªÀàĞÍµÄ¼¯ºÏÖĞ¡£
+	// å£°æ˜ä¸€ä¸ªæ³›å‹æ–¹æ³•ï¼Œè¯¥æ³›å‹æ–¹æ³•ä¸­å¸¦ä¸€ä¸ªTç±»å‹å½¢å‚ï¼Œ
+	//ä½¿ç”¨Collection<?>ä¸å¯è¡Œï¼Œå› ä¸ºjavaä¸å…è®¸æŠŠå¯¹è±¡æ”¾è¿›ä¸€ä¸ªæœªçŸ¥ç±»å‹çš„é›†åˆä¸­ã€‚
 	static <T> void fromArrayToCollection(T[] a, Collection<T> c)
 	{
 		for (T o : a)
@@ -31,15 +31,15 @@ public class GenericMethodTest
 		Object[] oa = new Object[100];
 		Collection<Object> co = new ArrayList<>();
 		
-		// ÏÂÃæ´úÂëÖĞT´ú±íObjectÀàĞÍ
+		// ä¸‹é¢ä»£ç ä¸­Tä»£è¡¨Objectç±»å‹
 		fromArrayToCollection(oa, co);
 		
 		String[] sa = new String[100];
 		Collection<String> cs = new ArrayList<>();
-		// ÏÂÃæ´úÂëÖĞT´ú±íStringÀàĞÍ
+		// ä¸‹é¢ä»£ç ä¸­Tä»£è¡¨Stringç±»å‹
 		fromArrayToCollection(sa, cs);
 	
-		// ÏÂÃæ´úÂëÖĞT´ú±íObjectÀàĞÍ
+		// ä¸‹é¢ä»£ç ä¸­Tä»£è¡¨Objectç±»å‹
 		fromArrayToCollection(sa, co);
 	
 		Integer[] ia = new Integer[100];
@@ -47,17 +47,17 @@ public class GenericMethodTest
 		Number[] na = new Number[100];
 		Collection<Number> cn = new ArrayList<>();
 		
-		// ÏÂÃæ´úÂëÖĞT´ú±íNumberÀàĞÍ
+		// ä¸‹é¢ä»£ç ä¸­Tä»£è¡¨Numberç±»å‹
 		fromArrayToCollection(ia, cn);
-		// ÏÂÃæ´úÂëÖĞT´ú±íNumberÀàĞÍ
+		// ä¸‹é¢ä»£ç ä¸­Tä»£è¡¨Numberç±»å‹
 		fromArrayToCollection(fa, cn);
-		// ÏÂÃæ´úÂëÖĞT´ú±íNumberÀàĞÍ
+		// ä¸‹é¢ä»£ç ä¸­Tä»£è¡¨Numberç±»å‹
 		fromArrayToCollection(na, cn);
-		// ÏÂÃæ´úÂëÖĞT´ú±íObjectÀàĞÍ
+		// ä¸‹é¢ä»£ç ä¸­Tä»£è¡¨Objectç±»å‹
 		fromArrayToCollection(na, co);
-		// ÏÂÃæ´úÂëÖĞT´ú±íStringÀàĞÍ£¬µ«naÊÇÒ»¸öNumberÊı×é£¬
-		// ÒòÎªNumber¼È²»ÊÇStringÀàĞÍ£¬
-		// Ò²²»ÊÇËüµÄ×ÓÀà£¬ËùÒÔ³öÏÖ±àÒë´íÎó
+		// ä¸‹é¢ä»£ç ä¸­Tä»£è¡¨Stringç±»å‹ï¼Œä½†naæ˜¯ä¸€ä¸ªNumberæ•°ç»„ï¼Œ
+		// å› ä¸ºNumberæ—¢ä¸æ˜¯Stringç±»å‹ï¼Œ
+		// ä¹Ÿä¸æ˜¯å®ƒçš„å­ç±»ï¼Œæ‰€ä»¥å‡ºç°ç¼–è¯‘é”™è¯¯
 //		fromArrayToCollection(na, cs);
 
 		

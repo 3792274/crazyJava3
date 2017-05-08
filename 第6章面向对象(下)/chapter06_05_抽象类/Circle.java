@@ -1,10 +1,10 @@
-package chapter06_05_³éÏóÀà;
+package chapter06_05_æŠ½è±¡ç±»;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -24,20 +24,20 @@ public class Circle extends Shape
 	{
 		this.radius = radius;
 	}
-	// ÖØĞ´ShapeÀàµÄµÄ¼ÆËãÖÜ³¤µÄ³éÏó·½·¨
+	// é‡å†™Shapeç±»çš„çš„è®¡ç®—å‘¨é•¿çš„æŠ½è±¡æ–¹æ³•
 	public double calPerimeter()
 	{
 		return 2 * Math.PI * radius;
 	}
-	// ÖØĞ´ShapeÀàµÄµÄ·µ»ØĞÎ×´µÄ³éÏó·½·¨
+	// é‡å†™Shapeç±»çš„çš„è¿”å›å½¢çŠ¶çš„æŠ½è±¡æ–¹æ³•
 	public String getType()
 	{
-		return getColor() + "Ô²ĞÎ";
+		return getColor() + "åœ†å½¢";
 	}
 	public static void main(String[] args)
 	{
-		Shape s1 = new Triangle("ºÚÉ«" , 3 , 4, 5);
-		Shape s2 = new Circle("»ÆÉ«" , 3);
+		Shape s1 = new Triangle("é»‘è‰²" , 3 , 4, 5);
+		Shape s2 = new Circle("é»„è‰²" , 3);
 		System.out.println(s1.getType());
 		System.out.println(s1.calPerimeter());
 		System.out.println(s2.getType());

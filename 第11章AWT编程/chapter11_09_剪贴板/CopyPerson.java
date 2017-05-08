@@ -1,4 +1,4 @@
-package chapter11_09_¼ôÌù°å;
+package chapter11_09_å‰ªè´´æ¿;
 
 
 import java.awt.*;
@@ -6,7 +6,7 @@ import java.awt.event.*;
 import java.awt.datatransfer.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -27,7 +27,7 @@ class Person
 		this.name = name;
 		this.age = age;
 	}
-	// nameµÄsetterºÍgetter·½·¨
+	// nameçš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name)
 	{
 		this.name = name;
@@ -37,7 +37,7 @@ class Person
 		 return this.name;
 	}
 
-	// ageµÄsetterºÍgetter·½·¨
+	// ageçš„setterå’Œgetteræ–¹æ³•
 	public void setAge(int age)
 	{
 		this.age = age;
@@ -53,27 +53,27 @@ class Person
 }
 public class CopyPerson
 {
-	Frame f = new Frame("¸´ÖÆ¶ÔÏó");
-	Button copy = new Button("¸´ÖÆ");
-	Button paste = new Button("Õ³Ìù");
+	Frame f = new Frame("å¤åˆ¶å¯¹è±¡");
+	Button copy = new Button("å¤åˆ¶");
+	Button paste = new Button("ç²˜è´´");
 	TextField name = new TextField(15);
 	TextField age = new TextField(15);
 	TextArea ta = new TextArea(3 , 30);
-	// ´´½¨±¾µØµÄ¼ôÌù°å
+	// åˆ›å»ºæœ¬åœ°çš„å‰ªè´´æ¿
 	Clipboard clipboard = new Clipboard("cp");
 	public void init()
 	{
 		Panel p = new Panel();
-		p.add(new Label("ĞÕÃû"));
+		p.add(new Label("å§“å"));
 		p.add(name);
-		p.add(new Label("ÄêÁä"));
+		p.add(new Label("å¹´é¾„"));
 		p.add(age);
 		f.add(p , BorderLayout.NORTH);
 		f.add(ta);
 		Panel bp = new Panel();
-		// Îª¡°¸´ÖÆ¡±°´Å¥Ìí¼ÓÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºâ€œå¤åˆ¶â€æŒ‰é’®æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
 		copy.addActionListener(e -> copyPerson());
-		// Îª¡°Õ³Ìù¡±°´Å¥Ìí¼ÓÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºâ€œç²˜è´´â€æŒ‰é’®æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
 		paste.addActionListener(e ->
 		{
 			try
@@ -93,20 +93,20 @@ public class CopyPerson
 	}
 	public void copyPerson()
 	{
-		// ÒÔname,ageÎÄ±¾¿òµÄÄÚÈİ´´½¨Person¶ÔÏó
+		// ä»¥name,ageæ–‡æœ¬æ¡†çš„å†…å®¹åˆ›å»ºPersonå¯¹è±¡
 		Person p = new Person(name.getText()
 			, Integer.parseInt(age.getText()));
-		// ½«Person¶ÔÏó·â×°³ÉLocalObjectSelection¶ÔÏó
+		// å°†Personå¯¹è±¡å°è£…æˆLocalObjectSelectionå¯¹è±¡
 		LocalObjectSelection ls = new LocalObjectSelection(p);
-		// ½«LocalObjectSelection¶ÔÏó·ÅÈë±¾µØ¼ôÌù°å
+		// å°†LocalObjectSelectionå¯¹è±¡æ”¾å…¥æœ¬åœ°å‰ªè´´æ¿
 		clipboard.setContents(ls , null);
 	}
 	public void readPerson()throws Exception
 	{
-		// ´´½¨±£´æPerson¶ÔÏóÒıÓÃµÄDataFlavor¶ÔÏó
+		// åˆ›å»ºä¿å­˜Personå¯¹è±¡å¼•ç”¨çš„DataFlavorå¯¹è±¡
 		DataFlavor peronFlavor = new DataFlavor(
 			"application/x-java-jvm-local-objectref;class=Person");
-		// È¡³ö±¾µØ¼ôÌù°åÄÚµÄÄÚÈİ
+		// å–å‡ºæœ¬åœ°å‰ªè´´æ¿å†…çš„å†…å®¹
 		if (clipboard.isDataFlavorAvailable(DataFlavor.stringFlavor))
 		{
 			Person p = (Person)clipboard.getData(peronFlavor);

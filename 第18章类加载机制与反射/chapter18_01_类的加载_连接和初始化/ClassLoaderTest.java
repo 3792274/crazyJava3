@@ -1,9 +1,9 @@
-package chapter18_01_ÀàµÄ¼ÓÔØ_Á¬½ÓºÍ³õÊ¼»¯;
+package chapter18_01_ç±»çš„åŠ è½½_è¿æ¥å’Œåˆå§‹åŒ–;
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,7 +15,7 @@ class Tester
 {
 	static
 	{
-		System.out.println("TesterÀàµÄ¾²Ì¬³õÊ¼»¯¿é...");
+		System.out.println("Testerç±»çš„é™æ€åˆå§‹åŒ–å—...");
 	}
 }
 public class ClassLoaderTest
@@ -24,10 +24,10 @@ public class ClassLoaderTest
 		throws ClassNotFoundException
 	{
 		ClassLoader cl = ClassLoader.getSystemClassLoader();
-		// ÏÂÃæÓï¾ä½ö½öÊÇ¼ÓÔØTesterÀà
+		// ä¸‹é¢è¯­å¥ä»…ä»…æ˜¯åŠ è½½Testerç±»
 		cl.loadClass("Tester");
-		System.out.println("ÏµÍ³¼ÓÔØTesterÀà");
-		// ÏÂÃæÓï¾ä²Å»á³õÊ¼»¯TesterÀà
+		System.out.println("ç³»ç»ŸåŠ è½½Testerç±»");
+		// ä¸‹é¢è¯­å¥æ‰ä¼šåˆå§‹åŒ–Testerç±»
 		Class.forName("Tester");
 	}
 }

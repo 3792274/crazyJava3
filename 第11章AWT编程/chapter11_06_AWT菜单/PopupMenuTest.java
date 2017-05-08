@@ -1,11 +1,11 @@
-package chapter11_06_AWT²Ëµ¥;
+package chapter11_06_AWTèœå•;
 
 
 import java.awt.*;
 import java.awt.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,54 +16,54 @@ import java.awt.event.*;
 public class PopupMenuTest
 {
 	private TextArea ta = new TextArea(4 , 30);
-	private Frame f = new Frame("²âÊÔ");
+	private Frame f = new Frame("æµ‹è¯•");
 	PopupMenu pop = new PopupMenu();
 	CheckboxMenuItem autoWrap =
-		new CheckboxMenuItem("×Ô¶¯»»ĞĞ");
-	MenuItem copyItem = new MenuItem("¸´ÖÆ");
-	MenuItem pasteItem = new MenuItem("Õ³Ìù");
-	Menu format = new Menu("¸ñÊ½");
-	// ´´½¨commentItem²Ëµ¥Ïî£¬Ö¸¶¨Ê¹ÓÃ Ctrl+Shift+/ ¿ì½İ¼ü
-	MenuItem commentItem = new MenuItem("×¢ÊÍ" ,
+		new CheckboxMenuItem("è‡ªåŠ¨æ¢è¡Œ");
+	MenuItem copyItem = new MenuItem("å¤åˆ¶");
+	MenuItem pasteItem = new MenuItem("ç²˜è´´");
+	Menu format = new Menu("æ ¼å¼");
+	// åˆ›å»ºcommentItemèœå•é¡¹ï¼ŒæŒ‡å®šä½¿ç”¨ Ctrl+Shift+/ å¿«æ·é”®
+	MenuItem commentItem = new MenuItem("æ³¨é‡Š" ,
 		new MenuShortcut(KeyEvent.VK_SLASH , true));
-	MenuItem cancelItem = new MenuItem("È¡Ïû×¢ÊÍ");
+	MenuItem cancelItem = new MenuItem("å–æ¶ˆæ³¨é‡Š");
 	public void init()
 	{
-		// ÒÔLambda±í´ïÊ½´´½¨²Ëµ¥ÊÂ¼ş¼àÌıÆ÷
+		// ä»¥Lambdaè¡¨è¾¾å¼åˆ›å»ºèœå•äº‹ä»¶ç›‘å¬å™¨
 		ActionListener menuListener = e ->
 		{
 			String cmd = e.getActionCommand();
-			ta.append("µ¥»÷¡°" + cmd + "¡±²Ëµ¥" + "\n");
-			if (cmd.equals("ÍË³ö"))
+			ta.append("å•å‡»â€œ" + cmd + "â€èœå•" + "\n");
+			if (cmd.equals("é€€å‡º"))
 			{
 				System.exit(0);
 			}
 		};
-		// ÎªcommentItem²Ëµ¥ÏîÌí¼ÓÁËÊÂ¼ş¼àÌıÆ÷¡£
+		// ä¸ºcommentItemèœå•é¡¹æ·»åŠ äº†äº‹ä»¶ç›‘å¬å™¨ã€‚
 		commentItem.addActionListener(menuListener);
-		// Îªpop²Ëµ¥Ìí¼Ó²Ëµ¥Ïî
+		// ä¸ºpopèœå•æ·»åŠ èœå•é¡¹
 		pop.add(autoWrap);
-		// Ê¹ÓÃaddSeparator·½·¨À´Ìí¼Ó²Ëµ¥·Ö¸ôÏß
+		// ä½¿ç”¨addSeparatoræ–¹æ³•æ¥æ·»åŠ èœå•åˆ†éš”çº¿
 		pop.addSeparator();
 		pop.add(copyItem);
 		pop.add(pasteItem);
-		// Îªformat²Ëµ¥Ìí¼Ó²Ëµ¥Ïî
+		// ä¸ºformatèœå•æ·»åŠ èœå•é¡¹
 		format.add(commentItem);
 		format.add(cancelItem);
-		// Ê¹ÓÃÌí¼Ónew MenuItem("-")µÄ·½Ê½Ìí¼Ó²Ëµ¥·Ö¸ôÏß
+		// ä½¿ç”¨æ·»åŠ new MenuItem("-")çš„æ–¹å¼æ·»åŠ èœå•åˆ†éš”çº¿
 		pop.add(new MenuItem("-"));
-		// ½«format²Ëµ¥×éºÏµ½pop²Ëµ¥ÖĞ£¬´Ó¶øĞÎ³É¶ş¼¶²Ëµ¥
+		// å°†formatèœå•ç»„åˆåˆ°popèœå•ä¸­ï¼Œä»è€Œå½¢æˆäºŒçº§èœå•
 		pop.add(format);
 		final Panel p = new Panel();
 		p.setPreferredSize(new Dimension(300, 160));
-		// Ïòp´°¿ÚÖĞÌí¼ÓPopupMenu¶ÔÏó
+		// å‘pçª—å£ä¸­æ·»åŠ PopupMenuå¯¹è±¡
 		p.add(pop);
-		// Ìí¼ÓÊó±êÊÂ¼ş¼àÌıÆ÷
+		// æ·»åŠ é¼ æ ‡äº‹ä»¶ç›‘å¬å™¨
 		p.addMouseListener(new MouseAdapter()
 		{
 			public void mouseReleased(MouseEvent e)
 			{
-				// Èç¹ûÊÍ·ÅµÄÊÇÊó±êÓÒ¼ü
+				// å¦‚æœé‡Šæ”¾çš„æ˜¯é¼ æ ‡å³é”®
 				if (e.isPopupTrigger())
 				{
 					pop.show(p , e.getX() , e.getY());
@@ -72,7 +72,7 @@ public class PopupMenuTest
 		});
 		f.add(p);
 		f.add(ta , BorderLayout.NORTH);
-		// ÒÔÄäÃûÄÚ²¿ÀàµÄĞÎÊ½À´´´½¨ÊÂ¼ş¼àÌıÆ÷¶ÔÏó
+		// ä»¥åŒ¿åå†…éƒ¨ç±»çš„å½¢å¼æ¥åˆ›å»ºäº‹ä»¶ç›‘å¬å™¨å¯¹è±¡
 		f.addWindowListener(new WindowAdapter()
 		{
 			public void windowClosing(WindowEvent e)

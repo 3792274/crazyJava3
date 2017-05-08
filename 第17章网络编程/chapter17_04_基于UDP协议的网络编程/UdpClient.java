@@ -1,11 +1,11 @@
-package chapter17_04_»ùÓÚUDPĞ­ÒéµÄÍøÂç±à³Ì;
+package chapter17_04_åŸºäºUDPåè®®çš„ç½‘ç»œç¼–ç¨‹;
 
 import java.net.*;
 import java.io.*;
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,39 +15,39 @@ import java.util.*;
  */
 public class UdpClient
 {
-	// ¶¨Òå·¢ËÍÊı¾İ±¨µÄÄ¿µÄµØ
+	// å®šä¹‰å‘é€æ•°æ®æŠ¥çš„ç›®çš„åœ°
 	public static final int DEST_PORT = 30000;
 	public static final String DEST_IP = "127.0.0.1";
-	// ¶¨ÒåÃ¿¸öÊı¾İ±¨µÄ×î´ó´óĞ¡Îª4K
+	// å®šä¹‰æ¯ä¸ªæ•°æ®æŠ¥çš„æœ€å¤§å¤§å°ä¸º4K
 	private static final int DATA_LEN = 4096;
-	// ¶¨Òå½ÓÊÕÍøÂçÊı¾İµÄ×Ö½ÚÊı×é
+	// å®šä¹‰æ¥æ”¶ç½‘ç»œæ•°æ®çš„å­—èŠ‚æ•°ç»„
 	byte[] inBuff = new byte[DATA_LEN];
-	// ÒÔÖ¸¶¨×Ö½ÚÊı×é´´½¨×¼±¸½ÓÊÜÊı¾İµÄDatagramPacket¶ÔÏó
+	// ä»¥æŒ‡å®šå­—èŠ‚æ•°ç»„åˆ›å»ºå‡†å¤‡æ¥å—æ•°æ®çš„DatagramPacketå¯¹è±¡
 	private DatagramPacket inPacket =
 		new DatagramPacket(inBuff , inBuff.length);
-	// ¶¨ÒåÒ»¸öÓÃÓÚ·¢ËÍµÄDatagramPacket¶ÔÏó
+	// å®šä¹‰ä¸€ä¸ªç”¨äºå‘é€çš„DatagramPacketå¯¹è±¡
 	private DatagramPacket outPacket = null;
 	public void init()throws IOException
 	{
 		try(
-			// ´´½¨Ò»¸ö¿Í»§¶ËDatagramSocket£¬Ê¹ÓÃËæ»ú¶Ë¿Ú
+			// åˆ›å»ºä¸€ä¸ªå®¢æˆ·ç«¯DatagramSocketï¼Œä½¿ç”¨éšæœºç«¯å£
 			DatagramSocket socket = new DatagramSocket())
 		{
-			// ³õÊ¼»¯·¢ËÍÓÃµÄDatagramSocket£¬Ëü°üº¬Ò»¸ö³¤¶ÈÎª0µÄ×Ö½ÚÊı×é
+			// åˆå§‹åŒ–å‘é€ç”¨çš„DatagramSocketï¼Œå®ƒåŒ…å«ä¸€ä¸ªé•¿åº¦ä¸º0çš„å­—èŠ‚æ•°ç»„
 			outPacket = new DatagramPacket(new byte[0] , 0
 				, InetAddress.getByName(DEST_IP) , DEST_PORT);
-			// ´´½¨¼üÅÌÊäÈëÁ÷
+			// åˆ›å»ºé”®ç›˜è¾“å…¥æµ
 			Scanner scan = new Scanner(System.in);
-			// ²»¶Ï¶ÁÈ¡¼üÅÌÊäÈë
+			// ä¸æ–­è¯»å–é”®ç›˜è¾“å…¥
 			while(scan.hasNextLine())
 			{
-				// ½«¼üÅÌÊäÈëµÄÒ»ĞĞ×Ö·û´®×ª»»×Ö½ÚÊı×é
+				// å°†é”®ç›˜è¾“å…¥çš„ä¸€è¡Œå­—ç¬¦ä¸²è½¬æ¢å­—èŠ‚æ•°ç»„
 				byte[] buff = scan.nextLine().getBytes();
-				// ÉèÖÃ·¢ËÍÓÃµÄDatagramPacketÀïµÄ×Ö½ÚÊı¾İ
+				// è®¾ç½®å‘é€ç”¨çš„DatagramPacketé‡Œçš„å­—èŠ‚æ•°æ®
 				outPacket.setData(buff);
-				// ·¢ËÍÊı¾İ±¨
+				// å‘é€æ•°æ®æŠ¥
 				socket.send(outPacket);
-				// ¶ÁÈ¡SocketÖĞµÄÊı¾İ£¬¶Áµ½µÄÊı¾İ·ÅÔÚinPacketËù·â×°µÄ×Ö½ÚÊı×éÀï¡£
+				// è¯»å–Socketä¸­çš„æ•°æ®ï¼Œè¯»åˆ°çš„æ•°æ®æ”¾åœ¨inPacketæ‰€å°è£…çš„å­—èŠ‚æ•°ç»„é‡Œã€‚
 				socket.receive(inPacket);
 				System.out.println(new String(inBuff , 0
 					, inPacket.getLength()));

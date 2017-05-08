@@ -6,8 +6,8 @@ import java.nio.channels.*;
 import java.nio.charset.*;
 
 /**
- * Description: ´Ó½ÚµãÁ÷´´½¨£¬Ö»ÄÜÓëBufferÖ±½Ó½»»¥¡£<br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description: ä»èŠ‚ç‚¹æµåˆ›å»ºï¼Œåªèƒ½ä¸Bufferç›´æ¥äº¤äº’ã€‚<br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -18,37 +18,37 @@ import java.nio.charset.*;
  */
 public class FileChannelTest {
 	public static void main(String[] args) {
-		File f = new File("µÚ15ÕÂÊäÈë_Êä³ö/chapter15_09_NIO/FileChannelTest.java");
+		File f = new File("ç¬¬15ç« è¾“å…¥_è¾“å‡º/chapter15_09_NIO/FileChannelTest.java");
 		try (
-				// ´´½¨FileInputStream£¬ÒÔ¸ÃÎÄ¼şÊäÈëÁ÷´´½¨FileChannel
-				FileChannel inChannel = new FileInputStream(f).getChannel(); //FileInputStream»ñÈ¡µÄFileChannelÖ»ÄÜ¶Á£¬FileOutputStreamÖ»ÄÜĞ´
+				// åˆ›å»ºFileInputStreamï¼Œä»¥è¯¥æ–‡ä»¶è¾“å…¥æµåˆ›å»ºFileChannel
+				FileChannel inChannel = new FileInputStream(f).getChannel(); //FileInputStreamè·å–çš„FileChannelåªèƒ½è¯»ï¼ŒFileOutputStreamåªèƒ½å†™
 
-				// ÒÔÎÄ¼şÊä³öÁ÷´´½¨FileBuffer£¬ÓÃÒÔ¿ØÖÆÊä³ö
+				// ä»¥æ–‡ä»¶è¾“å‡ºæµåˆ›å»ºFileBufferï¼Œç”¨ä»¥æ§åˆ¶è¾“å‡º
 				FileChannel outChannel = new FileOutputStream("D:/a.txt").getChannel()) {
 
-			// ½«FileChannelÀïµÄÈ«²¿Êı¾İÓ³Éä³ÉByteBuffer
-			MappedByteBuffer buffer = inChannel.map(FileChannel.MapMode.READ_ONLY, 0, f.length()); // ¢Ù
+			// å°†FileChannelé‡Œçš„å…¨éƒ¨æ•°æ®æ˜ å°„æˆByteBuffer
+			MappedByteBuffer buffer = inChannel.map(FileChannel.MapMode.READ_ONLY, 0, f.length()); // â‘ 
 
-			// Ö±½Ó½«bufferÀïµÄÊı¾İÈ«²¿Êä³ö
-			outChannel.write(buffer); // ¢Ú
+			// ç›´æ¥å°†bufferé‡Œçš„æ•°æ®å…¨éƒ¨è¾“å‡º
+			outChannel.write(buffer); // â‘¡
 
-			// ÔÙ´Îµ÷ÓÃbufferµÄclear()·½·¨£¬¸´Ô­limit¡¢positionµÄÎ»ÖÃ
+			// å†æ¬¡è°ƒç”¨bufferçš„clear()æ–¹æ³•ï¼Œå¤åŸlimitã€positionçš„ä½ç½®
 			buffer.clear();
 
 			
 			
 			
 			
-			// Ê¹ÓÃGBKµÄ×Ö·û¼¯À´´´½¨½âÂëÆ÷
+			// ä½¿ç”¨GBKçš„å­—ç¬¦é›†æ¥åˆ›å»ºè§£ç å™¨
 			Charset charset = Charset.forName("GBK");
 
-			// ´´½¨½âÂëÆ÷(CharsetDecoder)¶ÔÏó
+			// åˆ›å»ºè§£ç å™¨(CharsetDecoder)å¯¹è±¡
 			CharsetDecoder decoder = charset.newDecoder();
 
-			// Ê¹ÓÃ½âÂëÆ÷½«ByteBuffer×ª»»³ÉCharBuffer
+			// ä½¿ç”¨è§£ç å™¨å°†ByteBufferè½¬æ¢æˆCharBuffer
 			CharBuffer charBuffer = decoder.decode(buffer);
 
-			// CharBufferµÄtoString·½·¨¿ÉÒÔ»ñÈ¡¶ÔÓ¦µÄ×Ö·û´®
+			// CharBufferçš„toStringæ–¹æ³•å¯ä»¥è·å–å¯¹åº”çš„å­—ç¬¦ä¸²
 			System.out.println(charBuffer);
 			
 			

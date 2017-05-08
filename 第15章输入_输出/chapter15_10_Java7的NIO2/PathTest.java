@@ -1,12 +1,12 @@
-package chapter15_10_Java7µÄNIO2;
+package chapter15_10_Java7çš„NIO2;
 
 import java.io.*;
 import java.net.*;
 import java.nio.file.*;
 
 /**
- * Description: Paths ¹¤¾ßÀà£¬pathÓëÆ½Ì¨ÎŞ¹ØµÄÆ½Ì¨Â·¾¶¡£<br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description: Paths å·¥å…·ç±»ï¼Œpathä¸å¹³å°æ— å…³çš„å¹³å°è·¯å¾„ã€‚<br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -17,23 +17,23 @@ import java.nio.file.*;
  */
 public class PathTest {
 	public static void main(String[] args) throws Exception {
-		// ÒÔµ±Ç°Â·¾¶À´´´½¨Path¶ÔÏó
+		// ä»¥å½“å‰è·¯å¾„æ¥åˆ›å»ºPathå¯¹è±¡
 		Path path = Paths.get(".");
-		System.out.println("pathÀï°üº¬µÄÂ·¾¶ÊıÁ¿£º" + path.getNameCount());
-		System.out.println("pathµÄ¸ùÂ·¾¶£º" + path.getRoot());
+		System.out.println("pathé‡ŒåŒ…å«çš„è·¯å¾„æ•°é‡ï¼š" + path.getNameCount());
+		System.out.println("pathçš„æ ¹è·¯å¾„ï¼š" + path.getRoot());
 		
-		// »ñÈ¡path¶ÔÓ¦µÄ¾ø¶ÔÂ·¾¶¡£
+		// è·å–pathå¯¹åº”çš„ç»å¯¹è·¯å¾„ã€‚
 		Path absolutePath = path.toAbsolutePath();
 		System.out.println(absolutePath);
 		
-		// »ñÈ¡¾ø¶ÔÂ·¾¶µÄ¸ùÂ·¾¶
-		System.out.println("absolutePathµÄ¸ùÂ·¾¶£º" + absolutePath.getRoot());
+		// è·å–ç»å¯¹è·¯å¾„çš„æ ¹è·¯å¾„
+		System.out.println("absolutePathçš„æ ¹è·¯å¾„ï¼š" + absolutePath.getRoot());
 		
-		// »ñÈ¡¾ø¶ÔÂ·¾¶Ëù°üº¬µÄÂ·¾¶ÊıÁ¿
-		System.out.println("absolutePathÀï°üº¬µÄÂ·¾¶ÊıÁ¿£º" + absolutePath.getNameCount());
+		// è·å–ç»å¯¹è·¯å¾„æ‰€åŒ…å«çš„è·¯å¾„æ•°é‡
+		System.out.println("absolutePathé‡ŒåŒ…å«çš„è·¯å¾„æ•°é‡ï¼š" + absolutePath.getNameCount());
 		System.out.println(absolutePath.getName(3));
 		
-		// ÒÔ¶à¸öStringÀ´¹¹½¨Path¶ÔÏó
+		// ä»¥å¤šä¸ªStringæ¥æ„å»ºPathå¯¹è±¡
 		Path path2 = Paths.get("g:", "publish", "codes");
 		System.out.println(path2);
 	}

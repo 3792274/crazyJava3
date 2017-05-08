@@ -1,4 +1,4 @@
-package chapter13_06_Java7µÄRowSet;
+package chapter13_06_Java7çš„RowSet;
 
 
 import java.util.*;
@@ -8,7 +8,7 @@ import javax.sql.*;
 import javax.sql.rowset.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -24,7 +24,7 @@ public class CachedRowSetTest
 	private static String pass;
 	public void initParam(String paramFile)throws Exception
 	{
-		// Ê¹ÓÃPropertiesÀàÀ´¼ÓÔØÊôĞÔÎÄ¼ş
+		// ä½¿ç”¨Propertiesç±»æ¥åŠ è½½å±æ€§æ–‡ä»¶
 		Properties props = new Properties();
 		props.load(new FileInputStream(paramFile));
 		driver = props.getProperty("driver");
@@ -35,19 +35,19 @@ public class CachedRowSetTest
 
 	public CachedRowSet query(String sql)throws Exception
 	{
-		// ¼ÓÔØÇı¶¯
+		// åŠ è½½é©±åŠ¨
 		Class.forName(driver);
-		// »ñÈ¡Êı¾İ¿âÁ¬½Ó
+		// è·å–æ•°æ®åº“è¿æ¥
 		Connection conn = DriverManager.getConnection(url , user , pass);
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery(sql);
-		// Ê¹ÓÃRowSetProvider´´½¨RowSetFactory
+		// ä½¿ç”¨RowSetProvideråˆ›å»ºRowSetFactory
 		RowSetFactory factory = RowSetProvider.newFactory();
-		// ´´½¨Ä¬ÈÏµÄCachedRowSetÊµÀı
+		// åˆ›å»ºé»˜è®¤çš„CachedRowSetå®ä¾‹
 		CachedRowSet cachedRs = factory.createCachedRowSet();
-		// Ê¹ÓÃResultSet×°ÌîRowSet
-		cachedRs.populate(rs);    // ¢Ù
-		// ¹Ø±Õ×ÊÔ´
+		// ä½¿ç”¨ResultSetè£…å¡«RowSet
+		cachedRs.populate(rs);    // â‘ 
+		// å…³é—­èµ„æº
 		rs.close();
 		stmt.close();
 		conn.close();
@@ -56,10 +56,10 @@ public class CachedRowSetTest
 	public static void main(String[] args)throws Exception
 	{
 		CachedRowSetTest ct = new CachedRowSetTest();
-		ct.initParam("resource\\chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½\\mysql.ini");
+		ct.initParam("resource\\chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼\\mysql.ini");
 		CachedRowSet rs = ct.query("select * from student_table");
 		rs.afterLast();
-		// ÏòÇ°¹ö¶¯½á¹û¼¯
+		// å‘å‰æ»šåŠ¨ç»“æœé›†
 		while (rs.previous())
 		{
 			System.out.println(rs.getString(1)
@@ -67,16 +67,16 @@ public class CachedRowSetTest
 				+ "\t" + rs.getString(3));
 			if (rs.getInt("student_id") == 3)
 			{
-				// ĞŞ¸ÄÖ¸¶¨¼ÇÂ¼ĞĞ
-				rs.updateString("student_name", "ËïÎò¿Õ");
+				// ä¿®æ”¹æŒ‡å®šè®°å½•è¡Œ
+				rs.updateString("student_name", "å­™æ‚Ÿç©º");
 				rs.updateRow();
 			}
 		}
-		// ÖØĞÂ»ñÈ¡Êı¾İ¿âÁ¬½Ó
+		// é‡æ–°è·å–æ•°æ®åº“è¿æ¥
 		Connection conn = DriverManager.getConnection(url
 			, user , pass);
 		conn.setAutoCommit(false);
-		// °Ñ¶ÔRowSetËù×öµÄĞŞ¸ÄÍ¬²½µ½µ×²ãÊı¾İ¿â
+		// æŠŠå¯¹RowSetæ‰€åšçš„ä¿®æ”¹åŒæ­¥åˆ°åº•å±‚æ•°æ®åº“
 		rs.acceptChanges(conn);
 	}
 }

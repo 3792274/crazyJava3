@@ -1,10 +1,10 @@
-package chapter18_02_Àà¼ÓÔØÆ÷;
+package chapter18_02_ç±»åŠ è½½å™¨;
 
 import java.io.*;
 import java.lang.reflect.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,7 +14,7 @@ import java.lang.reflect.*;
  */
 public class CompileClassLoader extends ClassLoader
 {
-	// ¶ÁÈ¡Ò»¸öÎÄ¼şµÄÄÚÈİ
+	// è¯»å–ä¸€ä¸ªæ–‡ä»¶çš„å†…å®¹
 	private byte[] getBytes(String filename)
 		throws IOException
 	{
@@ -24,55 +24,55 @@ public class CompileClassLoader extends ClassLoader
 		try(
 			FileInputStream fin = new FileInputStream(file))
 		{
-			// Ò»´Î¶ÁÈ¡classÎÄ¼şµÄÈ«²¿¶ş½øÖÆÊı¾İ
+			// ä¸€æ¬¡è¯»å–classæ–‡ä»¶çš„å…¨éƒ¨äºŒè¿›åˆ¶æ•°æ®
 			int r = fin.read(raw);
 			if(r != len)
-			throw new IOException("ÎŞ·¨¶ÁÈ¡È«²¿ÎÄ¼ş£º"
+			throw new IOException("æ— æ³•è¯»å–å…¨éƒ¨æ–‡ä»¶ï¼š"
 				+ r + " != " + len);
 			return raw;
 		}
 	}
-	// ¶¨Òå±àÒëÖ¸¶¨JavaÎÄ¼şµÄ·½·¨
+	// å®šä¹‰ç¼–è¯‘æŒ‡å®šJavaæ–‡ä»¶çš„æ–¹æ³•
 	private boolean compile(String javaFile)
 		throws IOException
 	{
-		System.out.println("CompileClassLoader:ÕıÔÚ±àÒë "
+		System.out.println("CompileClassLoader:æ­£åœ¨ç¼–è¯‘ "
 			+ javaFile + "...");
-		// µ÷ÓÃÏµÍ³µÄjavacÃüÁî
+		// è°ƒç”¨ç³»ç»Ÿçš„javacå‘½ä»¤
 		Process p = Runtime.getRuntime().exec("javac " + javaFile);
 		try
 		{
-			// ÆäËûÏß³Ì¶¼µÈ´ıÕâ¸öÏß³ÌÍê³É
+			// å…¶ä»–çº¿ç¨‹éƒ½ç­‰å¾…è¿™ä¸ªçº¿ç¨‹å®Œæˆ
 			p.waitFor();
 		}
 		catch(InterruptedException ie)
 		{
 			System.out.println(ie);
 		}
-		// »ñÈ¡javacÏß³ÌµÄÍË³öÖµ
+		// è·å–javacçº¿ç¨‹çš„é€€å‡ºå€¼
 		int ret = p.exitValue();
-		// ·µ»Ø±àÒëÊÇ·ñ³É¹¦
+		// è¿”å›ç¼–è¯‘æ˜¯å¦æˆåŠŸ
 		return ret == 0;
 	}
-	// ÖØĞ´ClassLoaderµÄfindClass·½·¨
+	// é‡å†™ClassLoaderçš„findClassæ–¹æ³•
 	protected Class<?> findClass(String name)
 		throws ClassNotFoundException
 	{
 		Class clazz = null;
-		// ½«°üÂ·¾¶ÖĞµÄµã£¨.£©Ìæ»»³ÉĞ±Ïß£¨/£©¡£
+		// å°†åŒ…è·¯å¾„ä¸­çš„ç‚¹ï¼ˆ.ï¼‰æ›¿æ¢æˆæ–œçº¿ï¼ˆ/ï¼‰ã€‚
 		String fileStub = name.replace("." , "/");
 		String javaFilename = fileStub + ".java";
 		String classFilename = fileStub + ".class";
 		File javaFile = new File(javaFilename);
 		File classFile = new File(classFilename);
-		// µ±Ö¸¶¨JavaÔ´ÎÄ¼ş´æÔÚ£¬ÇÒclassÎÄ¼ş²»´æÔÚ¡¢»òÕßJavaÔ´ÎÄ¼ş
-		// µÄĞŞ¸ÄÊ±¼ä±ÈclassÎÄ¼şĞŞ¸ÄÊ±¼ä¸üÍí£¬ÖØĞÂ±àÒë
+		// å½“æŒ‡å®šJavaæºæ–‡ä»¶å­˜åœ¨ï¼Œä¸”classæ–‡ä»¶ä¸å­˜åœ¨ã€æˆ–è€…Javaæºæ–‡ä»¶
+		// çš„ä¿®æ”¹æ—¶é—´æ¯”classæ–‡ä»¶ä¿®æ”¹æ—¶é—´æ›´æ™šï¼Œé‡æ–°ç¼–è¯‘
 		if(javaFile.exists() && (!classFile.exists()
 			|| javaFile.lastModified() > classFile.lastModified()))
 		{
 			try
 			{
-				// Èç¹û±àÒëÊ§°Ü£¬»òÕß¸ÃClassÎÄ¼ş²»´æÔÚ
+				// å¦‚æœç¼–è¯‘å¤±è´¥ï¼Œæˆ–è€…è¯¥Classæ–‡ä»¶ä¸å­˜åœ¨
 				if(!compile(javaFilename) || !classFile.exists())
 				{
 					throw new ClassNotFoundException(
@@ -84,14 +84,14 @@ public class CompileClassLoader extends ClassLoader
 				ex.printStackTrace();
 			}
 		}
-		// Èç¹ûclassÎÄ¼ş´æÔÚ£¬ÏµÍ³¸ºÔğ½«¸ÃÎÄ¼ş×ª»»³ÉClass¶ÔÏó
+		// å¦‚æœclassæ–‡ä»¶å­˜åœ¨ï¼Œç³»ç»Ÿè´Ÿè´£å°†è¯¥æ–‡ä»¶è½¬æ¢æˆClasså¯¹è±¡
 		if (classFile.exists())
 		{
 			try
 			{
-				// ½«classÎÄ¼şµÄ¶ş½øÖÆÊı¾İ¶ÁÈëÊı×é
+				// å°†classæ–‡ä»¶çš„äºŒè¿›åˆ¶æ•°æ®è¯»å…¥æ•°ç»„
 				byte[] raw = getBytes(classFilename);
-				// µ÷ÓÃClassLoaderµÄdefineClass·½·¨½«¶ş½øÖÆÊı¾İ×ª»»³ÉClass¶ÔÏó
+				// è°ƒç”¨ClassLoaderçš„defineClassæ–¹æ³•å°†äºŒè¿›åˆ¶æ•°æ®è½¬æ¢æˆClasså¯¹è±¡
 				clazz = defineClass(name,raw,0,raw.length);
 			}
 			catch(IOException ie)
@@ -99,33 +99,33 @@ public class CompileClassLoader extends ClassLoader
 				ie.printStackTrace();
 			}
 		}
-		// Èç¹ûclazzÎªnull£¬±íÃ÷¼ÓÔØÊ§°Ü£¬ÔòÅ×³öÒì³£
+		// å¦‚æœclazzä¸ºnullï¼Œè¡¨æ˜åŠ è½½å¤±è´¥ï¼Œåˆ™æŠ›å‡ºå¼‚å¸¸
 		if(clazz == null)
 		{
 			throw new ClassNotFoundException(name);
 		}
 		return clazz;
 	}
-	// ¶¨ÒåÒ»¸öÖ÷·½·¨
+	// å®šä¹‰ä¸€ä¸ªä¸»æ–¹æ³•
 	public static void main(String[] args) throws Exception
 	{
-		// Èç¹ûÔËĞĞ¸Ã³ÌĞòÊ±Ã»ÓĞ²ÎÊı£¬¼´Ã»ÓĞÄ¿±êÀà
+		// å¦‚æœè¿è¡Œè¯¥ç¨‹åºæ—¶æ²¡æœ‰å‚æ•°ï¼Œå³æ²¡æœ‰ç›®æ ‡ç±»
 		if (args.length < 1)
 		{
-			System.out.println("È±ÉÙÄ¿±êÀà£¬Çë°´ÈçÏÂ¸ñÊ½ÔËĞĞJavaÔ´ÎÄ¼ş£º");
+			System.out.println("ç¼ºå°‘ç›®æ ‡ç±»ï¼Œè¯·æŒ‰å¦‚ä¸‹æ ¼å¼è¿è¡ŒJavaæºæ–‡ä»¶ï¼š");
 			System.out.println("java CompileClassLoader ClassName");
 		}
-		// µÚÒ»¸ö²ÎÊıÊÇĞèÒªÔËĞĞµÄÀà
+		// ç¬¬ä¸€ä¸ªå‚æ•°æ˜¯éœ€è¦è¿è¡Œçš„ç±»
 		String progClass = args[0];
-		// Ê£ÏÂµÄ²ÎÊı½«×÷ÎªÔËĞĞÄ¿±êÀàÊ±µÄ²ÎÊı£¬
-		// ½«ÕâĞ©²ÎÊı¸´ÖÆµ½Ò»¸öĞÂÊı×éÖĞ
+		// å‰©ä¸‹çš„å‚æ•°å°†ä½œä¸ºè¿è¡Œç›®æ ‡ç±»æ—¶çš„å‚æ•°ï¼Œ
+		// å°†è¿™äº›å‚æ•°å¤åˆ¶åˆ°ä¸€ä¸ªæ–°æ•°ç»„ä¸­
 		String[] progArgs = new String[args.length-1];
 		System.arraycopy(args , 1 , progArgs
 			, 0 , progArgs.length);
 		CompileClassLoader ccl = new CompileClassLoader();
-		// ¼ÓÔØĞèÒªÔËĞĞµÄÀà
+		// åŠ è½½éœ€è¦è¿è¡Œçš„ç±»
 		Class<?> clazz = ccl.loadClass(progClass);
-		// »ñÈ¡ĞèÒªÔËĞĞµÄÀàµÄÖ÷·½·¨
+		// è·å–éœ€è¦è¿è¡Œçš„ç±»çš„ä¸»æ–¹æ³•
 		Method main = clazz.getMethod("main" , (new String[0]).getClass());
 		Object[] argsArray = {progArgs};
 		main.invoke(null,argsArray);

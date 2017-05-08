@@ -1,8 +1,8 @@
-package chapter06_09_Ã¶¾ÙÀà;
+package chapter06_09_æšä¸¾ç±»;
 
 /**
- * Description:ÔçÆÚ×Ô¶¨ÒåµÄÃ¶¾ÙÀà¡£ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:æ—©æœŸè‡ªå®šä¹‰çš„æšä¸¾ç±»ã€‚ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,14 +13,14 @@ package chapter06_09_Ã¶¾ÙÀà;
  */
 public class Season01 {
 	
-	// °ÑSeasonÀà¶¨Òå³É²»¿É±äµÄ£¬½«Æä³ÉÔ±±äÁ¿Ò²¶¨Òå³ÉfinalµÄ
+	// æŠŠSeasonç±»å®šä¹‰æˆä¸å¯å˜çš„ï¼Œå°†å…¶æˆå‘˜å˜é‡ä¹Ÿå®šä¹‰æˆfinalçš„
 	private final String name;
 	private final String desc;
 	
-	public static final Season01 SPRING = new Season01("´ºÌì", "³Ã´ºÌ¤Çà");
-	public static final Season01 SUMMER = new Season01("ÏÄÌì", "ÏÄÈÕÑ×Ñ×");
-	public static final Season01 FALL = new Season01("ÇïÌì", "Çï¸ßÆøË¬");
-	public static final Season01 WINTER = new Season01("¶¬Ìì", "Î§Â¯ÉÍÑ©");
+	public static final Season01 SPRING = new Season01("æ˜¥å¤©", "è¶æ˜¥è¸é’");
+	public static final Season01 SUMMER = new Season01("å¤å¤©", "å¤æ—¥ç‚ç‚");
+	public static final Season01 FALL = new Season01("ç§‹å¤©", "ç§‹é«˜æ°”çˆ½");
+	public static final Season01 WINTER = new Season01("å†¬å¤©", "å›´ç‚‰èµé›ª");
 
 	public static Season01 getSeason(int seasonNum) {
 		switch (seasonNum) {
@@ -37,13 +37,13 @@ public class Season01 {
 		}
 	}
 
-	// ½«¹¹ÔìÆ÷¶¨Òå³Éprivate·ÃÎÊÈ¨ÏŞ
+	// å°†æ„é€ å™¨å®šä¹‰æˆprivateè®¿é—®æƒé™
 	private Season01(String name, String desc) {
 		this.name = name;
 		this.desc = desc;
 	}
 
-	// Ö»ÎªnameºÍdescÌá¹©getter·½·¨
+	// åªä¸ºnameå’Œdescæä¾›getteræ–¹æ³•
 	public String getName() {
 		return this.name;
 	}

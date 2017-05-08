@@ -1,9 +1,9 @@
-package chapter08_08_²Ù×÷¼¯ºÏµÄ¹¤¾ßÀàCollections;
+package chapter08_08_æ“ä½œé›†åˆçš„å·¥å…·ç±»Collections;
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,10 +14,10 @@ package chapter08_08_²Ù×÷¼¯ºÏµÄ¹¤¾ßÀàCollections;
 public class ArrayUtils
 {
 	/**
-	 * ¶¨ÒåÒ»¸ö¹¤¾ß·½·¨£¬¹¤¾ß·½·¨´Ó×Ö·û´®Êı×éÖĞÕÒµ½¶ÔÓ¦µÄ×Ö·û´®ÔªËØµÄÎ»ÖÃ
-	 * @param array ËÑË÷µÄÊı×é
-	 * @param target ËÑË÷µÄ×Ö·û´®
-	 * @return Ä¿±ê×Ö·û´®³öÏÖµÄÎ»ÖÃ,-1±íÃ÷ÕÒ²»µ½
+	 * å®šä¹‰ä¸€ä¸ªå·¥å…·æ–¹æ³•ï¼Œå·¥å…·æ–¹æ³•ä»å­—ç¬¦ä¸²æ•°ç»„ä¸­æ‰¾åˆ°å¯¹åº”çš„å­—ç¬¦ä¸²å…ƒç´ çš„ä½ç½®
+	 * @param array æœç´¢çš„æ•°ç»„
+	 * @param target æœç´¢çš„å­—ç¬¦ä¸²
+	 * @return ç›®æ ‡å­—ç¬¦ä¸²å‡ºç°çš„ä½ç½®,-1è¡¨æ˜æ‰¾ä¸åˆ°
 	 */
 	public static int search(String[] array, String target)
 	{

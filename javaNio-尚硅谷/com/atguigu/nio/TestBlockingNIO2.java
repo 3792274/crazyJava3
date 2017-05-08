@@ -13,7 +13,7 @@ import org.junit.Test;
 
 public class TestBlockingNIO2 {
 	
-	//¿Í»§¶Ë
+	//å®¢æˆ·ç«¯
 	@Test
 	public void client() throws IOException{
 		SocketChannel sChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 9898));
@@ -30,7 +30,7 @@ public class TestBlockingNIO2 {
 		
 		sChannel.shutdownOutput();
 		
-		//½ÓÊÕ·şÎñ¶ËµÄ·´À¡
+		//æ¥æ”¶æœåŠ¡ç«¯çš„åé¦ˆ
 		int len = 0;
 		while((len = sChannel.read(buf)) != -1){
 			buf.flip();
@@ -42,7 +42,7 @@ public class TestBlockingNIO2 {
 		sChannel.close();
 	}
 	
-	//·şÎñ¶Ë
+	//æœåŠ¡ç«¯
 	@Test
 	public void server() throws IOException{
 		ServerSocketChannel ssChannel = ServerSocketChannel.open();
@@ -61,8 +61,8 @@ public class TestBlockingNIO2 {
 			buf.clear();
 		}
 		
-		//·¢ËÍ·´À¡¸ø¿Í»§¶Ë
-		buf.put("·şÎñ¶Ë½ÓÊÕÊı¾İ³É¹¦".getBytes());
+		//å‘é€åé¦ˆç»™å®¢æˆ·ç«¯
+		buf.put("æœåŠ¡ç«¯æ¥æ”¶æ•°æ®æˆåŠŸ".getBytes());
 		buf.flip();
 		sChannel.write(buf);
 		

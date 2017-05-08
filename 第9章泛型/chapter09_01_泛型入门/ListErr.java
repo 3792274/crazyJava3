@@ -1,10 +1,10 @@
-package chapter09_01_·ºĞÍÈëÃÅ;
+package chapter09_01_æ³›å‹å…¥é—¨;
 
 
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,12 +16,12 @@ public class ListErr
 {
 	public static void main(String[] args)
 	{
-		// ´´½¨Ò»¸öÖ»Ïë±£´æ×Ö·û´®µÄList¼¯ºÏ
+		// åˆ›å»ºä¸€ä¸ªåªæƒ³ä¿å­˜å­—ç¬¦ä¸²çš„Listé›†åˆ
 		List strList = new ArrayList();
-		strList.add("·è¿ñJava½²Òå");
-		strList.add("·è¿ñAndroid½²Òå");
-		// "²»Ğ¡ĞÄ"°ÑÒ»¸öInteger¶ÔÏó"¶ª½ø"ÁË¼¯ºÏ
-		strList.add(5);     // ¢Ù
-		strList.forEach(str -> System.out.println(((String)str).length())); // ¢Ú
+		strList.add("ç–¯ç‹‚Javaè®²ä¹‰");
+		strList.add("ç–¯ç‹‚Androidè®²ä¹‰");
+		// "ä¸å°å¿ƒ"æŠŠä¸€ä¸ªIntegerå¯¹è±¡"ä¸¢è¿›"äº†é›†åˆ
+		strList.add(5);     // â‘ 
+		strList.forEach(str -> System.out.println(((String)str).length())); // â‘¡
 	}
 }

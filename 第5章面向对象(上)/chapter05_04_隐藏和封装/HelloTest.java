@@ -1,9 +1,9 @@
-package chapter05_04_Òş²ØºÍ·â×°;
+package chapter05_04_éšè—å’Œå°è£…;
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,9 +17,9 @@ public class HelloTest
 	public static void main(String[] args)
 	{
 		Hello h = new Hello();
-		// Ê¹ÓÃÀàÈ«ÃûµÄĞ´·¨
+		// ä½¿ç”¨ç±»å…¨åçš„å†™æ³•
 		 Apple a = new  Apple();
-		// Èç¹ûÊ¹ÓÃimportÓï¾äÀ´µ¼ÈëAppleÀàºó£¬¾Í¿ÉÒÔ²»ÔÙÊ¹ÓÃÀàÈ«Ãû
+		// å¦‚æœä½¿ç”¨importè¯­å¥æ¥å¯¼å…¥Appleç±»åï¼Œå°±å¯ä»¥ä¸å†ä½¿ç”¨ç±»å…¨å
 		Apple aa = new Apple();
 	}
 }

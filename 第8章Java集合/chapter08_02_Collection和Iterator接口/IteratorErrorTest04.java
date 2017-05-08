@@ -1,4 +1,4 @@
-package chapter08_02_CollectionºÍIterator½Ó¿Ú;
+package chapter08_02_Collectionå’ŒIteratoræ¥å£;
 
 import java.util.*;
 
@@ -7,19 +7,19 @@ import java.util.*;
  */
 public class IteratorErrorTest04 {
 	public static void main(String[] args) {
-		// ´´½¨¼¯ºÏ¡¢Ìí¼ÓÔªËØµÄ´úÂëÓëÇ°Ò»¸ö³ÌĞòÏàÍ¬
+		// åˆ›å»ºé›†åˆã€æ·»åŠ å…ƒç´ çš„ä»£ç ä¸å‰ä¸€ä¸ªç¨‹åºç›¸åŒ
 		Collection books = new HashSet();
-		books.add("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
-		books.add("·è¿ñJava½²Òå");
-		books.add("·è¿ñAndroid½²Òå");
-		// »ñÈ¡books¼¯ºÏ¶ÔÓ¦µÄµü´úÆ÷
+		books.add("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
+		books.add("ç–¯ç‹‚Javaè®²ä¹‰");
+		books.add("ç–¯ç‹‚Androidè®²ä¹‰");
+		// è·å–booksé›†åˆå¯¹åº”çš„è¿­ä»£å™¨
 		Iterator it = books.iterator();
 		while (it.hasNext()) {
 			String book = (String) it.next();
 			System.out.println(book);
-			if (book.equals("·è¿ñAndroid½²Òå")) {
-				// Ê¹ÓÃIteratorµü´ú¹ı³ÌÖĞ£¬²»¿ÉĞŞ¸Ä¼¯ºÏÔªËØ,ÏÂÃæ´úÂëÒı·¢Òì³££¬
-				//Èç¹ûÉÏÃæÉ¾³ıµÄÊÇ ·è¿ñJava½²Òå£¬Ôò²»»á·¢ÉúÒì³££¬ÕâÊÇÓÉÓÚHashSet/ArrayListÄÚ²¿´úÂëÊµÏÖµÄ£¬É¾³ıÌØ¶¨ÔªËØ²ÅÓĞÒì³£¡£
+			if (book.equals("ç–¯ç‹‚Androidè®²ä¹‰")) {
+				// ä½¿ç”¨Iteratorè¿­ä»£è¿‡ç¨‹ä¸­ï¼Œä¸å¯ä¿®æ”¹é›†åˆå…ƒç´ ,ä¸‹é¢ä»£ç å¼•å‘å¼‚å¸¸ï¼Œ
+				//å¦‚æœä¸Šé¢åˆ é™¤çš„æ˜¯ ç–¯ç‹‚Javaè®²ä¹‰ï¼Œåˆ™ä¸ä¼šå‘ç”Ÿå¼‚å¸¸ï¼Œè¿™æ˜¯ç”±äºHashSet/ArrayListå†…éƒ¨ä»£ç å®ç°çš„ï¼Œåˆ é™¤ç‰¹å®šå…ƒç´ æ‰æœ‰å¼‚å¸¸ã€‚
 				books.remove(book);
 			}
 		}

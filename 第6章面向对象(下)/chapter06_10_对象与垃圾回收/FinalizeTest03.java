@@ -1,8 +1,8 @@
-package chapter06_10_¶ÔÏóÓëÀ¬»ø»ØÊÕ;
+package chapter06_10_å¯¹è±¡ä¸åƒåœ¾å›æ”¶;
 
 /**
- * Description:ÑİÊ¾finalizeÈçºÎµÄ²»È·¶¨ĞĞ£¬¼°ÈçºÎÔÚ¸Ã·½·¨ÖĞ¸´»î×ÔÉí <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:æ¼”ç¤ºfinalizeå¦‚ä½•çš„ä¸ç¡®å®šè¡Œï¼ŒåŠå¦‚ä½•åœ¨è¯¥æ–¹æ³•ä¸­å¤æ´»è‡ªèº« <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,26 +16,26 @@ public class FinalizeTest03 {
 	private static FinalizeTest03 ft = null;
 
 	public void info() {
-		System.out.println("²âÊÔ×ÊÔ´ÇåÀíµÄfinalize  info ·½·¨");
+		System.out.println("æµ‹è¯•èµ„æºæ¸…ç†çš„finalize  info æ–¹æ³•");
 	}
 
 	public static void main(String[] args) throws Exception {
 		
-		// ´´½¨FinalizeTest¶ÔÏóÁ¢¼´½øÈë¿É»Ö¸´×´Ì¬
+		// åˆ›å»ºFinalizeTestå¯¹è±¡ç«‹å³è¿›å…¥å¯æ¢å¤çŠ¶æ€
 		new FinalizeTest03();
 		
-		// Í¨ÖªÏµÍ³½øĞĞ×ÊÔ´»ØÊÕ
-		// System.gc(); //¢Ù Èç¹û×¢ÊÍ±¾ĞĞ£¬ËäÈ»Ç¿ÖÆ»ØÊÕµ«Ã»ÓĞÍ¨Öª£¬Ò²ÎŞ·¨»ØÊÕ£¬Òª»ØÊÕ1.Í¨Öª£¬2Ç¿ÖÆ£¬²ÅÄÜÖ´ĞĞÄ¿±ê¶ÔÏóµÄfinalize·½·¨
+		// é€šçŸ¥ç³»ç»Ÿè¿›è¡Œèµ„æºå›æ”¶
+		// System.gc(); //â‘  å¦‚æœæ³¨é‡Šæœ¬è¡Œï¼Œè™½ç„¶å¼ºåˆ¶å›æ”¶ä½†æ²¡æœ‰é€šçŸ¥ï¼Œä¹Ÿæ— æ³•å›æ”¶ï¼Œè¦å›æ”¶1.é€šçŸ¥ï¼Œ2å¼ºåˆ¶ï¼Œæ‰èƒ½æ‰§è¡Œç›®æ ‡å¯¹è±¡çš„finalizeæ–¹æ³•
 		
-		// Ç¿ÖÆÀ¬»ø»ØÊÕ»úÖÆµ÷ÓÃ¿É»Ö¸´¶ÔÏóµÄfinalize()·½·¨
-		// Runtime.getRuntime().runFinalization(); //¢Ú
-		System.runFinalization(); // ¢Û
+		// å¼ºåˆ¶åƒåœ¾å›æ”¶æœºåˆ¶è°ƒç”¨å¯æ¢å¤å¯¹è±¡çš„finalize()æ–¹æ³•
+		// Runtime.getRuntime().runFinalization(); //â‘¡
+		System.runFinalization(); // â‘¢
 		
 		ft.info();
 	}
 
 	public void finalize() {
-		// ÈÃtfÒıÓÃµ½ÊÔÍ¼»ØÊÕµÄ¿É»Ö¸´¶ÔÏó£¬¼´¿É»Ö¸´¶ÔÏóÖØĞÂ±ä³É¿É´ï
+		// è®©tfå¼•ç”¨åˆ°è¯•å›¾å›æ”¶çš„å¯æ¢å¤å¯¹è±¡ï¼Œå³å¯æ¢å¤å¯¹è±¡é‡æ–°å˜æˆå¯è¾¾
 		ft = this;
 	}
 }

@@ -1,10 +1,10 @@
-package chapter05_07_¶àÌ¬;
+package chapter05_07_å¤šæ€;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,52 +17,52 @@ class BaseClass
 	public int book = 6;
 	public void base()
 	{
-		System.out.println("¸¸ÀàµÄÆÕÍ¨·½·¨");
+		System.out.println("çˆ¶ç±»çš„æ™®é€šæ–¹æ³•");
 	}
 	public void test()
 	{
-		System.out.println("¸¸ÀàµÄ±»¸²¸ÇµÄ·½·¨");
+		System.out.println("çˆ¶ç±»çš„è¢«è¦†ç›–çš„æ–¹æ³•");
 	}
 }
 public class SubClass extends BaseClass
 {
-	//ÖØĞÂ¶¨ÒåÒ»¸öbookÊµÀı±äÁ¿Òş²Ø¸¸ÀàµÄbookÊµÀı±äÁ¿
-	public String book = "ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½";
+	//é‡æ–°å®šä¹‰ä¸€ä¸ªbookå®ä¾‹å˜é‡éšè—çˆ¶ç±»çš„bookå®ä¾‹å˜é‡
+	public String book = "è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜";
 	public void test()
 	{
-		System.out.println("×ÓÀàµÄ¸²¸Ç¸¸ÀàµÄ·½·¨");
+		System.out.println("å­ç±»çš„è¦†ç›–çˆ¶ç±»çš„æ–¹æ³•");
 	}
 	public void sub()
 	{
-		System.out.println("×ÓÀàµÄÆÕÍ¨·½·¨");
+		System.out.println("å­ç±»çš„æ™®é€šæ–¹æ³•");
 	}
 	public static void main(String[] args)
 	{
-		// ÏÂÃæ±àÒëÊ±ÀàĞÍºÍÔËĞĞÊ±ÀàĞÍÍêÈ«Ò»Ñù£¬Òò´Ë²»´æÔÚ¶àÌ¬
+		// ä¸‹é¢ç¼–è¯‘æ—¶ç±»å‹å’Œè¿è¡Œæ—¶ç±»å‹å®Œå…¨ä¸€æ ·ï¼Œå› æ­¤ä¸å­˜åœ¨å¤šæ€
 		BaseClass bc = new BaseClass();
-		// Êä³ö 6
+		// è¾“å‡º 6
 		System.out.println(bc.book);
-		// ÏÂÃæÁ½´Îµ÷ÓÃ½«Ö´ĞĞBaseClassµÄ·½·¨
+		// ä¸‹é¢ä¸¤æ¬¡è°ƒç”¨å°†æ‰§è¡ŒBaseClassçš„æ–¹æ³•
 		bc.base();
 		bc.test();
-		// ÏÂÃæ±àÒëÊ±ÀàĞÍºÍÔËĞĞÊ±ÀàĞÍÍêÈ«Ò»Ñù£¬Òò´Ë²»´æÔÚ¶àÌ¬
+		// ä¸‹é¢ç¼–è¯‘æ—¶ç±»å‹å’Œè¿è¡Œæ—¶ç±»å‹å®Œå…¨ä¸€æ ·ï¼Œå› æ­¤ä¸å­˜åœ¨å¤šæ€
 		SubClass sc = new SubClass();
-		// Êä³ö"ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½"
+		// è¾“å‡º"è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜"
 		System.out.println(sc.book);
-		// ÏÂÃæµ÷ÓÃ½«Ö´ĞĞ´Ó¸¸Àà¼Ì³Ğµ½µÄbase()·½·¨
+		// ä¸‹é¢è°ƒç”¨å°†æ‰§è¡Œä»çˆ¶ç±»ç»§æ‰¿åˆ°çš„base()æ–¹æ³•
 		sc.base();
-		// ÏÂÃæµ÷ÓÃ½«Ö´ĞĞ´Óµ±Ç°ÀàµÄtest()·½·¨
+		// ä¸‹é¢è°ƒç”¨å°†æ‰§è¡Œä»å½“å‰ç±»çš„test()æ–¹æ³•
 		sc.test();
-		// ÏÂÃæ±àÒëÊ±ÀàĞÍºÍÔËĞĞÊ±ÀàĞÍ²»Ò»Ñù£¬¶àÌ¬·¢Éú
+		// ä¸‹é¢ç¼–è¯‘æ—¶ç±»å‹å’Œè¿è¡Œæ—¶ç±»å‹ä¸ä¸€æ ·ï¼Œå¤šæ€å‘ç”Ÿ
 		BaseClass ploymophicBc = new SubClass();
-		// Êä³ö6 ¡ª¡ª ±íÃ÷·ÃÎÊµÄÊÇ¸¸Àà¶ÔÏóµÄÊµÀı±äÁ¿
+		// è¾“å‡º6 â€”â€” è¡¨æ˜è®¿é—®çš„æ˜¯çˆ¶ç±»å¯¹è±¡çš„å®ä¾‹å˜é‡
 		System.out.println(ploymophicBc.book);
-		// ÏÂÃæµ÷ÓÃ½«Ö´ĞĞ´Ó¸¸Àà¼Ì³Ğµ½µÄbase()·½·¨
+		// ä¸‹é¢è°ƒç”¨å°†æ‰§è¡Œä»çˆ¶ç±»ç»§æ‰¿åˆ°çš„base()æ–¹æ³•
 		ploymophicBc.base();
-		// ÏÂÃæµ÷ÓÃ½«Ö´ĞĞ´Óµ±Ç°ÀàµÄtest()·½·¨
+		// ä¸‹é¢è°ƒç”¨å°†æ‰§è¡Œä»å½“å‰ç±»çš„test()æ–¹æ³•
 		ploymophicBc.test();
-		// ÒòÎªploymophicBcµÄ±àÒëÀàĞÍÊÇBaseClass£¬
-		// BaseClassÀàÃ»ÓĞÌá¹©sub·½·¨,ËùÒÔÏÂÃæ´úÂë±àÒëÊ±»á³öÏÖ´íÎó¡£
+		// å› ä¸ºploymophicBcçš„ç¼–è¯‘ç±»å‹æ˜¯BaseClassï¼Œ
+		// BaseClassç±»æ²¡æœ‰æä¾›subæ–¹æ³•,æ‰€ä»¥ä¸‹é¢ä»£ç ç¼–è¯‘æ—¶ä¼šå‡ºç°é”™è¯¯ã€‚
 		// ploymophicBc.sub();
 	}
 }

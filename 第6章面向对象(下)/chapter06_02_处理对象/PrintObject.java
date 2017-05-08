@@ -1,8 +1,8 @@
-package chapter06_02_´¦Àí¶ÔÏó;
+package chapter06_02_å¤„ç†å¯¹è±¡;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -21,9 +21,9 @@ class PersonX {
 
 public class PrintObject {
 	public static void main(String[] args) {
-		// ´´½¨Ò»¸öPerson¶ÔÏó£¬½«Ö®¸³¸øp±äÁ¿
-		PersonX p = new PersonX("ËïÎò¿Õ");
-		// ´òÓ¡pËùÒıÓÃµÄPerson¶ÔÏó
+		// åˆ›å»ºä¸€ä¸ªPersonå¯¹è±¡ï¼Œå°†ä¹‹èµ‹ç»™på˜é‡
+		PersonX p = new PersonX("å­™æ‚Ÿç©º");
+		// æ‰“å°pæ‰€å¼•ç”¨çš„Personå¯¹è±¡
 		System.out.println(p);
 	}
 }

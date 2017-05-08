@@ -1,13 +1,13 @@
-package chapter08_03_Set¼¯ºÏ;
+package chapter08_03_Seté›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * ¶¨ÖÆÅÅĞò
- * 1.Í¨¹ıComparator½Ó¿Ú£¬int compare(T o1,To2)
- * 2.Ìá¹©Ò»¸öComparator¶ÔÏóÓë¸ÃTreeSet¼¯ºÏ¹ØÁª£¬ÓÉ¸ÃComparator¶ÔÏó¸ºÔğ¼¯ºÏÔªËØµÄÅÅĞòÂß¼­
- *    ÓÉÓÚComparatorÊÇÒ»¸öº¯ÊıÊ½½Ó¿Ú£¬Òò´Ë¿ÉÒÔÊ¹ÓÃLamdba±í´ïÊ½À´´úÌæComparator¶ÔÏó¡£
+ * å®šåˆ¶æ’åº
+ * 1.é€šè¿‡Comparatoræ¥å£ï¼Œint compare(T o1,To2)
+ * 2.æä¾›ä¸€ä¸ªComparatorå¯¹è±¡ä¸è¯¥TreeSeté›†åˆå…³è”ï¼Œç”±è¯¥Comparatorå¯¹è±¡è´Ÿè´£é›†åˆå…ƒç´ çš„æ’åºé€»è¾‘
+ *    ç”±äºComparatoræ˜¯ä¸€ä¸ªå‡½æ•°å¼æ¥å£ï¼Œå› æ­¤å¯ä»¥ä½¿ç”¨Lamdbaè¡¨è¾¾å¼æ¥ä»£æ›¿Comparatorå¯¹è±¡ã€‚
  */
 class M
 {
@@ -25,12 +25,12 @@ public class TreeSetTest4
 {
 	public static void main(String[] args)
 	{
-		// ´Ë´¦Lambda±í´ïÊ½µÄÄ¿±êÀàĞÍÊÇComparator
+		// æ­¤å¤„Lambdaè¡¨è¾¾å¼çš„ç›®æ ‡ç±»å‹æ˜¯Comparator
 		TreeSet ts = new TreeSet((o1 , o2) ->
 		{
 			M m1 = (M)o1;
 			M m2 = (M)o2;
-			// ¸ù¾İM¶ÔÏóµÄageÊôĞÔÀ´¾ö¶¨´óĞ¡£¬ageÔ½´ó£¬M¶ÔÏó·´¶øÔ½Ğ¡
+			// æ ¹æ®Må¯¹è±¡çš„ageå±æ€§æ¥å†³å®šå¤§å°ï¼Œageè¶Šå¤§ï¼ŒMå¯¹è±¡åè€Œè¶Šå°
 			return m1.age > m2.age ? -1
 				: m1.age < m2.age ? 1 : 0;
 		});

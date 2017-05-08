@@ -1,9 +1,9 @@
-package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
+package chapter06_06_Java8æ”¹è¿›çš„æ¥å£;
 
 
 /**
- * Description:ÃüÁîÄ£Ê½£¬Êı×é´¦ÀíµÄÊµ¼ÊÃüÁî
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:å‘½ä»¤æ¨¡å¼ï¼Œæ•°ç»„å¤„ç†çš„å®é™…å‘½ä»¤
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -21,7 +21,7 @@ public class AddCommand implements Command
 		{
 			sum += tmp;
 		}
-		System.out.println("Êı×éÔªËØµÄ×ÜºÍÊÇ:" + sum);
+		System.out.println("æ•°ç»„å…ƒç´ çš„æ€»å’Œæ˜¯:" + sum);
 	}
 }
 

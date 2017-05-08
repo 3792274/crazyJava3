@@ -1,10 +1,10 @@
-package chapter14_01_»ù±¾Annotation;
+package chapter14_01_åŸºæœ¬Annotation;
 
 
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -12,13 +12,13 @@ import java.util.*;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// ¹Ø±ÕÕû¸öÀàÀïµÄ±àÒëÆ÷¾¯¸æ
+// å…³é—­æ•´ä¸ªç±»é‡Œçš„ç¼–è¯‘å™¨è­¦å‘Š
 @SuppressWarnings(value="unchecked")
 public class SuppressWarningsTest
 {
 	public static void main(String[] args)
 	{
-		List<String> myList = new ArrayList();     // ¢Ù
+		List<String> myList = new ArrayList();     // â‘ 
 	}
 }
 

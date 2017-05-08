@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -18,42 +18,42 @@ import java.util.Arrays;
 public class CharsetTransform {
 	public static void main(String[] args) throws Exception {
 		
-		//String ÖĞgetByte(String charset)·½·¨Ò²ÊÇ·µ»Øbute[]Ê¹ÓÃÖ¸¶¨µÄ×Ö·û¼¯½«Ö¸¶¨µÄ×Ö·û´®×ª»»³É×Ö½ÚĞòÁĞ¡£
-		System.out.println(Arrays.toString("ËïÎò¿Õ".getBytes("utf-8")));
+		//String ä¸­getByte(String charset)æ–¹æ³•ä¹Ÿæ˜¯è¿”å›bute[]ä½¿ç”¨æŒ‡å®šçš„å­—ç¬¦é›†å°†æŒ‡å®šçš„å­—ç¬¦ä¸²è½¬æ¢æˆå­—èŠ‚åºåˆ—ã€‚
+		System.out.println(Arrays.toString("å­™æ‚Ÿç©º".getBytes("utf-8")));
 		
-		//Èç¹û½öÊÇĞèÒª±àÂë½âÂë²Ù×÷£¬ÎŞĞè´´½¨CharsetEncoding¡¢CharsetDecoding¶ÔÏó
-		ByteBuffer byteBuffer = Charset.forName("GBK").encode(CharBuffer.wrap("ËïÎò¿Õ".toCharArray()));
+		//å¦‚æœä»…æ˜¯éœ€è¦ç¼–ç è§£ç æ“ä½œï¼Œæ— éœ€åˆ›å»ºCharsetEncodingã€CharsetDecodingå¯¹è±¡
+		ByteBuffer byteBuffer = Charset.forName("GBK").encode(CharBuffer.wrap("å­™æ‚Ÿç©º".toCharArray()));
 		CharBuffer charBuffer =  Charset.forName("GBK").decode(byteBuffer);
 		System.out.println(Arrays.toString(byteBuffer.array())+":"+charBuffer);
 		
 		
 		
 		
-		// ´´½¨¼òÌåÖĞÎÄ¶ÔÓ¦µÄCharset
+		// åˆ›å»ºç®€ä½“ä¸­æ–‡å¯¹åº”çš„Charset
 		Charset cn = Charset.forName("GBK");
 		
-		// »ñÈ¡cn¶ÔÏó¶ÔÓ¦µÄ±àÂëÆ÷ºÍ½âÂëÆ÷
+		// è·å–cnå¯¹è±¡å¯¹åº”çš„ç¼–ç å™¨å’Œè§£ç å™¨
 		CharsetEncoder cnEncoder = cn.newEncoder();
 		CharsetDecoder cnDecoder = cn.newDecoder();
 		
-		// ´´½¨Ò»¸öCharBuffer¶ÔÏó
+		// åˆ›å»ºä¸€ä¸ªCharBufferå¯¹è±¡
 		CharBuffer cbuff = CharBuffer.allocate(8);
 		
-		cbuff.put('Ëï');
-		cbuff.put('Îò');
-		cbuff.put('¿Õ');
-		cbuff.put('¸Õ');
+		cbuff.put('å­™');
+		cbuff.put('æ‚Ÿ');
+		cbuff.put('ç©º');
+		cbuff.put('åˆš');
 		cbuff.flip();
 		
-		// ½«CharBufferÖĞµÄ×Ö·ûĞòÁĞ×ª»»³É×Ö½ÚĞòÁĞ
+		// å°†CharBufferä¸­çš„å­—ç¬¦åºåˆ—è½¬æ¢æˆå­—èŠ‚åºåˆ—
 		ByteBuffer bbuff = cnEncoder.encode(cbuff);
 		
-		// Ñ­»··ÃÎÊByteBufferÖĞµÄÃ¿¸ö×Ö½Ú
+		// å¾ªç¯è®¿é—®ByteBufferä¸­çš„æ¯ä¸ªå­—èŠ‚
 		for (int i = 0; i < bbuff.capacity(); i++) {
 			System.out.print(bbuff.get(i) + " ");
 		}
 		
-		// ½«ByteBufferµÄÊı¾İ½âÂë³É×Ö·ûĞòÁĞ
+		// å°†ByteBufferçš„æ•°æ®è§£ç æˆå­—ç¬¦åºåˆ—
 		System.out.println("\n" + cnDecoder.decode(bbuff));
 	}
 }

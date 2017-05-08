@@ -1,11 +1,11 @@
-package chapter12_04_Swing¼ò»¯µÄÍÏ·Å¹¦ÄÜ;
+package chapter12_04_Swingç®€åŒ–çš„æ‹–æ”¾åŠŸèƒ½;
 
 
 import java.awt.*;
 import javax.swing.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,14 +15,14 @@ import javax.swing.*;
  */
 public class SwingDndSupport
 {
-	JFrame jf = new JFrame("SwingµÄÍÏ·ÅÖ§³Ö");
+	JFrame jf = new JFrame("Swingçš„æ‹–æ”¾æ”¯æŒ");
 	JTextArea srcTxt = new JTextArea(8 , 30);
 	JTextField jtf = new JTextField(34);
 	public void init()
 	{
-		srcTxt.append("SwingµÄÍÏ·ÅÖ§³Ö.\n");
-		srcTxt.append("½«¸ÃÎÄ±¾ÓòµÄÄÚÈİÍÏÈëÆäËû³ÌĞò.\n");
-		// Æô¶¯ÎÄ±¾ÓòºÍµ¥ĞĞÎÄ±¾¿òµÄÍÏ·ÅÖ§³Ö
+		srcTxt.append("Swingçš„æ‹–æ”¾æ”¯æŒ.\n");
+		srcTxt.append("å°†è¯¥æ–‡æœ¬åŸŸçš„å†…å®¹æ‹–å…¥å…¶ä»–ç¨‹åº.\n");
+		// å¯åŠ¨æ–‡æœ¬åŸŸå’Œå•è¡Œæ–‡æœ¬æ¡†çš„æ‹–æ”¾æ”¯æŒ
 		srcTxt.setDragEnabled(true);
 		jtf.setDragEnabled(true);
 		jf.add(new JScrollPane(srcTxt));

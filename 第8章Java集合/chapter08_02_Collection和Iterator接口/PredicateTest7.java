@@ -1,9 +1,9 @@
-package chapter08_02_CollectionºÍIterator½Ó¿Ú;
+package chapter08_02_Collectionå’ŒIteratoræ¥å£;
 
 import java.util.*;
 import java.util.function.*;
 /**
- * Description:java8ĞÂÔöµÄPredicate²Ù×÷¼¯ºÏ¡£
+ * Description:java8æ–°å¢çš„Predicateæ“ä½œé›†åˆã€‚
  * Collection.removeIf(Predicate)
  * 
 default boolean removeIf(Predicate<? super E> filter) {
@@ -25,14 +25,14 @@ public class PredicateTest7
 {
 	public static void main(String[] args)
 	{
-		// ´´½¨Ò»¸ö¼¯ºÏ
+		// åˆ›å»ºä¸€ä¸ªé›†åˆ
 		Collection books = new HashSet();
-		books.add(new String("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½"));
-		books.add(new String("·è¿ñJava½²Òå"));
-		books.add(new String("·è¿ñiOS½²Òå"));
-		books.add(new String("·è¿ñAjax½²Òå"));
-		books.add(new String("·è¿ñAndroid½²Òå"));
-		// Ê¹ÓÃLambda±í´ïÊ½£¨Ä¿±êÀàĞÍÊÇPredicate£©¹ıÂË¼¯ºÏ
+		books.add(new String("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜"));
+		books.add(new String("ç–¯ç‹‚Javaè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚iOSè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚Ajaxè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚Androidè®²ä¹‰"));
+		// ä½¿ç”¨Lambdaè¡¨è¾¾å¼ï¼ˆç›®æ ‡ç±»å‹æ˜¯Predicateï¼‰è¿‡æ»¤é›†åˆ
 		books.removeIf(ele -> ((String)ele).length() < 10);
 		System.out.println(books);
 	}

@@ -1,10 +1,10 @@
-package chapter15_06_javaĞéÄâ»ú¶ÁĞ´ÆäËû½ø³ÌµÄÊı¾İ;
+package chapter15_06_javaè™šæ‹Ÿæœºè¯»å†™å…¶ä»–è¿›ç¨‹çš„æ•°æ®;
 
 
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,15 +17,15 @@ public class ReadFromProcess
 	public static void main(String[] args)
 		throws IOException
 	{
-		// ÔËĞĞjavacÃüÁî£¬·µ»ØÔËĞĞ¸ÃÃüÁîµÄ×Ó½ø³Ì
+		// è¿è¡Œjavacå‘½ä»¤ï¼Œè¿”å›è¿è¡Œè¯¥å‘½ä»¤çš„å­è¿›ç¨‹
 		Process p = Runtime.getRuntime().exec("javac");
 		try(
-			// ÒÔp½ø³ÌµÄ´íÎóÁ÷´´½¨BufferedReader¶ÔÏó
-			// Õâ¸ö´íÎóÁ÷¶Ô±¾³ÌĞòÊÇÊäÈëÁ÷£¬¶Ôp½ø³ÌÔòÊÇÊä³öÁ÷
+			// ä»¥pè¿›ç¨‹çš„é”™è¯¯æµåˆ›å»ºBufferedReaderå¯¹è±¡
+			// è¿™ä¸ªé”™è¯¯æµå¯¹æœ¬ç¨‹åºæ˜¯è¾“å…¥æµï¼Œå¯¹pè¿›ç¨‹åˆ™æ˜¯è¾“å‡ºæµ
 				BufferedReader br = new BufferedReader(new InputStreamReader(p.getErrorStream())))
 		{
 			String buff = null;
-			// ²ÉÈ¡Ñ­»··½Ê½À´¶ÁÈ¡p½ø³ÌµÄ´íÎóÊä³ö
+			// é‡‡å–å¾ªç¯æ–¹å¼æ¥è¯»å–pè¿›ç¨‹çš„é”™è¯¯è¾“å‡º
 			while((buff = br.readLine()) != null)
 			{
 				System.out.println(buff);

@@ -1,4 +1,4 @@
-package chapter10_02_�쳣��ļ̳���ϵ;
+package chapter10_02_异常类的继承体系;
 
 
 import java.util.*;
@@ -16,11 +16,11 @@ public class NullTest
 		}
 		catch (NullPointerException ne)
 		{
-			System.out.println("��ָ���쳣");
+			System.out.println("空指针异常");
 		}
 		catch(Exception e)
 		{
-			System.out.println("δ֪�쳣");
+			System.out.println("未知异常");
 		}
 	}
 }

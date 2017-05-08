@@ -1,10 +1,10 @@
-package chapter14_02_JDK的元Annotation;
+package chapter14_02_JDK鐨勫厓Annotation;
 
 
 
 /**
  * Description:
- * <br>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br>This program is protected by copyright laws.
  * <br>Program Name:
@@ -14,10 +14,10 @@ package chapter14_02_JDK的元Annotation;
  */
 public class MyTest
 {
-	// 使用@Test修饰info方法
+	// 浣跨敤@Test淇グinfo鏂规硶
 	@Testable
 	public void info()
 	{
-		System.out.println("info方法...");
+		System.out.println("info鏂规硶...");
 	}
 }

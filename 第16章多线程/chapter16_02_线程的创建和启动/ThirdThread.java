@@ -1,7 +1,7 @@
-package chapter16_02_Ïß³ÌµÄ´´½¨ºÍÆô¶¯;
+package chapter16_02_çº¿ç¨‹çš„åˆ›å»ºå’Œå¯åŠ¨;
 
 /**
- * ¿ÉÒÔÊ¹ÈÎÒâ·½·¨±ä³ÉÏß³Ì£¬²¢ÇÒ¿ÉÒÔÓĞ·µ»ØÖµ¡£
+ * å¯ä»¥ä½¿ä»»æ„æ–¹æ³•å˜æˆçº¿ç¨‹ï¼Œå¹¶ä¸”å¯ä»¥æœ‰è¿”å›å€¼ã€‚
  */
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
@@ -11,36 +11,36 @@ public class ThirdThread {
 	public static void main(String[] args) {
 		
 		
-		//´´½¨Callable¶ÔÏó£¨²»ÖªµÀ¸ÉÊ²Ã´ÓÃfuck!£©
+		//åˆ›å»ºCallableå¯¹è±¡ï¼ˆä¸çŸ¥é“å¹²ä»€ä¹ˆç”¨fuck!ï¼‰
 		ThirdThread rt = new ThirdThread();
 		
 		
-		//ÏÈÊ¹ÓÃLambda±í´ïÊ½´´½¨Callable<Integer>¶ÔÏó,Ê¹ÓÃFutureTaskÀ´°ü×°Callable¶ÔÏó
+		//å…ˆä½¿ç”¨Lambdaè¡¨è¾¾å¼åˆ›å»ºCallable<Integer>å¯¹è±¡,ä½¿ç”¨FutureTaskæ¥åŒ…è£…Callableå¯¹è±¡
 		FutureTask< Integer> task  = new FutureTask<Integer>((Callable<Integer>)()->{
 			int i = 0;
 			for(;i<100;i++){
-				System.out.println(Thread.currentThread().getName() +"µÄÑ­»·±äÁ¿iµÄÖµÊÇ£º "+ i);
+				System.out.println(Thread.currentThread().getName() +"çš„å¾ªç¯å˜é‡içš„å€¼æ˜¯ï¼š "+ i);
 			}
 			
-			//call()·½·¨¿ÉÒÔÓĞ·µ»ØÖµ
+			//call()æ–¹æ³•å¯ä»¥æœ‰è¿”å›å€¼
 			return i;
 		});
 		
 		
 		
 		for(int i=0;i<100;i++){
-			System.out.println(Thread.currentThread().getName() +"µÄÑ­»·±äÁ¿iµÄÖµÊÇ£º"+ i);
+			System.out.println(Thread.currentThread().getName() +"çš„å¾ªç¯å˜é‡içš„å€¼æ˜¯ï¼š"+ i);
 			if(i==20){
-				//ÊµÖÊ»¹ÊÇÒÔcallable¶ÔÏóÀ´´´½¨²¢Æô¶¯Ïß³Ì
-				new Thread(task,"ÓĞ·µ»ØÖµµÄÏß³Ì-1 ").start();
+				//å®è´¨è¿˜æ˜¯ä»¥callableå¯¹è±¡æ¥åˆ›å»ºå¹¶å¯åŠ¨çº¿ç¨‹
+				new Thread(task,"æœ‰è¿”å›å€¼çš„çº¿ç¨‹-1 ").start();
 			}
 		}
 		
 		
 		
 		try{
-			//»ñÈ¡Ïß³ÌµÄ·µ»ØÖµ
-			System.out.println("×ÓÏß³ÌµÄ·µ»ØÖµ£º "+task.get()); //¸Ã·½·¨µ¼ÖÂÖ÷Ïß³Ì±»×èÈû
+			//è·å–çº¿ç¨‹çš„è¿”å›å€¼
+			System.out.println("å­çº¿ç¨‹çš„è¿”å›å€¼ï¼š "+task.get()); //è¯¥æ–¹æ³•å¯¼è‡´ä¸»çº¿ç¨‹è¢«é˜»å¡
 		}catch(Exception exception){
 			exception.printStackTrace();
 		}

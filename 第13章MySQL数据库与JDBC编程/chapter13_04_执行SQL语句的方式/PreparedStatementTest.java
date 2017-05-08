@@ -1,4 +1,4 @@
-package chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½;
+package chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼;
 
 import java.util.*;
 import java.io.*;
@@ -6,7 +6,7 @@ import java.sql.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -22,53 +22,53 @@ public class PreparedStatementTest {
 	private String pass;
 
 	public void initParam(String paramFile) throws Exception {
-		// Ê¹ÓÃPropertiesÀàÀ´¼ÓÔØÊôĞÔÎÄ¼ş
+		// ä½¿ç”¨Propertiesç±»æ¥åŠ è½½å±æ€§æ–‡ä»¶
 		Properties props = new Properties();
 		props.load(new FileInputStream(paramFile));
 		driver = props.getProperty("driver");
 		url = props.getProperty("url");
 		user = props.getProperty("user");
 		pass = props.getProperty("pass");
-		// ¼ÓÔØÇı¶¯
+		// åŠ è½½é©±åŠ¨
 		Class.forName(driver);
 	}
 
 	public void insertUseStatement() throws Exception {
 		long start = System.currentTimeMillis();
 		try (
-				// »ñÈ¡Êı¾İ¿âÁ¬½Ó
+				// è·å–æ•°æ®åº“è¿æ¥
 				Connection conn = DriverManager.getConnection(url, user, pass);
-				// Ê¹ÓÃConnectionÀ´´´½¨Ò»¸öStatment¶ÔÏó
+				// ä½¿ç”¨Connectionæ¥åˆ›å»ºä¸€ä¸ªStatmentå¯¹è±¡
 				Statement stmt = conn.createStatement()) {
-			// ĞèÒªÊ¹ÓÃ100ÌõSQLÓï¾äÀ´²åÈë100Ìõ¼ÇÂ¼
+			// éœ€è¦ä½¿ç”¨100æ¡SQLè¯­å¥æ¥æ’å…¥100æ¡è®°å½•
 			for (int i = 0; i < 1000; i++) {
-				stmt.executeUpdate("insert into student_table values(" + " null ,'ĞÕÃû" + i + "' , 1)");
+				stmt.executeUpdate("insert into student_table values(" + " null ,'å§“å" + i + "' , 1)");
 			}
-			System.out.println("Ê¹ÓÃStatement·ÑÊ±:" + (System.currentTimeMillis() - start));
+			System.out.println("ä½¿ç”¨Statementè´¹æ—¶:" + (System.currentTimeMillis() - start));
 		}
 	}
 
 	public void insertUsePrepare() throws Exception {
 		long start = System.currentTimeMillis();
 		try (
-				// »ñÈ¡Êı¾İ¿âÁ¬½Ó
+				// è·å–æ•°æ®åº“è¿æ¥
 				Connection conn = DriverManager.getConnection(url, user, pass);
-				// Ê¹ÓÃConnectionÀ´´´½¨Ò»¸öPreparedStatement¶ÔÏó
+				// ä½¿ç”¨Connectionæ¥åˆ›å»ºä¸€ä¸ªPreparedStatementå¯¹è±¡
 				PreparedStatement pstmt = conn.prepareStatement("insert into student_table values(null,?,1)"))
 
 		{
-			// 100´ÎÎªPreparedStatementµÄ²ÎÊıÉèÖµ£¬¾Í¿ÉÒÔ²åÈë100Ìõ¼ÇÂ¼
+			// 100æ¬¡ä¸ºPreparedStatementçš„å‚æ•°è®¾å€¼ï¼Œå°±å¯ä»¥æ’å…¥100æ¡è®°å½•
 			for (int i = 0; i < 1000; i++) {
-				pstmt.setString(1, "ĞÕÃû" + i);
+				pstmt.setString(1, "å§“å" + i);
 				pstmt.executeUpdate();
 			}
-			System.out.println("Ê¹ÓÃPreparedStatement·ÑÊ±:" + (System.currentTimeMillis() - start));
+			System.out.println("ä½¿ç”¨PreparedStatementè´¹æ—¶:" + (System.currentTimeMillis() - start));
 		}
 	}
 
 	public static void main(String[] args) throws Exception {
 		PreparedStatementTest pt = new PreparedStatementTest();
-		pt.initParam("resource\\chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½\\mysql.ini");
+		pt.initParam("resource\\chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼\\mysql.ini");
 		pt.insertUseStatement();
 		pt.insertUsePrepare();
 	}

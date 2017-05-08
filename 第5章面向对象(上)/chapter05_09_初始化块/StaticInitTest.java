@@ -1,10 +1,10 @@
-package chapter05_09_³õÊ¼»¯¿é;
+package chapter05_09_åˆå§‹åŒ–å—;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,16 +14,16 @@ package chapter05_09_³õÊ¼»¯¿é;
  */
 public class StaticInitTest
 {
-	// ÏÈÖ´ĞĞ¾²Ì¬³õÊ¼»¯¿é½«a¾²Ì¬³ÉÔ±±äÁ¿¸³ÖµÎª6
+	// å…ˆæ‰§è¡Œé™æ€åˆå§‹åŒ–å—å°†aé™æ€æˆå‘˜å˜é‡èµ‹å€¼ä¸º6
 	static
 	{
 		a = 6;
 	}
-	// ÔÙ½«a¾²Ì¬³ÉÔ±±äÁ¿¸³ÖµÎª9
+	// å†å°†aé™æ€æˆå‘˜å˜é‡èµ‹å€¼ä¸º9
 	static int a = 9;
 	public static void main(String[] args)
 	{
-		// ÏÂÃæ´úÂë½«Êä³ö9
+		// ä¸‹é¢ä»£ç å°†è¾“å‡º9
 		System.out.println(StaticInitTest.a);
 	}
 }

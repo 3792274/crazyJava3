@@ -1,8 +1,8 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 /**
- * Description:²»ÔÊÐíÔÚ·Ç¾²Ì¬ÄÚ²¿ÀàÖÐ¶¨Òå¾²Ì¬³ÉÔ±£¬µ¥¿ÉÒÔ°üº¬³õÊ¼»¯¿é¡£
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:ä¸å…è®¸åœ¨éžé™æ€å†…éƒ¨ç±»ä¸­å®šä¹‰é™æ€æˆå‘˜ï¼Œå•å¯ä»¥åŒ…å«åˆå§‹åŒ–å—ã€‚
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,8 +15,8 @@ public class InnerNoStatic
 	private class InnerClass
 	{
 		/*
-		ÏÂÃæÈý¸ö¾²Ì¬ÉùÃ÷¶¼½«Òý·¢ÈçÏÂ±àÒë´íÎó:
-		·Ç¾²Ì¬ÄÚ²¿Àà²»ÄÜÓÐ¾²Ì¬ÉùÃ÷
+		ä¸‹é¢ä¸‰ä¸ªé™æ€å£°æ˜Žéƒ½å°†å¼•å‘å¦‚ä¸‹ç¼–è¯‘é”™è¯¯:
+		éžé™æ€å†…éƒ¨ç±»ä¸èƒ½æœ‰é™æ€å£°æ˜Ž
 		*/
 		
 //		static

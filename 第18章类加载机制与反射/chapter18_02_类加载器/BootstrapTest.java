@@ -1,9 +1,9 @@
-package chapter18_02_类加载器;
+package chapter18_02_绫诲姞杞藉櫒;
 
 import java.net.*;
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,10 +15,10 @@ public class BootstrapTest
 {
 	public static void main(String[] args)
 	{
-		// 获取根类加载器所加载的全部URL数组
+		// 鑾峰彇鏍圭被鍔犺浇鍣ㄦ墍鍔犺浇鐨勫叏閮║RL鏁扮粍
 		URL[] urls = sun.misc.Launcher.
 		getBootstrapClassPath().getURLs();
-		// 遍历、输出根类加载器加载的全部URL
+		// 閬嶅巻銆佽緭鍑烘牴绫诲姞杞藉櫒鍔犺浇鐨勫叏閮║RL
 		for (int i = 0; i < urls.length; i++)
 		{
 			System.out.println(urls[i].toExternalForm());

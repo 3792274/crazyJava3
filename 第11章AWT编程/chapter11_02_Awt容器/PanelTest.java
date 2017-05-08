@@ -1,31 +1,31 @@
-package chapter11_02_AwtÈÝÆ÷;
+package chapter11_02_Awtå®¹å™¨;
 
 
 import java.awt.*;
 /**
  * Description:
- * Panel(AWT-³éÏó´°¿Ú¹¤¾ß¼¯£¬µäÐÍÈÝÆ÷£¬²»ÄÜ¶ÀÁ¢´æÔÚ£¬±ØÐë·ÅÔÚÆäËûÈÝÆ÷ÖÐµÄÈÝÆ÷)
- * 1.¿ÉÒÔ×÷ÎªÈÝÆ÷À´Ê¢×°ÆäËû×é¼þ£¬Îª·ÅÖÃ×é¼þÌá¹©¿Õ¼ä
- * 2.²»ÄÜµ¥¶À´æÔÚ£¬±ØÐë·ÅÖÃÆäËûÈÝÆ÷ÖÐ
- * 3.Ä¬ÈÏÊ¹ÓÃFlowLayout×÷Îª²¼¾Ö¹ÜÀíÆ÷
+ * Panel(AWT-æŠ½è±¡çª—å£å·¥å…·é›†ï¼Œå…¸åž‹å®¹å™¨ï¼Œä¸èƒ½ç‹¬ç«‹å­˜åœ¨ï¼Œå¿…é¡»æ”¾åœ¨å…¶ä»–å®¹å™¨ä¸­çš„å®¹å™¨)
+ * 1.å¯ä»¥ä½œä¸ºå®¹å™¨æ¥ç››è£…å…¶ä»–ç»„ä»¶ï¼Œä¸ºæ”¾ç½®ç»„ä»¶æä¾›ç©ºé—´
+ * 2.ä¸èƒ½å•ç‹¬å­˜åœ¨ï¼Œå¿…é¡»æ”¾ç½®å…¶ä»–å®¹å™¨ä¸­
+ * 3.é»˜è®¤ä½¿ç”¨FlowLayoutä½œä¸ºå¸ƒå±€ç®¡ç†å™¨
  */
 public class PanelTest
 {
 	
-	//Ê¢×°Ò»¸öÎÄ±¾¿ò£¬Ò»¸ö°´Å¥£¬Ìí¼Óµ½Frame¶ÔÏóÖÐ
+	//ç››è£…ä¸€ä¸ªæ–‡æœ¬æ¡†ï¼Œä¸€ä¸ªæŒ‰é’®ï¼Œæ·»åŠ åˆ°Frameå¯¹è±¡ä¸­
 	public static void main(String[] args)
 	{
-		Frame f = new Frame("²âÊÔ´°¿Ú");
-		// ´´½¨Ò»¸öPanelÈÝÆ÷
+		Frame f = new Frame("æµ‹è¯•çª—å£");
+		// åˆ›å»ºä¸€ä¸ªPanelå®¹å™¨
 		Panel p = new Panel();
-		// ÏòPanelÈÝÆ÷ÖÐÌí¼ÓÁ½¸ö×é¼þ
+		// å‘Panelå®¹å™¨ä¸­æ·»åŠ ä¸¤ä¸ªç»„ä»¶
 		p.add(new TextField(20));
-		p.add(new Button("µ¥»÷ÎÒ"));
-		// ½«PanelÈÝÆ÷Ìí¼Óµ½Frame´°¿ÚÖÐ
+		p.add(new Button("å•å‡»æˆ‘"));
+		// å°†Panelå®¹å™¨æ·»åŠ åˆ°Frameçª—å£ä¸­
 		f.add(p);
-		// ÉèÖÃ´°¿ÚµÄ´óÐ¡¡¢Î»ÖÃ
+		// è®¾ç½®çª—å£çš„å¤§å°ã€ä½ç½®
 		f.setBounds(30, 30 , 250, 120);
-		// ½«´°¿ÚÏÔÊ¾³öÀ´£¨Frame¶ÔÏóÄ¬ÈÏ´¦ÓÚÒþ²Ø×´Ì¬£©
+		// å°†çª—å£æ˜¾ç¤ºå‡ºæ¥ï¼ˆFrameå¯¹è±¡é»˜è®¤å¤„äºŽéšè—çŠ¶æ€ï¼‰
 		f.setVisible(true);
 	}
 }

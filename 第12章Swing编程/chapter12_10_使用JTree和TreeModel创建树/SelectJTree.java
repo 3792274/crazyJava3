@@ -1,4 +1,4 @@
-package chapter12_10_Ê¹ÓÃJTreeºÍTreeModel´´½¨Ê÷;
+package chapter12_10_ä½¿ç”¨JTreeå’ŒTreeModelåˆ›å»ºæ ‘;
 
 
 import java.awt.event.*;
@@ -7,7 +7,7 @@ import javax.swing.tree.*;
 import javax.swing.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,43 +17,43 @@ import javax.swing.event.*;
  */
 public class SelectJTree
 {
-	JFrame jf = new JFrame("¼àÌıÊ÷µÄÑ¡ÔñÊÂ¼ş");
+	JFrame jf = new JFrame("ç›‘å¬æ ‘çš„é€‰æ‹©äº‹ä»¶");
 	JTree tree;
-	// ¶¨Òå¼¸¸ö³õÊ¼½Úµã
-	DefaultMutableTreeNode root = new DefaultMutableTreeNode("ÖĞ¹ú");
-	DefaultMutableTreeNode guangdong = new DefaultMutableTreeNode("¹ã¶«");
-	DefaultMutableTreeNode guangxi = new DefaultMutableTreeNode("¹ãÎ÷");
-	DefaultMutableTreeNode foshan = new DefaultMutableTreeNode("·ğÉ½");
-	DefaultMutableTreeNode shantou = new DefaultMutableTreeNode("ÉÇÍ·");
-	DefaultMutableTreeNode guilin = new DefaultMutableTreeNode("¹ğÁÖ");
-	DefaultMutableTreeNode nanning = new DefaultMutableTreeNode("ÄÏÄş");
+	// å®šä¹‰å‡ ä¸ªåˆå§‹èŠ‚ç‚¹
+	DefaultMutableTreeNode root = new DefaultMutableTreeNode("ä¸­å›½");
+	DefaultMutableTreeNode guangdong = new DefaultMutableTreeNode("å¹¿ä¸œ");
+	DefaultMutableTreeNode guangxi = new DefaultMutableTreeNode("å¹¿è¥¿");
+	DefaultMutableTreeNode foshan = new DefaultMutableTreeNode("ä½›å±±");
+	DefaultMutableTreeNode shantou = new DefaultMutableTreeNode("æ±•å¤´");
+	DefaultMutableTreeNode guilin = new DefaultMutableTreeNode("æ¡‚æ—");
+	DefaultMutableTreeNode nanning = new DefaultMutableTreeNode("å—å®");
 	JTextArea eventTxt = new JTextArea(5 , 20);
 	public void init()
 	{
-		// Í¨¹ıadd()·½·¨½¨Á¢Ê÷½ÚµãÖ®¼äµÄ¸¸×Ó¹ØÏµ
+		// é€šè¿‡add()æ–¹æ³•å»ºç«‹æ ‘èŠ‚ç‚¹ä¹‹é—´çš„çˆ¶å­å…³ç³»
 		guangdong.add(foshan);
 		guangdong.add(shantou);
 		guangxi.add(guilin);
 		guangxi.add(nanning);
 		root.add(guangdong);
 		root.add(guangxi);
-		// ÒÔ¸ù½Úµã´´½¨Ê÷
+		// ä»¥æ ¹èŠ‚ç‚¹åˆ›å»ºæ ‘
 		tree = new JTree(root);
-		// ÉèÖÃÖ»ÄÜÑ¡ÔñÒ»¸öTreePath
+		// è®¾ç½®åªèƒ½é€‰æ‹©ä¸€ä¸ªTreePath
 		tree.getSelectionModel().setSelectionMode(
 			TreeSelectionModel.SINGLE_TREE_SELECTION);
-		// Ìí¼Ó¼àÌıÊ÷½ÚµãÑ¡ÔñÊÂ¼şµÄ¼àÌıÆ÷
-		// µ±JTreeÖĞ±»Ñ¡Ôñ½Úµã·¢Éú¸Ä±äÊ±£¬½«´¥·¢¸Ã·½·¨
+		// æ·»åŠ ç›‘å¬æ ‘èŠ‚ç‚¹é€‰æ‹©äº‹ä»¶çš„ç›‘å¬å™¨
+		// å½“JTreeä¸­è¢«é€‰æ‹©èŠ‚ç‚¹å‘ç”Ÿæ”¹å˜æ—¶ï¼Œå°†è§¦å‘è¯¥æ–¹æ³•
 		tree.addTreeSelectionListener(e -> {
 			if (e.getOldLeadSelectionPath() != null)
-				eventTxt.append("Ô­Ñ¡ÖĞµÄ½ÚµãÂ·¾¶£º"
+				eventTxt.append("åŸé€‰ä¸­çš„èŠ‚ç‚¹è·¯å¾„ï¼š"
 				+ e.getOldLeadSelectionPath().toString() + "\n");
-			eventTxt.append("ĞÂÑ¡ÖĞµÄ½ÚµãÂ·¾¶£º"
+			eventTxt.append("æ–°é€‰ä¸­çš„èŠ‚ç‚¹è·¯å¾„ï¼š"
 				+ e.getNewLeadSelectionPath().toString() + "\n");
 		});
-		//ÉèÖÃÊÇ·ñÏÔÊ¾¸ù½ÚµãµÄ¡°Õ¹¿ª/ÕÛµş¡±Í¼±ê,Ä¬ÈÏÊÇfalse
+		//è®¾ç½®æ˜¯å¦æ˜¾ç¤ºæ ¹èŠ‚ç‚¹çš„â€œå±•å¼€/æŠ˜å â€å›¾æ ‡,é»˜è®¤æ˜¯false
 		tree.setShowsRootHandles(true);
-		//ÉèÖÃ¸ù½ÚµãÊÇ·ñ¿É¼û,Ä¬ÈÏÊÇtrue
+		//è®¾ç½®æ ¹èŠ‚ç‚¹æ˜¯å¦å¯è§,é»˜è®¤æ˜¯true
 		tree.setRootVisible(true);
 		Box box = new Box(BoxLayout.X_AXIS);
 		box.add(new JScrollPane(tree));

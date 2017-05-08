@@ -1,11 +1,11 @@
-package chapter08_06_java8ÔöÇ¿µÄMap¼¯ºÏ;
+package chapter08_06_java8å¢å¼ºçš„Mapé›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * 1.Í¬HashMap»ù±¾ÀàËÆ£¬HashMap¶Ôkey±£´æ¶Ô¶ÔÏóµÄÇ¿ÒıÓÃ£¬WeakHashMap±£´æ¶Ô¶ÔÏóµÄÈõÒıÓÃ¡£
- * 2.ÔÚÀ¬»ø»ØÊÕ¶ÔÏóÖ®ºó£¬WeakHashMap»á×Ô¶¯É¾³ıkey¶ÔÓ¦µÄkey-value
+ * 1.åŒHashMapåŸºæœ¬ç±»ä¼¼ï¼ŒHashMapå¯¹keyä¿å­˜å¯¹å¯¹è±¡çš„å¼ºå¼•ç”¨ï¼ŒWeakHashMapä¿å­˜å¯¹å¯¹è±¡çš„å¼±å¼•ç”¨ã€‚
+ * 2.åœ¨åƒåœ¾å›æ”¶å¯¹è±¡ä¹‹åï¼ŒWeakHashMapä¼šè‡ªåŠ¨åˆ é™¤keyå¯¹åº”çš„key-value
  */
 public class WeakHashMapTest
 {
@@ -13,25 +13,25 @@ public class WeakHashMapTest
 	{
 		WeakHashMap whm = new WeakHashMap();
 		
-		// ½«WeakHashMapÖĞÌí¼ÓÈı¸ökey-value¶Ô£¬
-		// Èı¸ökey¶¼ÊÇÄäÃû×Ö·û´®¶ÔÏó£¨Ã»ÓĞÆäËûÒıÓÃ£©
-		whm.put(new String("ÓïÎÄ") , new String("Á¼ºÃ"));
-		whm.put(new String("ÊıÑ§") , new String("¼°¸ñ"));
-		whm.put(new String("Ó¢ÎÄ") , new String("ÖĞµÈ"));
+		// å°†WeakHashMapä¸­æ·»åŠ ä¸‰ä¸ªkey-valueå¯¹ï¼Œ
+		// ä¸‰ä¸ªkeyéƒ½æ˜¯åŒ¿åå­—ç¬¦ä¸²å¯¹è±¡ï¼ˆæ²¡æœ‰å…¶ä»–å¼•ç”¨ï¼‰
+		whm.put(new String("è¯­æ–‡") , new String("è‰¯å¥½"));
+		whm.put(new String("æ•°å­¦") , new String("åŠæ ¼"));
+		whm.put(new String("è‹±æ–‡") , new String("ä¸­ç­‰"));
 		
-		//½« WeakHashMapÖĞÌí¼ÓÒ»¸ökey-value¶Ô£¬
-		// ¸ÃkeyÊÇÒ»¸öÏµÍ³»º´æµÄ×Ö·û´®¶ÔÏó¡£
-		whm.put("java" , new String("ÖĞµÈ"));    // ¢Ù
+		//å°† WeakHashMapä¸­æ·»åŠ ä¸€ä¸ªkey-valueå¯¹ï¼Œ
+		// è¯¥keyæ˜¯ä¸€ä¸ªç³»ç»Ÿç¼“å­˜çš„å­—ç¬¦ä¸²å¯¹è±¡ã€‚
+		whm.put("java" , new String("ä¸­ç­‰"));    // â‘ 
 		
-		// Êä³öwhm¶ÔÏó£¬½«¿´µ½4¸ökey-value¶Ô¡£
+		// è¾“å‡ºwhmå¯¹è±¡ï¼Œå°†çœ‹åˆ°4ä¸ªkey-valueå¯¹ã€‚
 		System.out.println(whm);
 		
 		
-		// Í¨ÖªÏµÍ³Á¢¼´½øĞĞÀ¬»ø»ØÊÕ
+		// é€šçŸ¥ç³»ç»Ÿç«‹å³è¿›è¡Œåƒåœ¾å›æ”¶
 		System.gc();
 		System.runFinalization();
 		
-		// Í¨³£Çé¿öÏÂ£¬½«Ö»¿´µ½Ò»¸ökey-value¶Ô¡£
+		// é€šå¸¸æƒ…å†µä¸‹ï¼Œå°†åªçœ‹åˆ°ä¸€ä¸ªkey-valueå¯¹ã€‚
 		System.out.println(whm);
 	}
 }

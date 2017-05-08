@@ -1,10 +1,10 @@
-package chapter06_04_final���η�;
+package chapter06_04_final修饰符;
 
 
 
 /**
  * Description:
- * <br/>��վ: <a href="http://www.crazyit.org">���Java����</a>
+ * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,43 +14,43 @@ package chapter06_04_final���η�;
  */
 public class FinalVariableTest
 {
-	// �����Ա����ʱָ��Ĭ��ֵ���Ϸ���
+	// 定义成员变量时指定默认值，合法。
 	final int a = 6;
-	// ����������ڹ��������ʼ�����з����ʼֵ
+	// 下面变量将在构造器或初始化块中分配初始值
 	final String str;
 	final int c;
 	final static double d;
-	// ��û��ָ��Ĭ��ֵ����û���ڳ�ʼ���顢��������ָ����ʼֵ��
-	// ���涨���chʵ�������ǲ��Ϸ��ġ�
+	// 既没有指定默认值，又没有在初始化块、构造器中指定初始值，
+	// 下面定义的ch实例变量是不合法的。
 	// final char ch;
-	// ��ʼ���飬�ɶ�û��ָ��Ĭ��ֵ��ʵ������ָ����ʼֵ
+	// 初始化块，可对没有指定默认值的实例变量指定初始值
 	{
-		//�ڳ�ʼ������Ϊʵ������ָ����ʼֵ���Ϸ�
+		//在初始化块中为实例变量指定初始值，合法
 		str = "Hello";
-		// ����aʵ������ʱ�Ѿ�ָ����Ĭ��ֵ��
-		// ����Ϊa���¸�ֵ��������渳ֵ���Ƿ�
+		// 定义a实例变量时已经指定了默认值，
+		// 不能为a重新赋值，因此下面赋值语句非法
 		// a = 9;
 	}
-	// ��̬��ʼ���飬�ɶ�û��ָ��Ĭ��ֵ�������ָ����ʼֵ
+	// 静态初始化块，可对没有指定默认值的类变量指定初始值
 	static
 	{
-		// �ھ�̬��ʼ������Ϊ�����ָ����ʼֵ���Ϸ�
+		// 在静态初始化块中为类变量指定初始值，合法
 		d = 5.6;
 	}
-	// ���������ɶԼ�û��ָ��Ĭ��ֵ����û���ڳ�ʼ������
-	// ָ����ʼֵ��ʵ������ָ����ʼֵ
+	// 构造器，可对既没有指定默认值、有没有在初始化块中
+	// 指定初始值的实例变量指定初始值
 	public FinalVariableTest()
 	{
-		// ����ڳ�ʼ�������Ѿ���strָ���˳�ʼ��ֵ��
-		// �������в��ܶ�final�������¸�ֵ�����渳ֵ���Ƿ�
+		// 如果在初始化块中已经对str指定了初始化值，
+		// 构造器中不能对final变量重新赋值，下面赋值语句非法
 		// str = "java";
 		c = 5;
 	}
 	public void changeFinal()
 	{
-		// ��ͨ��������Ϊfinal���εĳ�Ա������ֵ
+		// 普通方法不能为final修饰的成员变量赋值
 		// d = 1.2;
-		// ��������ͨ������Ϊfinal��Ա����ָ����ʼֵ
+		// 不能在普通方法中为final成员变量指定初始值
 		// ch = 'a';
 	}
 	public static void main(String[] args)

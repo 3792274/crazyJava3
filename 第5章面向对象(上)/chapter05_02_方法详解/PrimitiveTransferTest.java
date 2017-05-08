@@ -1,10 +1,10 @@
-package chapter05_02_·½·¨Ïê½â;
+package chapter05_02_æ–¹æ³•è¯¦è§£;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,22 +16,22 @@ public class PrimitiveTransferTest
 {
 	public static void swap(int a , int b)
 	{
-		// ÏÂÃæÈıĞĞ´úÂëÊµÏÖa¡¢b±äÁ¿µÄÖµ½»»»¡£
-		// ¶¨ÒåÒ»¸öÁÙÊ±±äÁ¿À´±£´æa±äÁ¿µÄÖµ
+		// ä¸‹é¢ä¸‰è¡Œä»£ç å®ç°aã€bå˜é‡çš„å€¼äº¤æ¢ã€‚
+		// å®šä¹‰ä¸€ä¸ªä¸´æ—¶å˜é‡æ¥ä¿å­˜aå˜é‡çš„å€¼
 		int tmp = a;
-		// °ÑbµÄÖµ¸³¸øa
+		// æŠŠbçš„å€¼èµ‹ç»™a
 		a = b;
-		// °ÑÁÙÊ±±äÁ¿tmpµÄÖµ¸³¸øa
+		// æŠŠä¸´æ—¶å˜é‡tmpçš„å€¼èµ‹ç»™a
 		b = tmp;
-		System.out.println("swap·½·¨Àï£¬aµÄÖµÊÇ"
-			+ a + "£»bµÄÖµÊÇ" + b);
+		System.out.println("swapæ–¹æ³•é‡Œï¼Œaçš„å€¼æ˜¯"
+			+ a + "ï¼›bçš„å€¼æ˜¯" + b);
 	}
 	public static void main(String[] args)
 	{
 		int a = 6;
 		int b = 9;
 		swap(a , b);
-		System.out.println("½»»»½áÊøºó£¬±äÁ¿aµÄÖµÊÇ"
-			+ a + "£»±äÁ¿bµÄÖµÊÇ" + b);
+		System.out.println("äº¤æ¢ç»“æŸåï¼Œå˜é‡açš„å€¼æ˜¯"
+			+ a + "ï¼›å˜é‡bçš„å€¼æ˜¯" + b);
 	}
 }

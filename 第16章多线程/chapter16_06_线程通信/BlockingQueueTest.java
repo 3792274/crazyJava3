@@ -1,10 +1,10 @@
-package chapter16_06_Ïß³ÌÍ¨ĞÅ;
+package chapter16_06_çº¿ç¨‹é€šä¿¡;
 
 import java.util.concurrent.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,10 +15,10 @@ import java.util.concurrent.*;
  */
 public class BlockingQueueTest {
 	public static void main(String[] args) throws Exception {
-		// ¶¨ÒåÒ»¸ö³¤¶ÈÎª2µÄ×èÈû¶ÓÁĞ
+		// å®šä¹‰ä¸€ä¸ªé•¿åº¦ä¸º2çš„é˜»å¡é˜Ÿåˆ—
 		BlockingQueue<String> bq = new ArrayBlockingQueue<>(2);
-		bq.put("Java"); // Óëbq.add("Java"¡¢bq.offer("Java")ÏàÍ¬
-		bq.put("Java"); // Óëbq.add("Java"¡¢bq.offer("Java")ÏàÍ¬
-		bq.put("Java"); // ¢Ù ×èÈûÏß³Ì¡£Ê¹ÓÃput»áµ¼ÖÂ×èÈû£¬add»áµ¼ÖÂÒì³££¬offer·µ»Øfalse²¢²»·ÅÈëÔªËØ¡£
+		bq.put("Java"); // ä¸bq.add("Java"ã€bq.offer("Java")ç›¸åŒ
+		bq.put("Java"); // ä¸bq.add("Java"ã€bq.offer("Java")ç›¸åŒ
+		bq.put("Java"); // â‘  é˜»å¡çº¿ç¨‹ã€‚ä½¿ç”¨putä¼šå¯¼è‡´é˜»å¡ï¼Œaddä¼šå¯¼è‡´å¼‚å¸¸ï¼Œofferè¿”å›falseå¹¶ä¸æ”¾å…¥å…ƒç´ ã€‚
 	}
 }

@@ -1,11 +1,11 @@
-package chapter07_01_ÓëÓÃ»§½»»¥;
+package chapter07_01_ä¸ç”¨æˆ·äº¤äº’;
 
 import java.util.*;
 import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,14 +16,14 @@ import java.io.*;
  */
 public class ScannerFileTest04 {
 
-	// Éè¼Æµ½IO ÓĞ¿ÉÄÜ²úÉúÒì³£¡£
+	// è®¾è®¡åˆ°IO æœ‰å¯èƒ½äº§ç”Ÿå¼‚å¸¸ã€‚
 	public static void main(String[] args) throws Exception {
-		// ½«Ò»¸öFile¶ÔÏó×÷ÎªScannerµÄ¹¹ÔìÆ÷²ÎÊı£¬Scanner¶ÁÈ¡ÎÄ¼şÄÚÈİ
+		// å°†ä¸€ä¸ªFileå¯¹è±¡ä½œä¸ºScannerçš„æ„é€ å™¨å‚æ•°ï¼ŒScannerè¯»å–æ–‡ä»¶å†…å®¹
 		Scanner sc = new Scanner(new File("C:/Users/Mr.TianShu/Desktop/1.txt"));
-		System.out.println("ScannerFileTest.javaÎÄ¼şÄÚÈİÈçÏÂ£º");
-		// ÅĞ¶ÏÊÇ·ñ»¹ÓĞÏÂÒ»ĞĞ
+		System.out.println("ScannerFileTest.javaæ–‡ä»¶å†…å®¹å¦‚ä¸‹ï¼š");
+		// åˆ¤æ–­æ˜¯å¦è¿˜æœ‰ä¸‹ä¸€è¡Œ
 		while (sc.hasNextLine()) {
-			// Êä³öÎÄ¼şÖĞµÄÏÂÒ»ĞĞ
+			// è¾“å‡ºæ–‡ä»¶ä¸­çš„ä¸‹ä¸€è¡Œ
 			System.out.println(sc.nextLine());
 		}
 	}

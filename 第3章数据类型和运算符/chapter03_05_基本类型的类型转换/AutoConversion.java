@@ -1,8 +1,8 @@
-package chapter03_05_»ù±¾ÀàĞÍµÄÀàĞÍ×ª»»;
+package chapter03_05_åŸºæœ¬ç±»å‹çš„ç±»å‹è½¬æ¢;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,17 +15,17 @@ public class AutoConversion
 	public static void main(String[] args)
 	{
 		int a  = 6;
-		// int¿ÉÒÔ×Ô¶¯×ª»»ÎªfloatÀàĞÍ
+		// intå¯ä»¥è‡ªåŠ¨è½¬æ¢ä¸ºfloatç±»å‹
 		float f = a;
-		// ÏÂÃæ½«Êä³ö6.0
+		// ä¸‹é¢å°†è¾“å‡º6.0
 		System.out.println(f);
-		// ¶¨ÒåÒ»¸öbyteÀàĞÍµÄÕûÊı±äÁ¿
+		// å®šä¹‰ä¸€ä¸ªbyteç±»å‹çš„æ•´æ•°å˜é‡
 		byte b = 9;
-		// ÏÂÃæ´úÂë½«³ö´í£¬byteĞÍ²»ÄÜ×Ô¶¯ÀàĞÍ×ª»»ÎªcharĞÍ
+		// ä¸‹é¢ä»£ç å°†å‡ºé”™ï¼Œbyteå‹ä¸èƒ½è‡ªåŠ¨ç±»å‹è½¬æ¢ä¸ºcharå‹
 		// char c = b;
-		// ÏÂÃæÊÇbyteĞÍ±äÁ¿¿ÉÒÔ×Ô¶¯ÀàĞÍ×ª»»ÎªdoubleĞÍ
+		// ä¸‹é¢æ˜¯byteå‹å˜é‡å¯ä»¥è‡ªåŠ¨ç±»å‹è½¬æ¢ä¸ºdoubleå‹
 		double d = b;
-		// ÏÂÃæ½«Êä³ö9.0
+		// ä¸‹é¢å°†è¾“å‡º9.0
 		System.out.println(d);
 	}
 }

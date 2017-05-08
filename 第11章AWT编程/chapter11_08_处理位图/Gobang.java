@@ -1,4 +1,4 @@
-package chapter11_08_´¦ÀíÎ»Í¼;
+package chapter11_08_å¤„ç†ä½å›¾;
 
 
 import java.awt.*;
@@ -9,7 +9,7 @@ import javax.imageio.*;
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -19,29 +19,29 @@ import java.io.*;
  */
 public class Gobang
 {
-	// ÏÂÃæÈı¸öÎ»Í¼·Ö±ğ´ú±íÆåÅÌ¡¢ºÚ×Ó¡¢°××Ó
+	// ä¸‹é¢ä¸‰ä¸ªä½å›¾åˆ†åˆ«ä»£è¡¨æ£‹ç›˜ã€é»‘å­ã€ç™½å­
 	BufferedImage table;
 	BufferedImage black;
 	BufferedImage white;
-	// µ±Êó±êÒÆ¶¯Ê±ºòµÄÑ¡Ôñ¿ò
+	// å½“é¼ æ ‡ç§»åŠ¨æ—¶å€™çš„é€‰æ‹©æ¡†
 	BufferedImage selected;
-	// ¶¨ÒåÆåÅÌµÄ´óĞ¡
+	// å®šä¹‰æ£‹ç›˜çš„å¤§å°
 	private static int BOARD_SIZE = 15;
-	// ¶¨ÒåÆåÅÌ¿í¡¢¸ß¶àÉÙ¸öÏñËØ
+	// å®šä¹‰æ£‹ç›˜å®½ã€é«˜å¤šå°‘ä¸ªåƒç´ 
 	private final int TABLE_WIDTH = 535;
 	private final int TABLE_HETGHT = 536;
-	// ¶¨ÒåÆåÅÌ×ø±êµÄÏñËØÖµºÍÆåÅÌÊı×éÖ®¼äµÄ±ÈÂÊ¡£
+	// å®šä¹‰æ£‹ç›˜åæ ‡çš„åƒç´ å€¼å’Œæ£‹ç›˜æ•°ç»„ä¹‹é—´çš„æ¯”ç‡ã€‚
 	private final int RATE = TABLE_WIDTH / BOARD_SIZE;
-	// ¶¨ÒåÆåÅÌ×ø±êµÄÏñËØÖµºÍÆåÅÌÊı×éÖ®¼äµÄÆ«ÒÆ¾à¡£
+	// å®šä¹‰æ£‹ç›˜åæ ‡çš„åƒç´ å€¼å’Œæ£‹ç›˜æ•°ç»„ä¹‹é—´çš„åç§»è·ã€‚
 	private final int X_OFFSET = 5;
 	private final int Y_OFFSET = 6;
-	// ¶¨ÒåÒ»¸ö¶şÎ¬Êı×éÀ´³äµ±ÆåÅÌ
+	// å®šä¹‰ä¸€ä¸ªäºŒç»´æ•°ç»„æ¥å……å½“æ£‹ç›˜
 	private String[][] board = new String[BOARD_SIZE][BOARD_SIZE];
-	// Îå×ÓÆåÓÎÏ·µÄ´°¿Ú
-	JFrame f = new JFrame("Îå×ÓÆåÓÎÏ·");
-	// Îå×ÓÆåÓÎÏ·ÆåÅÌ¶ÔÓ¦µÄCanvas×é¼ş
+	// äº”å­æ£‹æ¸¸æˆçš„çª—å£
+	JFrame f = new JFrame("äº”å­æ£‹æ¸¸æˆ");
+	// äº”å­æ£‹æ¸¸æˆæ£‹ç›˜å¯¹åº”çš„Canvasç»„ä»¶
 	ChessBoard chessBoard = new ChessBoard();
-	// µ±Ç°Ñ¡ÖĞµãµÄ×ø±ê
+	// å½“å‰é€‰ä¸­ç‚¹çš„åæ ‡
 	private int selectedX = -1;
 	private int selectedY = -1;
 	public void init()throws Exception
@@ -50,12 +50,12 @@ public class Gobang
 		black = ImageIO.read(new File("image/black.gif"));
 		white = ImageIO.read(new File("image/white.gif"));
 		selected = ImageIO.read(new File("image/selected.gif"));
-		// °ÑÃ¿¸öÔªËØ¸³Îª"©ï"£¬"©ï"´ú±íÃ»ÓĞÆå×Ó
+		// æŠŠæ¯ä¸ªå…ƒç´ èµ‹ä¸º"â•‹"ï¼Œ"â•‹"ä»£è¡¨æ²¡æœ‰æ£‹å­
 		for (int i = 0 ; i < BOARD_SIZE ; i++)
 		{
 			for ( int j = 0 ; j < BOARD_SIZE ; j++)
 			{
-				board[i][j] = "©ï";
+				board[i][j] = "â•‹";
 			}
 		}
 		chessBoard.setPreferredSize(new Dimension(
@@ -64,19 +64,19 @@ public class Gobang
 		{
 			public void mouseClicked(MouseEvent e)
 			{
-				// ½«ÓÃ»§Êó±êÊÂ¼şµÄ×ø±ê×ª»»³ÉÆå×ÓÊı×éµÄ×ø±ê¡£
+				// å°†ç”¨æˆ·é¼ æ ‡äº‹ä»¶çš„åæ ‡è½¬æ¢æˆæ£‹å­æ•°ç»„çš„åæ ‡ã€‚
 				int xPos = (int)((e.getX() - X_OFFSET) / RATE);
 				int yPos = (int)((e.getY() - Y_OFFSET ) / RATE);
-				board[xPos][yPos] = "¡ñ";
+				board[xPos][yPos] = "â—";
 				/*
-				µçÄÔËæ»úÉú³ÉÁ½¸öÕûÊı£¬×÷ÎªµçÄÔÏÂÆåµÄ×ø±ê£¬¸³¸øboardÊı×é¡£
-				»¹Éæ¼°:
-				1.Èç¹ûÏÂÆåµÄµãÒÑ¾­ÓĞÆå×Ó£¬²»ÄÜÖØ¸´ÏÂÆå¡£
-				2.Ã¿´ÎÏÂÆåºó£¬ĞèÒªÉ¨ÃèË­Ó®ÁË
+				ç”µè„‘éšæœºç”Ÿæˆä¸¤ä¸ªæ•´æ•°ï¼Œä½œä¸ºç”µè„‘ä¸‹æ£‹çš„åæ ‡ï¼Œèµ‹ç»™boardæ•°ç»„ã€‚
+				è¿˜æ¶‰åŠ:
+				1.å¦‚æœä¸‹æ£‹çš„ç‚¹å·²ç»æœ‰æ£‹å­ï¼Œä¸èƒ½é‡å¤ä¸‹æ£‹ã€‚
+				2.æ¯æ¬¡ä¸‹æ£‹åï¼Œéœ€è¦æ‰«æè°èµ¢äº†
 				*/
 				chessBoard.repaint();
 			}
-			// µ±Êó±êÍË³öÆåÅÌÇøºó£¬¸´Î»Ñ¡ÖĞµã×ø±ê
+			// å½“é¼ æ ‡é€€å‡ºæ£‹ç›˜åŒºåï¼Œå¤ä½é€‰ä¸­ç‚¹åæ ‡
 			public void mouseExited(MouseEvent e)
 			{
 				selectedX = -1;
@@ -86,7 +86,7 @@ public class Gobang
 		});
 		chessBoard.addMouseMotionListener(new MouseMotionAdapter()
 		{
-			// µ±Êó±êÒÆ¶¯Ê±£¬¸Ä±äÑ¡ÖĞµãµÄ×ø±ê
+			// å½“é¼ æ ‡ç§»åŠ¨æ—¶ï¼Œæ”¹å˜é€‰ä¸­ç‚¹çš„åæ ‡
 			public void mouseMoved(MouseEvent e)
 			{
 				selectedX = (e.getX() - X_OFFSET) / RATE;
@@ -105,28 +105,28 @@ public class Gobang
 	}
 	class ChessBoard extends JPanel
 	{
-		// ÖØĞ´JPanelµÄpaint·½·¨£¬ÊµÏÖ»æ»­
+		// é‡å†™JPanelçš„paintæ–¹æ³•ï¼Œå®ç°ç»˜ç”»
 		public void paint(Graphics g)
 		{
-			// ½«»æÖÆÎå×ÓÆåÆåÅÌ
+			// å°†ç»˜åˆ¶äº”å­æ£‹æ£‹ç›˜
 			g.drawImage(table , 0 , 0 , null);
-			// »æÖÆÑ¡ÖĞµãµÄºì¿ò
+			// ç»˜åˆ¶é€‰ä¸­ç‚¹çš„çº¢æ¡†
 			if (selectedX >= 0 && selectedY >= 0)
 				g.drawImage(selected , selectedX * RATE + X_OFFSET ,
 			selectedY * RATE + Y_OFFSET, null);
-			// ±éÀúÊı×é£¬»æÖÆÆå×Ó¡£
+			// éå†æ•°ç»„ï¼Œç»˜åˆ¶æ£‹å­ã€‚
 			for (int i = 0 ; i < BOARD_SIZE ; i++)
 			{
 				for ( int j = 0 ; j < BOARD_SIZE ; j++)
 				{
-					// »æÖÆºÚÆå
-					if (board[i][j].equals("¡ñ"))
+					// ç»˜åˆ¶é»‘æ£‹
+					if (board[i][j].equals("â—"))
 					{
 						g.drawImage(black , i * RATE + X_OFFSET
 							, j * RATE + Y_OFFSET, null);
 					}
-					// »æÖÆ°×Æå
-					if (board[i][j].equals("¡ğ"))
+					// ç»˜åˆ¶ç™½æ£‹
+					if (board[i][j].equals("â—‹"))
 					{
 						g.drawImage(white, i * RATE  + X_OFFSET
 							, j * RATE  + Y_OFFSET, null);

@@ -1,10 +1,10 @@
-package chapter05_04_Òş²ØºÍ·â×°;
+package chapter05_04_éšè—å’Œå°è£…;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,16 +14,16 @@ package chapter05_04_Òş²ØºÍ·â×°;
  */
 public class Person
 {
-	// Ê¹ÓÃprivateĞŞÊÎ³ÉÔ±±äÁ¿£¬½«ÕâĞ©³ÉÔ±±äÁ¿Òş²ØÆğÀ´
+	// ä½¿ç”¨privateä¿®é¥°æˆå‘˜å˜é‡ï¼Œå°†è¿™äº›æˆå‘˜å˜é‡éšè—èµ·æ¥
 	private String name;
 	private int age;
-	// Ìá¹©·½·¨À´²Ù×÷name³ÉÔ±±äÁ¿
+	// æä¾›æ–¹æ³•æ¥æ“ä½œnameæˆå‘˜å˜é‡
 	public void setName(String name)
 	{
-		// Ö´ĞĞºÏÀíĞÔĞ£Ñé£¬ÒªÇóÓÃ»§Ãû±ØĞëÔÚ2¡«6Î»Ö®¼ä
+		// æ‰§è¡Œåˆç†æ€§æ ¡éªŒï¼Œè¦æ±‚ç”¨æˆ·åå¿…é¡»åœ¨2ï½6ä½ä¹‹é—´
 		if (name.length() > 6 || name.length() < 2)
 		{
-			System.out.println("ÄúÉèÖÃµÄÈËÃû²»·ûºÏÒªÇó");
+			System.out.println("æ‚¨è®¾ç½®çš„äººåä¸ç¬¦åˆè¦æ±‚");
 			return;
 		}
 		else
@@ -35,13 +35,13 @@ public class Person
 	{
 		return this.name;
 	}
-	// Ìá¹©·½·¨À´²Ù×÷age³ÉÔ±±äÁ¿
+	// æä¾›æ–¹æ³•æ¥æ“ä½œageæˆå‘˜å˜é‡
 	public void setAge(int age)
 	{
-		// Ö´ĞĞºÏÀíĞÔĞ£Ñé£¬ÒªÇóÓÃ»§ÄêÁä±ØĞëÔÚ0¡«100Ö®¼ä
+		// æ‰§è¡Œåˆç†æ€§æ ¡éªŒï¼Œè¦æ±‚ç”¨æˆ·å¹´é¾„å¿…é¡»åœ¨0ï½100ä¹‹é—´
 		if (age > 100 || age < 0)
 		{
-			System.out.println("ÄúÉèÖÃµÄÄêÁä²»ºÏ·¨");
+			System.out.println("æ‚¨è®¾ç½®çš„å¹´é¾„ä¸åˆæ³•");
 			return;
 		}
 		else

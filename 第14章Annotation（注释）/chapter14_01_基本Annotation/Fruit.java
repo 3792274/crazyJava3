@@ -1,10 +1,10 @@
-package chapter14_01_基本Annotation;
+package chapter14_01_鍩烘湰Annotation;
 
 
 
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,15 +16,15 @@ public class Fruit
 {
 	public void info()
 	{
-		System.out.println("水果的info方法...");
+		System.out.println("姘存灉鐨刬nfo鏂规硶...");
 	}
 }
 class Apple01 extends Fruit
 {
-	// 使用@Override指定下面方法必须重写父类方法
+	// 浣跨敤@Override鎸囧畾涓嬮潰鏂规硶蹇呴』閲嶅啓鐖剁被鏂规硶
 	@Override
 	public void info()
 	{
-		System.out.println("苹果重写水果的info方法...");
+		System.out.println("鑻规灉閲嶅啓姘存灉鐨刬nfo鏂规硶...");
 	}
 }

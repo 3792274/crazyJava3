@@ -1,9 +1,9 @@
-package chapter18_04_Ê¹ÓÃ·´ÉäÉú³É²¢²Ù×÷¶ÔÏó;
+package chapter18_04_ä½¿ç”¨åå°„ç”Ÿæˆå¹¶æ“ä½œå¯¹è±¡;
 
 import java.lang.reflect.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -26,22 +26,22 @@ public class FieldTest
 	public static void main(String[] args)
 		throws Exception
 	{
-		// ´´½¨Ò»¸öPerson¶ÔÏó
+		// åˆ›å»ºä¸€ä¸ªPersonå¯¹è±¡
 		Person p = new Person();
-		// »ñÈ¡PersonÀà¶ÔÓ¦µÄClass¶ÔÏó
+		// è·å–Personç±»å¯¹åº”çš„Classå¯¹è±¡
 		Class<Person> personClazz = Person.class;
-		// »ñÈ¡PersonµÄÃûÎªnameµÄ³ÉÔ±±äÁ¿
-		// Ê¹ÓÃgetDeclaredField()·½·¨±íÃ÷¿É»ñÈ¡¸÷ÖÖ·ÃÎÊ¿ØÖÆ·ûµÄ³ÉÔ±±äÁ¿
+		// è·å–Personçš„åä¸ºnameçš„æˆå‘˜å˜é‡
+		// ä½¿ç”¨getDeclaredField()æ–¹æ³•è¡¨æ˜å¯è·å–å„ç§è®¿é—®æ§åˆ¶ç¬¦çš„æˆå‘˜å˜é‡
 		Field nameField = personClazz.getDeclaredField("name");
-		// ÉèÖÃÍ¨¹ı·´Éä·ÃÎÊ¸Ã³ÉÔ±±äÁ¿Ê±È¡Ïû·ÃÎÊÈ¨ÏŞ¼ì²é
+		// è®¾ç½®é€šè¿‡åå°„è®¿é—®è¯¥æˆå‘˜å˜é‡æ—¶å–æ¶ˆè®¿é—®æƒé™æ£€æŸ¥
 		nameField.setAccessible(true);
-		// µ÷ÓÃset()·½·¨Îªp¶ÔÏóµÄname³ÉÔ±±äÁ¿ÉèÖÃÖµ
+		// è°ƒç”¨set()æ–¹æ³•ä¸ºpå¯¹è±¡çš„nameæˆå‘˜å˜é‡è®¾ç½®å€¼
 		nameField.set(p , "Yeeku.H.Lee");
-		// »ñÈ¡PersonÀàÃûÎªageµÄ³ÉÔ±±äÁ¿
+		// è·å–Personç±»åä¸ºageçš„æˆå‘˜å˜é‡
 		Field ageField = personClazz.getDeclaredField("age");
-		// ÉèÖÃÍ¨¹ı·´Éä·ÃÎÊ¸Ã³ÉÔ±±äÁ¿Ê±È¡Ïû·ÃÎÊÈ¨ÏŞ¼ì²é
+		// è®¾ç½®é€šè¿‡åå°„è®¿é—®è¯¥æˆå‘˜å˜é‡æ—¶å–æ¶ˆè®¿é—®æƒé™æ£€æŸ¥
 		ageField.setAccessible(true);
-		// µ÷ÓÃsetInt()·½·¨Îªp¶ÔÏóµÄage³ÉÔ±±äÁ¿ÉèÖÃÖµ
+		// è°ƒç”¨setInt()æ–¹æ³•ä¸ºpå¯¹è±¡çš„ageæˆå‘˜å˜é‡è®¾ç½®å€¼
 		ageField.setInt(p , 30);
 		System.out.println(p);
 	}

@@ -1,8 +1,8 @@
-package chapter06_01_Java8ÔöÇ¿µÄ°ü×°Àà;
+package chapter06_01_Java8å¢å¼ºçš„åŒ…è£…ç±»;
 
 /**
- * Description:°ü×°ÀàĞÍÓëÊıÖµÀàĞÍ±È½Ï£¬È¡³öµÄÊÇÊıÖµÀàĞÍµÄÖµ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:åŒ…è£…ç±»å‹ä¸æ•°å€¼ç±»å‹æ¯”è¾ƒï¼Œå–å‡ºçš„æ˜¯æ•°å€¼ç±»å‹çš„å€¼ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,16 +15,16 @@ public class WrapperClassCompare {
 	public static void main(String[] args) {
 		
 		Integer a = new Integer(6);
-		System.out.println("6µÄ°ü×°ÀàÊµÀıÊÇ·ñ´óÓÚ5.0" + (a > 5.0));// Êä³ötrue
-		System.out.println("±È½Ï2¸ö°ü×°ÀàµÄÊµÀıÊÇ·ñÏàµÈ£º" + (new Integer(2) == new Integer(2))); // Êä³öfalse
+		System.out.println("6çš„åŒ…è£…ç±»å®ä¾‹æ˜¯å¦å¤§äº5.0" + (a > 5.0));// è¾“å‡ºtrue
+		System.out.println("æ¯”è¾ƒ2ä¸ªåŒ…è£…ç±»çš„å®ä¾‹æ˜¯å¦ç›¸ç­‰ï¼š" + (new Integer(2) == new Integer(2))); // è¾“å‡ºfalse
 		
-		// Í¨¹ı×Ô¶¯×°Ïä£¬ÔÊĞí°Ñ»ù±¾ÀàĞÍÖµ¸³Öµ¸ø°ü×°ÀàµÄÊµÀı
+		// é€šè¿‡è‡ªåŠ¨è£…ç®±ï¼Œå…è®¸æŠŠåŸºæœ¬ç±»å‹å€¼èµ‹å€¼ç»™åŒ…è£…ç±»çš„å®ä¾‹
 		Integer ina = 2;
 		Integer inb = 2;
-		System.out.println("Á½¸ö2×Ô¶¯×°ÏäºóÊÇ·ñÏàµÈ£º" + (ina == inb)); // Êä³ötrue
+		System.out.println("ä¸¤ä¸ª2è‡ªåŠ¨è£…ç®±åæ˜¯å¦ç›¸ç­‰ï¼š" + (ina == inb)); // è¾“å‡ºtrue
 		
 		Integer biga = 128;
 		Integer bigb = 128;
-		System.out.println("Á½¸ö128×Ô¶¯×°ÏäºóÊÇ·ñÏàµÈ£º" + (biga == bigb)); // Êä³öfalse,IntegerÔ´ÂëÖ»»º´æ-128 ~ 127µÄÊı¡£
+		System.out.println("ä¸¤ä¸ª128è‡ªåŠ¨è£…ç®±åæ˜¯å¦ç›¸ç­‰ï¼š" + (biga == bigb)); // è¾“å‡ºfalse,Integeræºç åªç¼“å­˜-128 ~ 127çš„æ•°ã€‚
 	}
 }

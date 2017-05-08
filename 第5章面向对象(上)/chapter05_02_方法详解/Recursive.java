@@ -1,10 +1,10 @@
-package chapter05_02_·½·¨Ïê½â;
+package chapter05_02_æ–¹æ³•è¯¦è§£;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -26,13 +26,13 @@ public class Recursive
 		}
 		else
 		{
-			// ·½·¨ÖĞµ÷ÓÃËü×ÔÉí£¬¾ÍÊÇ·½·¨µİ¹é
+			// æ–¹æ³•ä¸­è°ƒç”¨å®ƒè‡ªèº«ï¼Œå°±æ˜¯æ–¹æ³•é€’å½’
 			return 2 * fn(n - 1) + fn(n - 2);
 		}
 	}
 	public static void main(String[] args)
 	{
-		// Êä³öfn(10)µÄ½á¹û
+		// è¾“å‡ºfn(10)çš„ç»“æœ
 		System.out.println(fn(10));
 	}
 }

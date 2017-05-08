@@ -1,10 +1,10 @@
-package chapter14_03_自定义Annotation;
+package chapter14_03_鑷畾涔堿nnotation;
 
 
 
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,24 +13,24 @@ package chapter14_03_自定义Annotation;
  * @version 1.0
  */
 @FkTag(age=5)
-@FkTag(name="疯狂Java" , age=9)
+@FkTag(name="鐤媯Java" , age=9)
 //@FkTags({@FkTag(age=5),
-//	@FkTag(name="疯狂Java" , age=9)})
+//	@FkTag(name="鐤媯Java" , age=9)})
 public class FkTagTest
 {
 	public static void main(String[] args)
 	{
 		Class<FkTagTest> clazz = FkTagTest.class;
-		/* 使用Java 8新增的getDeclaredAnnotationsByType()方法获取
-			修饰FkTagTest类的多个@FkTag注解 */
+		/* 浣跨敤Java 8鏂板鐨刧etDeclaredAnnotationsByType()鏂规硶鑾峰彇
+			淇グFkTagTest绫荤殑澶氫釜@FkTag娉ㄨВ */
 		FkTag[] tags = clazz.getDeclaredAnnotationsByType(FkTag.class);
-		// 遍历修饰FkTagTest类的多个@FkTag注解
+		// 閬嶅巻淇グFkTagTest绫荤殑澶氫釜@FkTag娉ㄨВ
 		for(FkTag tag : tags)
 		{
 			System.out.println(tag.name() + "-->" + tag.age());
 		}
-		/* 使用传统的getDeclaredAnnotation()方法获取
-			修饰FkTagTest类的@FkTags注解 */
+		/* 浣跨敤浼犵粺鐨刧etDeclaredAnnotation()鏂规硶鑾峰彇
+			淇グFkTagTest绫荤殑@FkTags娉ㄨВ */
 		FkTags container = clazz.getDeclaredAnnotation(FkTags.class);
 		System.out.println(container);
 	}

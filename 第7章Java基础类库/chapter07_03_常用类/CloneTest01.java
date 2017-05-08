@@ -1,16 +1,16 @@
-package chapter07_03_³£ÓÃÀà;
+package chapter07_03_å¸¸ç”¨ç±»;
 
 
 /**
- * Description:¿ËÂ¡Ò»¸öÀà£¬protect Ö»ÄÜ±»×ÓÀàÖØĞ´»òÕßµ÷ÓÃ<br />
- * 1.×Ô¶¨ÒåÀàÊµÏÖCloneable½Ó¿Ú£¬±ê¼Ç½Ó¿Ú£¬¿ÉÒÔÊµÏÖ¡°×ÔÎÒ¿ËÂ¡¡±£¬¿Õ·½·¨<br />
- * 2.×Ô¶¨ÒåÀàÊµÏÖ×Ô¼ºµÄclone()·½·¨<br />
- * 3.ÊµÏÖclone·½·¨£¬Í¨¹ıµ÷ÓÃsuper.clone()<br />
- * 4.ËÙ¶È±Ècopy¿ì£¬Ç³¿ËÂ¡¡£<br>
+ * Description:å…‹éš†ä¸€ä¸ªç±»ï¼Œprotect åªèƒ½è¢«å­ç±»é‡å†™æˆ–è€…è°ƒç”¨<br />
+ * 1.è‡ªå®šä¹‰ç±»å®ç°Cloneableæ¥å£ï¼Œæ ‡è®°æ¥å£ï¼Œå¯ä»¥å®ç°â€œè‡ªæˆ‘å…‹éš†â€ï¼Œç©ºæ–¹æ³•<br />
+ * 2.è‡ªå®šä¹‰ç±»å®ç°è‡ªå·±çš„clone()æ–¹æ³•<br />
+ * 3.å®ç°cloneæ–¹æ³•ï¼Œé€šè¿‡è°ƒç”¨super.clone()<br />
+ * 4.é€Ÿåº¦æ¯”copyå¿«ï¼Œæµ…å…‹éš†ã€‚<br>
  * 
  * 
  * 
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -30,7 +30,7 @@ class Address
 }
 
 
-// ÊµÏÖCloneable½Ó¿Ú
+// å®ç°Cloneableæ¥å£
 class User implements Cloneable
 {
 	int age;
@@ -39,10 +39,10 @@ class User implements Cloneable
 	public User(int age)
 	{
 		this.age = age;
-		address = new Address("¹ãÖİÌìºÓ");
+		address = new Address("å¹¿å·å¤©æ²³");
 	}
 	
-	// Í¨¹ıµ÷ÓÃsuper.clone()À´ÊµÏÖclone()·½·¨
+	// é€šè¿‡è°ƒç”¨super.clone()æ¥å®ç°clone()æ–¹æ³•
 	@Override
 	public User clone()
 		throws CloneNotSupportedException
@@ -59,13 +59,13 @@ public class CloneTest01
 	{
 		User u1 = new User(29);
 		
-		// cloneµÃµ½u1¶ÔÏóµÄ¸±±¾¡£
+		// cloneå¾—åˆ°u1å¯¹è±¡çš„å‰¯æœ¬ã€‚
 		User u2 = u1.clone();
 		
-		// ÅĞ¶Ïu1¡¢u2ÊÇ·ñÏàÍ¬
-		System.out.println(u1 == u2);      //¢Ù false
+		// åˆ¤æ–­u1ã€u2æ˜¯å¦ç›¸åŒ
+		System.out.println(u1 == u2);      //â‘  false
 		
-		// ÅĞ¶Ïu1¡¢u2µÄaddressÊÇ·ñÏàÍ¬
-		System.out.println(u1.address == u2.address);     //¢Útrue
+		// åˆ¤æ–­u1ã€u2çš„addressæ˜¯å¦ç›¸åŒ
+		System.out.println(u1.address == u2.address);     //â‘¡true
 	}
 }

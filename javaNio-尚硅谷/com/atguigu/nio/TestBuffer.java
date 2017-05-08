@@ -5,9 +5,9 @@ import java.nio.ByteBuffer;
 import org.junit.Test;
 
 /*
- * Ò»¡¢»º³åÇø£¨Buffer£©£ºÔÚ Java NIO ÖÐ¸ºÔðÊý¾ÝµÄ´æÈ¡¡£»º³åÇø¾ÍÊÇÊý×é¡£ÓÃÓÚ´æ´¢²»Í¬Êý¾ÝÀàÐÍµÄÊý¾Ý
+ * ä¸€ã€ç¼“å†²åŒºï¼ˆBufferï¼‰ï¼šåœ¨ Java NIO ä¸­è´Ÿè´£æ•°æ®çš„å­˜å–ã€‚ç¼“å†²åŒºå°±æ˜¯æ•°ç»„ã€‚ç”¨äºŽå­˜å‚¨ä¸åŒæ•°æ®ç±»åž‹çš„æ•°æ®
  * 
- * ¸ù¾ÝÊý¾ÝÀàÐÍ²»Í¬£¨boolean ³ýÍâ£©£¬Ìá¹©ÁËÏàÓ¦ÀàÐÍµÄ»º³åÇø£º
+ * æ ¹æ®æ•°æ®ç±»åž‹ä¸åŒï¼ˆboolean é™¤å¤–ï¼‰ï¼Œæä¾›äº†ç›¸åº”ç±»åž‹çš„ç¼“å†²åŒºï¼š
  * ByteBuffer
  * CharBuffer
  * ShortBuffer
@@ -16,30 +16,30 @@ import org.junit.Test;
  * FloatBuffer
  * DoubleBuffer
  * 
- * ÉÏÊö»º³åÇøµÄ¹ÜÀí·½Ê½¼¸ºõÒ»ÖÂ£¬Í¨¹ý allocate() »ñÈ¡»º³åÇø
+ * ä¸Šè¿°ç¼“å†²åŒºçš„ç®¡ç†æ–¹å¼å‡ ä¹Žä¸€è‡´ï¼Œé€šè¿‡ allocate() èŽ·å–ç¼“å†²åŒº
  * 
- * ¶þ¡¢»º³åÇø´æÈ¡Êý¾ÝµÄÁ½¸öºËÐÄ·½·¨£º
- * put() : ´æÈëÊý¾Ýµ½»º³åÇøÖÐ
- * get() : »ñÈ¡»º³åÇøÖÐµÄÊý¾Ý
+ * äºŒã€ç¼“å†²åŒºå­˜å–æ•°æ®çš„ä¸¤ä¸ªæ ¸å¿ƒæ–¹æ³•ï¼š
+ * put() : å­˜å…¥æ•°æ®åˆ°ç¼“å†²åŒºä¸­
+ * get() : èŽ·å–ç¼“å†²åŒºä¸­çš„æ•°æ®
  * 
- * Èý¡¢»º³åÇøÖÐµÄËÄ¸öºËÐÄÊôÐÔ£º
- * capacity : ÈÝÁ¿£¬±íÊ¾»º³åÇøÖÐ×î´ó´æ´¢Êý¾ÝµÄÈÝÁ¿¡£Ò»µ©ÉùÃ÷²»ÄÜ¸Ä±ä¡£
- * limit : ½çÏÞ£¬±íÊ¾»º³åÇøÖÐ¿ÉÒÔ²Ù×÷Êý¾ÝµÄ´óÐ¡¡££¨limit ºóÊý¾Ý²»ÄÜ½øÐÐ¶ÁÐ´£©
- * position : Î»ÖÃ£¬±íÊ¾»º³åÇøÖÐÕýÔÚ²Ù×÷Êý¾ÝµÄÎ»ÖÃ¡£
+ * ä¸‰ã€ç¼“å†²åŒºä¸­çš„å››ä¸ªæ ¸å¿ƒå±žæ€§ï¼š
+ * capacity : å®¹é‡ï¼Œè¡¨ç¤ºç¼“å†²åŒºä¸­æœ€å¤§å­˜å‚¨æ•°æ®çš„å®¹é‡ã€‚ä¸€æ—¦å£°æ˜Žä¸èƒ½æ”¹å˜ã€‚
+ * limit : ç•Œé™ï¼Œè¡¨ç¤ºç¼“å†²åŒºä¸­å¯ä»¥æ“ä½œæ•°æ®çš„å¤§å°ã€‚ï¼ˆlimit åŽæ•°æ®ä¸èƒ½è¿›è¡Œè¯»å†™ï¼‰
+ * position : ä½ç½®ï¼Œè¡¨ç¤ºç¼“å†²åŒºä¸­æ­£åœ¨æ“ä½œæ•°æ®çš„ä½ç½®ã€‚
  * 
- * mark : ±ê¼Ç£¬±íÊ¾¼ÇÂ¼µ±Ç° position µÄÎ»ÖÃ¡£¿ÉÒÔÍ¨¹ý reset() »Ö¸´µ½ mark µÄÎ»ÖÃ
+ * mark : æ ‡è®°ï¼Œè¡¨ç¤ºè®°å½•å½“å‰ position çš„ä½ç½®ã€‚å¯ä»¥é€šè¿‡ reset() æ¢å¤åˆ° mark çš„ä½ç½®
  * 
  * 0 <= mark <= position <= limit <= capacity
  * 
- * ËÄ¡¢Ö±½Ó»º³åÇøÓë·ÇÖ±½Ó»º³åÇø£º
- * ·ÇÖ±½Ó»º³åÇø£ºÍ¨¹ý allocate() ·½·¨·ÖÅä»º³åÇø£¬½«»º³åÇø½¨Á¢ÔÚ JVM µÄÄÚ´æÖÐ
- * Ö±½Ó»º³åÇø£ºÍ¨¹ý allocateDirect() ·½·¨·ÖÅäÖ±½Ó»º³åÇø£¬½«»º³åÇø½¨Á¢ÔÚÎïÀíÄÚ´æÖÐ¡£¿ÉÒÔÌá¸ßÐ§ÂÊ
+ * å››ã€ç›´æŽ¥ç¼“å†²åŒºä¸Žéžç›´æŽ¥ç¼“å†²åŒºï¼š
+ * éžç›´æŽ¥ç¼“å†²åŒºï¼šé€šè¿‡ allocate() æ–¹æ³•åˆ†é…ç¼“å†²åŒºï¼Œå°†ç¼“å†²åŒºå»ºç«‹åœ¨ JVM çš„å†…å­˜ä¸­
+ * ç›´æŽ¥ç¼“å†²åŒºï¼šé€šè¿‡ allocateDirect() æ–¹æ³•åˆ†é…ç›´æŽ¥ç¼“å†²åŒºï¼Œå°†ç¼“å†²åŒºå»ºç«‹åœ¨ç‰©ç†å†…å­˜ä¸­ã€‚å¯ä»¥æé«˜æ•ˆçŽ‡
  */
 public class TestBuffer {
 	
 	@Test
 	public void test3(){
-		//·ÖÅäÖ±½Ó»º³åÇø
+		//åˆ†é…ç›´æŽ¥ç¼“å†²åŒº
 		ByteBuffer buf = ByteBuffer.allocateDirect(1024);
 		
 		System.out.println(buf.isDirect());
@@ -60,21 +60,21 @@ public class TestBuffer {
 		System.out.println(new String(dst, 0, 2));
 		System.out.println(buf.position());
 		
-		//mark() : ±ê¼Ç
+		//mark() : æ ‡è®°
 		buf.mark();
 		
 		buf.get(dst, 2, 2);
 		System.out.println(new String(dst, 2, 2));
 		System.out.println(buf.position());
 		
-		//reset() : »Ö¸´µ½ mark µÄÎ»ÖÃ
+		//reset() : æ¢å¤åˆ° mark çš„ä½ç½®
 		buf.reset();
 		System.out.println(buf.position());
 		
-		//ÅÐ¶Ï»º³åÇøÖÐÊÇ·ñ»¹ÓÐÊ£ÓàÊý¾Ý
+		//åˆ¤æ–­ç¼“å†²åŒºä¸­æ˜¯å¦è¿˜æœ‰å‰©ä½™æ•°æ®
 		if(buf.hasRemaining()){
 			
-			//»ñÈ¡»º³åÇøÖÐ¿ÉÒÔ²Ù×÷µÄÊýÁ¿
+			//èŽ·å–ç¼“å†²åŒºä¸­å¯ä»¥æ“ä½œçš„æ•°é‡
 			System.out.println(buf.remaining());
 		}
 	}
@@ -83,7 +83,7 @@ public class TestBuffer {
 	public void test1(){
 		String str = "abcde";
 		
-		//1. ·ÖÅäÒ»¸öÖ¸¶¨´óÐ¡µÄ»º³åÇø
+		//1. åˆ†é…ä¸€ä¸ªæŒ‡å®šå¤§å°çš„ç¼“å†²åŒº
 		ByteBuffer buf = ByteBuffer.allocate(1024);
 		
 		System.out.println("-----------------allocate()----------------");
@@ -91,7 +91,7 @@ public class TestBuffer {
 		System.out.println(buf.limit());
 		System.out.println(buf.capacity());
 		
-		//2. ÀûÓÃ put() ´æÈëÊý¾Ýµ½»º³åÇøÖÐ
+		//2. åˆ©ç”¨ put() å­˜å…¥æ•°æ®åˆ°ç¼“å†²åŒºä¸­
 		buf.put(str.getBytes());
 		
 		System.out.println("-----------------put()----------------");
@@ -99,7 +99,7 @@ public class TestBuffer {
 		System.out.println(buf.limit());
 		System.out.println(buf.capacity());
 		
-		//3. ÇÐ»»¶ÁÈ¡Êý¾ÝÄ£Ê½
+		//3. åˆ‡æ¢è¯»å–æ•°æ®æ¨¡å¼
 		buf.flip();
 		
 		System.out.println("-----------------flip()----------------");
@@ -107,7 +107,7 @@ public class TestBuffer {
 		System.out.println(buf.limit());
 		System.out.println(buf.capacity());
 		
-		//4. ÀûÓÃ get() ¶ÁÈ¡»º³åÇøÖÐµÄÊý¾Ý
+		//4. åˆ©ç”¨ get() è¯»å–ç¼“å†²åŒºä¸­çš„æ•°æ®
 		byte[] dst = new byte[buf.limit()];
 		buf.get(dst);
 		System.out.println(new String(dst, 0, dst.length));
@@ -117,7 +117,7 @@ public class TestBuffer {
 		System.out.println(buf.limit());
 		System.out.println(buf.capacity());
 		
-		//5. rewind() : ¿ÉÖØ¸´¶Á
+		//5. rewind() : å¯é‡å¤è¯»
 		buf.rewind();
 		
 		System.out.println("-----------------rewind()----------------");
@@ -125,7 +125,7 @@ public class TestBuffer {
 		System.out.println(buf.limit());
 		System.out.println(buf.capacity());
 		
-		//6. clear() : Çå¿Õ»º³åÇø. µ«ÊÇ»º³åÇøÖÐµÄÊý¾ÝÒÀÈ»´æÔÚ£¬µ«ÊÇ´¦ÓÚ¡°±»ÒÅÍü¡±×´Ì¬
+		//6. clear() : æ¸…ç©ºç¼“å†²åŒº. ä½†æ˜¯ç¼“å†²åŒºä¸­çš„æ•°æ®ä¾ç„¶å­˜åœ¨ï¼Œä½†æ˜¯å¤„äºŽâ€œè¢«é—å¿˜â€çŠ¶æ€
 		buf.clear();
 		
 		System.out.println("-----------------clear()----------------");

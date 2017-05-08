@@ -1,9 +1,9 @@
-package chapter18_02_类加载器;
+package chapter18_02_绫诲姞杞藉櫒;
 
 
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,7 +17,7 @@ public class Hello
 	{
 		for (String arg : args)
 		{
-			System.out.println("运行Hello的参数：" + arg);
+			System.out.println("杩愯Hello鐨勫弬鏁帮細" + arg);
 		}
 	}
 }

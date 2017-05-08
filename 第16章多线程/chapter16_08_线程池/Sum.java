@@ -1,11 +1,11 @@
-package chapter16_08_Ïß³Ì³Ø;
+package chapter16_08_çº¿ç¨‹æ± ;
 
 import java.util.concurrent.*;
 import java.util.*;
 
 /**
- * Description:ÓĞ·µ»ØÖµµÄ²¢ĞĞÖ´ĞĞÈÎÎñ¡£ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:æœ‰è¿”å›å€¼çš„å¹¶è¡Œæ‰§è¡Œä»»åŠ¡ã€‚ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,15 +15,15 @@ import java.util.*;
  * @version 1.0
  */
 
-// ¼Ì³ĞRecursiveTaskÀ´ÊµÏÖ"¿É·Ö½â"µÄÈÎÎñ
+// ç»§æ‰¿RecursiveTaskæ¥å®ç°"å¯åˆ†è§£"çš„ä»»åŠ¡
 class CalTask extends RecursiveTask<Integer> {
-	// Ã¿¸ö¡°Ğ¡ÈÎÎñ¡±Ö»×î¶àÖ»ÀÛ¼Ó20¸öÊı
+	// æ¯ä¸ªâ€œå°ä»»åŠ¡â€åªæœ€å¤šåªç´¯åŠ 20ä¸ªæ•°
 	private static final int THRESHOLD = 20;
 	private int arr[];
 	private int start;
 	private int end;
 
-	// ÀÛ¼Ó´Óstartµ½endµÄÊı×éÔªËØ
+	// ç´¯åŠ ä»startåˆ°endçš„æ•°ç»„å…ƒç´ 
 	public CalTask(int[] arr, int start, int end) {
 		this.arr = arr;
 		this.start = start;
@@ -33,23 +33,23 @@ class CalTask extends RecursiveTask<Integer> {
 	@Override
 	protected Integer compute() {
 		int sum = 0;
-		// µ±endÓëstartÖ®¼äµÄ²îĞ¡ÓÚTHRESHOLDÊ±£¬¿ªÊ¼½øĞĞÊµ¼ÊÀÛ¼Ó
+		// å½“endä¸startä¹‹é—´çš„å·®å°äºTHRESHOLDæ—¶ï¼Œå¼€å§‹è¿›è¡Œå®é™…ç´¯åŠ 
 		if (end - start < THRESHOLD) {
 			for (int i = start; i < end; i++) {
 				sum += arr[i];
 			}
 			return sum;
 		} else {
-			// Èç¹ûµ±endÓëstartÖ®¼äµÄ²î´óÓÚTHRESHOLDÊ±£¬¼´ÒªÀÛ¼ÓµÄÊı³¬¹ı20¸öÊ±
-			// ½«´óÈÎÎñ·Ö½â³ÉÁ½¸öĞ¡ÈÎÎñ¡£
+			// å¦‚æœå½“endä¸startä¹‹é—´çš„å·®å¤§äºTHRESHOLDæ—¶ï¼Œå³è¦ç´¯åŠ çš„æ•°è¶…è¿‡20ä¸ªæ—¶
+			// å°†å¤§ä»»åŠ¡åˆ†è§£æˆä¸¤ä¸ªå°ä»»åŠ¡ã€‚
 			int middle = (start + end) / 2;
 			CalTask left = new CalTask(arr, start, middle);
 			CalTask right = new CalTask(arr, middle, end);
-			// ²¢ĞĞÖ´ĞĞÁ½¸ö¡°Ğ¡ÈÎÎñ¡±
+			// å¹¶è¡Œæ‰§è¡Œä¸¤ä¸ªâ€œå°ä»»åŠ¡â€
 			left.fork();
 			right.fork();
-			// °ÑÁ½¸ö¡°Ğ¡ÈÎÎñ¡±ÀÛ¼ÓµÄ½á¹ûºÏ²¢ÆğÀ´
-			return left.join() + right.join(); // ¢Ù
+			// æŠŠä¸¤ä¸ªâ€œå°ä»»åŠ¡â€ç´¯åŠ çš„ç»“æœåˆå¹¶èµ·æ¥
+			return left.join() + right.join(); // â‘ 
 		}
 	}
 }
@@ -59,19 +59,19 @@ public class Sum {
 		int[] arr = new int[100];
 		Random rand = new Random();
 		int total = 0;
-		// ³õÊ¼»¯100¸öÊı×ÖÔªËØ
+		// åˆå§‹åŒ–100ä¸ªæ•°å­—å…ƒç´ 
 		for (int i = 0, len = arr.length; i < len; i++) {
 			int tmp = rand.nextInt(20);
-			// ¶ÔÊı×éÔªËØ¸³Öµ£¬²¢½«Êı×éÔªËØµÄÖµÌí¼Óµ½sum×ÜºÍÖĞ¡£
+			// å¯¹æ•°ç»„å…ƒç´ èµ‹å€¼ï¼Œå¹¶å°†æ•°ç»„å…ƒç´ çš„å€¼æ·»åŠ åˆ°sumæ€»å’Œä¸­ã€‚
 			total += (arr[i] = tmp);
 		}
 		System.out.println(total);
-		// ´´½¨Ò»¸öÍ¨ÓÃ³Ø
+		// åˆ›å»ºä¸€ä¸ªé€šç”¨æ± 
 		ForkJoinPool pool = ForkJoinPool.commonPool();
-		// Ìá½»¿É·Ö½âµÄCalTaskÈÎÎñ
+		// æäº¤å¯åˆ†è§£çš„CalTaskä»»åŠ¡
 		Future<Integer> future = pool.submit(new CalTask(arr, 0, arr.length));
 		System.out.println(future.get());
-		// ¹Ø±ÕÏß³Ì³Ø
+		// å…³é—­çº¿ç¨‹æ± 
 		pool.shutdown();
 	}
 }

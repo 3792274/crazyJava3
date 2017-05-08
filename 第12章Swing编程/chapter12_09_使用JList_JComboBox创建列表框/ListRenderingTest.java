@@ -1,11 +1,11 @@
-package chapter12_09_Ê¹ÓÃJList_JComboBox´´½¨ÁĞ±í¿ò;
+package chapter12_09_ä½¿ç”¨JList_JComboBoxåˆ›å»ºåˆ—è¡¨æ¡†;
 
 
 import java.awt.*;
 import javax.swing.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,20 +15,20 @@ import javax.swing.*;
  */
 public class ListRenderingTest
 {
-	private JFrame mainWin = new JFrame("ºÃÓÑÁĞ±í");
+	private JFrame mainWin = new JFrame("å¥½å‹åˆ—è¡¨");
 	private String[] friends = new String[]
 	{
-		"ÀîÇåÕÕ",
-		"ËÕ¸ñÀ­µ×",
-		"Àî°×",
-		"ÅªÓñ",
-		"»¢Í·"
+		"ææ¸…ç…§",
+		"è‹æ ¼æ‹‰åº•",
+		"æç™½",
+		"å¼„ç‰",
+		"è™å¤´"
 	};
-	// ¶¨ÒåÒ»¸öJList¶ÔÏó
+	// å®šä¹‰ä¸€ä¸ªJListå¯¹è±¡
 	private JList<String> friendsList = new JList<>(friends);
 	public void init()
 	{
-		// ÉèÖÃ¸ÃJListÊ¹ÓÃImageCellRenderer×÷ÎªÁĞ±íÏî»æÖÆÆ÷
+		// è®¾ç½®è¯¥JListä½¿ç”¨ImageCellRendererä½œä¸ºåˆ—è¡¨é¡¹ç»˜åˆ¶å™¨
 		friendsList.setCellRenderer(new ImageCellRenderer());
 		mainWin.add(new JScrollPane(friendsList));
 		mainWin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,9 +45,9 @@ class ImageCellRenderer extends JPanel
 {
 	private ImageIcon icon;
 	private String name;
-	// ¶¨Òå»æÖÆµ¥Ôª¸ñÊ±µÄ±³¾°É«
+	// å®šä¹‰ç»˜åˆ¶å•å…ƒæ ¼æ—¶çš„èƒŒæ™¯è‰²
 	private Color background;
-	// ¶¨Òå»æÖÆµ¥Ôª¸ñÊ±µÄÇ°¾°É«
+	// å®šä¹‰ç»˜åˆ¶å•å…ƒæ ¼æ—¶çš„å‰æ™¯è‰²
 	private Color foreground;
 	public Component getListCellRendererComponent(JList list
 		, String value , int index
@@ -59,10 +59,10 @@ class ImageCellRenderer extends JPanel
 			: list.getBackground();
 		foreground = isSelected ? list.getSelectionForeground()
 			: list.getForeground();
-		// ·µ»Ø¸ÃJPanel¶ÔÏó×÷ÎªÁĞ±íÏî»æÖÆÆ÷
+		// è¿”å›è¯¥JPanelå¯¹è±¡ä½œä¸ºåˆ—è¡¨é¡¹ç»˜åˆ¶å™¨
 		return this;
 	}
-	// ÖØĞ´paintComponent·½·¨£¬¸Ä±äJPanelµÄÍâ¹Û
+	// é‡å†™paintComponentæ–¹æ³•ï¼Œæ”¹å˜JPanelçš„å¤–è§‚
 	public void paintComponent(Graphics g)
 	{
 		int imageWidth = icon.getImage().getWidth(null);
@@ -70,15 +70,15 @@ class ImageCellRenderer extends JPanel
 		g.setColor(background);
 		g.fillRect(0, 0, getWidth(), getHeight());
 		g.setColor(foreground);
-		// »æÖÆºÃÓÑÍ¼±ê
+		// ç»˜åˆ¶å¥½å‹å›¾æ ‡
 		g.drawImage(icon.getImage() , getWidth() / 2
 			- imageWidth / 2 , 10 , null);
 		g.setFont(new Font("SansSerif" , Font.BOLD , 18));
-		// »æÖÆºÃÓÑÓÃ»§Ãû
+		// ç»˜åˆ¶å¥½å‹ç”¨æˆ·å
 		g.drawString(name, getWidth() / 2
 			- name.length() * 10 , imageHeight + 30 );
 	}
-	// Í¨¹ı¸Ã·½·¨À´ÉèÖÃ¸ÃImageCellRendererµÄ×î¼Ñ´óĞ¡
+	// é€šè¿‡è¯¥æ–¹æ³•æ¥è®¾ç½®è¯¥ImageCellRendererçš„æœ€ä½³å¤§å°
 	public Dimension getPreferredSize()
 	{
 		return new Dimension(60, 80);

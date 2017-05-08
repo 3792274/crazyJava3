@@ -1,10 +1,10 @@
-package chapter06_04_finalĞŞÊÎ·û;
+package chapter06_04_finalä¿®é¥°ç¬¦;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,14 +16,14 @@ public class FinalReplaceTest
 {
 	public static void main(String[] args)
 	{
-		// ÏÂÃæ¶¨ÒåÁË4¸öfinal¡°ºê±äÁ¿¡±
+		// ä¸‹é¢å®šä¹‰äº†4ä¸ªfinalâ€œå®å˜é‡â€
 		final int a = 5 + 2;
 		final double b = 1.2 / 3;
-		final String str = "·è¿ñ" + "Java";
-		final String book = "·è¿ñJava½²Òå£º" + 99.0;
-		// ÏÂÃæµÄbook2±äÁ¿µÄÖµÒòÎªµ÷ÓÃÁË·½·¨£¬ËùÒÔÎŞ·¨ÔÚ±àÒëÊ±±»È·¶¨ÏÂÀ´
-		final String book2 = "·è¿ñJava½²Òå£º" + String.valueOf(99.0);  //¢Ù
-		System.out.println(book == "·è¿ñJava½²Òå£º99.0");
-		System.out.println(book2 == "·è¿ñJava½²Òå£º99.0");
+		final String str = "ç–¯ç‹‚" + "Java";
+		final String book = "ç–¯ç‹‚Javaè®²ä¹‰ï¼š" + 99.0;
+		// ä¸‹é¢çš„book2å˜é‡çš„å€¼å› ä¸ºè°ƒç”¨äº†æ–¹æ³•ï¼Œæ‰€ä»¥æ— æ³•åœ¨ç¼–è¯‘æ—¶è¢«ç¡®å®šä¸‹æ¥
+		final String book2 = "ç–¯ç‹‚Javaè®²ä¹‰ï¼š" + String.valueOf(99.0);  //â‘ 
+		System.out.println(book == "ç–¯ç‹‚Javaè®²ä¹‰ï¼š99.0");
+		System.out.println(book2 == "ç–¯ç‹‚Javaè®²ä¹‰ï¼š99.0");
 	}
 }

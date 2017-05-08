@@ -1,8 +1,8 @@
-package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
+package chapter06_06_Java8æ”¹è¿›çš„æ¥å£;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,13 +15,13 @@ public class OutputFieldTest
 {
 	public static void main(String[] args)
 	{
-		// ·ÃÎÊÁíÒ»¸ö°üÖĞµÄOutput½Ó¿ÚµÄMAX_CACHE_LINE
+		// è®¿é—®å¦ä¸€ä¸ªåŒ…ä¸­çš„Outputæ¥å£çš„MAX_CACHE_LINE
 		System.out.println(Output.MAX_CACHE_LINE);
 		
-		// ÏÂÃæÓï¾ä½«ÒıÆğ"Îªfinal±äÁ¿¸³Öµ"µÄ±àÒëÒì³£
+		// ä¸‹é¢è¯­å¥å°†å¼•èµ·"ä¸ºfinalå˜é‡èµ‹å€¼"çš„ç¼–è¯‘å¼‚å¸¸
 		// lee.Output.MAX_CACHE_LINE = 20;
 		
-		// Ê¹ÓÃ½Ó¿ÚÀ´µ÷ÓÃÀà·½·¨
+		// ä½¿ç”¨æ¥å£æ¥è°ƒç”¨ç±»æ–¹æ³•
 		System.out.println(Output.staticTest());
 	}
 }

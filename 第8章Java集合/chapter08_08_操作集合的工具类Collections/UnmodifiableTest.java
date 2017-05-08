@@ -1,34 +1,34 @@
-package chapter08_08_²Ù×÷¼¯ºÏµÄ¹¤¾ßÀàCollections;
+package chapter08_08_æ“ä½œé›†åˆçš„å·¥å…·ç±»Collections;
 
 
 import java.util.*;
 /**
- * Description:ÉèÖÃ²»¿É±ä¼¯ºÏ
- * ·½·¨²ÎÊıÊÇÔ­ÓĞ¼¯ºÏ¶ÔÏó£¬·µ»ØÖµÊÇ¸Ã¼¯ºÏµÄ¡°Ö»¶Á¡±°æ±¾¡£
+ * Description:è®¾ç½®ä¸å¯å˜é›†åˆ
+ * æ–¹æ³•å‚æ•°æ˜¯åŸæœ‰é›†åˆå¯¹è±¡ï¼Œè¿”å›å€¼æ˜¯è¯¥é›†åˆçš„â€œåªè¯»â€ç‰ˆæœ¬ã€‚
  * 
  */
 public class UnmodifiableTest
 {
 	public static void main(String[] args)
 	{
-		// ´´½¨Ò»¸ö¿ÕµÄ¡¢²»¿É¸Ä±äµÄList¶ÔÏó
+		// åˆ›å»ºä¸€ä¸ªç©ºçš„ã€ä¸å¯æ”¹å˜çš„Listå¯¹è±¡
 		List unmodifiableList = Collections.emptyList();
 		
-		// ´´½¨Ò»¸öÖ»ÓĞÒ»¸öÔªËØ£¬ÇÒ²»¿É¸Ä±äµÄSet¶ÔÏó
-		Set unmodifiableSet = Collections.singleton("·è¿ñJava½²Òå");
+		// åˆ›å»ºä¸€ä¸ªåªæœ‰ä¸€ä¸ªå…ƒç´ ï¼Œä¸”ä¸å¯æ”¹å˜çš„Setå¯¹è±¡
+		Set unmodifiableSet = Collections.singleton("ç–¯ç‹‚Javaè®²ä¹‰");
 		
-		// ´´½¨Ò»¸öÆÕÍ¨Map¶ÔÏó
+		// åˆ›å»ºä¸€ä¸ªæ™®é€šMapå¯¹è±¡
 		Map scores = new HashMap();
-		scores.put("ÓïÎÄ" , 80);
+		scores.put("è¯­æ–‡" , 80);
 		scores.put("Java" , 82);
 	
-		// ·µ»ØÆÕÍ¨Map¶ÔÏó¶ÔÓ¦µÄ²»¿É±ä°æ±¾
+		// è¿”å›æ™®é€šMapå¯¹è±¡å¯¹åº”çš„ä¸å¯å˜ç‰ˆæœ¬
 		Map unmodifiableMap = Collections.unmodifiableMap(scores);
 		
-		// ÏÂÃæÈÎÒâÒ»ĞĞ´úÂë¶¼½«Òı·¢UnsupportedOperationExceptionÒì³£
-		unmodifiableList.add("²âÊÔÔªËØ");   //¢Ù
-		unmodifiableSet.add("²âÊÔÔªËØ");    //¢Ú
-		unmodifiableMap.put("ÓïÎÄ" , 90);   //¢Û
+		// ä¸‹é¢ä»»æ„ä¸€è¡Œä»£ç éƒ½å°†å¼•å‘UnsupportedOperationExceptionå¼‚å¸¸
+		unmodifiableList.add("æµ‹è¯•å…ƒç´ ");   //â‘ 
+		unmodifiableSet.add("æµ‹è¯•å…ƒç´ ");    //â‘¡
+		unmodifiableMap.put("è¯­æ–‡" , 90);   //â‘¢
 	}
 }
 

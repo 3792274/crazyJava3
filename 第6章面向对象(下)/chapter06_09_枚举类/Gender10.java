@@ -1,11 +1,11 @@
-package chapter06_09_Ã¶¾ÙÀà;
+package chapter06_09_æšä¸¾ç±»;
 
 
 /**
- * Description:Ã¶¾ÙÀàÊµÏÖ½Ó¿Ú
- * ·Ç³éÏóÃ¶¾ÙÀàÄ¬ÈÏ²ÅÓĞfinalĞŞÊÎ
+ * Description:æšä¸¾ç±»å®ç°æ¥å£
+ * éæŠ½è±¡æšä¸¾ç±»é»˜è®¤æ‰æœ‰finalä¿®é¥°
  * 
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,32 +15,32 @@ package chapter06_09_Ã¶¾ÙÀà;
  */
 public enum Gender10 implements GenderDesc09
 {
-	// ´Ë´¦µÄÃ¶¾ÙÖµ±ØĞëµ÷ÓÃ¶ÔÓ¦¹¹ÔìÆ÷À´´´½¨£¬ÊÇGender10µÄÄäÃû×ÓÀà£¬abstractĞŞÊÎµÄ£¬·Çfinal
-	MALE("ÄĞ")
-	// »¨À¨ºÅ²¿·ÖÊµ¼ÊÉÏÊÇÒ»¸öÀàÌå²¿·Ö
+	// æ­¤å¤„çš„æšä¸¾å€¼å¿…é¡»è°ƒç”¨å¯¹åº”æ„é€ å™¨æ¥åˆ›å»ºï¼Œæ˜¯Gender10çš„åŒ¿åå­ç±»ï¼Œabstractä¿®é¥°çš„ï¼Œéfinal
+	MALE("ç”·")
+	// èŠ±æ‹¬å·éƒ¨åˆ†å®é™…ä¸Šæ˜¯ä¸€ä¸ªç±»ä½“éƒ¨åˆ†
 	{
 		public void info()
 		{
-			System.out.println("Õâ¸öÃ¶¾ÙÖµ´ú±íÄĞĞÔ");
+			System.out.println("è¿™ä¸ªæšä¸¾å€¼ä»£è¡¨ç”·æ€§");
 		}
 	},
 	
 	
-	//ÊÇGender10µÄÄäÃû×ÓÀà£¬abstractĞŞÊÎµÄ£¬·Çfinal
-	FEMALE("Å®") 
+	//æ˜¯Gender10çš„åŒ¿åå­ç±»ï¼Œabstractä¿®é¥°çš„ï¼Œéfinal
+	FEMALE("å¥³") 
 	{
 		public void info()
 		{
-			System.out.println("Õâ¸öÃ¶¾ÙÖµ´ú±íÅ®ĞÔ");
+			System.out.println("è¿™ä¸ªæšä¸¾å€¼ä»£è¡¨å¥³æ€§");
 		}
 	};
 	
 	
-	// ÆäËû²¿·ÖÓëcodes\06\6.9\best\Gender09.javaÖĞµÄGenderÀàÍêÈ«ÏàÍ¬
+	// å…¶ä»–éƒ¨åˆ†ä¸codes\06\6.9\best\Gender09.javaä¸­çš„Genderç±»å®Œå…¨ç›¸åŒ
 	private final String name;
 
 	
-	// Ã¶¾ÙÀàµÄ¹¹ÔìÆ÷Ö»ÄÜÊ¹ÓÃprivateĞŞÊÎ
+	// æšä¸¾ç±»çš„æ„é€ å™¨åªèƒ½ä½¿ç”¨privateä¿®é¥°
 	private Gender10(String name)
 	{
 		this.name = name;
@@ -54,9 +54,9 @@ public enum Gender10 implements GenderDesc09
 	}
 	
 	
-	// Ôö¼ÓÏÂÃæµÄinfo()·½·¨£¬ÊµÏÖGenderDesc½Ó¿Ú±ØĞëÊµÏÖµÄ·½·¨
+	// å¢åŠ ä¸‹é¢çš„info()æ–¹æ³•ï¼Œå®ç°GenderDescæ¥å£å¿…é¡»å®ç°çš„æ–¹æ³•
 	public void info()
 	{
-		System.out.println( "ÕâÊÇÒ»¸öÓÃÓÚÓÃÓÚ¶¨ÒåĞÔ±ğµÄÃ¶¾ÙÀà");
+		System.out.println( "è¿™æ˜¯ä¸€ä¸ªç”¨äºç”¨äºå®šä¹‰æ€§åˆ«çš„æšä¸¾ç±»");
 	}
 }

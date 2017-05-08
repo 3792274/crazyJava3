@@ -1,10 +1,10 @@
-package chapter05_05_ÉîÈë¹¹ÔìÆ÷;
+package chapter05_05_æ·±å…¥æ„é€ å™¨;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,20 +16,20 @@ public class ConstructorTest
 {
 	public String name;
 	public int count;
-	// Ìá¹©×Ô¶¨ÒåµÄ¹¹ÔìÆ÷£¬¸Ã¹¹ÔìÆ÷°üº¬Á½¸ö²ÎÊı
+	// æä¾›è‡ªå®šä¹‰çš„æ„é€ å™¨ï¼Œè¯¥æ„é€ å™¨åŒ…å«ä¸¤ä¸ªå‚æ•°
 	public ConstructorTest(String name , int count)
 	{
-		// ¹¹ÔìÆ÷ÀïµÄthis´ú±íËü½øĞĞ³õÊ¼»¯µÄ¶ÔÏó
-		// ÏÂÃæÁ½ĞĞ´úÂë½«´«ÈëµÄ2¸ö²ÎÊı¸³¸øthis´ú±í¶ÔÏóµÄnameºÍcountÊµÀı±äÁ¿
+		// æ„é€ å™¨é‡Œçš„thisä»£è¡¨å®ƒè¿›è¡Œåˆå§‹åŒ–çš„å¯¹è±¡
+		// ä¸‹é¢ä¸¤è¡Œä»£ç å°†ä¼ å…¥çš„2ä¸ªå‚æ•°èµ‹ç»™thisä»£è¡¨å¯¹è±¡çš„nameå’Œcountå®ä¾‹å˜é‡
 		this.name = name;
 		this.count = count;
 	}
 	public static void main(String[] args)
 	{
-		// Ê¹ÓÃ×Ô¶¨ÒåµÄ¹¹ÔìÆ÷À´´´½¨¶ÔÏó
-		// ÏµÍ³½«»á¶Ô¸Ã¶ÔÏóÖ´ĞĞ×Ô¶¨ÒåµÄ³õÊ¼»¯
-		ConstructorTest tc = new ConstructorTest("·è¿ñJava½²Òå" , 90000);
-		// Êä³öConstructorTest¶ÔÏóµÄnameºÍcountÁ½¸öÊµÀı±äÁ¿
+		// ä½¿ç”¨è‡ªå®šä¹‰çš„æ„é€ å™¨æ¥åˆ›å»ºå¯¹è±¡
+		// ç³»ç»Ÿå°†ä¼šå¯¹è¯¥å¯¹è±¡æ‰§è¡Œè‡ªå®šä¹‰çš„åˆå§‹åŒ–
+		ConstructorTest tc = new ConstructorTest("ç–¯ç‹‚Javaè®²ä¹‰" , 90000);
+		// è¾“å‡ºConstructorTestå¯¹è±¡çš„nameå’Œcountä¸¤ä¸ªå®ä¾‹å˜é‡
 		System.out.println(tc.name);
 		System.out.println(tc.count);
 	}

@@ -1,4 +1,4 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.SimpleAIO;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.SimpleAIO;
 
 import java.net.*;
 import java.nio.*;
@@ -6,7 +6,7 @@ import java.nio.channels.*;
 import java.util.concurrent.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -21,21 +21,21 @@ public class SimpleAIOServer
 		throws Exception
 	{
 		try(
-			// ¢Ù´´½¨AsynchronousServerSocketChannel¶ÔÏó¡£
+			// â‘ åˆ›å»ºAsynchronousServerSocketChannelå¯¹è±¡ã€‚
 			AsynchronousServerSocketChannel serverChannel =
 				AsynchronousServerSocketChannel.open())
 		{
-			// ¢ÚÖ¸¶¨ÔÚÖ¸¶¨µØÖ·¡¢¶Ë¿Ú¼àÌı¡£
+			// â‘¡æŒ‡å®šåœ¨æŒ‡å®šåœ°å€ã€ç«¯å£ç›‘å¬ã€‚
 			serverChannel.bind(new InetSocketAddress(PORT));
 			while (true)
 			{
-				// ¢Û²ÉÓÃÑ­»·½ÓÊÜÀ´×Ô¿Í»§¶ËµÄÁ¬½Ó
+				// â‘¢é‡‡ç”¨å¾ªç¯æ¥å—æ¥è‡ªå®¢æˆ·ç«¯çš„è¿æ¥
 				Future<AsynchronousSocketChannel> future
 					= serverChannel.accept();
-				// »ñÈ¡Á¬½ÓÍê³Éºó·µ»ØµÄAsynchronousSocketChannel
+				// è·å–è¿æ¥å®Œæˆåè¿”å›çš„AsynchronousSocketChannel
 				AsynchronousSocketChannel socketChannel = future.get();
-				// Ö´ĞĞÊä³ö¡£
-				socketChannel.write(ByteBuffer.wrap("»¶Ó­ÄãÀ´×ÔAIOµÄÊÀ½ç£¡"
+				// æ‰§è¡Œè¾“å‡ºã€‚
+				socketChannel.write(ByteBuffer.wrap("æ¬¢è¿ä½ æ¥è‡ªAIOçš„ä¸–ç•Œï¼"
 					.getBytes("UTF-8"))).get();
 			}
 		}

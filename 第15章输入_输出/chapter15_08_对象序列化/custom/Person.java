@@ -1,10 +1,10 @@
-package chapter15_08_¶ÔÏóĞòÁĞ»¯.custom;
+package chapter15_08_å¯¹è±¡åºåˆ—åŒ–.custom;
 
 import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -17,15 +17,15 @@ public class Person implements java.io.Serializable {
 	private String name;
 	private int age;
 
-	// ×¢Òâ´Ë´¦Ã»ÓĞÌá¹©ÎŞ²ÎÊıµÄ¹¹ÔìÆ÷!
+	// æ³¨æ„æ­¤å¤„æ²¡æœ‰æä¾›æ— å‚æ•°çš„æ„é€ å™¨!
 	public Person(String name, int age) {
-		System.out.println("ÓĞ²ÎÊıµÄ¹¹ÔìÆ÷");
+		System.out.println("æœ‰å‚æ•°çš„æ„é€ å™¨");
 		this.name = name;
 		this.age = age;
 	}
-	// Ê¡ÂÔnameÓëageµÄsetterºÍgetter·½·¨
+	// çœç•¥nameä¸ageçš„setterå’Œgetteræ–¹æ³•
 
-	// nameµÄsetterºÍgetter·½·¨
+	// nameçš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -34,7 +34,7 @@ public class Person implements java.io.Serializable {
 		return this.name;
 	}
 
-	// ageµÄsetterºÍgetter·½·¨
+	// ageçš„setterå’Œgetteræ–¹æ³•
 	public void setAge(int age) {
 		this.age = age;
 	}
@@ -44,16 +44,16 @@ public class Person implements java.io.Serializable {
 	}
 
 	
-	//×ÔÉíĞòÁĞ»¯Ğ´µÄ·½·¨
+	//è‡ªèº«åºåˆ—åŒ–å†™çš„æ–¹æ³•
 	private void writeObject(java.io.ObjectOutputStream out) throws IOException {
-		// ½«nameÊµÀı±äÁ¿µÄÖµ·´×ªºóĞ´Èë¶ş½øÖÆÁ÷
+		// å°†nameå®ä¾‹å˜é‡çš„å€¼åè½¬åå†™å…¥äºŒè¿›åˆ¶æµ
 		out.writeObject(new StringBuffer(name).reverse());
 		out.writeInt(age);
 	}
 
-	//×ÔÉíĞòÁĞ»¯¶ÁµÄ·½·¨
+	//è‡ªèº«åºåˆ—åŒ–è¯»çš„æ–¹æ³•
 	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
-		// ½«¶ÁÈ¡µÄ×Ö·û´®·´×ªºó¸³¸ønameÊµÀı±äÁ¿
+		// å°†è¯»å–çš„å­—ç¬¦ä¸²åè½¬åèµ‹ç»™nameå®ä¾‹å˜é‡
 		this.name = ((StringBuffer) in.readObject()).reverse().toString();
 		this.age = in.readInt();
 	}

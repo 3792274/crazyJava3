@@ -10,46 +10,46 @@ import java.util.function.Consumer;
 import org.junit.Test;
 
 /*
- * Ò»¡¢Lambda ±í´ïÊ½µÄ»ù´¡Óï·¨£ºJava8ÖĞÒıÈëÁËÒ»¸öĞÂµÄ²Ù×÷·û "->" ¸Ã²Ù×÷·û³ÆÎª¼ıÍ·²Ù×÷·û»ò Lambda ²Ù×÷·û
- *                          ¼ıÍ·²Ù×÷·û½« Lambda ±í´ïÊ½²ğ·Ö³ÉÁ½²¿·Ö£º
+ * ä¸€ã€Lambda è¡¨è¾¾å¼çš„åŸºç¡€è¯­æ³•ï¼šJava8ä¸­å¼•å…¥äº†ä¸€ä¸ªæ–°çš„æ“ä½œç¬¦ "->" è¯¥æ“ä½œç¬¦ç§°ä¸ºç®­å¤´æ“ä½œç¬¦æˆ– Lambda æ“ä½œç¬¦
+ *                          ç®­å¤´æ“ä½œç¬¦å°† Lambda è¡¨è¾¾å¼æ‹†åˆ†æˆä¸¤éƒ¨åˆ†ï¼š
  * 
- * ×ó²à£ºLambda ±í´ïÊ½µÄ²ÎÊıÁĞ±í
- * ÓÒ²à£ºLambda ±í´ïÊ½ÖĞËùĞèÖ´ĞĞµÄ¹¦ÄÜ£¬ ¼´ Lambda Ìå
+ * å·¦ä¾§ï¼šLambda è¡¨è¾¾å¼çš„å‚æ•°åˆ—è¡¨
+ * å³ä¾§ï¼šLambda è¡¨è¾¾å¼ä¸­æ‰€éœ€æ‰§è¡Œçš„åŠŸèƒ½ï¼Œ å³ Lambda ä½“
  * 
- * Óï·¨¸ñÊ½Ò»£ºÎŞ²ÎÊı£¬ÎŞ·µ»ØÖµ
+ * è¯­æ³•æ ¼å¼ä¸€ï¼šæ— å‚æ•°ï¼Œæ— è¿”å›å€¼
  *      () -> System.out.println("Hello Lambda!");
  * 
- * Óï·¨¸ñÊ½¶ş£ºÓĞÒ»¸ö²ÎÊı£¬²¢ÇÒÎŞ·µ»ØÖµ
+ * è¯­æ³•æ ¼å¼äºŒï¼šæœ‰ä¸€ä¸ªå‚æ•°ï¼Œå¹¶ä¸”æ— è¿”å›å€¼
  *      (x) -> System.out.println(x)
  * 
- * Óï·¨¸ñÊ½Èı£ºÈôÖ»ÓĞÒ»¸ö²ÎÊı£¬Ğ¡À¨ºÅ¿ÉÒÔÊ¡ÂÔ²»Ğ´
+ * è¯­æ³•æ ¼å¼ä¸‰ï¼šè‹¥åªæœ‰ä¸€ä¸ªå‚æ•°ï¼Œå°æ‹¬å·å¯ä»¥çœç•¥ä¸å†™
  *      x -> System.out.println(x)
  * 
- * Óï·¨¸ñÊ½ËÄ£ºÓĞÁ½¸öÒÔÉÏµÄ²ÎÊı£¬ÓĞ·µ»ØÖµ£¬²¢ÇÒ Lambda ÌåÖĞÓĞ¶àÌõÓï¾ä
+ * è¯­æ³•æ ¼å¼å››ï¼šæœ‰ä¸¤ä¸ªä»¥ä¸Šçš„å‚æ•°ï¼Œæœ‰è¿”å›å€¼ï¼Œå¹¶ä¸” Lambda ä½“ä¸­æœ‰å¤šæ¡è¯­å¥
  *      Comparator<Integer> com = (x, y) -> {
- *          System.out.println("º¯ÊıÊ½½Ó¿Ú");
+ *          System.out.println("å‡½æ•°å¼æ¥å£");
  *          return Integer.compare(x, y);
  *      };
  *
- * Óï·¨¸ñÊ½Îå£ºÈô Lambda ÌåÖĞÖ»ÓĞÒ»ÌõÓï¾ä£¬ return ºÍ ´óÀ¨ºÅ¶¼¿ÉÒÔÊ¡ÂÔ²»Ğ´
+ * è¯­æ³•æ ¼å¼äº”ï¼šè‹¥ Lambda ä½“ä¸­åªæœ‰ä¸€æ¡è¯­å¥ï¼Œ return å’Œ å¤§æ‹¬å·éƒ½å¯ä»¥çœç•¥ä¸å†™
  *      Comparator<Integer> com = (x, y) -> Integer.compare(x, y);
  * 
- * Óï·¨¸ñÊ½Áù£ºLambda ±í´ïÊ½µÄ²ÎÊıÁĞ±íµÄÊı¾İÀàĞÍ¿ÉÒÔÊ¡ÂÔ²»Ğ´£¬ÒòÎªJVM±àÒëÆ÷Í¨¹ıÉÏÏÂÎÄÍÆ¶Ï³ö£¬Êı¾İÀàĞÍ£¬¼´¡°ÀàĞÍÍÆ¶Ï¡±
+ * è¯­æ³•æ ¼å¼å…­ï¼šLambda è¡¨è¾¾å¼çš„å‚æ•°åˆ—è¡¨çš„æ•°æ®ç±»å‹å¯ä»¥çœç•¥ä¸å†™ï¼Œå› ä¸ºJVMç¼–è¯‘å™¨é€šè¿‡ä¸Šä¸‹æ–‡æ¨æ–­å‡ºï¼Œæ•°æ®ç±»å‹ï¼Œå³â€œç±»å‹æ¨æ–­â€
  *      (Integer x, Integer y) -> Integer.compare(x, y);
  * 
- * ÉÏÁª£º×óÓÒÓöÒ»À¨ºÅÊ¡
- * ÏÂÁª£º×ó²àÍÆ¶ÏÀàĞÍÊ¡
- * ºáÅú£ºÄÜÊ¡ÔòÊ¡
+ * ä¸Šè”ï¼šå·¦å³é‡ä¸€æ‹¬å·çœ
+ * ä¸‹è”ï¼šå·¦ä¾§æ¨æ–­ç±»å‹çœ
+ * æ¨ªæ‰¹ï¼šèƒ½çœåˆ™çœ
  * 
- * ¶ş¡¢Lambda ±í´ïÊ½ĞèÒª¡°º¯ÊıÊ½½Ó¿Ú¡±µÄÖ§³Ö
- * º¯ÊıÊ½½Ó¿Ú£º½Ó¿ÚÖĞÖ»ÓĞÒ»¸ö³éÏó·½·¨µÄ½Ó¿Ú£¬³ÆÎªº¯ÊıÊ½½Ó¿Ú¡£ ¿ÉÒÔÊ¹ÓÃ×¢½â @FunctionalInterface ĞŞÊÎ
- *           ¿ÉÒÔ¼ì²éÊÇ·ñÊÇº¯ÊıÊ½½Ó¿Ú
+ * äºŒã€Lambda è¡¨è¾¾å¼éœ€è¦â€œå‡½æ•°å¼æ¥å£â€çš„æ”¯æŒ
+ * å‡½æ•°å¼æ¥å£ï¼šæ¥å£ä¸­åªæœ‰ä¸€ä¸ªæŠ½è±¡æ–¹æ³•çš„æ¥å£ï¼Œç§°ä¸ºå‡½æ•°å¼æ¥å£ã€‚ å¯ä»¥ä½¿ç”¨æ³¨è§£ @FunctionalInterface ä¿®é¥°
+ *           å¯ä»¥æ£€æŸ¥æ˜¯å¦æ˜¯å‡½æ•°å¼æ¥å£
  */
 public class TestLambda2 {
     
     @Test
     public void test1(){
-        int num = 0;//jdk 1.7 Ç°£¬±ØĞëÊÇ final
+        int num = 0;//jdk 1.7 å‰ï¼Œå¿…é¡»æ˜¯ final
         
         Runnable r = new Runnable() {
             @Override
@@ -69,25 +69,25 @@ public class TestLambda2 {
     @Test
     public void test2(){
         Consumer<String> con = x -> System.out.println(x);
-        con.accept("ÎÒ´óÉĞ¹è¹ÈÍşÎä£¡");
+        con.accept("æˆ‘å¤§å°šç¡…è°·å¨æ­¦ï¼");
     }
     
     @Test
     public void test3(){
-        Comparator<Integer> com = (x, y) -> {  //¶àĞĞ
-            System.out.println("º¯ÊıÊ½½Ó¿Ú");
+        Comparator<Integer> com = (x, y) -> {  //å¤šè¡Œ
+            System.out.println("å‡½æ•°å¼æ¥å£");
             return Integer.compare(x, y);
         };
     }
     
     @Test
     public void test4(){
-        Comparator<Integer> com = (x, y) -> Integer.compare(x, y); //µ¥ĞĞ
+        Comparator<Integer> com = (x, y) -> Integer.compare(x, y); //å•è¡Œ
     }
     
     @Test
     public void test5(){
-//      String[] strs;  //·Ö¿ªĞ´²»ĞĞ£¬ºÏ²¢Ğ´¿ÉÒÔ
+//      String[] strs;  //åˆ†å¼€å†™ä¸è¡Œï¼Œåˆå¹¶å†™å¯ä»¥
 //      strs = {"aaa", "bbb", "ccc"};
         
         List<String> list = new ArrayList<>();
@@ -99,7 +99,7 @@ public class TestLambda2 {
         
     }
     
-    //ĞèÇó£º¶ÔÒ»¸öÊı½øĞĞÔËËã
+    //éœ€æ±‚ï¼šå¯¹ä¸€ä¸ªæ•°è¿›è¡Œè¿ç®—
     @Test
     public void test6(){
         Integer num = operation(100, (x) -> x * x);

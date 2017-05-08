@@ -1,8 +1,8 @@
-package chapter16_06_Ïß³ÌÍ¨ĞÅ.synchronized_Test;
+package chapter16_06_çº¿ç¨‹é€šä¿¡.synchronized_Test;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,13 +13,13 @@ package chapter16_06_Ïß³ÌÍ¨ĞÅ.synchronized_Test;
  */
 public class DrawTest {
 	public static void main(String[] args) {
-		// ´´½¨Ò»¸öÕË»§
+		// åˆ›å»ºä¸€ä¸ªè´¦æˆ·
 		Account acct = new Account("1234567", 0);
 		
-		new DrawThread("È¡Ç®Õß", acct, 800).start();
+		new DrawThread("å–é’±è€…", acct, 800).start();
 		
-		new DepositThread("´æ¿îÕß¼×", acct, 800).start();
-		new DepositThread("´æ¿îÕßÒÒ", acct, 800).start();
-		new DepositThread("´æ¿îÕß±û", acct, 800).start();
+		new DepositThread("å­˜æ¬¾è€…ç”²", acct, 800).start();
+		new DepositThread("å­˜æ¬¾è€…ä¹™", acct, 800).start();
+		new DepositThread("å­˜æ¬¾è€…ä¸™", acct, 800).start();
 	}
 }

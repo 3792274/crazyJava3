@@ -1,11 +1,11 @@
-package chapter18_03_Í¨¹ı·´Éä²é¿´ÀàĞÅÏ¢;
+package chapter18_03_é€šè¿‡åå°„æŸ¥çœ‹ç±»ä¿¡æ¯;
 
 import java.util.*;
 import java.lang.reflect.*;
 import java.lang.annotation.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,99 +13,99 @@ import java.lang.annotation.*;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// ¶¨Òå¿ÉÖØ¸´×¢½â
+// å®šä¹‰å¯é‡å¤æ³¨è§£
 @Repeatable(Annos.class)
 @interface Anno {}
 @Retention(value=RetentionPolicy.RUNTIME)
 @interface Annos {
     Anno[] value();
 }
-// Ê¹ÓÃ4¸ö×¢½âĞŞÊÎ¸ÃÀà
+// ä½¿ç”¨4ä¸ªæ³¨è§£ä¿®é¥°è¯¥ç±»
 @SuppressWarnings(value="unchecked")
 @Deprecated
-// Ê¹ÓÃÖØ¸´×¢½âĞŞÊÎ¸ÃÀà
+// ä½¿ç”¨é‡å¤æ³¨è§£ä¿®é¥°è¯¥ç±»
 @Anno
 @Anno
 public class ClassTest
 {
-	// Îª¸ÃÀà¶¨ÒåÒ»¸öË½ÓĞµÄ¹¹ÔìÆ÷
+	// ä¸ºè¯¥ç±»å®šä¹‰ä¸€ä¸ªç§æœ‰çš„æ„é€ å™¨
 	private ClassTest()
 	{
 	}
-	// ¶¨ÒåÒ»¸öÓĞ²ÎÊıµÄ¹¹ÔìÆ÷
+	// å®šä¹‰ä¸€ä¸ªæœ‰å‚æ•°çš„æ„é€ å™¨
 	public ClassTest(String name)
 	{
-		System.out.println("Ö´ĞĞÓĞ²ÎÊıµÄ¹¹ÔìÆ÷");
+		System.out.println("æ‰§è¡Œæœ‰å‚æ•°çš„æ„é€ å™¨");
 	}
-	// ¶¨ÒåÒ»¸öÎŞ²ÎÊıµÄinfo·½·¨
+	// å®šä¹‰ä¸€ä¸ªæ— å‚æ•°çš„infoæ–¹æ³•
 	public void info()
 	{
-		System.out.println("Ö´ĞĞÎŞ²ÎÊıµÄinfo·½·¨");
+		System.out.println("æ‰§è¡Œæ— å‚æ•°çš„infoæ–¹æ³•");
 	}
-	// ¶¨ÒåÒ»¸öÓĞ²ÎÊıµÄinfo·½·¨
+	// å®šä¹‰ä¸€ä¸ªæœ‰å‚æ•°çš„infoæ–¹æ³•
 	public void info(String str)
 	{
-		System.out.println("Ö´ĞĞÓĞ²ÎÊıµÄinfo·½·¨"
-			+ "£¬Æästr²ÎÊıÖµ£º" + str);
+		System.out.println("æ‰§è¡Œæœ‰å‚æ•°çš„infoæ–¹æ³•"
+			+ "ï¼Œå…¶strå‚æ•°å€¼ï¼š" + str);
 	}
-	// ¶¨ÒåÒ»¸ö²âÊÔÓÃµÄÄÚ²¿Àà
+	// å®šä¹‰ä¸€ä¸ªæµ‹è¯•ç”¨çš„å†…éƒ¨ç±»
 	class Inner
 	{
 	}
 	public static void main(String[] args)
 		throws Exception
 	{
-		// ÏÂÃæ´úÂë¿ÉÒÔ»ñÈ¡ClassTest¶ÔÓ¦µÄClass
+		// ä¸‹é¢ä»£ç å¯ä»¥è·å–ClassTestå¯¹åº”çš„Class
 		Class<ClassTest> clazz = ClassTest.class;
-		// »ñÈ¡¸ÃClass¶ÔÏóËù¶ÔÓ¦ÀàµÄÈ«²¿¹¹ÔìÆ÷
+		// è·å–è¯¥Classå¯¹è±¡æ‰€å¯¹åº”ç±»çš„å…¨éƒ¨æ„é€ å™¨
 		Constructor[] ctors = clazz.getDeclaredConstructors();
-		System.out.println("ClassTestµÄÈ«²¿¹¹ÔìÆ÷ÈçÏÂ£º");
+		System.out.println("ClassTestçš„å…¨éƒ¨æ„é€ å™¨å¦‚ä¸‹ï¼š");
 		for (Constructor c : ctors)
 		{
 			System.out.println(c);
 		}
-		// »ñÈ¡¸ÃClass¶ÔÏóËù¶ÔÓ¦ÀàµÄÈ«²¿public¹¹ÔìÆ÷
+		// è·å–è¯¥Classå¯¹è±¡æ‰€å¯¹åº”ç±»çš„å…¨éƒ¨publicæ„é€ å™¨
 		Constructor[] publicCtors = clazz.getConstructors();
-		System.out.println("ClassTestµÄÈ«²¿public¹¹ÔìÆ÷ÈçÏÂ£º");
+		System.out.println("ClassTestçš„å…¨éƒ¨publicæ„é€ å™¨å¦‚ä¸‹ï¼š");
 		for (Constructor c : publicCtors)
 		{
 			System.out.println(c);
 		}
-		// »ñÈ¡¸ÃClass¶ÔÏóËù¶ÔÓ¦ÀàµÄÈ«²¿public·½·¨
+		// è·å–è¯¥Classå¯¹è±¡æ‰€å¯¹åº”ç±»çš„å…¨éƒ¨publicæ–¹æ³•
 		Method[] mtds = clazz.getMethods();
-		System.out.println("ClassTestµÄÈ«²¿public·½·¨ÈçÏÂ£º");
+		System.out.println("ClassTestçš„å…¨éƒ¨publicæ–¹æ³•å¦‚ä¸‹ï¼š");
 		for (Method md : mtds)
 		{
 			System.out.println(md);
 		}
-		// »ñÈ¡¸ÃClass¶ÔÏóËù¶ÔÓ¦ÀàµÄÖ¸¶¨·½·¨
-		System.out.println("ClassTestÀï´øÒ»¸ö×Ö·û´®²ÎÊıµÄinfo()·½·¨Îª£º"
+		// è·å–è¯¥Classå¯¹è±¡æ‰€å¯¹åº”ç±»çš„æŒ‡å®šæ–¹æ³•
+		System.out.println("ClassTesté‡Œå¸¦ä¸€ä¸ªå­—ç¬¦ä¸²å‚æ•°çš„info()æ–¹æ³•ä¸ºï¼š"
 			+ clazz.getMethod("info" , String.class));
-		// »ñÈ¡¸ÃClass¶ÔÏóËù¶ÔÓ¦ÀàµÄÉÏµÄÈ«²¿×¢½â
+		// è·å–è¯¥Classå¯¹è±¡æ‰€å¯¹åº”ç±»çš„ä¸Šçš„å…¨éƒ¨æ³¨è§£
 		Annotation[] anns = clazz.getAnnotations();
-		System.out.println("ClassTestµÄÈ«²¿AnnotationÈçÏÂ£º");
+		System.out.println("ClassTestçš„å…¨éƒ¨Annotationå¦‚ä¸‹ï¼š");
 		for (Annotation an : anns)
 		{
 			System.out.println(an);
 		}
-		System.out.println("¸ÃClassÔªËØÉÏµÄ@SuppressWarnings×¢½âÎª£º"
+		System.out.println("è¯¥Classå…ƒç´ ä¸Šçš„@SuppressWarningsæ³¨è§£ä¸ºï¼š"
 			+ Arrays.toString(clazz.getAnnotationsByType(SuppressWarnings.class)));
-		System.out.println("¸ÃClassÔªËØÉÏµÄ@Anno×¢½âÎª£º"
+		System.out.println("è¯¥Classå…ƒç´ ä¸Šçš„@Annoæ³¨è§£ä¸ºï¼š"
 			+ Arrays.toString(clazz.getAnnotationsByType(Anno.class)));
-		// »ñÈ¡¸ÃClass¶ÔÏóËù¶ÔÓ¦ÀàµÄÈ«²¿ÄÚ²¿Àà
+		// è·å–è¯¥Classå¯¹è±¡æ‰€å¯¹åº”ç±»çš„å…¨éƒ¨å†…éƒ¨ç±»
 		Class<?>[] inners = clazz.getDeclaredClasses();
-		System.out.println("ClassTestµÄÈ«²¿ÄÚ²¿ÀàÈçÏÂ£º");
+		System.out.println("ClassTestçš„å…¨éƒ¨å†…éƒ¨ç±»å¦‚ä¸‹ï¼š");
 		for (Class c : inners)
 		{
 			System.out.println(c);
 		}
-		// Ê¹ÓÃClass.forName·½·¨¼ÓÔØClassTestµÄInnerÄÚ²¿Àà
+		// ä½¿ç”¨Class.forNameæ–¹æ³•åŠ è½½ClassTestçš„Innerå†…éƒ¨ç±»
 		Class inClazz = Class.forName("ClassTest$Inner");
-		// Í¨¹ıgetDeclaringClass()·ÃÎÊ¸ÃÀàËùÔÚµÄÍâ²¿Àà
-		System.out.println("inClazz¶ÔÓ¦ÀàµÄÍâ²¿ÀàÎª£º" +
+		// é€šè¿‡getDeclaringClass()è®¿é—®è¯¥ç±»æ‰€åœ¨çš„å¤–éƒ¨ç±»
+		System.out.println("inClazzå¯¹åº”ç±»çš„å¤–éƒ¨ç±»ä¸ºï¼š" +
 			inClazz.getDeclaringClass());
-		System.out.println("ClassTestµÄ°üÎª£º" + clazz.getPackage());
-		System.out.println("ClassTestµÄ¸¸ÀàÎª£º" + clazz.getSuperclass());
+		System.out.println("ClassTestçš„åŒ…ä¸ºï¼š" + clazz.getPackage());
+		System.out.println("ClassTestçš„çˆ¶ç±»ä¸ºï¼š" + clazz.getSuperclass());
 	}
 }
 

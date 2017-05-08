@@ -1,15 +1,15 @@
-package chapter08_08_²Ù×÷¼¯ºÏµÄ¹¤¾ßÀàCollections;
+package chapter08_08_æ“ä½œé›†åˆçš„å·¥å…·ç±»Collections;
 
 
 import java.util.*;
 /**
- * Description:°ü×°³ÉÏß³ÌÍ¬²½µÄ¼¯ºÏ¡£
+ * Description:åŒ…è£…æˆçº¿ç¨‹åŒæ­¥çš„é›†åˆã€‚
  */
 public class SynchronizedTest
 {
 	public static void main(String[] args)
 	{
-		// ÏÂÃæ³ÌĞò´´½¨ÁËËÄ¸öÏß³Ì°²È«µÄ¼¯ºÏ¶ÔÏó
+		// ä¸‹é¢ç¨‹åºåˆ›å»ºäº†å››ä¸ªçº¿ç¨‹å®‰å…¨çš„é›†åˆå¯¹è±¡
 		Collection c = Collections .synchronizedCollection(new ArrayList());
 		List list = Collections.synchronizedList(new ArrayList());
 		Set s = Collections.synchronizedSet(new HashSet());

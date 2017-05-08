@@ -2,7 +2,7 @@ package test;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -11,6 +11,6 @@ package test;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// ×î¼òµ¥µÄÀà
+// æœ€ç®€å•çš„ç±»
 class Test {
 }

@@ -1,8 +1,8 @@
-package chapter03_07_ÔËËã·û;
+package chapter03_07_è¿ç®—ç¬¦;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,31 +13,31 @@ package chapter03_07_ÔËËã·û;
  */
 public class LogicOperatorTest {
 	public static void main(String[] args) {
-		// Ö±½Ó¶ÔfalseÇó·ÇÔËËã£¬½«·µ»Øtrue
+		// ç›´æ¥å¯¹falseæ±‚éè¿ç®—ï¼Œå°†è¿”å›true
 		System.out.println(!false);
-		// 5>3·µ»Øtrue£¬'6'×ª»»ÎªÕûÊı54£¬'6'>10·µ»Øtrue£¬ÇóÓëºó·µ»Øtrue
+		// 5>3è¿”å›trueï¼Œ'6'è½¬æ¢ä¸ºæ•´æ•°54ï¼Œ'6'>10è¿”å›trueï¼Œæ±‚ä¸åè¿”å›true
 		System.out.println(5 > 3 && '6' > 10);
-		// 4>=5·µ»Øfalse£¬'c'>'a'·µ»Øtrue¡£Çó»òºó·µ»Øtrue
+		// 4>=5è¿”å›falseï¼Œ'c'>'a'è¿”å›trueã€‚æ±‚æˆ–åè¿”å›true
 		System.out.println(4 >= 5 || 'c' > 'a');
-		// 4>=5·µ»Øfalse£¬'c'>'a'·µ»Øtrue¡£Á½¸ö²»Í¬µÄ²Ù×÷ÊıÇóÒì»ò·µ»Øtrue
+		// 4>=5è¿”å›falseï¼Œ'c'>'a'è¿”å›trueã€‚ä¸¤ä¸ªä¸åŒçš„æ“ä½œæ•°æ±‚å¼‚æˆ–è¿”å›true
 		System.out.println(4 >= 5 ^ 'c' > 'a');
 
-		// ¶¨Òå±äÁ¿a,b£¬²¢ÎªÁ½¸ö±äÁ¿¸³Öµ
+		// å®šä¹‰å˜é‡a,bï¼Œå¹¶ä¸ºä¸¤ä¸ªå˜é‡èµ‹å€¼
 		int a = 5;
 		int b = 10;
-		// ¶Ôa > 4ºÍb++ > 10Çó»òÔËËã£¬|²»Ö´ĞĞ¶ÌÂ·£¬²»ÂÛÇ°Ãæ¼ÆËã½á¹ûÊÇ·ñÒÑËµÃ÷ÎÊÌâ£¬ºóÃæµÄ±í´ïÊ½ÈÔÒªÔËĞĞ¡£
+		// å¯¹a > 4å’Œb++ > 10æ±‚æˆ–è¿ç®—ï¼Œ|ä¸æ‰§è¡ŒçŸ­è·¯ï¼Œä¸è®ºå‰é¢è®¡ç®—ç»“æœæ˜¯å¦å·²è¯´æ˜é—®é¢˜ï¼Œåé¢çš„è¡¨è¾¾å¼ä»è¦è¿è¡Œã€‚
 		if (a > 4 | b++ > 10) {
-			// Êä³öaµÄÖµÊÇ5£¬bµÄÖµÊÇ11¡£
-			System.out.println("aµÄÖµÊÇ:" + a + "£¬bµÄÖµÊÇ:" + b);
+			// è¾“å‡ºaçš„å€¼æ˜¯5ï¼Œbçš„å€¼æ˜¯11ã€‚
+			System.out.println("açš„å€¼æ˜¯:" + a + "ï¼Œbçš„å€¼æ˜¯:" + b);
 		}
 
-		// ¶¨Òå±äÁ¿c,d£¬²¢ÎªÁ½¸ö±äÁ¿¸³Öµ
+		// å®šä¹‰å˜é‡c,dï¼Œå¹¶ä¸ºä¸¤ä¸ªå˜é‡èµ‹å€¼
 		int c = 5;
 		int d = 10;
-		// c > 4 || d++ > 10Çó»òÔËËã
+		// c > 4 || d++ > 10æ±‚æˆ–è¿ç®—
 		if (c > 4 || d++ > 10) {
-			// Êä³öcµÄÖµÊÇ5£¬dµÄÖµÊÇ10¡£
-			System.out.println("cµÄÖµÊÇ:" + c + "£¬dµÄÖµÊÇ:" + d);
+			// è¾“å‡ºcçš„å€¼æ˜¯5ï¼Œdçš„å€¼æ˜¯10ã€‚
+			System.out.println("cçš„å€¼æ˜¯:" + c + "ï¼Œdçš„å€¼æ˜¯:" + d);
 		}
 
 	}

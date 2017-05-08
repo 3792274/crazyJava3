@@ -1,8 +1,8 @@
-package chapter16_05_Ïß³ÌÍ¬²½;
+package chapter16_05_çº¿ç¨‹åŒæ­¥;
 
 /**
- * Description:È¡Ç®µÄÏß³ÌÀà <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:å–é’±çš„çº¿ç¨‹ç±» <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -12,10 +12,10 @@ package chapter16_05_Ïß³ÌÍ¬²½;
  * @version 1.0
  */
 public class DrawThread extends Thread {
-	// Ä£ÄâÓÃ»§ÕË»§
+	// æ¨¡æ‹Ÿç”¨æˆ·è´¦æˆ·
 	private Account account;
 
-	// µ±Ç°È¡Ç®Ïß³ÌËùÏ£ÍûÈ¡µÄÇ®Êı
+	// å½“å‰å–é’±çº¿ç¨‹æ‰€å¸Œæœ›å–çš„é’±æ•°
 	private double drawAmount;
 
 	public DrawThread(String name, Account account, double drawAmount) {
@@ -24,13 +24,13 @@ public class DrawThread extends Thread {
 		this.drawAmount = drawAmount;
 	}
 
-	// µ±¶àÌõÏß³ÌĞŞ¸ÄÍ¬Ò»¸ö¹²ÏíÊı¾İÊ±£¬½«Éæ¼°Êı¾İ°²È«ÎÊÌâ¡£
+	// å½“å¤šæ¡çº¿ç¨‹ä¿®æ”¹åŒä¸€ä¸ªå…±äº«æ•°æ®æ—¶ï¼Œå°†æ¶‰åŠæ•°æ®å®‰å…¨é—®é¢˜ã€‚
 	@Override
 	public void run() {
-		// ÕË»§Óà¶î´óÓÚÈ¡Ç®ÊıÄ¿
+		// è´¦æˆ·ä½™é¢å¤§äºå–é’±æ•°ç›®
 		if (account.getBalance() >= drawAmount) {
-			// ÍÂ³ö³®Æ±
-			System.out.println(getName() + "È¡Ç®³É¹¦£¡ÍÂ³ö³®Æ±:" + drawAmount);
+			// åå‡ºé’ç¥¨
+			System.out.println(getName() + "å–é’±æˆåŠŸï¼åå‡ºé’ç¥¨:" + drawAmount);
 /*			
 			try {
 				Thread.sleep(1);
@@ -38,11 +38,11 @@ public class DrawThread extends Thread {
 				ex.printStackTrace();
 			}
 */			
-			// ĞŞ¸ÄÓà¶î
+			// ä¿®æ”¹ä½™é¢
 			account.setBalance(account.getBalance() - drawAmount);
-			System.out.println("\tÈ¡¿îºóÓà¶îÎª: " + account.getBalance());
+			System.out.println("\tå–æ¬¾åä½™é¢ä¸º: " + account.getBalance());
 		} else {
-			System.out.println(getName() + "È¡Ç®Ê§°Ü£¡Óà¶î²»×ã£¡");
+			System.out.println(getName() + "å–é’±å¤±è´¥ï¼ä½™é¢ä¸è¶³ï¼");
 		}
 	}
 }

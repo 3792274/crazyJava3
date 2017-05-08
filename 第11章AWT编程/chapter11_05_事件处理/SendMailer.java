@@ -1,10 +1,10 @@
-package chapter11_05_ÊÂ¼ş´¦Àí;
+package chapter11_05_äº‹ä»¶å¤„ç†;
 
 
 import java.awt.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,12 +14,12 @@ import java.awt.*;
  */
 public class SendMailer
 {
-	private Frame f = new Frame("²âÊÔ");
+	private Frame f = new Frame("æµ‹è¯•");
 	private TextField tf = new TextField(40);
-	private Button send = new Button("·¢ËÍ");
+	private Button send = new Button("å‘é€");
 	public void init()
 	{
-		// Ê¹ÓÃMailerListener¶ÔÏó×÷ÎªÊÂ¼ş¼àÌıÆ÷
+		// ä½¿ç”¨MailerListenerå¯¹è±¡ä½œä¸ºäº‹ä»¶ç›‘å¬å™¨
 		send.addActionListener(new MailerListener(tf));
 		f.add(tf);
 		f.add(send , BorderLayout.SOUTH);

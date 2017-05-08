@@ -1,8 +1,8 @@
-package chapter10_02_异常类的继承体系;
+package chapter10_02_寮傚父绫荤殑缁ф壙浣撶郴;
 
 /**
  * Description:
- * 一般不要再finally快中使用return/throw等导致方法终止的语句
+ * 涓�鑸笉瑕佸啀finally蹇腑浣跨敤return/throw绛夊鑷存柟娉曠粓姝㈢殑璇彞
  */
 public class FinallyFlowTest
 {
@@ -15,8 +15,8 @@ public class FinallyFlowTest
 	{
 		try
 		{
-			// 因为finally块中包含了return语句
-			// 所以下面的return语句失去作用
+			// 鍥犱负finally鍧椾腑鍖呭惈浜唕eturn璇彞
+			// 鎵�浠ヤ笅闈㈢殑return璇彞澶卞幓浣滅敤
 			return true;
 		}
 		finally

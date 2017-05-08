@@ -1,4 +1,4 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.MultiThread.server;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.MultiThread.server;
 
 import java.net.*;
 import java.io.*;
@@ -6,7 +6,7 @@ import java.util.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,16 +16,16 @@ import java.util.*;
  * @version 1.0
  */
 public class MyServer {
-	// ¶¨Òå±£´æËùÓĞSocketµÄArrayList£¬²¢½«Æä°ü×°ÎªÏß³Ì°²È«µÄ
+	// å®šä¹‰ä¿å­˜æ‰€æœ‰Socketçš„ArrayListï¼Œå¹¶å°†å…¶åŒ…è£…ä¸ºçº¿ç¨‹å®‰å…¨çš„
 	public static List<Socket> socketList = Collections.synchronizedList(new ArrayList<>());
 
 	public static void main(String[] args) throws IOException {
 		ServerSocket ss = new ServerSocket(30000);
 		while (true) {
-			// ´ËĞĞ´úÂë»á×èÈû£¬½«Ò»Ö±µÈ´ı±ğÈËµÄÁ¬½Ó
+			// æ­¤è¡Œä»£ç ä¼šé˜»å¡ï¼Œå°†ä¸€ç›´ç­‰å¾…åˆ«äººçš„è¿æ¥
 			Socket s = ss.accept();
 			socketList.add(s);
-			// Ã¿µ±¿Í»§¶ËÁ¬½ÓºóÆô¶¯Ò»ÌõServerThreadÏß³ÌÎª¸Ã¿Í»§¶Ë·şÎñ
+			// æ¯å½“å®¢æˆ·ç«¯è¿æ¥åå¯åŠ¨ä¸€æ¡ServerThreadçº¿ç¨‹ä¸ºè¯¥å®¢æˆ·ç«¯æœåŠ¡
 			new Thread(new ServerThread(s)).start();
 		}
 	}

@@ -1,4 +1,4 @@
-package chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½;
+package chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -9,7 +9,7 @@ import java.sql.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -19,17 +19,17 @@ import java.sql.*;
  * @version 1.0
  */
 public class LoginFrame {
-	private final String PROP_FILE = "resource\\chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½\\mysql.ini";
+	private final String PROP_FILE = "resource\\chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼\\mysql.ini";
 	private String driver;
-	// urlÊÇÊı¾İ¿âµÄ·şÎñµØÖ·
+	// urlæ˜¯æ•°æ®åº“çš„æœåŠ¡åœ°å€
 	private String url;
 	private String user;
 	private String pass;
-	// µÇÂ¼½çÃæµÄGUI×é¼ş
-	private JFrame jf = new JFrame("µÇÂ¼");
+	// ç™»å½•ç•Œé¢çš„GUIç»„ä»¶
+	private JFrame jf = new JFrame("ç™»å½•");
 	private JTextField userField = new JTextField(20);
 	private JTextField passField = new JTextField(20);
-	private JButton loginButton = new JButton("µÇÂ¼");
+	private JButton loginButton = new JButton("ç™»å½•");
 
 	public void init() throws Exception {
 		Properties connProp = new Properties();
@@ -38,17 +38,17 @@ public class LoginFrame {
 		url = connProp.getProperty("url");
 		user = connProp.getProperty("user");
 		pass = connProp.getProperty("pass");
-		// ¼ÓÔØÇı¶¯
+		// åŠ è½½é©±åŠ¨
 		Class.forName(driver);
-		// ÎªµÇÂ¼°´Å¥Ìí¼ÓÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºç™»å½•æŒ‰é’®æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
 		loginButton.addActionListener(e -> {
-			// µÇÂ¼³É¹¦ÔòÏÔÊ¾¡°µÇÂ¼³É¹¦¡±
+			// ç™»å½•æˆåŠŸåˆ™æ˜¾ç¤ºâ€œç™»å½•æˆåŠŸâ€
 			if (validate(userField.getText(), passField.getText())) {
-				JOptionPane.showMessageDialog(jf, "µÇÂ¼³É¹¦");
+				JOptionPane.showMessageDialog(jf, "ç™»å½•æˆåŠŸ");
 			}
-			// ·ñÔòÏÔÊ¾¡°µÇÂ¼Ê§°Ü¡±
+			// å¦åˆ™æ˜¾ç¤ºâ€œç™»å½•å¤±è´¥â€
 			else {
-				JOptionPane.showMessageDialog(jf, "µÇÂ¼Ê§°Ü");
+				JOptionPane.showMessageDialog(jf, "ç™»å½•å¤±è´¥");
 			}
 		});
 		jf.add(userField, BorderLayout.NORTH);
@@ -59,7 +59,7 @@ public class LoginFrame {
 	}
 	// private boolean validate(String userName, String userPass)
 	// {
-	// // Ö´ĞĞ²éÑ¯µÄSQLÓï¾ä
+	// // æ‰§è¡ŒæŸ¥è¯¢çš„SQLè¯­å¥
 	// String sql = "select * from jdbc_test "
 	// + "where jdbc_name='" + userName
 	// + "' and jdbc_desc='" + userPass + "'";
@@ -69,7 +69,7 @@ public class LoginFrame {
 	// Statement stmt = conn.createStatement();
 	// ResultSet rs = stmt.executeQuery(sql))
 	// {
-	// // Èç¹û²éÑ¯µÄResultSetÀïÓĞ³¬¹ıÒ»ÌõµÄ¼ÇÂ¼£¬ÔòµÇÂ¼³É¹¦
+	// // å¦‚æœæŸ¥è¯¢çš„ResultSeté‡Œæœ‰è¶…è¿‡ä¸€æ¡çš„è®°å½•ï¼Œåˆ™ç™»å½•æˆåŠŸ
 	// if (rs.next())
 	// {
 	// return true;
@@ -90,7 +90,7 @@ public class LoginFrame {
 			pstmt.setString(1, userName);
 			pstmt.setString(2, userPass);
 			try (ResultSet rs = pstmt.executeQuery()) {
-				// Èç¹û²éÑ¯µÄResultSetÀïÓĞ³¬¹ıÒ»ÌõµÄ¼ÇÂ¼£¬ÔòµÇÂ¼³É¹¦
+				// å¦‚æœæŸ¥è¯¢çš„ResultSeté‡Œæœ‰è¶…è¿‡ä¸€æ¡çš„è®°å½•ï¼Œåˆ™ç™»å½•æˆåŠŸ
 				if (rs.next()) {
 					return true;
 				}

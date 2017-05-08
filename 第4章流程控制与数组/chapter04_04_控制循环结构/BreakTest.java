@@ -1,8 +1,8 @@
-package chapter04_04_¿ØÖÆÑ­»·½á¹¹;
+package chapter04_04_æ§åˆ¶å¾ªç¯ç»“æ„;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,11 +13,11 @@ package chapter04_04_¿ØÖÆÑ­»·½á¹¹;
  */
 public class BreakTest {
 	public static void main(String[] args) {
-		// Ò»¸ö¼òµ¥µÄforÑ­»·
+		// ä¸€ä¸ªç®€å•çš„forå¾ªç¯
 		for (int i = 0; i < 10; i++) {
-			System.out.println("iµÄÖµÊÇ" + i);
+			System.out.println("içš„å€¼æ˜¯" + i);
 			if (i == 2) {
-				// Ö´ĞĞ¸ÃÓï¾äÊ±½«½áÊøÑ­»·
+				// æ‰§è¡Œè¯¥è¯­å¥æ—¶å°†ç»“æŸå¾ªç¯
 				break;
 			}
 		}

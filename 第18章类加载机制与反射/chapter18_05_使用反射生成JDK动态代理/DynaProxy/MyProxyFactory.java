@@ -1,9 +1,9 @@
-package chapter18_05_Ê¹ÓÃ·´ÉäÉú³ÉJDK¶¯Ì¬´úÀí.DynaProxy;
+package chapter18_05_ä½¿ç”¨åå°„ç”ŸæˆJDKåŠ¨æ€ä»£ç†.DynaProxy;
 
 import java.lang.reflect.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,16 +13,16 @@ import java.lang.reflect.*;
  */
 public class MyProxyFactory
 {
-	// ÎªÖ¸¶¨targetÉú³É¶¯Ì¬´úÀí¶ÔÏó
+	// ä¸ºæŒ‡å®štargetç”ŸæˆåŠ¨æ€ä»£ç†å¯¹è±¡
 	public static Object getProxy(Object target)
 		throws Exception
 		{
-		// ´´½¨Ò»¸öMyInvokationHandler¶ÔÏó
+		// åˆ›å»ºä¸€ä¸ªMyInvokationHandlerå¯¹è±¡
 		MyInvokationHandler handler =
 		new MyInvokationHandler();
-		// ÎªMyInvokationHandlerÉèÖÃtarget¶ÔÏó
+		// ä¸ºMyInvokationHandlerè®¾ç½®targetå¯¹è±¡
 		handler.setTarget(target);
-		// ´´½¨¡¢²¢·µ»ØÒ»¸ö¶¯Ì¬´úÀí
+		// åˆ›å»ºã€å¹¶è¿”å›ä¸€ä¸ªåŠ¨æ€ä»£ç†
 		return Proxy.newProxyInstance(target.getClass().getClassLoader()
 			, target.getClass().getInterfaces() , handler);
 	}

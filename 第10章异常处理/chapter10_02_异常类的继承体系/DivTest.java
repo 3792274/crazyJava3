@@ -1,9 +1,9 @@
-package chapter10_02_Òì³£ÀàµÄ¼Ì³ĞÌåÏµ;
+package chapter10_02_å¼‚å¸¸ç±»çš„ç»§æ‰¿ä½“ç³»;
 /**
- * Òì³£·ÖÎª£ºChecked±àÒë¡¢RuntimeÒì³£
- * ÎÊÌâ·ÖÎª£º  Òì³£Exception£ºRuntimeException£¨IndexOutOfBounddsException¡¢NullPointerException¡¢ClassCastException£©¡¢
- *                     Check:IoException¡¢SQLException
- *        ´íÎóError£ºAWTError¡¢IoError¡¢LinageError¡¢TreadDeath¡¢
+ * å¼‚å¸¸åˆ†ä¸ºï¼šCheckedç¼–è¯‘ã€Runtimeå¼‚å¸¸
+ * é—®é¢˜åˆ†ä¸ºï¼š  å¼‚å¸¸Exceptionï¼šRuntimeExceptionï¼ˆIndexOutOfBounddsExceptionã€NullPointerExceptionã€ClassCastExceptionï¼‰ã€
+ *                     Check:IoExceptionã€SQLException
+ *        é”™è¯¯Errorï¼šAWTErrorã€IoErrorã€LinageErrorã€TreadDeathã€
  * @author Mr.TianShu
  *
  */
@@ -16,15 +16,15 @@ public class DivTest {
 			int a =Integer.parseInt(args[0]);
 			int b =Integer.parseInt(args[1]);
 			int c =a/b;
-			System.out.println("ÄúÊäÈëµÄÁ½¸öÊıÏà³ıµÄ½á¹¹ÊÇ£º "+c);
+			System.out.println("æ‚¨è¾“å…¥çš„ä¸¤ä¸ªæ•°ç›¸é™¤çš„ç»“æ„æ˜¯ï¼š "+c);
 		} catch (IndexOutOfBoundsException e) {
-			System.out.println("Êı×éÔ½½ç£ºÔËĞĞ³ÌĞòÊ±ÊäÈëµÄ²ÎÊı¸öÊı²»¹»¡£");
+			System.out.println("æ•°ç»„è¶Šç•Œï¼šè¿è¡Œç¨‹åºæ—¶è¾“å…¥çš„å‚æ•°ä¸ªæ•°ä¸å¤Ÿã€‚");
 		}catch (NumberFormatException e) {
-			System.out.println("Êı×Ö¸ñÊ½»¯Òì³££º³ÌĞòÖ»ÄÜ½ÓÊÜÕûÊı²ÎÊı");
+			System.out.println("æ•°å­—æ ¼å¼åŒ–å¼‚å¸¸ï¼šç¨‹åºåªèƒ½æ¥å—æ•´æ•°å‚æ•°");
 		}catch (ArithmeticException e) {
-			System.out.println("ËãÊıÒì³£");
+			System.out.println("ç®—æ•°å¼‚å¸¸");
 		}catch (Exception e) {
-			System.out.println("Î´ÖªÒì³£");
+			System.out.println("æœªçŸ¥å¼‚å¸¸");
 		}
 	}
 

@@ -1,10 +1,10 @@
-package chapter05_01_ÀàºÍ¶ÔÏó;
+package chapter05_01_ç±»å’Œå¯¹è±¡;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,20 +14,20 @@ package chapter05_01_ÀàºÍ¶ÔÏó;
  */
 public class ThisInConstructor
 {
-	// ¶¨ÒåÒ»¸öÃûÎªfooµÄ³ÉÔ±±äÁ¿
+	// å®šä¹‰ä¸€ä¸ªåä¸ºfooçš„æˆå‘˜å˜é‡
 	public int foo;
 	public ThisInConstructor()
 	{
-		// ÔÚ¹¹ÔìÆ÷Àï¶¨ÒåÒ»¸öfoo±äÁ¿
+		// åœ¨æ„é€ å™¨é‡Œå®šä¹‰ä¸€ä¸ªfooå˜é‡
 		int foo = 0;
-		// Ê¹ÓÃthis´ú±í¸Ã¹¹ÔìÆ÷ÕıÔÚ³õÊ¼»¯µÄ¶ÔÏó
-		// ÏÂÃæµÄ´úÂë½«»á°Ñ¸Ã¹¹ÔìÆ÷ÕıÔÚ³õÊ¼»¯µÄ¶ÔÏóµÄfoo³ÉÔ±±äÁ¿ÉèÎª6¡£
+		// ä½¿ç”¨thisä»£è¡¨è¯¥æ„é€ å™¨æ­£åœ¨åˆå§‹åŒ–çš„å¯¹è±¡
+		// ä¸‹é¢çš„ä»£ç å°†ä¼šæŠŠè¯¥æ„é€ å™¨æ­£åœ¨åˆå§‹åŒ–çš„å¯¹è±¡çš„fooæˆå‘˜å˜é‡è®¾ä¸º6ã€‚
 		this.foo = 6;
 	}
 	public static void main(String[] args)
 	{
-		// ËùÓĞÊ¹ÓÃThisInConstructor´´½¨µÄ¶ÔÏóµÄfoo³ÉÔ±±äÁ¿
-		// ¶¼½«±»ÉèÎª6£¬ËùÒÔÏÂÃæ´úÂë½«Êä³ö6¡£
+		// æ‰€æœ‰ä½¿ç”¨ThisInConstructoråˆ›å»ºçš„å¯¹è±¡çš„fooæˆå‘˜å˜é‡
+		// éƒ½å°†è¢«è®¾ä¸º6ï¼Œæ‰€ä»¥ä¸‹é¢ä»£ç å°†è¾“å‡º6ã€‚
 		System.out.println(new ThisInConstructor().foo);
 	}
 }

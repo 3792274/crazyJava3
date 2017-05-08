@@ -1,10 +1,10 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 /**
- * Description:ÔÚJava8Ö®Ç°£¬JavaÒªÇó±»¾Ö²¿ÄÚ²¿Àà¡¢ÄäÃûÄÚ²¿Àà·ÃÎÊµÄ¾Ö²¿±äÁ¿±ØÐëÊ¹ÓÃfinalÐÞÊÎ£¬
- * ´Ójava8¿ªÊ¼È¡ÏûÕâ¸öÏÞÖÆ£¬Èç¹û¾Ö²¿±äÁ¿±»ÄÚ²¿Àà·ÃÎÊ£¬ÄÇÃ´¸Ã¾Ö²¿±äÁ¿Ïàµ±ÓÚ×Ô¶¯Ê¹ÓÃÁËfinalÐÞÊÎ¡£
- * ±»ÄäÃûÄÚ²¿Àà·ÃÎÊµÄ¾Ö²¿±äÁ¿±ØÐëÊ¹ÓÃfinalÐÞÊÎ
+ * Description:åœ¨Java8ä¹‹å‰ï¼ŒJavaè¦æ±‚è¢«å±€éƒ¨å†…éƒ¨ç±»ã€åŒ¿åå†…éƒ¨ç±»è®¿é—®çš„å±€éƒ¨å˜é‡å¿…é¡»ä½¿ç”¨finalä¿®é¥°ï¼Œ
+ * ä»Žjava8å¼€å§‹å–æ¶ˆè¿™ä¸ªé™åˆ¶ï¼Œå¦‚æžœå±€éƒ¨å˜é‡è¢«å†…éƒ¨ç±»è®¿é—®ï¼Œé‚£ä¹ˆè¯¥å±€éƒ¨å˜é‡ç›¸å½“äºŽè‡ªåŠ¨ä½¿ç”¨äº†finalä¿®é¥°ã€‚
+ * è¢«åŒ¿åå†…éƒ¨ç±»è®¿é—®çš„å±€éƒ¨å˜é‡å¿…é¡»ä½¿ç”¨finalä¿®é¥°
  *  <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -19,14 +19,14 @@ interface A {
 
 public class ATest {
 	public static void main(String[] args) {
-		int age = 8; // ¢Ù
-		// ÏÂÃæ´úÂë½«»áµ¼ÖÂ±àÒë´íÎó
-		// ÓÉÓÚage¾Ö²¿±äÁ¿±»ÄäÃûÄÚ²¿Àà·ÃÎÊÁË£¬Òò´ËageÏàµ±ÓÚ±»finalÐÞÊÎÁË
+		int age = 8; // â‘ 
+		// ä¸‹é¢ä»£ç å°†ä¼šå¯¼è‡´ç¼–è¯‘é”™è¯¯
+		// ç”±äºŽageå±€éƒ¨å˜é‡è¢«åŒ¿åå†…éƒ¨ç±»è®¿é—®äº†ï¼Œå› æ­¤ageç›¸å½“äºŽè¢«finalä¿®é¥°äº†
 		age = 2;
 		A a = new A() {
 			public void test() {
-				// ÔÚJava 8ÒÔÇ°ÏÂÃæÓï¾ä½«ÌáÊ¾´íÎó£ºage±ØÐëÊ¹ÓÃfinalÐÞÊÎ
-				// ´ÓJava 8¿ªÊ¼£¬ÄäÃûÄÚ²¿Àà¡¢¾Ö²¿ÄÚ²¿ÀàÔÊÐí·ÃÎÊ·ÇfinalµÄ¾Ö²¿±äÁ¿
+				// åœ¨Java 8ä»¥å‰ä¸‹é¢è¯­å¥å°†æç¤ºé”™è¯¯ï¼šageå¿…é¡»ä½¿ç”¨finalä¿®é¥°
+				// ä»ŽJava 8å¼€å§‹ï¼ŒåŒ¿åå†…éƒ¨ç±»ã€å±€éƒ¨å†…éƒ¨ç±»å…è®¸è®¿é—®éžfinalçš„å±€éƒ¨å˜é‡
 				//System.out.println(age);
 			}
 		};

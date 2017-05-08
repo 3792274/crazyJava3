@@ -18,7 +18,7 @@ import org.junit.Test;
 
 public class TestLocalDateTime {
 	
-	//6.ZonedDate¡¢ZonedTime¡¢ZonedDateTime £º ´øÊ±ÇøµÄÊ±¼ä»òÈÕÆÚ
+	//6.ZonedDateã€ZonedTimeã€ZonedDateTime ï¼š å¸¦æ—¶åŒºçš„æ—¶é—´æˆ–æ—¥æœŸ
 	@Test
 	public void test7(){
 		LocalDateTime ldt = LocalDateTime.now(ZoneId.of("Asia/Shanghai"));
@@ -35,12 +35,12 @@ public class TestLocalDateTime {
 	}
 
 	
-	//5. DateTimeFormatter : ½âÎöºÍ¸ñÊ½»¯ÈÕÆÚ»òÊ±¼ä
+	//5. DateTimeFormatter : è§£æå’Œæ ¼å¼åŒ–æ—¥æœŸæˆ–æ—¶é—´
 	@Test
 	public void test5(){
 //		DateTimeFormatter dtf = DateTimeFormatter.ISO_LOCAL_DATE;
 		
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyÄêMMÔÂddÈÕ HH:mm:ss E");
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyå¹´MMæœˆddæ—¥ HH:mm:ss E");
 		
 		LocalDateTime ldt = LocalDateTime.now();
 		String strDate = ldt.format(dtf);
@@ -51,7 +51,7 @@ public class TestLocalDateTime {
 		System.out.println(newLdt);
 	}
 	
-	//4. TemporalAdjuster : Ê±¼äĞ£ÕıÆ÷
+	//4. TemporalAdjuster : æ—¶é—´æ ¡æ­£å™¨
 	@Test
 	public void test4(){
 	LocalDateTime ldt = LocalDateTime.now();
@@ -63,7 +63,7 @@ public class TestLocalDateTime {
 		LocalDateTime ldt3 = ldt.with(TemporalAdjusters.next(DayOfWeek.SUNDAY));
 		System.out.println(ldt3);
 		
-		//×Ô¶¨Òå£ºÏÂÒ»¸ö¹¤×÷ÈÕ
+		//è‡ªå®šä¹‰ï¼šä¸‹ä¸€ä¸ªå·¥ä½œæ—¥
 		LocalDateTime ldt5 = ldt.with((l) -> {
 			LocalDateTime ldt4 = (LocalDateTime) l;
 			
@@ -83,8 +83,8 @@ public class TestLocalDateTime {
 	}
 	
 	//3.
-	//Duration : ÓÃÓÚ¼ÆËãÁ½¸ö¡°Ê±¼ä¡±¼ä¸ô
-	//Period : ÓÃÓÚ¼ÆËãÁ½¸ö¡°ÈÕÆÚ¡±¼ä¸ô
+	//Duration : ç”¨äºè®¡ç®—ä¸¤ä¸ªâ€œæ—¶é—´â€é—´éš”
+	//Period : ç”¨äºè®¡ç®—ä¸¤ä¸ªâ€œæ—¥æœŸâ€é—´éš”
 	@Test
 	public void test3(){
 		Instant ins1 = Instant.now();
@@ -97,7 +97,7 @@ public class TestLocalDateTime {
 		
 		Instant ins2 = Instant.now();
 		
-		System.out.println("ËùºÄ·ÑÊ±¼äÎª£º" + Duration.between(ins1, ins2));
+		System.out.println("æ‰€è€—è´¹æ—¶é—´ä¸ºï¼š" + Duration.between(ins1, ins2));
 		
 		System.out.println("----------------------------------");
 		
@@ -110,10 +110,10 @@ public class TestLocalDateTime {
 		System.out.println(pe.getDays());
 	}
 	
-	//2. Instant : Ê±¼ä´Á¡£ £¨Ê¹ÓÃ Unix ÔªÄê  1970Äê1ÔÂ1ÈÕ 00:00:00 Ëù¾­ÀúµÄºÁÃëÖµ£©
+	//2. Instant : æ—¶é—´æˆ³ã€‚ ï¼ˆä½¿ç”¨ Unix å…ƒå¹´  1970å¹´1æœˆ1æ—¥ 00:00:00 æ‰€ç»å†çš„æ¯«ç§’å€¼ï¼‰
 	@Test
 	public void test2(){
-		Instant ins = Instant.now();  //Ä¬ÈÏÊ¹ÓÃ UTC Ê±Çø
+		Instant ins = Instant.now();  //é»˜è®¤ä½¿ç”¨ UTC æ—¶åŒº
 		System.out.println(ins);
 		
 		OffsetDateTime odt = ins.atOffset(ZoneOffset.ofHours(8));
@@ -125,7 +125,7 @@ public class TestLocalDateTime {
 		System.out.println(ins2);
 	}
 	
-	//1. LocalDate¡¢LocalTime¡¢LocalDateTime
+	//1. LocalDateã€LocalTimeã€LocalDateTime
 	@Test
 	public void test1(){
 		LocalDateTime ldt = LocalDateTime.now();

@@ -1,9 +1,9 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.Senior.server;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.Senior.server;
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,13 +13,13 @@ package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.Senior.server;
  */
 public interface CrazyitProtocol
 {
-	// ¶¨ÒåĞ­Òé×Ö·û´®µÄ³¤¶È
+	// å®šä¹‰åè®®å­—ç¬¦ä¸²çš„é•¿åº¦
 	int PROTOCOL_LEN = 2;
-	// ÏÂÃæÊÇÒ»Ğ©Ğ­Òé×Ö·û´®£¬·şÎñÆ÷ºÍ¿Í»§¶Ë½»»»µÄĞÅÏ¢¶¼Ó¦¸ÃÔÚÇ°¡¢ºóÌí¼ÓÕâÖÖÌØÊâ×Ö·û´®¡£
-	String MSG_ROUND = "¡ì¦Ã";
-	String USER_ROUND = "¡Ç¡Æ";
+	// ä¸‹é¢æ˜¯ä¸€äº›åè®®å­—ç¬¦ä¸²ï¼ŒæœåŠ¡å™¨å’Œå®¢æˆ·ç«¯äº¤æ¢çš„ä¿¡æ¯éƒ½åº”è¯¥åœ¨å‰ã€åæ·»åŠ è¿™ç§ç‰¹æ®Šå­—ç¬¦ä¸²ã€‚
+	String MSG_ROUND = "Â§Î³";
+	String USER_ROUND = "âˆâˆ‘";
 	String LOGIN_SUCCESS = "1";
 	String NAME_REP = "-1";
-	String PRIVATE_ROUND = "¡ï¡¾";
-	String SPLIT_SIGN = "¡ù";
+	String PRIVATE_ROUND = "â˜…ã€";
+	String SPLIT_SIGN = "â€»";
 }

@@ -1,9 +1,9 @@
-package chapter17_02_JavaµÄ»ù±¾ÍøÂçÖ§³Ö;
+package chapter17_02_Javaçš„åŸºæœ¬ç½‘ç»œæ”¯æŒ;
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,18 +15,18 @@ public class MultiThreadDown
 {
 	public static void main(String[] args) throws Exception
 	{
-		// ³õÊ¼»¯DownUtil¶ÔÏó
+		// åˆå§‹åŒ–DownUtilå¯¹è±¡
 		final DownUtil downUtil = new DownUtil("http://dldir1.qq.com/qqfile/qq/QQ8.4/18380/QQ8.4.exe", "QQ8.4.exe", 10);
 		
-		// ¿ªÊ¼ÏÂÔØ
+		// å¼€å§‹ä¸‹è½½
 		downUtil.download();
 		
 		new Thread(() -> {
 				while(downUtil.getCompleteRate() < 1)
 				{
-					// Ã¿¸ô0.1Ãë²éÑ¯Ò»´ÎÈÎÎñµÄÍê³É½ø¶È£¬
-					// GUI³ÌĞòÖĞ¿É¸ù¾İ¸Ã½ø¶ÈÀ´»æÖÆ½ø¶ÈÌõ
-					System.out.println("ÒÑÍê³É£º" + downUtil.getCompleteRate());
+					// æ¯éš”0.1ç§’æŸ¥è¯¢ä¸€æ¬¡ä»»åŠ¡çš„å®Œæˆè¿›åº¦ï¼Œ
+					// GUIç¨‹åºä¸­å¯æ ¹æ®è¯¥è¿›åº¦æ¥ç»˜åˆ¶è¿›åº¦æ¡
+					System.out.println("å·²å®Œæˆï¼š" + downUtil.getCompleteRate());
 					try
 					{
 						Thread.sleep(10000);

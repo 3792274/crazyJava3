@@ -1,8 +1,8 @@
-package chapter06_01_Java8ÔöÇ¿µÄ°ü×°Àà;
+package chapter06_01_Java8å¢å¼ºçš„åŒ…è£…ç±»;
 
 /**
- * Description:»ù±¾Êı¾İÀàĞÍºÍ×Ö·û´®Ö®¼äµÄÏà»¥×ª»»
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:åŸºæœ¬æ•°æ®ç±»å‹å’Œå­—ç¬¦ä¸²ä¹‹é—´çš„ç›¸äº’è½¬æ¢
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,26 +15,26 @@ public class Primitive2String
 	public static void main(String[] args)
 	{
 		String intStr = "123";
-		// °ÑÒ»¸öÌØ¶¨×Ö·û´®×ª»»³Éint±äÁ¿
+		// æŠŠä¸€ä¸ªç‰¹å®šå­—ç¬¦ä¸²è½¬æ¢æˆintå˜é‡
 		int it1 = Integer.parseInt(intStr);
 		int it2 = new Integer(intStr);
 		System.out.println(it2);
 		
 		String floatStr = "4.56";
-		// °ÑÒ»¸öÌØ¶¨×Ö·û´®×ª»»³Éfloat±äÁ¿
+		// æŠŠä¸€ä¸ªç‰¹å®šå­—ç¬¦ä¸²è½¬æ¢æˆfloatå˜é‡
 		float ft1 = Float.parseFloat(floatStr);
 		float ft2 = new Float(floatStr);
 		System.out.println(ft2);
 		
-		// °ÑÒ»¸öfloat±äÁ¿×ª»»³ÉString±äÁ¿
+		// æŠŠä¸€ä¸ªfloatå˜é‡è½¬æ¢æˆStringå˜é‡
 		String ftStr = String.valueOf(2.345f);
 		System.out.println(ftStr);
 		
-		// °ÑÒ»¸ödouble±äÁ¿×ª»»³ÉString±äÁ¿
+		// æŠŠä¸€ä¸ªdoubleå˜é‡è½¬æ¢æˆStringå˜é‡
 		String dbStr = String.valueOf(3.344);
 		System.out.println(dbStr);
 		
-		// °ÑÒ»¸öboolean±äÁ¿×ª»»³ÉString±äÁ¿
+		// æŠŠä¸€ä¸ªbooleanå˜é‡è½¬æ¢æˆStringå˜é‡
 		String boolStr = String.valueOf(true);
 		System.out.println(boolStr.toUpperCase());
 	}

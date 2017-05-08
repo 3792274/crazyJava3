@@ -1,8 +1,8 @@
-package chapter06_10_¶ÔÏóÓëÀ¬»ø»ØÊÕ;
+package chapter06_10_å¯¹è±¡ä¸åƒåœ¾å›æ”¶;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,11 +13,11 @@ package chapter06_10_¶ÔÏóÓëÀ¬»ø»ØÊÕ;
  */
 public class StatusTranfer01 {
 	public static void test() {
-		String a = new String("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½"); // ¢Ù Ö´ĞĞÒÔºó´¦ÓÚ¿É´ï×´Ì¬
-		a = new String("·è¿ñJava½²Òå"); // ¢Ú»Ö¸´×´Ì¬
+		String a = new String("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜"); // â‘  æ‰§è¡Œä»¥åå¤„äºå¯è¾¾çŠ¶æ€
+		a = new String("ç–¯ç‹‚Javaè®²ä¹‰"); // â‘¡æ¢å¤çŠ¶æ€
 	}
 
 	public static void main(String[] args) {
-		test(); // ¢Û
+		test(); // â‘¢
 	}
 }

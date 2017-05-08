@@ -1,10 +1,10 @@
-package chapter09_04_·ºĞÍ·½·¨;
+package chapter09_04_æ³›å‹æ–¹æ³•;
 
 
 import java.util.*;
 /**
- * Description:Í¨Åä·ûÏÂÏŞ¡£
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:é€šé…ç¬¦ä¸‹é™ã€‚
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,7 +16,7 @@ public class TreeSetTest
 {
 	public static void main(String[] args)
 	{
-		// ComparatorµÄÊµ¼ÊÀàĞÍÊÇTreeSetµÄÔªËØÀàĞÍµÄ¸¸Àà£¬Âú×ãÒªÇó
+		// Comparatorçš„å®é™…ç±»å‹æ˜¯TreeSetçš„å…ƒç´ ç±»å‹çš„çˆ¶ç±»ï¼Œæ»¡è¶³è¦æ±‚
 		TreeSet<String> ts1 = new TreeSet<>(
 			new Comparator<Object>()
 		{
@@ -28,7 +28,7 @@ public class TreeSetTest
 		});
 		ts1.add("hello");
 		ts1.add("wa");
-		// ComparatorµÄÊµ¼ÊÀàĞÍÊÇTreeSetÔªËØµÄÀàĞÍ£¬Âú×ãÒªÇó
+		// Comparatorçš„å®é™…ç±»å‹æ˜¯TreeSetå…ƒç´ çš„ç±»å‹ï¼Œæ»¡è¶³è¦æ±‚
 		TreeSet<String> ts2 = new TreeSet<>(
 			new Comparator<String>()
 		{

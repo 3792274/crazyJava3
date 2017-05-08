@@ -1,4 +1,4 @@
-package chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½;
+package chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼;
 
 
 import java.util.*;
@@ -6,7 +6,7 @@ import java.io.*;
 import java.sql.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -24,7 +24,7 @@ public class ExecuteDML
 	public void initParam(String paramFile)
 		throws Exception
 	{
-		// Ê¹ÓÃPropertiesÀàÀ´¼ÓÔØÊôĞÔÎÄ¼ş
+		// ä½¿ç”¨Propertiesç±»æ¥åŠ è½½å±æ€§æ–‡ä»¶
 		Properties props = new Properties();
 		props.load(new FileInputStream(paramFile));
 		driver = props.getProperty("driver");
@@ -34,27 +34,27 @@ public class ExecuteDML
 	}
 	public int insertData(String sql)throws Exception
 	{
-		// ¼ÓÔØÇı¶¯
+		// åŠ è½½é©±åŠ¨
 		Class.forName(driver);
 		try(
-			// »ñÈ¡Êı¾İ¿âÁ¬½Ó
+			// è·å–æ•°æ®åº“è¿æ¥
 			Connection conn = DriverManager.getConnection(url
 				, user , pass);
-			// Ê¹ÓÃConnectionÀ´´´½¨Ò»¸öStatment¶ÔÏó
+			// ä½¿ç”¨Connectionæ¥åˆ›å»ºä¸€ä¸ªStatmentå¯¹è±¡
 			Statement stmt = conn.createStatement())
 		{
-			// Ö´ĞĞDML,·µ»ØÊÜÓ°ÏìµÄ¼ÇÂ¼ÌõÊı
+			// æ‰§è¡ŒDML,è¿”å›å—å½±å“çš„è®°å½•æ¡æ•°
 			return stmt.executeUpdate(sql);
 		}
 	}
 	public static void main(String[] args)throws Exception
 	{
 		ExecuteDML ed = new ExecuteDML();
-		ed.initParam("resource\\chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½\\mysql.ini");
+		ed.initParam("resource\\chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼\\mysql.ini");
 		int result = ed.insertData("insert into jdbc_test(jdbc_name,jdbc_desc)"
 			+ "select s.student_name , t.teacher_name "
 			+ "from student_table s , teacher_table t "
 			+ "where s.java_teacher = t.teacher_id;");
-		System.out.println("--ÏµÍ³ÖĞ¹²ÓĞ" + result + "Ìõ¼ÇÂ¼ÊÜÓ°Ïì--");
+		System.out.println("--ç³»ç»Ÿä¸­å…±æœ‰" + result + "æ¡è®°å½•å—å½±å“--");
 	}
 }

@@ -1,10 +1,10 @@
-package chapter06_04_finalĞŞÊÎ·û;
+package chapter06_04_finalä¿®é¥°ç¬¦;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,20 +16,20 @@ public class FinalLocalVariableTest
 {
 	public void test(final int a)
 	{
-		// ²»ÄÜ¶ÔfinalĞŞÊÎµÄĞÎ²Î¸³Öµ£¬ÏÂÃæÓï¾ä·Ç·¨
+		// ä¸èƒ½å¯¹finalä¿®é¥°çš„å½¢å‚èµ‹å€¼ï¼Œä¸‹é¢è¯­å¥éæ³•
 		// a = 5;
 	}
 	public static void main(String[] args)
 	{
-		// ¶¨Òåfinal¾Ö²¿±äÁ¿Ê±Ö¸¶¨Ä¬ÈÏÖµ£¬Ôòstr±äÁ¿ÎŞ·¨ÖØĞÂ¸³Öµ
+		// å®šä¹‰finalå±€éƒ¨å˜é‡æ—¶æŒ‡å®šé»˜è®¤å€¼ï¼Œåˆ™strå˜é‡æ— æ³•é‡æ–°èµ‹å€¼
 		final String str = "hello";
-		// ÏÂÃæ¸³ÖµÓï¾ä·Ç·¨
+		// ä¸‹é¢èµ‹å€¼è¯­å¥éæ³•
 		// str = "Java";
-		// ¶¨Òåfinal¾Ö²¿±äÁ¿Ê±Ã»ÓĞÖ¸¶¨Ä¬ÈÏÖµ£¬Ôòd±äÁ¿¿É±»¸³ÖµÒ»´Î
+		// å®šä¹‰finalå±€éƒ¨å˜é‡æ—¶æ²¡æœ‰æŒ‡å®šé»˜è®¤å€¼ï¼Œåˆ™då˜é‡å¯è¢«èµ‹å€¼ä¸€æ¬¡
 		final double d;
-		// µÚÒ»´Î¸³³õÊ¼Öµ£¬³É¹¦
+		// ç¬¬ä¸€æ¬¡èµ‹åˆå§‹å€¼ï¼ŒæˆåŠŸ
 		d = 5.6;
-		// ¶Ôfinal±äÁ¿ÖØ¸´¸³Öµ£¬ÏÂÃæÓï¾ä·Ç·¨
+		// å¯¹finalå˜é‡é‡å¤èµ‹å€¼ï¼Œä¸‹é¢è¯­å¥éæ³•
 		// d = 3.4;
 	}
 }

@@ -1,4 +1,4 @@
-package chapter08_04_List¼¯ºÏ;
+package chapter08_04_Listé›†åˆ;
 
 
 import java.util.*;
@@ -8,7 +8,7 @@ import java.util.*;
 class A
 {
 	
-	//A¶ÔÏóÖØĞ´equals·½·¨£¬Èç¹ûÉ¾³ıA¶ÔÏó£¬ListÓÃÆäÖĞµÄ¶ÔÏó¶Ô±ÈA¶ÔÏóµÄequals·½·¨£¬Èç¹û·µ»Øtrue,¾ÍÉ¾³ı¶ÔÏó¡£
+	//Aå¯¹è±¡é‡å†™equalsæ–¹æ³•ï¼Œå¦‚æœåˆ é™¤Aå¯¹è±¡ï¼ŒListç”¨å…¶ä¸­çš„å¯¹è±¡å¯¹æ¯”Aå¯¹è±¡çš„equalsæ–¹æ³•ï¼Œå¦‚æœè¿”å›true,å°±åˆ é™¤å¯¹è±¡ã€‚
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -20,18 +20,18 @@ public class ListTest2
 	public static void main(String[] args)
 	{
 		List books = new ArrayList();
-		books.add(new String("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½"));
-		books.add(new String("·è¿ñJava½²Òå"));
-		books.add(new String("·è¿ñAndroid½²Òå"));
+		books.add(new String("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜"));
+		books.add(new String("ç–¯ç‹‚Javaè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚Androidè®²ä¹‰"));
 		
 		System.out.println(books);
 		
-		// É¾³ı¼¯ºÏÖĞA¶ÔÏó£¬½«µ¼ÖÂµÚÒ»¸öÔªËØ±»É¾³ı
-		books.remove(new A());     // ¢Ù
+		// åˆ é™¤é›†åˆä¸­Aå¯¹è±¡ï¼Œå°†å¯¼è‡´ç¬¬ä¸€ä¸ªå…ƒç´ è¢«åˆ é™¤
+		books.remove(new A());     // â‘ 
 		System.out.println(books);
 		
-		// É¾³ı¼¯ºÏÖĞA¶ÔÏó£¬ÔÙ´ÎÉ¾³ı¼¯ºÏÖĞµÚÒ»¸öÔªËØ
-		books.remove(new A());     // ¢Ú
+		// åˆ é™¤é›†åˆä¸­Aå¯¹è±¡ï¼Œå†æ¬¡åˆ é™¤é›†åˆä¸­ç¬¬ä¸€ä¸ªå…ƒç´ 
+		books.remove(new A());     // â‘¡
 		System.out.println(books);
 	}
 }

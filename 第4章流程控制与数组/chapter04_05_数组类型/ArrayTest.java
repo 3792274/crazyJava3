@@ -1,8 +1,8 @@
-package chapter04_05_��������;
+package chapter04_05_数组类型;
 
 /**
  * Description:
- * <br/>��վ: <a href="http://www.crazyit.org">���Java����</a>
+ * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,49 +14,49 @@ public class ArrayTest
 {
 	public static void main(String[] args)
 	{
-		// ����һ��int�������͵ı�����������ΪintArr.
+		// 定义一个int数组类型的变量，变量名为intArr.
 		int[] intArr;
-		// ʹ�þ�̬��ʼ������ʼ������ʱָֻ������Ԫ�صĳ�ʼֵ����ָ�����鳤�ȡ�
+		// 使用静态初始化，初始化数组时只指定数组元素的初始值，不指定数组长度。
 		intArr = new int[]{5, 6, 8 , 20};
-		// ����һ��Object�������͵ı�����������ΪobjArr.
+		// 定义一个Object数组类型的变量，变量名为objArr.
 		Object[] objArr ;
-		// ʹ�þ�̬��ʼ������ʼ������ʱ����Ԫ�ص�������
-		// ��������ʱ��ָ��������Ԫ�����͵�����
-		objArr = new String[]{"Java" , "���"};
+		// 使用静态初始化，初始化数组时数组元素的类型是
+		// 定义数组时所指定的数组元素类型的子类
+		objArr = new String[]{"Java" , "李刚"};
 		Object[] objArr2 ;
-		// ʹ�þ�̬��ʼ��
-		objArr2 = new Object[] {"Java" , "���"};
+		// 使用静态初始化
+		objArr2 = new Object[] {"Java" , "李刚"};
 
 
-		// ����Ķ���ͳ�ʼ��ͬʱ��ɣ�ʹ�ü򻯵ľ�̬��ʼ��д��
+		// 数组的定义和初始化同时完成，使用简化的静态初始化写法
 		int[] a = {5, 6 , 7, 9};
 
 
-		//����Ķ���ͳ�ʼ��ͬʱ��ɣ�ʹ�ö�̬��ʼ���﷨,��ʼ��Ϊ0��null��
+		//数组的定义和初始化同时完成，使用动态初始化语法,初始化为0，null等
 		int[] prices = new int[5];
-		// ����Ķ���ͳ�ʼ��ͬʱ��ɣ���ʼ������ʱԪ�ص������Ƕ�������ʱԪ�����͵�����
+		// 数组的定义和初始化同时完成，初始化数组时元素的类型是定义数组时元素类型的子类
 		Object[] books = new String[4];
 
 
-		// ���objArr����ĵڶ���Ԫ�أ�������ַ���"���"
+		// 输出objArr数组的第二个元素，将输出字符串"李刚"
 		System.out.println(objArr[1]);
-		// ΪobjArr2�ĵ�һ������Ԫ�ظ�ֵ
+		// 为objArr2的第一个数组元素赋值
 		objArr2[0] = "Spring";
 
-		// ��������Ԫ��ָ���������������鳤�ȣ�����������뽫������ʱ�����쳣
+		// 访问数组元素指定的索引等于数组长度，所以下面代码将在运行时出现异常
 		// System.out.println(objArr2[2]);
 
 
-		// ʹ��ѭ�����prices�����ÿ������Ԫ�ص�ֵ
+		// 使用循环输出prices数组的每个数组元素的值
 		for (int i = 0; i < prices.length ; i ++ )
 		{
 			System.out.println(prices[i]);
 		}
 
-		// �Զ�̬��ʼ���������Ԫ�ؽ��и�ֵ
-		books[0] = "���Java����";
-		books[1] = "������Java EE��ҵӦ��ʵս";
-		// ʹ��ѭ�����books�����ÿ������Ԫ�ص�ֵ
+		// 对动态初始化后的数组元素进行赋值
+		books[0] = "疯狂Java讲义";
+		books[1] = "轻量级Java EE企业应用实战";
+		// 使用循环输出books数组的每个数组元素的值
 		for (int i = 0 ; i < books.length ; i++ )
 		{
 			System.out.println(books[i]);

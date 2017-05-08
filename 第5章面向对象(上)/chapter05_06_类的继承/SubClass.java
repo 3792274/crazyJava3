@@ -1,10 +1,10 @@
-package chapter05_06_类的继承;
+package chapter05_06_绫荤殑缁ф壙;
 
 
 
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -25,13 +25,13 @@ public class SubClass extends BaseClass
 	}
 	public void accessBase()
 	{
-		// 通过super来限定访问从父类继承得到的a实例变量
+		// 閫氳繃super鏉ラ檺瀹氳闂粠鐖剁被缁ф壙寰楀埌鐨刟瀹炰緥鍙橀噺
 		System.out.println(super.a);
 	}
 	public static void main(String[] args)
 	{
 		SubClass sc = new SubClass();
-		sc.accessOwner(); // 输出7
-		sc.accessBase(); // 输出5
+		sc.accessOwner(); // 杈撳嚭7
+		sc.accessBase(); // 杈撳嚭5
 	}
 }

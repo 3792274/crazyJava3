@@ -1,11 +1,11 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.HalfClose;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.HalfClose;
 
 import java.io.*;
 import java.net.*;
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -25,8 +25,8 @@ public class Client
 			System.out.println(scan.nextLine());
 		}
 		PrintStream ps = new PrintStream(s.getOutputStream());
-		ps.println("¿Í»§¶ËµÄµÚÒ»ĞĞÊı¾İ");
-		ps.println("¿Í»§¶ËµÄµÚ¶şĞĞÊı¾İ");
+		ps.println("å®¢æˆ·ç«¯çš„ç¬¬ä¸€è¡Œæ•°æ®");
+		ps.println("å®¢æˆ·ç«¯çš„ç¬¬äºŒè¡Œæ•°æ®");
 		ps.close();
 		scan.close();
 		s.close();

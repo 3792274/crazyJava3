@@ -1,10 +1,10 @@
-package chapter05_09_³õÊ¼»¯¿é;
+package chapter05_09_åˆå§‹åŒ–å—;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,23 +14,23 @@ package chapter05_09_³õÊ¼»¯¿é;
  */
 public class Person
 {
-	// ÏÂÃæ¶¨ÒåÒ»¸ö³õÊ¼»¯¿é
+	// ä¸‹é¢å®šä¹‰ä¸€ä¸ªåˆå§‹åŒ–å—
 	{
 		int a = 6;
 		if (a > 4)
 		{
-			System.out.println("Person³õÊ¼»¯¿é£º¾Ö²¿±äÁ¿aµÄÖµ´óÓÚ4");
+			System.out.println("Personåˆå§‹åŒ–å—ï¼šå±€éƒ¨å˜é‡açš„å€¼å¤§äº4");
 		}
-		System.out.println("PersonµÄ³õÊ¼»¯¿é");
+		System.out.println("Personçš„åˆå§‹åŒ–å—");
 	}
-	// ¶¨ÒåµÚ¶ş¸ö³õÊ¼»¯¿é
+	// å®šä¹‰ç¬¬äºŒä¸ªåˆå§‹åŒ–å—
 	{
-		System.out.println("PersonµÄµÚ¶ş¸ö³õÊ¼»¯¿é");
+		System.out.println("Personçš„ç¬¬äºŒä¸ªåˆå§‹åŒ–å—");
 	}
-	// ¶¨ÒåÎŞ²ÎÊıµÄ¹¹ÔìÆ÷
+	// å®šä¹‰æ— å‚æ•°çš„æ„é€ å™¨
 	public Person()
 	{
-		System.out.println("PersonÀàµÄÎŞ²ÎÊı¹¹ÔìÆ÷");
+		System.out.println("Personç±»çš„æ— å‚æ•°æ„é€ å™¨");
 	}
 	public static void main(String[] args)
 	{

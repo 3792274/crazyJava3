@@ -1,8 +1,8 @@
-package chapter03_05_»ù±¾ÀàĞÍµÄÀàĞÍ×ª»»;
+package chapter03_05_åŸºæœ¬ç±»å‹çš„ç±»å‹è½¬æ¢;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,20 +13,20 @@ package chapter03_05_»ù±¾ÀàĞÍµÄÀàĞÍ×ª»»;
 public class RandomStr
 {
 	
-	//Éú³ÉÑéÖ¤ÂëµÄÀı×Ó
+	//ç”ŸæˆéªŒè¯ç çš„ä¾‹å­
 	public static void main(String[] args)
 	{
-		// ¶¨ÒåÒ»¸ö¿Õ×Ö·û´®
+		// å®šä¹‰ä¸€ä¸ªç©ºå­—ç¬¦ä¸²
 		String result = "";
-		// ½øĞĞ6´ÎÑ­»·
+		// è¿›è¡Œ6æ¬¡å¾ªç¯
 		for(int i = 0 ; i < 6 ; i ++)
 		{
-			// Éú³ÉÒ»¸ö97¡«122µÄintĞÍµÄÕûÊı
+			// ç”Ÿæˆä¸€ä¸ª97ï½122çš„intå‹çš„æ•´æ•°
 			int intVal = (int)(Math.random() * 26 + 97);
-			// ½«intValueÇ¿ÖÆ×ª»»ÎªcharºóÁ¬½Óµ½resultºóÃæ
+			// å°†intValueå¼ºåˆ¶è½¬æ¢ä¸ºcharåè¿æ¥åˆ°resultåé¢
 			result = result + (char)intVal;
 		}
-		// Êä³öËæ»ú×Ö·û´®
+		// è¾“å‡ºéšæœºå­—ç¬¦ä¸²
 		System.out.println(result);
 	}
 }

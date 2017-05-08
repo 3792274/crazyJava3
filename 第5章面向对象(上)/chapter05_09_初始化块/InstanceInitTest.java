@@ -1,10 +1,10 @@
-package chapter05_09_³õÊ¼»¯¿é;
+package chapter05_09_åˆå§‹åŒ–å—;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,15 +14,15 @@ package chapter05_09_³õÊ¼»¯¿é;
  */
 public class InstanceInitTest
 {
-	// ÏÈÖ´ĞĞ³õÊ¼»¯¿é½«aÊµÀı±äÁ¿¸³ÖµÎª6
+	// å…ˆæ‰§è¡Œåˆå§‹åŒ–å—å°†aå®ä¾‹å˜é‡èµ‹å€¼ä¸º6
 	{
 		a = 6;
 	}
-	// ÔÙÖ´ĞĞ½«aÊµÀı±äÁ¿¸³ÖµÎª9
+	// å†æ‰§è¡Œå°†aå®ä¾‹å˜é‡èµ‹å€¼ä¸º9
 	int a = 9;
 	public static void main(String[] args)
 	{
-		// ÏÂÃæ´úÂë½«Êä³ö9¡£
+		// ä¸‹é¢ä»£ç å°†è¾“å‡º9ã€‚
 		System.out.println(new InstanceInitTest().a);
 	}
 }

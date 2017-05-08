@@ -1,8 +1,8 @@
-package chapter06_05_³éÏóÀà;
+package chapter06_05_æŠ½è±¡ç±»;
 
 /**
- * Description:³éÏóÀàÄ£°å
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:æŠ½è±¡ç±»æ¨¡æ¿
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -12,13 +12,13 @@ package chapter06_05_³éÏóÀà;
  */
 public abstract class SpeedMeter
 {
-	// ×ªËÙ
+	// è½¬é€Ÿ
 	private double turnRate;
 	
 	public SpeedMeter()
 	{
 	}
-	// °Ñ·µ»Ø³µÂÖ°ë¾¶µÄ·½·¨¶¨Òå³É³éÏó·½·¨£¬ÎŞ·¨È·¶¨³µÂÖµÄ°ë¾¶£¬ÍÆ³Ùµ½×ÓÀàÊµÏÖ
+	// æŠŠè¿”å›è½¦è½®åŠå¾„çš„æ–¹æ³•å®šä¹‰æˆæŠ½è±¡æ–¹æ³•ï¼Œæ— æ³•ç¡®å®šè½¦è½®çš„åŠå¾„ï¼Œæ¨è¿Ÿåˆ°å­ç±»å®ç°
 	public abstract double getRadius();
 	
 	public void setTurnRate(double turnRate)
@@ -26,10 +26,10 @@ public abstract class SpeedMeter
 		this.turnRate = turnRate;
 	}
 	
-	// ¶¨Òå¼ÆËãËÙ¶ÈµÄÍ¨ÓÃËã·¨£¬ÓÃÓÚ·µ»Øµ±Ç°µÄ³µËÙ
+	// å®šä¹‰è®¡ç®—é€Ÿåº¦çš„é€šç”¨ç®—æ³•ï¼Œç”¨äºè¿”å›å½“å‰çš„è½¦é€Ÿ
 	public double getSpeed()
 	{
-		// ËÙ¶ÈµÈÓÚ ³µÂÖ°ë¾¶ * 2 * PI * ×ªËÙ
+		// é€Ÿåº¦ç­‰äº è½¦è½®åŠå¾„ * 2 * PI * è½¬é€Ÿ
 		return java.lang.Math.PI * 2 * getRadius() * turnRate;
 	}
 }

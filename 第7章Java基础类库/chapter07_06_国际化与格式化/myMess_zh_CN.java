@@ -1,15 +1,15 @@
-package chapter07_06_¹ú¼Ê»¯Óë¸ñÊ½»¯;
+package chapter07_06_å›½é™…åŒ–ä¸æ ¼å¼åŒ–;
 
 import java.util.*;
 
 /**
- * Description: Ê¹ÓÃÀàÎÄ¼ş´úÌæ×ÊÔ´ÎÄ¼ş<br/>
+ * Description: ä½¿ç”¨ç±»æ–‡ä»¶ä»£æ›¿èµ„æºæ–‡ä»¶<br/>
  * 
- * 1.±ØĞë¼Ì³ĞListResourceBundle,ÖØĞ´getContents()·½·¨£¬·µ»Økey-value
- * 2.Ãû³ÆÃüÃûÍ¬×ÊÔ´ÎÄ¼ş¡£
+ * 1.å¿…é¡»ç»§æ‰¿ListResourceBundle,é‡å†™getContents()æ–¹æ³•ï¼Œè¿”å›key-value
+ * 2.åç§°å‘½ååŒèµ„æºæ–‡ä»¶ã€‚
  * 
  * 
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -19,12 +19,12 @@ import java.util.*;
  * @version 1.0
  */
 public class myMess_zh_CN extends ListResourceBundle {
-	// ¶¨Òå×ÊÔ´
-	private final Object myData[][] = { { "msg", "{0}£¬ÄãºÃ11£¡½ñÌìµÄÈÕÆÚÊÇ{1}" } };
+	// å®šä¹‰èµ„æº
+	private final Object myData[][] = { { "msg", "{0}ï¼Œä½ å¥½11ï¼ä»Šå¤©çš„æ—¥æœŸæ˜¯{1}" } };
 
-	// ÖØĞ´·½·¨getContents()
+	// é‡å†™æ–¹æ³•getContents()
 	public Object[][] getContents() {
-		// ¸Ã·½·¨·µ»Ø×ÊÔ´µÄkey-value¶Ô
+		// è¯¥æ–¹æ³•è¿”å›èµ„æºçš„key-valueå¯¹
 		return myData;
 	}
 }

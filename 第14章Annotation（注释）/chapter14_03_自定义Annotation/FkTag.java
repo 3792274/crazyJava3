@@ -1,10 +1,10 @@
-package chapter14_03_×Ô¶¨ÒåAnnotation;
+package chapter14_03_è‡ªå®šä¹‰Annotation;
 
 
 import java.lang.annotation.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -12,13 +12,13 @@ import java.lang.annotation.*;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// Ö¸¶¨¸Ã×¢½âĞÅÏ¢»á±£Áôµ½ÔËĞĞÊ±
+// æŒ‡å®šè¯¥æ³¨è§£ä¿¡æ¯ä¼šä¿ç•™åˆ°è¿è¡Œæ—¶
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Repeatable(FkTags.class)
 public @interface FkTag
 {
-	// Îª¸Ã×¢½â¶¨Òå2¸ö³ÉÔ±±äÁ¿
-	String name() default "·è¿ñÈí¼ş";
+	// ä¸ºè¯¥æ³¨è§£å®šä¹‰2ä¸ªæˆå‘˜å˜é‡
+	String name() default "ç–¯ç‹‚è½¯ä»¶";
 	int age();
 }

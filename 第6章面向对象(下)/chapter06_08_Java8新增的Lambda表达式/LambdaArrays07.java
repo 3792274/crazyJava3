@@ -1,9 +1,9 @@
-package chapter06_08_Java8ĞÂÔöµÄLambda±í´ïÊ½;
+package chapter06_08_Java8æ–°å¢çš„Lambdaè¡¨è¾¾å¼;
 
 import java.util.Arrays;
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -21,14 +21,14 @@ public class LambdaArrays07 {
 		
 		
 		int[] arr2 = new int[] { 3, -4, 25, 16, 30, 18 };
-		// left´ú±íÊı×éÖĞÇ°Ò»¸öËùË÷Òı´¦µÄÔªËØ£¬¼ÆËãµÚÒ»¸öÔªËØÊ±£¬leftÎª1
-		// right´ú±íÊı×éÖĞµ±Ç°Ë÷Òı´¦µÄÔªËØ
+		// leftä»£è¡¨æ•°ç»„ä¸­å‰ä¸€ä¸ªæ‰€ç´¢å¼•å¤„çš„å…ƒç´ ï¼Œè®¡ç®—ç¬¬ä¸€ä¸ªå…ƒç´ æ—¶ï¼Œleftä¸º1
+		// rightä»£è¡¨æ•°ç»„ä¸­å½“å‰ç´¢å¼•å¤„çš„å…ƒç´ 
 		Arrays.parallelPrefix(arr2, (left, right) -> left * right);
 		System.out.println(Arrays.toString(arr2));
 		
 		
 		long[] arr3 = new long[5];
-		// operand´ú±íÕıÔÚ¼ÆËãµÄÔªËØË÷Òı
+		// operandä»£è¡¨æ­£åœ¨è®¡ç®—çš„å…ƒç´ ç´¢å¼•
 		Arrays.parallelSetAll(arr3, operand -> operand * 5);
 		System.out.println(Arrays.toString(arr3));
 	}

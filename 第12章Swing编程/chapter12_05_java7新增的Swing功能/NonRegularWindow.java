@@ -1,4 +1,4 @@
-package chapter12_05_java7ĞÂÔöµÄSwing¹¦ÄÜ;
+package chapter12_05_java7æ–°å¢çš„SwingåŠŸèƒ½;
 
 
 import java.io.*;
@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.awt.geom.Ellipse2D;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -21,20 +21,20 @@ import java.awt.geom.Ellipse2D;
 public class NonRegularWindow extends JFrame
 	implements ActionListener
 {
-	// ¶¨Òå3¸ö´°¿Ú
-	JFrame transWin = new JFrame("Í¸Ã÷´°¿Ú");
-	JFrame gradientWin = new JFrame("½¥±äÍ¸Ã÷´°¿Ú");
-	JFrame bgWin = new JFrame("±³¾°Í¼Æ¬´°¿Ú");
-	JFrame shapeWin = new JFrame("ÍÖÔ²´°¿Ú");
+	// å®šä¹‰3ä¸ªçª—å£
+	JFrame transWin = new JFrame("é€æ˜çª—å£");
+	JFrame gradientWin = new JFrame("æ¸å˜é€æ˜çª—å£");
+	JFrame bgWin = new JFrame("èƒŒæ™¯å›¾ç‰‡çª—å£");
+	JFrame shapeWin = new JFrame("æ¤­åœ†çª—å£");
 	public NonRegularWindow()
 	{
-		super("²»¹æÔò´°¿Ú²âÊÔ");
+		super("ä¸è§„åˆ™çª—å£æµ‹è¯•");
 		setLayout(new FlowLayout());
-		JButton transBn = new JButton("Í¸Ã÷´°¿Ú");
-		JButton gradientBn = new JButton("½¥±äÍ¸Ã÷´°¿Ú");
-		JButton bgBn = new JButton("±³¾°Í¼Æ¬´°¿Ú");
-		JButton shapeBn = new JButton("ÍÖÔ²´°¿Ú");
-		// Îª3¸ö°´Å¥Ìí¼ÓÊÂ¼ş¼àÌıÆ÷
+		JButton transBn = new JButton("é€æ˜çª—å£");
+		JButton gradientBn = new JButton("æ¸å˜é€æ˜çª—å£");
+		JButton bgBn = new JButton("èƒŒæ™¯å›¾ç‰‡çª—å£");
+		JButton shapeBn = new JButton("æ¤­åœ†çª—å£");
+		// ä¸º3ä¸ªæŒ‰é’®æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
 		transBn.addActionListener(this);
 		gradientBn.addActionListener(this);
 		bgBn.addActionListener(this);
@@ -43,16 +43,16 @@ public class NonRegularWindow extends JFrame
 		add(gradientBn);
 		add(bgBn);
 		add(shapeBn);
-		//-------ÉèÖÃÍ¸Ã÷´°¿Ú-------
+		//-------è®¾ç½®é€æ˜çª—å£-------
 		transWin.setLayout(new GridBagLayout());
 		transWin.setSize(300,200);
-		transWin.add(new JButton("Í¸Ã÷´°¿ÚÀïµÄ¼òµ¥°´Å¥"));
-		// ÉèÖÃÍ¸Ã÷¶ÈÎª0.65f£¬Í¸Ã÷¶ÈÎª1Ê±ÍêÈ«²»Í¸Ã÷¡£
+		transWin.add(new JButton("é€æ˜çª—å£é‡Œçš„ç®€å•æŒ‰é’®"));
+		// è®¾ç½®é€æ˜åº¦ä¸º0.65fï¼Œé€æ˜åº¦ä¸º1æ—¶å®Œå…¨ä¸é€æ˜ã€‚
 		transWin.setOpacity(0.65f);
-		//-------ÉèÖÃ½¥±äÍ¸Ã÷µÄ´°¿Ú-------
+		//-------è®¾ç½®æ¸å˜é€æ˜çš„çª—å£-------
 		gradientWin.setBackground(new Color(0,0,0,0));
 		gradientWin.setSize(new Dimension(300,200));
-		// Ê¹ÓÃÒ»¸öJPanel¶ÔÏó×÷Îª½¥±äÍ¸Ã÷µÄ±³¾°
+		// ä½¿ç”¨ä¸€ä¸ªJPanelå¯¹è±¡ä½œä¸ºæ¸å˜é€æ˜çš„èƒŒæ™¯
 		JPanel panel = new JPanel()
 		{
 			protected void paintComponent(Graphics g)
@@ -62,7 +62,7 @@ public class NonRegularWindow extends JFrame
 					final int R = 240;
 					final int G = 240;
 					final int B = 240;
-					// ´´½¨Ò»¸ö½¥±ä»­±Ê
+					// åˆ›å»ºä¸€ä¸ªæ¸å˜ç”»ç¬”
 					Paint p = new GradientPaint(0.0f, 0.0f
 						, new Color(R, G, B, 0)
 						, 0.0f, getHeight()
@@ -73,14 +73,14 @@ public class NonRegularWindow extends JFrame
 				}
 			}
 		};
-		// Ê¹ÓÃJPanel¶ÔÏó×÷ÎªJFrameµÄcontentPane
+		// ä½¿ç”¨JPanelå¯¹è±¡ä½œä¸ºJFrameçš„contentPane
 		gradientWin.setContentPane(panel);
 		panel.setLayout(new GridBagLayout());
-		gradientWin.add(new JButton("½¥±äÍ¸Ã÷´°¿ÚÀïµÄ¼òµ¥°´Å¥"));
-		//-------ÉèÖÃÓĞ±³¾°Í¼Æ¬µÄ´°¿Ú-------
+		gradientWin.add(new JButton("æ¸å˜é€æ˜çª—å£é‡Œçš„ç®€å•æŒ‰é’®"));
+		//-------è®¾ç½®æœ‰èƒŒæ™¯å›¾ç‰‡çš„çª—å£-------
 		bgWin.setBackground(new Color(0,0,0,0));
 		bgWin.setSize(new Dimension(300,200));
-		// Ê¹ÓÃÒ»¸öJPanel¶ÔÏó×÷Îª±³¾°Í¼Æ¬
+		// ä½¿ç”¨ä¸€ä¸ªJPanelå¯¹è±¡ä½œä¸ºèƒŒæ™¯å›¾ç‰‡
 		JPanel bgPanel = new JPanel()
 		{
 			protected void paintComponent(Graphics g)
@@ -88,7 +88,7 @@ public class NonRegularWindow extends JFrame
 				try
 				{
 					Image bg = ImageIO.read(new File("images/java.png"));
-					// »æÖÆÒ»ÕÅÍ¼Æ¬×÷Îª±³¾°
+					// ç»˜åˆ¶ä¸€å¼ å›¾ç‰‡ä½œä¸ºèƒŒæ™¯
 					g.drawImage(bg , 0 , 0 , getWidth() , getHeight() ,  null);
 				}
 				catch (IOException ex)
@@ -97,29 +97,29 @@ public class NonRegularWindow extends JFrame
 				}
 			}
 		};
-		// Ê¹ÓÃJPanel¶ÔÏó×÷ÎªJFrameµÄcontentPane
+		// ä½¿ç”¨JPanelå¯¹è±¡ä½œä¸ºJFrameçš„contentPane
 		bgWin.setContentPane(bgPanel);
 		bgPanel.setLayout(new GridBagLayout());
-		bgWin.add(new JButton("ÓĞ±³¾°Í¼Æ¬´°¿ÚÀïµÄ¼òµ¥°´Å¥"));
-		//-------ÉèÖÃÍÖÔ²ĞÎ´°¿Ú-------
+		bgWin.add(new JButton("æœ‰èƒŒæ™¯å›¾ç‰‡çª—å£é‡Œçš„ç®€å•æŒ‰é’®"));
+		//-------è®¾ç½®æ¤­åœ†å½¢çª—å£-------
 		shapeWin.setLayout(new GridBagLayout());
 		shapeWin.setUndecorated(true);
 		shapeWin.setOpacity(0.7f);
-		// Í¨¹ıÎªshapeWinÌí¼Ó¼àÌıÆ÷À´ÉèÖÃ´°¿ÚµÄĞÎ×´¡£
-		// µ±shapeWin´°¿ÚµÄ´óĞ¡±»¸Ä±äÊ±£¬³ÌĞò¶¯Ì¬ÉèÖÃ¸Ã´°¿ÚµÄĞÎ×´
+		// é€šè¿‡ä¸ºshapeWinæ·»åŠ ç›‘å¬å™¨æ¥è®¾ç½®çª—å£çš„å½¢çŠ¶ã€‚
+		// å½“shapeWinçª—å£çš„å¤§å°è¢«æ”¹å˜æ—¶ï¼Œç¨‹åºåŠ¨æ€è®¾ç½®è¯¥çª—å£çš„å½¢çŠ¶
 		shapeWin.addComponentListener(new ComponentAdapter()
 		{
-			// µ±´°¿Ú´óĞ¡±»¸Ä±äÊ±£¬ÍÖÔ²µÄ´óĞ¡Ò²»áÏàÓ¦µØ¸Ä±ä
+			// å½“çª—å£å¤§å°è¢«æ”¹å˜æ—¶ï¼Œæ¤­åœ†çš„å¤§å°ä¹Ÿä¼šç›¸åº”åœ°æ”¹å˜
 			public void componentResized(ComponentEvent e)
 			{
-				// ÉèÖÃ´°¿ÚµÄĞÎ×´
+				// è®¾ç½®çª—å£çš„å½¢çŠ¶
 				shapeWin.setShape(new Ellipse2D.Double(0 , 0
-					, shapeWin.getWidth() , shapeWin.getHeight()));  // ¢Ù
+					, shapeWin.getWidth() , shapeWin.getHeight()));  // â‘ 
 			}
 		});
 		shapeWin.setSize(300,200);
-		shapeWin.add(new JButton("ÍÖÔ²ĞÎ´°¿ÚÀïµÄ¼òµ¥°´Å¥"));
-		//-------ÉèÖÃÖ÷³ÌĞòµÄ´°¿Ú-------
+		shapeWin.add(new JButton("æ¤­åœ†å½¢çª—å£é‡Œçš„ç®€å•æŒ‰é’®"));
+		//-------è®¾ç½®ä¸»ç¨‹åºçš„çª—å£-------
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
 		setVisible(true);
@@ -128,16 +128,16 @@ public class NonRegularWindow extends JFrame
 	{
 		switch(event.getActionCommand())
 		{
-			case "Í¸Ã÷´°¿Ú":
+			case "é€æ˜çª—å£":
 				transWin.setVisible(true);
 				break;
-			case "½¥±äÍ¸Ã÷´°¿Ú":
+			case "æ¸å˜é€æ˜çª—å£":
 				gradientWin.setVisible(true);
 				break;
-			case "±³¾°Í¼Æ¬´°¿Ú":
+			case "èƒŒæ™¯å›¾ç‰‡çª—å£":
 				bgWin.setVisible(true);
 				break;
-			case "ÍÖÔ²´°¿Ú":
+			case "æ¤­åœ†çª—å£":
 				shapeWin.setVisible(true);
 				break;
 		}

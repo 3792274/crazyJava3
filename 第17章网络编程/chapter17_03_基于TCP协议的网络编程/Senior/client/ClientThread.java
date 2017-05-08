@@ -1,9 +1,9 @@
-package chapter17_03_»ùÓÚTCPÐ­ÒéµÄÍøÂç±à³Ì.Senior.client;
+package chapter17_03_åŸºäºŽTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.Senior.client;
 
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,9 +13,9 @@ import java.io.*;
  */
 public class ClientThread extends Thread
 {
-	// ¸Ã¿Í»§¶ËÏß³Ì¸ºÔð´¦ÀíµÄÊäÈëÁ÷
+	// è¯¥å®¢æˆ·ç«¯çº¿ç¨‹è´Ÿè´£å¤„ç†çš„è¾“å…¥æµ
 	BufferedReader br = null;
-	// Ê¹ÓÃÒ»¸öÍøÂçÊäÈëÁ÷À´´´½¨¿Í»§¶ËÏß³Ì
+	// ä½¿ç”¨ä¸€ä¸ªç½‘ç»œè¾“å…¥æµæ¥åˆ›å»ºå®¢æˆ·ç«¯çº¿ç¨‹
 	public ClientThread(BufferedReader br)
 	{
 		this.br = br;
@@ -25,21 +25,21 @@ public class ClientThread extends Thread
 		try
 		{
 			String line = null;
-			// ²»¶Ï´ÓÊäÈëÁ÷ÖÐ¶ÁÈ¡Êý¾Ý£¬²¢½«ÕâÐ©Êý¾Ý´òÓ¡Êä³ö
+			// ä¸æ–­ä»Žè¾“å…¥æµä¸­è¯»å–æ•°æ®ï¼Œå¹¶å°†è¿™äº›æ•°æ®æ‰“å°è¾“å‡º
 			while((line = br.readLine())!= null)
 			{
 				System.out.println(line);
 				/*
-				±¾Àý½ö´òÓ¡ÁË´Ó·þÎñÆ÷¶Ë¶Áµ½µÄÄÚÈÝ¡£Êµ¼ÊÉÏ£¬´Ë´¦µÄÇé¿ö¿ÉÒÔ¸ü¸´ÔÓ£º
-				Èç¹ûÏ£Íû¿Í»§¶ËÄÜ¿´µ½ÁÄÌìÊÒµÄÓÃ»§ÁÐ±í£¬Ôò¿ÉÒÔÈÃ·þÎñÆ÷ÔÚ
-				Ã¿´ÎÓÐÓÃ»§µÇÂ¼¡¢ÓÃ»§ÍË³öÊ±£¬½«ËùÓÐÓÃ»§ÁÐ±íÐÅÏ¢¶¼Ïò¿Í»§¶Ë·¢ËÍÒ»±é¡£
-				ÎªÁËÇø·Ö·þÎñÆ÷·¢ËÍµÄÊÇÁÄÌìÐÅÏ¢£¬»¹ÊÇÓÃ»§ÁÐ±í£¬·þÎñÆ÷Ò²Ó¦¸Ã
-				ÔÚÒª·¢ËÍµÄÐÅÏ¢Ç°¡¢ºó¶¼Ìí¼ÓÒ»¶¨µÄÐ­Òé×Ö·û´®£¬¿Í»§¶Ë´Ë´¦Ôò¸ù¾ÝÐ­Òé
-				×Ö·û´®µÄ²»Í¬¶ø½øÐÐ²»Í¬µÄ´¦Àí£¡
-				¸ü¸´ÔÓµÄÇé¿ö£º
-				Èç¹ûÁ½¶Ë½øÐÐÓÎÏ·£¬Ôò»¹ÓÐ¿ÉÄÜ·¢ËÍÓÎÏ·ÐÅÏ¢£¬ÀýÈçÁ½¶Ë½øÐÐÎå×ÓÆåÓÎÏ·£¬
-				Ôò»¹ÐèÒª·¢ËÍÏÂÆå×ø±êÐÅÏ¢µÈ£¬·þÎñÆ÷Í¬ÑùÔÚÕâÐ©ÏÂÆå×ø±êÐÅÏ¢Ç°¡¢ºó
-				Ìí¼ÓÐ­Òé×Ö·û´®ºóÔÙ·¢ËÍ£¬¿Í»§¶Ë¾Í¿ÉÒÔ¸ù¾Ý¸ÃÐÅÏ¢ÖªµÀ¶ÔÊÖµÄÏÂÆå×ø±ê¡£
+				æœ¬ä¾‹ä»…æ‰“å°äº†ä»ŽæœåŠ¡å™¨ç«¯è¯»åˆ°çš„å†…å®¹ã€‚å®žé™…ä¸Šï¼Œæ­¤å¤„çš„æƒ…å†µå¯ä»¥æ›´å¤æ‚ï¼š
+				å¦‚æžœå¸Œæœ›å®¢æˆ·ç«¯èƒ½çœ‹åˆ°èŠå¤©å®¤çš„ç”¨æˆ·åˆ—è¡¨ï¼Œåˆ™å¯ä»¥è®©æœåŠ¡å™¨åœ¨
+				æ¯æ¬¡æœ‰ç”¨æˆ·ç™»å½•ã€ç”¨æˆ·é€€å‡ºæ—¶ï¼Œå°†æ‰€æœ‰ç”¨æˆ·åˆ—è¡¨ä¿¡æ¯éƒ½å‘å®¢æˆ·ç«¯å‘é€ä¸€éã€‚
+				ä¸ºäº†åŒºåˆ†æœåŠ¡å™¨å‘é€çš„æ˜¯èŠå¤©ä¿¡æ¯ï¼Œè¿˜æ˜¯ç”¨æˆ·åˆ—è¡¨ï¼ŒæœåŠ¡å™¨ä¹Ÿåº”è¯¥
+				åœ¨è¦å‘é€çš„ä¿¡æ¯å‰ã€åŽéƒ½æ·»åŠ ä¸€å®šçš„åè®®å­—ç¬¦ä¸²ï¼Œå®¢æˆ·ç«¯æ­¤å¤„åˆ™æ ¹æ®åè®®
+				å­—ç¬¦ä¸²çš„ä¸åŒè€Œè¿›è¡Œä¸åŒçš„å¤„ç†ï¼
+				æ›´å¤æ‚çš„æƒ…å†µï¼š
+				å¦‚æžœä¸¤ç«¯è¿›è¡Œæ¸¸æˆï¼Œåˆ™è¿˜æœ‰å¯èƒ½å‘é€æ¸¸æˆä¿¡æ¯ï¼Œä¾‹å¦‚ä¸¤ç«¯è¿›è¡Œäº”å­æ£‹æ¸¸æˆï¼Œ
+				åˆ™è¿˜éœ€è¦å‘é€ä¸‹æ£‹åæ ‡ä¿¡æ¯ç­‰ï¼ŒæœåŠ¡å™¨åŒæ ·åœ¨è¿™äº›ä¸‹æ£‹åæ ‡ä¿¡æ¯å‰ã€åŽ
+				æ·»åŠ åè®®å­—ç¬¦ä¸²åŽå†å‘é€ï¼Œå®¢æˆ·ç«¯å°±å¯ä»¥æ ¹æ®è¯¥ä¿¡æ¯çŸ¥é“å¯¹æ‰‹çš„ä¸‹æ£‹åæ ‡ã€‚
 				*/
 			}
 		}
@@ -47,7 +47,7 @@ public class ClientThread extends Thread
 		{
 			ex.printStackTrace();
 		}
-		// Ê¹ÓÃfinally¿éÀ´¹Ø±Õ¸ÃÏß³Ì¶ÔÓ¦µÄÊäÈëÁ÷
+		// ä½¿ç”¨finallyå—æ¥å…³é—­è¯¥çº¿ç¨‹å¯¹åº”çš„è¾“å…¥æµ
 		finally
 		{
 			try

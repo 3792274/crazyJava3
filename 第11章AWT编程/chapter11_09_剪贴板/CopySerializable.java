@@ -1,4 +1,4 @@
-package chapter11_09_¼ôÌù°å;
+package chapter11_09_å‰ªè´´æ¿;
 
 
 import java.awt.*;
@@ -8,7 +8,7 @@ import java.awt.datatransfer.*;
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -28,7 +28,7 @@ class Dog implements Serializable
 		this.name = name;
 		this.age = age;
 	}
-	// nameµÄsetterºÍgetter·½·¨
+	// nameçš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name)
 	{
 		this.name = name;
@@ -38,7 +38,7 @@ class Dog implements Serializable
 		 return this.name;
 	}
 
-	// ageµÄsetterºÍgetter·½·¨
+	// ageçš„setterå’Œgetteræ–¹æ³•
 	public void setAge(int age)
 	{
 		this.age = age;
@@ -54,21 +54,21 @@ class Dog implements Serializable
 }
 public class CopySerializable
 {
-	Frame f = new Frame("¸´ÖÆ¶ÔÏó");
-	Button copy = new Button("¸´ÖÆ");
-	Button paste = new Button("Õ³Ìù");
+	Frame f = new Frame("å¤åˆ¶å¯¹è±¡");
+	Button copy = new Button("å¤åˆ¶");
+	Button paste = new Button("ç²˜è´´");
 	TextField name = new TextField(15);
 	TextField age = new TextField(15);
 	TextArea ta = new TextArea(3 , 30);
-	// ´´½¨ÏµÍ³¼ôÌù°å
+	// åˆ›å»ºç³»ç»Ÿå‰ªè´´æ¿
 	Clipboard clipboard = Toolkit.getDefaultToolkit()
 		.getSystemClipboard();
 	public void init()
 	{
 		Panel p = new Panel();
-		p.add(new Label("ĞÕÃû"));
+		p.add(new Label("å§“å"));
 		p.add(name);
-		p.add(new Label("ÄêÁä"));
+		p.add(new Label("å¹´é¾„"));
 		p.add(age);
 		f.add(p , BorderLayout.NORTH);
 		f.add(ta);
@@ -95,9 +95,9 @@ public class CopySerializable
 	{
 		Dog d = new Dog(name.getText()
 			, Integer.parseInt(age.getText()));
-		// °ÑdogÊµÀı·â×°³ÉSerialSelection¶ÔÏó
+		// æŠŠdogå®ä¾‹å°è£…æˆSerialSelectionå¯¹è±¡
 		SerialSelection ls =new SerialSelection(d);
-		// °ÑSerialSelection¶ÔÏó·ÅÈëÏµÍ³¼ôÌù°åÖĞ
+		// æŠŠSerialSelectionå¯¹è±¡æ”¾å…¥ç³»ç»Ÿå‰ªè´´æ¿ä¸­
 		clipboard.setContents(ls , null);
 	}
 	public void readDog()throws Exception
@@ -106,7 +106,7 @@ public class CopySerializable
 			.javaSerializedObjectMimeType + ";class=Dog");
 		if (clipboard.isDataFlavorAvailable(DataFlavor.stringFlavor))
 		{
-			// ´ÓÏµÍ³¼ôÌù°åÖĞ¶ÁÈ¡Êı¾İ
+			// ä»ç³»ç»Ÿå‰ªè´´æ¿ä¸­è¯»å–æ•°æ®
 			Dog d = (Dog)clipboard.getData(peronFlavor);
 			ta.setText(d.toString());
 		}

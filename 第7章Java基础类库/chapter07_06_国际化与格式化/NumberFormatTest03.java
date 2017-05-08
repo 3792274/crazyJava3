@@ -1,10 +1,10 @@
-package chapter07_06_¹ú¼Ê»¯Óë¸ñÊ½»¯;
+package chapter07_06_å›½é™…åŒ–ä¸æ ¼å¼åŒ–;
 
 import java.util.*;
 import java.text.*;
 /**
- * Description:Ê¾·¶NumberFormatµÄÈıÖÖ¸ñÊ½»¯Æ÷Ê¹ÓÃ¡£
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:ç¤ºèŒƒNumberFormatçš„ä¸‰ç§æ ¼å¼åŒ–å™¨ä½¿ç”¨ã€‚
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,16 +16,16 @@ public class NumberFormatTest03
 {
 	public static void main(String[] args)
 	{
-		// ĞèÒª±»¸ñÊ½»¯µÄÊı×Ö
+		// éœ€è¦è¢«æ ¼å¼åŒ–çš„æ•°å­—
 		double db = 1234000.567;
 		
-		// ´´½¨ËÄ¸öLocale£¬·Ö±ğ´ú±íÖĞ¹ú¡¢ÈÕ±¾¡¢µÂ¹ú¡¢ÃÀ¹ú
+		// åˆ›å»ºå››ä¸ªLocaleï¼Œåˆ†åˆ«ä»£è¡¨ä¸­å›½ã€æ—¥æœ¬ã€å¾·å›½ã€ç¾å›½
 		Locale[] locales = {Locale.CHINA, Locale.JAPAN, Locale.GERMAN,  Locale.US};
 		NumberFormat[] nf = new NumberFormat[12];
 		
 		
-		// ÎªÉÏÃæËÄ¸öLocale´´½¨12¸öNumberFormat¶ÔÏó
-		// Ã¿¸öLocale·Ö±ğÓĞÍ¨ÓÃÊıÖµ¸ñÊ½Æ÷¡¢°Ù·Ö±È¸ñÊ½Æ÷¡¢»õ±Ò¸ñÊ½Æ÷
+		// ä¸ºä¸Šé¢å››ä¸ªLocaleåˆ›å»º12ä¸ªNumberFormatå¯¹è±¡
+		// æ¯ä¸ªLocaleåˆ†åˆ«æœ‰é€šç”¨æ•°å€¼æ ¼å¼å™¨ã€ç™¾åˆ†æ¯”æ ¼å¼å™¨ã€è´§å¸æ ¼å¼å™¨
 		for (int i = 0 ; i < locales.length ; i++)
 		{
 			nf[i * 3] = NumberFormat.getNumberInstance(locales[i]);
@@ -35,12 +35,12 @@ public class NumberFormatTest03
 		
 		for (int i = 0 ; i < locales.length ; i++)
 		{
-			String tip = (i == 0) ? ("----ÖĞ¹úµÄ¸ñÊ½----") : (i == 1) ? ("----ÈÕ±¾µÄ¸ñÊ½----") : ( i == 2) ? ("----µÂ¹úµÄ¸ñÊ½----") :("----ÃÀ¹úµÄ¸ñÊ½----");
+			String tip = (i == 0) ? ("----ä¸­å›½çš„æ ¼å¼----") : (i == 1) ? ("----æ—¥æœ¬çš„æ ¼å¼----") : ( i == 2) ? ("----å¾·å›½çš„æ ¼å¼----") :("----ç¾å›½çš„æ ¼å¼----");
 			
 			System.out.println(tip);
-			System.out.println("Í¨ÓÃÊıÖµ¸ñÊ½£º" + nf[i * 3].format(db));
-			System.out.println("°Ù·Ö±ÈÊıÖµ¸ñÊ½£º" + nf[i * 3 + 1].format(db));
-			System.out.println("»õ±ÒÊıÖµ¸ñÊ½£º" + nf[i * 3 + 2].format(db));
+			System.out.println("é€šç”¨æ•°å€¼æ ¼å¼ï¼š" + nf[i * 3].format(db));
+			System.out.println("ç™¾åˆ†æ¯”æ•°å€¼æ ¼å¼ï¼š" + nf[i * 3 + 1].format(db));
+			System.out.println("è´§å¸æ•°å€¼æ ¼å¼ï¼š" + nf[i * 3 + 2].format(db));
 		}
 	}
 }

@@ -1,4 +1,4 @@
-package chapter11_08_´¦ÀíÎ»Í¼;
+package chapter11_08_å¤„ç†ä½å›¾;
 
 
 import java.awt.*;
@@ -6,7 +6,7 @@ import java.awt.event.*;
 import java.awt.image.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,91 +16,91 @@ import java.awt.image.*;
  */
 public class HandDraw
 {
-	// »­Í¼ÇøµÄ¿í¶È
+	// ç”»å›¾åŒºçš„å®½åº¦
 	private final int AREA_WIDTH = 500;
-	// »­Í¼ÇøµÄ¸ß¶È
+	// ç”»å›¾åŒºçš„é«˜åº¦
 	private final int AREA_HEIGHT = 400;
-	// ÏÂÃæµÄpreX¡¢preY±£´æÁËÉÏÒ»´ÎÊó±êÍÏ¶¯ÊÂ¼şµÄÊó±ê×ø±ê
+	// ä¸‹é¢çš„preXã€preYä¿å­˜äº†ä¸Šä¸€æ¬¡é¼ æ ‡æ‹–åŠ¨äº‹ä»¶çš„é¼ æ ‡åæ ‡
 	private int preX = -1;
 	private int preY = -1;
-	// ¶¨ÒåÒ»¸öÓÒ¼ü²Ëµ¥ÓÃÓÚÉèÖÃ»­±ÊÑÕÉ«
+	// å®šä¹‰ä¸€ä¸ªå³é”®èœå•ç”¨äºè®¾ç½®ç”»ç¬”é¢œè‰²
 	PopupMenu pop = new PopupMenu();
-	MenuItem redItem = new MenuItem("ºìÉ«");
-	MenuItem greenItem = new MenuItem("ÂÌÉ«");
-	MenuItem blueItem = new MenuItem("À¶É«");
-	// ¶¨ÒåÒ»¸öBufferedImage¶ÔÏó
+	MenuItem redItem = new MenuItem("çº¢è‰²");
+	MenuItem greenItem = new MenuItem("ç»¿è‰²");
+	MenuItem blueItem = new MenuItem("è“è‰²");
+	// å®šä¹‰ä¸€ä¸ªBufferedImageå¯¹è±¡
 	BufferedImage image = new BufferedImage(AREA_WIDTH
 		, AREA_HEIGHT , BufferedImage.TYPE_INT_RGB);
-	// »ñÈ¡image¶ÔÏóµÄGraphics
+	// è·å–imageå¯¹è±¡çš„Graphics
 	Graphics g = image.getGraphics();
-	private Frame f = new Frame("¼òµ¥ÊÖ»æ³ÌĞò");
+	private Frame f = new Frame("ç®€å•æ‰‹ç»˜ç¨‹åº");
 	private DrawCanvas drawArea = new DrawCanvas();
-	// ÓÃÓÚ±£´æ»­±ÊÑÕÉ«
+	// ç”¨äºä¿å­˜ç”»ç¬”é¢œè‰²
 	private Color foreColor = new Color(255, 0 ,0);
 	public void init()
 	{
-		// ¶¨ÒåÓÒ¼ü²Ëµ¥µÄÊÂ¼ş¼àÌıÆ÷¡£
+		// å®šä¹‰å³é”®èœå•çš„äº‹ä»¶ç›‘å¬å™¨ã€‚
 		ActionListener menuListener = e ->
 		{
-			if (e.getActionCommand().equals("ÂÌÉ«"))
+			if (e.getActionCommand().equals("ç»¿è‰²"))
 			{
 				foreColor = new Color(0 , 255 , 0);
 			}
-			if (e.getActionCommand().equals("ºìÉ«"))
+			if (e.getActionCommand().equals("çº¢è‰²"))
 			{
 				foreColor = new Color(255 , 0 , 0);
 			}
-			if (e.getActionCommand().equals("À¶É«"))
+			if (e.getActionCommand().equals("è“è‰²"))
 			{
 				foreColor = new Color(0 , 0 , 255);
 			}
 		};
-		// ÎªÈı¸ö²Ëµ¥Ìí¼ÓÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºä¸‰ä¸ªèœå•æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
 		redItem.addActionListener(menuListener);
 		greenItem.addActionListener(menuListener);
 		blueItem.addActionListener(menuListener);
-		// ½«²Ëµ¥Ïî×éºÏ³ÉÓÒ¼ü²Ëµ¥
+		// å°†èœå•é¡¹ç»„åˆæˆå³é”®èœå•
 		pop.add(redItem);
 		pop.add(greenItem);
 		pop.add(blueItem);
-		// ½«ÓÒ¼ü²Ëµ¥Ìí¼Óµ½drawArea¶ÔÏóÖĞ
+		// å°†å³é”®èœå•æ·»åŠ åˆ°drawAreaå¯¹è±¡ä¸­
 		drawArea.add(pop);
-		// ½«image¶ÔÏóµÄ±³¾°É«Ìî³ä³É°×É«
+		// å°†imageå¯¹è±¡çš„èƒŒæ™¯è‰²å¡«å……æˆç™½è‰²
 		g.fillRect(0 , 0 ,AREA_WIDTH , AREA_HEIGHT);
 		drawArea.setPreferredSize(new Dimension(AREA_WIDTH , AREA_HEIGHT));
-		// ¼àÌıÊó±êÒÆ¶¯¶¯×÷
+		// ç›‘å¬é¼ æ ‡ç§»åŠ¨åŠ¨ä½œ
 		drawArea.addMouseMotionListener(new MouseMotionAdapter()
 		{
-			// ÊµÏÖ°´ÏÂÊó±ê¼ü²¢ÍÏ¶¯µÄÊÂ¼ş´¦ÀíÆ÷
+			// å®ç°æŒ‰ä¸‹é¼ æ ‡é”®å¹¶æ‹–åŠ¨çš„äº‹ä»¶å¤„ç†å™¨
 			public void mouseDragged(MouseEvent e)
 			{
-				// Èç¹ûpreXºÍpreY´óÓÚ0
+				// å¦‚æœpreXå’ŒpreYå¤§äº0
 				if (preX > 0 && preY > 0)
 				{
-					// ÉèÖÃµ±Ç°ÑÕÉ«
+					// è®¾ç½®å½“å‰é¢œè‰²
 					g.setColor(foreColor);
-					// »æÖÆ´ÓÉÏÒ»´ÎÊó±êÍÏ¶¯ÊÂ¼şµãµ½±¾´ÎÊó±êÍÏ¶¯ÊÂ¼şµãµÄÏß¶Î
+					// ç»˜åˆ¶ä»ä¸Šä¸€æ¬¡é¼ æ ‡æ‹–åŠ¨äº‹ä»¶ç‚¹åˆ°æœ¬æ¬¡é¼ æ ‡æ‹–åŠ¨äº‹ä»¶ç‚¹çš„çº¿æ®µ
 					g.drawLine(preX , preY , e.getX() , e.getY());
 				}
-				// ½«µ±Ç°Êó±êÊÂ¼şµãµÄX¡¢Y×ø±ê±£´æÆğÀ´
+				// å°†å½“å‰é¼ æ ‡äº‹ä»¶ç‚¹çš„Xã€Yåæ ‡ä¿å­˜èµ·æ¥
 				preX = e.getX();
 				preY = e.getY();
-				// ÖØ»ædrawArea¶ÔÏó
+				// é‡ç»˜drawAreaå¯¹è±¡
 				drawArea.repaint();
 			}
 		});
-		// ¼àÌıÊó±êÊÂ¼ş
+		// ç›‘å¬é¼ æ ‡äº‹ä»¶
 		drawArea.addMouseListener(new MouseAdapter()
 		{
-			// ÊµÏÖÊó±êËÉ¿ªµÄÊÂ¼ş´¦ÀíÆ÷
+			// å®ç°é¼ æ ‡æ¾å¼€çš„äº‹ä»¶å¤„ç†å™¨
 			public void mouseReleased(MouseEvent e)
 			{
-				// µ¯³öÓÒ¼ü²Ëµ¥
+				// å¼¹å‡ºå³é”®èœå•
 				if (e.isPopupTrigger())
 				{
 					pop.show(drawArea , e.getX() , e.getY());
 				}
-				// ËÉ¿ªÊó±ê¼üÊ±£¬°ÑÉÏÒ»´ÎÊó±êÍÏ¶¯ÊÂ¼şµÄX¡¢Y×ø±êÉèÎª-1¡£
+				// æ¾å¼€é¼ æ ‡é”®æ—¶ï¼ŒæŠŠä¸Šä¸€æ¬¡é¼ æ ‡æ‹–åŠ¨äº‹ä»¶çš„Xã€Yåæ ‡è®¾ä¸º-1ã€‚
 				preX = -1;
 				preY = -1;
 			}
@@ -115,10 +115,10 @@ public class HandDraw
 	}
 	class DrawCanvas extends Canvas
 	{
-		// ÖØĞ´CanvasµÄpaint·½·¨£¬ÊµÏÖ»æ»­
+		// é‡å†™Canvasçš„paintæ–¹æ³•ï¼Œå®ç°ç»˜ç”»
 		public void paint(Graphics g)
 		{
-			// ½«image»æÖÆµ½¸Ã×é¼şÉÏ
+			// å°†imageç»˜åˆ¶åˆ°è¯¥ç»„ä»¶ä¸Š
 			g.drawImage(image , 0 , 0 , null);
 		}
 	}

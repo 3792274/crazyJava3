@@ -1,9 +1,9 @@
 
-package chapter07_03_³£ÓÃÀà;
+package chapter07_03_å¸¸ç”¨ç±»;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -14,75 +14,75 @@ package chapter07_03_³£ÓÃÀà;
  */
 public class MathTest04 {
 	public static void main(String[] args) {
-		/*---------ÏÂÃæÊÇÈı½ÇÔËËã---------*/
-		// ½«»¡¶È×ª»»½Ç¶È
-		System.out.println("Math.toDegrees(1.57)£º" + Math.toDegrees(1.57));
-		// ½«½Ç¶È×ª»»Îª»¡¶È
-		System.out.println("Math.toRadians(90)£º" + Math.toRadians(90));
-		// ¼ÆËã·´ÓàÏÒ£¬·µ»ØµÄ½Ç¶È·¶Î§ÔÚ 0.0 µ½ pi Ö®¼ä¡£
-		System.out.println("Math.acos(1.2)£º" + Math.acos(1.2));
-		// ¼ÆËã·´ÕıÏÒ£»·µ»ØµÄ½Ç¶È·¶Î§ÔÚ -pi/2 µ½ pi/2 Ö®¼ä¡£
-		System.out.println("Math.asin(0.8)£º" + Math.asin(0.8));
-		// ¼ÆËã·´ÕıÇĞ£»·µ»ØµÄ½Ç¶È·¶Î§ÔÚ -pi/2 µ½ pi/2 Ö®¼ä¡£
-		System.out.println("Math.atan(2.3)£º" + Math.atan(2.3));
-		// ¼ÆËãÈı½ÇÓàÏÒ¡£
-		System.out.println("Math.cos(1.57)£º" + Math.cos(1.57));
-		// ¼ÆËãÖµµÄË«ÇúÓàÏÒ¡£
-		System.out.println("Math.cosh(1.2 )£º" + Math.cosh(1.2));
-		// ¼ÆËãÕıÏÒ
-		System.out.println("Math.sin(1.57 )£º" + Math.sin(1.57));
-		// ¼ÆËãË«ÇúÕıÏÒ
-		System.out.println("Math.sinh(1.2 )£º" + Math.sinh(1.2));
-		// ¼ÆËãÈı½ÇÕıÇĞ
-		System.out.println("Math.tan(0.8 )£º" + Math.tan(0.8));
-		// ¼ÆËãË«ÇúÕıÇĞ
-		System.out.println("Math.tanh(2.1 )£º" + Math.tanh(2.1));
-		// ½«¾ØĞÎ×ø±ê (x, y) ×ª»»³É¼«×ø±ê (r, thet));
-		System.out.println("Math.atan2(0.1, 0.2)£º" + Math.atan2(0.1, 0.2));
-		/*---------ÏÂÃæÊÇÈ¡ÕûÔËËã---------*/
-		// È¡Õû£¬·µ»ØĞ¡ÓÚÄ¿±êÊıµÄ×î´óÕûÊı¡£
-		System.out.println("Math.floor(-1.2 )£º" + Math.floor(-1.2));
-		// È¡Õû£¬·µ»Ø´óÓÚÄ¿±êÊıµÄ×îĞ¡ÕûÊı¡£
-		System.out.println("Math.ceil(1.2)£º" + Math.ceil(1.2));
-		// ËÄÉáÎåÈëÈ¡Õû
-		System.out.println("Math.round(2.3 )£º" + Math.round(2.3));
-		/*---------ÏÂÃæÊÇ³Ë·½¡¢¿ª·½¡¢Ö¸ÊıÔËËã---------*/
-		// ¼ÆËãÆ½·½¸ù¡£
-		System.out.println("Math.sqrt(2.3 )£º" + Math.sqrt(2.3));
-		// ¼ÆËãÁ¢·½¸ù¡£
-		System.out.println("Math.cbrt(9)£º" + Math.cbrt(9));
-		// ·µ»ØÅ·À­Êı e µÄn´ÎÃİ¡£
-		System.out.println("Math.exp(2)£º" + Math.exp(2));
-		// ·µ»Ø sqrt(x2 +y2)
-		System.out.println("Math.hypot(4 , 4)£º" + Math.hypot(4, 4));
-		// °´ÕÕ IEEE 754 ±ê×¼µÄ¹æ¶¨£¬¶ÔÁ½¸ö²ÎÊı½øĞĞÓàÊıÔËËã¡£
-		System.out.println("Math.IEEEremainder(5 , 2)£º" + Math.IEEEremainder(5, 2));
-		// ¼ÆËã³Ë·½
-		System.out.println("Math.pow(3, 2)£º" + Math.pow(3, 2));
-		// ¼ÆËã×ÔÈ»¶ÔÊı
-		System.out.println("Math.log(12)£º" + Math.log(12));
-		// ¼ÆËãµ×ÊıÎª 10 µÄ¶ÔÊı¡£
-		System.out.println("Math.log10(9)£º" + Math.log10(9));
-		// ·µ»Ø²ÎÊıÓë 1 Ö®ºÍµÄ×ÔÈ»¶ÔÊı¡£
-		System.out.println("Math.log1p(9)£º" + Math.log1p(9));
-		/*---------ÏÂÃæÊÇ·ûºÅÏà¹ØµÄÔËËã---------*/
-		// ¼ÆËã¾ø¶ÔÖµ¡£
-		System.out.println("Math.abs(-4.5)£º" + Math.abs(-4.5));
-		// ·ûºÅ¸³Öµ£¬·µ»Ø´øÓĞµÚ¶ş¸ö¸¡µãÊı·ûºÅµÄµÚÒ»¸ö¸¡µã²ÎÊı¡£
-		System.out.println("Math.copySign(1.2, -1.0)£º" + Math.copySign(1.2, -1.0));
-		// ·ûºÅº¯Êı£»Èç¹û²ÎÊıÎª 0£¬Ôò·µ»Ø 0£»Èç¹û²ÎÊı´óÓÚ 0£¬
-		// Ôò·µ»Ø 1.0£»Èç¹û²ÎÊıĞ¡ÓÚ 0£¬Ôò·µ»Ø -1.0¡£
-		System.out.println("Math.signum(2.3)£º" + Math.signum(2.3));
-		/*---------ÏÂÃæÊÇ´óĞ¡Ïà¹ØµÄÔËËã---------*/
-		// ÕÒ³ö×î´óÖµ
-		System.out.println("Math.max(2.3 , 4.5)£º" + Math.max(2.3, 4.5));
-		// ¼ÆËã×îĞ¡Öµ
-		System.out.println("Math.min(1.2 , 3.4)£º" + Math.min(1.2, 3.4));
-		// ·µ»ØµÚÒ»¸ö²ÎÊıºÍµÚ¶ş¸ö²ÎÊıÖ®¼äÓëµÚÒ»¸ö²ÎÊıÏàÁÚµÄ¸¡µãÊı¡£
-		System.out.println("Math.nextAfter(1.2, 1.0)£º" + Math.nextAfter(1.2, 1.0));
-		// ·µ»Ø±ÈÄ¿±êÊıÂÔ´óµÄ¸¡µãÊı
-		System.out.println("Math.nextUp(1.2 )£º" + Math.nextUp(1.2));
-		// ·µ»ØÒ»¸öÎ±Ëæ»úÊı£¬¸ÃÖµ´óÓÚµÈÓÚ 0.0 ÇÒĞ¡ÓÚ 1.0¡£
-		System.out.println("Math.random()£º" + Math.random());
+		/*---------ä¸‹é¢æ˜¯ä¸‰è§’è¿ç®—---------*/
+		// å°†å¼§åº¦è½¬æ¢è§’åº¦
+		System.out.println("Math.toDegrees(1.57)ï¼š" + Math.toDegrees(1.57));
+		// å°†è§’åº¦è½¬æ¢ä¸ºå¼§åº¦
+		System.out.println("Math.toRadians(90)ï¼š" + Math.toRadians(90));
+		// è®¡ç®—åä½™å¼¦ï¼Œè¿”å›çš„è§’åº¦èŒƒå›´åœ¨ 0.0 åˆ° pi ä¹‹é—´ã€‚
+		System.out.println("Math.acos(1.2)ï¼š" + Math.acos(1.2));
+		// è®¡ç®—åæ­£å¼¦ï¼›è¿”å›çš„è§’åº¦èŒƒå›´åœ¨ -pi/2 åˆ° pi/2 ä¹‹é—´ã€‚
+		System.out.println("Math.asin(0.8)ï¼š" + Math.asin(0.8));
+		// è®¡ç®—åæ­£åˆ‡ï¼›è¿”å›çš„è§’åº¦èŒƒå›´åœ¨ -pi/2 åˆ° pi/2 ä¹‹é—´ã€‚
+		System.out.println("Math.atan(2.3)ï¼š" + Math.atan(2.3));
+		// è®¡ç®—ä¸‰è§’ä½™å¼¦ã€‚
+		System.out.println("Math.cos(1.57)ï¼š" + Math.cos(1.57));
+		// è®¡ç®—å€¼çš„åŒæ›²ä½™å¼¦ã€‚
+		System.out.println("Math.cosh(1.2 )ï¼š" + Math.cosh(1.2));
+		// è®¡ç®—æ­£å¼¦
+		System.out.println("Math.sin(1.57 )ï¼š" + Math.sin(1.57));
+		// è®¡ç®—åŒæ›²æ­£å¼¦
+		System.out.println("Math.sinh(1.2 )ï¼š" + Math.sinh(1.2));
+		// è®¡ç®—ä¸‰è§’æ­£åˆ‡
+		System.out.println("Math.tan(0.8 )ï¼š" + Math.tan(0.8));
+		// è®¡ç®—åŒæ›²æ­£åˆ‡
+		System.out.println("Math.tanh(2.1 )ï¼š" + Math.tanh(2.1));
+		// å°†çŸ©å½¢åæ ‡ (x, y) è½¬æ¢æˆæåæ ‡ (r, thet));
+		System.out.println("Math.atan2(0.1, 0.2)ï¼š" + Math.atan2(0.1, 0.2));
+		/*---------ä¸‹é¢æ˜¯å–æ•´è¿ç®—---------*/
+		// å–æ•´ï¼Œè¿”å›å°äºç›®æ ‡æ•°çš„æœ€å¤§æ•´æ•°ã€‚
+		System.out.println("Math.floor(-1.2 )ï¼š" + Math.floor(-1.2));
+		// å–æ•´ï¼Œè¿”å›å¤§äºç›®æ ‡æ•°çš„æœ€å°æ•´æ•°ã€‚
+		System.out.println("Math.ceil(1.2)ï¼š" + Math.ceil(1.2));
+		// å››èˆäº”å…¥å–æ•´
+		System.out.println("Math.round(2.3 )ï¼š" + Math.round(2.3));
+		/*---------ä¸‹é¢æ˜¯ä¹˜æ–¹ã€å¼€æ–¹ã€æŒ‡æ•°è¿ç®—---------*/
+		// è®¡ç®—å¹³æ–¹æ ¹ã€‚
+		System.out.println("Math.sqrt(2.3 )ï¼š" + Math.sqrt(2.3));
+		// è®¡ç®—ç«‹æ–¹æ ¹ã€‚
+		System.out.println("Math.cbrt(9)ï¼š" + Math.cbrt(9));
+		// è¿”å›æ¬§æ‹‰æ•° e çš„næ¬¡å¹‚ã€‚
+		System.out.println("Math.exp(2)ï¼š" + Math.exp(2));
+		// è¿”å› sqrt(x2 +y2)
+		System.out.println("Math.hypot(4 , 4)ï¼š" + Math.hypot(4, 4));
+		// æŒ‰ç…§ IEEE 754 æ ‡å‡†çš„è§„å®šï¼Œå¯¹ä¸¤ä¸ªå‚æ•°è¿›è¡Œä½™æ•°è¿ç®—ã€‚
+		System.out.println("Math.IEEEremainder(5 , 2)ï¼š" + Math.IEEEremainder(5, 2));
+		// è®¡ç®—ä¹˜æ–¹
+		System.out.println("Math.pow(3, 2)ï¼š" + Math.pow(3, 2));
+		// è®¡ç®—è‡ªç„¶å¯¹æ•°
+		System.out.println("Math.log(12)ï¼š" + Math.log(12));
+		// è®¡ç®—åº•æ•°ä¸º 10 çš„å¯¹æ•°ã€‚
+		System.out.println("Math.log10(9)ï¼š" + Math.log10(9));
+		// è¿”å›å‚æ•°ä¸ 1 ä¹‹å’Œçš„è‡ªç„¶å¯¹æ•°ã€‚
+		System.out.println("Math.log1p(9)ï¼š" + Math.log1p(9));
+		/*---------ä¸‹é¢æ˜¯ç¬¦å·ç›¸å…³çš„è¿ç®—---------*/
+		// è®¡ç®—ç»å¯¹å€¼ã€‚
+		System.out.println("Math.abs(-4.5)ï¼š" + Math.abs(-4.5));
+		// ç¬¦å·èµ‹å€¼ï¼Œè¿”å›å¸¦æœ‰ç¬¬äºŒä¸ªæµ®ç‚¹æ•°ç¬¦å·çš„ç¬¬ä¸€ä¸ªæµ®ç‚¹å‚æ•°ã€‚
+		System.out.println("Math.copySign(1.2, -1.0)ï¼š" + Math.copySign(1.2, -1.0));
+		// ç¬¦å·å‡½æ•°ï¼›å¦‚æœå‚æ•°ä¸º 0ï¼Œåˆ™è¿”å› 0ï¼›å¦‚æœå‚æ•°å¤§äº 0ï¼Œ
+		// åˆ™è¿”å› 1.0ï¼›å¦‚æœå‚æ•°å°äº 0ï¼Œåˆ™è¿”å› -1.0ã€‚
+		System.out.println("Math.signum(2.3)ï¼š" + Math.signum(2.3));
+		/*---------ä¸‹é¢æ˜¯å¤§å°ç›¸å…³çš„è¿ç®—---------*/
+		// æ‰¾å‡ºæœ€å¤§å€¼
+		System.out.println("Math.max(2.3 , 4.5)ï¼š" + Math.max(2.3, 4.5));
+		// è®¡ç®—æœ€å°å€¼
+		System.out.println("Math.min(1.2 , 3.4)ï¼š" + Math.min(1.2, 3.4));
+		// è¿”å›ç¬¬ä¸€ä¸ªå‚æ•°å’Œç¬¬äºŒä¸ªå‚æ•°ä¹‹é—´ä¸ç¬¬ä¸€ä¸ªå‚æ•°ç›¸é‚»çš„æµ®ç‚¹æ•°ã€‚
+		System.out.println("Math.nextAfter(1.2, 1.0)ï¼š" + Math.nextAfter(1.2, 1.0));
+		// è¿”å›æ¯”ç›®æ ‡æ•°ç•¥å¤§çš„æµ®ç‚¹æ•°
+		System.out.println("Math.nextUp(1.2 )ï¼š" + Math.nextUp(1.2));
+		// è¿”å›ä¸€ä¸ªä¼ªéšæœºæ•°ï¼Œè¯¥å€¼å¤§äºç­‰äº 0.0 ä¸”å°äº 1.0ã€‚
+		System.out.println("Math.random()ï¼š" + Math.random());
 	}
 }

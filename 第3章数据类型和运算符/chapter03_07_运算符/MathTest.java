@@ -1,8 +1,8 @@
-package chapter03_07_ÔËËã·û;
+package chapter03_07_è¿ç®—ç¬¦;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,18 +13,18 @@ package chapter03_07_ÔËËã·û;
  */
 public class MathTest {
 	public static void main(String[] args) {
-		double a = 3.2; // ¶¨Òå±äÁ¿aÎª3.2
-		// ÇóaµÄ5´Î·½£¬²¢½«¼ÆËã½á¹û¸³Îªb¡£
+		double a = 3.2; // å®šä¹‰å˜é‡aä¸º3.2
+		// æ±‚açš„5æ¬¡æ–¹ï¼Œå¹¶å°†è®¡ç®—ç»“æœèµ‹ä¸ºbã€‚
 		double b = Math.pow(a, 5);
-		System.out.println(b); // Êä³öbµÄÖµ¡£
-		// ÇóaµÄÆ½·½¸ù£¬²¢½«½á¹û¸³¸øc
+		System.out.println(b); // è¾“å‡ºbçš„å€¼ã€‚
+		// æ±‚açš„å¹³æ–¹æ ¹ï¼Œå¹¶å°†ç»“æœèµ‹ç»™c
 		double c = Math.sqrt(a);
-		System.out.println(c); // Êä³öcµÄÖµ¡£
-		// ¼ÆËãËæ»úÊı,·µ»ØÒ»¸ö0¡«1Ö®¼äµÄÎ±Ëæ»úÊı¡£
+		System.out.println(c); // è¾“å‡ºcçš„å€¼ã€‚
+		// è®¡ç®—éšæœºæ•°,è¿”å›ä¸€ä¸ª0ï½1ä¹‹é—´çš„ä¼ªéšæœºæ•°ã€‚
 		double d = Math.random();
-		System.out.println(d); // Êä³öËæ»úÊıdµÄÖµ
-		// Çó1.57µÄsinº¯ÊıÖµ£º1.57±»µ±³É»¡¶ÈÊı
+		System.out.println(d); // è¾“å‡ºéšæœºæ•°dçš„å€¼
+		// æ±‚1.57çš„sinå‡½æ•°å€¼ï¼š1.57è¢«å½“æˆå¼§åº¦æ•°
 		double e = Math.sin(1.57);
-		System.out.println(e); // Êä³ö½Ó½ü1
+		System.out.println(e); // è¾“å‡ºæ¥è¿‘1
 	}
 }

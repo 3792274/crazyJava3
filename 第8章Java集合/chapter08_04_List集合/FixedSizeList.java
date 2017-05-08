@@ -1,30 +1,30 @@
-package chapter08_04_List¼¯ºÏ;
+package chapter08_04_Listé›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * 1£¬ArrayList ºÍ VectorÀà·â×°ÁËÒ»¸ö¶¯Ì¬µÄ¡¢ÔÊĞíÔÙ·ÖÅäµÄObject[]Êı×é
- * 2.Ê¹ÓÃinitialCapacityÉèÖÃÊı×é³¤¶È¡£µ±ĞèÒªÌí¼Ó´óÁ¿ÔªËØ¿ÉÊ¹ÓÃensureCapacity(int minCapacity)Ò»´ÎĞÔÔö¼Ó£¬Ìá¸ßĞÔÄÜ
- * 3.³õÊ¼´óĞ¡10
- * 4.ArrayListÏß³Ì²»°²È«£¬ÈçĞèÒª°²È«£¬¿ÉÊ¹ÓÃCollectionsµÄ¹¤¾ßÀà¡£
- * 5.¹ıÊ±Õ»ÀàStack Ìæ»» ArrayDeque
- * 6.²Ù×÷Êı×éµÄ¹¤¾ßArrays,Arrays.ArrayListÊÇÒ»¸ö¹Ì¶¨³¤¶ÈµÄList¼¯ºÏ£¬Ö»ÄÜ±éÀú£¬²»ÄÜÔö¼ÓÉ¾³ı¡£
+ * 1ï¼ŒArrayList å’Œ Vectorç±»å°è£…äº†ä¸€ä¸ªåŠ¨æ€çš„ã€å…è®¸å†åˆ†é…çš„Object[]æ•°ç»„
+ * 2.ä½¿ç”¨initialCapacityè®¾ç½®æ•°ç»„é•¿åº¦ã€‚å½“éœ€è¦æ·»åŠ å¤§é‡å…ƒç´ å¯ä½¿ç”¨ensureCapacity(int minCapacity)ä¸€æ¬¡æ€§å¢åŠ ï¼Œæé«˜æ€§èƒ½
+ * 3.åˆå§‹å¤§å°10
+ * 4.ArrayListçº¿ç¨‹ä¸å®‰å…¨ï¼Œå¦‚éœ€è¦å®‰å…¨ï¼Œå¯ä½¿ç”¨Collectionsçš„å·¥å…·ç±»ã€‚
+ * 5.è¿‡æ—¶æ ˆç±»Stack æ›¿æ¢ ArrayDeque
+ * 6.æ“ä½œæ•°ç»„çš„å·¥å…·Arrays,Arrays.ArrayListæ˜¯ä¸€ä¸ªå›ºå®šé•¿åº¦çš„Listé›†åˆï¼Œåªèƒ½éå†ï¼Œä¸èƒ½å¢åŠ åˆ é™¤ã€‚
  */
 public class FixedSizeList
 {
 	public static void main(String[] args)
 	{
-		List fixedList = Arrays.asList("·è¿ñJava½²Òå" , "ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
+		List fixedList = Arrays.asList("ç–¯ç‹‚Javaè®²ä¹‰" , "è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
 		
-		// »ñÈ¡fixedListµÄÊµÏÖÀà£¬½«Êä³öArrays$ArrayList
+		// è·å–fixedListçš„å®ç°ç±»ï¼Œå°†è¾“å‡ºArrays$ArrayList
 		System.out.println(fixedList.getClass());
 		
-		// Ê¹ÓÃ·½·¨ÒıÓÃ±éÀú¼¯ºÏÔªËØ
+		// ä½¿ç”¨æ–¹æ³•å¼•ç”¨éå†é›†åˆå…ƒç´ 
 		fixedList.forEach(System.out::println);
 	
-		// ÊÔÍ¼Ôö¼Ó¡¢É¾³ıÔªËØ¶¼»áÒı·¢UnsupportedOperationExceptionÒì³£
-		fixedList.add("·è¿ñAndroid½²Òå");
-		fixedList.remove("·è¿ñJava½²Òå");
+		// è¯•å›¾å¢åŠ ã€åˆ é™¤å…ƒç´ éƒ½ä¼šå¼•å‘UnsupportedOperationExceptionå¼‚å¸¸
+		fixedList.add("ç–¯ç‹‚Androidè®²ä¹‰");
+		fixedList.remove("ç–¯ç‹‚Javaè®²ä¹‰");
 	}
 }

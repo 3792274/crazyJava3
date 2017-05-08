@@ -1,11 +1,11 @@
-package chapter11_05_事件处理;
+package chapter11_05_浜嬩欢澶勭悊;
 
 
 import java.awt.*;
 import java.awt.event.*;
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,7 +15,7 @@ import java.awt.event.*;
  */
 public class WindowAdapterTest
 {
-	private Frame f = new Frame("测试");
+	private Frame f = new Frame("娴嬭瘯");
 	private TextArea ta = new TextArea(6 , 40);
 	public void init()
 	{
@@ -28,7 +28,7 @@ public class WindowAdapterTest
 	{
 		public void windowClosing(WindowEvent e)
 		{
-			System.out.println("用户关闭窗口！\n");
+			System.out.println("鐢ㄦ埛鍏抽棴绐楀彛锛乗n");
 			System.exit(0);
 		}
 	}

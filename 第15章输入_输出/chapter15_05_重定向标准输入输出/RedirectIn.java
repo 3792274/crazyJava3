@@ -1,11 +1,11 @@
-package chapter15_05_ÖØ¶¨Ïò±ê×¼ÊäÈëÊä³ö;
+package chapter15_05_é‡å®šå‘æ ‡å‡†è¾“å…¥è¾“å‡º;
 
 
 import java.util.*;
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -18,19 +18,19 @@ public class RedirectIn
 	public static void main(String[] args)
 	{
 		try(
-			FileInputStream fis = new FileInputStream("E:/µçÓ°/¡¾Õğº³ÊÓÆµ¡¿ÃÀ¹ú×îĞÂ¡°ÍøÂçÕ½½ÒÃØ¡±Ê·Ê«¼ÍÂ¼Æ¬£¨¶À¼Ò×ÖÄ»£© .mp4"))
+			FileInputStream fis = new FileInputStream("E:/ç”µå½±/ã€éœ‡æ’¼è§†é¢‘ã€‘ç¾å›½æœ€æ–°â€œç½‘ç»œæˆ˜æ­ç§˜â€å²è¯—çºªå½•ç‰‡ï¼ˆç‹¬å®¶å­—å¹•ï¼‰ .mp4"))
 		{
-			// ½«±ê×¼ÊäÈëÖØ¶¨Ïòµ½fisÊäÈëÁ÷
+			// å°†æ ‡å‡†è¾“å…¥é‡å®šå‘åˆ°fisè¾“å…¥æµ
 			System.setIn(fis);
-			// Ê¹ÓÃSystem.in´´½¨Scanner¶ÔÏó£¬ÓÃÓÚ»ñÈ¡±ê×¼ÊäÈë
+			// ä½¿ç”¨System.inåˆ›å»ºScannerå¯¹è±¡ï¼Œç”¨äºè·å–æ ‡å‡†è¾“å…¥
 			Scanner sc = new Scanner(System.in);
-			// Ôö¼ÓÏÂÃæÒ»ĞĞ½«Ö»°Ñ»Ø³µ×÷Îª·Ö¸ô·û
+			// å¢åŠ ä¸‹é¢ä¸€è¡Œå°†åªæŠŠå›è½¦ä½œä¸ºåˆ†éš”ç¬¦
 			sc.useDelimiter("/n");
-			// ÅĞ¶ÏÊÇ·ñ»¹ÓĞÏÂÒ»¸öÊäÈëÏî
+			// åˆ¤æ–­æ˜¯å¦è¿˜æœ‰ä¸‹ä¸€ä¸ªè¾“å…¥é¡¹
 			while(sc.hasNext())
 			{
-				// Êä³öÊäÈëÏî
-				System.out.println("¼üÅÌÊäÈëµÄÄÚÈİÊÇ£º" + sc.next());
+				// è¾“å‡ºè¾“å…¥é¡¹
+				System.out.println("é”®ç›˜è¾“å…¥çš„å†…å®¹æ˜¯ï¼š" + sc.next());
 			}
 		}
 		catch (IOException ex)

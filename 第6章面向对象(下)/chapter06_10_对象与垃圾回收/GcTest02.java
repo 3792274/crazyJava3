@@ -1,9 +1,9 @@
-package chapter06_10_¶ÔÏóÓëÀ¬»ø»ØÊÕ;
+package chapter06_10_å¯¹è±¡ä¸åƒåœ¾å›æ”¶;
 
 
 /**
- * Description:À¬»ø»ØÊÕ
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:åƒåœ¾å›æ”¶
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,9 +17,9 @@ public class GcTest02
 	{
 		for (int i = 0 ; i < 4; i++)
 		{
-			//´´½¨4¸ö¿É»Ö¸´×´Ì¬µÄ¶ÔÏó
+			//åˆ›å»º4ä¸ªå¯æ¢å¤çŠ¶æ€çš„å¯¹è±¡
 			new GcTest02();
-			// ÏÂÃæÁ½ĞĞ´úÂëµÄ×÷ÓÃÍêÈ«ÏàÍ¬£¬Ç¿ÖÆÏµÍ³½øĞĞÀ¬»ø»ØÊÕ
+			// ä¸‹é¢ä¸¤è¡Œä»£ç çš„ä½œç”¨å®Œå…¨ç›¸åŒï¼Œå¼ºåˆ¶ç³»ç»Ÿè¿›è¡Œåƒåœ¾å›æ”¶
 			// System.gc();
 			Runtime.getRuntime().gc();
 		}
@@ -27,15 +27,15 @@ public class GcTest02
 	
 	/**
 	 * 
-	 * java -verbose:gc GcTest  ¿É¿´ÇåÀ¬»ø»ØÊÕµÄ¶¯×÷
+	 * java -verbose:gc GcTest  å¯çœ‹æ¸…åƒåœ¾å›æ”¶çš„åŠ¨ä½œ
 	 * 
 	 * */
 	
 	
-	//Èç¹ûÃ»ÓĞÉÏÃæµÄÍ¨ÖªÀ¬»ø»ØÊÕ£¬Ö±µ½³ÌĞòÍË³öÏµÍ³ÈÔÈ»²»»á»ØÊÕ¸Ã×ÊÔ´¡£GC»ØÊÕÀ¬»øÇ°£¬Òªµ÷ÓÃ¸Ã·½·¨
+	//å¦‚æœæ²¡æœ‰ä¸Šé¢çš„é€šçŸ¥åƒåœ¾å›æ”¶ï¼Œç›´åˆ°ç¨‹åºé€€å‡ºç³»ç»Ÿä»ç„¶ä¸ä¼šå›æ”¶è¯¥èµ„æºã€‚GCå›æ”¶åƒåœ¾å‰ï¼Œè¦è°ƒç”¨è¯¥æ–¹æ³•
 	@Override
 	public void finalize()
 	{
-		System.out.println("ÏµÍ³ÕıÔÚÇåÀíGcTest¶ÔÏóµÄ×ÊÔ´...");
+		System.out.println("ç³»ç»Ÿæ­£åœ¨æ¸…ç†GcTestå¯¹è±¡çš„èµ„æº...");
 	}
 }

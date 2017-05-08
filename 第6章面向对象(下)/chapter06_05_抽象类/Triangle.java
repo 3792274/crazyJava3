@@ -1,10 +1,10 @@
-package chapter06_05_³éÏóÀà;
+package chapter06_05_æŠ½è±¡ç±»;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,7 +14,7 @@ package chapter06_05_³éÏóÀà;
  */
 public class Triangle extends Shape
 {
-	// ¶¨ÒåÈı½ÇĞÎµÄÈı±ß
+	// å®šä¹‰ä¸‰è§’å½¢çš„ä¸‰è¾¹
 	private double a;
 	private double b;
 	private double c;
@@ -28,21 +28,21 @@ public class Triangle extends Shape
 	{
 		if (a >= b + c || b >= a + c || c >= a + b)
 		{
-			System.out.println("Èı½ÇĞÎÁ½±ßÖ®ºÍ±ØĞë´óÓÚµÚÈı±ß");
+			System.out.println("ä¸‰è§’å½¢ä¸¤è¾¹ä¹‹å’Œå¿…é¡»å¤§äºç¬¬ä¸‰è¾¹");
 			return;
 		}
 		this.a = a;
 		this.b = b;
 		this.c = c;
 	}
-	// ÖØĞ´ShapeÀàµÄµÄ¼ÆËãÖÜ³¤µÄ³éÏó·½·¨
+	// é‡å†™Shapeç±»çš„çš„è®¡ç®—å‘¨é•¿çš„æŠ½è±¡æ–¹æ³•
 	public double calPerimeter()
 	{
 		return a + b + c;
 	}
-	// ÖØĞ´ShapeÀàµÄµÄ·µ»ØĞÎ×´µÄ³éÏó·½·¨
+	// é‡å†™Shapeç±»çš„çš„è¿”å›å½¢çŠ¶çš„æŠ½è±¡æ–¹æ³•
 	public String getType()
 	{
-		return "Èı½ÇĞÎ";
+		return "ä¸‰è§’å½¢";
 	}
 }

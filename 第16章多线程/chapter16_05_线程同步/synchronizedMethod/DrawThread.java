@@ -1,8 +1,8 @@
-package chapter16_05_Ïß³ÌÍ¬²½.synchronizedMethod;
+package chapter16_05_çº¿ç¨‹åŒæ­¥.synchronizedMethod;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -12,9 +12,9 @@ package chapter16_05_Ïß³ÌÍ¬²½.synchronizedMethod;
  * @version 1.0
  */
 public class DrawThread extends Thread {
-	// Ä£ÄâÓÃ»§ÕË»§
+	// æ¨¡æ‹Ÿç”¨æˆ·è´¦æˆ·
 	private Account account;
-	// µ±Ç°È¡Ç®Ïß³ÌËùÏ£ÍûÈ¡µÄÇ®Êı
+	// å½“å‰å–é’±çº¿ç¨‹æ‰€å¸Œæœ›å–çš„é’±æ•°
 	private double drawAmount;
 
 	public DrawThread(String name, Account account, double drawAmount) {
@@ -23,12 +23,12 @@ public class DrawThread extends Thread {
 		this.drawAmount = drawAmount;
 	}
 
-	// µ±¶àÌõÏß³ÌĞŞ¸ÄÍ¬Ò»¸ö¹²ÏíÊı¾İÊ±£¬½«Éæ¼°Êı¾İ°²È«ÎÊÌâ¡£
+	// å½“å¤šæ¡çº¿ç¨‹ä¿®æ”¹åŒä¸€ä¸ªå…±äº«æ•°æ®æ—¶ï¼Œå°†æ¶‰åŠæ•°æ®å®‰å…¨é—®é¢˜ã€‚
 	@Override
 	public void run() {
-		// Ö±½Óµ÷ÓÃaccount¶ÔÏóµÄdraw·½·¨À´Ö´ĞĞÈ¡Ç®
-		// Í¬²½·½·¨µÄÍ¬²½¼àÊÓÆ÷ÊÇthis£¬this´ú±íµ÷ÓÃdraw()·½·¨µÄ¶ÔÏó¡£
-		// Ò²¾ÍÊÇËµ£ºÏß³Ì½øÈëdraw()·½·¨Ö®Ç°£¬±ØĞëÏÈ¶Ôaccount¶ÔÏóµÄ¼ÓËø¡£
+		// ç›´æ¥è°ƒç”¨accountå¯¹è±¡çš„drawæ–¹æ³•æ¥æ‰§è¡Œå–é’±
+		// åŒæ­¥æ–¹æ³•çš„åŒæ­¥ç›‘è§†å™¨æ˜¯thisï¼Œthisä»£è¡¨è°ƒç”¨draw()æ–¹æ³•çš„å¯¹è±¡ã€‚
+		// ä¹Ÿå°±æ˜¯è¯´ï¼šçº¿ç¨‹è¿›å…¥draw()æ–¹æ³•ä¹‹å‰ï¼Œå¿…é¡»å…ˆå¯¹accountå¯¹è±¡çš„åŠ é”ã€‚
 		account.draw(drawAmount);
 	}
 }

@@ -1,8 +1,8 @@
-package chapter10_03_CheckedÒì³£ºÍRuntimeÒì³£ÌåÏµ;
+package chapter10_03_Checkedå¼‚å¸¸å’ŒRuntimeå¼‚å¸¸ä½“ç³»;
 import java.io.*;
 /**
  * Description:
- * 1.×ÓÀàÉùÃ÷Å×³öµÄÒì³£Òª±È¸¸ÀàÉÙ£¬·¶Î§Í¬Àà»òÕß×ÓÀà
+ * 1.å­ç±»å£°æ˜æŠ›å‡ºçš„å¼‚å¸¸è¦æ¯”çˆ¶ç±»å°‘ï¼ŒèŒƒå›´åŒç±»æˆ–è€…å­ç±»
  */
 public class OverrideThrows
 {
@@ -13,8 +13,8 @@ public class OverrideThrows
 }
 class Sub extends OverrideThrows
 {
-	// ×ÓÀà·½·¨ÉùÃ÷Å×³öÁË±È¸¸Àà·½·¨¸ü´óµÄÒì³£
-	// ËùÒÔÏÂÃæ·½·¨³ö´í
+	// å­ç±»æ–¹æ³•å£°æ˜æŠ›å‡ºäº†æ¯”çˆ¶ç±»æ–¹æ³•æ›´å¤§çš„å¼‚å¸¸
+	// æ‰€ä»¥ä¸‹é¢æ–¹æ³•å‡ºé”™
 //	public void test()throws Exception
 //	{
 //	}

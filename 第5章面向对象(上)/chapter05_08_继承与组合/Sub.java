@@ -1,10 +1,10 @@
-package chapter05_08_¼Ì³ĞÓë×éºÏ;
+package chapter05_08_ç»§æ‰¿ä¸ç»„åˆ;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -18,22 +18,22 @@ class Base
 	{
 		test();
 	}
-	public void test()           // ¢ÙºÅtest()·½·¨
+	public void test()           // â‘ å·test()æ–¹æ³•
 	{
-		System.out.println("½«±»×ÓÀàÖØĞ´µÄ·½·¨");
+		System.out.println("å°†è¢«å­ç±»é‡å†™çš„æ–¹æ³•");
 	}
 }
 public class Sub extends Base
 {
 	private String name;
-	public void test()         // ¢ÚºÅtest()·½·¨
+	public void test()         // â‘¡å·test()æ–¹æ³•
 	{
-		System.out.println("×ÓÀàÖØĞ´¸¸ÀàµÄ·½·¨£¬"
-			+ "Æäname×Ö·û´®³¤¶È" + name.length());
+		System.out.println("å­ç±»é‡å†™çˆ¶ç±»çš„æ–¹æ³•ï¼Œ"
+			+ "å…¶nameå­—ç¬¦ä¸²é•¿åº¦" + name.length());
 	}
 	public static void main(String[] args)
 	{
-		// ÏÂÃæ´úÂë»áÒı·¢¿ÕÖ¸ÕëÒì³£
+		// ä¸‹é¢ä»£ç ä¼šå¼•å‘ç©ºæŒ‡é’ˆå¼‚å¸¸
 		Sub s = new Sub();
 	}
 }

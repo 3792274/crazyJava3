@@ -1,4 +1,4 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.SimpleAIO;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.SimpleAIO;
 
 import java.net.*;
 import java.nio.*;
@@ -6,7 +6,7 @@ import java.nio.channels.*;
 import java.nio.charset.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,24 +20,24 @@ public class SimpleAIOClient
 	public static void main(String[] args)
 		throws Exception
 	{
-		// ÓÃÓÚ¶ÁÈ¡Êı¾İµÄByteBuffer¡£
+		// ç”¨äºè¯»å–æ•°æ®çš„ByteBufferã€‚
 		ByteBuffer buff = ByteBuffer.allocate(1024);
 		Charset utf = Charset.forName("utf-8");
 		try(
-			// ¢Ù´´½¨AsynchronousSocketChannel¶ÔÏó
+			// â‘ åˆ›å»ºAsynchronousSocketChannelå¯¹è±¡
 			AsynchronousSocketChannel clientChannel
 				= AsynchronousSocketChannel.open())
 		{
-			// ¢ÚÁ¬½ÓÔ¶³Ì·şÎñÆ÷
+			// â‘¡è¿æ¥è¿œç¨‹æœåŠ¡å™¨
 			clientChannel.connect(new InetSocketAddress("127.0.0.1"
-				, PORT)).get();     // ¢Ü
+				, PORT)).get();     // â‘£
 			buff.clear();
-			// ¢Û´ÓclientChannelÖĞ¶ÁÈ¡Êı¾İ
-			clientChannel.read(buff).get();     // ¢İ
+			// â‘¢ä»clientChannelä¸­è¯»å–æ•°æ®
+			clientChannel.read(buff).get();     // â‘¤
 			buff.flip();
-			// ½«buffÖĞÄÚÈİ×ª»»Îª×Ö·û´®
+			// å°†buffä¸­å†…å®¹è½¬æ¢ä¸ºå­—ç¬¦ä¸²
 			String content = utf.decode(buff).toString();
-			System.out.println("·şÎñÆ÷ĞÅÏ¢£º" + content);
+			System.out.println("æœåŠ¡å™¨ä¿¡æ¯ï¼š" + content);
 		}
 	}
 }

@@ -1,11 +1,11 @@
-package chapter11_04_AWT³£ÓÃ×é¼ş;
+package chapter11_04_AWTå¸¸ç”¨ç»„ä»¶;
 
 
 import java.awt.*;
 import java.awt.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,27 +15,27 @@ import java.awt.event.*;
  */
 public class FileDialogTest
 {
-	Frame f = new Frame("²âÊÔ");
-	// ´´½¨Á½¸öÎÄ¼ş¶Ô»°¿ò
+	Frame f = new Frame("æµ‹è¯•");
+	// åˆ›å»ºä¸¤ä¸ªæ–‡ä»¶å¯¹è¯æ¡†
 	FileDialog d1 = new FileDialog(f
-		, "Ñ¡ÔñĞèÒª´ò¿ªÎÄ¼ş" , FileDialog.LOAD);
+		, "é€‰æ‹©éœ€è¦æ‰“å¼€æ–‡ä»¶" , FileDialog.LOAD);
 	FileDialog d2 = new FileDialog(f
-		, "Ñ¡Ôñ±£´æÎÄ¼şµÄÂ·¾¶" , FileDialog.SAVE);
-	Button b1 = new Button("´ò¿ªÎÄ¼ş");
-	Button b2 = new Button("±£´æÎÄ¼ş");
+		, "é€‰æ‹©ä¿å­˜æ–‡ä»¶çš„è·¯å¾„" , FileDialog.SAVE);
+	Button b1 = new Button("æ‰“å¼€æ–‡ä»¶");
+	Button b2 = new Button("ä¿å­˜æ–‡ä»¶");
 	public void init()
 	{
 		b1.addActionListener(e ->
 		{
 			d1.setVisible(true);
-			// ´òÓ¡³öÓÃ»§Ñ¡ÔñµÄÎÄ¼şÂ·¾¶ºÍÎÄ¼şÃû
+			// æ‰“å°å‡ºç”¨æˆ·é€‰æ‹©çš„æ–‡ä»¶è·¯å¾„å’Œæ–‡ä»¶å
 			System.out.println(d1.getDirectory()
 				+ d1.getFile());
 		});
 		b2.addActionListener(e ->
 		{
 			d2.setVisible(true);
-			// ´òÓ¡³öÓÃ»§Ñ¡ÔñµÄÎÄ¼şÂ·¾¶ºÍÎÄ¼şÃû
+			// æ‰“å°å‡ºç”¨æˆ·é€‰æ‹©çš„æ–‡ä»¶è·¯å¾„å’Œæ–‡ä»¶å
 			System.out.println(d2.getDirectory()
 				+ d2.getFile());
 		});

@@ -1,14 +1,14 @@
-package chapter08_03_Set¼¯ºÏ;
+package chapter08_03_Seté›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * ÈçºÎÊ¹ÓÃEnumSetÀ´±£´æÃ¶¾ÙÀàµÄ¶à¸öÃ¶¾ÙÖµ¡£
- * 1.ËùÓĞÔªËØ±ØĞëÊÇÖ¸¶¨µÄÃ¶¾ÙÀàĞÍµÄÃ¶¾ÙÖµ¡£
- * 2.ÄÚ²¿ÒÔÎ»ÏòÁ¿µÄĞÎÊ½´æ´¢£¬·Ç³£½ô´Õ¡¢¸ßĞ§£¬ÄÚ´æĞ¡
- * 3.EnumSet²»ÔÊĞí¼ÓÈënullÔªËØ
- * 4.Ó¦Í¨¹ıËüÌá¹©µÄÀà·½·¨À´´´½¨EnumSet
+ * å¦‚ä½•ä½¿ç”¨EnumSetæ¥ä¿å­˜æšä¸¾ç±»çš„å¤šä¸ªæšä¸¾å€¼ã€‚
+ * 1.æ‰€æœ‰å…ƒç´ å¿…é¡»æ˜¯æŒ‡å®šçš„æšä¸¾ç±»å‹çš„æšä¸¾å€¼ã€‚
+ * 2.å†…éƒ¨ä»¥ä½å‘é‡çš„å½¢å¼å­˜å‚¨ï¼Œéå¸¸ç´§å‡‘ã€é«˜æ•ˆï¼Œå†…å­˜å°
+ * 3.EnumSetä¸å…è®¸åŠ å…¥nullå…ƒç´ 
+ * 4.åº”é€šè¿‡å®ƒæä¾›çš„ç±»æ–¹æ³•æ¥åˆ›å»ºEnumSet
  */
 enum Season
 {
@@ -18,24 +18,24 @@ public class EnumSetTest
 {
 	public static void main(String[] args)
 	{
-		// ´´½¨Ò»¸öEnumSet¼¯ºÏ£¬¼¯ºÏÔªËØ¾ÍÊÇSeasonÃ¶¾ÙÀàµÄÈ«²¿Ã¶¾ÙÖµ
+		// åˆ›å»ºä¸€ä¸ªEnumSeté›†åˆï¼Œé›†åˆå…ƒç´ å°±æ˜¯Seasonæšä¸¾ç±»çš„å…¨éƒ¨æšä¸¾å€¼
 		EnumSet es1 = EnumSet.allOf(Season.class);
-		System.out.println(es1); // Êä³ö[SPRING,SUMMER,FALL,WINTER]
-		// ´´½¨Ò»¸öEnumSet¿Õ¼¯ºÏ£¬Ö¸¶¨Æä¼¯ºÏÔªËØÊÇSeasonÀàµÄÃ¶¾ÙÖµ¡£
+		System.out.println(es1); // è¾“å‡º[SPRING,SUMMER,FALL,WINTER]
+		// åˆ›å»ºä¸€ä¸ªEnumSetç©ºé›†åˆï¼ŒæŒ‡å®šå…¶é›†åˆå…ƒç´ æ˜¯Seasonç±»çš„æšä¸¾å€¼ã€‚
 		EnumSet es2 = EnumSet.noneOf(Season.class);
-		System.out.println(es2); // Êä³ö[]
-		// ÊÖ¶¯Ìí¼ÓÁ½¸öÔªËØ
+		System.out.println(es2); // è¾“å‡º[]
+		// æ‰‹åŠ¨æ·»åŠ ä¸¤ä¸ªå…ƒç´ 
 		es2.add(Season.WINTER);
 		es2.add(Season.SPRING);
-		System.out.println(es2); // Êä³ö[SPRING,WINTER]
-		// ÒÔÖ¸¶¨Ã¶¾ÙÖµ´´½¨EnumSet¼¯ºÏ
+		System.out.println(es2); // è¾“å‡º[SPRING,WINTER]
+		// ä»¥æŒ‡å®šæšä¸¾å€¼åˆ›å»ºEnumSeté›†åˆ
 		EnumSet es3 = EnumSet.of(Season.SUMMER , Season.WINTER);
-		System.out.println(es3); // Êä³ö[SUMMER,WINTER]
+		System.out.println(es3); // è¾“å‡º[SUMMER,WINTER]
 		EnumSet es4 = EnumSet.range(Season.SUMMER , Season.WINTER);
-		System.out.println(es4); // Êä³ö[SUMMER,FALL,WINTER]
-		// ĞÂ´´½¨µÄEnumSet¼¯ºÏµÄÔªËØºÍes4¼¯ºÏµÄÔªËØÓĞÏàÍ¬ÀàĞÍ£¬
-		// es5µÄ¼¯ºÏÔªËØ + es4¼¯ºÏÔªËØ = SeasonÃ¶¾ÙÀàµÄÈ«²¿Ã¶¾ÙÖµ
+		System.out.println(es4); // è¾“å‡º[SUMMER,FALL,WINTER]
+		// æ–°åˆ›å»ºçš„EnumSeté›†åˆçš„å…ƒç´ å’Œes4é›†åˆçš„å…ƒç´ æœ‰ç›¸åŒç±»å‹ï¼Œ
+		// es5çš„é›†åˆå…ƒç´  + es4é›†åˆå…ƒç´  = Seasonæšä¸¾ç±»çš„å…¨éƒ¨æšä¸¾å€¼
 		EnumSet es5 = EnumSet.complementOf(es4);
-		System.out.println(es5); // Êä³ö[SPRING]
+		System.out.println(es5); // è¾“å‡º[SPRING]
 	}
 }

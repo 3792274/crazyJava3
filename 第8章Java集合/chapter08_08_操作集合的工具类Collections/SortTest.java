@@ -1,20 +1,20 @@
-package chapter08_08_²Ù×÷¼¯ºÏµÄ¹¤¾ßÀàCollections;
+package chapter08_08_æ“ä½œé›†åˆçš„å·¥å…·ç±»Collections;
 
 
 import java.util.*;
 /**
  * Description:
- * ¶Ô¼¯ºÏÔªËØ½øĞĞÅÅĞò¡¢²éÑ¯¡¢ĞŞ¸Ä
- * ½«¼¯ºÏ¶ÔÏóÉèÖÃÎª²»¿É±ä¡¢
- * ¶Ô¼¯ºÏ¶ÔÏóÊµÏÖÍ¬²½¿ØÖÆµÈ·½·¨
+ * å¯¹é›†åˆå…ƒç´ è¿›è¡Œæ’åºã€æŸ¥è¯¢ã€ä¿®æ”¹
+ * å°†é›†åˆå¯¹è±¡è®¾ç½®ä¸ºä¸å¯å˜ã€
+ * å¯¹é›†åˆå¯¹è±¡å®ç°åŒæ­¥æ§åˆ¶ç­‰æ–¹æ³•
  * 
  * 
- * 1.void reverse(List) ·­×ªÖ¸¶¨List¼¯ºÏÖĞÔªËØµÄË³Ğò
- * 2.void shuffle(List) ¶ÔList½øĞĞËæ»úÅÅĞò(Ï´ÅÆ)
- * 3.void sort(List)    °´×ÔÈ»ÉıĞòÅÅĞò
- * 4.void sort(List,Comparator) ¸ù¾İcomparator²úÉúµÄË³Ğò¶ÔList¼¯ºÏÔªËØ½øĞĞÅÅĞò
- * 5.void swap(List,int i,int j ) ½«¼¯ºÏÖĞµÄÔªËØi,j´¦ÔªËØ£¬½øĞĞ½»»»¡£
- * 6.void rotate(List,int distance)µ±distanceÎªÕıÊıÊ±£¬½«list¼¯ºÏµÄºódistance¸öÔªËØÕûÌåÒÆµ½Ç°Ãæ£»µ±Îª¸ºÊıÕûÌåÒÆµ½ºóÃæ£¬²»ÄÜ¸Ä±ä¼¯ºÏ³¤¶È¡£
+ * 1.void reverse(List) ç¿»è½¬æŒ‡å®šListé›†åˆä¸­å…ƒç´ çš„é¡ºåº
+ * 2.void shuffle(List) å¯¹Listè¿›è¡Œéšæœºæ’åº(æ´—ç‰Œ)
+ * 3.void sort(List)    æŒ‰è‡ªç„¶å‡åºæ’åº
+ * 4.void sort(List,Comparator) æ ¹æ®comparatoräº§ç”Ÿçš„é¡ºåºå¯¹Listé›†åˆå…ƒç´ è¿›è¡Œæ’åº
+ * 5.void swap(List,int i,int j ) å°†é›†åˆä¸­çš„å…ƒç´ i,jå¤„å…ƒç´ ï¼Œè¿›è¡Œäº¤æ¢ã€‚
+ * 6.void rotate(List,int distance)å½“distanceä¸ºæ­£æ•°æ—¶ï¼Œå°†listé›†åˆçš„ådistanceä¸ªå…ƒç´ æ•´ä½“ç§»åˆ°å‰é¢ï¼›å½“ä¸ºè´Ÿæ•°æ•´ä½“ç§»åˆ°åé¢ï¼Œä¸èƒ½æ”¹å˜é›†åˆé•¿åº¦ã€‚
  */
 public class SortTest
 {
@@ -26,15 +26,15 @@ public class SortTest
 		nums.add(3);
 		nums.add(0);
 	
-		System.out.println(nums); // Êä³ö:[2, -5, 3, 0]
+		System.out.println(nums); // è¾“å‡º:[2, -5, 3, 0]
 		
-		Collections.reverse(nums); // ½«List¼¯ºÏÔªËØµÄ´ÎĞò·´×ª
-		System.out.println(nums); // Êä³ö:[0, 3, -5, 2]
+		Collections.reverse(nums); // å°†Listé›†åˆå…ƒç´ çš„æ¬¡åºåè½¬
+		System.out.println(nums); // è¾“å‡º:[0, 3, -5, 2]
 	
-		Collections.sort(nums); // ½«List¼¯ºÏÔªËØµÄ°´×ÔÈ»Ë³ĞòÅÅĞò
-		System.out.println(nums); // Êä³ö:[-5, 0, 2, 3]
+		Collections.sort(nums); // å°†Listé›†åˆå…ƒç´ çš„æŒ‰è‡ªç„¶é¡ºåºæ’åº
+		System.out.println(nums); // è¾“å‡º:[-5, 0, 2, 3]
 		
-		Collections.shuffle(nums); // ½«List¼¯ºÏÔªËØµÄ°´Ëæ»úË³ĞòÅÅĞò
-		System.out.println(nums); // Ã¿´ÎÊä³öµÄ´ÎĞò²»¹Ì¶¨
+		Collections.shuffle(nums); // å°†Listé›†åˆå…ƒç´ çš„æŒ‰éšæœºé¡ºåºæ’åº
+		System.out.println(nums); // æ¯æ¬¡è¾“å‡ºçš„æ¬¡åºä¸å›ºå®š
 	}
 }

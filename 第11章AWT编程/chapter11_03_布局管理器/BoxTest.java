@@ -1,11 +1,11 @@
-package chapter11_03_²¼¾Ö¹ÜÀíÆ÷;
+package chapter11_03_å¸ƒå±€ç®¡ç†å™¨;
 
 import java.awt.*;
 import javax.swing.*;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,17 +15,17 @@ import javax.swing.*;
  */
 public class BoxTest
 {
-	private Frame f = new Frame("²âÊÔ");
-	// ¶¨ÒåË®Æ½°Ú·Å×é¼şµÄBox¶ÔÏó
+	private Frame f = new Frame("æµ‹è¯•");
+	// å®šä¹‰æ°´å¹³æ‘†æ”¾ç»„ä»¶çš„Boxå¯¹è±¡
 	private Box horizontal = Box.createHorizontalBox();
-	// ¶¨Òå´¹Ö±°Ú·Å×é¼şµÄBox¶ÔÏó
+	// å®šä¹‰å‚ç›´æ‘†æ”¾ç»„ä»¶çš„Boxå¯¹è±¡
 	private Box vertical = Box.createVerticalBox();
 	public void init()
 	{
-		horizontal.add(new Button("Ë®Æ½°´Å¥Ò»"));
-		horizontal.add(new Button("Ë®Æ½°´Å¥¶ş"));
-		vertical.add(new Button("´¹Ö±°´Å¥Ò»"));
-		vertical.add(new Button("´¹Ö±°´Å¥¶ş"));
+		horizontal.add(new Button("æ°´å¹³æŒ‰é’®ä¸€"));
+		horizontal.add(new Button("æ°´å¹³æŒ‰é’®äºŒ"));
+		vertical.add(new Button("å‚ç›´æŒ‰é’®ä¸€"));
+		vertical.add(new Button("å‚ç›´æŒ‰é’®äºŒ"));
 		f.add(horizontal , BorderLayout.NORTH);
 		f.add(vertical);
 		f.pack();

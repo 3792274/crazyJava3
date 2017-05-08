@@ -1,10 +1,10 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,10 +14,10 @@ package chapter06_07_ÄÚ²¿Àà;
  */
 public class SubClass extends Out.In
 {
-	//ÏÔÊ¾¶¨ÒåSubClassµÄ¹¹ÔìÆ÷
+	//æ˜¾ç¤ºå®šä¹‰SubClassçš„æ„é€ å™¨
 	public SubClass(Out out)
 	{
-		//Í¨¹ı´«ÈëµÄOut¶ÔÏóÏÔÊ½µ÷ÓÃInµÄ¹¹ÔìÆ÷
+		//é€šè¿‡ä¼ å…¥çš„Outå¯¹è±¡æ˜¾å¼è°ƒç”¨Inçš„æ„é€ å™¨
 		out.super("hello");
 	}
 }

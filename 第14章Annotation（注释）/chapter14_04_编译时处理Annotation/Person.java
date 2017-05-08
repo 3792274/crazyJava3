@@ -1,12 +1,12 @@
-package chapter14_04_±àÒëÊ±´¦ÀíAnnotation;
+package chapter14_04_ç¼–è¯‘æ—¶å¤„ç†Annotation;
 
 
 
 /**
- * Description:14.4 ±àÒëÊ±´¦ÀíAnnotation,
- * <br>±àÒëÊ±ĞèÒªÖ¸¶¨²ÎÊı£ºjavac -processor HibernateAnnotationProcessor Person.java
- * <br>Ö´ĞĞÒÔºó£¬½«Éú³ÉPerson.hbm.xmlÎÄ¼ş¡£
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:14.4 ç¼–è¯‘æ—¶å¤„ç†Annotation,
+ * <br>ç¼–è¯‘æ—¶éœ€è¦æŒ‡å®šå‚æ•°ï¼šjavac -processor HibernateAnnotationProcessor Person.java
+ * <br>æ‰§è¡Œä»¥åï¼Œå°†ç”ŸæˆPerson.hbm.xmlæ–‡ä»¶ã€‚
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -24,11 +24,11 @@ public class Person
 	@Property(column="person_age",type="integer")
 	private int age;
 
-	//ÎŞ²ÎÊıµÄ¹¹ÔìÆ÷
+	//æ— å‚æ•°çš„æ„é€ å™¨
 	public Person()
 	{
 	}
-	//³õÊ¼»¯È«²¿³ÉÔ±±äÁ¿µÄ¹¹ÔìÆ÷
+	//åˆå§‹åŒ–å…¨éƒ¨æˆå‘˜å˜é‡çš„æ„é€ å™¨
 	public Person(int id , String name , int age)
 	{
 		this.id = id;
@@ -36,9 +36,9 @@ public class Person
 		this.age = age;
 	}
 
-	// ÏÂÃæÊ¡ÂÔËùÓĞ³ÉÔ±±äÁ¿µÄsetterºÍgetter·½·¨
+	// ä¸‹é¢çœç•¥æ‰€æœ‰æˆå‘˜å˜é‡çš„setterå’Œgetteræ–¹æ³•
 
-	//idµÄsetterºÍgetter·½·¨
+	//idçš„setterå’Œgetteræ–¹æ³•
 	public void setId(int id)
 	{
 		this.id = id;
@@ -48,7 +48,7 @@ public class Person
 		return this.id;
 	}
 
-	//nameµÄsetterºÍgetter·½·¨
+	//nameçš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name)
 	{
 		this.name = name;
@@ -58,7 +58,7 @@ public class Person
 		return this.name;
 	}
 
-	//ageµÄsetterºÍgetter·½·¨
+	//ageçš„setterå’Œgetteræ–¹æ³•
 	public void setAge(int age)
 	{
 		this.age = age;

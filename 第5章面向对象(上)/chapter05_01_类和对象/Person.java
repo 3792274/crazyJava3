@@ -1,10 +1,10 @@
-package chapter05_01_ÀàºÍ¶ÔÏó;
+package chapter05_01_ç±»å’Œå¯¹è±¡;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,10 +14,10 @@ package chapter05_01_ÀàºÍ¶ÔÏó;
  */
 public class Person
 {
-	// ÏÂÃæ¶¨ÒåÁËÁ½¸ö³ÉÔ±±äÁ¿
+	// ä¸‹é¢å®šä¹‰äº†ä¸¤ä¸ªæˆå‘˜å˜é‡
 	public String name;
 	public int age;
-	// ÏÂÃæ¶¨ÒåÁËÒ»¸ösay·½·¨
+	// ä¸‹é¢å®šä¹‰äº†ä¸€ä¸ªsayæ–¹æ³•
 	public void say(String content)
 	{
 		System.out.println(content);

@@ -1,8 +1,8 @@
-package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
+package chapter06_06_Java8æ”¹è¿›çš„æ¥å£;
 
 /**
- * Description:ÃüÁîÄ£Ê½£¬Ê¹ÓÃÊµÀı <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:å‘½ä»¤æ¨¡å¼ï¼Œä½¿ç”¨å®ä¾‹ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -12,20 +12,20 @@ package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
  * @version 1.0
  */
 
-// ÏÔÊ¾ÁË£¬Ìá¹©Á½ÖÖ·½·¨´¦ÀíÊı×é
+// æ˜¾ç¤ºäº†ï¼Œæä¾›ä¸¤ç§æ–¹æ³•å¤„ç†æ•°ç»„
 public class CommandTest {
 	
 	public static void main(String[] args) {
 		
-		//Êı×é´¦ÀíÀà
+		//æ•°ç»„å¤„ç†ç±»
 		ProcessArray pa = new ProcessArray();
 		int[] target = { 3, -4, 6, 4 };
 	
-		// µÚÒ»´Î´¦ÀíÊı×é£¬¾ßÌå´¦ÀíĞĞÎªÈ¡¾öÓÚPrintCommand
+		// ç¬¬ä¸€æ¬¡å¤„ç†æ•°ç»„ï¼Œå…·ä½“å¤„ç†è¡Œä¸ºå–å†³äºPrintCommand
 		pa.process(target, new PrintCommand());
 		System.out.println("------------------");
 		
-		// µÚ¶ş´Î´¦ÀíÊı×é£¬¾ßÌå´¦ÀíĞĞÎªÈ¡¾öÓÚAddCommand
+		// ç¬¬äºŒæ¬¡å¤„ç†æ•°ç»„ï¼Œå…·ä½“å¤„ç†è¡Œä¸ºå–å†³äºAddCommand
 		pa.process(target, new AddCommand());
 	}
 }

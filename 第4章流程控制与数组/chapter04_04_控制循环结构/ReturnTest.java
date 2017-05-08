@@ -1,8 +1,8 @@
-package chapter04_04_控制循环结构;
+package chapter04_04_鎺у埗寰幆缁撴瀯;
 
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,15 +14,15 @@ public class ReturnTest
 {
 	public static void main(String[] args)
 	{
-		// 一个简单的for循环
+		// 涓�涓畝鍗曠殑for寰幆
 		for (int i = 0; i < 3 ; i++ )
 		{
-			System.out.println("i的值是" + i);
+			System.out.println("i鐨勫�兼槸" + i);
 			if (i == 1)
 			{
 				return;
 			}
-			System.out.println("return后的输出语句");
+			System.out.println("return鍚庣殑杈撳嚭璇彞");
 		}
 	}
 }

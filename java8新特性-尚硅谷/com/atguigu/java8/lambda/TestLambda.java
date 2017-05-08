@@ -7,13 +7,13 @@ import java.util.List;
 import org.junit.Test;
 
 public class TestLambda {
-	
+
 	List<Employee> emps = Arrays.asList(
-			new Employee(101, "ÕÅÈı", 18, 9999.99),
-			new Employee(102, "ÀîËÄ", 59, 6666.66),
-			new Employee(103, "ÍõÎå", 28, 3333.33),
-			new Employee(104, "ÕÔÁù", 8, 7777.77),
-			new Employee(105, "ÌïÆß", 38, 5555.55)
+			new Employee(101, "å¼ ä¸‰", 18, 9999.99),
+			new Employee(102, "æå››", 59, 6666.66),
+			new Employee(103, "ç‹äº”", 28, 3333.33),
+			new Employee(104, "èµµå…­", 8, 7777.77),
+			new Employee(105, "ç”°ä¸ƒ", 38, 5555.55)
 	);
 	
 	@Test
@@ -33,17 +33,17 @@ public class TestLambda {
 	
 	@Test
 	public void test2(){
-		String trimStr = strHandler("\t\t\t ÎÒ´óÉĞ¹è¹ÈÍşÎä   ", (str) -> str.trim());
+		String trimStr = strHandler("\t\t\t æˆ‘å¤§å°šç¡…è°·å¨æ­¦   ", (str) -> str.trim());
 		System.out.println(trimStr);
 		
 		String upper = strHandler("abcdef", (str) -> str.toUpperCase());
 		System.out.println(upper);
 		
-		String newStr = strHandler("ÎÒ´óÉĞ¹è¹ÈÍşÎä", (str) -> str.substring(2, 5));
+		String newStr = strHandler("æˆ‘å¤§å°šç¡…è°·å¨æ­¦", (str) -> str.substring(2, 5));
 		System.out.println(newStr);
 	}
 	
-	//ĞèÇó£ºÓÃÓÚ´¦Àí×Ö·û´®
+	//éœ€æ±‚ï¼šç”¨äºå¤„ç†å­—ç¬¦ä¸²
 	public String strHandler(String str, MyFunction mf){
 		return mf.getValue(str);
 	}
@@ -55,7 +55,7 @@ public class TestLambda {
 		op(100L, 200L, (x, y) -> x * y);
 	}
 	
-	//ĞèÇó£º¶ÔÓÚÁ½¸ö Long ĞÍÊı¾İ½øĞĞ´¦Àí
+	//éœ€æ±‚ï¼šå¯¹äºä¸¤ä¸ª Long å‹æ•°æ®è¿›è¡Œå¤„ç†
 	public void op(Long l1, Long l2, MyFunction2<Long, Long> mf){
 		System.out.println(mf.getValue(l1, l2));
 	}

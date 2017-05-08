@@ -1,10 +1,10 @@
-package chapter15_08_¶ÔÏóĞòÁĞ»¯.resolve;
+package chapter15_08_å¯¹è±¡åºåˆ—åŒ–.resolve;
 
 import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,9 +16,9 @@ import java.io.*;
 public class ResolveTest {
 	public static void main(String[] args) {
 		try (
-				// ´´½¨Ò»¸öObjectOutputStreamÊäÈëÁ÷
+				// åˆ›å»ºä¸€ä¸ªObjectOutputStreamè¾“å…¥æµ
 				ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("transient.txt"));
-				// ´´½¨Ò»¸öObjectInputStreamÊäÈëÁ÷
+				// åˆ›å»ºä¸€ä¸ªObjectInputStreamè¾“å…¥æµ
 				ObjectInputStream ois = new ObjectInputStream(new FileInputStream("transient.txt"))) {
 			oos.writeObject(Orientation.HORIZONTAL);
 			Orientation ori = (Orientation) ois.readObject();

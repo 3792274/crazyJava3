@@ -1,4 +1,4 @@
-package chapter07_03_³£ÓÃÀà;
+package chapter07_03_å¸¸ç”¨ç±»;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -6,11 +6,11 @@ import java.util.concurrent.ThreadLocalRandom;
 import com.sun.xml.internal.ws.api.server.ThreadLocalContainerResolver;
 /**
  * Description:
- * 1.RandomÊ¹ÓÃÒ»¸ö48Î»µÄÖÖ×Ó£¬Èç¹ûÕâ¸öÀàµÄÁ½¸öÊµÀıÊÇÍ¬Ò»¸öÖÖ×Ó´´½¨£¬¶ÔËûÃÇÒÔÍ¬ÑùµÄË³Ğòµ÷ÓÃ·½·¨£¬ÔòËûÃÇ»á²úÉúÏàÍ¬µÄÊı×ÖĞòÁĞ¡£<br>
- * 2.µ±Ê¹ÓÃÄ¬ÈÏµÄÖÖ×Ó¹¹ÔìRandom¶ÔÏóÊ±£¬ËûÃÇÊôÓÚÍ¬Ò»¸öÖÖ×Ó¡£
+ * 1.Randomä½¿ç”¨ä¸€ä¸ª48ä½çš„ç§å­ï¼Œå¦‚æœè¿™ä¸ªç±»çš„ä¸¤ä¸ªå®ä¾‹æ˜¯åŒä¸€ä¸ªç§å­åˆ›å»ºï¼Œå¯¹ä»–ä»¬ä»¥åŒæ ·çš„é¡ºåºè°ƒç”¨æ–¹æ³•ï¼Œåˆ™ä»–ä»¬ä¼šäº§ç”Ÿç›¸åŒçš„æ•°å­—åºåˆ—ã€‚<br>
+ * 2.å½“ä½¿ç”¨é»˜è®¤çš„ç§å­æ„é€ Randomå¯¹è±¡æ—¶ï¼Œä»–ä»¬å±äºåŒä¸€ä¸ªç§å­ã€‚
  * 
  * 
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -24,7 +24,7 @@ public class SeedTest06
 	{
 		Random r1 = new Random(50);
 		
-		System.out.println("µÚÒ»¸öÖÖ×ÓÎª50µÄRandom¶ÔÏó");
+		System.out.println("ç¬¬ä¸€ä¸ªç§å­ä¸º50çš„Randomå¯¹è±¡");
 		System.out.println("r1.nextBoolean():\t" + r1.nextBoolean());
 		System.out.println("r1.nextInt():\t\t" + r1.nextInt(55));
 		System.out.println("r1.nextDouble():\t" + r1.nextDouble());
@@ -32,7 +32,7 @@ public class SeedTest06
 		System.out.println("---------------------------");
 		
 		Random r2 = new Random(50);
-		System.out.println("µÚ¶ş¸öÖÖ×ÓÎª50µÄRandom¶ÔÏó");
+		System.out.println("ç¬¬äºŒä¸ªç§å­ä¸º50çš„Randomå¯¹è±¡");
 		System.out.println("r2.nextBoolean():\t" + r2.nextBoolean());
 		System.out.println("r2.nextInt():\t\t" + r2.nextInt(55));
 		System.out.println("r2.nextDouble():\t" + r2.nextDouble());
@@ -40,17 +40,17 @@ public class SeedTest06
 		System.out.println("---------------------------");
 	
 		Random r3 = new Random(100);
-		System.out.println("ÖÖ×ÓÎª100µÄRandom¶ÔÏó");
+		System.out.println("ç§å­ä¸º100çš„Randomå¯¹è±¡");
 		System.out.println("r3.nextBoolean():\t" + r3.nextBoolean());
 		System.out.println("r3.nextInt():\t\t" + r3.nextInt());
 		System.out.println("r3.nextDouble():\t" + r3.nextDouble());
 		System.out.println("r3.nextGaussian():\t" + r3.nextGaussian());
 		
 		
-		//ÎªÁË±ÜÃâÁ½¸öËæ»úÊıÏàÍ¬£¬ÍÆ¼öÊ¹ÓÃÊ±¼ä×÷ÎªÖÖ×Ó
+		//ä¸ºäº†é¿å…ä¸¤ä¸ªéšæœºæ•°ç›¸åŒï¼Œæ¨èä½¿ç”¨æ—¶é—´ä½œä¸ºç§å­
 		Random r4=new Random(System.currentTimeMillis());
 		
-		//ÔÚ¶àÏß³ÌÏÂÊ¹ÓÃThreadLocalRandom,Éú³ÉÎ±Ëæ»úÊı
+		//åœ¨å¤šçº¿ç¨‹ä¸‹ä½¿ç”¨ThreadLocalRandom,ç”Ÿæˆä¼ªéšæœºæ•°
 		ThreadLocalRandom r5 =  ThreadLocalRandom.current();
 		int val1= r5.nextInt(4,20);
 		double val2=  r5.nextDouble(2.0,10.0);

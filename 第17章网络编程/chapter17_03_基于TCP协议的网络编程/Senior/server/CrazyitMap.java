@@ -1,9 +1,9 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.Senior.server;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.Senior.server;
 
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -11,12 +11,12 @@ import java.util.*;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// Í¨¹ı×éºÏHashMap¶ÔÏóÀ´ÊµÏÖCrazyitMap£¬CrazyitMapÒªÇóvalueÒ²²»¿ÉÖØ¸´
+// é€šè¿‡ç»„åˆHashMapå¯¹è±¡æ¥å®ç°CrazyitMapï¼ŒCrazyitMapè¦æ±‚valueä¹Ÿä¸å¯é‡å¤
 public class CrazyitMap<K,V>
 {
-	// ´´½¨Ò»¸öÏß³Ì°²È«µÄHashMap
+	// åˆ›å»ºä¸€ä¸ªçº¿ç¨‹å®‰å…¨çš„HashMap
 	public Map<K ,V> map = Collections.synchronizedMap(new HashMap<K,V>());
-	// ¸ù¾İvalueÀ´É¾³ıÖ¸¶¨Ïî
+	// æ ¹æ®valueæ¥åˆ é™¤æŒ‡å®šé¡¹
 	public synchronized void removeByValue(Object value)
 	{
 		for (Object key : map.keySet())
@@ -28,21 +28,21 @@ public class CrazyitMap<K,V>
 			}
 		}
 	}
-	// »ñÈ¡ËùÓĞvalue×é³ÉµÄSet¼¯ºÏ
+	// è·å–æ‰€æœ‰valueç»„æˆçš„Seté›†åˆ
 	public synchronized Set<V> valueSet()
 	{
 		Set<V> result = new HashSet<V>();
-		// ½«mapÖĞËùÓĞvalueÌí¼Óµ½result¼¯ºÏÖĞ
+		// å°†mapä¸­æ‰€æœ‰valueæ·»åŠ åˆ°resulté›†åˆä¸­
 		map.forEach((key , value) -> result.add(value));
 		return result;
 	}
-	// ¸ù¾İvalue²éÕÒkey¡£
+	// æ ¹æ®valueæŸ¥æ‰¾keyã€‚
 	public synchronized K getKeyByValue(V val)
 	{
-		// ±éÀúËùÓĞkey×é³ÉµÄ¼¯ºÏ
+		// éå†æ‰€æœ‰keyç»„æˆçš„é›†åˆ
 		for (K key : map.keySet())
 		{
-			// Èç¹ûÖ¸¶¨key¶ÔÓ¦µÄvalueÓë±»ËÑË÷µÄvalueÏàÍ¬£¬Ôò·µ»Ø¶ÔÓ¦µÄkey
+			// å¦‚æœæŒ‡å®škeyå¯¹åº”çš„valueä¸è¢«æœç´¢çš„valueç›¸åŒï¼Œåˆ™è¿”å›å¯¹åº”çš„key
 			if (map.get(key) == val || map.get(key).equals(val))
 			{
 				return key;
@@ -50,18 +50,18 @@ public class CrazyitMap<K,V>
 		}
 		return null;
 	}
-	// ÊµÏÖput()·½·¨£¬¸Ã·½·¨²»ÔÊĞívalueÖØ¸´
+	// å®ç°put()æ–¹æ³•ï¼Œè¯¥æ–¹æ³•ä¸å…è®¸valueé‡å¤
 	public synchronized V put(K key,V value)
 	{
-		// ±éÀúËùÓĞvalue×é³ÉµÄ¼¯ºÏ
+		// éå†æ‰€æœ‰valueç»„æˆçš„é›†åˆ
 		for (V val : valueSet() )
 		{
-			// Èç¹ûÄ³¸övalueÓëÊÔÍ¼·ÅÈë¼¯ºÏµÄvalueÏàÍ¬
-			// ÔòÅ×³öÒ»¸öRuntimeExceptionÒì³£
+			// å¦‚æœæŸä¸ªvalueä¸è¯•å›¾æ”¾å…¥é›†åˆçš„valueç›¸åŒ
+			// åˆ™æŠ›å‡ºä¸€ä¸ªRuntimeExceptionå¼‚å¸¸
 			if (val.equals(value)
 				&& val.hashCode()== value.hashCode())
 			{
-				throw new RuntimeException("MyMapÊµÀıÖĞ²»ÔÊĞíÓĞÖØ¸´value!");
+				throw new RuntimeException("MyMapå®ä¾‹ä¸­ä¸å…è®¸æœ‰é‡å¤value!");
 			}
 		}
 		return map.put(key , value);

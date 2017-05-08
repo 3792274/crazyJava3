@@ -1,8 +1,8 @@
-package chapter06_02_´¦Àí¶ÔÏó;
+package chapter06_02_å¤„ç†å¯¹è±¡;
 
 /**
- * Description:ÀàÃû+@+hasCode <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:ç±»å+@+hasCode <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -18,13 +18,13 @@ class Apple {
 	public Apple() {
 	}
 
-	// Ìá¹©ÓĞ²ÎÊıµÄ¹¹ÔìÆ÷
+	// æä¾›æœ‰å‚æ•°çš„æ„é€ å™¨
 	public Apple(String color, double weight) {
 		this.color = color;
 		this.weight = weight;
 	}
 
-	// colorµÄsetterºÍgetter·½·¨
+	// colorçš„setterå’Œgetteræ–¹æ³•
 	public void setColor(String color) {
 		this.color = color;
 	}
@@ -33,7 +33,7 @@ class Apple {
 		return this.color;
 	}
 
-	// weightµÄsetterºÍgetter·½·¨
+	// weightçš„setterå’Œgetteræ–¹æ³•
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
@@ -42,9 +42,9 @@ class Apple {
 		return this.weight;
 	}
 
-	// ÖØĞ´toString·½·¨£¬ÓÃÓÚÊµÏÖApple¶ÔÏóµÄ"×ÔÎÒÃèÊö"
+	// é‡å†™toStringæ–¹æ³•ï¼Œç”¨äºå®ç°Appleå¯¹è±¡çš„"è‡ªæˆ‘æè¿°"
 	public String toString() {
-		return "Ò»¸öÆ»¹û£¬ÑÕÉ«ÊÇ£º" + color + "£¬ÖØÁ¿ÊÇ£º" + weight;
+		return "ä¸€ä¸ªè‹¹æœï¼Œé¢œè‰²æ˜¯ï¼š" + color + "ï¼Œé‡é‡æ˜¯ï¼š" + weight;
 	}
 
 	// public String toString()
@@ -56,8 +56,8 @@ class Apple {
 
 public class ToStringTest {
 	public static void main(String[] args) {
-		Apple a = new Apple("ºìÉ«", 5.68);
-		// ´òÓ¡Apple¶ÔÏó
+		Apple a = new Apple("çº¢è‰²", 5.68);
+		// æ‰“å°Appleå¯¹è±¡
 		System.out.println(a);
 	}
 }

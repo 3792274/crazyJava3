@@ -1,10 +1,10 @@
-package chapter09_04_·ºĞÍ·½·¨;
+package chapter09_04_æ³›å‹æ–¹æ³•;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -26,18 +26,18 @@ public class GenericConstructor
 {
 	public static void main(String[] args)
 	{
-		// ·ºĞÍ¹¹ÔìÆ÷ÖĞµÄT²ÎÊıÎªString¡£
-		new Foo("·è¿ñJava½²Òå");
+		// æ³›å‹æ„é€ å™¨ä¸­çš„Tå‚æ•°ä¸ºStringã€‚
+		new Foo("ç–¯ç‹‚Javaè®²ä¹‰");
 		
-		// ·ºĞÍ¹¹ÔìÆ÷ÖĞµÄT²ÎÊıÎªInteger¡£
+		// æ³›å‹æ„é€ å™¨ä¸­çš„Tå‚æ•°ä¸ºIntegerã€‚
 		new Foo(200);
 		
-		// ÏÔÊ½Ö¸¶¨·ºĞÍ¹¹ÔìÆ÷ÖĞµÄT²ÎÊıÎªString£¬
-		// ´«¸øFoo¹¹ÔìÆ÷µÄÊµ²ÎÒ²ÊÇString¶ÔÏó£¬ÍêÈ«ÕıÈ·¡£
-		new <String> Foo("·è¿ñAndroid½²Òå");
+		// æ˜¾å¼æŒ‡å®šæ³›å‹æ„é€ å™¨ä¸­çš„Tå‚æ•°ä¸ºStringï¼Œ
+		// ä¼ ç»™Fooæ„é€ å™¨çš„å®å‚ä¹Ÿæ˜¯Stringå¯¹è±¡ï¼Œå®Œå…¨æ­£ç¡®ã€‚
+		new <String> Foo("ç–¯ç‹‚Androidè®²ä¹‰");
 	
-		// ÏÔÊ½Ö¸¶¨·ºĞÍ¹¹ÔìÆ÷ÖĞµÄT²ÎÊıÎªString£¬
-		// µ«´«¸øFoo¹¹ÔìÆ÷µÄÊµ²ÎÊÇDouble¶ÔÏó£¬ÏÂÃæ´úÂë³ö´í
+		// æ˜¾å¼æŒ‡å®šæ³›å‹æ„é€ å™¨ä¸­çš„Tå‚æ•°ä¸ºStringï¼Œ
+		// ä½†ä¼ ç»™Fooæ„é€ å™¨çš„å®å‚æ˜¯Doubleå¯¹è±¡ï¼Œä¸‹é¢ä»£ç å‡ºé”™
 //		new <String> Foo(12.3);
 	}
 }

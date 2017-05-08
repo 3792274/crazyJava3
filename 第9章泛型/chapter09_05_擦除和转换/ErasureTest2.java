@@ -1,10 +1,10 @@
-package chapter09_05_²Á³ıºÍ×ª»»;
+package chapter09_05_æ“¦é™¤å’Œè½¬æ¢;
 
 
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -21,10 +21,10 @@ public class ErasureTest2
 		li.add(9);
 		List list = li;
 	
-		// ÏÂÃæ´úÂëÒıÆğ¡°Î´¾­¼ì²éµÄ×ª»»¡±µÄ¾¯¸æ£¬±àÒë¡¢ÔËĞĞÊ±ÍêÈ«Õı³£
-		List<String> ls = list;     // ¢Ù
+		// ä¸‹é¢ä»£ç å¼•èµ·â€œæœªç»æ£€æŸ¥çš„è½¬æ¢â€çš„è­¦å‘Šï¼Œç¼–è¯‘ã€è¿è¡Œæ—¶å®Œå…¨æ­£å¸¸
+		List<String> ls = list;     // â‘ 
 		
-		// µ«Ö»Òª·ÃÎÊlsÀïµÄÔªËØ£¬ÈçÏÂÃæ´úÂë½«ÒıÆğÔËĞĞÊ±Òì³£¡£
+		// ä½†åªè¦è®¿é—®lsé‡Œçš„å…ƒç´ ï¼Œå¦‚ä¸‹é¢ä»£ç å°†å¼•èµ·è¿è¡Œæ—¶å¼‚å¸¸ã€‚
 		System.out.println(ls.get(0));
 	}
 }

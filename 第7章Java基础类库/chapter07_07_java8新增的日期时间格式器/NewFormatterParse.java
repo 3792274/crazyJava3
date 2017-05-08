@@ -1,32 +1,32 @@
-package chapter07_07_java8ĞÂÔöµÄÈÕÆÚÊ±¼ä¸ñÊ½Æ÷;
+package chapter07_07_java8æ–°å¢çš„æ—¥æœŸæ—¶é—´æ ¼å¼å™¨;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * DateTimeFormatter ½âÎöÈÕÆÚ¡¢Ê±¼ä×Ö·û´®
+ * DateTimeFormatter è§£ææ—¥æœŸã€æ—¶é—´å­—ç¬¦ä¸²
  *
  */
 public class NewFormatterParse {
 
 	public static void main(String[] args) {
 		
-		//¶¨ÒåÒ»¸öÈÎÒâ¸ñÊ½µÄÈÕÆÚ¡¢Ê±¼ä×Ö·û´®
-		String str1="2014==04==12 01Ê±06·Ö09Ãë";
+		//å®šä¹‰ä¸€ä¸ªä»»æ„æ ¼å¼çš„æ—¥æœŸã€æ—¶é—´å­—ç¬¦ä¸²
+		String str1="2014==04==12 01æ—¶06åˆ†09ç§’";
 		
-		//¸ù¾İ×Ö·û´®½âÎöËùÓÃµÄ¸ñÊ½Æ÷
-		DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy==MM==dd HHÊ±mm·ÖssÃë");
+		//æ ¹æ®å­—ç¬¦ä¸²è§£ææ‰€ç”¨çš„æ ¼å¼å™¨
+		DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy==MM==dd HHæ—¶mmåˆ†ssç§’");
 		
-		//Ö´ĞĞ½âÎö
+		//æ‰§è¡Œè§£æ
 		LocalDateTime dt1 = LocalDateTime.parse(str1,formatter1);
-		System.out.println(dt1); //Êä³ö 2014-04-12T01:06:09
+		System.out.println(dt1); //è¾“å‡º 2014-04-12T01:06:09
 		
 		
-		//ÏÂÃæÔÚÊ¹ÓÃÁíÒ»¸ö×Ö·û´®
-		String str2 = "2014$$$ËÄÔÂ$$$13 20 Ğ¡Ê±";
-		DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy$$$MMM$$$dd HH Ğ¡Ê±");
+		//ä¸‹é¢åœ¨ä½¿ç”¨å¦ä¸€ä¸ªå­—ç¬¦ä¸²
+		String str2 = "2014$$$å››æœˆ$$$13 20 å°æ—¶";
+		DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy$$$MMM$$$dd HH å°æ—¶");
 		LocalDateTime dt2 = LocalDateTime.parse(str2,formatter2);
-		System.out.println(dt2);//Êä³ö 2014-04-13T20:00
+		System.out.println(dt2);//è¾“å‡º 2014-04-13T20:00
 
 	}
 

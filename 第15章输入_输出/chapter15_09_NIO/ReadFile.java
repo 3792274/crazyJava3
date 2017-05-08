@@ -6,8 +6,8 @@ import java.nio.*;
 import java.nio.channels.*;
 import java.nio.charset.*;
 /**
- * Description:Ê¹ÓÃ´«Í³µÄChannelºÍBuffer,ÓÃÖñÍ²¶à´ÎÈ¡Ë®£¬½â¾öÎÄ¼ş¹ı´óÒ»´ÎĞÔ¼ÓÔØÄÚ´æÒıÆğĞÔÄÜµÍÏÂ¡£
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:ä½¿ç”¨ä¼ ç»Ÿçš„Channelå’ŒBuffer,ç”¨ç«¹ç­’å¤šæ¬¡å–æ°´ï¼Œè§£å†³æ–‡ä»¶è¿‡å¤§ä¸€æ¬¡æ€§åŠ è½½å†…å­˜å¼•èµ·æ€§èƒ½ä½ä¸‹ã€‚
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -21,27 +21,27 @@ public class ReadFile
 		throws IOException
 	{
 		try(
-			// ´´½¨ÎÄ¼şÊäÈëÁ÷
+			// åˆ›å»ºæ–‡ä»¶è¾“å…¥æµ
 			FileInputStream fis = new FileInputStream("D:/a.txt");
-			// ´´½¨Ò»¸öFileChannel
+			// åˆ›å»ºä¸€ä¸ªFileChannel
 			FileChannel fcin = fis.getChannel())
 		{
-			// ¶¨ÒåÒ»¸öByteBuffer¶ÔÏó£¬ÓÃÓÚÖØ¸´È¡Ë®
+			// å®šä¹‰ä¸€ä¸ªByteBufferå¯¹è±¡ï¼Œç”¨äºé‡å¤å–æ°´
 			ByteBuffer bbuff = ByteBuffer.allocate(256);
-			// ½«FileChannelÖĞÊı¾İ·ÅÈëByteBufferÖĞ
+			// å°†FileChannelä¸­æ•°æ®æ”¾å…¥ByteBufferä¸­
 			while( fcin.read(bbuff) != -1 )
 			{
-				// Ëø¶¨BufferµÄ¿Õ°×Çø
+				// é”å®šBufferçš„ç©ºç™½åŒº
 				bbuff.flip();
-				// ´´½¨Charset¶ÔÏó->´´½¨½âÂëÆ÷(CharsetDecoder)¶ÔÏó
+				// åˆ›å»ºCharsetå¯¹è±¡->åˆ›å»ºè§£ç å™¨(CharsetDecoder)å¯¹è±¡
 				CharsetDecoder decoder = Charset.forName("GBK").newDecoder();
 				
-				// ½«ByteBufferµÄÄÚÈİ×ªÂë
+				// å°†ByteBufferçš„å†…å®¹è½¬ç 
 				CharBuffer cbuff = decoder.decode(bbuff);
 			
 				System.out.print(cbuff);
 				
-				// ½«Buffer³õÊ¼»¯£¬ÎªÏÂÒ»´Î¶ÁÈ¡Êı¾İ×ö×¼±¸
+				// å°†Bufferåˆå§‹åŒ–ï¼Œä¸ºä¸‹ä¸€æ¬¡è¯»å–æ•°æ®åšå‡†å¤‡
 				bbuff.clear();
 			}
 		}

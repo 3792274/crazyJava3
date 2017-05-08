@@ -1,7 +1,7 @@
-package chapter06_08_Java8ĞÂÔöµÄLambda±í´ïÊ½;
+package chapter06_08_Java8æ–°å¢çš„Lambdaè¡¨è¾¾å¼;
 /**
- * Description: Lambda±í´ïÊ½¾ÍÏàµ±ÓÚÒ»¸öÄäÃû·½·¨£¬ÓĞ·½·¨²ÎÊıÀ¨ºÅ¼°·½·¨Ìå¡£
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description: Lambdaè¡¨è¾¾å¼å°±ç›¸å½“äºä¸€ä¸ªåŒ¿åæ–¹æ³•ï¼Œæœ‰æ–¹æ³•å‚æ•°æ‹¬å·åŠæ–¹æ³•ä½“ã€‚
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,14 +15,14 @@ public class CommandTest03
 	{
 		ProcessArray02 pa = new ProcessArray02();
 		int[] array = {3, -4, 6, 4};
-		// ´¦ÀíÊı×é£¬¾ßÌå´¦ÀíĞĞÎªÈ¡¾öÓÚÄäÃûÄÚ²¿Àà,²»ĞèÒª·½·¨Ãû£¬·µ»ØÖµÀàĞÍ£¬Ö»Òª¸ø³ö·½·¨À¨ºÅ¼°À¨ºÅÀïµÄĞÎ²ÎÁĞ±í¼´¿É
+		// å¤„ç†æ•°ç»„ï¼Œå…·ä½“å¤„ç†è¡Œä¸ºå–å†³äºåŒ¿åå†…éƒ¨ç±»,ä¸éœ€è¦æ–¹æ³•åï¼Œè¿”å›å€¼ç±»å‹ï¼Œåªè¦ç»™å‡ºæ–¹æ³•æ‹¬å·åŠæ‹¬å·é‡Œçš„å½¢å‚åˆ—è¡¨å³å¯
 		pa.process(array , (int[] target)->{
 				int sum = 0;
 				for (int tmp : target )
 				{
 					sum += tmp;
 				}
-				System.out.println("Êı×éÔªËØµÄ×ÜºÍÊÇ:" + sum);
+				System.out.println("æ•°ç»„å…ƒç´ çš„æ€»å’Œæ˜¯:" + sum);
 			});
 	}
 }

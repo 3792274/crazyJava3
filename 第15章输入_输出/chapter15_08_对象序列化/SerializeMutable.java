@@ -1,10 +1,10 @@
-package chapter15_08_¶ÔÏóĞòÁĞ»¯;
+package chapter15_08_å¯¹è±¡åºåˆ—åŒ–;
 
 import java.io.*;
 
 /**
- * Description:ĞòÁĞ»¯ÒÔºó½«²»ÔÙ¸üĞÂ¶ÔÏó¡£ĞòÁĞ»¯ÒıÓÃ¶ÔÏóµÄÖµĞŞ¸ÄºóÔÙĞòÁĞ»¯Ò²²»»á±£´æĞŞ¸ÄºóµÄÖµ¡£ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:åºåˆ—åŒ–ä»¥åå°†ä¸å†æ›´æ–°å¯¹è±¡ã€‚åºåˆ—åŒ–å¼•ç”¨å¯¹è±¡çš„å€¼ä¿®æ”¹åå†åºåˆ—åŒ–ä¹Ÿä¸ä¼šä¿å­˜ä¿®æ”¹åçš„å€¼ã€‚ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -17,22 +17,22 @@ public class SerializeMutable {
 	public static void main(String[] args) {
 
 		try (
-				// ´´½¨Ò»¸öObjectOutputStreamÊäÈëÁ÷
+				// åˆ›å»ºä¸€ä¸ªObjectOutputStreamè¾“å…¥æµ
 				ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("mutable.txt"));
-				// ´´½¨Ò»¸öObjectInputStreamÊäÈëÁ÷
+				// åˆ›å»ºä¸€ä¸ªObjectInputStreamè¾“å…¥æµ
 				ObjectInputStream ois = new ObjectInputStream(new FileInputStream("mutable.txt"))) {
-			Person per = new Person("ËïÎò¿Õ", 500);
-			// ÏµÍ³»áper¶ÔÏó×ª»»×Ö½ÚĞòÁĞ²¢Êä³ö
+			Person per = new Person("å­™æ‚Ÿç©º", 500);
+			// ç³»ç»Ÿä¼šperå¯¹è±¡è½¬æ¢å­—èŠ‚åºåˆ—å¹¶è¾“å‡º
 			oos.writeObject(per);
-			// ¸Ä±äper¶ÔÏóµÄnameÊµÀı±äÁ¿
-			per.setName("Öí°Ë½ä");
-			// ÏµÍ³Ö»ÊÇÊä³öĞòÁĞ»¯±àºÅ£¬ËùÒÔ¸Ä±äºóµÄname²»»á±»ĞòÁĞ»¯
+			// æ”¹å˜perå¯¹è±¡çš„nameå®ä¾‹å˜é‡
+			per.setName("çŒªå…«æˆ’");
+			// ç³»ç»Ÿåªæ˜¯è¾“å‡ºåºåˆ—åŒ–ç¼–å·ï¼Œæ‰€ä»¥æ”¹å˜åçš„nameä¸ä¼šè¢«åºåˆ—åŒ–
 			oos.writeObject(per);
-			Person p1 = (Person) ois.readObject(); // ¢Ù
-			Person p2 = (Person) ois.readObject(); // ¢Ú
-			// ÏÂÃæÊä³ötrue£¬¼´·´ĞòÁĞ»¯ºóp1µÈÓÚp2
+			Person p1 = (Person) ois.readObject(); // â‘ 
+			Person p2 = (Person) ois.readObject(); // â‘¡
+			// ä¸‹é¢è¾“å‡ºtrueï¼Œå³ååºåˆ—åŒ–åp1ç­‰äºp2
 			System.out.println(p1 == p2);
-			// ÏÂÃæÒÀÈ»¿´µ½Êä³ö"ËïÎò¿Õ"£¬¼´¸Ä±äºóµÄÊµÀı±äÁ¿Ã»ÓĞ±»ĞòÁĞ»¯
+			// ä¸‹é¢ä¾ç„¶çœ‹åˆ°è¾“å‡º"å­™æ‚Ÿç©º"ï¼Œå³æ”¹å˜åçš„å®ä¾‹å˜é‡æ²¡æœ‰è¢«åºåˆ—åŒ–
 			System.out.println(p2.getName());
 		} catch (Exception ex) {
 			ex.printStackTrace();

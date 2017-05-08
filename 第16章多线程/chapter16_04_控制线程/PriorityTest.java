@@ -1,8 +1,8 @@
-package chapter16_04_¿ØÖÆÏß³Ì;
+package chapter16_04_æ§åˆ¶çº¿ç¨‹;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -12,36 +12,36 @@ package chapter16_04_¿ØÖÆÏß³Ì;
  * @version 1.0
  */
 public class PriorityTest extends Thread {
-	// ¶¨ÒåÒ»¸öÓĞ²ÎÊıµÄ¹¹ÔìÆ÷£¬ÓÃÓÚ´´½¨Ïß³ÌÊ±Ö¸¶¨name
+	// å®šä¹‰ä¸€ä¸ªæœ‰å‚æ•°çš„æ„é€ å™¨ï¼Œç”¨äºåˆ›å»ºçº¿ç¨‹æ—¶æŒ‡å®šname
 	public PriorityTest(String name) {
 		super(name);
 	}
 
 	public void run() {
 		for (int i = 0; i < 50; i++) {
-			System.out.println(getName() + ",ÆäÓÅÏÈ¼¶ÊÇ£º" + getPriority() + ",Ñ­»·±äÁ¿µÄÖµÎª:" + i);
+			System.out.println(getName() + ",å…¶ä¼˜å…ˆçº§æ˜¯ï¼š" + getPriority() + ",å¾ªç¯å˜é‡çš„å€¼ä¸º:" + i);
 		}
 	}
 
 	public static void main(String[] args) {
 		
-		// ¸Ä±äÖ÷Ïß³ÌµÄÓÅÏÈ¼¶
+		// æ”¹å˜ä¸»çº¿ç¨‹çš„ä¼˜å…ˆçº§
 		Thread.currentThread().setPriority(6);
 	
 		for (int i = 0; i < 30; i++) {
 			if (i == 10) {
-				PriorityTest low = new PriorityTest("µÍ¼¶");
+				PriorityTest low = new PriorityTest("ä½çº§");
 				low.start();
-				System.out.println("´´½¨Ö®³õµÄÓÅÏÈ¼¶:" + low.getPriority());
-				// ÉèÖÃ¸ÃÏß³ÌÎª×îµÍÓÅÏÈ¼¶
+				System.out.println("åˆ›å»ºä¹‹åˆçš„ä¼˜å…ˆçº§:" + low.getPriority());
+				// è®¾ç½®è¯¥çº¿ç¨‹ä¸ºæœ€ä½ä¼˜å…ˆçº§
 				low.setPriority(Thread.MIN_PRIORITY);
 			}
 			
 			if (i == 20) {
-				PriorityTest high = new PriorityTest("¸ß¼¶");
+				PriorityTest high = new PriorityTest("é«˜çº§");
 				high.start();
-				System.out.println("´´½¨Ö®³õµÄÓÅÏÈ¼¶:" + high.getPriority());
-				// ÉèÖÃ¸ÃÏß³ÌÎª×î¸ßÓÅÏÈ¼¶
+				System.out.println("åˆ›å»ºä¹‹åˆçš„ä¼˜å…ˆçº§:" + high.getPriority());
+				// è®¾ç½®è¯¥çº¿ç¨‹ä¸ºæœ€é«˜ä¼˜å…ˆçº§
 				high.setPriority(Thread.MAX_PRIORITY);
 			}
 		}

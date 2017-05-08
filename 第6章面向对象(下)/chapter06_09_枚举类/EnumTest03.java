@@ -1,9 +1,9 @@
-package chapter06_09_Ã¶¾ÙÀà;
+package chapter06_09_æšä¸¾ç±»;
 
 
 /**
- * Description:Ã¶¾ÙÀàÊ¹ÓÃ
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:æšä¸¾ç±»ä½¿ç”¨
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,31 +15,31 @@ public class EnumTest03
 {
 	public void judge(SeasonEnum02 s)
 	{
-		// switchÓï¾äÀïµÄ±í´ïÊ½¿ÉÒÔÊÇÃ¶¾ÙÖµ
+		// switchè¯­å¥é‡Œçš„è¡¨è¾¾å¼å¯ä»¥æ˜¯æšä¸¾å€¼
 		switch (s)
 		{
 			case SPRING:
-				System.out.println("´ºÅ¯»¨¿ª£¬ÕıºÃÌ¤Çà");
+				System.out.println("æ˜¥æš–èŠ±å¼€ï¼Œæ­£å¥½è¸é’");
 				break;
 			case SUMMER:
-				System.out.println("ÏÄÈÕÑ×Ñ×£¬ÊÊºÏÓÎÓ¾");
+				System.out.println("å¤æ—¥ç‚ç‚ï¼Œé€‚åˆæ¸¸æ³³");
 				break;
 			case FALL:
-				System.out.println("Çï¸ßÆøË¬£¬½ø²¹¼°Ê±");
+				System.out.println("ç§‹é«˜æ°”çˆ½ï¼Œè¿›è¡¥åŠæ—¶");
 				break;
 			case WINTER:
-				System.out.println("¶¬ÈÕÑ©Æ®£¬Î§Â¯ÉÍÑ©");
+				System.out.println("å†¬æ—¥é›ªé£˜ï¼Œå›´ç‚‰èµé›ª");
 				break;
 		}
 	}
 	public static void main(String[] args)
 	{
-		// Ã¶¾ÙÀàÄ¬ÈÏÓĞÒ»¸övalues·½·¨£¬·µ»Ø¸ÃÃ¶¾ÙÀàµÄËùÓĞÊµÀı
+		// æšä¸¾ç±»é»˜è®¤æœ‰ä¸€ä¸ªvaluesæ–¹æ³•ï¼Œè¿”å›è¯¥æšä¸¾ç±»çš„æ‰€æœ‰å®ä¾‹
 		for (SeasonEnum02 s : SeasonEnum02.values())
 		{
 			System.out.print(s+",");
 		}
-		// Ê¹ÓÃÃ¶¾ÙÊµÀıÊ±£¬¿ÉÍ¨¹ıEnumClass.variableĞÎÊ½À´·ÃÎÊ
+		// ä½¿ç”¨æšä¸¾å®ä¾‹æ—¶ï¼Œå¯é€šè¿‡EnumClass.variableå½¢å¼æ¥è®¿é—®
 		new EnumTest03().judge(SeasonEnum02.SPRING);
 	}
 }

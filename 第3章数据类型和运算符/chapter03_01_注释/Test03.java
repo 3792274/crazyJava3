@@ -1,8 +1,8 @@
-package chapter03_01_×¢ÊÍ;
+package chapter03_01_æ³¨é‡Š;
 
 /**
  * Description:
- * <br>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br>This program is protected by copyright laws.
  * <br>Program Name:
@@ -13,11 +13,11 @@ package chapter03_01_×¢ÊÍ;
 public class Test03
 {
 	/**
-	 * ¼òµ¥²âÊÔ³ÉÔ±±äÁ¿
+	 * ç®€å•æµ‹è¯•æˆå‘˜å˜é‡
 	 */
 	public int age;
 	/**
-	 * TestÀàµÄ²âÊÔ¹¹ÔìÆ÷
+	 * Testç±»çš„æµ‹è¯•æ„é€ å™¨
 	 */
 	public Test03()
 	{

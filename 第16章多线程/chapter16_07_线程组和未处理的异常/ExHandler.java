@@ -1,8 +1,8 @@
-package chapter16_07_Ïß³Ì×éºÍÎ´´¦ÀíµÄÒì³£;
+package chapter16_07_çº¿ç¨‹ç»„å’Œæœªå¤„ç†çš„å¼‚å¸¸;
 
 /**
- * Description:Ïß³ÌµÄÒì³£´¦Àí¡£ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:çº¿ç¨‹çš„å¼‚å¸¸å¤„ç†ã€‚ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -11,22 +11,22 @@ package chapter16_07_Ïß³Ì×éºÍÎ´´¦ÀíµÄÒì³£;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// ¶¨Òå×Ô¼ºµÄÒì³£´¦ÀíÆ÷
+// å®šä¹‰è‡ªå·±çš„å¼‚å¸¸å¤„ç†å™¨
 class MyExHandler implements Thread.UncaughtExceptionHandler {
-	// ÊµÏÖuncaughtException·½·¨£¬¸Ã·½·¨½«´¦ÀíÏß³ÌµÄÎ´´¦ÀíÒì³£
+	// å®ç°uncaughtExceptionæ–¹æ³•ï¼Œè¯¥æ–¹æ³•å°†å¤„ç†çº¿ç¨‹çš„æœªå¤„ç†å¼‚å¸¸
 	public void uncaughtException(Thread t, Throwable e) {
-		System.out.println(t.getName() + " Ïß³Ì³öÏÖÁËÒì³££º" + e);
+		System.out.println(t.getName() + " çº¿ç¨‹å‡ºç°äº†å¼‚å¸¸ï¼š" + e);
 	}
 }
 
 public class ExHandler {
 	public static void main(String[] args) {
-		// ÉèÖÃÖ÷Ïß³ÌµÄÒì³£´¦ÀíÆ÷
-		Thread.currentThread().setName("MainÖ÷Ïß³Ì");
+		// è®¾ç½®ä¸»çº¿ç¨‹çš„å¼‚å¸¸å¤„ç†å™¨
+		Thread.currentThread().setName("Mainä¸»çº¿ç¨‹");
 		Thread.currentThread().setUncaughtExceptionHandler(new MyExHandler());
-		int a = 5 / 0; // ¢Ù
+		int a = 5 / 0; // â‘ 
 		
-		//Ïß³ÌÒì³£³öÏÖºó£¬ÕÒµ½¶ÔÓ¦µÄ´¦ÀíÀà½«²»»áÕı³£½áÊø³ÌĞò£¬ÒÔÏÂÄÚÈİ²»»áÖ´ĞĞ¡£
-		System.out.println("³ÌĞòÕı³£½áÊø£¡");
+		//çº¿ç¨‹å¼‚å¸¸å‡ºç°åï¼Œæ‰¾åˆ°å¯¹åº”çš„å¤„ç†ç±»å°†ä¸ä¼šæ­£å¸¸ç»“æŸç¨‹åºï¼Œä»¥ä¸‹å†…å®¹ä¸ä¼šæ‰§è¡Œã€‚
+		System.out.println("ç¨‹åºæ­£å¸¸ç»“æŸï¼");
 	}
 }

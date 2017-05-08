@@ -1,11 +1,11 @@
-package chapter11_03_²¼¾Ö¹ÜÀíÆ÷;
+package chapter11_03_å¸ƒå±€ç®¡ç†å™¨;
 
 import java.awt.*;
 import java.awt.event.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,14 +15,14 @@ import java.awt.event.*;
  * @version 1.0
  */
 public class CardLayoutTest {
-	Frame frame = new Frame("²âÊÔ´°¿Ú");
+	Frame frame = new Frame("æµ‹è¯•çª—å£");
 	
 
 
 	public void init() {
 		
 		
-		String[] lableNames = { "µÚÒ»ÕÅ", "µÚ¶şÕÅ", "µÚÈıÕÅ", "µÚËÄÕÅ", "µÚÎåÕÅ" };
+		String[] lableNames = { "ç¬¬ä¸€å¼ ", "ç¬¬äºŒå¼ ", "ç¬¬ä¸‰å¼ ", "ç¬¬å››å¼ ", "ç¬¬äº”å¼ " };
 		
 		Panel lablePanel = new Panel();
 		Panel buttonPanel = new Panel();
@@ -39,38 +39,38 @@ public class CardLayoutTest {
 		
 		ActionListener listener = e -> {
 			switch (e.getActionCommand()) {
-			case "ÉÏÒ»ÕÅ":
+			case "ä¸Šä¸€å¼ ":
 				cardLayout.previous(lablePanel);
 				break;
-			case "ÏÂÒ»ÕÅ":
+			case "ä¸‹ä¸€å¼ ":
 				cardLayout.next(lablePanel);
 				break;
-			case "µÚÒ»ÕÅ":
+			case "ç¬¬ä¸€å¼ ":
 				cardLayout.first(lablePanel);
 				break;
-			case "×îºóÒ»ÕÅ":
+			case "æœ€åä¸€å¼ ":
 				cardLayout.last(lablePanel);
 				break;
-			case "µÚÈıÕÅ":
-				cardLayout.show(lablePanel, "µÚÈıÕÅ");
+			case "ç¬¬ä¸‰å¼ ":
+				cardLayout.show(lablePanel, "ç¬¬ä¸‰å¼ ");
 				break;
 			}
 		};
 		
-		// ¿ØÖÆÏÔÊ¾ÉÏÒ»ÕÅµÄ°´Å¥
-		Button previous = new Button("ÉÏÒ»ÕÅ");
+		// æ§åˆ¶æ˜¾ç¤ºä¸Šä¸€å¼ çš„æŒ‰é’®
+		Button previous = new Button("ä¸Šä¸€å¼ ");
 		previous.addActionListener(listener);
-		// ¿ØÖÆÏÔÊ¾ÏÂÒ»ÕÅµÄ°´Å¥
-		Button next = new Button("ÏÂÒ»ÕÅ");
+		// æ§åˆ¶æ˜¾ç¤ºä¸‹ä¸€å¼ çš„æŒ‰é’®
+		Button next = new Button("ä¸‹ä¸€å¼ ");
 		next.addActionListener(listener);
-		// ¿ØÖÆÏÔÊ¾µÚÒ»ÕÅµÄ°´Å¥
-		Button first = new Button("µÚÒ»ÕÅ");
+		// æ§åˆ¶æ˜¾ç¤ºç¬¬ä¸€å¼ çš„æŒ‰é’®
+		Button first = new Button("ç¬¬ä¸€å¼ ");
 		first.addActionListener(listener);
-		// ¿ØÖÆÏÔÊ¾×îºóÒ»ÕÅµÄ°´Å¥
-		Button last = new Button("×îºóÒ»ÕÅ");
+		// æ§åˆ¶æ˜¾ç¤ºæœ€åä¸€å¼ çš„æŒ‰é’®
+		Button last = new Button("æœ€åä¸€å¼ ");
 		last.addActionListener(listener);
-		// ¿ØÖÆ¸ù¾İCardÃûÏÔÊ¾µÄ°´Å¥
-		Button third = new Button("µÚÈıÕÅ");
+		// æ§åˆ¶æ ¹æ®Cardåæ˜¾ç¤ºçš„æŒ‰é’®
+		Button third = new Button("ç¬¬ä¸‰å¼ ");
 		third.addActionListener(listener);
 		
 		buttonPanel.add(previous);

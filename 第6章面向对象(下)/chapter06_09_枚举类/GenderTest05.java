@@ -1,9 +1,9 @@
-package chapter06_09_Ã¶¾ÙÀà;
+package chapter06_09_æšä¸¾ç±»;
 
 
 /**
- * Description:Ã¶¾ÙÀàÊ¹ÓÃ
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:æšä¸¾ç±»ä½¿ç”¨
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,11 +15,11 @@ public class GenderTest05
 {
 	public static void main(String[] args)
 	{
-		// Í¨¹ıEnumµÄvalueOf()·½·¨À´»ñÈ¡Ö¸¶¨Ã¶¾ÙÀàµÄÃ¶¾ÙÖµ
+		// é€šè¿‡Enumçš„valueOf()æ–¹æ³•æ¥è·å–æŒ‡å®šæšä¸¾ç±»çš„æšä¸¾å€¼
 		Gender04 g = Enum.valueOf(Gender04.class , "FEMALE");
-		// Ö±½ÓÎªÃ¶¾ÙÖµµÄnameÊµÀı±äÁ¿¸³Öµ
-		g.name = "Å®";
-		// Ö±½Ó·ÃÎÊÃ¶¾ÙÖµµÄnameÊµÀı±äÁ¿
-		System.out.println(g + "´ú±í:" + g.name);
+		// ç›´æ¥ä¸ºæšä¸¾å€¼çš„nameå®ä¾‹å˜é‡èµ‹å€¼
+		g.name = "å¥³";
+		// ç›´æ¥è®¿é—®æšä¸¾å€¼çš„nameå®ä¾‹å˜é‡
+		System.out.println(g + "ä»£è¡¨:" + g.name);
 	}
 }

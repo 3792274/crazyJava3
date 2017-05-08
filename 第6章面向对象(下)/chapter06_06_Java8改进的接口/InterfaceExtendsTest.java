@@ -1,8 +1,8 @@
-package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
+package chapter06_06_Java8æ”¹è¿›çš„æ¥å£;
 
 /**
- * Description: ½Ó¿ÚµÄ¼Ì³Ğ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description: æ¥å£çš„ç»§æ‰¿ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>

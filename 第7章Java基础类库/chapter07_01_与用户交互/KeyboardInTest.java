@@ -1,10 +1,10 @@
-package chapter07_01_ÓëÓÃ»§½»»¥;
+package chapter07_01_ä¸ç”¨æˆ·äº¤äº’;
 
 import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -19,14 +19,14 @@ public class KeyboardInTest {
 	public static void main(String[] args) throws Exception {
 		
 		
-		// ÒÔSystem.in½ÚµãÁ÷Îª»ù´¡£¬´´½¨Ò»¸öBufferedReader¶ÔÏó
+		// ä»¥System.inèŠ‚ç‚¹æµä¸ºåŸºç¡€ï¼Œåˆ›å»ºä¸€ä¸ªBufferedReaderå¯¹è±¡
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	
 		String line = null;
 		
-		// ÖğĞĞ¶ÁÈ¡¼üÅÌÊäÈë
+		// é€è¡Œè¯»å–é”®ç›˜è¾“å…¥
 		while ((line = br.readLine()) != null) {
-			System.out.println("ÓÃ»§¼üÅÌÊäÈëÊÇ:" + line);
+			System.out.println("ç”¨æˆ·é”®ç›˜è¾“å…¥æ˜¯:" + line);
 		}
 	}
 }

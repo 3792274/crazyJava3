@@ -1,10 +1,10 @@
-package chapter06_04_finalĞŞÊÎ·û;
+package chapter06_04_finalä¿®é¥°ç¬¦;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,11 +14,11 @@ package chapter06_04_finalĞŞÊÎ·û;
  */
 public class FinalErrorTest
 {
-	// ¶¨ÒåÒ»¸öfinalĞŞÊÎµÄÊµÀı±äÁ¿
-	// ÏµÍ³²»»á¶Ôfinal³ÉÔ±±äÁ¿½øĞĞÄ¬ÈÏ³õÊ¼»¯
+	// å®šä¹‰ä¸€ä¸ªfinalä¿®é¥°çš„å®ä¾‹å˜é‡
+	// ç³»ç»Ÿä¸ä¼šå¯¹finalæˆå‘˜å˜é‡è¿›è¡Œé»˜è®¤åˆå§‹åŒ–
 	final int age;
 	{
-		// ageÃ»ÓĞ³õÊ¼»¯£¬ËùÒÔ´Ë´¦´úÂë½«ÒıÆğ´íÎó¡£
+		// ageæ²¡æœ‰åˆå§‹åŒ–ï¼Œæ‰€ä»¥æ­¤å¤„ä»£ç å°†å¼•èµ·é”™è¯¯ã€‚
 //		System.out.println(age);
 		age = 6;
 		System.out.println(age);

@@ -1,18 +1,18 @@
-package chapter06_09_Ã¶¾ÙÀà;
+package chapter06_09_æšä¸¾ç±»;
 
 
 /**
- * Description:Ã¶¾ÙÀà¶¨Òå
- * 1.¿ÉÒÔÊµÏÖ¶à¸ö½Ó¿Ú£¬·ÇObject,¶øÊÇjava.lang.Enum,
- * 2.Ä¬ÈÏ·Ç³éÏóµÄfinalĞŞÊÎ£¬²»ÄÜÅÉÉú×ÓÀà
- * 3.¹¹ÔìÆ÷ÊÇprivateµÄ
- * 4.ËùÓĞÊµÀı±ØĞë·ÅÔÚµÚÒ»ĞĞ£¬Ä¬ÈÏÌí¼Ópublic static final
+ * Description:æšä¸¾ç±»å®šä¹‰
+ * 1.å¯ä»¥å®ç°å¤šä¸ªæ¥å£ï¼ŒéObject,è€Œæ˜¯java.lang.Enum,
+ * 2.é»˜è®¤éæŠ½è±¡çš„finalä¿®é¥°ï¼Œä¸èƒ½æ´¾ç”Ÿå­ç±»
+ * 3.æ„é€ å™¨æ˜¯privateçš„
+ * 4.æ‰€æœ‰å®ä¾‹å¿…é¡»æ”¾åœ¨ç¬¬ä¸€è¡Œï¼Œé»˜è®¤æ·»åŠ public static final
  * 
  * 
  *  Object eeEnum02 = SeasonEnum02.FALL;
  *  
  * 
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -22,6 +22,6 @@ package chapter06_09_Ã¶¾ÙÀà;
  */
 public enum SeasonEnum02
 {
-	// ÔÚµÚÒ»ĞĞÁĞ³ö4¸öÃ¶¾ÙÊµÀı
+	// åœ¨ç¬¬ä¸€è¡Œåˆ—å‡º4ä¸ªæšä¸¾å®ä¾‹
 	SPRING,SUMMER,FALL,WINTER;
 }

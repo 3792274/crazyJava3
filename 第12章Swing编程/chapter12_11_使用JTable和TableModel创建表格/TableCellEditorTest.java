@@ -1,4 +1,4 @@
-package chapter12_11_Ê¹ÓÃJTableºÍTableModel´´½¨±í¸ñ;
+package chapter12_11_ä½¿ç”¨JTableå’ŒTableModelåˆ›å»ºè¡¨æ ¼;
 
 
 import java.io.File;
@@ -10,7 +10,7 @@ import javax.swing.table.*;
 import javax.swing.filechooser.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,47 +20,47 @@ import javax.swing.filechooser.*;
  */
 public class TableCellEditorTest
 {
-	JFrame jf = new JFrame("Ê¹ÓÃµ¥Ôª¸ñ±à¼­Æ÷");
+	JFrame jf = new JFrame("ä½¿ç”¨å•å…ƒæ ¼ç¼–è¾‘å™¨");
 	JTable table;
-	// ¶¨Òå¶şÎ¬Êı×é×÷Îª±í¸ñÊı¾İ
+	// å®šä¹‰äºŒç»´æ•°ç»„ä½œä¸ºè¡¨æ ¼æ•°æ®
 	Object[][] tableData =
 	{
-		new Object[]{"ÀîÇåÕÕ" , 29 , "Å®" , new ImageIcon("icon/3.gif")
+		new Object[]{"ææ¸…ç…§" , 29 , "å¥³" , new ImageIcon("icon/3.gif")
 			, new ImageIcon("icon/3.gif") , true},
-		new Object[]{"ËÕ¸ñÀ­µ×", 56 , "ÄĞ" , new ImageIcon("icon/1.gif")
+		new Object[]{"è‹æ ¼æ‹‰åº•", 56 , "ç”·" , new ImageIcon("icon/1.gif")
 			, new ImageIcon("icon/1.gif") , false},
-		new Object[]{"Àî°×", 35 , "ÄĞ" , new ImageIcon("icon/4.gif")
+		new Object[]{"æç™½", 35 , "ç”·" , new ImageIcon("icon/4.gif")
 			, new ImageIcon("icon/4.gif") , true},
-		new Object[]{"ÅªÓñ", 18 , "Å®" , new ImageIcon("icon/2.gif")
+		new Object[]{"å¼„ç‰", 18 , "å¥³" , new ImageIcon("icon/2.gif")
 			, new ImageIcon("icon/2.gif") , true},
-		new Object[]{"»¢Í·" , 2 , "ÄĞ" , new ImageIcon("icon/5.gif")
+		new Object[]{"è™å¤´" , 2 , "ç”·" , new ImageIcon("icon/5.gif")
 			, new ImageIcon("icon/5.gif") , false}
 	};
-	// ¶¨ÒåÒ»Î¬Êı¾İ×÷ÎªÁĞ±êÌâ
-	String[] columnTitle = {"ĞÕÃû" , "ÄêÁä" , "ĞÔ±ğ" , "Ö÷Í·Ïñ"
-		, "´ÎÍ·Ïñ" , "ÊÇ·ñÖĞ¹úÈË"};
+	// å®šä¹‰ä¸€ç»´æ•°æ®ä½œä¸ºåˆ—æ ‡é¢˜
+	String[] columnTitle = {"å§“å" , "å¹´é¾„" , "æ€§åˆ«" , "ä¸»å¤´åƒ"
+		, "æ¬¡å¤´åƒ" , "æ˜¯å¦ä¸­å›½äºº"};
 	public void init()
 	{
-		// ÒÔ¶şÎ¬Êı×éºÍÒ»Î¬Êı×éÀ´´´½¨Ò»¸öExtendedTableModel¶ÔÏó
+		// ä»¥äºŒç»´æ•°ç»„å’Œä¸€ç»´æ•°ç»„æ¥åˆ›å»ºä¸€ä¸ªExtendedTableModelå¯¹è±¡
 		ExtendedTableModel model = new ExtendedTableModel(
 			columnTitle , tableData);
-		// ÒÔExtendedTableModelÀ´´´½¨JTable
+		// ä»¥ExtendedTableModelæ¥åˆ›å»ºJTable
 		table = new JTable(model);
 		table.setRowSelectionAllowed(false);
 		table.setRowHeight(40);
-		// Îª¸Ã±í¸ñÖ¸¶¨Ä¬ÈÏµÄ±à¼­Æ÷
+		// ä¸ºè¯¥è¡¨æ ¼æŒ‡å®šé»˜è®¤çš„ç¼–è¾‘å™¨
 		table.setDefaultEditor(ImageIcon.class, new ImageCellEditor());
-		// »ñÈ¡µÚÎåÁĞ
+		// è·å–ç¬¬äº”åˆ—
 		TableColumn lastColumn = table.getColumnModel().getColumn(4);
-		// ´´½¨JComboBox¶ÔÏó£¬²¢Ìí¼Ó¶à¸öÍ¼±êÁĞ±íÏî
+		// åˆ›å»ºJComboBoxå¯¹è±¡ï¼Œå¹¶æ·»åŠ å¤šä¸ªå›¾æ ‡åˆ—è¡¨é¡¹
 		JComboBox<ImageIcon> editCombo = new JComboBox<>();
 		for (int i = 1; i <= 10; i++)
 		{
 			editCombo.addItem(new ImageIcon("icon/" + i + ".gif"));
 		}
-		// ÉèÖÃµÚÎåÁĞÊ¹ÓÃ»ùÓÚJComboBoxµÄDefaultCellEditor
+		// è®¾ç½®ç¬¬äº”åˆ—ä½¿ç”¨åŸºäºJComboBoxçš„DefaultCellEditor
 		lastColumn.setCellEditor(new DefaultCellEditor(editCombo));
-		// ½«JTable¶ÔÏó·ÅÔÚJScrollPaneÖĞ£¬²¢½«¸ÃJScrollPane·ÅÔÚ´°¿ÚÖĞÏÔÊ¾³öÀ´
+		// å°†JTableå¯¹è±¡æ”¾åœ¨JScrollPaneä¸­ï¼Œå¹¶å°†è¯¥JScrollPaneæ”¾åœ¨çª—å£ä¸­æ˜¾ç¤ºå‡ºæ¥
 		jf.add(new JScrollPane(table));
 		jf.pack();
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -73,38 +73,38 @@ public class TableCellEditorTest
 }
 class ExtendedTableModel extends DefaultTableModel
 {
-	// ÖØĞÂÌá¹©Ò»¸ö¹¹ÔìÆ÷£¬¸Ã¹¹ÔìÆ÷µÄÊµÏÖÎ¯ÍĞ¸øDefaultTableModel¸¸Àà
+	// é‡æ–°æä¾›ä¸€ä¸ªæ„é€ å™¨ï¼Œè¯¥æ„é€ å™¨çš„å®ç°å§”æ‰˜ç»™DefaultTableModelçˆ¶ç±»
 	public ExtendedTableModel(String[] columnNames , Object[][] cells)
 	{
 		super(cells , columnNames);
 	}
-	// ÖØĞ´getColumnClass·½·¨£¬¸ù¾İÃ¿ÁĞµÄµÚÒ»¸öÖµ·µ»Ø¸ÃÁĞÕæÊµµÄÊı¾İÀàĞÍ
+	// é‡å†™getColumnClassæ–¹æ³•ï¼Œæ ¹æ®æ¯åˆ—çš„ç¬¬ä¸€ä¸ªå€¼è¿”å›è¯¥åˆ—çœŸå®çš„æ•°æ®ç±»å‹
 	public Class getColumnClass(int c)
 	{
 		return getValueAt(0 , c).getClass();
 	}
 }
-// À©Õ¹DefaultCellEditorÀ´ÊµÏÖTableCellEditorÀà
+// æ‰©å±•DefaultCellEditoræ¥å®ç°TableCellEditorç±»
 class ImageCellEditor extends DefaultCellEditor
 {
-	// ¶¨ÒåÎÄ¼şÑ¡ÔñÆ÷
+	// å®šä¹‰æ–‡ä»¶é€‰æ‹©å™¨
 	private JFileChooser fDialog = new JFileChooser(); ;
 	private JTextField field = new JTextField(15);
 	private JButton button = new JButton("...");
 	public ImageCellEditor()
 	{
-		// ÒòÎªDefaultCellEditorÃ»ÓĞÎŞ²ÎÊıµÄ¹¹ÔìÆ÷
-		// ËùÒÔÕâÀïÏÔÊ½µ÷ÓÃ¸¸ÀàÓĞ²ÎÊıµÄ¹¹ÔìÆ÷¡£
+		// å› ä¸ºDefaultCellEditoræ²¡æœ‰æ— å‚æ•°çš„æ„é€ å™¨
+		// æ‰€ä»¥è¿™é‡Œæ˜¾å¼è°ƒç”¨çˆ¶ç±»æœ‰å‚æ•°çš„æ„é€ å™¨ã€‚
 		super(new JTextField());
 		initEditor();
 	}
 	private void initEditor()
 	{
 		field.setEditable(false);
-		// Îª°´Å¥Ìí¼Ó¼àÌıÆ÷£¬µ±ÓÃ»§µ¥»÷¸Ã°´Å¥Ê±£¬
-		// ÏµÍ³½«³öÏÖÒ»¸öÎÄ¼şÑ¡ÔñÆ÷ÈÃÓÃ»§Ñ¡ÔñÍ¼±êÎÄ¼ş¡£
+		// ä¸ºæŒ‰é’®æ·»åŠ ç›‘å¬å™¨ï¼Œå½“ç”¨æˆ·å•å‡»è¯¥æŒ‰é’®æ—¶ï¼Œ
+		// ç³»ç»Ÿå°†å‡ºç°ä¸€ä¸ªæ–‡ä»¶é€‰æ‹©å™¨è®©ç”¨æˆ·é€‰æ‹©å›¾æ ‡æ–‡ä»¶ã€‚
 		button.addActionListener(e -> browse());
-		// ÎªÎÄ¼şÑ¡ÔñÆ÷°²×°ÎÄ¼ş¹ıÂËÆ÷
+		// ä¸ºæ–‡ä»¶é€‰æ‹©å™¨å®‰è£…æ–‡ä»¶è¿‡æ»¤å™¨
 		fDialog.addChoosableFileFilter(new FileFilter()
 		{
 			public boolean accept(File f)
@@ -134,16 +134,16 @@ class ImageCellEditor extends DefaultCellEditor
 			}
 			public String getDescription()
 			{
-				return "ÓĞĞ§µÄÍ¼Æ¬ÎÄ¼ş";
+				return "æœ‰æ•ˆçš„å›¾ç‰‡æ–‡ä»¶";
 			}
 		});
 		fDialog.setAcceptAllFileFilterUsed(false);
 	}
-	// ÖØĞ´TableCellEditor½Ó¿ÚµÄgetTableCellEditorComponent·½·¨
-	// ¸Ã·½·¨·µ»Øµ¥Ôª¸ñ±à¼­Æ÷£¬¸Ã±à¼­Æ÷ÊÇÒ»¸öJPanel£¬
-	// ¸ÃÈİÆ÷°üº¬Ò»¸öÎÄ±¾¿òºÍÒ»¸ö°´Å¥
+	// é‡å†™TableCellEditoræ¥å£çš„getTableCellEditorComponentæ–¹æ³•
+	// è¯¥æ–¹æ³•è¿”å›å•å…ƒæ ¼ç¼–è¾‘å™¨ï¼Œè¯¥ç¼–è¾‘å™¨æ˜¯ä¸€ä¸ªJPanelï¼Œ
+	// è¯¥å®¹å™¨åŒ…å«ä¸€ä¸ªæ–‡æœ¬æ¡†å’Œä¸€ä¸ªæŒ‰é’®
 	public Component getTableCellEditorComponent(JTable table
-		, Object value , boolean isSelected , int row , int column)  // ¢Ù
+		, Object value , boolean isSelected , int row , int column)  // â‘ 
 	{
 		this.button.setPreferredSize(new Dimension(20, 20));
 		JPanel panel = new JPanel();
@@ -159,20 +159,20 @@ class ImageCellEditor extends DefaultCellEditor
 	}
 	private void browse()
 	{
-		// ÉèÖÃ¡¢´ò¿ªÎÄ¼şÑ¡ÔñÆ÷
+		// è®¾ç½®ã€æ‰“å¼€æ–‡ä»¶é€‰æ‹©å™¨
 		fDialog.setCurrentDirectory(new File("icon"));
 		int result = fDialog.showOpenDialog(null);
-		// Èç¹ûµ¥»÷ÁËÎÄ¼şÑ¡ÔñÆ÷µÄ¡°È¡Ïû¡±°´Å¥
+		// å¦‚æœå•å‡»äº†æ–‡ä»¶é€‰æ‹©å™¨çš„â€œå–æ¶ˆâ€æŒ‰é’®
 		if (result == JFileChooser.CANCEL_OPTION)
 		{
-			// È¡Ïû±à¼­
+			// å–æ¶ˆç¼–è¾‘
 			super.cancelCellEditing();
 			return;
 		}
-		// Èç¹ûµ¥»÷ÁËÎÄ¼şÑ¡ÔñÆ÷µÄ¡°È·¶¨¡±°´Å¥
+		// å¦‚æœå•å‡»äº†æ–‡ä»¶é€‰æ‹©å™¨çš„â€œç¡®å®šâ€æŒ‰é’®
 		else
 		{
-			// ÉèÖÃfieldµÄÄÚÈİ
+			// è®¾ç½®fieldçš„å†…å®¹
 			field.setText("icon/" + fDialog.getSelectedFile().getName());
 		}
 	}
@@ -185,7 +185,7 @@ class Utils
 	public final static String tiff = "tiff";
 	public final static String tif = "tif";
 	public final static String png = "png";
-	// »ñÈ¡ÎÄ¼şÀ©Õ¹ÃûµÄ·½·¨
+	// è·å–æ–‡ä»¶æ‰©å±•åçš„æ–¹æ³•
 	public static String getExtension(File f)
 	{
 		String ext = null;

@@ -1,16 +1,16 @@
-package chapter07_03_³£ÓÃÀà;
+package chapter07_03_å¸¸ç”¨ç±»;
 
 import java.math.*;
 /**
  * Description:
- * 1.double: ¼ÆËã»úµÄĞ¡Êı²¿·ÖÎŞ·¨¾«È·±íÊ¾£¬ÒòÎª0.9*2=1.8 , 0.8*2 = 1.6 ....ÓÀÔ¶³ı²»¾¡¡£
- * 2.BigDecimal,²»ÍÆ¼öÊ¹ÓÃdouble µÄ¹¹Ôìº¯Êı£¬Ó¦¸ÃÊ¹ÓÃ"0.5" »òÕßBigDecimal.valueOf()
+ * 1.double: è®¡ç®—æœºçš„å°æ•°éƒ¨åˆ†æ— æ³•ç²¾ç¡®è¡¨ç¤ºï¼Œå› ä¸º0.9*2=1.8 , 0.8*2 = 1.6 ....æ°¸è¿œé™¤ä¸å°½ã€‚
+ * 2.BigDecimal,ä¸æ¨èä½¿ç”¨double çš„æ„é€ å‡½æ•°ï¼Œåº”è¯¥ä½¿ç”¨"0.5" æˆ–è€…BigDecimal.valueOf()
  * 
  * 
  * 
  * 
  * 
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -24,17 +24,17 @@ public class BigDecimalTest08
 	{
 		BigDecimal f1 = new BigDecimal("0.05");
 		BigDecimal f2 = BigDecimal.valueOf(0.01);
-		BigDecimal f3 = new BigDecimal(0.05);  //¶ªÊ§¾«¶È¡£¡£¡£double ÎŞ·¨¾«È·±íÊ¾¸¡µã¡£
+		BigDecimal f3 = new BigDecimal(0.05);  //ä¸¢å¤±ç²¾åº¦ã€‚ã€‚ã€‚double æ— æ³•ç²¾ç¡®è¡¨ç¤ºæµ®ç‚¹ã€‚
 		
 		
 		
-		System.out.println("Ê¹ÓÃString×÷ÎªBigDecimal¹¹ÔìÆ÷²ÎÊı£º");
+		System.out.println("ä½¿ç”¨Stringä½œä¸ºBigDecimalæ„é€ å™¨å‚æ•°ï¼š");
 		System.out.println("0.05 + 0.01 = " + f1.add(f2));
 		System.out.println("0.05 - 0.01 = " + f1.subtract(f2));
 		System.out.println("0.05 * 0.01 = " + f1.multiply(f2));
 		System.out.println("0.05 / 0.01 = " + f1.divide(f2));
 		
-		System.out.println("Ê¹ÓÃdouble×÷ÎªBigDecimal¹¹ÔìÆ÷²ÎÊı£º");
+		System.out.println("ä½¿ç”¨doubleä½œä¸ºBigDecimalæ„é€ å™¨å‚æ•°ï¼š");
 		System.out.println("0.05 + 0.01 = " + f3.add(f2));
 		System.out.println("0.05 - 0.01 = " + f3.subtract(f2));
 		System.out.println("0.05 * 0.01 = " + f3.multiply(f2));

@@ -1,29 +1,29 @@
-package chapter09_03_ÀàĞÍÍ¨Åä·û;
+package chapter09_03_ç±»å‹é€šé…ç¬¦;
 
 import java.util.*;
 /**
  * Description:
- * ·ºĞÍ²»¼Ì³Ğ¡£
- * Êı×éºÍ·ºĞÍÓĞËù²»Í¬£¬¼ÙÉèFooÊÇBarµÄÒ»¸ö×ÓÀàĞÍ£¨×ÓÀà»òÕß×Ó½Ó¿Ú£©£¬ÄÇÃ´Foo[]ÒÀÈ»ÊÇBar[]µÄ×ÓÀàĞÍ
- * µ«ÊÇG<Foo>²»ÊÇG<Bar>µÄ×ÓÀàĞÍ
+ * æ³›å‹ä¸ç»§æ‰¿ã€‚
+ * æ•°ç»„å’Œæ³›å‹æœ‰æ‰€ä¸åŒï¼Œå‡è®¾Fooæ˜¯Barçš„ä¸€ä¸ªå­ç±»å‹ï¼ˆå­ç±»æˆ–è€…å­æ¥å£ï¼‰ï¼Œé‚£ä¹ˆFoo[]ä¾ç„¶æ˜¯Bar[]çš„å­ç±»å‹
+ * ä½†æ˜¯G<Foo>ä¸æ˜¯G<Bar>çš„å­ç±»å‹
  */
 public class ArrayErr
 {
 	public static void main(String[] args)
 	{
-		// ¶¨ÒåÒ»¸öIntegerÊı×é
+		// å®šä¹‰ä¸€ä¸ªIntegeræ•°ç»„
 		Integer[] ia = new Integer[5];
 	
-		// ¿ÉÒÔ°ÑÒ»¸öInteger[]Êı×é¸³¸øNumber[]±äÁ¿
+		// å¯ä»¥æŠŠä¸€ä¸ªInteger[]æ•°ç»„èµ‹ç»™Number[]å˜é‡
 		Number[] na = ia;
 		
-		// ÏÂÃæ´úÂë±àÒëÕı³££¬µ«ÔËĞĞÊ±»áÒı·¢ArrayStoreExceptionÒì³£
-		// ÒòÎª0.5²¢²»ÊÇInteger
-		na[0] = 0.5;   // ¢Ù
+		// ä¸‹é¢ä»£ç ç¼–è¯‘æ­£å¸¸ï¼Œä½†è¿è¡Œæ—¶ä¼šå¼•å‘ArrayStoreExceptionå¼‚å¸¸
+		// å› ä¸º0.5å¹¶ä¸æ˜¯Integer
+		na[0] = 0.5;   // â‘ 
 	
 		List<Integer> iList = new ArrayList<>();
 		
-		// ÏÂÃæ´úÂëµ¼ÖÂ±àÒë´íÎó
+		// ä¸‹é¢ä»£ç å¯¼è‡´ç¼–è¯‘é”™è¯¯
 //		List<Number> nList = iList;
 	}
 }

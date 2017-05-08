@@ -1,9 +1,9 @@
-package chapter06_08_Java8ĞÂÔöµÄLambda±í´ïÊ½;
+package chapter06_08_Java8æ–°å¢çš„Lambdaè¡¨è¾¾å¼;
 
 import javax.swing.*;
 /**
- * Description:ÒıÓÃÀà·½·¨
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:å¼•ç”¨ç±»æ–¹æ³•
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -29,43 +29,43 @@ public class MethodRefer06
 {
 	public static void main(String[] args)
 	{
-		// ÏÂÃæ´úÂëÊ¹ÓÃLambda±í´ïÊ½´´½¨Converter¶ÔÏó£¬ÒıÓÃÀà·½·¨
+		// ä¸‹é¢ä»£ç ä½¿ç”¨Lambdaè¡¨è¾¾å¼åˆ›å»ºConverterå¯¹è±¡ï¼Œå¼•ç”¨ç±»æ–¹æ³•
 //		Converter converter1 = from -> Integer.valueOf(from);
-//		// ·½·¨ÒıÓÃ´úÌæLambda±í´ïÊ½£ºÒıÓÃÀà·½·¨¡£
-//		// º¯ÊıÊ½½Ó¿ÚÖĞ±»ÊµÏÖ·½·¨µÄÈ«²¿²ÎÊı´«¸ø¸ÃÀà·½·¨×÷Îª²ÎÊı¡£
+//		// æ–¹æ³•å¼•ç”¨ä»£æ›¿Lambdaè¡¨è¾¾å¼ï¼šå¼•ç”¨ç±»æ–¹æ³•ã€‚
+//		// å‡½æ•°å¼æ¥å£ä¸­è¢«å®ç°æ–¹æ³•çš„å…¨éƒ¨å‚æ•°ä¼ ç»™è¯¥ç±»æ–¹æ³•ä½œä¸ºå‚æ•°ã€‚
 //		Converter converter1 = Integer::valueOf;
 //		Integer val = converter1.convert("99");
-//		System.out.println(val); // Êä³öÕûÊı99
+//		System.out.println(val); // è¾“å‡ºæ•´æ•°99
 
 
 
-		// ÏÂÃæ´úÂëÊ¹ÓÃLambda±í´ïÊ½´´½¨Converter¶ÔÏó £¬£¬ÒıÓÃÌØ¶¨¶ÔÏóÊµÀıµÄ·½·¨¡£
+		// ä¸‹é¢ä»£ç ä½¿ç”¨Lambdaè¡¨è¾¾å¼åˆ›å»ºConverterå¯¹è±¡ ï¼Œï¼Œå¼•ç”¨ç‰¹å®šå¯¹è±¡å®ä¾‹çš„æ–¹æ³•ã€‚
 //		Converter converter2 = from -> "fkit.org".indexOf(from);
-//		// ·½·¨ÒıÓÃ´úÌæLambda±í´ïÊ½£ºÒıÓÃÌØ¶¨¶ÔÏóµÄÊµÀı·½·¨¡£
-//		// º¯ÊıÊ½½Ó¿ÚÖĞ±»ÊµÏÖ·½·¨µÄÈ«²¿²ÎÊı´«¸ø¸Ã·½·¨×÷Îª²ÎÊı¡£
+//		// æ–¹æ³•å¼•ç”¨ä»£æ›¿Lambdaè¡¨è¾¾å¼ï¼šå¼•ç”¨ç‰¹å®šå¯¹è±¡çš„å®ä¾‹æ–¹æ³•ã€‚
+//		// å‡½æ•°å¼æ¥å£ä¸­è¢«å®ç°æ–¹æ³•çš„å…¨éƒ¨å‚æ•°ä¼ ç»™è¯¥æ–¹æ³•ä½œä¸ºå‚æ•°ã€‚
 //		Converter converter2 = "fkit.org"::indexOf;
 //		Integer value = converter2.convert("it");
-//		System.out.println(value); // Êä³ö2
+//		System.out.println(value); // è¾“å‡º2
 
 
 
-		// ÏÂÃæ´úÂëÊ¹ÓÃLambda±í´ïÊ½´´½¨MyTest¶ÔÏó£¬ÒıÓÃÄ³Àà¶ÔÏó¶ÔÏóµÄÊµÀı·½·¨
+		// ä¸‹é¢ä»£ç ä½¿ç”¨Lambdaè¡¨è¾¾å¼åˆ›å»ºMyTestå¯¹è±¡ï¼Œå¼•ç”¨æŸç±»å¯¹è±¡å¯¹è±¡çš„å®ä¾‹æ–¹æ³•
 //		MyTest mt = (a , b , c) -> a.substring(b , c);
-		// ·½·¨ÒıÓÃ´úÌæLambda±í´ïÊ½£ºÒıÓÃÄ³Àà¶ÔÏóµÄÊµÀı·½·¨¡£
-		// º¯ÊıÊ½½Ó¿ÚÖĞ±»ÊµÏÖ·½·¨µÄµÚÒ»¸ö²ÎÊı×÷Îªµ÷ÓÃÕß£¬
-		// ºóÃæµÄ²ÎÊıÈ«²¿´«¸ø¸Ã·½·¨×÷Îª²ÎÊı¡£
+		// æ–¹æ³•å¼•ç”¨ä»£æ›¿Lambdaè¡¨è¾¾å¼ï¼šå¼•ç”¨æŸç±»å¯¹è±¡çš„å®ä¾‹æ–¹æ³•ã€‚
+		// å‡½æ•°å¼æ¥å£ä¸­è¢«å®ç°æ–¹æ³•çš„ç¬¬ä¸€ä¸ªå‚æ•°ä½œä¸ºè°ƒç”¨è€…ï¼Œ
+		// åé¢çš„å‚æ•°å…¨éƒ¨ä¼ ç»™è¯¥æ–¹æ³•ä½œä¸ºå‚æ•°ã€‚
 //		MyTest mt = String::substring;
 //		String str = mt.test("Java I Love you" , 2 , 9);
-//		System.out.println(str); // Êä³ö:va I Lo
+//		System.out.println(str); // è¾“å‡º:va I Lo
 
 
 
-		// ÏÂÃæ´úÂëÊ¹ÓÃLambda±í´ïÊ½´´½¨YourTest¶ÔÏó£¬ÒıÓÃ¹¹ÔìÆ÷
+		// ä¸‹é¢ä»£ç ä½¿ç”¨Lambdaè¡¨è¾¾å¼åˆ›å»ºYourTestå¯¹è±¡ï¼Œå¼•ç”¨æ„é€ å™¨
 //		YourTest yt = (String a) -> new JFrame(a);
-		// ¹¹ÔìÆ÷ÒıÓÃ´úÌæLambda±í´ïÊ½¡£
-		// º¯ÊıÊ½½Ó¿ÚÖĞ±»ÊµÏÖ·½·¨µÄÈ«²¿²ÎÊı´«¸ø¸Ã¹¹ÔìÆ÷×÷Îª²ÎÊı¡£
+		// æ„é€ å™¨å¼•ç”¨ä»£æ›¿Lambdaè¡¨è¾¾å¼ã€‚
+		// å‡½æ•°å¼æ¥å£ä¸­è¢«å®ç°æ–¹æ³•çš„å…¨éƒ¨å‚æ•°ä¼ ç»™è¯¥æ„é€ å™¨ä½œä¸ºå‚æ•°ã€‚
 		YourTest yt = JFrame::new;
-		JFrame jf = yt.win("ÎÒµÄ´°¿Ú");
+		JFrame jf = yt.win("æˆ‘çš„çª—å£");
 		System.out.println(jf);
 	}
 }

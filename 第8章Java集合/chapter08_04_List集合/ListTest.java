@@ -1,41 +1,41 @@
-package chapter08_04_List¼¯ºÏ;
+package chapter08_04_Listé›†åˆ;
 
 import java.util.*;
 
 /**
- * Description: ListÊÇCollection½Ó¿ÚµÄ×Ó½Ó¿Ú
- * 1.List´ú±íÒ»¸öÔªËØÓĞĞò¡¢¿ÉÖØ¸´µÄ¼¯ºÏ£¬¶¼ÓĞË÷Òı
- * 2.java8¸Ä½øµÄList½Ó¿ÚºÍListIterator½Ó¿Ú
- * 3.java8ĞÂÔö¼Óvoid replaceAll(UnaryOperator operator) ¸ù¾İÖ¸¶¨¹æÔòÖØĞÂÉèÖÃList¼¯ºÏµÄËùÓĞÔªËØ
- *           void  sort(Comparator c)           ¸ù¾İComparator²ÎÊı¶ÔList¼¯ºÏµÄÔªËØÅÅĞò£¬¿ÉÒÔÓÃlambda×÷Îª²ÎÊı
+ * Description: Listæ˜¯Collectionæ¥å£çš„å­æ¥å£
+ * 1.Listä»£è¡¨ä¸€ä¸ªå…ƒç´ æœ‰åºã€å¯é‡å¤çš„é›†åˆï¼Œéƒ½æœ‰ç´¢å¼•
+ * 2.java8æ”¹è¿›çš„Listæ¥å£å’ŒListIteratoræ¥å£
+ * 3.java8æ–°å¢åŠ void replaceAll(UnaryOperator operator) æ ¹æ®æŒ‡å®šè§„åˆ™é‡æ–°è®¾ç½®Listé›†åˆçš„æ‰€æœ‰å…ƒç´ 
+ *           void  sort(Comparator c)           æ ¹æ®Comparatorå‚æ•°å¯¹Listé›†åˆçš„å…ƒç´ æ’åºï¼Œå¯ä»¥ç”¨lambdaä½œä¸ºå‚æ•°
  * 
  */
 public class ListTest {
 	public static void main(String[] args) {
 		List books = new ArrayList();
 	
-		// Ïòbooks¼¯ºÏÖĞÌí¼ÓÈı¸öÔªËØ
-		books.add(new String("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½"));
-		books.add(new String("·è¿ñJava½²Òå"));
-		books.add(new String("·è¿ñAndroid½²Òå"));
+		// å‘booksé›†åˆä¸­æ·»åŠ ä¸‰ä¸ªå…ƒç´ 
+		books.add(new String("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜"));
+		books.add(new String("ç–¯ç‹‚Javaè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚Androidè®²ä¹‰"));
 		System.out.println(books);
 		
-		// ½«ĞÂ×Ö·û´®¶ÔÏó²åÈëÔÚµÚ¶ş¸öÎ»ÖÃ
-		books.add(1, new String("·è¿ñAjax½²Òå"));
+		// å°†æ–°å­—ç¬¦ä¸²å¯¹è±¡æ’å…¥åœ¨ç¬¬äºŒä¸ªä½ç½®
+		books.add(1, new String("ç–¯ç‹‚Ajaxè®²ä¹‰"));
 		for (int i = 0; i < books.size(); i++) {
 			System.out.println(books.get(i));
 		}
 		
-		// É¾³ıµÚÈı¸öÔªËØ
+		// åˆ é™¤ç¬¬ä¸‰ä¸ªå…ƒç´ 
 		books.remove(2);
 		System.out.println(books);
-		// ÅĞ¶ÏÖ¸¶¨ÔªËØÔÚList¼¯ºÏÖĞÎ»ÖÃ£ºÊä³ö1£¬±íÃ÷Î»ÓÚµÚ¶şÎ»£¬´´½¨µÄÊÇĞÂµÄ×Ö·û´®£¬listÖĞ²¢Ã»ÓĞ£¬µ«¿ÉÒÔ·µ»ØËµÃ÷¶Ô±È·½·¨Îªequals
-		System.out.println(books.indexOf(new String("·è¿ñAjax½²Òå"))); // ¢Ù
-		// ½«µÚ¶ş¸öÔªËØÌæ»»³ÉĞÂµÄ×Ö·û´®¶ÔÏó
-		books.set(1, new String("·è¿ñJava½²Òå"));
+		// åˆ¤æ–­æŒ‡å®šå…ƒç´ åœ¨Listé›†åˆä¸­ä½ç½®ï¼šè¾“å‡º1ï¼Œè¡¨æ˜ä½äºç¬¬äºŒä½ï¼Œåˆ›å»ºçš„æ˜¯æ–°çš„å­—ç¬¦ä¸²ï¼Œlistä¸­å¹¶æ²¡æœ‰ï¼Œä½†å¯ä»¥è¿”å›è¯´æ˜å¯¹æ¯”æ–¹æ³•ä¸ºequals
+		System.out.println(books.indexOf(new String("ç–¯ç‹‚Ajaxè®²ä¹‰"))); // â‘ 
+		// å°†ç¬¬äºŒä¸ªå…ƒç´ æ›¿æ¢æˆæ–°çš„å­—ç¬¦ä¸²å¯¹è±¡
+		books.set(1, new String("ç–¯ç‹‚Javaè®²ä¹‰"));
 		System.out.println(books);
-		// ½«books¼¯ºÏµÄµÚ¶ş¸öÔªËØ£¨°üÀ¨£©
-		// µ½µÚÈı¸öÔªËØ£¨²»°üÀ¨£©½ØÈ¡³É×Ó¼¯ºÏ
+		// å°†booksé›†åˆçš„ç¬¬äºŒä¸ªå…ƒç´ ï¼ˆåŒ…æ‹¬ï¼‰
+		// åˆ°ç¬¬ä¸‰ä¸ªå…ƒç´ ï¼ˆä¸åŒ…æ‹¬ï¼‰æˆªå–æˆå­é›†åˆ
 		System.out.println(books.subList(1, 2));
 	}
 }

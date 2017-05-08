@@ -14,11 +14,11 @@ import java.util.Scanner;
 import org.junit.Test;
 
 /*
- * Ò»¡¢Ê¹ÓÃ NIO Íê³ÉÍøÂçÍ¨ĞÅµÄÈı¸öºËĞÄ£º
+ * ä¸€ã€ä½¿ç”¨ NIO å®Œæˆç½‘ç»œé€šä¿¡çš„ä¸‰ä¸ªæ ¸å¿ƒï¼š
  * 
- * 1. Í¨µÀ£¨Channel£©£º¸ºÔğÁ¬½Ó
+ * 1. é€šé“ï¼ˆChannelï¼‰ï¼šè´Ÿè´£è¿æ¥
  * 		
- * 	   java.nio.channels.Channel ½Ó¿Ú£º
+ * 	   java.nio.channels.Channel æ¥å£ï¼š
  * 			|--SelectableChannel
  * 				|--SocketChannel
  * 				|--ServerSocketChannel
@@ -27,26 +27,26 @@ import org.junit.Test;
  * 				|--Pipe.SinkChannel
  * 				|--Pipe.SourceChannel
  * 
- * 2. »º³åÇø£¨Buffer£©£º¸ºÔğÊı¾İµÄ´æÈ¡
+ * 2. ç¼“å†²åŒºï¼ˆBufferï¼‰ï¼šè´Ÿè´£æ•°æ®çš„å­˜å–
  * 
- * 3. Ñ¡ÔñÆ÷£¨Selector£©£ºÊÇ SelectableChannel µÄ¶àÂ·¸´ÓÃÆ÷¡£ÓÃÓÚ¼à¿Ø SelectableChannel µÄ IO ×´¿ö
+ * 3. é€‰æ‹©å™¨ï¼ˆSelectorï¼‰ï¼šæ˜¯ SelectableChannel çš„å¤šè·¯å¤ç”¨å™¨ã€‚ç”¨äºç›‘æ§ SelectableChannel çš„ IO çŠ¶å†µ
  * 
  */
 public class TestNonBlockingNIO {
 	
-	//¿Í»§¶Ë
+	//å®¢æˆ·ç«¯
 	@Test
 	public void client() throws IOException{
-		//1. »ñÈ¡Í¨µÀ
+		//1. è·å–é€šé“
 		SocketChannel sChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 9898));
 		
-		//2. ÇĞ»»·Ç×èÈûÄ£Ê½
+		//2. åˆ‡æ¢éé˜»å¡æ¨¡å¼
 		sChannel.configureBlocking(false);
 		
-		//3. ·ÖÅäÖ¸¶¨´óĞ¡µÄ»º³åÇø
+		//3. åˆ†é…æŒ‡å®šå¤§å°çš„ç¼“å†²åŒº
 		ByteBuffer buf = ByteBuffer.allocate(1024);
 		
-		//4. ·¢ËÍÊı¾İ¸ø·şÎñ¶Ë
+		//4. å‘é€æ•°æ®ç»™æœåŠ¡ç«¯
 		Scanner scan = new Scanner(System.in);
 		
 		while(scan.hasNext()){
@@ -57,53 +57,53 @@ public class TestNonBlockingNIO {
 			buf.clear();
 		}
 		
-		//5. ¹Ø±ÕÍ¨µÀ
+		//5. å…³é—­é€šé“
 		sChannel.close();
 	}
 
-	//·şÎñ¶Ë
+	//æœåŠ¡ç«¯
 	@Test
 	public void server() throws IOException{
-		//1. »ñÈ¡Í¨µÀ
+		//1. è·å–é€šé“
 		ServerSocketChannel ssChannel = ServerSocketChannel.open();
 		
-		//2. ÇĞ»»·Ç×èÈûÄ£Ê½
+		//2. åˆ‡æ¢éé˜»å¡æ¨¡å¼
 		ssChannel.configureBlocking(false);
 		
-		//3. °ó¶¨Á¬½Ó
+		//3. ç»‘å®šè¿æ¥
 		ssChannel.bind(new InetSocketAddress(9898));
 		
-		//4. »ñÈ¡Ñ¡ÔñÆ÷
+		//4. è·å–é€‰æ‹©å™¨
 		Selector selector = Selector.open();
 		
-		//5. ½«Í¨µÀ×¢²áµ½Ñ¡ÔñÆ÷ÉÏ, ²¢ÇÒÖ¸¶¨¡°¼àÌı½ÓÊÕÊÂ¼ş¡±
+		//5. å°†é€šé“æ³¨å†Œåˆ°é€‰æ‹©å™¨ä¸Š, å¹¶ä¸”æŒ‡å®šâ€œç›‘å¬æ¥æ”¶äº‹ä»¶â€
 		ssChannel.register(selector, SelectionKey.OP_ACCEPT);
 		
-		//6. ÂÖÑ¯Ê½µÄ»ñÈ¡Ñ¡ÔñÆ÷ÉÏÒÑ¾­¡°×¼±¸¾ÍĞ÷¡±µÄÊÂ¼ş
+		//6. è½®è¯¢å¼çš„è·å–é€‰æ‹©å™¨ä¸Šå·²ç»â€œå‡†å¤‡å°±ç»ªâ€çš„äº‹ä»¶
 		while(selector.select() > 0){
 			
-			//7. »ñÈ¡µ±Ç°Ñ¡ÔñÆ÷ÖĞËùÓĞ×¢²áµÄ¡°Ñ¡Ôñ¼ü(ÒÑ¾ÍĞ÷µÄ¼àÌıÊÂ¼ş)¡±
+			//7. è·å–å½“å‰é€‰æ‹©å™¨ä¸­æ‰€æœ‰æ³¨å†Œçš„â€œé€‰æ‹©é”®(å·²å°±ç»ªçš„ç›‘å¬äº‹ä»¶)â€
 			Iterator<SelectionKey> it = selector.selectedKeys().iterator();
 			
 			while(it.hasNext()){
-				//8. »ñÈ¡×¼±¸¡°¾ÍĞ÷¡±µÄÊÇÊÂ¼ş
+				//8. è·å–å‡†å¤‡â€œå°±ç»ªâ€çš„æ˜¯äº‹ä»¶
 				SelectionKey sk = it.next();
 				
-				//9. ÅĞ¶Ï¾ßÌåÊÇÊ²Ã´ÊÂ¼ş×¼±¸¾ÍĞ÷
+				//9. åˆ¤æ–­å…·ä½“æ˜¯ä»€ä¹ˆäº‹ä»¶å‡†å¤‡å°±ç»ª
 				if(sk.isAcceptable()){
-					//10. Èô¡°½ÓÊÕ¾ÍĞ÷¡±£¬»ñÈ¡¿Í»§¶ËÁ¬½Ó
+					//10. è‹¥â€œæ¥æ”¶å°±ç»ªâ€ï¼Œè·å–å®¢æˆ·ç«¯è¿æ¥
 					SocketChannel sChannel = ssChannel.accept();
 					
-					//11. ÇĞ»»·Ç×èÈûÄ£Ê½
+					//11. åˆ‡æ¢éé˜»å¡æ¨¡å¼
 					sChannel.configureBlocking(false);
 					
-					//12. ½«¸ÃÍ¨µÀ×¢²áµ½Ñ¡ÔñÆ÷ÉÏ
+					//12. å°†è¯¥é€šé“æ³¨å†Œåˆ°é€‰æ‹©å™¨ä¸Š
 					sChannel.register(selector, SelectionKey.OP_READ);
 				}else if(sk.isReadable()){
-					//13. »ñÈ¡µ±Ç°Ñ¡ÔñÆ÷ÉÏ¡°¶Á¾ÍĞ÷¡±×´Ì¬µÄÍ¨µÀ
+					//13. è·å–å½“å‰é€‰æ‹©å™¨ä¸Šâ€œè¯»å°±ç»ªâ€çŠ¶æ€çš„é€šé“
 					SocketChannel sChannel = (SocketChannel) sk.channel();
 					
-					//14. ¶ÁÈ¡Êı¾İ
+					//14. è¯»å–æ•°æ®
 					ByteBuffer buf = ByteBuffer.allocate(1024);
 					
 					int len = 0;
@@ -114,7 +114,7 @@ public class TestNonBlockingNIO {
 					}
 				}
 				
-				//15. È¡ÏûÑ¡Ôñ¼ü SelectionKey
+				//15. å–æ¶ˆé€‰æ‹©é”® SelectionKey
 				it.remove();
 			}
 		}

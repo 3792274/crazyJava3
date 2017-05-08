@@ -1,15 +1,15 @@
-package chapter16_02_Ïß³ÌµÄ´´½¨ºÍÆô¶¯;
+package chapter16_02_çº¿ç¨‹çš„åˆ›å»ºå’Œå¯åŠ¨;
 
 public class FirstThread  extends Thread{
 	
-	//Á½¸öÏß³Ì²¢²»ÄÜ¹²Ïí¸Ã±äÁ¿ÊÇÊµÀı±äÁ¿¶ø²»ÊÇ¾Ö²¿±äÁ¿
+	//ä¸¤ä¸ªçº¿ç¨‹å¹¶ä¸èƒ½å…±äº«è¯¥å˜é‡æ˜¯å®ä¾‹å˜é‡è€Œä¸æ˜¯å±€éƒ¨å˜é‡
 	private int i;
 	
 	
 	@Override
 	public void run() {
 		for(;i<100;i++){
-			//µ±Ïß³Ì¼Ì³ĞThreadÀàÊ±£¬Ê¹ÓÃthis»ñÈ¡µ±Ç°Ïß³Ì£¬getName()·µ»ØÏß³ÌÃû×Ö
+			//å½“çº¿ç¨‹ç»§æ‰¿Threadç±»æ—¶ï¼Œä½¿ç”¨thisè·å–å½“å‰çº¿ç¨‹ï¼ŒgetName()è¿”å›çº¿ç¨‹åå­—
 			System.out.println(getName()+" "+i);
 		}
 	}
@@ -17,15 +17,15 @@ public class FirstThread  extends Thread{
 	
 	public static void main(String[] args) {
 		for(int i=0;i<100;i++){
-			//µ÷ÓÃThreadµÄ¾²Ì¬·½·¨currentThread()»ñµÃµ±Ç°Ïß³Ì
+			//è°ƒç”¨Threadçš„é™æ€æ–¹æ³•currentThread()è·å¾—å½“å‰çº¿ç¨‹
 			System.out.println(Thread.currentThread().getName()+" : "+i);
 			if(i==20){
-				//´´½¨²¢Æô¶¯µÚÒ»¸öÏß³Ì
+				//åˆ›å»ºå¹¶å¯åŠ¨ç¬¬ä¸€ä¸ªçº¿ç¨‹
 				Thread thread1 = new FirstThread();
-				thread1.setName("Ïß³Ì2");
+				thread1.setName("çº¿ç¨‹2");
 				thread1.start();
 				
-				//´´½¨²¢Æô¶¯µÚ¶ş¸öÏß³Ì
+				//åˆ›å»ºå¹¶å¯åŠ¨ç¬¬äºŒä¸ªçº¿ç¨‹
 				new FirstThread().start();
 				
 			}

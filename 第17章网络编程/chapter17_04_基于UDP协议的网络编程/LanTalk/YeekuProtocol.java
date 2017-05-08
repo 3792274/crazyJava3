@@ -1,9 +1,9 @@
-package chapter17_04_»ùÓÚUDPĞ­ÒéµÄÍøÂç±à³Ì.LanTalk;
+package chapter17_04_åŸºäºUDPåè®®çš„ç½‘ç»œç¼–ç¨‹.LanTalk;
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,7 +13,7 @@ package chapter17_04_»ùÓÚUDPĞ­ÒéµÄÍøÂç±à³Ì.LanTalk;
  */
 public interface YeekuProtocol
 {
-	String PRESENCE = "¨S¨S";
-	String SPLITTER = "¨ˆ";
+	String PRESENCE = "âŠ¿âŠ¿";
+	String SPLITTER = "â–“";
 }
 

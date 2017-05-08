@@ -1,4 +1,4 @@
-package chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½;
+package chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼;
 
 
 import java.util.*;
@@ -6,7 +6,7 @@ import java.io.*;
 import java.sql.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -23,7 +23,7 @@ public class ExecuteSQL
 	
 	public void initParam(String paramFile)throws Exception
 	{
-		// Ê¹ÓÃPropertiesÀàÀ´¼ÓÔØÊôĞÔÎÄ¼ş
+		// ä½¿ç”¨Propertiesç±»æ¥åŠ è½½å±æ€§æ–‡ä»¶
 		Properties props = new Properties();
 		props.load(new FileInputStream(paramFile));
 		driver = props.getProperty("driver");
@@ -33,30 +33,30 @@ public class ExecuteSQL
 	}
 	public void executeSql(String sql)throws Exception
 	{
-		// ¼ÓÔØÇı¶¯
+		// åŠ è½½é©±åŠ¨
 		Class.forName(driver);
 		try(
-			// »ñÈ¡Êı¾İ¿âÁ¬½Ó
+			// è·å–æ•°æ®åº“è¿æ¥
 			Connection conn = DriverManager.getConnection(url , user , pass);
-			// Ê¹ÓÃConnectionÀ´´´½¨Ò»¸öStatement¶ÔÏó
+			// ä½¿ç”¨Connectionæ¥åˆ›å»ºä¸€ä¸ªStatementå¯¹è±¡
 			Statement stmt = conn.createStatement())
 		{
-			// Ö´ĞĞSQL,·µ»ØbooleanÖµ±íÊ¾ÊÇ·ñ°üº¬ResultSet
+			// æ‰§è¡ŒSQL,è¿”å›booleanå€¼è¡¨ç¤ºæ˜¯å¦åŒ…å«ResultSet
 			boolean hasResultSet = stmt.execute(sql);
-			// Èç¹ûÖ´ĞĞºóÓĞResultSet½á¹û¼¯
+			// å¦‚æœæ‰§è¡Œåæœ‰ResultSetç»“æœé›†
 			if (hasResultSet)
 			{
 				try(
-					// »ñÈ¡½á¹û¼¯
+					// è·å–ç»“æœé›†
 					ResultSet rs = stmt.getResultSet())
 				{
-					// ResultSetMetaDataÊÇÓÃÓÚ·ÖÎö½á¹û¼¯µÄÔªÊı¾İ½Ó¿Ú
+					// ResultSetMetaDataæ˜¯ç”¨äºåˆ†æç»“æœé›†çš„å…ƒæ•°æ®æ¥å£
 					ResultSetMetaData rsmd = rs.getMetaData();
 					int columnCount = rsmd.getColumnCount();
-					// µü´úÊä³öResultSet¶ÔÏó
+					// è¿­ä»£è¾“å‡ºResultSetå¯¹è±¡
 					while (rs.next())
 					{
-						// ÒÀ´ÎÊä³öÃ¿ÁĞµÄÖµ
+						// ä¾æ¬¡è¾“å‡ºæ¯åˆ—çš„å€¼
 						for (int i = 0 ; i < columnCount ; i++ )
 						{
 							System.out.print(rs.getString(i + 1) + "\t");
@@ -67,24 +67,24 @@ public class ExecuteSQL
 			}
 			else
 			{
-				System.out.println("¸ÃSQLÓï¾äÓ°ÏìµÄ¼ÇÂ¼ÓĞ" + stmt.getUpdateCount() + "Ìõ");
+				System.out.println("è¯¥SQLè¯­å¥å½±å“çš„è®°å½•æœ‰" + stmt.getUpdateCount() + "æ¡");
 			}
 		}
 	}
 	public static void main(String[] args) throws Exception
 	{
 		ExecuteSQL es = new ExecuteSQL();
-		es.initParam("resource\\chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½\\mysql.ini");
-		System.out.println("------Ö´ĞĞÉ¾³ı±íµÄDDLÓï¾ä-----");
+		es.initParam("resource\\chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼\\mysql.ini");
+		System.out.println("------æ‰§è¡Œåˆ é™¤è¡¨çš„DDLè¯­å¥-----");
 		es.executeSql("drop table if exists my_test");
-		System.out.println("------Ö´ĞĞ½¨±íµÄDDLÓï¾ä-----");
+		System.out.println("------æ‰§è¡Œå»ºè¡¨çš„DDLè¯­å¥-----");
 		es.executeSql("create table my_test"
 			+ "(test_id int auto_increment primary key, "
 			+ "test_name varchar(255))");
-		System.out.println("------Ö´ĞĞ²åÈëÊı¾İµÄDMLÓï¾ä-----");
+		System.out.println("------æ‰§è¡Œæ’å…¥æ•°æ®çš„DMLè¯­å¥-----");
 		es.executeSql("insert into my_test(test_name) "
 			+ "select student_name from student_table");
-		System.out.println("------Ö´ĞĞ²éÑ¯Êı¾İµÄ²éÑ¯Óï¾ä-----");
+		System.out.println("------æ‰§è¡ŒæŸ¥è¯¢æ•°æ®çš„æŸ¥è¯¢è¯­å¥-----");
 		es.executeSql("select * from my_test");
 	}
 }

@@ -1,8 +1,8 @@
-package chapter15_08_¶ÔÏóĞòÁĞ»¯.test_transient;
+package chapter15_08_å¯¹è±¡åºåˆ—åŒ–.test_transient;
 
 /**
- * Description: transient ±êÊ¾µÄºÍstatic±êÊ¾µÄ½«²»»áĞòÁĞ»¯¡£<br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description: transient æ ‡ç¤ºçš„å’Œstaticæ ‡ç¤ºçš„å°†ä¸ä¼šåºåˆ—åŒ–ã€‚<br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,14 +15,14 @@ public class Person implements java.io.Serializable {
 	private String name;
 	private transient int age;
 
-	// ×¢Òâ´Ë´¦Ã»ÓĞÌá¹©ÎŞ²ÎÊıµÄ¹¹ÔìÆ÷!
+	// æ³¨æ„æ­¤å¤„æ²¡æœ‰æä¾›æ— å‚æ•°çš„æ„é€ å™¨!
 	public Person(String name, int age) {
-		System.out.println("ÓĞ²ÎÊıµÄ¹¹ÔìÆ÷");
+		System.out.println("æœ‰å‚æ•°çš„æ„é€ å™¨");
 		this.name = name;
 		this.age = age;
 	}
 
-	// nameµÄsetterºÍgetter·½·¨
+	// nameçš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -31,7 +31,7 @@ public class Person implements java.io.Serializable {
 		return this.name;
 	}
 
-	// ageµÄsetterºÍgetter·½·¨
+	// ageçš„setterå’Œgetteræ–¹æ³•
 	public void setAge(int age) {
 		this.age = age;
 	}

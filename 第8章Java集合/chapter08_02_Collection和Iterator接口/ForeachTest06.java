@@ -1,9 +1,9 @@
-package chapter08_02_CollectionºÍIterator½Ó¿Ú;
+package chapter08_02_Collectionå’ŒIteratoræ¥å£;
 
 import java.util.*;
 /**
- * Description:Java5Ìá¹©µÄĞÂ·½·¨
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:Java5æä¾›çš„æ–°æ–¹æ³•
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,20 +15,20 @@ public class ForeachTest06
 {
 	public static void main(String[] args)
 	{
-		// ´´½¨¼¯ºÏ¡¢Ìí¼ÓÔªËØµÄ´úÂëÓëÇ°Ò»¸ö³ÌĞòÏàÍ¬
+		// åˆ›å»ºé›†åˆã€æ·»åŠ å…ƒç´ çš„ä»£ç ä¸å‰ä¸€ä¸ªç¨‹åºç›¸åŒ
 		Collection books = new HashSet();
-		books.add(new String("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½"));
-		books.add(new String("·è¿ñJava½²Òå"));
-		books.add(new String("·è¿ñAndroid½²Òå"));
+		books.add(new String("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜"));
+		books.add(new String("ç–¯ç‹‚Javaè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚Androidè®²ä¹‰"));
 		for (Object obj : books)
 		{
-			// ´Ë´¦µÄbook±äÁ¿Ò²²»ÊÇ¼¯ºÏÔªËØ±¾Éí
+			// æ­¤å¤„çš„bookå˜é‡ä¹Ÿä¸æ˜¯é›†åˆå…ƒç´ æœ¬èº«
 			String book = (String)obj;
 			System.out.println(book);
-			if (book.equals("·è¿ñAndroid½²Òå"))
+			if (book.equals("ç–¯ç‹‚Androidè®²ä¹‰"))
 			{
-				// ÏÂÃæ´úÂë»áÒı·¢ConcurrentModificationExceptionÒì³£
-				books.remove(book);     //¢Ù
+				// ä¸‹é¢ä»£ç ä¼šå¼•å‘ConcurrentModificationExceptionå¼‚å¸¸
+				books.remove(book);     //â‘ 
 			}
 		}
 		System.out.println(books);

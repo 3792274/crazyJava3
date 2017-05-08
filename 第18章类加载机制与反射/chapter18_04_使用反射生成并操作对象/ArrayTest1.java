@@ -1,9 +1,9 @@
-package chapter18_04_Ê¹ÓÃ·´ÉäÉú³É²¢²Ù×÷¶ÔÏó;
+package chapter18_04_ä½¿ç”¨åå°„ç”Ÿæˆå¹¶æ“ä½œå¯¹è±¡;
 
 import java.lang.reflect.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,15 +17,15 @@ public class ArrayTest1
 	{
 		try
 		{
-			// ´´½¨Ò»¸öÔªËØÀàĞÍÎªString £¬³¤¶ÈÎª10µÄÊı×é
+			// åˆ›å»ºä¸€ä¸ªå…ƒç´ ç±»å‹ä¸ºString ï¼Œé•¿åº¦ä¸º10çš„æ•°ç»„
 			Object arr = Array.newInstance(String.class, 10);
-			// ÒÀ´ÎÎªarrÊı×éÖĞindexÎª5¡¢6µÄÔªËØ¸³Öµ
-			Array.set(arr, 5, "·è¿ñJava½²Òå");
-			Array.set(arr, 6, "ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
-			// ÒÀ´ÎÈ¡³öarrÊı×éÖĞindexÎª5¡¢6µÄÔªËØµÄÖµ
+			// ä¾æ¬¡ä¸ºarræ•°ç»„ä¸­indexä¸º5ã€6çš„å…ƒç´ èµ‹å€¼
+			Array.set(arr, 5, "ç–¯ç‹‚Javaè®²ä¹‰");
+			Array.set(arr, 6, "è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
+			// ä¾æ¬¡å–å‡ºarræ•°ç»„ä¸­indexä¸º5ã€6çš„å…ƒç´ çš„å€¼
 			Object book1 = Array.get(arr , 5);
 			Object book2 = Array.get(arr , 6);
-			// Êä³öarrÊı×éÖĞindexÎª5¡¢6µÄÔªËØ
+			// è¾“å‡ºarræ•°ç»„ä¸­indexä¸º5ã€6çš„å…ƒç´ 
 			System.out.println(book1);
 			System.out.println(book2);
 		}

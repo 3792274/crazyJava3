@@ -1,10 +1,10 @@
-package chapter09_04_·ºĞÍ·½·¨;
+package chapter09_04_æ³›å‹æ–¹æ³•;
 
 
 import java.util.*;
 /**
- * Description:Éè¶¨Í¨Åä·ûÏÂÏŞ£¬ÀıÈçTreeSetÀà¡£
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:è®¾å®šé€šé…ç¬¦ä¸‹é™ï¼Œä¾‹å¦‚TreeSetç±»ã€‚
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,10 +14,10 @@ import java.util.*;
  */
 public class MyUtils
 {
-	// ÏÂÃædest¼¯ºÏÔªËØÀàĞÍ±ØĞëÓësrc¼¯ºÏÔªËØÀàĞÍÏàÍ¬£¬»òÊÇÆä¸¸Àà
+	// ä¸‹é¢desté›†åˆå…ƒç´ ç±»å‹å¿…é¡»ä¸srcé›†åˆå…ƒç´ ç±»å‹ç›¸åŒï¼Œæˆ–æ˜¯å…¶çˆ¶ç±»
 	public static <T> T copy(Collection<? super T> dest , Collection<T> src)
 	{
-		T last = null; //½ÚÊ¡¿ªÏú¡£
+		T last = null; //èŠ‚çœå¼€é”€ã€‚
 		for (T ele  : src)
 		{
 			last = ele;
@@ -30,9 +30,9 @@ public class MyUtils
 		List<Number> ln = new ArrayList<>();
 		List<Integer> li = new ArrayList<>();
 		li.add(5);
-		// ´Ë´¦¿É×¼È·µÄÖªµÀ×îºóÒ»¸ö±»¸´ÖÆµÄÔªËØÊÇIntegerÀàĞÍ
-		// Óësrc¼¯ºÏÔªËØµÄÀàĞÍÏàÍ¬
-		Integer last = copy(ln , li);    // ¢Ù
+		// æ­¤å¤„å¯å‡†ç¡®çš„çŸ¥é“æœ€åä¸€ä¸ªè¢«å¤åˆ¶çš„å…ƒç´ æ˜¯Integerç±»å‹
+		// ä¸srcé›†åˆå…ƒç´ çš„ç±»å‹ç›¸åŒ
+		Integer last = copy(ln , li);    // â‘ 
 		System.out.println(ln);
 	}
 }

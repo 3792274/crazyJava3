@@ -1,8 +1,8 @@
-package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
+package chapter06_06_Java8æ”¹è¿›çš„æ¥å£;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,15 +15,15 @@ public class BetterPrinter implements Output {
 
 	private String[] printData = new String[MAX_CACHE_LINE * 2];
 
-	// ÓÃÒÔ¼ÇÂ¼µ±Ç°Ğè´òÓ¡µÄ×÷ÒµÊı
+	// ç”¨ä»¥è®°å½•å½“å‰éœ€æ‰“å°çš„ä½œä¸šæ•°
 	private int dataNum = 0;
 
 	@Override
 	public void out() {
-		// Ö»Òª»¹ÓĞ×÷Òµ£¬¼ÌĞø´òÓ¡
+		// åªè¦è¿˜æœ‰ä½œä¸šï¼Œç»§ç»­æ‰“å°
 		while (dataNum > 0) {
-			System.out.println("¸ßËÙ´òÓ¡»úÕıÔÚ´òÓ¡£º" + printData[0]);
-			// °Ñ×÷Òµ¶ÓÁĞÕûÌåÇ°ÒÆÒ»Î»£¬²¢½«Ê£ÏÂµÄ×÷ÒµÊı¼õ1
+			System.out.println("é«˜é€Ÿæ‰“å°æœºæ­£åœ¨æ‰“å°ï¼š" + printData[0]);
+			// æŠŠä½œä¸šé˜Ÿåˆ—æ•´ä½“å‰ç§»ä¸€ä½ï¼Œå¹¶å°†å‰©ä¸‹çš„ä½œä¸šæ•°å‡1
 			System.arraycopy(printData, 1, printData, 0, --dataNum);
 		}
 	}
@@ -31,9 +31,9 @@ public class BetterPrinter implements Output {
 	@Override
 	public void putData(String msg) {
 		if (dataNum >= MAX_CACHE_LINE * 2) {
-			System.out.println("Êä³ö¶ÓÁĞÒÑÂú£¬Ìí¼ÓÊ§°Ü");
+			System.out.println("è¾“å‡ºé˜Ÿåˆ—å·²æ»¡ï¼Œæ·»åŠ å¤±è´¥");
 		} else {
-			// °Ñ´òÓ¡Êı¾İÌí¼Óµ½¶ÓÁĞÀï£¬ÒÑ±£´æÊı¾İµÄÊıÁ¿¼Ó1¡£
+			// æŠŠæ‰“å°æ•°æ®æ·»åŠ åˆ°é˜Ÿåˆ—é‡Œï¼Œå·²ä¿å­˜æ•°æ®çš„æ•°é‡åŠ 1ã€‚
 			printData[dataNum++] = msg;
 		}
 	}

@@ -1,10 +1,10 @@
-package chapter05_02_·½·¨Ïê½â;
+package chapter05_02_æ–¹æ³•è¯¦è§£;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,21 +14,21 @@ package chapter05_02_·½·¨Ïê½â;
  */
 public class Varargs
 {
-	// ¶¨ÒåÁËĞÎ²Î¸öÊı¿É±äµÄ·½·¨
+	// å®šä¹‰äº†å½¢å‚ä¸ªæ•°å¯å˜çš„æ–¹æ³•
 	public static void test(int a , String... books)
 	{
-		// books±»µ±³ÉÊı×é´¦Àí
+		// booksè¢«å½“æˆæ•°ç»„å¤„ç†
 		for (String tmp : books)
 		{
 			System.out.println(tmp);
 		}
-		// Êä³öÕûÊı±äÁ¿aµÄÖµ
+		// è¾“å‡ºæ•´æ•°å˜é‡açš„å€¼
 		System.out.println(a);
 	}
 	public static void main(String[] args)
 	{
-		// µ÷ÓÃtest·½·¨
-		test(5 , "·è¿ñJava½²Òå" , "ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
+		// è°ƒç”¨testæ–¹æ³•
+		test(5 , "ç–¯ç‹‚Javaè®²ä¹‰" , "è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
 	}
 }
 

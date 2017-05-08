@@ -1,4 +1,4 @@
-package chapter14_04_±àÒëÊ±´¦ÀíAnnotation;
+package chapter14_04_ç¼–è¯‘æ—¶å¤„ç†Annotation;
 
 import javax.annotation.processing.*;
 import javax.lang.model.element.*;
@@ -8,8 +8,8 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Description: Annotation´¦ÀíÀà£¬±ØĞëÒª¼Ì³Ğ AbstractProcessor Àà£¬²¢ÖØĞ´È«²¿·½·¨ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description: Annotationå¤„ç†ç±»ï¼Œå¿…é¡»è¦ç»§æ‰¿ AbstractProcessor ç±»ï¼Œå¹¶é‡å†™å…¨éƒ¨æ–¹æ³• <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -19,47 +19,47 @@ import java.util.*;
  * @version 1.0
  */
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
-// Ö¸¶¨¿É´¦Àí@Persistent¡¢@Id¡¢@PropertyÈı¸öAnnotation
+// æŒ‡å®šå¯å¤„ç†@Persistentã€@Idã€@Propertyä¸‰ä¸ªAnnotation
 @SupportedAnnotationTypes({ "Persistent", "Id", "Property" })
 public class HibernateAnnotationProcessor extends AbstractProcessor {
-	// Ñ­»·´¦ÀíÃ¿¸öĞèÒª´¦ÀíµÄ³ÌĞò¶ÔÏó
+	// å¾ªç¯å¤„ç†æ¯ä¸ªéœ€è¦å¤„ç†çš„ç¨‹åºå¯¹è±¡
 	@Override
 	public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-		// ¶¨ÒåÒ»¸öÎÄ¼şÊä³öÁ÷£¬ÓÃÓÚÉú³É¶îÍâµÄÎÄ¼ş
+		// å®šä¹‰ä¸€ä¸ªæ–‡ä»¶è¾“å‡ºæµï¼Œç”¨äºç”Ÿæˆé¢å¤–çš„æ–‡ä»¶
 		PrintStream ps = null;
 		try {
-			// ±éÀúÃ¿¸ö±»@PersistentĞŞÊÎµÄclassÎÄ¼ş
+			// éå†æ¯ä¸ªè¢«@Persistentä¿®é¥°çš„classæ–‡ä»¶
 			for (Element t : roundEnv.getElementsAnnotatedWith(Persistent.class)) {
-				// »ñÈ¡ÕıÔÚ´¦ÀíµÄÀàÃû
+				// è·å–æ­£åœ¨å¤„ç†çš„ç±»å
 				Name clazzName = t.getSimpleName();
-				// »ñÈ¡Àà¶¨ÒåÇ°µÄ@Persistent Annotation
+				// è·å–ç±»å®šä¹‰å‰çš„@Persistent Annotation
 				Persistent per = t.getAnnotation(Persistent.class);
-				// ´´½¨ÎÄ¼şÊä³öÁ÷
+				// åˆ›å»ºæ–‡ä»¶è¾“å‡ºæµ
 				ps = new PrintStream(new FileOutputStream(clazzName + ".hbm.xml"));
-				// Ö´ĞĞÊä³ö
+				// æ‰§è¡Œè¾“å‡º
 				ps.println("<?xml version=\"1.0\"?>");
 				ps.println("<!DOCTYPE hibernate-mapping PUBLIC");
 				ps.println("	\"-//Hibernate/Hibernate " + "Mapping DTD 3.0//EN\"");
 				ps.println("	\"http://www.hibernate.org/dtd/" + "hibernate-mapping-3.0.dtd\">");
 				ps.println("<hibernate-mapping>");
 				ps.print("	<class name=\"" + t);
-				// Êä³öperµÄtable()µÄÖµ
+				// è¾“å‡ºperçš„table()çš„å€¼
 				ps.println("\" table=\"" + per.table() + "\">");
 				for (Element f : t.getEnclosedElements()) {
-					// Ö»´¦Àí³ÉÔ±±äÁ¿ÉÏµÄAnnotation
-					if (f.getKind() == ElementKind.FIELD) // ¢Ù
+					// åªå¤„ç†æˆå‘˜å˜é‡ä¸Šçš„Annotation
+					if (f.getKind() == ElementKind.FIELD) // â‘ 
 					{
-						// »ñÈ¡³ÉÔ±±äÁ¿¶¨ÒåÇ°µÄ@Id Annotation
-						Id id = f.getAnnotation(Id.class); // ¢Ú
-						// µ±@Id Annotation´æÔÚÊ±Êä³ö<id.../>ÔªËØ
+						// è·å–æˆå‘˜å˜é‡å®šä¹‰å‰çš„@Id Annotation
+						Id id = f.getAnnotation(Id.class); // â‘¡
+						// å½“@Id Annotationå­˜åœ¨æ—¶è¾“å‡º<id.../>å…ƒç´ 
 						if (id != null) {
 							ps.println("		<id name=\"" + f.getSimpleName() + "\" column=\"" + id.column() + "\" type=\"" + id.type() + "\">");
 							ps.println("		<generator class=\"" + id.generator() + "\"/>");
 							ps.println("		</id>");
 						}
-						// »ñÈ¡³ÉÔ±±äÁ¿¶¨ÒåÇ°µÄ@Property Annotation
-						Property p = f.getAnnotation(Property.class); // ¢Û
-						// µ±@Property Annotation´æÔÚÊ±Êä³ö<property.../>ÔªËØ
+						// è·å–æˆå‘˜å˜é‡å®šä¹‰å‰çš„@Property Annotation
+						Property p = f.getAnnotation(Property.class); // â‘¢
+						// å½“@Property Annotationå­˜åœ¨æ—¶è¾“å‡º<property.../>å…ƒç´ 
 						if (p != null) {
 							ps.println("		<property name=\"" + f.getSimpleName() + "\" column=\"" + p.column() + "\" type=\"" + p.type() + "\"/>");
 						}

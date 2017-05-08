@@ -1,22 +1,22 @@
-package chapter11_02_AwtÈİÆ÷;
+package chapter11_02_Awtå®¹å™¨;
 
 import java.awt.*;
 /**
  * Description:
  * 1.Object
- *   	Component(ÆÕÍ¨×é¼ş)
+ *   	Component(æ™®é€šç»„ä»¶)
  *   				Button
  *   				TextField
  *   				List
  *   				Container	
  *   						Window
- *   								Frame(´´½¨´°¿Ú)
- *   								Dialog(´´½¨¶Ô»°¿ò)
- *   						Panel(AWT-³éÏó´°¿Ú¹¤¾ß¼¯£¬µäĞÍÈİÆ÷£¬²»ÄÜ¶ÀÁ¢´æÔÚ£¬±ØĞë·ÅÔÚÆäËûÈİÆ÷ÖĞµÄÈİÆ÷)
+ *   								Frame(åˆ›å»ºçª—å£)
+ *   								Dialog(åˆ›å»ºå¯¹è¯æ¡†)
+ *   						Panel(AWT-æŠ½è±¡çª—å£å·¥å…·é›†ï¼Œå…¸å‹å®¹å™¨ï¼Œä¸èƒ½ç‹¬ç«‹å­˜åœ¨ï¼Œå¿…é¡»æ”¾åœ¨å…¶ä»–å®¹å™¨ä¸­çš„å®¹å™¨)
  *   								Applet
- *   						ScrollPane(Ôö¼Ó¹ö¶¯Ìõ)
+ *   						ScrollPane(å¢åŠ æ»šåŠ¨æ¡)
  *   			
- *  	 MenuComponent(²Ëµ¥×é¼ş)
+ *  	 MenuComponent(èœå•ç»„ä»¶)
  *  				MenuBar
  *  				MenuItem
  *  						Menu
@@ -25,11 +25,11 @@ public class FrameTest
 {
 	public static void main(String[] args)
 	{
-		//Ä¬ÈÏÊ¹ÓÃBorderLayout×÷Îª²¼¾Ö¹ÜÀíÆ÷
-		Frame f = new Frame("²âÊÔ´°¿Ú");
-		// ÉèÖÃ´°¿ÚµÄ´óĞ¡¡¢Î»ÖÃ
+		//é»˜è®¤ä½¿ç”¨BorderLayoutä½œä¸ºå¸ƒå±€ç®¡ç†å™¨
+		Frame f = new Frame("æµ‹è¯•çª—å£");
+		// è®¾ç½®çª—å£çš„å¤§å°ã€ä½ç½®
 		f.setBounds(30, 30 , 250, 200);
-		// ½«´°¿ÚÏÔÊ¾³öÀ´£¨Frame¶ÔÏóÄ¬ÈÏ´¦ÓÚÒş²Ø×´Ì¬£©
+		// å°†çª—å£æ˜¾ç¤ºå‡ºæ¥ï¼ˆFrameå¯¹è±¡é»˜è®¤å¤„äºéšè—çŠ¶æ€ï¼‰
 		f.setVisible(true);
 	}
 }

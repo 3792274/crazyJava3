@@ -1,4 +1,4 @@
-package chapter12_12_Ê¹ÓÃJFormattedTextFieldºÍJtextPane;
+package chapter12_12_ä½¿ç”¨JFormattedTextFieldå’ŒJtextPane;
 
 
 import java.awt.*;
@@ -10,7 +10,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,85 +20,85 @@ import javax.swing.event.*;
  */
 public class JEditorPaneTest
 {
-	JFrame mainWin = new JFrame("²âÊÔJEditorPane");
+	JFrame mainWin = new JFrame("æµ‹è¯•JEditorPane");
 	LinkedList<String> urls = new LinkedList<String>();
 	JEditorPane editorPane = new JEditorPane();
 	JTextField url = new JTextField(30);
 	JCheckBox editable = new JCheckBox();
-	JButton backButton = new JButton("ºóÍË");
+	JButton backButton = new JButton("åé€€");
 
 	public void init()
 	{
-		// Ä¬ÈÏÉèÖÃ²»ÔÊĞí±à¼­
+		// é»˜è®¤è®¾ç½®ä¸å…è®¸ç¼–è¾‘
 		editorPane.setEditable(false);
 		editorPane.addHyperlinkListener(event -> {
 			if (event.getEventType() == HyperlinkEvent.EventType.ACTIVATED)
 			{
 				try
 				{
-					// ½«ÓÃ»§ä¯ÀÀ¹ıµÄURL
+					// å°†ç”¨æˆ·æµè§ˆè¿‡çš„URL
 					urls.push(event.getURL().toString());
-					// ÔÚÎÄ±¾¿òÄÚÊäÈëURL×Ö·û´®
+					// åœ¨æ–‡æœ¬æ¡†å†…è¾“å…¥URLå­—ç¬¦ä¸²
 					url.setText(event.getURL().toString());
-					// ÈÃJEditorPane×°ÔØĞÂµÄÒ³Ãæ
+					// è®©JEditorPaneè£…è½½æ–°çš„é¡µé¢
 					editorPane.setPage(event.getURL());
 				}
 				catch (IOException e)
 				{
-					editorPane.setText("³öÏÖÒì³£: " + e);
+					editorPane.setText("å‡ºç°å¼‚å¸¸: " + e);
 				}
 			}
 		});
 
-		// Îª¿É±à¼­µÄ¸´Ñ¡¿òÌí¼ÓÊÂ¼ş¼àÌıÆ÷¡£
-		// Èç¹û¸Ã¸´Ñ¡¿ò´¦ÓÚÑ¡ÖĞ×´Ì¬£¬Ôò¸Ã±à¼­Æ÷¿É±à¼­
+		// ä¸ºå¯ç¼–è¾‘çš„å¤é€‰æ¡†æ·»åŠ äº‹ä»¶ç›‘å¬å™¨ã€‚
+		// å¦‚æœè¯¥å¤é€‰æ¡†å¤„äºé€‰ä¸­çŠ¶æ€ï¼Œåˆ™è¯¥ç¼–è¾‘å™¨å¯ç¼–è¾‘
 		editable.addActionListener(event ->
 			editorPane.setEditable(editable.isSelected()));
 
-		// ¼ÓÔØURLÖ¸¶¨Ò³ÃæµÄ¼àÌıÆ÷
+		// åŠ è½½URLæŒ‡å®šé¡µé¢çš„ç›‘å¬å™¨
 		ActionListener listener = event -> {
 			try
 			{
-				// ½«ÓÃ»§ä¯ÀÀºóµÄURLÌí¼Óµ½URLÕ»ÖĞ
+				// å°†ç”¨æˆ·æµè§ˆåçš„URLæ·»åŠ åˆ°URLæ ˆä¸­
 				urls.push(url.getText());
 				editorPane.setPage(url.getText());
 			}
 			catch (IOException e)
 			{
-				editorPane.setText("Ò³Ãæ: " + e);
+				editorPane.setText("é¡µé¢: " + e);
 			}
 		};
 
-		JButton loadButton = new JButton("ÔØÈë");
+		JButton loadButton = new JButton("è½½å…¥");
 		loadButton.addActionListener(listener);
 		url.addActionListener(listener);
 
-		// ÎªºóÍË°´Å¥Ìí¼Ó¼àÌıÆ÷
+		// ä¸ºåé€€æŒ‰é’®æ·»åŠ ç›‘å¬å™¨
 		backButton.addActionListener(event -> {
-			// Èç¹û»¹Ã»ÓĞÒÑ¾­ä¯ÀÀ¹ıµÄURL
+			// å¦‚æœè¿˜æ²¡æœ‰å·²ç»æµè§ˆè¿‡çš„URL
 			if (urls.size() <= 1) return;
 			try
 			{
-				// È¡³ö¡¢²¢»ñÈ¡×îºóÒ»¸öURL
+				// å–å‡ºã€å¹¶è·å–æœ€åä¸€ä¸ªURL
 				String urlString = urls.pop();
 				url.setText(urlString);
-				// ÖØĞÂ¼ÓÔØĞÂµÄURL
+				// é‡æ–°åŠ è½½æ–°çš„URL
 				editorPane.setPage(urlString);
 			}
 			catch (IOException e)
 			{
-				editorPane.setText("³öÏÖÒì³£: " + e);
+				editorPane.setText("å‡ºç°å¼‚å¸¸: " + e);
 			}
 		});
 
 		mainWin.add(new JScrollPane(editorPane), BorderLayout.CENTER);
 
 		JPanel panel = new JPanel();
-		panel.add(new JLabel("ÊäÈëÍøÖ·£º"));
+		panel.add(new JLabel("è¾“å…¥ç½‘å€ï¼š"));
 		panel.add(url);
 		panel.add(loadButton);
 		panel.add(backButton);
-		panel.add(new JLabel("ÊÇ·ñ¿É±à¼­"));
+		panel.add(new JLabel("æ˜¯å¦å¯ç¼–è¾‘"));
 		panel.add(editable);
 
 		mainWin.add(panel, BorderLayout.NORTH);

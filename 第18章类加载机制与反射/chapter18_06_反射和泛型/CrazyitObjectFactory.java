@@ -1,9 +1,9 @@
-package chapter18_06_·´ÉäºÍ·ºĞÍ;
+package chapter18_06_åå°„å’Œæ³›å‹;
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,9 +17,9 @@ public class CrazyitObjectFactory
 	{
 		try
 		{
-			// ´´½¨Ö¸¶¨Àà¶ÔÓ¦µÄClass¶ÔÏó
+			// åˆ›å»ºæŒ‡å®šç±»å¯¹åº”çš„Classå¯¹è±¡
 			Class cls = Class.forName(clsName);
-			// ·µ»ØÊ¹ÓÃ¸ÃClass¶ÔÏóËù´´½¨µÄÊµÀı
+			// è¿”å›ä½¿ç”¨è¯¥Classå¯¹è±¡æ‰€åˆ›å»ºçš„å®ä¾‹
 			return cls.newInstance();
 		}
 		catch(Exception e)

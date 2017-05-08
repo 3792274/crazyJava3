@@ -1,4 +1,4 @@
-package chapter12_10_Ê¹ÓÃJTreeºÍTreeModel´´½¨Ê÷;
+package chapter12_10_ä½¿ç”¨JTreeå’ŒTreeModelåˆ›å»ºæ ‘;
 
 
 import java.awt.*;
@@ -6,7 +6,7 @@ import javax.swing.*;
 import javax.swing.tree.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,30 +16,30 @@ import javax.swing.tree.*;
  */
 public class CustomTreeNode
 {
-	JFrame jf = new JFrame("¶¨ÖÆÊ÷µÄ½Úµã");
+	JFrame jf = new JFrame("å®šåˆ¶æ ‘çš„èŠ‚ç‚¹");
 	JTree tree;
-	// ¶¨Òå¼¸¸ö³õÊ¼½Úµã
-	DefaultMutableTreeNode friends = new DefaultMutableTreeNode("ÎÒµÄºÃÓÑ");
-	DefaultMutableTreeNode qingzhao = new DefaultMutableTreeNode("ÀîÇåÕÕ");
-	DefaultMutableTreeNode suge = new DefaultMutableTreeNode("ËÕ¸ñÀ­µ×");
-	DefaultMutableTreeNode libai = new DefaultMutableTreeNode("Àî°×");
-	DefaultMutableTreeNode nongyu = new DefaultMutableTreeNode("ÅªÓñ");
-	DefaultMutableTreeNode hutou = new DefaultMutableTreeNode("»¢Í·");
+	// å®šä¹‰å‡ ä¸ªåˆå§‹èŠ‚ç‚¹
+	DefaultMutableTreeNode friends = new DefaultMutableTreeNode("æˆ‘çš„å¥½å‹");
+	DefaultMutableTreeNode qingzhao = new DefaultMutableTreeNode("ææ¸…ç…§");
+	DefaultMutableTreeNode suge = new DefaultMutableTreeNode("è‹æ ¼æ‹‰åº•");
+	DefaultMutableTreeNode libai = new DefaultMutableTreeNode("æç™½");
+	DefaultMutableTreeNode nongyu = new DefaultMutableTreeNode("å¼„ç‰");
+	DefaultMutableTreeNode hutou = new DefaultMutableTreeNode("è™å¤´");
 	public void init()
 	{
-		// Í¨¹ıadd()·½·¨½¨Á¢Ê÷½ÚµãÖ®¼äµÄ¸¸×Ó¹ØÏµ
+		// é€šè¿‡add()æ–¹æ³•å»ºç«‹æ ‘èŠ‚ç‚¹ä¹‹é—´çš„çˆ¶å­å…³ç³»
 		friends.add(qingzhao);
 		friends.add(suge);
 		friends.add(libai);
 		friends.add(nongyu);
 		friends.add(hutou);
-		// ÒÔ¸ù½Úµã´´½¨Ê÷
+		// ä»¥æ ¹èŠ‚ç‚¹åˆ›å»ºæ ‘
 		tree = new JTree(friends);
-		// ÉèÖÃÊÇ·ñÏÔÊ¾¸ù½ÚµãµÄ¡°Õ¹¿ª/ÕÛµş¡±Í¼±ê,Ä¬ÈÏÊÇfalse
+		// è®¾ç½®æ˜¯å¦æ˜¾ç¤ºæ ¹èŠ‚ç‚¹çš„â€œå±•å¼€/æŠ˜å â€å›¾æ ‡,é»˜è®¤æ˜¯false
 		tree.setShowsRootHandles(true);
-		// ÉèÖÃ½ÚµãÊÇ·ñ¿É¼û,Ä¬ÈÏÊÇtrue
+		// è®¾ç½®èŠ‚ç‚¹æ˜¯å¦å¯è§,é»˜è®¤æ˜¯true
 		tree.setRootVisible(true);
-		// ÉèÖÃÊ¹ÓÃ¶¨ÖÆµÄ½Úµã»æÖÆÆ÷
+		// è®¾ç½®ä½¿ç”¨å®šåˆ¶çš„èŠ‚ç‚¹ç»˜åˆ¶å™¨
 		tree.setCellRenderer(new ImageCellRenderer());
 		jf.add(new JScrollPane(tree));
 		jf.pack();
@@ -51,14 +51,14 @@ public class CustomTreeNode
 		new CustomTreeNode().init();
 	}
 }
-// ÊµÏÖ×Ô¼ºµÄ½Úµã»æÖÆÆ÷
+// å®ç°è‡ªå·±çš„èŠ‚ç‚¹ç»˜åˆ¶å™¨
 class ImageCellRenderer extends JPanel implements TreeCellRenderer
 {
 	private ImageIcon icon;
 	private String name;
-	// ¶¨Òå»æÖÆµ¥Ôª¸ñÊ±µÄ±³¾°É«
+	// å®šä¹‰ç»˜åˆ¶å•å…ƒæ ¼æ—¶çš„èƒŒæ™¯è‰²
 	private Color background;
-	// ¶¨Òå»æÖÆµ¥Ôª¸ñÊ±µÄÇ°¾°É«
+	// å®šä¹‰ç»˜åˆ¶å•å…ƒæ ¼æ—¶çš„å‰æ™¯è‰²
 	private Color foreground;
 	public Component getTreeCellRendererComponent(JTree tree
 		, Object value , boolean sel , boolean expanded
@@ -70,10 +70,10 @@ class ImageCellRenderer extends JPanel implements TreeCellRenderer
 			: new Color(255 , 255 , 255);
 		foreground = hasFocus ? new Color(255 , 255 ,3)
 			: new Color(0 , 0 , 0);
-		// ·µ»Ø¸ÃJPanel¶ÔÏó×÷Îªµ¥Ôª¸ñ»æÖÆÆ÷
+		// è¿”å›è¯¥JPanelå¯¹è±¡ä½œä¸ºå•å…ƒæ ¼ç»˜åˆ¶å™¨
 		return this;
 	}
-	// ÖØĞ´paintComponent·½·¨£¬¸Ä±äJPanelµÄÍâ¹Û
+	// é‡å†™paintComponentæ–¹æ³•ï¼Œæ”¹å˜JPanelçš„å¤–è§‚
 	public void paintComponent(Graphics g)
 	{
 		int imageWidth = icon.getImage().getWidth(null);
@@ -81,15 +81,15 @@ class ImageCellRenderer extends JPanel implements TreeCellRenderer
 		g.setColor(background);
 		g.fillRect(0 , 0 , getWidth() , getHeight());
 		g.setColor(foreground);
-		// »æÖÆºÃÓÑÍ¼±ê
+		// ç»˜åˆ¶å¥½å‹å›¾æ ‡
 		g.drawImage(icon.getImage() , getWidth() / 2
 			- imageWidth / 2 , 10 , null);
 		g.setFont(new Font("SansSerif" , Font.BOLD , 18));
-		// »æÖÆºÃÓÑÓÃ»§Ãû
+		// ç»˜åˆ¶å¥½å‹ç”¨æˆ·å
 		g.drawString(name, getWidth() / 2
 			- name.length() * 10 , imageHeight + 30 );
 	}
-	// Í¨¹ı¸Ã·½·¨À´ÉèÖÃ¸ÃImageCellRendererµÄ×î¼Ñ´óĞ¡
+	// é€šè¿‡è¯¥æ–¹æ³•æ¥è®¾ç½®è¯¥ImageCellRendererçš„æœ€ä½³å¤§å°
 	public Dimension getPreferredSize()
 	{
 		return new Dimension(80, 80);

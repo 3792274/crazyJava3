@@ -1,10 +1,10 @@
-package chapter05_02_·½·¨Ïê½â;
+package chapter05_02_æ–¹æ³•è¯¦è§£;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,23 +14,23 @@ package chapter05_02_·½·¨Ïê½â;
  */
 public class Overload
 {
-	// ÏÂÃæ¶¨ÒåÁËÁ½¸ötest()·½·¨£¬µ«·½·¨µÄĞÎ²ÎÁĞ±í²»Í¬
-	// ÏµÍ³¿ÉÒÔÇø·ÖÕâÁ½¸ö·½·¨£¬ÕâÖÖ±»³ÆÎª·½·¨ÖØÔØ
+	// ä¸‹é¢å®šä¹‰äº†ä¸¤ä¸ªtest()æ–¹æ³•ï¼Œä½†æ–¹æ³•çš„å½¢å‚åˆ—è¡¨ä¸åŒ
+	// ç³»ç»Ÿå¯ä»¥åŒºåˆ†è¿™ä¸¤ä¸ªæ–¹æ³•ï¼Œè¿™ç§è¢«ç§°ä¸ºæ–¹æ³•é‡è½½
 	public void test()
 	{
-		System.out.println("ÎŞ²ÎÊı");
+		System.out.println("æ— å‚æ•°");
 	}
 	public void test(String msg)
 	{
-		System.out.println("ÖØÔØµÄtest·½·¨ " + msg);
+		System.out.println("é‡è½½çš„testæ–¹æ³• " + msg);
 	}
 	public static void main(String[] args)
 	{
 		Overload ol = new Overload();
-		// µ÷ÓÃtest()Ê±Ã»ÓĞ´«Èë²ÎÊı£¬Òò´ËÏµÍ³µ÷ÓÃÉÏÃæÃ»ÓĞ²ÎÊıµÄtest()·½·¨¡£
+		// è°ƒç”¨test()æ—¶æ²¡æœ‰ä¼ å…¥å‚æ•°ï¼Œå› æ­¤ç³»ç»Ÿè°ƒç”¨ä¸Šé¢æ²¡æœ‰å‚æ•°çš„test()æ–¹æ³•ã€‚
 		ol.test();
-		// µ÷ÓÃtest()Ê±´«ÈëÁËÒ»¸ö×Ö·û´®²ÎÊı£¬
-		// Òò´ËÏµÍ³µ÷ÓÃÉÏÃæ´øÒ»¸ö×Ö·û´®²ÎÊıµÄtest()·½·¨¡£
+		// è°ƒç”¨test()æ—¶ä¼ å…¥äº†ä¸€ä¸ªå­—ç¬¦ä¸²å‚æ•°ï¼Œ
+		// å› æ­¤ç³»ç»Ÿè°ƒç”¨ä¸Šé¢å¸¦ä¸€ä¸ªå­—ç¬¦ä¸²å‚æ•°çš„test()æ–¹æ³•ã€‚
 		ol.test("hello");
 	}
 }

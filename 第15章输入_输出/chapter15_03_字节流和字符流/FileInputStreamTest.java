@@ -1,10 +1,10 @@
-package chapter15_03_×Ö½ÚÁ÷ºÍ×Ö·ûÁ÷;
+package chapter15_03_å­—èŠ‚æµå’Œå­—ç¬¦æµ;
 
 import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,19 +15,19 @@ import java.io.*;
  */
 public class FileInputStreamTest {
 	public static void main(String[] args) throws IOException {
-		// ´´½¨×Ö½ÚÊäÈëÁ÷
-		FileInputStream fis = new FileInputStream("E:/µçÓ°/·ÉÓ¥°¬µÏ.720p.HDº«°æÖĞ×Ö.mkv");
-		// ´´½¨Ò»¸ö³¤¶ÈÎª1024µÄ¡°ÖñÍ²¡±
+		// åˆ›å»ºå­—èŠ‚è¾“å…¥æµ
+		FileInputStream fis = new FileInputStream("E:/ç”µå½±/é£é¹°è‰¾è¿ª.720p.HDéŸ©ç‰ˆä¸­å­—.mkv");
+		// åˆ›å»ºä¸€ä¸ªé•¿åº¦ä¸º1024çš„â€œç«¹ç­’â€
 		byte[] bbuf = new byte[1024];
-		// ÓÃÓÚ±£´æÊµ¼Ê¶ÁÈ¡µÄ×Ö½ÚÊı
+		// ç”¨äºä¿å­˜å®é™…è¯»å–çš„å­—èŠ‚æ•°
 		int hasRead = 0;
  		
-		// Ê¹ÓÃÑ­»·À´ÖØ¸´¡°È¡Ë®¡±¹ı³Ì
+		// ä½¿ç”¨å¾ªç¯æ¥é‡å¤â€œå–æ°´â€è¿‡ç¨‹
 		while ((hasRead = fis.read(bbuf)) > 0) {
-			// È¡³ö¡°ÖñÍ²¡±ÖĞË®µÎ£¨×Ö½Ú£©£¬½«×Ö½ÚÊı×é×ª»»³É×Ö·û´®ÊäÈë£¡
+			// å–å‡ºâ€œç«¹ç­’â€ä¸­æ°´æ»´ï¼ˆå­—èŠ‚ï¼‰ï¼Œå°†å­—èŠ‚æ•°ç»„è½¬æ¢æˆå­—ç¬¦ä¸²è¾“å…¥ï¼
 		  	System.out.print(new String(bbuf, 0, hasRead));
 		}
-		// ¹Ø±ÕÎÄ¼şÊäÈëÁ÷£¬·ÅÔÚfinally¿éÀï¸ü°²È«
+		// å…³é—­æ–‡ä»¶è¾“å…¥æµï¼Œæ”¾åœ¨finallyå—é‡Œæ›´å®‰å…¨
 		fis.close();
 	}
 }

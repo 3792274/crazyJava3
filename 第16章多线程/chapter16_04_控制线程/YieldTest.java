@@ -1,8 +1,8 @@
-package chapter16_04_¿ØÖÆÏß³Ì;
+package chapter16_04_æ§åˆ¶çº¿ç¨‹;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,17 +13,17 @@ package chapter16_04_¿ØÖÆÏß³Ì;
  */
 public class YieldTest extends Thread {
 	
-	//Ïß³ÌÃû×Ö
+	//çº¿ç¨‹åå­—
 	public YieldTest(String name) {
 		super(name);
 	}
 
-	// ¶¨Òårun·½·¨×÷ÎªÏß³ÌÖ´ĞĞÌå
+	// å®šä¹‰runæ–¹æ³•ä½œä¸ºçº¿ç¨‹æ‰§è¡Œä½“
 	@Override
 	public void run() {
 		for (int i = 0; i < 50; i++) {
 			System.out.println(getName() + "  " + i);
-			// µ±iµÈÓÚ20Ê±£¬Ê¹ÓÃyield·½·¨ÈÃµ±Ç°Ïß³ÌÈÃ²½
+			// å½“iç­‰äº20æ—¶ï¼Œä½¿ç”¨yieldæ–¹æ³•è®©å½“å‰çº¿ç¨‹è®©æ­¥
 			if (i == 20) {
 				Thread.yield();
 			}
@@ -31,16 +31,16 @@ public class YieldTest extends Thread {
 	}
 
 	public static void main(String[] args) throws Exception {
-		// Æô¶¯Á½Ìõ²¢·¢Ïß³Ì
-		YieldTest yt1 = new YieldTest("¸ß¼¶");
+		// å¯åŠ¨ä¸¤æ¡å¹¶å‘çº¿ç¨‹
+		YieldTest yt1 = new YieldTest("é«˜çº§");
 		
-		// ½«ty1Ïß³ÌÉèÖÃ³É×î¸ßÓÅÏÈ¼¶
+		// å°†ty1çº¿ç¨‹è®¾ç½®æˆæœ€é«˜ä¼˜å…ˆçº§
 		yt1.setPriority(Thread.MAX_PRIORITY);
 		yt1.start();
 		
 		
-		// ½«yt2Ïß³ÌÉèÖÃ³É×îµÍÓÅÏÈ¼¶
-		YieldTest yt2 = new YieldTest("µÍ¼¶");
+		// å°†yt2çº¿ç¨‹è®¾ç½®æˆæœ€ä½ä¼˜å…ˆçº§
+		YieldTest yt2 = new YieldTest("ä½çº§");
 		yt2.setPriority(Thread.MIN_PRIORITY);
 		yt2.start();
 	}

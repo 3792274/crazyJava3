@@ -1,10 +1,10 @@
-package chapter15_08_¶ÔÏóĞòÁĞ»¯;
+package chapter15_08_å¯¹è±¡åºåˆ—åŒ–;
 
 import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,11 +16,11 @@ import java.io.*;
 public class WriteObject {
 	public static void main(String[] args) {
 		try (
-				// ´´½¨Ò»¸öObjectOutputStreamÊä³öÁ÷
+				// åˆ›å»ºä¸€ä¸ªObjectOutputStreamè¾“å‡ºæµ
 				ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("object.txt"))
 			){
-			Person per = new Person("ËïÎò¿Õ", 500);
-			// ½«per¶ÔÏóĞ´ÈëÊä³öÁ÷
+			Person per = new Person("å­™æ‚Ÿç©º", 500);
+			// å°†perå¯¹è±¡å†™å…¥è¾“å‡ºæµ
 			oos.writeObject(per);
 		} catch (IOException ex) {
 			ex.printStackTrace();

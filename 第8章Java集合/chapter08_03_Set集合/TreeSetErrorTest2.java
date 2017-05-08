@@ -1,20 +1,20 @@
-package chapter08_03_Set¼¯ºÏ;
+package chapter08_03_Seté›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * Ìí¼Óµ½treeSetÖĞµÄÔªËØ±ØĞëÊÇÍ¬ÀàĞÍ
- * Èç¹ûÊÇ³ÌĞòÔ±×Ô¶¨ÒåÀàĞÍ£¬Ôò¿ÉÒÔÌí¼Ó¶à¸ö²»Í¬µÄ×Ô¶¨ÒåÀàĞÍ£¬µ¥±ØĞëÊµÏÖcompare½Ó¿Ú
- *ÏÈcompare¶ÔÏó£¬È»ºó¸ù¾İºìºÚÊ÷½á¹¹ÕÒµ½¶ÔÏóµÄ´æ´¢Î»ÖÃ¡£
+ * æ·»åŠ åˆ°treeSetä¸­çš„å…ƒç´ å¿…é¡»æ˜¯åŒç±»å‹
+ * å¦‚æœæ˜¯ç¨‹åºå‘˜è‡ªå®šä¹‰ç±»å‹ï¼Œåˆ™å¯ä»¥æ·»åŠ å¤šä¸ªä¸åŒçš„è‡ªå®šä¹‰ç±»å‹ï¼Œå•å¿…é¡»å®ç°compareæ¥å£
+ *å…ˆcompareå¯¹è±¡ï¼Œç„¶åæ ¹æ®çº¢é»‘æ ‘ç»“æ„æ‰¾åˆ°å¯¹è±¡çš„å­˜å‚¨ä½ç½®ã€‚
  */
 public class TreeSetErrorTest2
 {
 	public static void main(String[] args)
 	{
 		TreeSet ts = new TreeSet();
-		// ÏòTreeSet¼¯ºÏÖĞÌí¼ÓÁ½¸ö¶ÔÏó
-		ts.add(new String("·è¿ñJava½²Òå"));
-		ts.add(new Date());   // ¢Ù
+		// å‘TreeSeté›†åˆä¸­æ·»åŠ ä¸¤ä¸ªå¯¹è±¡
+		ts.add(new String("ç–¯ç‹‚Javaè®²ä¹‰"));
+		ts.add(new Date());   // â‘ 
 	}
 }

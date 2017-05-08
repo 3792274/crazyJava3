@@ -1,11 +1,11 @@
-package chapter08_06_java8ÔöÇ¿µÄMap¼¯ºÏ;
+package chapter08_06_java8å¢å¼ºçš„Mapé›†åˆ;
 
 
 import java.util.*;
 import java.io.*;
 /**
  * Description:
- * ÊÇHashtable µÄ×ÓÀà,»¹¿ÉÒÔ´ÓxmlÖĞ»ñÈ¡¡£
+ * æ˜¯Hashtable çš„å­ç±»,è¿˜å¯ä»¥ä»xmlä¸­è·å–ã€‚
  */
 public class PropertiesTest
 {
@@ -13,21 +13,21 @@ public class PropertiesTest
 	{
 		Properties props = new Properties();
 		
-		// ÏòPropertiesÖĞÔö¼ÓÊôĞÔ
+		// å‘Propertiesä¸­å¢åŠ å±æ€§
 		props.setProperty("username" , "yeeku");
 		props.setProperty("password" , "123456");
 		
-		// ½«PropertiesÖĞµÄkey-value¶Ô±£´æµ½a.iniÎÄ¼şÖĞ
-		props.store(new FileOutputStream("µÚ8ÕÂJava¼¯ºÏ\\chapter08_06_java8ÔöÇ¿µÄMap¼¯ºÏ\\a.ini"), "comment line");   //¢Ù
+		// å°†Propertiesä¸­çš„key-valueå¯¹ä¿å­˜åˆ°a.iniæ–‡ä»¶ä¸­
+		props.store(new FileOutputStream("ç¬¬8ç« Javaé›†åˆ\\chapter08_06_java8å¢å¼ºçš„Mapé›†åˆ\\a.ini"), "comment line");   //â‘ 
 		
-		// ĞÂ½¨Ò»¸öProperties¶ÔÏó
+		// æ–°å»ºä¸€ä¸ªPropertieså¯¹è±¡
 		Properties props2 = new Properties();
 		
-		// ÏòPropertiesÖĞÔö¼ÓÊôĞÔ
+		// å‘Propertiesä¸­å¢åŠ å±æ€§
 		props2.setProperty("gender" , "male");
 		
-		// ½«a.iniÎÄ¼şÖĞµÄkey-value¶Ô×·¼Óµ½props2ÖĞ
-		props2.load(new FileInputStream("µÚ8ÕÂJava¼¯ºÏ\\chapter08_06_java8ÔöÇ¿µÄMap¼¯ºÏ\\a.ini") );   //¢Ú
+		// å°†a.iniæ–‡ä»¶ä¸­çš„key-valueå¯¹è¿½åŠ åˆ°props2ä¸­
+		props2.load(new FileInputStream("ç¬¬8ç« Javaé›†åˆ\\chapter08_06_java8å¢å¼ºçš„Mapé›†åˆ\\a.ini") );   //â‘¡
 		System.out.println(props2);
 	}
 }

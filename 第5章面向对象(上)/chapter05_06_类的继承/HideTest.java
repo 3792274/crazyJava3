@@ -1,10 +1,10 @@
-package chapter05_06_ÀàµÄ¼Ì³Ğ;
+package chapter05_06_ç±»çš„ç»§æ‰¿;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,22 +14,22 @@ package chapter05_06_ÀàµÄ¼Ì³Ğ;
  */
 class Parent
 {
-	public String tag = "·è¿ñJava½²Òå";         //¢Ù
+	public String tag = "ç–¯ç‹‚Javaè®²ä¹‰";         //â‘ 
 }
 class Derived extends Parent
 {
-	// ¶¨ÒåÒ»¸öË½ÓĞµÄtagÊµÀı±äÁ¿À´Òş²Ø¸¸ÀàµÄtagÊµÀı±äÁ¿
-	private String tag = "ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½";         //¢Ú
+	// å®šä¹‰ä¸€ä¸ªç§æœ‰çš„tagå®ä¾‹å˜é‡æ¥éšè—çˆ¶ç±»çš„tagå®ä¾‹å˜é‡
+	private String tag = "è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜";         //â‘¡
 }
 public class HideTest
 {
 	public static void main(String[] args)
 	{
 		Derived d = new Derived();
-		// ³ÌĞò²»¿É·ÃÎÊdµÄË½ÓĞ±äÁ¿tag£¬ËùÒÔÏÂÃæÓï¾ä½«ÒıÆğ±àÒë´íÎó
-		// System.out.println(d.tag);         //¢Û
-		// ½«d±äÁ¿ÏÔÊ½µØÏòÉÏ×ªĞÍÎªParentºó£¬¼´¿É·ÃÎÊtagÊµÀı±äÁ¿
-		// ³ÌĞò½«Êä³ö£º¡°·è¿ñJava½²Òå¡±
-		System.out.println(((Parent)d).tag);         //¢Ü
+		// ç¨‹åºä¸å¯è®¿é—®dçš„ç§æœ‰å˜é‡tagï¼Œæ‰€ä»¥ä¸‹é¢è¯­å¥å°†å¼•èµ·ç¼–è¯‘é”™è¯¯
+		// System.out.println(d.tag);         //â‘¢
+		// å°†då˜é‡æ˜¾å¼åœ°å‘ä¸Šè½¬å‹ä¸ºParentåï¼Œå³å¯è®¿é—®tagå®ä¾‹å˜é‡
+		// ç¨‹åºå°†è¾“å‡ºï¼šâ€œç–¯ç‹‚Javaè®²ä¹‰â€
+		System.out.println(((Parent)d).tag);         //â‘£
 	}
 }

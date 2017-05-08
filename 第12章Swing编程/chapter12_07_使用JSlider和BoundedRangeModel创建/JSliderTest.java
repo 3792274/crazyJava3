@@ -1,4 +1,4 @@
-package chapter12_07_Ê¹ÓÃJSliderºÍBoundedRangeModel´´½¨;
+package chapter12_07_ä½¿ç”¨JSliderå’ŒBoundedRangeModelåˆ›å»º;
 
 
 import java.awt.*;
@@ -10,7 +10,7 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,82 +20,82 @@ import java.util.Hashtable;
  */
 public class JSliderTest
 {
-	JFrame mainWin = new JFrame("»¬¶¯ÌõÊ¾·¶");
+	JFrame mainWin = new JFrame("æ»‘åŠ¨æ¡ç¤ºèŒƒ");
 	Box sliderBox = new Box(BoxLayout.Y_AXIS);
 	JTextField showVal = new JTextField();
 	ChangeListener listener;
 	public void init()
 	{
-		// ¶¨ÒåÒ»¸ö¼àÌıÆ÷£¬ÓÃÓÚ¼àÌıËùÓĞ»¬¶¯Ìõ
+		// å®šä¹‰ä¸€ä¸ªç›‘å¬å™¨ï¼Œç”¨äºç›‘å¬æ‰€æœ‰æ»‘åŠ¨æ¡
 		listener = event -> {
-			// È¡³ö»¬¶¯ÌõµÄÖµ£¬²¢ÔÚÎÄ±¾ÖĞÏÔÊ¾³öÀ´
+			// å–å‡ºæ»‘åŠ¨æ¡çš„å€¼ï¼Œå¹¶åœ¨æ–‡æœ¬ä¸­æ˜¾ç¤ºå‡ºæ¥
 			JSlider source = (JSlider) event.getSource();
-			showVal.setText("µ±Ç°»¬¶¯ÌõµÄÖµÎª£º"
+			showVal.setText("å½“å‰æ»‘åŠ¨æ¡çš„å€¼ä¸ºï¼š"
 				+ source.getValue());
 		};
-		// -----------Ìí¼ÓÒ»¸öÆÕÍ¨»¬¶¯Ìõ-----------
+		// -----------æ·»åŠ ä¸€ä¸ªæ™®é€šæ»‘åŠ¨æ¡-----------
 		JSlider slider = new JSlider();
-		addSlider(slider, "ÆÕÍ¨»¬¶¯Ìõ");
-		// -----------Ìí¼Ó±£ÁôÇøÎª30µÄ»¬¶¯Ìõ-----------
+		addSlider(slider, "æ™®é€šæ»‘åŠ¨æ¡");
+		// -----------æ·»åŠ ä¿ç•™åŒºä¸º30çš„æ»‘åŠ¨æ¡-----------
 		slider = new JSlider();
 		slider.setExtent(30);
-		addSlider(slider, "±£ÁôÇøÎª30");
-		// ---Ìí¼Ó´øÖ÷¡¢´Î¿Ì¶ÈµÄ»¬¶¯Ìõ,²¢ÉèÖÃÆä×î´óÖµ£¬×îĞ¡Öµ---
+		addSlider(slider, "ä¿ç•™åŒºä¸º30");
+		// ---æ·»åŠ å¸¦ä¸»ã€æ¬¡åˆ»åº¦çš„æ»‘åŠ¨æ¡,å¹¶è®¾ç½®å…¶æœ€å¤§å€¼ï¼Œæœ€å°å€¼---
 		slider = new JSlider(30 , 200);
-		// ÉèÖÃ»æÖÆ¿Ì¶È
+		// è®¾ç½®ç»˜åˆ¶åˆ»åº¦
 		slider.setPaintTicks(true);
-		// ÉèÖÃÖ÷¡¢´Î¿Ì¶ÈµÄ¼ä¾à
+		// è®¾ç½®ä¸»ã€æ¬¡åˆ»åº¦çš„é—´è·
 		slider.setMajorTickSpacing(20);
 		slider.setMinorTickSpacing(5);
-		addSlider(slider, "ÓĞ¿Ì¶È");
-		// -----------Ìí¼Ó»¬¿é±ØĞëÍ£ÔÚ¿Ì¶È´¦»¬¶¯Ìõ-----------
+		addSlider(slider, "æœ‰åˆ»åº¦");
+		// -----------æ·»åŠ æ»‘å—å¿…é¡»åœåœ¨åˆ»åº¦å¤„æ»‘åŠ¨æ¡-----------
 		slider = new JSlider();
-		// ÉèÖÃ»¬¿é±ØĞëÍ£ÔÚ¿Ì¶È´¦
+		// è®¾ç½®æ»‘å—å¿…é¡»åœåœ¨åˆ»åº¦å¤„
 		slider.setSnapToTicks(true);
-		// ÉèÖÃ»æÖÆ¿Ì¶È
+		// è®¾ç½®ç»˜åˆ¶åˆ»åº¦
 		slider.setPaintTicks(true);
-		// ÉèÖÃÖ÷¡¢´Î¿Ì¶ÈµÄ¼ä¾à
+		// è®¾ç½®ä¸»ã€æ¬¡åˆ»åº¦çš„é—´è·
 		slider.setMajorTickSpacing(20);
 		slider.setMinorTickSpacing(5);
-		addSlider(slider, "»¬¿éÍ£ÔÚ¿Ì¶È´¦");
-		// -----------Ìí¼ÓÃ»ÓĞ»¬¹ìµÄ»¬¶¯Ìõ-----------
+		addSlider(slider, "æ»‘å—åœåœ¨åˆ»åº¦å¤„");
+		// -----------æ·»åŠ æ²¡æœ‰æ»‘è½¨çš„æ»‘åŠ¨æ¡-----------
 		slider = new JSlider();
-		// ÉèÖÃ»æÖÆ¿Ì¶È
+		// è®¾ç½®ç»˜åˆ¶åˆ»åº¦
 		slider.setPaintTicks(true);
-		// ÉèÖÃÖ÷¡¢´Î¿Ì¶ÈµÄ¼ä¾à
+		// è®¾ç½®ä¸»ã€æ¬¡åˆ»åº¦çš„é—´è·
 		slider.setMajorTickSpacing(20);
 		slider.setMinorTickSpacing(5);
-		// ÉèÖÃ²»»æÖÆ»¬¹ì
+		// è®¾ç½®ä¸ç»˜åˆ¶æ»‘è½¨
 		slider.setPaintTrack(false);
-		addSlider(slider, "ÎŞ»¬¹ì");
-		// -----------Ìí¼Ó·½Ïò·´×ªµÄ»¬¶¯Ìõ-----------
+		addSlider(slider, "æ— æ»‘è½¨");
+		// -----------æ·»åŠ æ–¹å‘åè½¬çš„æ»‘åŠ¨æ¡-----------
 		slider = new JSlider();
-		// ÉèÖÃ»æÖÆ¿Ì¶È
+		// è®¾ç½®ç»˜åˆ¶åˆ»åº¦
 		slider.setPaintTicks(true);
-		// ÉèÖÃÖ÷¡¢´Î¿Ì¶ÈµÄ¼ä¾à
+		// è®¾ç½®ä¸»ã€æ¬¡åˆ»åº¦çš„é—´è·
 		slider.setMajorTickSpacing(20);
 		slider.setMinorTickSpacing(5);
-		// ÉèÖÃ·½Ïò·´×ª
+		// è®¾ç½®æ–¹å‘åè½¬
 		slider.setInverted(true);
-		addSlider(slider, "·½Ïò·´×ª");
-		// --------Ìí¼Ó»æÖÆÄ¬ÈÏ¿Ì¶È±êÇ©µÄ»¬¶¯Ìõ--------
+		addSlider(slider, "æ–¹å‘åè½¬");
+		// --------æ·»åŠ ç»˜åˆ¶é»˜è®¤åˆ»åº¦æ ‡ç­¾çš„æ»‘åŠ¨æ¡--------
 		slider = new JSlider();
-		// ÉèÖÃ»æÖÆ¿Ì¶È
+		// è®¾ç½®ç»˜åˆ¶åˆ»åº¦
 		slider.setPaintTicks(true);
-		// ÉèÖÃÖ÷¡¢´Î¿Ì¶ÈµÄ¼ä¾à
+		// è®¾ç½®ä¸»ã€æ¬¡åˆ»åº¦çš„é—´è·
 		slider.setMajorTickSpacing(20);
 		slider.setMinorTickSpacing(5);
-		// ÉèÖÃ»æÖÆ¿Ì¶È±êÇ©£¬Ä¬ÈÏ»æÖÆÊıÖµ¿Ì¶È±êÇ©
+		// è®¾ç½®ç»˜åˆ¶åˆ»åº¦æ ‡ç­¾ï¼Œé»˜è®¤ç»˜åˆ¶æ•°å€¼åˆ»åº¦æ ‡ç­¾
 		slider.setPaintLabels(true);
-		addSlider(slider, "ÊıÖµ¿Ì¶È±êÇ©");
-		// ------Ìí¼Ó»æÖÆLabelÀàĞÍµÄ¿Ì¶È±êÇ©µÄ»¬¶¯Ìõ------
+		addSlider(slider, "æ•°å€¼åˆ»åº¦æ ‡ç­¾");
+		// ------æ·»åŠ ç»˜åˆ¶Labelç±»å‹çš„åˆ»åº¦æ ‡ç­¾çš„æ»‘åŠ¨æ¡------
 		slider = new JSlider();
-		// ÉèÖÃ»æÖÆ¿Ì¶È
+		// è®¾ç½®ç»˜åˆ¶åˆ»åº¦
 		slider.setPaintTicks(true);
-		// ÉèÖÃÖ÷¡¢´Î¿Ì¶ÈµÄ¼ä¾à
+		// è®¾ç½®ä¸»ã€æ¬¡åˆ»åº¦çš„é—´è·
 		slider.setMajorTickSpacing(20);
 		slider.setMinorTickSpacing(5);
-		// ÉèÖÃ»æÖÆ¿Ì¶È±êÇ©
+		// è®¾ç½®ç»˜åˆ¶åˆ»åº¦æ ‡ç­¾
 		slider.setPaintLabels(true);
 		Dictionary<Integer, Component> labelTable = new Hashtable<>();
 		labelTable.put(0, new JLabel("A"));
@@ -104,17 +104,17 @@ public class JSliderTest
 		labelTable.put(60, new JLabel("D"));
 		labelTable.put(80, new JLabel("E"));
 		labelTable.put(100, new JLabel("F"));
-		// Ö¸¶¨¿Ì¶È±êÇ©£¬±êÇ©ÊÇJLabel
+		// æŒ‡å®šåˆ»åº¦æ ‡ç­¾ï¼Œæ ‡ç­¾æ˜¯JLabel
 		slider.setLabelTable(labelTable);
-		addSlider(slider, "JLable±êÇ©");
-		// ------Ìí¼Ó»æÖÆLabelÀàĞÍµÄ¿Ì¶È±êÇ©µÄ»¬¶¯Ìõ------
+		addSlider(slider, "JLableæ ‡ç­¾");
+		// ------æ·»åŠ ç»˜åˆ¶Labelç±»å‹çš„åˆ»åº¦æ ‡ç­¾çš„æ»‘åŠ¨æ¡------
 		slider = new JSlider();
-		// ÉèÖÃ»æÖÆ¿Ì¶È
+		// è®¾ç½®ç»˜åˆ¶åˆ»åº¦
 		slider.setPaintTicks(true);
-		// ÉèÖÃÖ÷¡¢´Î¿Ì¶ÈµÄ¼ä¾à
+		// è®¾ç½®ä¸»ã€æ¬¡åˆ»åº¦çš„é—´è·
 		slider.setMajorTickSpacing(20);
 		slider.setMinorTickSpacing(5);
-		// ÉèÖÃ»æÖÆ¿Ì¶È±êÇ©
+		// è®¾ç½®ç»˜åˆ¶åˆ»åº¦æ ‡ç­¾
 		slider.setPaintLabels(true);
 		labelTable = new Hashtable<Integer, Component>();
 		labelTable.put(0, new JLabel(new ImageIcon("ico/0.GIF")));
@@ -122,21 +122,21 @@ public class JSliderTest
 		labelTable.put(40, new JLabel(new ImageIcon("ico/4.GIF")));
 		labelTable.put(60, new JLabel(new ImageIcon("ico/6.GIF")));
 		labelTable.put(80, new JLabel(new ImageIcon("ico/8.GIF")));
-		// Ö¸¶¨¿Ì¶È±êÇ©£¬±êÇ©ÊÇImageIcon
+		// æŒ‡å®šåˆ»åº¦æ ‡ç­¾ï¼Œæ ‡ç­¾æ˜¯ImageIcon
 		slider.setLabelTable(labelTable);
-		addSlider(slider, "Icon±êÇ©");
+		addSlider(slider, "Iconæ ‡ç­¾");
 		mainWin.add(sliderBox, BorderLayout.CENTER);
 		mainWin.add(showVal, BorderLayout.SOUTH);
 		mainWin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainWin.pack();
 		mainWin.setVisible(true);
 	}
-	// ¶¨ÒåÒ»¸ö·½·¨£¬ÓÃÓÚ½«»¬¶¯ÌõÌí¼Óµ½ÈİÆ÷ÖĞ
+	// å®šä¹‰ä¸€ä¸ªæ–¹æ³•ï¼Œç”¨äºå°†æ»‘åŠ¨æ¡æ·»åŠ åˆ°å®¹å™¨ä¸­
 	public void addSlider(JSlider slider, String description)
 	{
 		slider.addChangeListener(listener);
 		Box box = new Box(BoxLayout.X_AXIS);
-		box.add(new JLabel(description + "£º"));
+		box.add(new JLabel(description + "ï¼š"));
 		box.add(slider);
 		sliderBox.add(box);
 	}

@@ -1,11 +1,11 @@
-package chapter16_03_Ïß³ÌµÄÉúÃüÖÜÆÚ;
+package chapter16_03_çº¿ç¨‹çš„ç”Ÿå‘½å‘¨æœŸ;
 
-//³¢ÊÔ¶ÔÒ»¸öÒÑ¾­ËÀÍöµÄÏß³Ìµ÷ÓÃstart()·½·¨
+//å°è¯•å¯¹ä¸€ä¸ªå·²ç»æ­»äº¡çš„çº¿ç¨‹è°ƒç”¨start()æ–¹æ³•
 public class StartDead extends Thread {
 
 	private int i;
 
-	// ÖØĞ´run·½·¨£¬run·½·¨µÄ·½·¨Ìå¾ÍÊÇÏß³ÌÖ´ĞĞÌå
+	// é‡å†™runæ–¹æ³•ï¼Œrunæ–¹æ³•çš„æ–¹æ³•ä½“å°±æ˜¯çº¿ç¨‹æ‰§è¡Œä½“
 	@Override
 	public void run() {
 		for (; i < 100; i++) {
@@ -14,26 +14,26 @@ public class StartDead extends Thread {
 	}
 
 	public static void main(String[] args) {
-		// ´´½¨Ïß³Ì¶ÔÏó
+		// åˆ›å»ºçº¿ç¨‹å¯¹è±¡
 		StartDead sd = new StartDead();
 		
 		for (int i = 0; i < 300; i++) {
-			// µ÷ÓÃThreadµÄcurrentThread·½·¨»ñÈ¡µ±Ç°Ïß³Ì
+			// è°ƒç”¨Threadçš„currentThreadæ–¹æ³•è·å–å½“å‰çº¿ç¨‹
 			System.out.println(Thread.currentThread().getName() + " " + i);
 			if (i == 20) {
-				// Æô¶¯Ïß³Ì
+				// å¯åŠ¨çº¿ç¨‹
 				sd.start();
-				// ÅĞ¶ÏÆô¶¯ºóÏß³ÌµÄisAlive()Öµ£¬Êä³ötrue
+				// åˆ¤æ–­å¯åŠ¨åçº¿ç¨‹çš„isAlive()å€¼ï¼Œè¾“å‡ºtrue
 				System.out.println(sd.isAlive());
 			}
 			
-			// Ö»ÓĞµ±Ïß³Ì´¦ÓÚĞÂ½¨¡¢ËÀÍöÁ½ÖÖ×´Ì¬Ê±isAlive()·½·¨·µ»Øfalse¡£
-			// µ±i > 20£¬Ôò¸ÃÏß³Ì¿Ï¶¨ÒÑ¾­Æô¶¯¹ıÁË£¬Èç¹ûsd.isAlive()Îª¼ÙÊ±£¬
-			// ÄÇÖ»ÄÜÊÇËÀÍö×´Ì¬ÁË¡£Òı·¢ java.lang.IllegalThreadStateException Òì³£
+			// åªæœ‰å½“çº¿ç¨‹å¤„äºæ–°å»ºã€æ­»äº¡ä¸¤ç§çŠ¶æ€æ—¶isAlive()æ–¹æ³•è¿”å›falseã€‚
+			// å½“i > 20ï¼Œåˆ™è¯¥çº¿ç¨‹è‚¯å®šå·²ç»å¯åŠ¨è¿‡äº†ï¼Œå¦‚æœsd.isAlive()ä¸ºå‡æ—¶ï¼Œ
+			// é‚£åªèƒ½æ˜¯æ­»äº¡çŠ¶æ€äº†ã€‚å¼•å‘ java.lang.IllegalThreadStateException å¼‚å¸¸
 			if (i > 20 && !sd.isAlive())
 
 			{
-				// ÊÔÍ¼ÔÙ´ÎÆô¶¯¸ÃÏß³Ì
+				// è¯•å›¾å†æ¬¡å¯åŠ¨è¯¥çº¿ç¨‹
 				sd.start();
 			}
 		}

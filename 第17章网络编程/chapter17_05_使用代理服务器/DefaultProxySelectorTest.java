@@ -1,4 +1,4 @@
-package chapter17_05_Ê¹ÓÃ´úÀí·şÎñÆ÷;
+package chapter17_05_ä½¿ç”¨ä»£ç†æœåŠ¡å™¨;
 
 import java.io.*;
 import java.net.*;
@@ -6,7 +6,7 @@ import java.util.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,47 +16,47 @@ import java.util.*;
  * @version 1.0
  */
 public class DefaultProxySelectorTest {
-	// ¶¨ÒåĞèÒª·ÃÎÊµÄÍøÕ¾µØÖ·
+	// å®šä¹‰éœ€è¦è®¿é—®çš„ç½‘ç«™åœ°å€
 	static String urlStr = "http://www.crazyit.org";
 
 	public static void main(String[] args) throws Exception {
-		// »ñÈ¡ÏµÍ³µÄÄ¬ÈÏÊôĞÔ
+		// è·å–ç³»ç»Ÿçš„é»˜è®¤å±æ€§
 		Properties props = System.getProperties();
-		// Í¨¹ıÏµÍ³ÊôĞÔÉèÖÃHTTP·ÃÎÊËùÓÃµÄ´úÀí·şÎñÆ÷µÄÖ÷»úµØÖ·¡¢¶Ë¿Ú
+		// é€šè¿‡ç³»ç»Ÿå±æ€§è®¾ç½®HTTPè®¿é—®æ‰€ç”¨çš„ä»£ç†æœåŠ¡å™¨çš„ä¸»æœºåœ°å€ã€ç«¯å£
 		props.setProperty("http.proxyHost", "192.168.10.96");
 		props.setProperty("http.proxyPort", "8080");
-		// Í¨¹ıÏµÍ³ÊôĞÔÉèÖÃHTTP·ÃÎÊÎŞĞèÊ¹ÓÃ´úÀí·şÎñÆ÷µÄÖ÷»ú
-		// ¿ÉÒÔÊ¹ÓÃ*Í¨Åä·û£¬¶à¸öµØÖ·ÓÃ|·Ö¸ô
+		// é€šè¿‡ç³»ç»Ÿå±æ€§è®¾ç½®HTTPè®¿é—®æ— éœ€ä½¿ç”¨ä»£ç†æœåŠ¡å™¨çš„ä¸»æœº
+		// å¯ä»¥ä½¿ç”¨*é€šé…ç¬¦ï¼Œå¤šä¸ªåœ°å€ç”¨|åˆ†éš”
 		props.setProperty("http.nonProxyHosts", "localhost|192.168.10.*");
-		// Í¨¹ıÏµÍ³ÊôĞÔÉèÖÃHTTPS·ÃÎÊËùÓÃµÄ´úÀí·şÎñÆ÷µÄÖ÷»úµØÖ·¡¢¶Ë¿Ú
+		// é€šè¿‡ç³»ç»Ÿå±æ€§è®¾ç½®HTTPSè®¿é—®æ‰€ç”¨çš„ä»£ç†æœåŠ¡å™¨çš„ä¸»æœºåœ°å€ã€ç«¯å£
 		props.setProperty("https.proxyHost", "192.168.10.96");
 		props.setProperty("https.proxyPort", "443");
 		/*
-		 * DefaultProxySelector²»Ö§³Öhttps.nonProxyHostsÊôĞÔ£¬
-		 * DefaultProxySelectorÖ±½Ó°´http.nonProxyHostsµÄÉèÖÃ¹æÔò´¦Àí
+		 * DefaultProxySelectorä¸æ”¯æŒhttps.nonProxyHostså±æ€§ï¼Œ
+		 * DefaultProxySelectorç›´æ¥æŒ‰http.nonProxyHostsçš„è®¾ç½®è§„åˆ™å¤„ç†
 		 */
-		// Í¨¹ıÏµÍ³ÊôĞÔÉèÖÃFTP·ÃÎÊËùÓÃµÄ´úÀí·şÎñÆ÷µÄÖ÷»úµØÖ·¡¢¶Ë¿Ú
+		// é€šè¿‡ç³»ç»Ÿå±æ€§è®¾ç½®FTPè®¿é—®æ‰€ç”¨çš„ä»£ç†æœåŠ¡å™¨çš„ä¸»æœºåœ°å€ã€ç«¯å£
 		props.setProperty("ftp.proxyHost", "192.168.10.96");
 		props.setProperty("ftp.proxyPort", "2121");
-		// Í¨¹ıÏµÍ³ÊôĞÔÉèÖÃFTP·ÃÎÊÎŞĞèÊ¹ÓÃ´úÀí·şÎñÆ÷µÄÖ÷»ú
+		// é€šè¿‡ç³»ç»Ÿå±æ€§è®¾ç½®FTPè®¿é—®æ— éœ€ä½¿ç”¨ä»£ç†æœåŠ¡å™¨çš„ä¸»æœº
 		props.setProperty("ftp.nonProxyHosts", "localhost|192.168.10.*");
-		// Í¨¹ıÏµÍ³ÊôĞÔÉèÖÃÉèÖÃSOCKS´úÀí·şÎñÆ÷µÄÖ÷»úµØÖ·¡¢¶Ë¿Ú
+		// é€šè¿‡ç³»ç»Ÿå±æ€§è®¾ç½®è®¾ç½®SOCKSä»£ç†æœåŠ¡å™¨çš„ä¸»æœºåœ°å€ã€ç«¯å£
 		props.setProperty("socks.ProxyHost", "192.168.10.96");
 		props.setProperty("socks.ProxyPort", "1080");
-		// »ñÈ¡ÏµÍ³Ä¬ÈÏµÄ´úÀíÑ¡ÔñÆ÷
-		ProxySelector selector = ProxySelector.getDefault(); // ¢Ù
-		System.out.println("ÏµÍ³Ä¬ÈÏµÄ´úÀíÑ¡ÔñÆ÷£º" + selector);
-		// ¸ù¾İURI¶¯Ì¬¾ö¶¨ËùÊ¹ÓÃµÄ´úÀí·şÎñÆ÷
-		System.out.println("ÏµÍ³Îªftp://www.crazyit.orgÑ¡ÔñµÄ´úÀí·şÎñÆ÷Îª£º" + ProxySelector.getDefault().select(new URI("ftp://www.crazyit.org"))); // ¢Ú
+		// è·å–ç³»ç»Ÿé»˜è®¤çš„ä»£ç†é€‰æ‹©å™¨
+		ProxySelector selector = ProxySelector.getDefault(); // â‘ 
+		System.out.println("ç³»ç»Ÿé»˜è®¤çš„ä»£ç†é€‰æ‹©å™¨ï¼š" + selector);
+		// æ ¹æ®URIåŠ¨æ€å†³å®šæ‰€ä½¿ç”¨çš„ä»£ç†æœåŠ¡å™¨
+		System.out.println("ç³»ç»Ÿä¸ºftp://www.crazyit.orgé€‰æ‹©çš„ä»£ç†æœåŠ¡å™¨ä¸ºï¼š" + ProxySelector.getDefault().select(new URI("ftp://www.crazyit.org"))); // â‘¡
 		URL url = new URL(urlStr);
-		// Ö±½Ó´ò¿ªÁ¬½Ó£¬Ä¬ÈÏµÄ´úÀíÑ¡ÔñÆ÷»áÊ¹ÓÃhttp.proxyHost¡¢
-		// http.proxyPortÏµÍ³ÊôĞÔÉèÖÃµÄ´úÀí·şÎñÆ÷£¬
-		// Èç¹ûÎŞ·¨Á¬½Ó´úÀí·şÎñÆ÷£¬Ä¬ÈÏµÄ´úÀíÑ¡ÔñÆ÷»á³¢ÊÔÖ±½ÓÁ¬½Ó
-		URLConnection conn = url.openConnection(); // ¢Û
-		// ÉèÖÃ³¬Ê±Ê±³¤¡£
+		// ç›´æ¥æ‰“å¼€è¿æ¥ï¼Œé»˜è®¤çš„ä»£ç†é€‰æ‹©å™¨ä¼šä½¿ç”¨http.proxyHostã€
+		// http.proxyPortç³»ç»Ÿå±æ€§è®¾ç½®çš„ä»£ç†æœåŠ¡å™¨ï¼Œ
+		// å¦‚æœæ— æ³•è¿æ¥ä»£ç†æœåŠ¡å™¨ï¼Œé»˜è®¤çš„ä»£ç†é€‰æ‹©å™¨ä¼šå°è¯•ç›´æ¥è¿æ¥
+		URLConnection conn = url.openConnection(); // â‘¢
+		// è®¾ç½®è¶…æ—¶æ—¶é•¿ã€‚
 		conn.setConnectTimeout(3000);
 		try (Scanner scan = new Scanner(conn.getInputStream(), "utf-8")) {
-			// ¶ÁÈ¡Ô¶³ÌÖ÷»úµÄÄÚÈİ
+			// è¯»å–è¿œç¨‹ä¸»æœºçš„å†…å®¹
 			while (scan.hasNextLine()) {
 				System.out.println(scan.nextLine());
 			}

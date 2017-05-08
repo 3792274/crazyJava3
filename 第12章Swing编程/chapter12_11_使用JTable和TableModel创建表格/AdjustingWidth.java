@@ -1,4 +1,4 @@
-package chapter12_11_Ê¹ÓÃJTableºÍTableModel´´½¨±í¸ñ;
+package chapter12_11_ä½¿ç”¨JTableå’ŒTableModelåˆ›å»ºè¡¨æ ¼;
 
 
 import java.awt.event.*;
@@ -6,7 +6,7 @@ import javax.swing.*;
 import javax.swing.table.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,21 +16,21 @@ import javax.swing.table.*;
  */
 public class AdjustingWidth
 {
-	JFrame jf = new JFrame("µ÷Õû±í¸ñÁĞ¿í");
+	JFrame jf = new JFrame("è°ƒæ•´è¡¨æ ¼åˆ—å®½");
 	JMenuBar menuBar = new JMenuBar();
-	JMenu adjustModeMenu = new JMenu("µ÷Õû·½Ê½");
-	JMenu selectUnitMenu = new JMenu("Ñ¡Ôñµ¥Ôª");
-	JMenu selectModeMenu = new JMenu("Ñ¡Ôñ·½Ê½");
-	// ¶¨Òå5¸öµ¥Ñ¡¿ò°´Å¥£¬ÓÃÒÔ¿ØÖÆ±í¸ñµÄ¿í¶Èµ÷Õû·½Ê½
+	JMenu adjustModeMenu = new JMenu("è°ƒæ•´æ–¹å¼");
+	JMenu selectUnitMenu = new JMenu("é€‰æ‹©å•å…ƒ");
+	JMenu selectModeMenu = new JMenu("é€‰æ‹©æ–¹å¼");
+	// å®šä¹‰5ä¸ªå•é€‰æ¡†æŒ‰é’®ï¼Œç”¨ä»¥æ§åˆ¶è¡¨æ ¼çš„å®½åº¦è°ƒæ•´æ–¹å¼
 	JRadioButtonMenuItem[] adjustModesItem = new JRadioButtonMenuItem[5];
-	// ¶¨Òå3¸öµ¥Ñ¡¿ò°´Å¥£¬ÓÃÒÔ¿ØÖÆ±í¸ñµÄÑ¡Ôñ·½Ê½
+	// å®šä¹‰3ä¸ªå•é€‰æ¡†æŒ‰é’®ï¼Œç”¨ä»¥æ§åˆ¶è¡¨æ ¼çš„é€‰æ‹©æ–¹å¼
 	JRadioButtonMenuItem[] selectModesItem = new JRadioButtonMenuItem[3];
-	JCheckBoxMenuItem rowsItem = new JCheckBoxMenuItem("Ñ¡ÔñĞĞ");
-	JCheckBoxMenuItem columnsItem = new JCheckBoxMenuItem("Ñ¡ÔñÁĞ");
-	JCheckBoxMenuItem cellsItem = new JCheckBoxMenuItem("Ñ¡Ôñµ¥Ôª¸ñ");
+	JCheckBoxMenuItem rowsItem = new JCheckBoxMenuItem("é€‰æ‹©è¡Œ");
+	JCheckBoxMenuItem columnsItem = new JCheckBoxMenuItem("é€‰æ‹©åˆ—");
+	JCheckBoxMenuItem cellsItem = new JCheckBoxMenuItem("é€‰æ‹©å•å…ƒæ ¼");
 	ButtonGroup adjustBg = new ButtonGroup();
 	ButtonGroup selectBg = new ButtonGroup();
-	// ¶¨ÒåÒ»¸öintÀàĞÍµÄÊı×é£¬ÓÃÓÚ±£´æ±í¸ñËùÓĞµÄ¿í¶Èµ÷Õû·½Ê½
+	// å®šä¹‰ä¸€ä¸ªintç±»å‹çš„æ•°ç»„ï¼Œç”¨äºä¿å­˜è¡¨æ ¼æ‰€æœ‰çš„å®½åº¦è°ƒæ•´æ–¹å¼
 	int[] adjustModes = new int[]{
 		JTable.AUTO_RESIZE_OFF
 		, JTable.AUTO_RESIZE_NEXT_COLUMN
@@ -44,31 +44,31 @@ public class AdjustingWidth
 		, ListSelectionModel.SINGLE_SELECTION
 	};
 	JTable table;
-	// ¶¨Òå¶şÎ¬Êı×é×÷Îª±í¸ñÊı¾İ
+	// å®šä¹‰äºŒç»´æ•°ç»„ä½œä¸ºè¡¨æ ¼æ•°æ®
 	Object[][] tableData =
 	{
-		new Object[]{"ÀîÇåÕÕ" , 29 , "Å®"},
-		new Object[]{"ËÕ¸ñÀ­µ×", 56 , "ÄĞ"},
-		new Object[]{"Àî°×", 35 , "ÄĞ"},
-		new Object[]{"ÅªÓñ", 18 , "Å®"},
-		new Object[]{"»¢Í·" , 2 , "ÄĞ"}
+		new Object[]{"ææ¸…ç…§" , 29 , "å¥³"},
+		new Object[]{"è‹æ ¼æ‹‰åº•", 56 , "ç”·"},
+		new Object[]{"æç™½", 35 , "ç”·"},
+		new Object[]{"å¼„ç‰", 18 , "å¥³"},
+		new Object[]{"è™å¤´" , 2 , "ç”·"}
 	};
-	// ¶¨ÒåÒ»Î¬Êı¾İ×÷ÎªÁĞ±êÌâ
-	Object[] columnTitle = {"ĞÕÃû" , "ÄêÁä" , "ĞÔ±ğ"};
+	// å®šä¹‰ä¸€ç»´æ•°æ®ä½œä¸ºåˆ—æ ‡é¢˜
+	Object[] columnTitle = {"å§“å" , "å¹´é¾„" , "æ€§åˆ«"};
 	public void init()
 	{
-		// ÒÔ¶şÎ¬Êı×éºÍÒ»Î¬Êı×éÀ´´´½¨Ò»¸öJTable¶ÔÏó
+		// ä»¥äºŒç»´æ•°ç»„å’Œä¸€ç»´æ•°ç»„æ¥åˆ›å»ºä¸€ä¸ªJTableå¯¹è±¡
 		table = new JTable(tableData , columnTitle);
-		// -----------Îª´°¿Ú°²×°ÉèÖÃ±í¸ñµ÷Õû·½Ê½µÄ²Ëµ¥-----------
-		adjustModesItem[0] = new JRadioButtonMenuItem("Ö»µ÷Õû±í¸ñ");
-		adjustModesItem[1] = new JRadioButtonMenuItem("Ö»µ÷ÕûÏÂÒ»ÁĞ");
-		adjustModesItem[2] = new JRadioButtonMenuItem("Æ½¾ùµ÷ÕûÓàÏÂÁĞ");
-		adjustModesItem[3] = new JRadioButtonMenuItem("Ö»µ÷Õû×îºóÒ»ÁĞ");
-		adjustModesItem[4] = new JRadioButtonMenuItem("Æ½¾ùµ÷ÕûËùÓĞÁĞ");
+		// -----------ä¸ºçª—å£å®‰è£…è®¾ç½®è¡¨æ ¼è°ƒæ•´æ–¹å¼çš„èœå•-----------
+		adjustModesItem[0] = new JRadioButtonMenuItem("åªè°ƒæ•´è¡¨æ ¼");
+		adjustModesItem[1] = new JRadioButtonMenuItem("åªè°ƒæ•´ä¸‹ä¸€åˆ—");
+		adjustModesItem[2] = new JRadioButtonMenuItem("å¹³å‡è°ƒæ•´ä½™ä¸‹åˆ—");
+		adjustModesItem[3] = new JRadioButtonMenuItem("åªè°ƒæ•´æœ€åä¸€åˆ—");
+		adjustModesItem[4] = new JRadioButtonMenuItem("å¹³å‡è°ƒæ•´æ‰€æœ‰åˆ—");
 		menuBar.add(adjustModeMenu);
 		for (int i = 0; i < adjustModesItem.length ; i++)
 		{
-			// Ä¬ÈÏÑ¡ÖĞµÚÈı¸ö²Ëµ¥Ïî£¬¼´¶ÔÓ¦±í¸ñÄ¬ÈÏµÄ¿í¶Èµ÷Õû·½Ê½
+			// é»˜è®¤é€‰ä¸­ç¬¬ä¸‰ä¸ªèœå•é¡¹ï¼Œå³å¯¹åº”è¡¨æ ¼é»˜è®¤çš„å®½åº¦è°ƒæ•´æ–¹å¼
 			if (i == 2)
 			{
 				adjustModesItem[i].setSelected(true);
@@ -76,24 +76,24 @@ public class AdjustingWidth
 			adjustBg.add(adjustModesItem[i]);
 			adjustModeMenu.add(adjustModesItem[i]);
 			final int index = i;
-			// ÎªÉèÖÃµ÷Õû·½Ê½µÄ²Ëµ¥ÏîÌí¼Ó¼àÌıÆ÷
+			// ä¸ºè®¾ç½®è°ƒæ•´æ–¹å¼çš„èœå•é¡¹æ·»åŠ ç›‘å¬å™¨
 			adjustModesItem[i].addActionListener(evt ->
 			{
-				// Èç¹ûµ±Ç°²Ëµ¥Ïî´¦ÓÚÑ¡ÖĞ×´Ì¬£¬±í¸ñÊ¹ÓÃ¶ÔÓ¦µÄµ÷Õû·½Ê½
+				// å¦‚æœå½“å‰èœå•é¡¹å¤„äºé€‰ä¸­çŠ¶æ€ï¼Œè¡¨æ ¼ä½¿ç”¨å¯¹åº”çš„è°ƒæ•´æ–¹å¼
 				if (adjustModesItem[index].isSelected())
 				{
-					table.setAutoResizeMode(adjustModes[index]);   //¢Ù
+					table.setAutoResizeMode(adjustModes[index]);   //â‘ 
 				}
 			});
 		}
-		// -----------Îª´°¿Ú°²×°ÉèÖÃ±í¸ñÑ¡Ôñ·½Ê½µÄ²Ëµ¥-----------
-		selectModesItem[0] = new JRadioButtonMenuItem("ÎŞÏŞÖÆ");
-		selectModesItem[1] = new JRadioButtonMenuItem("µ¥¶ÀµÄÁ¬ĞøÇø");
-		selectModesItem[2] = new JRadioButtonMenuItem("µ¥Ñ¡");
+		// -----------ä¸ºçª—å£å®‰è£…è®¾ç½®è¡¨æ ¼é€‰æ‹©æ–¹å¼çš„èœå•-----------
+		selectModesItem[0] = new JRadioButtonMenuItem("æ— é™åˆ¶");
+		selectModesItem[1] = new JRadioButtonMenuItem("å•ç‹¬çš„è¿ç»­åŒº");
+		selectModesItem[2] = new JRadioButtonMenuItem("å•é€‰");
 		menuBar.add(selectModeMenu);
 		for (int i = 0; i < selectModesItem.length ; i++)
 		{
-			// Ä¬ÈÏÑ¡ÖĞµÚÒ»¸ö²Ëµ¥Ïî£¬¼´¶ÔÓ¦±í¸ñÄ¬ÈÏµÄÑ¡Ôñ·½Ê½
+			// é»˜è®¤é€‰ä¸­ç¬¬ä¸€ä¸ªèœå•é¡¹ï¼Œå³å¯¹åº”è¡¨æ ¼é»˜è®¤çš„é€‰æ‹©æ–¹å¼
 			if (i == 0)
 			{
 			selectModesItem[i].setSelected(true);
@@ -101,55 +101,55 @@ public class AdjustingWidth
 			selectBg.add(selectModesItem[i]);
 			selectModeMenu.add(selectModesItem[i]);
 			final int index = i;
-			// ÎªÉèÖÃÑ¡Ôñ·½Ê½µÄ²Ëµ¥ÏîÌí¼Ó¼àÌıÆ÷
+			// ä¸ºè®¾ç½®é€‰æ‹©æ–¹å¼çš„èœå•é¡¹æ·»åŠ ç›‘å¬å™¨
 			selectModesItem[i].addActionListener(evt -> {
-				// Èç¹ûµ±Ç°²Ëµ¥Ïî´¦ÓÚÑ¡ÖĞ×´Ì¬£¬±í¸ñÊ¹ÓÃ¶ÔÓ¦µÄÑ¡Ôñ·½Ê½s
+				// å¦‚æœå½“å‰èœå•é¡¹å¤„äºé€‰ä¸­çŠ¶æ€ï¼Œè¡¨æ ¼ä½¿ç”¨å¯¹åº”çš„é€‰æ‹©æ–¹å¼s
 				if (selectModesItem[index].isSelected())
 				{
 					table.getSelectionModel().setSelectionMode
-						(selectModes[index]);     //¢Ú
+						(selectModes[index]);     //â‘¡
 				}
 			});
 		}
 		menuBar.add(selectUnitMenu);
-		// -----Îª´°¿Ú°²×°ÉèÖÃ±í¸ñÑ¡Ôñµ¥ÔªµÄ²Ëµ¥-----
+		// -----ä¸ºçª—å£å®‰è£…è®¾ç½®è¡¨æ ¼é€‰æ‹©å•å…ƒçš„èœå•-----
 		rowsItem.setSelected(table.getRowSelectionAllowed());
 		columnsItem.setSelected(table.getColumnSelectionAllowed());
 		cellsItem.setSelected(table.getCellSelectionEnabled());
 		rowsItem.addActionListener(event -> {
 			table.clearSelection();
-			// Èç¹û¸Ã²Ëµ¥Ïî´¦ÓÚÑ¡ÖĞ×´Ì¬£¬ÉèÖÃ±í¸ñµÄÑ¡Ôñµ¥ÔªÊÇĞĞ
+			// å¦‚æœè¯¥èœå•é¡¹å¤„äºé€‰ä¸­çŠ¶æ€ï¼Œè®¾ç½®è¡¨æ ¼çš„é€‰æ‹©å•å…ƒæ˜¯è¡Œ
 			table.setRowSelectionAllowed(rowsItem.isSelected());
-			// Èç¹ûÑ¡ÔñĞĞ¡¢Ñ¡ÔñÁĞÍ¬Ê±±»Ñ¡ÖĞ£¬ÆäÊµÖÊÊÇÑ¡Ôñµ¥Ôª¸ñ
+			// å¦‚æœé€‰æ‹©è¡Œã€é€‰æ‹©åˆ—åŒæ—¶è¢«é€‰ä¸­ï¼Œå…¶å®è´¨æ˜¯é€‰æ‹©å•å…ƒæ ¼
 			cellsItem.setSelected(table.getCellSelectionEnabled());
 		});
 		selectUnitMenu.add(rowsItem);
 		columnsItem.addActionListener(event -> {
 			table.clearSelection();
-			// Èç¹û¸Ã²Ëµ¥Ïî´¦ÓÚÑ¡ÖĞ×´Ì¬£¬ÉèÖÃ±í¸ñµÄÑ¡Ôñµ¥ÔªÊÇÁĞ
+			// å¦‚æœè¯¥èœå•é¡¹å¤„äºé€‰ä¸­çŠ¶æ€ï¼Œè®¾ç½®è¡¨æ ¼çš„é€‰æ‹©å•å…ƒæ˜¯åˆ—
 			table.setColumnSelectionAllowed(columnsItem.isSelected());
-			// Èç¹ûÑ¡ÔñĞĞ¡¢Ñ¡ÔñÁĞÍ¬Ê±±»Ñ¡ÖĞ£¬ÆäÊµÖÊÊÇÑ¡Ôñµ¥Ôª¸ñ
+			// å¦‚æœé€‰æ‹©è¡Œã€é€‰æ‹©åˆ—åŒæ—¶è¢«é€‰ä¸­ï¼Œå…¶å®è´¨æ˜¯é€‰æ‹©å•å…ƒæ ¼
 			cellsItem.setSelected(table.getCellSelectionEnabled());
 		});
 		selectUnitMenu.add(columnsItem);
 		cellsItem.addActionListener(event -> {
 			table.clearSelection();
-			// Èç¹û¸Ã²Ëµ¥Ïî´¦ÓÚÑ¡ÖĞ×´Ì¬£¬ÉèÖÃ±í¸ñµÄÑ¡Ôñµ¥ÔªÊÇµ¥Ôª¸ñ
+			// å¦‚æœè¯¥èœå•é¡¹å¤„äºé€‰ä¸­çŠ¶æ€ï¼Œè®¾ç½®è¡¨æ ¼çš„é€‰æ‹©å•å…ƒæ˜¯å•å…ƒæ ¼
 			table.setCellSelectionEnabled(cellsItem.isSelected());
-			// ¸ÃÑ¡ÏîµÄ¸Ä±ä»áÍ¬Ê±Ó°ÏìÑ¡ÔñĞĞ¡¢Ñ¡ÔñÁĞÁ½¸ö²Ëµ¥
+			// è¯¥é€‰é¡¹çš„æ”¹å˜ä¼šåŒæ—¶å½±å“é€‰æ‹©è¡Œã€é€‰æ‹©åˆ—ä¸¤ä¸ªèœå•
 			rowsItem.setSelected(table.getRowSelectionAllowed());
 			columnsItem.setSelected(table.getColumnSelectionAllowed());
 		});
 		selectUnitMenu.add(cellsItem);
 		jf.setJMenuBar(menuBar);
-		// ·Ö±ğ»ñÈ¡±í¸ñµÄÈı¸ö±í¸ñÁĞ£¬²¢ÉèÖÃÈıÁĞµÄ×îĞ¡¿í¶È£¬×î¼Ñ¿í¶ÈºÍ×î´ó¿í¶È
+		// åˆ†åˆ«è·å–è¡¨æ ¼çš„ä¸‰ä¸ªè¡¨æ ¼åˆ—ï¼Œå¹¶è®¾ç½®ä¸‰åˆ—çš„æœ€å°å®½åº¦ï¼Œæœ€ä½³å®½åº¦å’Œæœ€å¤§å®½åº¦
 		TableColumn nameColumn = table.getColumn(columnTitle[0]);
 		nameColumn.setMinWidth(40);
 		TableColumn ageColumn = table.getColumn(columnTitle[1]);
 		ageColumn.setPreferredWidth(50);
 		TableColumn genderColumn = table.getColumn(columnTitle[2]);
 		genderColumn.setMaxWidth(50);
-		// ½«JTable¶ÔÏó·ÅÔÚJScrollPaneÖĞ£¬²¢½«¸ÃJScrollPane·ÅÔÚ´°¿ÚÖĞÏÔÊ¾³öÀ´
+		// å°†JTableå¯¹è±¡æ”¾åœ¨JScrollPaneä¸­ï¼Œå¹¶å°†è¯¥JScrollPaneæ”¾åœ¨çª—å£ä¸­æ˜¾ç¤ºå‡ºæ¥
 		jf.add(new JScrollPane(table));
 		jf.pack();
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

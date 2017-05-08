@@ -1,10 +1,10 @@
-package chapter04_02_分支结构;
+package chapter04_02_鍒嗘敮缁撴瀯;
 
 
 
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,25 +16,25 @@ public class StringSwitchTest
 {
 	public static void main(String[] args)
 	{
-		// 声明变量season
-		String season = "夏天";   //JDK7新增的方法，String,以前允许byte/short/int/char/枚举类型
-		// 执行swicth分支语句
+		// 澹版槑鍙橀噺season
+		String season = "澶忓ぉ";   //JDK7鏂板鐨勬柟娉曪紝String,浠ュ墠鍏佽byte/short/int/char/鏋氫妇绫诲瀷
+		// 鎵цswicth鍒嗘敮璇彞
 		switch (season)
 		{
-			case "春天":
-				System.out.println("春暖花开.");
+			case "鏄ュぉ":
+				System.out.println("鏄ユ殩鑺卞紑.");
 				break;
-			case "夏天":
-				System.out.println("夏日炎炎.");
+			case "澶忓ぉ":
+				System.out.println("澶忔棩鐐庣値.");
 				break;
-			case "秋天":
-				System.out.println("秋高气爽.");
+			case "绉嬪ぉ":
+				System.out.println("绉嬮珮姘旂埥.");
 				break;
-			case "冬天":
-				System.out.println("冬雪皑皑.");
+			case "鍐ぉ":
+				System.out.println("鍐洩鐨戠殤.");
 				break;
 			default:
-				System.out.println("季节输入错误");
+				System.out.println("瀛ｈ妭杈撳叆閿欒");
 		}
 	}
 }

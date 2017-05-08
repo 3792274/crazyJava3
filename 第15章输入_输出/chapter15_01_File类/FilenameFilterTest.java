@@ -1,9 +1,9 @@
-package chapter15_01_FileÀà;
+package chapter15_01_Fileç±»;
 
 import java.io.File;
 
 /***
- * File.list()·½·¨²ÎÊý FilenameFilterÊ¾Àý
+ * File.list()æ–¹æ³•å‚æ•° FilenameFilterç¤ºä¾‹
  * 
  * @author Mr.TianShu
  *
@@ -14,8 +14,8 @@ public class FilenameFilterTest {
 
 			File  file = new File(".");
 			
-			//Ê¹ÓÃlambda±í´ïÊ½(Ä¿±êÀàÐÍÎªFilenameFilter) ÊµÏÖÎÄ¼þ¹ýÂËÆ÷,ÊµÏÖFilenameFilterÖÐaccept()·½·¨
-			//Èç¹ûÎÄ¼þÒÔjava½áÎ²»òÕßÎÄ¼þÖÐ¶ÔÓ¦Ò»¸öÂ·¾¶£¬Ôò·µ»Øtrue,
+			//ä½¿ç”¨lambdaè¡¨è¾¾å¼(ç›®æ ‡ç±»åž‹ä¸ºFilenameFilter) å®žçŽ°æ–‡ä»¶è¿‡æ»¤å™¨,å®žçŽ°FilenameFilterä¸­accept()æ–¹æ³•
+			//å¦‚æžœæ–‡ä»¶ä»¥javaç»“å°¾æˆ–è€…æ–‡ä»¶ä¸­å¯¹åº”ä¸€ä¸ªè·¯å¾„ï¼Œåˆ™è¿”å›žtrue,
 			
 			String [] nameList = file.list(
 						(dir,name)->{

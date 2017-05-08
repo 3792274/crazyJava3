@@ -1,10 +1,10 @@
-package chapter07_02_ÏµÍ³Ïà¹Ø;
+package chapter07_02_ç³»ç»Ÿç›¸å…³;
 
 import com.sun.glass.ui.TouchInputSupport;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,7 +16,7 @@ import com.sun.glass.ui.TouchInputSupport;
 public class ExecTest04 {
 	public static void main(String[] args) throws Exception {
 		Runtime rt = Runtime.getRuntime();
-		// ÔËĞĞ¼ÇÊÂ±¾³ÌĞò£¬µ¥¶ÀÆô¶¯Ò»¸ö½ø³ÌÔËĞĞ²Ù×÷ÏµÍ³ÃüÁî
+		// è¿è¡Œè®°äº‹æœ¬ç¨‹åºï¼Œå•ç‹¬å¯åŠ¨ä¸€ä¸ªè¿›ç¨‹è¿è¡Œæ“ä½œç³»ç»Ÿå‘½ä»¤
 		rt.exec("notepad.exe");
 	}
 }

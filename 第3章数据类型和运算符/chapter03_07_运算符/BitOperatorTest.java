@@ -1,8 +1,8 @@
-package chapter03_07_ÔËËã·û;
+package chapter03_07_è¿ç®—ç¬¦;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,19 +13,19 @@ package chapter03_07_ÔËËã·û;
 public class BitOperatorTest
 {
 	
-	//ÒÆÎ»²Ù×÷£ºÏòÓÒÒÆnÎ»£¬³ıÒÔ2µÄ¼¸´Î·½£¬Ïò×óÒÆnÎ»£¬³ËÒÔ2µÄ¼¸´Î·½
-	//×î¿ìËÙËã³ö2*8=16; 2<<<3
+	//ç§»ä½æ“ä½œï¼šå‘å³ç§»nä½ï¼Œé™¤ä»¥2çš„å‡ æ¬¡æ–¹ï¼Œå‘å·¦ç§»nä½ï¼Œä¹˜ä»¥2çš„å‡ æ¬¡æ–¹
+	//æœ€å¿«é€Ÿç®—å‡º2*8=16; 2<<<3
 	public static void main(String[] args)
 	{
 //		System.out.println(2.5 & 3.0);
-		System.out.println(5 & 9); // ½«Êä³ö1
-		System.out.println(5 | 9); // ½«Êä³ö13
-		System.out.println(~-5); // ½«Êä³ö4
-		System.out.println(5 ^ 9); // ½«Êä³ö12
-		System.out.println(5 << 2); // Êä³ö20
-		System.out.println(-5 << 2); // Êä³ö-20
-		System.out.println(-5 >> 2); // Êä³ö-2
-		System.out.println(-5 >>> 2); // Êä³ö1073741822,ÓĞ·ûºÅµÄÒÆÎ»
-		System.err.println(2<<3);    //Êä³ö16
+		System.out.println(5 & 9); // å°†è¾“å‡º1
+		System.out.println(5 | 9); // å°†è¾“å‡º13
+		System.out.println(~-5); // å°†è¾“å‡º4
+		System.out.println(5 ^ 9); // å°†è¾“å‡º12
+		System.out.println(5 << 2); // è¾“å‡º20
+		System.out.println(-5 << 2); // è¾“å‡º-20
+		System.out.println(-5 >> 2); // è¾“å‡º-2
+		System.out.println(-5 >>> 2); // è¾“å‡º1073741822,æœ‰ç¬¦å·çš„ç§»ä½
+		System.err.println(2<<3);    //è¾“å‡º16
 	}
 }

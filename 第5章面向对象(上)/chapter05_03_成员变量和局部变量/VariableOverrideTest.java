@@ -1,10 +1,10 @@
-package chapter05_03_³ÉÔ±±äÁ¿ºÍ¾Ö²¿±äÁ¿;
+package chapter05_03_æˆå‘˜å˜é‡å’Œå±€éƒ¨å˜é‡;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,31 +14,31 @@ package chapter05_03_³ÉÔ±±äÁ¿ºÍ¾Ö²¿±äÁ¿;
  */
 public class VariableOverrideTest
 {
-	// ¶¨ÒåÒ»¸önameÊµÀı±äÁ¿
-	private String name = "Àî¸Õ";
-	// ¶¨ÒåÒ»¸öpriceÀà±äÁ¿
+	// å®šä¹‰ä¸€ä¸ªnameå®ä¾‹å˜é‡
+	private String name = "æåˆš";
+	// å®šä¹‰ä¸€ä¸ªpriceç±»å˜é‡
 	private static double price = 78.0;
-	// Ö÷·½·¨£¬³ÌĞòµÄÈë¿Ú
+	// ä¸»æ–¹æ³•ï¼Œç¨‹åºçš„å…¥å£
 	public static void main(String[] args)
 	{
-		// ·½·¨ÀïµÄ¾Ö²¿±äÁ¿£¬¾Ö²¿±äÁ¿¸²¸Ç³ÉÔ±±äÁ¿
+		// æ–¹æ³•é‡Œçš„å±€éƒ¨å˜é‡ï¼Œå±€éƒ¨å˜é‡è¦†ç›–æˆå‘˜å˜é‡
 		int price = 65;
-		// Ö±½Ó·ÃÎÊprice±äÁ¿£¬½«Êä³öprice¾Ö²¿±äÁ¿µÄÖµ£º65
+		// ç›´æ¥è®¿é—®priceå˜é‡ï¼Œå°†è¾“å‡ºpriceå±€éƒ¨å˜é‡çš„å€¼ï¼š65
 		System.out.println(price);
-		// Ê¹ÓÃÀàÃû×÷Îªprice±äÁ¿µÄÏŞ¶¨£¬
-		// ½«Êä³öpriceÀà±äÁ¿µÄÖµ£º78.0
+		// ä½¿ç”¨ç±»åä½œä¸ºpriceå˜é‡çš„é™å®šï¼Œ
+		// å°†è¾“å‡ºpriceç±»å˜é‡çš„å€¼ï¼š78.0
 		System.out.println(VariableOverrideTest.price);
-		// ÔËĞĞinfo·½·¨
+		// è¿è¡Œinfoæ–¹æ³•
 		new VariableOverrideTest().info();
 	}
 	public void info()
 	{
-		// ·½·¨ÀïµÄ¾Ö²¿±äÁ¿£¬¾Ö²¿±äÁ¿¸²¸Ç³ÉÔ±±äÁ¿
-		String name = "ËïÎò¿Õ";
-		// Ö±½Ó·ÃÎÊname±äÁ¿£¬½«Êä³öname¾Ö²¿±äÁ¿µÄÖµ£º"ËïÎò¿Õ"
+		// æ–¹æ³•é‡Œçš„å±€éƒ¨å˜é‡ï¼Œå±€éƒ¨å˜é‡è¦†ç›–æˆå‘˜å˜é‡
+		String name = "å­™æ‚Ÿç©º";
+		// ç›´æ¥è®¿é—®nameå˜é‡ï¼Œå°†è¾“å‡ºnameå±€éƒ¨å˜é‡çš„å€¼ï¼š"å­™æ‚Ÿç©º"
 		System.out.println(name);
-		// Ê¹ÓÃthisÀ´×÷Îªname±äÁ¿µÄÏŞ¶¨£¬
-		// ½«Êä³önameÊµÀı±äÁ¿µÄÖµ£º"Àî¸Õ"
+		// ä½¿ç”¨thisæ¥ä½œä¸ºnameå˜é‡çš„é™å®šï¼Œ
+		// å°†è¾“å‡ºnameå®ä¾‹å˜é‡çš„å€¼ï¼š"æåˆš"
 		System.out.println(this.name);
 	}
 }

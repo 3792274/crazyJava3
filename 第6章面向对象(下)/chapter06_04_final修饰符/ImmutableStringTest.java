@@ -1,10 +1,10 @@
-package chapter06_04_finalĞŞÊÎ·û;
+package chapter06_04_finalä¿®é¥°ç¬¦;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -18,9 +18,9 @@ public class ImmutableStringTest
 	{
 		String str1 = new String("Hello");
 		String str2 = new String("Hello");
-		System.out.println(str1 == str2); // Êä³öfalse
-		System.out.println(str1.equals(str2)); // Êä³ötrue
-		// ÏÂÃæÁ½´ÎÊä³öµÄhashCodeÏàÍ¬
+		System.out.println(str1 == str2); // è¾“å‡ºfalse
+		System.out.println(str1.equals(str2)); // è¾“å‡ºtrue
+		// ä¸‹é¢ä¸¤æ¬¡è¾“å‡ºçš„hashCodeç›¸åŒ
 		System.out.println(str1.hashCode());
 		System.out.println(str2.hashCode());
 	}

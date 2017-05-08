@@ -1,10 +1,10 @@
-package chapter08_03_Set¼¯ºÏ;
+package chapter08_03_Seté›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * 1.ÅĞ¶ÏÁ½¸ö¶ÔÏóÊÇ·ñÏàµÈ£¬compare·½·¨·µ»Ø0
+ * 1.åˆ¤æ–­ä¸¤ä¸ªå¯¹è±¡æ˜¯å¦ç›¸ç­‰ï¼Œcompareæ–¹æ³•è¿”å›0
  */
 
 class Z implements Comparable
@@ -14,12 +14,12 @@ class Z implements Comparable
 	{
 		this.age = age;
 	}
-	// ÖØĞ´equals()·½·¨£¬×ÜÊÇ·µ»Øtrue
+	// é‡å†™equals()æ–¹æ³•ï¼Œæ€»æ˜¯è¿”å›true
 	public boolean equals(Object obj)
 	{
 		return true;
 	}
-	// ÖØĞ´ÁËcompareTo(Object obj)·½·¨£¬×ÜÊÇ·µ»Ø1
+	// é‡å†™äº†compareTo(Object obj)æ–¹æ³•ï¼Œæ€»æ˜¯è¿”å›1
 	public int compareTo(Object obj)
 	{
 		return 1;
@@ -32,13 +32,13 @@ public class TreeSetTest2
 		TreeSet set = new TreeSet();
 		Z z1 = new Z(6);
 		set.add(z1);
-		// µÚ¶ş´ÎÌí¼ÓÍ¬Ò»¸ö¶ÔÏó£¬Êä³ötrue£¬±íÃ÷Ìí¼Ó³É¹¦
-		System.out.println(set.add(z1));    //¢Ù
-		// ÏÂÃæÊä³öset¼¯ºÏ£¬½«¿´µ½ÓĞÁ½¸öÔªËØ
+		// ç¬¬äºŒæ¬¡æ·»åŠ åŒä¸€ä¸ªå¯¹è±¡ï¼Œè¾“å‡ºtrueï¼Œè¡¨æ˜æ·»åŠ æˆåŠŸ
+		System.out.println(set.add(z1));    //â‘ 
+		// ä¸‹é¢è¾“å‡ºseté›†åˆï¼Œå°†çœ‹åˆ°æœ‰ä¸¤ä¸ªå…ƒç´ 
 		System.out.println(set);
-		// ĞŞ¸Äset¼¯ºÏµÄµÚÒ»¸öÔªËØµÄage±äÁ¿
+		// ä¿®æ”¹seté›†åˆçš„ç¬¬ä¸€ä¸ªå…ƒç´ çš„ageå˜é‡
 		 ((Z)(set.first())).age = 9;
-		// Êä³öset¼¯ºÏµÄ×îºóÒ»¸öÔªËØµÄage±äÁ¿£¬½«¿´µ½Ò²±ä³ÉÁË9
+		// è¾“å‡ºseté›†åˆçš„æœ€åä¸€ä¸ªå…ƒç´ çš„ageå˜é‡ï¼Œå°†çœ‹åˆ°ä¹Ÿå˜æˆäº†9
 		System.out.println(((Z)(set.last())).age);
 	}
 }

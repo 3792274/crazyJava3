@@ -3,11 +3,11 @@ package com.atguigu.java8.streamAPI;
 public interface MyInterface {
 	
 	default String getName(){
-		return "ºÇºÇºÇ";
+		return "å‘µå‘µå‘µ";
 	}
 	
 	public static void show(){
-		System.out.println("½Ó¿ÚÖĞµÄ¾²Ì¬·½·¨");
+		System.out.println("æ¥å£ä¸­çš„é™æ€æ–¹æ³•");
 	}
 
 }

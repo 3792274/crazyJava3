@@ -1,4 +1,4 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.AIO;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.AIO;
 
 import java.net.*;
 import java.io.*;
@@ -9,7 +9,7 @@ import java.nio.charset.*;
 import java.util.concurrent.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -26,18 +26,18 @@ public class AIOServer
 	public void startListen() throws InterruptedException,
 		Exception
 	{
-		// ´´½¨Ò»¸öÏß³Ì³Ø
+		// åˆ›å»ºä¸€ä¸ªçº¿ç¨‹æ± 
 		ExecutorService executor = Executors.newFixedThreadPool(20);
-		// ÒÔÖ¸¶¨Ïß³Ì³ØÀ´´´½¨Ò»¸öAsynchronousChannelGroup
+		// ä»¥æŒ‡å®šçº¿ç¨‹æ± æ¥åˆ›å»ºä¸€ä¸ªAsynchronousChannelGroup
 		AsynchronousChannelGroup channelGroup = AsynchronousChannelGroup
 			.withThreadPool(executor);
-		// ÒÔÖ¸¶¨Ïß³Ì³ØÀ´´´½¨Ò»¸öAsynchronousServerSocketChannel
+		// ä»¥æŒ‡å®šçº¿ç¨‹æ± æ¥åˆ›å»ºä¸€ä¸ªAsynchronousServerSocketChannel
 		AsynchronousServerSocketChannel serverChannel
 			= AsynchronousServerSocketChannel.open(channelGroup)
-			// Ö¸¶¨¼àÌı±¾»úµÄPORT¶Ë¿Ú
+			// æŒ‡å®šç›‘å¬æœ¬æœºçš„PORTç«¯å£
 			.bind(new InetSocketAddress(PORT));
-		// Ê¹ÓÃCompletionHandler½ÓÊÜÀ´×Ô¿Í»§¶ËµÄÁ¬½ÓÇëÇó
-		serverChannel.accept(null, new AcceptHandler(serverChannel));  // ¢Ù
+		// ä½¿ç”¨CompletionHandleræ¥å—æ¥è‡ªå®¢æˆ·ç«¯çš„è¿æ¥è¯·æ±‚
+		serverChannel.accept(null, new AcceptHandler(serverChannel));  // â‘ 
 		Thread.sleep(5000);
 	}
 	public static void main(String[] args)
@@ -47,7 +47,7 @@ public class AIOServer
 		server.startListen();
 	}
 }
-// ÊµÏÖ×Ô¼ºµÄCompletionHandlerÀà
+// å®ç°è‡ªå·±çš„CompletionHandlerç±»
 class AcceptHandler implements
 	CompletionHandler<AsynchronousSocketChannel, Object>
 {
@@ -56,29 +56,29 @@ class AcceptHandler implements
 	{
 		this.serverChannel = sc;
 	}
-	// ¶¨ÒåÒ»¸öByteBuffer×¼±¸¶ÁÈ¡Êı¾İ
+	// å®šä¹‰ä¸€ä¸ªByteBufferå‡†å¤‡è¯»å–æ•°æ®
 	ByteBuffer buff = ByteBuffer.allocate(1024);
-	// µ±Êµ¼ÊIO²Ù×÷Íê³ÉÊ±ºò´¥·¢¸Ã·½·¨
+	// å½“å®é™…IOæ“ä½œå®Œæˆæ—¶å€™è§¦å‘è¯¥æ–¹æ³•
 	@Override
 	public void completed(final AsynchronousSocketChannel sc
 		, Object attachment)
 	{
-		// ¼ÇÂ¼ĞÂÁ¬½ÓµÄ½øÀ´µÄChannel
+		// è®°å½•æ–°è¿æ¥çš„è¿›æ¥çš„Channel
 		AIOServer.channelList.add(sc);
-		// ×¼±¸½ÓÊÜ¿Í»§¶ËµÄÏÂÒ»´ÎÁ¬½Ó
+		// å‡†å¤‡æ¥å—å®¢æˆ·ç«¯çš„ä¸‹ä¸€æ¬¡è¿æ¥
 		serverChannel.accept(null , this);
 		sc.read(buff , null
-			, new CompletionHandler<Integer,Object>()  // ¢Ú
+			, new CompletionHandler<Integer,Object>()  // â‘¡
 		{
 			@Override
 			public void completed(Integer result
 				, Object attachment)
 			{
 				buff.flip();
-				// ½«buffÖĞÄÚÈİ×ª»»Îª×Ö·û´®
+				// å°†buffä¸­å†…å®¹è½¬æ¢ä¸ºå­—ç¬¦ä¸²
 				String content = StandardCharsets.UTF_8
 					.decode(buff).toString();
-				// ±éÀúÃ¿¸öChannel£¬½«ÊÕµ½µÄĞÅÏ¢Ğ´Èë¸÷ChannelÖĞ
+				// éå†æ¯ä¸ªChannelï¼Œå°†æ”¶åˆ°çš„ä¿¡æ¯å†™å…¥å„Channelä¸­
 				for(AsynchronousSocketChannel c : AIOServer.channelList)
 				{
 					try
@@ -92,14 +92,14 @@ class AcceptHandler implements
 					}
 				}
 				buff.clear();
-				// ¶ÁÈ¡ÏÂÒ»´ÎÊı¾İ
+				// è¯»å–ä¸‹ä¸€æ¬¡æ•°æ®
 				sc.read(buff , null , this);
 			}
 			@Override
 			public void failed(Throwable ex, Object attachment)
 			{
-				System.out.println("¶ÁÈ¡Êı¾İÊ§°Ü: " + ex);
-				// ´Ó¸ÃChannel¶ÁÈ¡Êı¾İÊ§°Ü£¬¾Í½«¸ÃChannelÉ¾³ı
+				System.out.println("è¯»å–æ•°æ®å¤±è´¥: " + ex);
+				// ä»è¯¥Channelè¯»å–æ•°æ®å¤±è´¥ï¼Œå°±å°†è¯¥Channelåˆ é™¤
 				AIOServer.channelList.remove(sc);
 			}
 		});
@@ -107,6 +107,6 @@ class AcceptHandler implements
 	@Override
 	public void failed(Throwable ex, Object attachment)
 	{
-		System.out.println("Á¬½ÓÊ§°Ü: " + ex);
+		System.out.println("è¿æ¥å¤±è´¥: " + ex);
 	}
 }

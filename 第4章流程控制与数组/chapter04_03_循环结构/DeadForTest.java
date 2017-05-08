@@ -1,8 +1,8 @@
-package chapter04_03_循环结构;
+package chapter04_03_寰幆缁撴瀯;
 
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,7 +14,7 @@ public class DeadForTest
 {
 	public static void main(String[] args)
 	{
-		// 省略了for循环三个部分，循环条件将一直为true
+		// 鐪佺暐浜唂or寰幆涓変釜閮ㄥ垎锛屽惊鐜潯浠跺皢涓�鐩翠负true
 		for (; ; )
 		{
 			System.out.println("=============");

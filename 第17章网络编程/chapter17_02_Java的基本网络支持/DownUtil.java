@@ -1,4 +1,4 @@
-package chapter17_02_JavaµÄ»ù±¾ÍøÂçÖ§³Ö;
+package chapter17_02_Javaçš„åŸºæœ¬ç½‘ç»œæ”¯æŒ;
 
 import java.io.InputStream;
 import java.io.RandomAccessFile;
@@ -6,7 +6,7 @@ import java.net.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,25 +16,25 @@ import java.net.*;
  * @version 1.0
  */
 public class DownUtil {
-	// ¶¨ÒåÏÂÔØ×ÊÔ´µÄÂ·¾¶
+	// å®šä¹‰ä¸‹è½½èµ„æºçš„è·¯å¾„
 	private String path;
 	
-	// Ö¸¶¨ËùÏÂÔØµÄÎÄ¼şµÄ±£´æÎ»ÖÃ
+	// æŒ‡å®šæ‰€ä¸‹è½½çš„æ–‡ä»¶çš„ä¿å­˜ä½ç½®
 	private String targetFile;
 	
-	// ¶¨ÒåĞèÒªÊ¹ÓÃ¶àÉÙÏß³ÌÏÂÔØ×ÊÔ´
+	// å®šä¹‰éœ€è¦ä½¿ç”¨å¤šå°‘çº¿ç¨‹ä¸‹è½½èµ„æº
 	private int threadNum;
 	
-	// ¶¨ÒåÏÂÔØµÄÏß³Ì¶ÔÏó
+	// å®šä¹‰ä¸‹è½½çš„çº¿ç¨‹å¯¹è±¡
 	private DownThread[] threads;
 	
-	// ¶¨ÒåÏÂÔØµÄÎÄ¼şµÄ×Ü´óĞ¡
+	// å®šä¹‰ä¸‹è½½çš„æ–‡ä»¶çš„æ€»å¤§å°
 	private int fileSize;
 
 	public DownUtil(String path, String targetFile, int threadNum) {
 		this.path = path;
 		this.threadNum = threadNum;
-		// ³õÊ¼»¯threadsÊı×é
+		// åˆå§‹åŒ–threadsæ•°ç»„
 		threads = new DownThread[threadNum];
 		this.targetFile = targetFile;
 	}
@@ -49,44 +49,44 @@ public class DownUtil {
 		conn.setRequestProperty("Charset", "UTF-8");
 		conn.setRequestProperty("Connection", "Keep-Alive");
 	
-		// µÃµ½ÎÄ¼ş´óĞ¡
+		// å¾—åˆ°æ–‡ä»¶å¤§å°
 		fileSize = conn.getContentLength();
-		System.out.println("---------->ÎÄ¼ş´óĞ¡£º "+fileSize);
+		System.out.println("---------->æ–‡ä»¶å¤§å°ï¼š "+fileSize);
 		
 		conn.disconnect();
 	
 		int currentPartSize = fileSize / threadNum + 1;
-		System.out.println("----currentPartSize------>Ã¿¸öÏß³Ì·ÖÅäµÄÏÂÔØ´óĞ¡£º "+currentPartSize);
+		System.out.println("----currentPartSize------>æ¯ä¸ªçº¿ç¨‹åˆ†é…çš„ä¸‹è½½å¤§å°ï¼š "+currentPartSize);
 		
 		RandomAccessFile file = new RandomAccessFile(targetFile, "rw");
 	
-		// ÉèÖÃ±¾µØÎÄ¼şµÄ´óĞ¡
+		// è®¾ç½®æœ¬åœ°æ–‡ä»¶çš„å¤§å°
 		file.setLength(fileSize);
 		file.close();
 		
 		
 		for (int i = 0; i < threadNum; i++) {
-			// ¼ÆËãÃ¿ÌõÏß³ÌµÄÏÂÔØµÄ¿ªÊ¼Î»ÖÃ
+			// è®¡ç®—æ¯æ¡çº¿ç¨‹çš„ä¸‹è½½çš„å¼€å§‹ä½ç½®
 			int startPos = i * currentPartSize;
-			// Ã¿¸öÏß³ÌÊ¹ÓÃÒ»¸öRandomAccessFile½øĞĞÏÂÔØ
+			// æ¯ä¸ªçº¿ç¨‹ä½¿ç”¨ä¸€ä¸ªRandomAccessFileè¿›è¡Œä¸‹è½½
 			RandomAccessFile currentPart = new RandomAccessFile(targetFile, "rw");
-			// ¶¨Î»¸ÃÏß³ÌµÄÏÂÔØÎ»ÖÃ
+			// å®šä½è¯¥çº¿ç¨‹çš„ä¸‹è½½ä½ç½®
 			currentPart.seek(startPos);
-			// ´´½¨ÏÂÔØÏß³Ì
+			// åˆ›å»ºä¸‹è½½çº¿ç¨‹
 			threads[i] = new DownThread(startPos, currentPartSize, currentPart);
-			// Æô¶¯ÏÂÔØÏß³Ì
+			// å¯åŠ¨ä¸‹è½½çº¿ç¨‹
 			threads[i].start();
 		}
 	}
 
-	// »ñÈ¡ÏÂÔØµÄÍê³É°Ù·Ö±È
+	// è·å–ä¸‹è½½çš„å®Œæˆç™¾åˆ†æ¯”
 	public double getCompleteRate() {
-		// Í³¼Æ¶àÌõÏß³ÌÒÑ¾­ÏÂÔØµÄ×Ü´óĞ¡
+		// ç»Ÿè®¡å¤šæ¡çº¿ç¨‹å·²ç»ä¸‹è½½çš„æ€»å¤§å°
 		int sumSize = 0;
 		for (int i = 0; i < threadNum; i++) {
 			sumSize += threads[i].length;
 		}
-		// ·µ»ØÒÑ¾­Íê³ÉµÄ°Ù·Ö±È
+		// è¿”å›å·²ç»å®Œæˆçš„ç™¾åˆ†æ¯”
 		return sumSize * 1.0 / fileSize;
 	}
 
@@ -94,13 +94,13 @@ public class DownUtil {
 	
 	
 	private class DownThread extends Thread {
-		// µ±Ç°Ïß³ÌµÄÏÂÔØÎ»ÖÃ
+		// å½“å‰çº¿ç¨‹çš„ä¸‹è½½ä½ç½®
 		private int startPos;
-		// ¶¨Òåµ±Ç°Ïß³Ì¸ºÔğÏÂÔØµÄÎÄ¼ş´óĞ¡
+		// å®šä¹‰å½“å‰çº¿ç¨‹è´Ÿè´£ä¸‹è½½çš„æ–‡ä»¶å¤§å°
 		private int currentPartSize;
-		// µ±Ç°Ïß³ÌĞèÒªÏÂÔØµÄÎÄ¼ş¿é
+		// å½“å‰çº¿ç¨‹éœ€è¦ä¸‹è½½çš„æ–‡ä»¶å—
 		private RandomAccessFile currentPart;
-		// ¶¨ÒåÒÑ¾­¸ÃÏß³ÌÒÑÏÂÔØµÄ×Ö½ÚÊı
+		// å®šä¹‰å·²ç»è¯¥çº¿ç¨‹å·²ä¸‹è½½çš„å­—èŠ‚æ•°
 		public int length;
 
 		public DownThread(int startPos, int currentPartSize, RandomAccessFile currentPart) {
@@ -122,17 +122,17 @@ public class DownUtil {
 				
 				InputStream inStream = conn.getInputStream();
 				
-				// Ìø¹ıstartPos¸ö×Ö½Ú£¬±íÃ÷¸ÃÏß³ÌÖ»ÏÂÔØ×Ô¼º¸ºÔğÄÄ²¿·ÖÎÄ¼ş¡£
+				// è·³è¿‡startPosä¸ªå­—èŠ‚ï¼Œè¡¨æ˜è¯¥çº¿ç¨‹åªä¸‹è½½è‡ªå·±è´Ÿè´£å“ªéƒ¨åˆ†æ–‡ä»¶ã€‚
 				inStream.skip(this.startPos);
 				
 				byte[] buffer = new byte[1024];
 				int hasRead = 0;
-				// ¶ÁÈ¡ÍøÂçÊı¾İ£¬²¢Ğ´Èë±¾µØÎÄ¼ş
+				// è¯»å–ç½‘ç»œæ•°æ®ï¼Œå¹¶å†™å…¥æœ¬åœ°æ–‡ä»¶
 				while (length < currentPartSize && (hasRead = inStream.read(buffer)) != -1) {
 					currentPart.write(buffer, 0, hasRead);
-					// ÀÛ¼Æ¸ÃÏß³ÌÏÂÔØµÄ×Ü´óĞ¡
+					// ç´¯è®¡è¯¥çº¿ç¨‹ä¸‹è½½çš„æ€»å¤§å°
 					length += hasRead;
-//					System.err.println("µ±Ç°Ïß³Ì£º "+Thread.currentThread().getName()+"ÒÑ¾­ÏÂÔØ£º "+length);
+//					System.err.println("å½“å‰çº¿ç¨‹ï¼š "+Thread.currentThread().getName()+"å·²ç»ä¸‹è½½ï¼š "+length);
 				}
 				currentPart.close();
 				inStream.close();

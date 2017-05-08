@@ -1,10 +1,10 @@
-package chapter10_02_Òì³£ÀàµÄ¼Ì³ĞÌåÏµ;
+package chapter10_02_å¼‚å¸¸ç±»çš„ç»§æ‰¿ä½“ç³»;
 
 
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,35 +14,35 @@ import java.io.*;
  */
 public class Gobang
 {
-	// ¶¨ÒåÒ»¸ö¶şÎ¬Êı×éÀ´³äµ±ÆåÅÌ
+	// å®šä¹‰ä¸€ä¸ªäºŒç»´æ•°ç»„æ¥å……å½“æ£‹ç›˜
 	private String[][] board;
-	// ¶¨ÒåÆåÅÌµÄ´óĞ¡
+	// å®šä¹‰æ£‹ç›˜çš„å¤§å°
 	private static int BOARD_SIZE = 15;
 	public void initBoard()
 	{
-		// ³õÊ¼»¯ÆåÅÌÊı×é
+		// åˆå§‹åŒ–æ£‹ç›˜æ•°ç»„
 		board = new String[BOARD_SIZE][BOARD_SIZE];
-		// °ÑÃ¿¸öÔªËØ¸³Îª"©ï"£¬ÓÃÓÚÔÚ¿ØÖÆÌ¨»­³öÆåÅÌ
+		// æŠŠæ¯ä¸ªå…ƒç´ èµ‹ä¸º"â•‹"ï¼Œç”¨äºåœ¨æ§åˆ¶å°ç”»å‡ºæ£‹ç›˜
 		for (int i = 0 ; i < BOARD_SIZE ; i++)
 		{
 			for ( int j = 0 ; j < BOARD_SIZE ; j++)
 			{
-				board[i][j] = "©ï";
+				board[i][j] = "â•‹";
 			}
 		}
 	}
-	// ÔÚ¿ØÖÆÌ¨Êä³öÆåÅÌµÄ·½·¨
+	// åœ¨æ§åˆ¶å°è¾“å‡ºæ£‹ç›˜çš„æ–¹æ³•
 	public void printBoard()
 	{
-		// ´òÓ¡Ã¿¸öÊı×éÔªËØ
+		// æ‰“å°æ¯ä¸ªæ•°ç»„å…ƒç´ 
 		for (int i = 0 ; i < BOARD_SIZE ; i++)
 		{
 			for ( int j = 0 ; j < BOARD_SIZE ; j++)
 			{
-				// ´òÓ¡Êı×éÔªËØºó²»»»ĞĞ
+				// æ‰“å°æ•°ç»„å…ƒç´ åä¸æ¢è¡Œ
 				System.out.print(board[i][j]);
 			}
-			// Ã¿´òÓ¡ÍêÒ»ĞĞÊı×éÔªËØºóÊä³öÒ»¸ö»»ĞĞ·û
+			// æ¯æ‰“å°å®Œä¸€è¡Œæ•°ç»„å…ƒç´ åè¾“å‡ºä¸€ä¸ªæ¢è¡Œç¬¦
 			System.out.print("\n");
 		}
 	}
@@ -51,37 +51,37 @@ public class Gobang
         Gobang gb = new Gobang();
 		gb.initBoard();
 		gb.printBoard();
-		// ÕâÊÇÓÃÓÚ»ñÈ¡¼üÅÌÊäÈëµÄ·½·¨
+		// è¿™æ˜¯ç”¨äºè·å–é”®ç›˜è¾“å…¥çš„æ–¹æ³•
 		BufferedReader br = new BufferedReader(
 			new InputStreamReader(System.in));
 		String inputStr = null;
-		// br.readLine()£ºÃ¿µ±ÔÚ¼üÅÌÉÏÊäÈëÒ»ĞĞÄÚÈİ°´»Ø³µ£¬
-		// ÓÃ»§¸Õ¸ÕÊäÈëµÄÄÚÈİ½«±»br¶ÁÈ¡µ½¡£
+		// br.readLine()ï¼šæ¯å½“åœ¨é”®ç›˜ä¸Šè¾“å…¥ä¸€è¡Œå†…å®¹æŒ‰å›è½¦ï¼Œ
+		// ç”¨æˆ·åˆšåˆšè¾“å…¥çš„å†…å®¹å°†è¢«brè¯»å–åˆ°ã€‚
 		while ((inputStr = br.readLine()) != null)
 		{
 			try
 			{
-				// ½«ÓÃ»§ÊäÈëµÄ×Ö·û´®ÒÔ¶ººÅ×÷Îª·Ö¸ô·û£¬·Ö½â³É2¸ö×Ö·û´®
+				// å°†ç”¨æˆ·è¾“å…¥çš„å­—ç¬¦ä¸²ä»¥é€—å·ä½œä¸ºåˆ†éš”ç¬¦ï¼Œåˆ†è§£æˆ2ä¸ªå­—ç¬¦ä¸²
 				String[] posStrArr = inputStr.split(",");
-				// ½«2¸ö×Ö·û´®×ª»»³ÉÓÃ»§ÏÂÆåµÄ×ø±ê
+				// å°†2ä¸ªå­—ç¬¦ä¸²è½¬æ¢æˆç”¨æˆ·ä¸‹æ£‹çš„åæ ‡
 				int xPos = Integer.parseInt(posStrArr[0]);
 				int yPos = Integer.parseInt(posStrArr[1]);
-				// °Ñ¶ÔÓ¦µÄÊı×éÔªËØ¸³Îª"¡ñ"¡£
-				if (!gb.board[xPos - 1][yPos - 1].equals("©ï"))
+				// æŠŠå¯¹åº”çš„æ•°ç»„å…ƒç´ èµ‹ä¸º"â—"ã€‚
+				if (!gb.board[xPos - 1][yPos - 1].equals("â•‹"))
 				{
-					System.out.println("ÄúÊäÈëµÄ×ø±êµãÒÑÓĞÆå×ÓÁË£¬"+ "ÇëÖØĞÂÊäÈë");
+					System.out.println("æ‚¨è¾“å…¥çš„åæ ‡ç‚¹å·²æœ‰æ£‹å­äº†ï¼Œ"+ "è¯·é‡æ–°è¾“å…¥");
 					continue;
 				}
-				gb.board[xPos - 1][yPos - 1] = "¡ñ";
+				gb.board[xPos - 1][yPos - 1] = "â—";
 			}
 			catch (Exception e)
 			{
-				System.out.println("ÄúÊäÈëµÄ×ø±ê²»ºÏ·¨£¬ÇëÖØĞÂÊäÈë£¬"+ "ÏÂÆå×ø±êÓ¦ÒÔx,yµÄ¸ñÊ½");
+				System.out.println("æ‚¨è¾“å…¥çš„åæ ‡ä¸åˆæ³•ï¼Œè¯·é‡æ–°è¾“å…¥ï¼Œ"+ "ä¸‹æ£‹åæ ‡åº”ä»¥x,yçš„æ ¼å¼");
 				continue;
 			}
 
 			gb.printBoard();
-			System.out.println("ÇëÊäÈëÄúÏÂÆåµÄ×ø±ê£¬Ó¦ÒÔx,yµÄ¸ñÊ½£º");
+			System.out.println("è¯·è¾“å…¥æ‚¨ä¸‹æ£‹çš„åæ ‡ï¼Œåº”ä»¥x,yçš„æ ¼å¼ï¼š");
 		}
     }
 }

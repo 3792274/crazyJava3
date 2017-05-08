@@ -1,10 +1,10 @@
-package chapter11_09_¼ôÌù°å;
+package chapter11_09_å‰ªè´´æ¿;
 
 
 import java.awt.datatransfer.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,17 +14,17 @@ import java.awt.datatransfer.*;
  */
 public class LocalObjectSelection implements Transferable
 {
-	// ³ÖÓĞÒ»¸ö¶ÔÏóµÄÒıÓÃ
+	// æŒæœ‰ä¸€ä¸ªå¯¹è±¡çš„å¼•ç”¨
 	private Object obj;
 	public LocalObjectSelection(Object obj)
 	{
 		this.obj = obj;
 	}
-	// ·µ»Ø¸ÃTransferable¶ÔÏóÖ§³ÖµÄDataFlavor
+	// è¿”å›è¯¥Transferableå¯¹è±¡æ”¯æŒçš„DataFlavor
 	public DataFlavor[] getTransferDataFlavors()
 	{
 		DataFlavor[] flavors = new DataFlavor[2];
-		//»ñÈ¡±»·â×°¶ÔÏóµÄÀàĞÍ
+		//è·å–è¢«å°è£…å¯¹è±¡çš„ç±»å‹
 		Class clazz = obj.getClass();
 		String mimeType = "application/x-java-jvm-local-objectref;"
 			+ "class=" + clazz.getName();
@@ -40,7 +40,7 @@ public class LocalObjectSelection implements Transferable
 			return null;
 		}
 	}
-	// È¡³ö¸ÃTransferable¶ÔÏó·â×°µÄÊı¾İ
+	// å–å‡ºè¯¥Transferableå¯¹è±¡å°è£…çš„æ•°æ®
 	public Object getTransferData(DataFlavor flavor)
 		throws UnsupportedFlavorException
 	{

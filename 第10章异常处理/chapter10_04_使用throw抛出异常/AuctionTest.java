@@ -1,8 +1,8 @@
-package chapter10_04_Ê¹ÓÃthrowÅ×³öÒì³£;
+package chapter10_04_ä½¿ç”¨throwæŠ›å‡ºå¼‚å¸¸;
 
 /**
- * Description:catchºÍthrowÍ¬Ê±Ê¹ÓÃ¡£ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:catchå’ŒthrowåŒæ—¶ä½¿ç”¨ã€‚ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -14,21 +14,21 @@ package chapter10_04_Ê¹ÓÃthrowÅ×³öÒì³£;
 public class AuctionTest {
 	private double initPrice = 30.0;
 
-	// ÒòÎª¸Ã·½·¨ÖĞÏÔÊ½Å×³öÁËAuctionExceptionÒì³££¬
-	// ËùÒÔ´Ë´¦ĞèÒªÉùÃ÷Å×³öAuctionExceptionÒì³£
+	// å› ä¸ºè¯¥æ–¹æ³•ä¸­æ˜¾å¼æŠ›å‡ºäº†AuctionExceptionå¼‚å¸¸ï¼Œ
+	// æ‰€ä»¥æ­¤å¤„éœ€è¦å£°æ˜æŠ›å‡ºAuctionExceptionå¼‚å¸¸
 	public void bid(String bidPrice) throws AuctionException {
 		double d = 0.0;
 		try {
 			d = Double.parseDouble(bidPrice);
 		} catch (Exception e) {
-			// ´Ë´¦Íê³É±¾·½·¨ÖĞ¿ÉÒÔ¶ÔÒì³£Ö´ĞĞµÄĞŞ¸´´¦Àí£¬
-			// ´Ë´¦½ö½öÊÇÔÚ¿ØÖÆÌ¨´òÓ¡Òì³£¸ú×ÙÕ»ĞÅÏ¢¡£
+			// æ­¤å¤„å®Œæˆæœ¬æ–¹æ³•ä¸­å¯ä»¥å¯¹å¼‚å¸¸æ‰§è¡Œçš„ä¿®å¤å¤„ç†ï¼Œ
+			// æ­¤å¤„ä»…ä»…æ˜¯åœ¨æ§åˆ¶å°æ‰“å°å¼‚å¸¸è·Ÿè¸ªæ ˆä¿¡æ¯ã€‚
 			e.printStackTrace();
-			// ÔÙ´ÎÅ×³ö×Ô¶¨ÒåÒì³£
-			throw new AuctionException("¾ºÅÄ¼Û±ØĞëÊÇÊıÖµ£¬" + "²»ÄÜ°üº¬ÆäËû×Ö·û£¡");
+			// å†æ¬¡æŠ›å‡ºè‡ªå®šä¹‰å¼‚å¸¸
+			throw new AuctionException("ç«æ‹ä»·å¿…é¡»æ˜¯æ•°å€¼ï¼Œ" + "ä¸èƒ½åŒ…å«å…¶ä»–å­—ç¬¦ï¼");
 		}
 		if (initPrice > d) {
-			throw new AuctionException("¾ºÅÄ¼Û±ÈÆğÅÄ¼ÛµÍ£¬" + "²»ÔÊĞí¾ºÅÄ£¡");
+			throw new AuctionException("ç«æ‹ä»·æ¯”èµ·æ‹ä»·ä½ï¼Œ" + "ä¸å…è®¸ç«æ‹ï¼");
 		}
 		initPrice = d;
 	}
@@ -39,7 +39,7 @@ public class AuctionTest {
 		try {
 			at.bid("df");
 		} catch (AuctionException ae) {
-			// ÔÙ´Î²¶×½µ½bid·½·¨ÖĞµÄÒì³£¡£²¢¶Ô¸ÃÒì³£½øĞĞ´¦Àí
+			// å†æ¬¡æ•æ‰åˆ°bidæ–¹æ³•ä¸­çš„å¼‚å¸¸ã€‚å¹¶å¯¹è¯¥å¼‚å¸¸è¿›è¡Œå¤„ç†
 			System.err.println(ae.getMessage());
 		}
 	}

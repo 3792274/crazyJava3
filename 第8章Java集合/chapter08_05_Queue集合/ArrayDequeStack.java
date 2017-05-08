@@ -1,12 +1,12 @@
-package chapter08_05_Queue¼¯ºÏ;
+package chapter08_05_Queueé›†åˆ;
 
 
 import java.util.*;
 /**
- * Description:ºó½øÏÈ³ö
- * 1.Deque½Ó¿ÚÊÇQueue½Ó¿ÚµÄ×Ó½Ó¿Ú£¬ËüÊÇÒ»¸öË«¶Ë¶ÓÁĞ
- * 2.ArrayDequeÊµÏÖÀà£¬´´½¨DequeÍ¬Ñù¿ÉÒÔÖ¸¶¨Ò»¸önumElements²ÎÊı£¬ÓÃÓÚÖ¸¶¨Object[]Êı×é³¤¶È£¬Ä¬ÈÏ16
- * 3.ÏÂÃæÑİÊ¾½«ArrayDequeµ±³ÉÕ»À´Ê¹ÓÃ¡£
+ * Description:åè¿›å…ˆå‡º
+ * 1.Dequeæ¥å£æ˜¯Queueæ¥å£çš„å­æ¥å£ï¼Œå®ƒæ˜¯ä¸€ä¸ªåŒç«¯é˜Ÿåˆ—
+ * 2.ArrayDequeå®ç°ç±»ï¼Œåˆ›å»ºDequeåŒæ ·å¯ä»¥æŒ‡å®šä¸€ä¸ªnumElementså‚æ•°ï¼Œç”¨äºæŒ‡å®šObject[]æ•°ç»„é•¿åº¦ï¼Œé»˜è®¤16
+ * 3.ä¸‹é¢æ¼”ç¤ºå°†ArrayDequeå½“æˆæ ˆæ¥ä½¿ç”¨ã€‚
  */
 public class ArrayDequeStack
 {
@@ -14,24 +14,24 @@ public class ArrayDequeStack
 	{
 		ArrayDeque stack = new ArrayDeque();
 		
-		// ÒÀ´Î½«Èı¸öÔªËØpushÈë"Õ»"
-		stack.push("·è¿ñJava½²Òå");
-		stack.push("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
-		stack.push("·è¿ñAndroid½²Òå");
+		// ä¾æ¬¡å°†ä¸‰ä¸ªå…ƒç´ pushå…¥"æ ˆ"
+		stack.push("ç–¯ç‹‚Javaè®²ä¹‰");
+		stack.push("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
+		stack.push("ç–¯ç‹‚Androidè®²ä¹‰");
 		
-		// Êä³ö£º[·è¿ñAndroid½²Òå, ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½, ·è¿ñJava½²Òå]
+		// è¾“å‡ºï¼š[ç–¯ç‹‚Androidè®²ä¹‰, è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜, ç–¯ç‹‚Javaè®²ä¹‰]
 		System.out.println(stack);
 		
-		// ·ÃÎÊµÚÒ»¸öÔªËØ£¬µ«²¢²»½«Æäpop³ö"Õ»"£¬Êä³ö£º·è¿ñAndroid½²Òå
+		// è®¿é—®ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œä½†å¹¶ä¸å°†å…¶popå‡º"æ ˆ"ï¼Œè¾“å‡ºï¼šç–¯ç‹‚Androidè®²ä¹‰
 		System.out.println(stack.peek());
 		
-		// ÒÀÈ»Êä³ö£º[·è¿ñAndroid½²Òå, ·è¿ñJava½²Òå, ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½]
+		// ä¾ç„¶è¾“å‡ºï¼š[ç–¯ç‹‚Androidè®²ä¹‰, ç–¯ç‹‚Javaè®²ä¹‰, è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜]
 		System.out.println(stack);
 		
-		// pop³öµÚÒ»¸öÔªËØ£¬Êä³ö£º·è¿ñAndroid½²Òå
+		// popå‡ºç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œè¾“å‡ºï¼šç–¯ç‹‚Androidè®²ä¹‰
 		System.out.println(stack.pop());
 		
-		// Êä³ö£º[ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½, ·è¿ñJava½²Òå]
+		// è¾“å‡ºï¼š[è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜, ç–¯ç‹‚Javaè®²ä¹‰]
 		System.out.println(stack);
 	}
 }

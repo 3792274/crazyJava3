@@ -1,8 +1,8 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 /**
- * Description: ¾²Ì¬ÄÚ²¿Àà,²»ÄÜ·ÃÎÊ·Ç¾²Ì¬³ÉÔ±¡£<br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description: é™æ€å†…éƒ¨ç±»,ä¸èƒ½è®¿é—®éé™æ€æˆå‘˜ã€‚<br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,14 +16,14 @@ public class StaticInnerClassTest {
 	private static int prop2 = 9;
 
 	static class StaticInnerClass {
-		// ¾²Ì¬ÄÚ²¿ÀàÀï¿ÉÒÔ°üº¬¾²Ì¬³ÉÔ±
+		// é™æ€å†…éƒ¨ç±»é‡Œå¯ä»¥åŒ…å«é™æ€æˆå‘˜
 		private static int age;
 				int b;
 		public void accessOuterProp() {
-			// ÏÂÃæ´úÂë³öÏÖ´íÎó£º
-			// ¾²Ì¬ÄÚ²¿ÀàÎŞ·¨·ÃÎÊÍâ²¿ÀàµÄÊµÀı±äÁ¿
+			// ä¸‹é¢ä»£ç å‡ºç°é”™è¯¯ï¼š
+			// é™æ€å†…éƒ¨ç±»æ— æ³•è®¿é—®å¤–éƒ¨ç±»çš„å®ä¾‹å˜é‡
 //			System.out.println(prop1);
-			// ÏÂÃæ´úÂëÕı³£
+			// ä¸‹é¢ä»£ç æ­£å¸¸
 			System.out.println(prop2);
 		}
 	}

@@ -1,4 +1,4 @@
-package chapter13_03_JDBCµÄµäĞÍÓÃ·¨;
+package chapter13_03_JDBCçš„å…¸å‹ç”¨æ³•;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,25 +6,25 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 /**
- * 1.²ÉÓÃjava7Ìá¹©µÄ×Ô¶¯¹Ø±Õ×ÊÔ´µÄtry()Ğ´·¨
- * 2.java7¸ÄĞ´ÁËConnection¡¢Statement¡¢ResultSetµÈ½Ó¿Ú£¬ËûÃÇ¶¼¼Ì³ĞÁËAutoCloseable½Ó¿Ú
+ * 1.é‡‡ç”¨java7æä¾›çš„è‡ªåŠ¨å…³é—­èµ„æºçš„try()å†™æ³•
+ * 2.java7æ”¹å†™äº†Connectionã€Statementã€ResultSetç­‰æ¥å£ï¼Œä»–ä»¬éƒ½ç»§æ‰¿äº†AutoCloseableæ¥å£
  * @author Mr.TianShu
  *
  */
 public class ConnMySql {
 
 	public static void main(String[] args) throws Exception {
-		// 1.¼ÓÔØÊı¾İ¿âÆô¶¯£¬Ê¹ÓÃ·´Éä
+		// 1.åŠ è½½æ•°æ®åº“å¯åŠ¨ï¼Œä½¿ç”¨åå°„
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
 
 		try (
-				// 2.Ê¹ÓÃDriverManager»ñÈ¡Á¬½Ó
+				// 2.ä½¿ç”¨DriverManagerè·å–è¿æ¥
 				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/select_test?characterEncoding=utf8&useSSL=true", "root", "12369");
-				// 3.Ê¹ÓÃConnection ´´½¨Ò»¸öStatement¶ÔÏó
+				// 3.ä½¿ç”¨Connection åˆ›å»ºä¸€ä¸ªStatementå¯¹è±¡
 				Statement stmt = conn.createStatement();
-				// 4.Ö´ĞĞSQLÓï¾ä
+				// 4.æ‰§è¡ŒSQLè¯­å¥
 				ResultSet rs = stmt.executeQuery("select s.* ,teacher_name from student_table s,teacher_table t where t.teacher_id=s.java_teacher");) {
-			// 5.Ê¹ÓÃresultSet
+			// 5.ä½¿ç”¨resultSet
 			while (rs.next()) {
 				System.out.println(rs.getInt(1) + "\t" + rs.getString(2) + "\t" + rs.getString(3) + "\t" + rs.getString(4));
 

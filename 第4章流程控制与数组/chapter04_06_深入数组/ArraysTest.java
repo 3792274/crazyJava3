@@ -1,10 +1,10 @@
-package chapter04_06_ÉîÈëÊı×é;
+package chapter04_06_æ·±å…¥æ•°ç»„;
 
 import java.util.Arrays;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,31 +15,31 @@ import java.util.Arrays;
  */
 public class ArraysTest {
 	public static void main(String[] args) {
-		// ¶¨ÒåÒ»¸öaÊı×é
+		// å®šä¹‰ä¸€ä¸ªaæ•°ç»„
 		int[] a = new int[] { 3, 4, 5, 6 };
-		// ¶¨ÒåÒ»¸öa2Êı×é
+		// å®šä¹‰ä¸€ä¸ªa2æ•°ç»„
 		int[] a2 = new int[] { 3, 4, 5, 6 };
 		
-		// aÊı×éºÍa2Êı×éµÄ³¤¶ÈÏàµÈ£¬Ã¿¸öÔªËØÒÀ´ÎÏàµÈ£¬½«Êä³ötrue
-		System.out.println("aÊı×éºÍa2Êı×éÊÇ·ñÏàµÈ£º" + Arrays.equals(a, a2));
+		// aæ•°ç»„å’Œa2æ•°ç»„çš„é•¿åº¦ç›¸ç­‰ï¼Œæ¯ä¸ªå…ƒç´ ä¾æ¬¡ç›¸ç­‰ï¼Œå°†è¾“å‡ºtrue
+		System.out.println("aæ•°ç»„å’Œa2æ•°ç»„æ˜¯å¦ç›¸ç­‰ï¼š" + Arrays.equals(a, a2));
 		
-		// Í¨¹ı¸´ÖÆaÊı×é£¬Éú³ÉÒ»¸öĞÂµÄbÊı×é
+		// é€šè¿‡å¤åˆ¶aæ•°ç»„ï¼Œç”Ÿæˆä¸€ä¸ªæ–°çš„bæ•°ç»„
 		int[] b = Arrays.copyOf(a, 6);
-		System.out.println("aÊı×éºÍbÊı×éÊÇ·ñÏàµÈ£º" + Arrays.equals(a, b));
+		System.out.println("aæ•°ç»„å’Œbæ•°ç»„æ˜¯å¦ç›¸ç­‰ï¼š" + Arrays.equals(a, b));
 		
-		// Êä³öbÊı×éµÄÔªËØ£¬½«Êä³ö[3, 4, 5, 6, 0, 0]
-		System.out.println("bÊı×éµÄÔªËØÎª£º" + Arrays.toString(b));
+		// è¾“å‡ºbæ•°ç»„çš„å…ƒç´ ï¼Œå°†è¾“å‡º[3, 4, 5, 6, 0, 0]
+		System.out.println("bæ•°ç»„çš„å…ƒç´ ä¸ºï¼š" + Arrays.toString(b));
 		
-		// ½«bÊı×éµÄµÚ3¸öÔªËØ£¨°üÀ¨£©µ½µÚ5¸öÔªËØ£¨²»°üÀ¨£©¸³Îª1,bÊı×éµÄÔªËØÎª£º[3, 4, 1, 1, 0, 0]
+		// å°†bæ•°ç»„çš„ç¬¬3ä¸ªå…ƒç´ ï¼ˆåŒ…æ‹¬ï¼‰åˆ°ç¬¬5ä¸ªå…ƒç´ ï¼ˆä¸åŒ…æ‹¬ï¼‰èµ‹ä¸º1,bæ•°ç»„çš„å…ƒç´ ä¸ºï¼š[3, 4, 1, 1, 0, 0]
 		Arrays.fill(b, 2, 4, 1);
 		
-		// Êä³öbÊı×éµÄÔªËØ£¬½«Êä³ö[3, 4, 1, 1, 0, 0]
-		System.out.println("bÊı×éµÄÔªËØÎª£º" + Arrays.toString(b));
+		// è¾“å‡ºbæ•°ç»„çš„å…ƒç´ ï¼Œå°†è¾“å‡º[3, 4, 1, 1, 0, 0]
+		System.out.println("bæ•°ç»„çš„å…ƒç´ ä¸ºï¼š" + Arrays.toString(b));
 		
-		// ¶ÔbÊı×é½øĞĞÅÅĞò
+		// å¯¹bæ•°ç»„è¿›è¡Œæ’åº
 		Arrays.sort(b);
 		
-		// Êä³öbÊı×éµÄÔªËØ£¬½«Êä³ö[0, 0, 1, 1, 3, 4]
-		System.out.println("bÊı×éµÄÔªËØÎª£º" + Arrays.toString(b));
+		// è¾“å‡ºbæ•°ç»„çš„å…ƒç´ ï¼Œå°†è¾“å‡º[0, 0, 1, 1, 3, 4]
+		System.out.println("bæ•°ç»„çš„å…ƒç´ ä¸ºï¼š" + Arrays.toString(b));
 	}
 }

@@ -1,10 +1,10 @@
-package chapter14_03_×Ô¶¨ÒåAnnotation.one;
+package chapter14_03_è‡ªå®šä¹‰Annotation.one;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,8 +17,8 @@ public class RunTests
 	public static void main(String[] args)
 		throws Exception
 	{
-		// ´¦ÀíMyTestÀà
-		ProcessorTest.process("chapter14_03_×Ô¶¨ÒåAnnotation.one.MyTest");
+		// å¤„ç†MyTestç±»
+		ProcessorTest.process("chapter14_03_è‡ªå®šä¹‰Annotation.one.MyTest");
 	}
 }
 

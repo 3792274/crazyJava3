@@ -1,8 +1,8 @@
-package chapter03_05_»ù±¾ÀàĞÍµÄÀàĞÍ×ª»»;
+package chapter03_05_åŸºæœ¬ç±»å‹çš„ç±»å‹è½¬æ¢;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,15 +15,15 @@ public class NarrowConversion
 	public static void main(String[] args)
 	{
 		int iValue = 233;
-		// Ç¿ÖÆ°ÑÒ»¸öintÀàĞÍµÄÖµ×ª»»ÎªbyteÀàĞÍµÄÖµ
+		// å¼ºåˆ¶æŠŠä¸€ä¸ªintç±»å‹çš„å€¼è½¬æ¢ä¸ºbyteç±»å‹çš„å€¼
 		byte bValue = (byte)iValue;
-		// ½«Êä³ö-23
+		// å°†è¾“å‡º-23
 		System.out.println(bValue);
 		
-		// Ç¿ÖÆ°ÑÒ»¸ödoubleÀàĞÍµÄÖµ×ª»»Îªint
+		// å¼ºåˆ¶æŠŠä¸€ä¸ªdoubleç±»å‹çš„å€¼è½¬æ¢ä¸ºint
 		double dValue = 3.98;
 		int tol = (int)dValue;
-		// ½«Êä³ö3
+		// å°†è¾“å‡º3
 		System.out.println(tol);
 	}
 }

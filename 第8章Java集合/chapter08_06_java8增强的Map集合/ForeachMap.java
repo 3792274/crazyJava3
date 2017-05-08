@@ -1,4 +1,4 @@
-package chapter08_06_java8ÔöÇ¿µÄMap¼¯ºÏ;
+package chapter08_06_java8å¢å¼ºçš„Mapé›†åˆ;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +20,7 @@ public class ForeachMap {
         mapInArrayList.add(hashMap);
         
         
-        //forEachÑ­»·£¬ĞŞ¸ÄÑ­»·±äÁ¿£¬Í¬Ê±Ò²»áĞŞ¸Ä±»Ñ­»·¶ÔÏó
+        //forEachå¾ªç¯ï¼Œä¿®æ”¹å¾ªç¯å˜é‡ï¼ŒåŒæ—¶ä¹Ÿä¼šä¿®æ”¹è¢«å¾ªç¯å¯¹è±¡
         for (Map<String, Object> map : mapInArrayList) {
             map.put("a", 3);
             Person p2 = new Person("bb");

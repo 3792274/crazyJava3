@@ -1,8 +1,8 @@
-package chapter03_05_»ù±¾ÀàĞÍµÄÀàĞÍ×ª»»;
+package chapter03_05_åŸºæœ¬ç±»å‹çš„ç±»å‹è½¬æ¢;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,28 +14,28 @@ public class AutoPromote
 {
 	public static void main(String[] args)
 	{
-		// ¶¨ÒåÒ»¸öshortÀàĞÍ±äÁ¿
+		// å®šä¹‰ä¸€ä¸ªshortç±»å‹å˜é‡
 		short sValue = 5;
-		// ÏÂÃæ´úÂë½«³ö´í£º±í´ïÊ½ÖĞµÄsValue½«×Ô¶¯ÌáÉıµ½intÀàĞÍ£¬
-		// ÔòÓÒ±ßµÄ±í´ïÊ½ÀàĞÍÎªint£¬½«Ò»¸öintÀàĞÍ¸³¸øshortÀàĞÍµÄ±äÁ¿½«·¢Éú´íÎó¡£
+		// ä¸‹é¢ä»£ç å°†å‡ºé”™ï¼šè¡¨è¾¾å¼ä¸­çš„sValueå°†è‡ªåŠ¨æå‡åˆ°intç±»å‹ï¼Œ
+		// åˆ™å³è¾¹çš„è¡¨è¾¾å¼ç±»å‹ä¸ºintï¼Œå°†ä¸€ä¸ªintç±»å‹èµ‹ç»™shortç±»å‹çš„å˜é‡å°†å‘ç”Ÿé”™è¯¯ã€‚
 		// sValue = sValue - 2;
 		byte b = 40;
 		char c = 'a';
 		int i = 23;
 		double d = .314;
-		// ÓÒ±ß±í´ïÊ½ÖĞÔÚ×î¸ßµÈ¼¶²Ù×÷ÊıÎªd£¨doubleĞÍ£©
-		// ÔòÓÒ±ß±í´ïÊ½µÄÀàĞÍÎªdoubleĞÍ,¹Ê¸³¸øÒ»¸ödoubleĞÍ±äÁ¿
+		// å³è¾¹è¡¨è¾¾å¼ä¸­åœ¨æœ€é«˜ç­‰çº§æ“ä½œæ•°ä¸ºdï¼ˆdoubleå‹ï¼‰
+		// åˆ™å³è¾¹è¡¨è¾¾å¼çš„ç±»å‹ä¸ºdoubleå‹,æ•…èµ‹ç»™ä¸€ä¸ªdoubleå‹å˜é‡
 		double result = b + c + i * d;
-		// ½«Êä³ö144.222
+		// å°†è¾“å‡º144.222
 		System.out.println(result);
 		int val = 3;
-		// ÓÒ±ß±í´ïÊ½ÖĞ2¸ö²Ù×÷Êı¶¼ÊÇint£¬¹ÊÓÒ±ß±í´ïÊ½µÄÀàĞÍÎªint
-		// Òò´Ë£¬ËäÈ»23/3²»ÄÜ³ı¾¡£¬ÒÀÈ»µÃµ½Ò»¸öintÕûÊı
+		// å³è¾¹è¡¨è¾¾å¼ä¸­2ä¸ªæ“ä½œæ•°éƒ½æ˜¯intï¼Œæ•…å³è¾¹è¡¨è¾¾å¼çš„ç±»å‹ä¸ºint
+		// å› æ­¤ï¼Œè™½ç„¶23/3ä¸èƒ½é™¤å°½ï¼Œä¾ç„¶å¾—åˆ°ä¸€ä¸ªintæ•´æ•°
 		int intResult = 23 / val;
-		System.out.println(intResult); // ½«Êä³ö7
-		// Êä³ö×Ö·û´®Hello!a7
+		System.out.println(intResult); // å°†è¾“å‡º7
+		// è¾“å‡ºå­—ç¬¦ä¸²Hello!a7
 		System.out.println("Hello!" + 'a' + 7);
-		// Êä³ö×Ö·û´®104Hello!
+		// è¾“å‡ºå­—ç¬¦ä¸²104Hello!
 		System.out.println('a' + 7 + "Hello!");
 	}
 }

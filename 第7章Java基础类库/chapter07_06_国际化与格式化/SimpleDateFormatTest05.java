@@ -1,11 +1,11 @@
-package chapter07_06_¹ú¼Ê»¯Óë¸ñÊ½»¯;
+package chapter07_06_å›½é™…åŒ–ä¸æ ¼å¼åŒ–;
 
 import java.text.*;
 import java.util.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -18,20 +18,20 @@ public class SimpleDateFormatTest05 {
 	public static void main(String[] args) throws ParseException {
 		Date d = new Date();
 		
-		// ´´½¨Ò»¸öSimpleDateFormat¶ÔÏó
-		SimpleDateFormat sdf1 = new SimpleDateFormat("GyyyyÄêÖĞµÚDÌì");
+		// åˆ›å»ºä¸€ä¸ªSimpleDateFormatå¯¹è±¡
+		SimpleDateFormat sdf1 = new SimpleDateFormat("Gyyyyå¹´ä¸­ç¬¬Då¤©");
 		
-		// ½«d¸ñÊ½»¯³ÉÈÕÆÚ£¬Êä³ö£º¹«Ôª2014ÄêÖĞµÚ101Ìì
+		// å°†dæ ¼å¼åŒ–æˆæ—¥æœŸï¼Œè¾“å‡ºï¼šå…¬å…ƒ2014å¹´ä¸­ç¬¬101å¤©
 		String dateStr = sdf1.format(d);
 		System.out.println(dateStr);
 		
 		
 		
-		// Ò»¸ö·Ç³£ÌØÊâµÄÈÕÆÚ×Ö·û´®
-		String str = "14###ÈıÔÂ##21";
+		// ä¸€ä¸ªéå¸¸ç‰¹æ®Šçš„æ—¥æœŸå­—ç¬¦ä¸²
+		String str = "14###ä¸‰æœˆ##21";
 		SimpleDateFormat sdf2 = new SimpleDateFormat("y###MMM##d");
 		
-		// ½«ÈÕÆÚ×Ö·û´®½âÎö³ÉÈÕÆÚ£¬Êä³ö£ºFri Mar 21 00:00:00 CST 2014
+		// å°†æ—¥æœŸå­—ç¬¦ä¸²è§£ææˆæ—¥æœŸï¼Œè¾“å‡ºï¼šFri Mar 21 00:00:00 CST 2014
 		System.out.println(sdf2.parse(str));
 	}
 }

@@ -1,7 +1,7 @@
-package chapter03_01_×¢ÊÍ;
+package chapter03_01_æ³¨é‡Š;
 /**
- * Description: ÓÃÁ½¸ö**±íÊ¾ÎÄµµ×¢ÊÍ
- * <br>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description: ç”¨ä¸¤ä¸ª**è¡¨ç¤ºæ–‡æ¡£æ³¨é‡Š
+ * <br>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br>This program is protected by copyright laws.
  * <br>Program Name:
@@ -12,12 +12,12 @@ package chapter03_01_×¢ÊÍ;
 public class JavadocTest02
 {
 	/**
-	 * ÓÃÁ½¸ö**±íÊ¾ÎÄµµ×¢ÊÍ
-	 * ¼òµ¥²âÊÔ³ÉÔ±±äÁ¿
+	 * ç”¨ä¸¤ä¸ª**è¡¨ç¤ºæ–‡æ¡£æ³¨é‡Š
+	 * ç®€å•æµ‹è¯•æˆå‘˜å˜é‡
 	 */
 	protected String name;
 	/**
-	 * Ö÷·½·¨£¬³ÌĞòµÄÈë¿Ú
+	 * ä¸»æ–¹æ³•ï¼Œç¨‹åºçš„å…¥å£
 	 */
 	public static void main(String[] args)
 	{

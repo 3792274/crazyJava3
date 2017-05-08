@@ -1,10 +1,10 @@
-package chapter09_04_·ºĞÍ·½·¨;
+package chapter09_04_æ³›å‹æ–¹æ³•;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,7 +17,7 @@ class MyClass<E>
 {
 	public <T> MyClass(T t)
 	{
-		System.out.println("t²ÎÊıµÄÖµÎª£º" + t);
+		System.out.println("tå‚æ•°çš„å€¼ä¸ºï¼š" + t);
 	}
 }
 
@@ -27,18 +27,18 @@ public class GenericDiamondTest
 {
 	public static void main(String[] args)
 	{
-		// MyClassÀàÉùÃ÷ÖĞµÄEĞÎ²ÎÊÇStringÀàĞÍ¡£
-		// ·ºĞÍ¹¹ÔìÆ÷ÖĞÉùÃ÷µÄTĞÎ²ÎÊÇIntegerÀàĞÍ
+		// MyClassç±»å£°æ˜ä¸­çš„Eå½¢å‚æ˜¯Stringç±»å‹ã€‚
+		// æ³›å‹æ„é€ å™¨ä¸­å£°æ˜çš„Tå½¢å‚æ˜¯Integerç±»å‹
 		MyClass<String> mc1 = new MyClass<>(5);
 	
 		
-		// ÏÔÊ½Ö¸¶¨·ºĞÍ¹¹ÔìÆ÷ÖĞÉùÃ÷µÄTĞÎ²ÎÊÇIntegerÀàĞÍ£¬
+		// æ˜¾å¼æŒ‡å®šæ³›å‹æ„é€ å™¨ä¸­å£°æ˜çš„Tå½¢å‚æ˜¯Integerç±»å‹ï¼Œ
 		MyClass<String> mc2 = new <Integer> MyClass<String>(5);
 		
 		
-		// MyClassÀàÉùÃ÷ÖĞµÄEĞÎ²ÎÊÇStringÀàĞÍ¡£
-		// Èç¹ûÏÔÊ½Ö¸¶¨·ºĞÍ¹¹ÔìÆ÷ÖĞÉùÃ÷µÄTĞÎ²ÎÊÇIntegerÀàĞÍ
-		// ´ËÊ±¾Í²»ÄÜÊ¹ÓÃ"ÁâĞÎ"Óï·¨£¬ÏÂÃæ´úÂëÊÇ´íµÄ¡£
+		// MyClassç±»å£°æ˜ä¸­çš„Eå½¢å‚æ˜¯Stringç±»å‹ã€‚
+		// å¦‚æœæ˜¾å¼æŒ‡å®šæ³›å‹æ„é€ å™¨ä¸­å£°æ˜çš„Tå½¢å‚æ˜¯Integerç±»å‹
+		// æ­¤æ—¶å°±ä¸èƒ½ä½¿ç”¨"è±å½¢"è¯­æ³•ï¼Œä¸‹é¢ä»£ç æ˜¯é”™çš„ã€‚
 //		MyClass<String> mc3 = new <Integer> MyClass<>(5);
 	}
 }

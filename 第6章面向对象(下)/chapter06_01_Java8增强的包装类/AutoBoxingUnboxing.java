@@ -1,8 +1,8 @@
-package chapter06_01_Java8ÔöÇ¿µÄ°ü×°Àà;
+package chapter06_01_Java8å¢å¼ºçš„åŒ…è£…ç±»;
 
 /**
- * Description: jdk1.5 ÒÔºó×Ô¶¯²ğÏä£¬×°Ïä<br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description: jdk1.5 ä»¥åè‡ªåŠ¨æ‹†ç®±ï¼Œè£…ç®±<br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,14 +13,14 @@ package chapter06_01_Java8ÔöÇ¿µÄ°ü×°Àà;
  */
 public class AutoBoxingUnboxing {
 	public static void main(String[] args) {
-		// Ö±½Ó°ÑÒ»¸ö»ù±¾ÀàĞÍ±äÁ¿¸³¸øInteger¶ÔÏó
+		// ç›´æ¥æŠŠä¸€ä¸ªåŸºæœ¬ç±»å‹å˜é‡èµ‹ç»™Integerå¯¹è±¡
 		Integer inObj = 5;
-		// Ö±½Ó°ÑÒ»¸öbooleanÀàĞÍ±äÁ¿¸³¸øÒ»¸öObjectÀàĞÍµÄ±äÁ¿
+		// ç›´æ¥æŠŠä¸€ä¸ªbooleanç±»å‹å˜é‡èµ‹ç»™ä¸€ä¸ªObjectç±»å‹çš„å˜é‡
 		Object boolObj = true;
-		// Ö±½Ó°ÑÒ»¸öInteger¶ÔÏó¸³¸øintÀàĞÍµÄ±äÁ¿
+		// ç›´æ¥æŠŠä¸€ä¸ªIntegerå¯¹è±¡èµ‹ç»™intç±»å‹çš„å˜é‡
 		int it = inObj;
 		if (boolObj instanceof Boolean) {
-			// ÏÈ°ÑObject¶ÔÏóÇ¿ÖÆÀàĞÍ×ª»»ÎªBooleanÀàĞÍ£¬ÔÙ¸³¸øboolean±äÁ¿
+			// å…ˆæŠŠObjectå¯¹è±¡å¼ºåˆ¶ç±»å‹è½¬æ¢ä¸ºBooleanç±»å‹ï¼Œå†èµ‹ç»™booleanå˜é‡
 			boolean b = (Boolean) boolObj;
 			System.out.println(b);
 		}

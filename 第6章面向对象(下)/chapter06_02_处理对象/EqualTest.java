@@ -1,8 +1,8 @@
-package chapter06_02_´¦Àí¶ÔÏó;
+package chapter06_02_å¤„ç†å¯¹è±¡;
 
 /**
- * Description:»ù±¾ÀàĞÍ¶Ô±ÈÖµ£¬ÒıÓÃÀàĞÍ±ØĞë´æÔÚ¼Ì³Ğ¹ØÏµ²ÅÄÜ±È£¬¶Ô±È¶ÓĞÎÒıÓÃÊÇ·ñÊÇÍ¬Ò»¸ö¶ÔÏó <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:åŸºæœ¬ç±»å‹å¯¹æ¯”å€¼ï¼Œå¼•ç”¨ç±»å‹å¿…é¡»å­˜åœ¨ç»§æ‰¿å…³ç³»æ‰èƒ½æ¯”ï¼Œå¯¹æ¯”é˜Ÿå½¢å¼•ç”¨æ˜¯å¦æ˜¯åŒä¸€ä¸ªå¯¹è±¡ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,20 +15,20 @@ public class EqualTest {
 	public static void main(String[] args) {
 		int it = 65;
 		float fl = 65.0f;
-		// ½«Êä³ötrue
-		System.out.println("65ºÍ65.0fÊÇ·ñÏàµÈ£¿" + (it == fl));
+		// å°†è¾“å‡ºtrue
+		System.out.println("65å’Œ65.0fæ˜¯å¦ç›¸ç­‰ï¼Ÿ" + (it == fl));
 		char ch = 'A';
-		// ½«Êä³ötrue
-		System.out.println("65ºÍ'A'ÊÇ·ñÏàµÈ£¿" + (it == ch));
+		// å°†è¾“å‡ºtrue
+		System.out.println("65å’Œ'A'æ˜¯å¦ç›¸ç­‰ï¼Ÿ" + (it == ch));
 		String str1 = new String("hello");
 		String str2 = new String("hello");
-		// ½«Êä³öfalse
-		System.out.println("str1ºÍstr2ÊÇ·ñÏàµÈ£¿" + (str1 == str2));
-		// ½«Êä³ötrue
-		System.out.println("str1ÊÇ·ñequals str2£¿" + (str1.equals(str2)));
-		// ÓÉÓÚjava.lang.StringÓëEqualTestÀàÃ»ÓĞ¼Ì³Ğ¹ØÏµ£¬
+		// å°†è¾“å‡ºfalse
+		System.out.println("str1å’Œstr2æ˜¯å¦ç›¸ç­‰ï¼Ÿ" + (str1 == str2));
+		// å°†è¾“å‡ºtrue
+		System.out.println("str1æ˜¯å¦equals str2ï¼Ÿ" + (str1.equals(str2)));
+		// ç”±äºjava.lang.Stringä¸EqualTestç±»æ²¡æœ‰ç»§æ‰¿å…³ç³»ï¼Œ
 
-		// ËùÒÔÏÂÃæÓï¾äµ¼ÖÂ±àÒë´íÎó,²»Í¬ÀàĞÍ²»ÄÜ¶Ô±È
+		// æ‰€ä»¥ä¸‹é¢è¯­å¥å¯¼è‡´ç¼–è¯‘é”™è¯¯,ä¸åŒç±»å‹ä¸èƒ½å¯¹æ¯”
 		// System.out.println("hello" == new EqualTest());
 
 		Integer ii = it;

@@ -1,4 +1,4 @@
-package chapter12_12_Ê¹ÓÃJFormattedTextFieldºÍJtextPane;
+package chapter12_12_ä½¿ç”¨JFormattedTextFieldå’ŒJtextPane;
 
 
 import java.awt.*;
@@ -7,7 +7,7 @@ import javax.swing.*;
 import javax.swing.text.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,42 +17,42 @@ import javax.swing.text.*;
  */
 public class JTextPaneTest
 {
-	JFrame mainWin = new JFrame("²âÊÔJTextPane");
+	JFrame mainWin = new JFrame("æµ‹è¯•JTextPane");
 	JTextPane txt = new JTextPane();
 	StyledDocument doc = txt.getStyledDocument();
-	// ¶¨ÒåÈı¸öSimpleAttributeSet¶ÔÏó
+	// å®šä¹‰ä¸‰ä¸ªSimpleAttributeSetå¯¹è±¡
 	SimpleAttributeSet android = new SimpleAttributeSet();
 	SimpleAttributeSet java = new SimpleAttributeSet();
 	SimpleAttributeSet javaee = new SimpleAttributeSet();
 	public void init()
 	{
-		// ÎªandroidÊôĞÔ¼¯ÉèÖÃÑÕÉ«¡¢×ÖÌå´óĞ¡¡¢×ÖÌåºÍÏÂ»®Ïß
+		// ä¸ºandroidå±æ€§é›†è®¾ç½®é¢œè‰²ã€å­—ä½“å¤§å°ã€å­—ä½“å’Œä¸‹åˆ’çº¿
 		StyleConstants.setForeground(android, Color.RED);
 		StyleConstants.setFontSize(android, 24);
 		StyleConstants.setFontFamily(android, "Dialog");
 		StyleConstants.setUnderline(android, true);
-		// ÎªjavaÊôĞÔ¼¯ÉèÖÃÑÕÉ«¡¢×ÖÌå´óĞ¡¡¢×ÖÌåºÍ´ÖÌå×Ö
+		// ä¸ºjavaå±æ€§é›†è®¾ç½®é¢œè‰²ã€å­—ä½“å¤§å°ã€å­—ä½“å’Œç²—ä½“å­—
 		StyleConstants.setForeground(java, Color.BLUE);
 		StyleConstants.setFontSize(java, 30);
 		StyleConstants.setFontFamily(java, "Arial Black");
 		StyleConstants.setBold(java, true);
-		// ÎªjavaeeÊôĞÔ¼¯ÉèÖÃÑÕÉ«¡¢×ÖÌå´óĞ¡¡¢Ğ±Ìå×Ö
+		// ä¸ºjavaeeå±æ€§é›†è®¾ç½®é¢œè‰²ã€å­—ä½“å¤§å°ã€æ–œä½“å­—
 		StyleConstants.setForeground(javaee, Color.GREEN);
 		StyleConstants.setFontSize(javaee, 32);
 		StyleConstants.setItalic(javaee, true);
-		// ÉèÖÃ²»ÔÊĞí±à¼­
+		// è®¾ç½®ä¸å…è®¸ç¼–è¾‘
 		txt.setEditable(false);
-		txt.setText("·è¿ñAndroid½²Òå\n"
-			+ "·è¿ñJava½²Òå\n" + "ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½\n");
-		// ·Ö±ğÎªÎÄµµÖĞÈı¶ÎÎÄ×ÖÉèÖÃ²»Í¬µÄÍâ¹ÛÑùÊ½
+		txt.setText("ç–¯ç‹‚Androidè®²ä¹‰\n"
+			+ "ç–¯ç‹‚Javaè®²ä¹‰\n" + "è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜\n");
+		// åˆ†åˆ«ä¸ºæ–‡æ¡£ä¸­ä¸‰æ®µæ–‡å­—è®¾ç½®ä¸åŒçš„å¤–è§‚æ ·å¼
 		doc.setCharacterAttributes(0 , 12 , android, true);
 		doc.setCharacterAttributes(12 , 12 , java, true);
 		doc.setCharacterAttributes(24 , 30 , javaee, true);
 		mainWin.add(new JScrollPane(txt), BorderLayout.CENTER);
-		// »ñÈ¡ÆÁÄ»³ß´ç
+		// è·å–å±å¹•å°ºå¯¸
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int inset = 100;
-		// ÉèÖÃÖ÷´°¿ÚµÄ´óĞ¡
+		// è®¾ç½®ä¸»çª—å£çš„å¤§å°
 		mainWin.setBounds(inset, inset, screenSize.width - inset * 2
 			, screenSize.height - inset * 2);
 		mainWin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

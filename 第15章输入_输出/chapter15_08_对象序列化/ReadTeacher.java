@@ -1,10 +1,10 @@
-package chapter15_08_¶ÔÏóĞòÁĞ»¯;
+package chapter15_08_å¯¹è±¡åºåˆ—åŒ–;
 
 import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,19 +16,19 @@ import java.io.*;
 public class ReadTeacher {
 	public static void main(String[] args) {
 		try (
-				// ´´½¨Ò»¸öObjectInputStreamÊä³öÁ÷
+				// åˆ›å»ºä¸€ä¸ªObjectInputStreamè¾“å‡ºæµ
 				ObjectInputStream ois = new ObjectInputStream(new FileInputStream("teacher.txt"))) {
-			// ÒÀ´Î¶ÁÈ¡ObjectInputStreamÊäÈëÁ÷ÖĞµÄËÄ¸ö¶ÔÏó
+			// ä¾æ¬¡è¯»å–ObjectInputStreamè¾“å…¥æµä¸­çš„å››ä¸ªå¯¹è±¡
 			Teacher t1 = (Teacher) ois.readObject();
 			Teacher t2 = (Teacher) ois.readObject();
 			Person p = (Person) ois.readObject();
 			Teacher t3 = (Teacher) ois.readObject();
-			// Êä³ötrue
-			System.out.println("t1µÄstudentÒıÓÃºÍpÊÇ·ñÏàÍ¬£º" + (t1.getStudent() == p));
-			// Êä³ötrue
-			System.out.println("t2µÄstudentÒıÓÃºÍpÊÇ·ñÏàÍ¬£º" + (t2.getStudent() == p));
-			// Êä³ötrue
-			System.out.println("t2ºÍt3ÊÇ·ñÊÇÍ¬Ò»¸ö¶ÔÏó£º" + (t2 == t3));
+			// è¾“å‡ºtrue
+			System.out.println("t1çš„studentå¼•ç”¨å’Œpæ˜¯å¦ç›¸åŒï¼š" + (t1.getStudent() == p));
+			// è¾“å‡ºtrue
+			System.out.println("t2çš„studentå¼•ç”¨å’Œpæ˜¯å¦ç›¸åŒï¼š" + (t2.getStudent() == p));
+			// è¾“å‡ºtrue
+			System.out.println("t2å’Œt3æ˜¯å¦æ˜¯åŒä¸€ä¸ªå¯¹è±¡ï¼š" + (t2 == t3));
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

@@ -1,7 +1,7 @@
-package chapter10_04_使用throw抛出异常;
+package chapter10_04_浣跨敤throw鎶涘嚭寮傚父;
 
 /**
- * Description:链式结构异常
+ * Description:閾惧紡缁撴瀯寮傚父
  */
 public class SalException extends Exception
 {
@@ -10,7 +10,7 @@ public class SalException extends Exception
 	{
 		super(msg);
 	}
-	// 创建一个可以接受Throwable参数的构造器
+	// 鍒涘缓涓�涓彲浠ユ帴鍙桾hrowable鍙傛暟鐨勬瀯閫犲櫒
 	public SalException(Throwable t)
 	{
 		super(t);

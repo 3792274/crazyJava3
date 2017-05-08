@@ -1,8 +1,8 @@
-package chapter04_04_¿ØÖÆÑ­»·½á¹¹;
+package chapter04_04_æ§åˆ¶å¾ªç¯ç»“æ„;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,16 +14,16 @@ public class ContinueTest
 {
 	public static void main(String[] args)
 	{
-		// Ò»¸ö¼òµ¥µÄforÑ­»·
+		// ä¸€ä¸ªç®€å•çš„forå¾ªç¯
 		for (int i = 0; i < 3 ; i++ )
 		{
-			System.out.println("iµÄÖµÊÇ" + i);
+			System.out.println("içš„å€¼æ˜¯" + i);
 			if (i == 1)
 			{
-				// ºöÂÔ±¾´ÎÑ­»·µÄÊ£ÏÂÓï¾ä
+				// å¿½ç•¥æœ¬æ¬¡å¾ªç¯çš„å‰©ä¸‹è¯­å¥
 				continue;
 			}
-			System.out.println("continueºóµÄÊä³öÓï¾ä");
+			System.out.println("continueåçš„è¾“å‡ºè¯­å¥");
 		}
 	}
 }

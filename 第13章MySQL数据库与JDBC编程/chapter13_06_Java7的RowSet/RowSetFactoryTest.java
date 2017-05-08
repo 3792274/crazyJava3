@@ -1,4 +1,4 @@
-package chapter13_06_Java7µÄRowSet;
+package chapter13_06_Java7çš„RowSet;
 
 
 import java.util.*;
@@ -7,7 +7,7 @@ import java.sql.*;
 import javax.sql.rowset.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -23,7 +23,7 @@ public class RowSetFactoryTest
 	private String pass;
 	public void initParam(String paramFile)throws Exception
 	{
-		// Ê¹ÓÃPropertiesÀàÀ´¼ÓÔØÊôĞÔÎÄ¼ş
+		// ä½¿ç”¨Propertiesç±»æ¥åŠ è½½å±æ€§æ–‡ä»¶
 		Properties props = new Properties();
 		props.load(new FileInputStream(paramFile));
 		driver = props.getProperty("driver");
@@ -34,24 +34,24 @@ public class RowSetFactoryTest
 
 	public void update(String sql)throws Exception
 	{
-		// ¼ÓÔØÇı¶¯
+		// åŠ è½½é©±åŠ¨
 		Class.forName(driver);
-		// Ê¹ÓÃRowSetProvider´´½¨RowSetFactory
+		// ä½¿ç”¨RowSetProvideråˆ›å»ºRowSetFactory
 		RowSetFactory factory = RowSetProvider.newFactory();
 		try(
-			// Ê¹ÓÃRowSetFactory´´½¨Ä¬ÈÏµÄJdbcRowSetÊµÀı
+			// ä½¿ç”¨RowSetFactoryåˆ›å»ºé»˜è®¤çš„JdbcRowSetå®ä¾‹
 			JdbcRowSet jdbcRs = factory.createJdbcRowSet())
 		{
-			// ÉèÖÃ±ØÒªµÄÁ¬½ÓĞÅÏ¢
+			// è®¾ç½®å¿…è¦çš„è¿æ¥ä¿¡æ¯
 			jdbcRs.setUrl(url);
 			jdbcRs.setUsername(user);
 			jdbcRs.setPassword(pass);
-			// ÉèÖÃSQL²éÑ¯Óï¾ä
+			// è®¾ç½®SQLæŸ¥è¯¢è¯­å¥
 			jdbcRs.setCommand(sql);
-			// Ö´ĞĞ²éÑ¯
+			// æ‰§è¡ŒæŸ¥è¯¢
 			jdbcRs.execute();
 			jdbcRs.afterLast();
-			// ÏòÇ°¹ö¶¯½á¹û¼¯
+			// å‘å‰æ»šåŠ¨ç»“æœé›†
 			while (jdbcRs.previous())
 			{
 				System.out.println(jdbcRs.getString(1)
@@ -59,8 +59,8 @@ public class RowSetFactoryTest
 					+ "\t" + jdbcRs.getString(3));
 				if (jdbcRs.getInt("student_id") == 3)
 				{
-					// ĞŞ¸ÄÖ¸¶¨¼ÇÂ¼ĞĞ
-					jdbcRs.updateString("student_name", "ËïÎò¿Õ");
+					// ä¿®æ”¹æŒ‡å®šè®°å½•è¡Œ
+					jdbcRs.updateString("student_name", "å­™æ‚Ÿç©º");
 					jdbcRs.updateRow();
 				}
 			}
@@ -69,7 +69,7 @@ public class RowSetFactoryTest
 	public static void main(String[] args)throws Exception
 	{
 		RowSetFactoryTest jt = new RowSetFactoryTest();
-		jt.initParam("resource\\chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½\\mysql.ini");
+		jt.initParam("resource\\chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼\\mysql.ini");
 		jt.update("select * from student_table");
 	}
 }

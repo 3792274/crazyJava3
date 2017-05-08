@@ -1,10 +1,10 @@
-package chapter05_08_¼Ì³ĞÓë×éºÏ;
+package chapter05_08_ç»§æ‰¿ä¸ç»„åˆ;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,62 +16,62 @@ class Animal
 {
 	private void beat()
 	{
-		System.out.println("ĞÄÔàÌø¶¯...");
+		System.out.println("å¿ƒè„è·³åŠ¨...");
 	}
 	public void breath()
 	{
 		beat();
-		System.out.println("ÎüÒ»¿ÚÆø£¬ÍÂÒ»¿ÚÆø£¬ºôÎüÖĞ...");
+		System.out.println("å¸ä¸€å£æ°”ï¼Œåä¸€å£æ°”ï¼Œå‘¼å¸ä¸­...");
 	}
 }
 class Bird
 {
-	// ½«Ô­À´µÄ¸¸Àà×éºÏµ½Ô­À´µÄ×ÓÀà£¬×÷Îª×ÓÀàµÄÒ»¸ö×éºÏ³É·Ö
+	// å°†åŸæ¥çš„çˆ¶ç±»ç»„åˆåˆ°åŸæ¥çš„å­ç±»ï¼Œä½œä¸ºå­ç±»çš„ä¸€ä¸ªç»„åˆæˆåˆ†
 	private Animal a;
 	public Bird(Animal a)
 	{
 		this.a = a;
 	}
-	// ÖØĞÂ¶¨ÒåÒ»¸ö×Ô¼ºµÄbreath()·½·¨
+	// é‡æ–°å®šä¹‰ä¸€ä¸ªè‡ªå·±çš„breath()æ–¹æ³•
 	public void breath()
 	{
-		// Ö±½Ó¸´ÓÃAnimalÌá¹©µÄbreath()·½·¨À´ÊµÏÖBirdµÄbreath()·½·¨¡£
+		// ç›´æ¥å¤ç”¨Animalæä¾›çš„breath()æ–¹æ³•æ¥å®ç°Birdçš„breath()æ–¹æ³•ã€‚
 		a.breath();
 	}
 	public void fly()
 	{
-		System.out.println("ÎÒÔÚÌì¿Õ×ÔÔÚµÄ·ÉÏè...");
+		System.out.println("æˆ‘åœ¨å¤©ç©ºè‡ªåœ¨çš„é£ç¿”...");
 	}
 }
 class Wolf
 {
-	// ½«Ô­À´µÄ¸¸Àà×éºÏµ½Ô­À´µÄ×ÓÀà£¬×÷Îª×ÓÀàµÄÒ»¸ö×éºÏ³É·Ö
+	// å°†åŸæ¥çš„çˆ¶ç±»ç»„åˆåˆ°åŸæ¥çš„å­ç±»ï¼Œä½œä¸ºå­ç±»çš„ä¸€ä¸ªç»„åˆæˆåˆ†
 	private Animal a;
 	public Wolf(Animal a)
 	{
 		this.a = a;
 	}
-	// ÖØĞÂ¶¨ÒåÒ»¸ö×Ô¼ºµÄbreath()·½·¨
+	// é‡æ–°å®šä¹‰ä¸€ä¸ªè‡ªå·±çš„breath()æ–¹æ³•
 	public void breath()
 	{
-		// Ö±½Ó¸´ÓÃAnimalÌá¹©µÄbreath()·½·¨À´ÊµÏÖWolfµÄbreath()·½·¨¡£
+		// ç›´æ¥å¤ç”¨Animalæä¾›çš„breath()æ–¹æ³•æ¥å®ç°Wolfçš„breath()æ–¹æ³•ã€‚
 		a.breath();
 	}
 	public void run()
 	{
-		System.out.println("ÎÒÔÚÂ½µØÉÏµÄ¿ìËÙ±¼ÅÜ...");
+		System.out.println("æˆ‘åœ¨é™†åœ°ä¸Šçš„å¿«é€Ÿå¥”è·‘...");
 	}
 }
 public class CompositeTest
 {
 	public static void main(String[] args)
 	{
-		// ´ËÊ±ĞèÒªÏÔÊ½´´½¨±»×éºÏµÄ¶ÔÏó
+		// æ­¤æ—¶éœ€è¦æ˜¾å¼åˆ›å»ºè¢«ç»„åˆçš„å¯¹è±¡
 		Animal a1 = new Animal();
 		Bird b = new Bird(a1);
 		b.breath();
 		b.fly();
-		// ´ËÊ±ĞèÒªÏÔÊ½´´½¨±»×éºÏµÄ¶ÔÏó
+		// æ­¤æ—¶éœ€è¦æ˜¾å¼åˆ›å»ºè¢«ç»„åˆçš„å¯¹è±¡
 		Animal a2 = new Animal();
 		Wolf w = new Wolf(a2);
 		w.breath();

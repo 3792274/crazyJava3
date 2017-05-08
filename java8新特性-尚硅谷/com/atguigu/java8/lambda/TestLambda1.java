@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class TestLambda1 {
 
-    //Ô­À´Ê¹ÓÃÄäÃûÄÚ²¿Àà
+    //åŸæ¥ä½¿ç”¨åŒ¿åå†…éƒ¨ç±»
     @Test
     public void test1() {
         Comparator<String> com = new Comparator<String>() {
@@ -33,7 +33,7 @@ public class TestLambda1 {
 
     }
 
-    //ÏÖÔÚÊ¹ÓÃLambda±í´ïÊ½
+    //ç°åœ¨ä½¿ç”¨Lambdaè¡¨è¾¾å¼
     @Test
     public void test2() {
         Comparator<String> com = (x, y) -> Integer.compare(x.length(), y.length());
@@ -41,14 +41,14 @@ public class TestLambda1 {
     }
 
     List<Employee> emps = Arrays.asList(
-        new Employee(101, "ÕÅÈı", 18, 9999.99), 
-        new Employee(102, "ÀîËÄ", 59, 6666.66), 
-        new Employee(103, "ÍõÎå", 28, 3333.33), 
-        new Employee(104, "ÕÔÁù", 8, 7777.77), 
-        new Employee(105, "ÌïÆß", 38, 5555.55)
+        new Employee(101, "å¼ ä¸‰", 18, 9999.99), 
+        new Employee(102, "æå››", 59, 6666.66), 
+        new Employee(103, "ç‹äº”", 28, 3333.33), 
+        new Employee(104, "èµµå…­", 8, 7777.77), 
+        new Employee(105, "ç”°ä¸ƒ", 38, 5555.55)
      );
 
-    //  ĞèÇó£º»ñÈ¡¹«Ë¾ÖĞÄêÁäĞ¡ÓÚ 35 µÄÔ±¹¤ĞÅÏ¢
+    //  éœ€æ±‚ï¼šè·å–å…¬å¸ä¸­å¹´é¾„å°äº 35 çš„å‘˜å·¥ä¿¡æ¯
     public List<Employee> filterEmployeeByAge(List<Employee> emps) {
         List<Employee> list = new ArrayList<>();
         for (Employee employee : emps) {
@@ -67,7 +67,7 @@ public class TestLambda1 {
         }
     }
 
-    //ĞèÇó£º»ñÈ¡¹«Ë¾ÖĞ¹¤×Ê´óÓÚ 5000 µÄÔ±¹¤ĞÅÏ¢
+    //éœ€æ±‚ï¼šè·å–å…¬å¸ä¸­å·¥èµ„å¤§äº 5000 çš„å‘˜å·¥ä¿¡æ¯
     public List<Employee> filterEmployeeBySalary(List<Employee> emps) {
         List<Employee> list = new ArrayList<>();
         for (Employee employee : emps) {
@@ -78,7 +78,7 @@ public class TestLambda1 {
         return list;
     }
 
-    //ÓÅ»¯·½Ê½Ò»£º²ßÂÔÄ£Ê½
+    //ä¼˜åŒ–æ–¹å¼ä¸€ï¼šç­–ç•¥æ¨¡å¼
     public List<Employee> filterEmployee(List<Employee> emps, MyPredicate<Employee> mp) {
         List<Employee> list = new ArrayList<>();
         for (Employee employee : emps) {
@@ -100,7 +100,7 @@ public class TestLambda1 {
     
     
     
-    //ÓÅ»¯·½Ê½¶ş£ºÄäÃûÄÚ²¿Àà
+    //ä¼˜åŒ–æ–¹å¼äºŒï¼šåŒ¿åå†…éƒ¨ç±»
     @Test
     public void test5(){
         List<Employee> list = filterEmployee(emps, new MyPredicate<Employee>() {
@@ -115,7 +115,7 @@ public class TestLambda1 {
     }
 
     
-    //ÓÅ»¯·½Ê½Èı£ºLambda±í´ïÊ½
+    //ä¼˜åŒ–æ–¹å¼ä¸‰ï¼šLambdaè¡¨è¾¾å¼
     @Test
     public void test6(){
         List<Employee> list = filterEmployee(emps, (e) -> e.getSalary()>=5000);
@@ -126,7 +126,7 @@ public class TestLambda1 {
     }
     
     
-    //ÓÅ»¯·½Ê½ËÄ£ºStream API
+    //ä¼˜åŒ–æ–¹å¼å››ï¼šStream API
     @Test
     public void test7(){
         emps.stream()

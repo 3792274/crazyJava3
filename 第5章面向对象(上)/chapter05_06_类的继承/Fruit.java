@@ -1,10 +1,10 @@
-package chapter05_06_ÀàµÄ¼Ì³Ğ;
+package chapter05_06_ç±»çš„ç»§æ‰¿;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,8 +17,8 @@ public class Fruit
 	public double weight;
 	public void info()
 	{
-		System.out.println("ÎÒÊÇÒ»¸öË®¹û£¡ÖØ"
-			+ weight + "g£¡");
+		System.out.println("æˆ‘æ˜¯ä¸€ä¸ªæ°´æœï¼é‡"
+			+ weight + "gï¼");
 	}
 }
 

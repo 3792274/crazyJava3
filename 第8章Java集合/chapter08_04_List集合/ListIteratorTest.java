@@ -1,22 +1,22 @@
-package chapter08_04_List¼¯ºÏ;
+package chapter08_04_Listé›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * 1.ÓëSetÖ»Ìá¹©Ò»¸öiterator()·½·¨²»Í¬£¬List»¹¶îÍâÌá¹©ÁËÒ»¸ölistIterator()·½·¨£¬·µ»ØÒ»¸öListIterator¶ÔÏó
- * 2.ListIterator¼Ì³ĞIterator½Ó¿Ú£¬¶îÍâÌá¹©
- * boolean hasPrevious() ·µ»Øµü´úÆ÷¼¯ºÏÊÇ·ñ»¹ÓĞÉÏÒ»¸öÔªËØ
- * Object previous()  ·µ»ØÉÏÒ»¸öÔªËØ
- * void add(Object o) ÔÚÖ¸¶¨Î»ÖÃ²åÈëÒ»¸öÔªËØ
+ * 1.ä¸Setåªæä¾›ä¸€ä¸ªiterator()æ–¹æ³•ä¸åŒï¼ŒListè¿˜é¢å¤–æä¾›äº†ä¸€ä¸ªlistIterator()æ–¹æ³•ï¼Œè¿”å›ä¸€ä¸ªListIteratorå¯¹è±¡
+ * 2.ListIteratorç»§æ‰¿Iteratoræ¥å£ï¼Œé¢å¤–æä¾›
+ * boolean hasPrevious() è¿”å›è¿­ä»£å™¨é›†åˆæ˜¯å¦è¿˜æœ‰ä¸Šä¸€ä¸ªå…ƒç´ 
+ * Object previous()  è¿”å›ä¸Šä¸€ä¸ªå…ƒç´ 
+ * void add(Object o) åœ¨æŒ‡å®šä½ç½®æ’å…¥ä¸€ä¸ªå…ƒç´ 
  */
 public class ListIteratorTest
 {
 	public static void main(String[] args)
 	{
 		String[] books = {
-			"·è¿ñJava½²Òå", "·è¿ñiOS½²Òå",
-			"ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½"
+			"ç–¯ç‹‚Javaè®²ä¹‰", "ç–¯ç‹‚iOSè®²ä¹‰",
+			"è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜"
 		};
 		
 		List bookList = new ArrayList();
@@ -29,10 +29,10 @@ public class ListIteratorTest
 		while (lit.hasNext())
 		{
 			System.out.println(lit.next());
-			lit.add("-------·Ö¸ô·û-------");  //Ìí¼Ó·Ö¸ô·û¡£¡£¡£
+			lit.add("-------åˆ†éš”ç¬¦-------");  //æ·»åŠ åˆ†éš”ç¬¦ã€‚ã€‚ã€‚
 		}
 		
-		System.out.println("=======ÏÂÃæ¿ªÊ¼·´Ïòµü´ú=======");
+		System.out.println("=======ä¸‹é¢å¼€å§‹åå‘è¿­ä»£=======");
 		
 		while(lit.hasPrevious())
 		{

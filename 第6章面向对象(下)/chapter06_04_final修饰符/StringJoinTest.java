@@ -1,10 +1,10 @@
-package chapter06_04_finalĞŞÊÎ·û;
+package chapter06_04_finalä¿®é¥°ç¬¦;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,15 +16,15 @@ public class StringJoinTest
 {
 	public static void main(String[] args)
 	{
-		String s1 = "·è¿ñJava";
-		// s2±äÁ¿ÒıÓÃµÄ×Ö·û´®¿ÉÒÔ±àÒëÊ±¾ÍÈ·¶¨³öÀ´£¬
-		// Òò´Ës2Ö±½ÓÒıÓÃ³£Á¿³ØÖĞÒÑÓĞµÄ"·è¿ñJava"×Ö·û´®
-		String s2 = "·è¿ñ" + "Java";
+		String s1 = "ç–¯ç‹‚Java";
+		// s2å˜é‡å¼•ç”¨çš„å­—ç¬¦ä¸²å¯ä»¥ç¼–è¯‘æ—¶å°±ç¡®å®šå‡ºæ¥ï¼Œ
+		// å› æ­¤s2ç›´æ¥å¼•ç”¨å¸¸é‡æ± ä¸­å·²æœ‰çš„"ç–¯ç‹‚Java"å­—ç¬¦ä¸²
+		String s2 = "ç–¯ç‹‚" + "Java";
 		System.out.println(s1 == s2);
-		// ¶¨Òå2¸ö×Ö·û´®Ö±½ÓÁ¿
-		String str1 = "·è¿ñ";     //¢Ù
-		String str2 = "Java";     //¢Ú
-		// ½«str1ºÍstr2½øĞĞÁ¬½ÓÔËËã
+		// å®šä¹‰2ä¸ªå­—ç¬¦ä¸²ç›´æ¥é‡
+		String str1 = "ç–¯ç‹‚";     //â‘ 
+		String str2 = "Java";     //â‘¡
+		// å°†str1å’Œstr2è¿›è¡Œè¿æ¥è¿ç®—
 		String s3 = str1 + str2;
 		System.out.println(s1 == s3);
 	}

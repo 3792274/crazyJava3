@@ -1,8 +1,8 @@
-package chapter06_04_finalĞŞÊÎ·û;
+package chapter06_04_finalä¿®é¥°ç¬¦;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,7 +16,7 @@ public class FinalMethodTest
 }
 class Sub02 extends FinalMethodTest
 {
-	// ÏÂÃæ·½·¨¶¨Òå½«³öÏÖ±àÒë´íÎó£¬²»ÄÜÖØĞ´final·½·¨
+	// ä¸‹é¢æ–¹æ³•å®šä¹‰å°†å‡ºç°ç¼–è¯‘é”™è¯¯ï¼Œä¸èƒ½é‡å†™finalæ–¹æ³•
 //	public void test(){}
 }
 

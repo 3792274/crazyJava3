@@ -1,6 +1,6 @@
 package com.atguigu.java8.streamAPI;
 
-//½»Ò×Àà
+//äº¤æ˜“ç±»
 public class Transaction {
 
   private Trader trader;

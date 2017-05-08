@@ -1,14 +1,14 @@
-package chapter06_09_Ã¶¾ÙÀà;
+package chapter06_09_æšä¸¾ç±»;
 
-//Éè¼Æ³É²»¿É±äÀà
+//è®¾è®¡æˆä¸å¯å˜ç±»
 public enum Gender08 {
 	
-	//´Ë´¦µÄÃ¶¾ÙÖµ±ØĞëµ÷ÓÃ¶ÔÓ¦µÄ¹¹ÔìÆ÷À´´´½¨
- 	MALE("ÄĞ"),FEMALE("Å®");
+	//æ­¤å¤„çš„æšä¸¾å€¼å¿…é¡»è°ƒç”¨å¯¹åº”çš„æ„é€ å™¨æ¥åˆ›å»º
+ 	MALE("ç”·"),FEMALE("å¥³");
 	
-	//¿ÉÒÔÈçÏÂÀí½â
-//	public static final Gender08 MALE = new Gender08("ÄĞ");
-//	public static final Gender08 FEMALE = new Gender08("Å®");
+	//å¯ä»¥å¦‚ä¸‹ç†è§£
+//	public static final Gender08 MALE = new Gender08("ç”·");
+//	public static final Gender08 FEMALE = new Gender08("å¥³");
 	
 	private final String name;
 	

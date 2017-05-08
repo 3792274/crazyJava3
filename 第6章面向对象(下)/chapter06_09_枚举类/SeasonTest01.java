@@ -1,8 +1,8 @@
-package chapter06_09_Ã¶¾ÙÀà;
+package chapter06_09_æšä¸¾ç±»;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,13 +15,13 @@ public class SeasonTest01 {
 	
 	 
 	public SeasonTest01(Season01 s) {
-		System.out.println(s.getName() + "£¬ÕâÕæÊÇÒ»¸ö" + s.getDesc() + "µÄ¼¾½Ú");
+		System.out.println(s.getName() + "ï¼Œè¿™çœŸæ˜¯ä¸€ä¸ª" + s.getDesc() + "çš„å­£èŠ‚");
 	}
 
 	
 	
 	public static void main(String[] args) {
-		// Ö±½ÓÊ¹ÓÃSeasonµÄFALL³£Á¿´ú±íÒ»¸öSeason¶ÔÏó
+		// ç›´æ¥ä½¿ç”¨Seasonçš„FALLå¸¸é‡ä»£è¡¨ä¸€ä¸ªSeasonå¯¹è±¡
 		
 		
 		new SeasonTest01(Season01.FALL);

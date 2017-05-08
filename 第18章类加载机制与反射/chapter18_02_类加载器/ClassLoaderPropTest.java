@@ -1,11 +1,11 @@
-package chapter18_02_Àà¼ÓÔØÆ÷;
+package chapter18_02_ç±»åŠ è½½å™¨;
 
 import java.util.*;
 import java.net.*;
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -18,25 +18,25 @@ public class ClassLoaderPropTest
 	public static void main(String[] args)
 		throws IOException
 	{
-		// »ñÈ¡ÏµÍ³Àà¼ÓÔØÆ÷
+		// è·å–ç³»ç»Ÿç±»åŠ è½½å™¨
 		ClassLoader systemLoader = ClassLoader.getSystemClassLoader();
-		System.out.println("ÏµÍ³Àà¼ÓÔØÆ÷£º" + systemLoader);
+		System.out.println("ç³»ç»Ÿç±»åŠ è½½å™¨ï¼š" + systemLoader);
 		/*
-		»ñÈ¡ÏµÍ³Àà¼ÓÔØÆ÷µÄ¼ÓÔØÂ·¾¶¡ª¡ªÍ¨³£ÓÉCLASSPATH»·¾³±äÁ¿Ö¸¶¨
-		Èç¹û²Ù×÷ÏµÍ³Ã»ÓĞÖ¸¶¨CLASSPATH»·¾³±äÁ¿£¬Ä¬ÈÏÒÔµ±Ç°Â·¾¶×÷Îª
-		ÏµÍ³Àà¼ÓÔØÆ÷µÄ¼ÓÔØÂ·¾¶
+		è·å–ç³»ç»Ÿç±»åŠ è½½å™¨çš„åŠ è½½è·¯å¾„â€”â€”é€šå¸¸ç”±CLASSPATHç¯å¢ƒå˜é‡æŒ‡å®š
+		å¦‚æœæ“ä½œç³»ç»Ÿæ²¡æœ‰æŒ‡å®šCLASSPATHç¯å¢ƒå˜é‡ï¼Œé»˜è®¤ä»¥å½“å‰è·¯å¾„ä½œä¸º
+		ç³»ç»Ÿç±»åŠ è½½å™¨çš„åŠ è½½è·¯å¾„
 		*/
 		Enumeration<URL> em1 = systemLoader.getResources("");
 		while(em1.hasMoreElements())
 		{
 			System.out.println(em1.nextElement());
 		}
-		// »ñÈ¡ÏµÍ³Àà¼ÓÔØÆ÷µÄ¸¸Àà¼ÓÔØÆ÷£ºµÃµ½À©Õ¹Àà¼ÓÔØÆ÷
+		// è·å–ç³»ç»Ÿç±»åŠ è½½å™¨çš„çˆ¶ç±»åŠ è½½å™¨ï¼šå¾—åˆ°æ‰©å±•ç±»åŠ è½½å™¨
 		ClassLoader extensionLader = systemLoader.getParent();
-		System.out.println("À©Õ¹Àà¼ÓÔØÆ÷£º" + extensionLader);
-		System.out.println("À©Õ¹Àà¼ÓÔØÆ÷µÄ¼ÓÔØÂ·¾¶£º"
+		System.out.println("æ‰©å±•ç±»åŠ è½½å™¨ï¼š" + extensionLader);
+		System.out.println("æ‰©å±•ç±»åŠ è½½å™¨çš„åŠ è½½è·¯å¾„ï¼š"
 			+ System.getProperty("java.ext.dirs"));
-		System.out.println("À©Õ¹Àà¼ÓÔØÆ÷µÄparent: "
+		System.out.println("æ‰©å±•ç±»åŠ è½½å™¨çš„parent: "
 			+ extensionLader.getParent());
 	}
 }

@@ -1,13 +1,13 @@
-package chapter10_02_Òì³£ÀàµÄ¼Ì³ĞÌåÏµ;
+package chapter10_02_å¼‚å¸¸ç±»çš„ç»§æ‰¿ä½“ç³»;
 
 
 import java.io.*;
 /**
- * Description:·ÃÎÊÒì³£ĞÅÏ¢
- * 1.getMessage():·µ»ØÒì³£ÏêÏ¸ĞÅÏ¢×Ö·û´®
- * 2.printStackTrace():¸ú×ÙÕ»ĞÅÏ¢Êä³öÆÁÄ»
- * 3.printStackTrace(PrintStream s) ½«Òì³£¸ú×ÙÕ»ĞÅÏ¢Êä³öµ½Ö¸¶¨Êä³öÁ÷
- * 4.getStackTrace():·µ»ØÒì³£µÄ¸ú×ÙÕ»ĞÅÏ¢¡£
+ * Description:è®¿é—®å¼‚å¸¸ä¿¡æ¯
+ * 1.getMessage():è¿”å›å¼‚å¸¸è¯¦ç»†ä¿¡æ¯å­—ç¬¦ä¸²
+ * 2.printStackTrace():è·Ÿè¸ªæ ˆä¿¡æ¯è¾“å‡ºå±å¹•
+ * 3.printStackTrace(PrintStream s) å°†å¼‚å¸¸è·Ÿè¸ªæ ˆä¿¡æ¯è¾“å‡ºåˆ°æŒ‡å®šè¾“å‡ºæµ
+ * 4.getStackTrace():è¿”å›å¼‚å¸¸çš„è·Ÿè¸ªæ ˆä¿¡æ¯ã€‚
  * 
  */
 public class AccessExceptionMsg
@@ -16,7 +16,7 @@ public class AccessExceptionMsg
 	{
 		try
 		{
-			FileInputStream fis = new FileInputStream("µÚ10ÕÂÒì³£´¦Àí\\chapter10_02_Òì³£ÀàµÄ¼Ì³ĞÌåÏµ\\b.txt");
+			FileInputStream fis = new FileInputStream("ç¬¬10ç« å¼‚å¸¸å¤„ç†\\chapter10_02_å¼‚å¸¸ç±»çš„ç»§æ‰¿ä½“ç³»\\b.txt");
 		}
 		catch (IOException ioe)
 		{

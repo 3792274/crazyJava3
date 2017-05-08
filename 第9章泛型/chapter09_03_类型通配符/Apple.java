@@ -1,12 +1,12 @@
-package chapter09_03_ÀàĞÍÍ¨Åä·û;
+package chapter09_03_ç±»å‹é€šé…ç¬¦;
 
 import javax.sql.rowset.JdbcRowSet;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
 /**
- * Description:Éè¶¨ÀàĞÍĞÎ²ÎµÄÉÏÏŞ¡£
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:è®¾å®šç±»å‹å½¢å‚çš„ä¸Šé™ã€‚
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -22,9 +22,9 @@ public class Apple<T extends Number>
 		Apple<Integer> ai = new Apple<>();
 		Apple<Double> ad = new Apple<>();
 		
-		// ÏÂÃæ´úÂë½«ÒıÆğ±àÒëÒì³££¬ÏÂÃæ´úÂëÊÔÍ¼°ÑStringÀàĞÍ´«¸øTĞÎ²Î
-		// µ«String²»ÊÇNumberµÄ×ÓÀàĞÍ£¬ËùÒÔÒı·¢±àÒë´íÎó
-//		Apple<String> as = new Apple<>();		// ¢Ù
+		// ä¸‹é¢ä»£ç å°†å¼•èµ·ç¼–è¯‘å¼‚å¸¸ï¼Œä¸‹é¢ä»£ç è¯•å›¾æŠŠStringç±»å‹ä¼ ç»™Tå½¢å‚
+		// ä½†Stringä¸æ˜¯Numberçš„å­ç±»å‹ï¼Œæ‰€ä»¥å¼•å‘ç¼–è¯‘é”™è¯¯
+//		Apple<String> as = new Apple<>();		// â‘ 
 	
 	
 	}
@@ -33,7 +33,7 @@ public class Apple<T extends Number>
 
 
 
-//ÎªÀàĞÍĞÎ²ÎÉè¶¨¶à¸öÉÏÏŞ,±íÃ÷TÀàĞÍ±ØĞëÊÇNumberÀà»òÆä×ÓÀà£¬²¢±ØĞëÊµÏÖSerializable½Ó¿Ú¡£
+//ä¸ºç±»å‹å½¢å‚è®¾å®šå¤šä¸ªä¸Šé™,è¡¨æ˜Tç±»å‹å¿…é¡»æ˜¯Numberç±»æˆ–å…¶å­ç±»ï¼Œå¹¶å¿…é¡»å®ç°Serializableæ¥å£ã€‚
 class Apple2<T extends Number & java.io.Serializable>{
 	
 }

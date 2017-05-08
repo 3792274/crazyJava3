@@ -1,15 +1,15 @@
-package chapter07_03_³£ÓÃÀà;
+package chapter07_03_å¸¸ç”¨ç±»;
 
 import java.math.*;
 
 /**
  * Description:
  * 
- * ¹¤¾ßÀà 1.doubleËÄÔòÔËËã½á¹ûÊÇBigDecimal,»¹µÃ×ª»»Îªdouble,·±Ëö¡£
+ * å·¥å…·ç±» 1.doubleå››åˆ™è¿ç®—ç»“æœæ˜¯BigDecimal,è¿˜å¾—è½¬æ¢ä¸ºdouble,ç¹çã€‚
  * 
  * 
  * <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -19,36 +19,36 @@ import java.math.*;
  * @version 1.0
  */
 public class Arith08 {
-	// Ä¬ÈÏ³ı·¨ÔËËã¾«¶È
+	// é»˜è®¤é™¤æ³•è¿ç®—ç²¾åº¦
 	private static final int DEF_DIV_SCALE = 10;
 
-	// ¹¹ÔìÆ÷Ë½ÓĞ£¬ÈÃÕâ¸öÀà²»ÄÜÊµÀı»¯
+	// æ„é€ å™¨ç§æœ‰ï¼Œè®©è¿™ä¸ªç±»ä¸èƒ½å®ä¾‹åŒ–
 	private Arith08() {
 	}
 
-	// Ìá¹©¾«È·µÄ¼Ó·¨ÔËËã¡£
+	// æä¾›ç²¾ç¡®çš„åŠ æ³•è¿ç®—ã€‚
 	public static double add(double v1, double v2) {
 		BigDecimal b1 = BigDecimal.valueOf(v1);
 		BigDecimal b2 = BigDecimal.valueOf(v2);
 		return b1.add(b2).doubleValue();
 	}
 
-	// Ìá¹©¾«È·µÄ¼õ·¨ÔËËã¡£
+	// æä¾›ç²¾ç¡®çš„å‡æ³•è¿ç®—ã€‚
 	public static double sub(double v1, double v2) {
 		BigDecimal b1 = BigDecimal.valueOf(v1);
 		BigDecimal b2 = BigDecimal.valueOf(v2);
 		return b1.subtract(b2).doubleValue();
 	}
 
-	// Ìá¹©¾«È·µÄ³Ë·¨ÔËËã¡£
+	// æä¾›ç²¾ç¡®çš„ä¹˜æ³•è¿ç®—ã€‚
 	public static double mul(double v1, double v2) {
 		BigDecimal b1 = BigDecimal.valueOf(v1);
 		BigDecimal b2 = BigDecimal.valueOf(v2);
 		return b1.multiply(b2).doubleValue();
 	}
 
-	// Ìá¹©£¨Ïà¶Ô£©¾«È·µÄ³ı·¨ÔËËã£¬µ±·¢Éú³ı²»¾¡µÄÇé¿öÊ±.
-	// ¾«È·µ½Ğ¡ÊıµãÒÔºó10Î»µÄÊı×ÖËÄÉáÎåÈë¡£
+	// æä¾›ï¼ˆç›¸å¯¹ï¼‰ç²¾ç¡®çš„é™¤æ³•è¿ç®—ï¼Œå½“å‘ç”Ÿé™¤ä¸å°½çš„æƒ…å†µæ—¶.
+	// ç²¾ç¡®åˆ°å°æ•°ç‚¹ä»¥å10ä½çš„æ•°å­—å››èˆäº”å…¥ã€‚
 	public static double div(double v1, double v2) {
 		BigDecimal b1 = BigDecimal.valueOf(v1);
 		BigDecimal b2 = BigDecimal.valueOf(v2);

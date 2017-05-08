@@ -1,8 +1,8 @@
-package chapter03_07_ÔËËã·û;
+package chapter03_07_è¿ç®—ç¬¦;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,19 +14,19 @@ public class ComparableOperatorTest
 {
 	public static void main(String[] args)
 	{
-		System.out.println("5ÊÇ·ñ´óÓÚ 4.0£º" + (5 > 4.0)); // Êä³ötrue
-		System.out.println("5ºÍ5.0ÊÇ·ñÏàµÈ£º" + (5 == 5.0)); // Êä³ötrue
-		System.out.println("97ºÍ'a'ÊÇ·ñÏàµÈ£º" + (97 == 'a')); // Êä³ötrue
-		System.out.println("trueºÍfalseÊÇ·ñÏàµÈ£º" + (true == false)); // Êä³öfalse
-		// ´´½¨2¸öComparableOperatorTest¶ÔÏó£¬·Ö±ğ¸³¸øt1ºÍt2Á½¸öÒıÓÃ
+		System.out.println("5æ˜¯å¦å¤§äº 4.0ï¼š" + (5 > 4.0)); // è¾“å‡ºtrue
+		System.out.println("5å’Œ5.0æ˜¯å¦ç›¸ç­‰ï¼š" + (5 == 5.0)); // è¾“å‡ºtrue
+		System.out.println("97å’Œ'a'æ˜¯å¦ç›¸ç­‰ï¼š" + (97 == 'a')); // è¾“å‡ºtrue
+		System.out.println("trueå’Œfalseæ˜¯å¦ç›¸ç­‰ï¼š" + (true == false)); // è¾“å‡ºfalse
+		// åˆ›å»º2ä¸ªComparableOperatorTestå¯¹è±¡ï¼Œåˆ†åˆ«èµ‹ç»™t1å’Œt2ä¸¤ä¸ªå¼•ç”¨
 		ComparableOperatorTest t1 = new ComparableOperatorTest();
 		ComparableOperatorTest t2 = new ComparableOperatorTest();
-		// t1ºÍt2ÊÇÍ¬Ò»¸öÀàµÄÁ½¸öÊµÀıµÄÒıÓÃ£¬ËùÒÔ¿ÉÒÔ±È½Ï£¬
-		// µ«t1ºÍt2ÒıÓÃ²»Í¬µÄ¶ÔÏó£¬ËùÒÔ·µ»Øfalse
-		System.out.println("t1ÊÇ·ñµÈÓÚt2£º" + (t1 == t2));
-		// Ö±½Ó½«t1µÄÖµ¸³¸øt3£¬¼´ÈÃt3Ö¸Ïòt1Ö¸ÏòµÄ¶ÔÏó
+		// t1å’Œt2æ˜¯åŒä¸€ä¸ªç±»çš„ä¸¤ä¸ªå®ä¾‹çš„å¼•ç”¨ï¼Œæ‰€ä»¥å¯ä»¥æ¯”è¾ƒï¼Œ
+		// ä½†t1å’Œt2å¼•ç”¨ä¸åŒçš„å¯¹è±¡ï¼Œæ‰€ä»¥è¿”å›false
+		System.out.println("t1æ˜¯å¦ç­‰äºt2ï¼š" + (t1 == t2));
+		// ç›´æ¥å°†t1çš„å€¼èµ‹ç»™t3ï¼Œå³è®©t3æŒ‡å‘t1æŒ‡å‘çš„å¯¹è±¡
 		ComparableOperatorTest t3 = t1;
-		// t1ºÍt3Ö¸ÏòÍ¬Ò»¸ö¶ÔÏó£¬ËùÒÔ·µ»Øtrue
-		System.out.println("t1ÊÇ·ñµÈÓÚt3£º" + (t1 == t3));
+		// t1å’Œt3æŒ‡å‘åŒä¸€ä¸ªå¯¹è±¡ï¼Œæ‰€ä»¥è¿”å›true
+		System.out.println("t1æ˜¯å¦ç­‰äºt3ï¼š" + (t1 == t3));
 	}
 }

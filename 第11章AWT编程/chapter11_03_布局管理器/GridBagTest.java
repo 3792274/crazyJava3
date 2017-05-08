@@ -1,10 +1,10 @@
-package chapter11_03_²¼¾Ö¹ÜÀíÆ÷;
+package chapter11_03_å¸ƒå±€ç®¡ç†å™¨;
 
 
 import java.awt.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,7 +14,7 @@ import java.awt.*;
  */
 public class GridBagTest
 {
-	private Frame f = new Frame("²âÊÔ´°¿Ú");
+	private Frame f = new Frame("æµ‹è¯•çª—å£");
 	private GridBagLayout gb = new GridBagLayout();
 	private GridBagConstraints gbc = new GridBagConstraints();
 	private Button[] bs = new Button[10];
@@ -23,41 +23,41 @@ public class GridBagTest
 		f.setLayout(gb);
 		for (int i = 0; i < bs.length ; i++ )
 		{
-			bs[i] = new Button("°´Å¥" + i);
+			bs[i] = new Button("æŒ‰é’®" + i);
 		}
-		// ËùÓĞ×é¼ş¶¼¿ÉÒÔºáÏò¡¢×İÏòÉÏÀ©´ó
+		// æ‰€æœ‰ç»„ä»¶éƒ½å¯ä»¥æ¨ªå‘ã€çºµå‘ä¸Šæ‰©å¤§
 		gbc.fill = GridBagConstraints.BOTH;
 		gbc.weightx = 1;
 		addButton(bs[0]);
 		addButton(bs[1]);
 		addButton(bs[2]);
-		// ¸ÃGridBagConstraints¿ØÖÆµÄGUI×é¼ş½«»á³ÉÎªºáÏò×îºóÒ»¸öÔªËØ
+		// è¯¥GridBagConstraintsæ§åˆ¶çš„GUIç»„ä»¶å°†ä¼šæˆä¸ºæ¨ªå‘æœ€åä¸€ä¸ªå…ƒç´ 
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
 		addButton(bs[3]);
-		// ¸ÃGridBagConstraints¿ØÖÆµÄGUI×é¼ş½«ºáÏòÉÏ²»»áÀ©´ó
+		// è¯¥GridBagConstraintsæ§åˆ¶çš„GUIç»„ä»¶å°†æ¨ªå‘ä¸Šä¸ä¼šæ‰©å¤§
 		gbc.weightx = 0;
 		addButton(bs[4]);
-		// ¸ÃGridBagConstraints¿ØÖÆµÄGUI×é¼ş½«ºá¿çÁ½¸öÍø¸ñ
+		// è¯¥GridBagConstraintsæ§åˆ¶çš„GUIç»„ä»¶å°†æ¨ªè·¨ä¸¤ä¸ªç½‘æ ¼
 		gbc.gridwidth = 2;
 		addButton(bs[5]);
-		// ¸ÃGridBagConstraints¿ØÖÆµÄGUI×é¼ş½«ºá¿çÒ»¸öÍø¸ñ
+		// è¯¥GridBagConstraintsæ§åˆ¶çš„GUIç»„ä»¶å°†æ¨ªè·¨ä¸€ä¸ªç½‘æ ¼
 		gbc.gridwidth = 1;
-		// ¸ÃGridBagConstraints¿ØÖÆµÄGUI×é¼ş½«×İÏò¿çÁ½¸öÍø¸ñ
+		// è¯¥GridBagConstraintsæ§åˆ¶çš„GUIç»„ä»¶å°†çºµå‘è·¨ä¸¤ä¸ªç½‘æ ¼
 		gbc.gridheight = 2;
-		// ¸ÃGridBagConstraints¿ØÖÆµÄGUI×é¼ş½«»á³ÉÎªºáÏò×îºóÒ»¸öÔªËØ
+		// è¯¥GridBagConstraintsæ§åˆ¶çš„GUIç»„ä»¶å°†ä¼šæˆä¸ºæ¨ªå‘æœ€åä¸€ä¸ªå…ƒç´ 
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
 		addButton(bs[6]);
-		// ¸ÃGridBagConstraints¿ØÖÆµÄGUI×é¼ş½«ºáÏò¿çÔ½Ò»¸öÍø¸ñ£¬×İÏò¿çÔ½2¸öÍø¸ñ¡£
+		// è¯¥GridBagConstraintsæ§åˆ¶çš„GUIç»„ä»¶å°†æ¨ªå‘è·¨è¶Šä¸€ä¸ªç½‘æ ¼ï¼Œçºµå‘è·¨è¶Š2ä¸ªç½‘æ ¼ã€‚
 		gbc.gridwidth = 1;
 		gbc.gridheight = 2;
-		// ¸ÃGridBagConstraints¿ØÖÆµÄGUI×é¼ş×İÏòÀ©´óµÄÈ¨ÖØÊÇ1
+		// è¯¥GridBagConstraintsæ§åˆ¶çš„GUIç»„ä»¶çºµå‘æ‰©å¤§çš„æƒé‡æ˜¯1
 		gbc.weighty = 1;
 		addButton(bs[7]);
-		// ÉèÖÃÏÂÃæµÄ°´Å¥ÔÚ×İÏòÉÏ²»»áÀ©´ó
+		// è®¾ç½®ä¸‹é¢çš„æŒ‰é’®åœ¨çºµå‘ä¸Šä¸ä¼šæ‰©å¤§
 		gbc.weighty = 0;
-		// ¸ÃGridBagConstraints¿ØÖÆµÄGUI×é¼ş½«»á³ÉÎªºáÏò×îºóÒ»¸öÔªËØ
+		// è¯¥GridBagConstraintsæ§åˆ¶çš„GUIç»„ä»¶å°†ä¼šæˆä¸ºæ¨ªå‘æœ€åä¸€ä¸ªå…ƒç´ 
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		// ¸ÃGridBagConstraints¿ØÖÆµÄGUI×é¼ş½«×İÏòÉÏºá¿çÒ»¸öÍø¸ñ
+		// è¯¥GridBagConstraintsæ§åˆ¶çš„GUIç»„ä»¶å°†çºµå‘ä¸Šæ¨ªè·¨ä¸€ä¸ªç½‘æ ¼
 		gbc.gridheight = 1;
 		addButton(bs[8]);
 		addButton(bs[9]);

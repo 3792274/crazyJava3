@@ -1,10 +1,10 @@
-package chapter08_03_Set¼¯ºÏ;
+package chapter08_03_Seté›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,12 +20,12 @@ public class EnumSetTest2
 		c.clear();
 		c.add(Season.FALL);
 		c.add(Season.SPRING);
-		// ¸´ÖÆCollection¼¯ºÏÖĞËùÓĞÔªËØÀ´´´½¨EnumSet¼¯ºÏ
-		EnumSet enumSet = EnumSet.copyOf(c);   // ¢Ù
-		System.out.println(enumSet); // Êä³ö[SPRING,FALL]
-		c.add("·è¿ñJava½²Òå");
-		c.add("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
-		// ÏÂÃæ´úÂë³öÏÖÒì³££ºÒòÎªc¼¯ºÏÀïµÄÔªËØ²»ÊÇÈ«²¿¶¼ÎªÃ¶¾ÙÖµ
-		enumSet = EnumSet.copyOf(c);  // ¢Ú
+		// å¤åˆ¶Collectioné›†åˆä¸­æ‰€æœ‰å…ƒç´ æ¥åˆ›å»ºEnumSeté›†åˆ
+		EnumSet enumSet = EnumSet.copyOf(c);   // â‘ 
+		System.out.println(enumSet); // è¾“å‡º[SPRING,FALL]
+		c.add("ç–¯ç‹‚Javaè®²ä¹‰");
+		c.add("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
+		// ä¸‹é¢ä»£ç å‡ºç°å¼‚å¸¸ï¼šå› ä¸ºcé›†åˆé‡Œçš„å…ƒç´ ä¸æ˜¯å…¨éƒ¨éƒ½ä¸ºæšä¸¾å€¼
+		enumSet = EnumSet.copyOf(c);  // â‘¡
 	}
 }

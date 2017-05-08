@@ -1,10 +1,10 @@
-package chapter06_02_´¦Àí¶ÔÏó;
+package chapter06_02_å¤„ç†å¯¹è±¡;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -12,26 +12,26 @@ package chapter06_02_´¦Àí¶ÔÏó;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// ¶¨ÒåÒ»¸öPersonÀà
+// å®šä¹‰ä¸€ä¸ªPersonç±»
 class Person
 {
-	// ÖØĞ´equals()·½·¨£¬Ìá¹©×Ô¶¨ÒåµÄÏàµÈ±ê×¼
+	// é‡å†™equals()æ–¹æ³•ï¼Œæä¾›è‡ªå®šä¹‰çš„ç›¸ç­‰æ ‡å‡†
 	public boolean equals(Object obj)
 	{
-		// ²»¼ÓÅĞ¶Ï£¬×ÜÊÇ·µ»Øtrue£¬¼´Person¶ÔÏóÓëÈÎºÎ¶ÔÏó¶¼ÏàµÈ
+		// ä¸åŠ åˆ¤æ–­ï¼Œæ€»æ˜¯è¿”å›trueï¼Œå³Personå¯¹è±¡ä¸ä»»ä½•å¯¹è±¡éƒ½ç›¸ç­‰
 		return true;
 	}
 }
-// ¶¨ÒåÒ»¸öDog¿ÕÀà
+// å®šä¹‰ä¸€ä¸ªDogç©ºç±»
 class Dog{}
 public class OverrideEqualsError
 {
 	public static void main(String[] args)
 	{
 		Person p = new Person();
-		System.out.println("Person¶ÔÏóÊÇ·ñequals Dog¶ÔÏó£¿"
+		System.out.println("Personå¯¹è±¡æ˜¯å¦equals Dogå¯¹è±¡ï¼Ÿ"
 			+ p.equals(new Dog()));
-		System.out.println("Person¶ÔÏóÊÇ·ñequals String¶ÔÏó£¿"
+		System.out.println("Personå¯¹è±¡æ˜¯å¦equals Stringå¯¹è±¡ï¼Ÿ"
 			+ p.equals(new String("Hello")));
 	}
 }

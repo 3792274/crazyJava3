@@ -1,10 +1,10 @@
-package chapter17_02_JavaµÄ»ù±¾ÍøÂçÖ§³Ö;
+package chapter17_02_Javaçš„åŸºæœ¬ç½‘ç»œæ”¯æŒ;
 
 import java.net.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,20 +15,20 @@ import java.net.*;
  */
 public class InetAddressTest {
 	public static void main(String[] args) throws Exception {
-		// ¸ù¾İÖ÷»úÃûÀ´»ñÈ¡¶ÔÓ¦µÄInetAddressÊµÀı
+		// æ ¹æ®ä¸»æœºåæ¥è·å–å¯¹åº”çš„InetAddresså®ä¾‹
 		InetAddress ip = InetAddress.getByName("www.baidu.com");
 		
-		// ÅĞ¶ÏÊÇ·ñ¿É´ï
-		System.out.println("BaiDuÊÇ·ñ¿É´ï£º" + ip.isReachable(2000));
+		// åˆ¤æ–­æ˜¯å¦å¯è¾¾
+		System.out.println("BaiDuæ˜¯å¦å¯è¾¾ï¼š" + ip.isReachable(2000));
 	
-		// »ñÈ¡¸ÃInetAddressÊµÀıµÄIP×Ö·û´®
+		// è·å–è¯¥InetAddresså®ä¾‹çš„IPå­—ç¬¦ä¸²
 		System.out.println(ip.getHostAddress());
 	
-		// ¸ù¾İÔ­Ê¼IPµØÖ·À´»ñÈ¡¶ÔÓ¦µÄInetAddressÊµÀı
+		// æ ¹æ®åŸå§‹IPåœ°å€æ¥è·å–å¯¹åº”çš„InetAddresså®ä¾‹
 		InetAddress local = InetAddress.getByAddress(new byte[] { 127, 0, 0, 1 });
-		System.out.println("±¾»úÊÇ·ñ¿É´ï£º" + local.isReachable(5000));
+		System.out.println("æœ¬æœºæ˜¯å¦å¯è¾¾ï¼š" + local.isReachable(5000));
 		
-		// »ñÈ¡¸ÃInetAddressÊµÀı¶ÔÓ¦µÄÈ«ÏŞ¶¨ÓòÃû
+		// è·å–è¯¥InetAddresså®ä¾‹å¯¹åº”çš„å…¨é™å®šåŸŸå
 		System.out.println(local.getCanonicalHostName());
 	}
 }

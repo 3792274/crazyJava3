@@ -1,10 +1,10 @@
-package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
+package chapter06_06_Java8æ”¹è¿›çš„æ¥å£;
 
  
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,7 +13,7 @@ package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
  * @version 1.0
  */
 
-//computerÀàÍêÈ«Óëprint·ÖÀë£¬ Ò²²»¸ºÔğ´´½¨output¶ÔÏó	
+//computerç±»å®Œå…¨ä¸printåˆ†ç¦»ï¼Œ ä¹Ÿä¸è´Ÿè´£åˆ›å»ºoutputå¯¹è±¡	
 public class OutputFactory
 {
 	public Output getOutput()
@@ -26,8 +26,8 @@ public class OutputFactory
 		OutputFactory of = new OutputFactory();
 		Computer c = new Computer(of.getOutput());
 		
-		c.keyIn("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
-		c.keyIn("·è¿ñJava½²Òå");
+		c.keyIn("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
+		c.keyIn("ç–¯ç‹‚Javaè®²ä¹‰");
 		c.print();
 	}
 }

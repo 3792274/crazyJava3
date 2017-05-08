@@ -1,9 +1,9 @@
-package chapter08_03_Set¼¯ºÏ;
+package chapter08_03_Seté›†åˆ;
 
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -49,25 +49,25 @@ public class HashSetTest2
 		hs.add(new R(9));
 		hs.add(new R(-2));
 		
-		// ´òÓ¡HashSet¼¯ºÏ£¬¼¯ºÏÔªËØÃ»ÓĞÖØ¸´
+		// æ‰“å°HashSeté›†åˆï¼Œé›†åˆå…ƒç´ æ²¡æœ‰é‡å¤
 		System.out.println(hs);
 		
-		// È¡³öµÚÒ»¸öÔªËØ
+		// å–å‡ºç¬¬ä¸€ä¸ªå…ƒç´ 
 		Iterator it = hs.iterator();
 		R first = (R)it.next();
 		
-		// ÎªµÚÒ»¸öÔªËØµÄcountÊµÀı±äÁ¿¸³Öµ
-		first.count = -3;     // ¢Ù
+		// ä¸ºç¬¬ä¸€ä¸ªå…ƒç´ çš„countå®ä¾‹å˜é‡èµ‹å€¼
+		first.count = -3;     // â‘ 
 		
-		// ÔÙ´ÎÊä³öHashSet¼¯ºÏ£¬¼¯ºÏÔªËØÓĞÖØ¸´ÔªËØ
+		// å†æ¬¡è¾“å‡ºHashSeté›†åˆï¼Œé›†åˆå…ƒç´ æœ‰é‡å¤å…ƒç´ 
 		System.out.println(hs);
 		
-		// É¾³ıcountÎª-3µÄR¶ÔÏó
-		hs.remove(new R(-3));    // ¢Ú
+		// åˆ é™¤countä¸º-3çš„Rå¯¹è±¡
+		hs.remove(new R(-3));    // â‘¡
 		
-		// ¿ÉÒÔ¿´µ½±»É¾³ıÁËÒ»¸öRÔªËØ
+		// å¯ä»¥çœ‹åˆ°è¢«åˆ é™¤äº†ä¸€ä¸ªRå…ƒç´ 
 		System.out.println(hs);
-		System.out.println("hsÊÇ·ñ°üº¬countÎª-3µÄR¶ÔÏó£¿"+ hs.contains(new R(-3))); // Êä³öfalse
-		System.out.println("hsÊÇ·ñ°üº¬countÎª-2µÄR¶ÔÏó£¿"+ hs.contains(new R(-2))); // Êä³öfalse
+		System.out.println("hsæ˜¯å¦åŒ…å«countä¸º-3çš„Rå¯¹è±¡ï¼Ÿ"+ hs.contains(new R(-3))); // è¾“å‡ºfalse
+		System.out.println("hsæ˜¯å¦åŒ…å«countä¸º-2çš„Rå¯¹è±¡ï¼Ÿ"+ hs.contains(new R(-2))); // è¾“å‡ºfalse
 	}
 }

@@ -1,28 +1,28 @@
-package chapter08_03_Set¼¯ºÏ;
+package chapter08_03_Seté›†åˆ;
 
 import java.util.*;
 /**
  * Description:
- * 1.LinkedHashSet ÊÇHashSetµÄ×ÓÀà
- * 2.ÄÚ²¿Ê¹ÓÃÁ´±íÎ¬»¤ÔªËØµÄ´ÎĞò
- * 3.ÓÉÓÚĞèÒªÎ¬»¤ÔªËØµÄ²åÈëË³Ğò£¬Òò´ËĞÔÄÜÂÔµÍÓÚHashSet,µ«ÔÚµü´ú·ÃÎÊSetÀïµÄÈ«²¿ÔªËØÊ±ÓĞ¸üºÃµÄĞÔÄÜ¡£
- * 4.²»ÔÊĞí¼¯ºÏÔªËØÖØ¸´¡£
+ * 1.LinkedHashSet æ˜¯HashSetçš„å­ç±»
+ * 2.å†…éƒ¨ä½¿ç”¨é“¾è¡¨ç»´æŠ¤å…ƒç´ çš„æ¬¡åº
+ * 3.ç”±äºéœ€è¦ç»´æŠ¤å…ƒç´ çš„æ’å…¥é¡ºåºï¼Œå› æ­¤æ€§èƒ½ç•¥ä½äºHashSet,ä½†åœ¨è¿­ä»£è®¿é—®Seté‡Œçš„å…¨éƒ¨å…ƒç´ æ—¶æœ‰æ›´å¥½çš„æ€§èƒ½ã€‚
+ * 4.ä¸å…è®¸é›†åˆå…ƒç´ é‡å¤ã€‚
  */
 public class LinkedHashSetTest3
 {
 	public static void main(String[] args)
 	{
 		LinkedHashSet books = new LinkedHashSet();
-		books.add("·è¿ñJava½²Òå");
-		books.add("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
+		books.add("ç–¯ç‹‚Javaè®²ä¹‰");
+		books.add("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
 		
 		System.out.println(books);
 		
-		// É¾³ı ·è¿ñJava½²Òå
-		books.remove("·è¿ñJava½²Òå");
+		// åˆ é™¤ ç–¯ç‹‚Javaè®²ä¹‰
+		books.remove("ç–¯ç‹‚Javaè®²ä¹‰");
 		
-		// ÖØĞÂÌí¼Ó ·è¿ñJava½²Òå
-		books.add("·è¿ñJava½²Òå");
+		// é‡æ–°æ·»åŠ  ç–¯ç‹‚Javaè®²ä¹‰
+		books.add("ç–¯ç‹‚Javaè®²ä¹‰");
 		
 		System.out.println(books);
 	}

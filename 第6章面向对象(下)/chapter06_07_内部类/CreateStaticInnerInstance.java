@@ -1,10 +1,10 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,13 +14,13 @@ package chapter06_07_ÄÚ²¿Àà;
  */
 class StaticOut
 {
-	// ¶¨ÒåÒ»¸ö¾²Ì¬ÄÚ²¿Àà£¬²»Ê¹ÓÃ·ÃÎÊ¿ØÖÆ·û£¬
-	// ¼´Í¬Ò»¸ö°üÖĞÆäËûÀà¿É·ÃÎÊ¸ÃÄÚ²¿Àà
+	// å®šä¹‰ä¸€ä¸ªé™æ€å†…éƒ¨ç±»ï¼Œä¸ä½¿ç”¨è®¿é—®æ§åˆ¶ç¬¦ï¼Œ
+	// å³åŒä¸€ä¸ªåŒ…ä¸­å…¶ä»–ç±»å¯è®¿é—®è¯¥å†…éƒ¨ç±»
 	static class StaticIn
 	{
 		public StaticIn()
 		{
-			System.out.println("¾²Ì¬ÄÚ²¿ÀàµÄ¹¹ÔìÆ÷");
+			System.out.println("é™æ€å†…éƒ¨ç±»çš„æ„é€ å™¨");
 		}
 	}
 }
@@ -30,10 +30,10 @@ public class CreateStaticInnerInstance
 	{
 		StaticOut.StaticIn in = new StaticOut.StaticIn();
 		/*
-		ÉÏÃæ´úÂë¿É¸ÄÎªÈçÏÂÁ½ĞĞ´úÂë£º
-		Ê¹ÓÃOutterClass.InnerClassµÄĞÎÊ½¶¨ÒåÄÚ²¿Àà±äÁ¿
+		ä¸Šé¢ä»£ç å¯æ”¹ä¸ºå¦‚ä¸‹ä¸¤è¡Œä»£ç ï¼š
+		ä½¿ç”¨OutterClass.InnerClassçš„å½¢å¼å®šä¹‰å†…éƒ¨ç±»å˜é‡
 		StaticOut.StaticIn in;
-		Í¨¹ınewÀ´µ÷ÓÃÄÚ²¿Àà¹¹ÔìÆ÷´´½¨¾²Ì¬ÄÚ²¿ÀàÊµÀı
+		é€šè¿‡newæ¥è°ƒç”¨å†…éƒ¨ç±»æ„é€ å™¨åˆ›å»ºé™æ€å†…éƒ¨ç±»å®ä¾‹
 		in = new StaticOut.StaticIn();
 		*/
 	}

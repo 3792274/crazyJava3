@@ -1,4 +1,4 @@
-package chapter12_11_Ê¹ÓÃJTableºÍTableModel´´½¨±í¸ñ;
+package chapter12_11_ä½¿ç”¨JTableå’ŒTableModelåˆ›å»ºè¡¨æ ¼;
 
 
 import java.awt.event.*;
@@ -7,7 +7,7 @@ import javax.swing.*;
 import javax.swing.table.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,46 +17,46 @@ import javax.swing.table.*;
  */
 public class SortTable
 {
-	JFrame jf = new JFrame("¿É°´ÁĞÅÅĞòµÄ±í¸ñ");
-	// ¶¨Òå¶şÎ¬Êı×é×÷Îª±í¸ñÊı¾İ
+	JFrame jf = new JFrame("å¯æŒ‰åˆ—æ’åºçš„è¡¨æ ¼");
+	// å®šä¹‰äºŒç»´æ•°ç»„ä½œä¸ºè¡¨æ ¼æ•°æ®
 	Object[][] tableData =
 	{
-		new Object[]{"ÀîÇåÕÕ" , 29 , "Å®"},
-		new Object[]{"ËÕ¸ñÀ­µ×", 56 , "ÄĞ"},
-		new Object[]{"Àî°×", 35 , "ÄĞ"},
-		new Object[]{"ÅªÓñ", 18 , "Å®"},
-		new Object[]{"»¢Í·" , 2 , "ÄĞ"}
+		new Object[]{"ææ¸…ç…§" , 29 , "å¥³"},
+		new Object[]{"è‹æ ¼æ‹‰åº•", 56 , "ç”·"},
+		new Object[]{"æç™½", 35 , "ç”·"},
+		new Object[]{"å¼„ç‰", 18 , "å¥³"},
+		new Object[]{"è™å¤´" , 2 , "ç”·"}
 	};
-	// ¶¨ÒåÒ»Î¬Êı¾İ×÷ÎªÁĞ±êÌâ
-	Object[] columnTitle = {"ĞÕÃû" , "ÄêÁä" , "ĞÔ±ğ"};
-	// ÒÔ¶şÎ¬Êı×éºÍÒ»Î¬Êı×éÀ´´´½¨Ò»¸öJTable¶ÔÏó
+	// å®šä¹‰ä¸€ç»´æ•°æ®ä½œä¸ºåˆ—æ ‡é¢˜
+	Object[] columnTitle = {"å§“å" , "å¹´é¾„" , "æ€§åˆ«"};
+	// ä»¥äºŒç»´æ•°ç»„å’Œä¸€ç»´æ•°ç»„æ¥åˆ›å»ºä¸€ä¸ªJTableå¯¹è±¡
 	JTable table = new JTable(tableData , columnTitle);
-	// ½«Ô­±í¸ñÀïµÄmodel°ü×°³ÉĞÂµÄSortableTableModel¶ÔÏó
+	// å°†åŸè¡¨æ ¼é‡Œçš„modelåŒ…è£…æˆæ–°çš„SortableTableModelå¯¹è±¡
 	SortableTableModel sorterModel = new SortableTableModel(
 		table.getModel());
 	public void init()
 	{
-		// Ê¹ÓÃ°ü×°ºóSortableTableModel¶ÔÏó×÷ÎªJTableµÄmodel¶ÔÏó
+		// ä½¿ç”¨åŒ…è£…åSortableTableModelå¯¹è±¡ä½œä¸ºJTableçš„modelå¯¹è±¡
 		table.setModel(sorterModel);
-		// ÎªÃ¿ÁĞµÄÁĞÍ·Ôö¼ÓÊó±ê¼àÌıÆ÷
+		// ä¸ºæ¯åˆ—çš„åˆ—å¤´å¢åŠ é¼ æ ‡ç›‘å¬å™¨
 		table.getTableHeader().addMouseListener(new MouseAdapter()
 		{
-			public void mouseClicked(MouseEvent event)    // ¢Ù
+			public void mouseClicked(MouseEvent event)    // â‘ 
 			{
-				//  Èç¹ûµ¥»÷´ÎÊıĞ¡ÓÚ2£¬¼´²»ÊÇË«»÷£¬Ö±½Ó·µ»Ø
+				//  å¦‚æœå•å‡»æ¬¡æ•°å°äº2ï¼Œå³ä¸æ˜¯åŒå‡»ï¼Œç›´æ¥è¿”å›
 				if (event.getClickCount() < 2)
 				{
 					return;
 				}
-				// ÕÒ³öÊó±êË«»÷ÊÂ¼şËùÔÚµÄÁĞË÷Òı
+				// æ‰¾å‡ºé¼ æ ‡åŒå‡»äº‹ä»¶æ‰€åœ¨çš„åˆ—ç´¢å¼•
 				int tableColumn = table.columnAtPoint(event.getPoint());
-				// ½«JTableÖĞµÄÁĞË÷Òı×ª»»³É¶ÔÓ¦TableModelÖĞµÄÁĞË÷Òı
+				// å°†JTableä¸­çš„åˆ—ç´¢å¼•è½¬æ¢æˆå¯¹åº”TableModelä¸­çš„åˆ—ç´¢å¼•
 				int modelColumn = table.convertColumnIndexToModel(tableColumn);
-				// ¸ù¾İÖ¸¶¨ÁĞ½øĞĞÅÅĞò
+				// æ ¹æ®æŒ‡å®šåˆ—è¿›è¡Œæ’åº
 				sorterModel.sort(modelColumn);
 			}
 		});
-		// ½«JTable¶ÔÏó·ÅÔÚJScrollPaneÖĞ£¬²¢½«¸ÃJScrollPaneÏÔÊ¾³öÀ´
+		// å°†JTableå¯¹è±¡æ”¾åœ¨JScrollPaneä¸­ï¼Œå¹¶å°†è¯¥JScrollPaneæ˜¾ç¤ºå‡ºæ¥
 		jf.add(new JScrollPane(table));
 		jf.pack();
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -72,27 +72,27 @@ class SortableTableModel extends AbstractTableModel
 	private TableModel model;
 	private int sortColumn;
 	private Row[] rows;
-	// ½«Ò»¸öÒÑ¾­´æÔÚTableModel¶ÔÏó°ü×°³ÉSortableTableModel¶ÔÏó
+	// å°†ä¸€ä¸ªå·²ç»å­˜åœ¨TableModelå¯¹è±¡åŒ…è£…æˆSortableTableModelå¯¹è±¡
 	public SortableTableModel(TableModel m)
 	{
-		// ½«±»·â×°µÄTableModel´«Èë
+		// å°†è¢«å°è£…çš„TableModelä¼ å…¥
 		model = m;
 		rows = new Row[model.getRowCount()];
-		// ½«Ô­TableModelÖĞµÄÃ¿ĞĞ¼ÇÂ¼µÄË÷ÒıÊ¹ÓÃRowÊı×é±£´æÆğÀ´
+		// å°†åŸTableModelä¸­çš„æ¯è¡Œè®°å½•çš„ç´¢å¼•ä½¿ç”¨Rowæ•°ç»„ä¿å­˜èµ·æ¥
 		for (int i = 0; i < rows.length; i++)
 		{
 			rows[i] = new Row(i);
 		}
 	}
-	// ÊµÏÖ¸ù¾İÖ¸¶¨ÁĞ½øĞĞÅÅĞò
+	// å®ç°æ ¹æ®æŒ‡å®šåˆ—è¿›è¡Œæ’åº
 	public void sort(int c)
 	{
 		sortColumn = c;
 		java.util.Arrays.sort(rows);
 		fireTableDataChanged();
 	}
-	// ÏÂÃæÈı¸ö·½·¨ĞèÒª·ÃÎÊmodelÖĞµÄÊı¾İ£¬ËùÒÔÉæ¼°±¾modelÖĞÊı¾İ
-	// ºÍ±»°ü×°modelÊı¾İÖĞµÄË÷Òı×ª»»£¬³ÌĞòÊ¹ÓÃrowsÊı×éÍê³ÉÕâÖÖ×ª»»¡£
+	// ä¸‹é¢ä¸‰ä¸ªæ–¹æ³•éœ€è¦è®¿é—®modelä¸­çš„æ•°æ®ï¼Œæ‰€ä»¥æ¶‰åŠæœ¬modelä¸­æ•°æ®
+	// å’Œè¢«åŒ…è£…modelæ•°æ®ä¸­çš„ç´¢å¼•è½¬æ¢ï¼Œç¨‹åºä½¿ç”¨rowsæ•°ç»„å®Œæˆè¿™ç§è½¬æ¢ã€‚
 	public Object getValueAt(int r, int c)
 	{
 		return model.getValueAt(rows[r].index, c);
@@ -105,7 +105,7 @@ class SortableTableModel extends AbstractTableModel
 	{
 		model.setValueAt(aValue, rows[r].index, c);
 	}
-	// ÏÂÃæ·½·¨µÄÊµÏÖ°Ñ¸ÃmodelµÄ·½·¨Î¯ÍĞÎªÔ­·â×°µÄmodelÀ´ÊµÏÖ
+	// ä¸‹é¢æ–¹æ³•çš„å®ç°æŠŠè¯¥modelçš„æ–¹æ³•å§”æ‰˜ä¸ºåŸå°è£…çš„modelæ¥å®ç°
 	public int getRowCount()
 	{
 		return model.getRowCount();
@@ -122,17 +122,17 @@ class SortableTableModel extends AbstractTableModel
 	{
 		return model.getColumnClass(c);
 	}
-	// ¶¨ÒåÒ»¸öRowÀà£¬¸ÃÀàÓÃÓÚ·â×°JTableÖĞµÄÒ»ĞĞ
-	// Êµ¼ÊÉÏËü²¢²»·â×°ĞĞÊı¾İ£¬ËüÖ»·â×°ĞĞË÷Òı
+	// å®šä¹‰ä¸€ä¸ªRowç±»ï¼Œè¯¥ç±»ç”¨äºå°è£…JTableä¸­çš„ä¸€è¡Œ
+	// å®é™…ä¸Šå®ƒå¹¶ä¸å°è£…è¡Œæ•°æ®ï¼Œå®ƒåªå°è£…è¡Œç´¢å¼•
 	private class Row implements Comparable<Row>
 	{
-		// ¸Ãindex±£´æ×Å±»·â×°ModelÀïÃ¿ĞĞ¼ÇÂ¼µÄĞĞË÷Òı
+		// è¯¥indexä¿å­˜ç€è¢«å°è£…Modelé‡Œæ¯è¡Œè®°å½•çš„è¡Œç´¢å¼•
 		public int index;
 		public Row(int index)
 		{
 			this.index = index;
 		}
-		// ÊµÏÖÁ½ĞĞÖ®¼äµÄ´óĞ¡±È½Ï
+		// å®ç°ä¸¤è¡Œä¹‹é—´çš„å¤§å°æ¯”è¾ƒ
 		public int compareTo(Row other)
 		{
 			Object a = model.getValueAt(index, sortColumn);

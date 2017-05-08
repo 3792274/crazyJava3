@@ -1,9 +1,9 @@
-package chapter18_01_类的加载_连接和初始化;
+package chapter18_01_绫荤殑鍔犺浇_杩炴帴鍜屽垵濮嬪寲;
 
 
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,6 +13,6 @@ package chapter18_01_类的加载_连接和初始化;
  */
 public class A
 {
-	// 定义该类的类变量
+	// 瀹氫箟璇ョ被鐨勭被鍙橀噺
 	public static int a = 6;
 }

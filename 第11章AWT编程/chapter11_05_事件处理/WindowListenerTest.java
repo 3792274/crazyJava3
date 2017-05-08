@@ -1,11 +1,11 @@
-package chapter11_05_ÊÂ¼ş´¦Àí;
+package chapter11_05_äº‹ä»¶å¤„ç†;
 
 
 import java.awt.*;
 import java.awt.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,47 +15,47 @@ import java.awt.event.*;
  */
 public class WindowListenerTest
 {
-	private Frame f = new Frame("²âÊÔ");
+	private Frame f = new Frame("æµ‹è¯•");
 	private TextArea ta = new TextArea(6 , 40);
 	public void init()
 	{
-		// Îª´°¿ÚÌí¼Ó´°¿ÚÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºçª—å£æ·»åŠ çª—å£äº‹ä»¶ç›‘å¬å™¨
 		f.addWindowListener(new MyListener());
 		f.add(ta);
 		f.pack();
 		f.setVisible(true);
 	}
-	// ÊµÏÖÒ»¸ö´°¿Ú¼àÌıÆ÷Àà
+	// å®ç°ä¸€ä¸ªçª—å£ç›‘å¬å™¨ç±»
 	class MyListener implements WindowListener
 	{
 		public void windowActivated(WindowEvent e)
 		{
-			ta.append("´°¿Ú±»¼¤»î£¡\n");
+			ta.append("çª—å£è¢«æ¿€æ´»ï¼\n");
 		}
 		public void windowClosed(WindowEvent e)
 		{
-			ta.append("´°¿Ú±»³É¹¦¹Ø±Õ£¡\n");
+			ta.append("çª—å£è¢«æˆåŠŸå…³é—­ï¼\n");
 		}
 		public void windowClosing(WindowEvent e)
 		{
-			ta.append("ÓÃ»§¹Ø±Õ´°¿Ú£¡\n");
+			ta.append("ç”¨æˆ·å…³é—­çª—å£ï¼\n");
 			System.exit(0);
 		}
 		public void windowDeactivated(WindowEvent e)
 		{
-			ta.append("´°¿ÚÊ§È¥½¹µã£¡\n");
+			ta.append("çª—å£å¤±å»ç„¦ç‚¹ï¼\n");
 		}
 		public void windowDeiconified(WindowEvent e)
 		{
-			ta.append("´°¿Ú±»»Ö¸´£¡\n");
+			ta.append("çª—å£è¢«æ¢å¤ï¼\n");
 		}
 		public void windowIconified(WindowEvent e)
 		{
-			ta.append("´°¿Ú±»×îĞ¡»¯£¡\n");
+			ta.append("çª—å£è¢«æœ€å°åŒ–ï¼\n");
 		}
 		public void windowOpened(WindowEvent e)
 		{
-			ta.append("´°¿Ú³õ´Î±»´ò¿ª£¡\n");
+			ta.append("çª—å£åˆæ¬¡è¢«æ‰“å¼€ï¼\n");
 		}
 	}
 	public static void main(String[] args)

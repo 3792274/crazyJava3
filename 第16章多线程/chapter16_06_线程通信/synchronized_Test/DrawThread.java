@@ -1,8 +1,8 @@
-package chapter16_06_Ïß³ÌÍ¨ĞÅ.synchronized_Test;
+package chapter16_06_çº¿ç¨‹é€šä¿¡.synchronized_Test;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -12,9 +12,9 @@ package chapter16_06_Ïß³ÌÍ¨ĞÅ.synchronized_Test;
  * @version 1.0
  */
 public class DrawThread extends Thread {
-	// Ä£ÄâÓÃ»§ÕË»§
+	// æ¨¡æ‹Ÿç”¨æˆ·è´¦æˆ·
 	private Account account;
-	// µ±Ç°È¡Ç®Ïß³ÌËùÏ£ÍûÈ¡µÄÇ®Êı
+	// å½“å‰å–é’±çº¿ç¨‹æ‰€å¸Œæœ›å–çš„é’±æ•°
 	private double drawAmount;
 
 	public DrawThread(String name, Account account, double drawAmount) {
@@ -23,7 +23,7 @@ public class DrawThread extends Thread {
 		this.drawAmount = drawAmount;
 	}
 
-	// ÖØ¸´100´ÎÖ´ĞĞÈ¡Ç®²Ù×÷
+	// é‡å¤100æ¬¡æ‰§è¡Œå–é’±æ“ä½œ
 	public void run() {
 		for (int i = 0; i < 100; i++) {
 			account.draw(drawAmount);

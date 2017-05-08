@@ -1,7 +1,7 @@
-package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
+package chapter06_06_Java8æ”¹è¿›çš„æ¥å£;
 /**
- * Description:ÃüÁîÄ£Ê½
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:å‘½ä»¤æ¨¡å¼
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -10,7 +10,7 @@ package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
  * @version 1.0
  */
 
-//Êı×éµÄ´¦ÀíÀà£¬¸ÃÀà²»ÖªµÀ½«ÈçºÎ´¦ÀíÊı×é£¬Ìá¹©Ò»¸öÃüÁî
+//æ•°ç»„çš„å¤„ç†ç±»ï¼Œè¯¥ç±»ä¸çŸ¥é“å°†å¦‚ä½•å¤„ç†æ•°ç»„ï¼Œæä¾›ä¸€ä¸ªå‘½ä»¤
 public class ProcessArray
 {
 	public void process(int[] target , Command cmd)

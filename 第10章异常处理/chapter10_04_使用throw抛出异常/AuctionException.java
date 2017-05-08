@@ -1,18 +1,18 @@
-package chapter10_04_Ê¹ÓÃthrowÅ×³öÒì³£;
+package chapter10_04_ä½¿ç”¨throwæŠ›å‡ºå¼‚å¸¸;
 
 
 
 /**
- * Description:×Ô¶¨ÒåÒì³£Àà
- * 1.¿ÉÒÔ¼Ì³ĞException
- * 2.¿ÉÒÔ¼Ì³ĞRuntimeException ,¸ü¼òµ¥
+ * Description:è‡ªå®šä¹‰å¼‚å¸¸ç±»
+ * 1.å¯ä»¥ç»§æ‰¿Exception
+ * 2.å¯ä»¥ç»§æ‰¿RuntimeException ,æ›´ç®€å•
  */
 public class AuctionException extends Exception
 {
-	// 1.±ØĞëÓĞÒ»¸ö ----ÎŞ²ÎÊıµÄ¹¹ÔìÆ÷
-	public AuctionException(){}       //¢Ù
-	// 2.±ØĞëÓĞÒ»¸ö---´øÒ»¸ö×Ö·û´®²ÎÊıµÄ¹¹ÔìÆ÷
-	public AuctionException(String msg)    //¢Ú
+	// 1.å¿…é¡»æœ‰ä¸€ä¸ª ----æ— å‚æ•°çš„æ„é€ å™¨
+	public AuctionException(){}       //â‘ 
+	// 2.å¿…é¡»æœ‰ä¸€ä¸ª---å¸¦ä¸€ä¸ªå­—ç¬¦ä¸²å‚æ•°çš„æ„é€ å™¨
+	public AuctionException(String msg)    //â‘¡
 	{
 		super(msg);
 	}

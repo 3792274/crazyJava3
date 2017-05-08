@@ -1,10 +1,10 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,8 +14,8 @@ package chapter06_07_ÄÚ²¿Àà;
  */
 class Out
 {
-	// ¶¨ÒåÒ»¸öÄÚ²¿Àà£¬²»Ê¹ÓÃ·ÃÎÊ¿ØÖÆ·û£¬
-	// ¼´Ö»ÓĞÍ¬Ò»¸ö°üÖĞÆäËûÀà¿É·ÃÎÊ¸ÃÄÚ²¿Àà
+	// å®šä¹‰ä¸€ä¸ªå†…éƒ¨ç±»ï¼Œä¸ä½¿ç”¨è®¿é—®æ§åˆ¶ç¬¦ï¼Œ
+	// å³åªæœ‰åŒä¸€ä¸ªåŒ…ä¸­å…¶ä»–ç±»å¯è®¿é—®è¯¥å†…éƒ¨ç±»
 	class In
 	{
 		public In(String msg)
@@ -28,15 +28,15 @@ public class CreateInnerInstance
 {
 	public static void main(String[] args)
 	{
-		Out.In in = new Out().new In("²âÊÔĞÅÏ¢");
+		Out.In in = new Out().new In("æµ‹è¯•ä¿¡æ¯");
 		/*
-		ÉÏÃæ´úÂë¿É¸ÄÎªÈçÏÂÈıĞĞ´úÂë£º
-		Ê¹ÓÃOutterClass.InnerClassµÄĞÎÊ½¶¨ÒåÄÚ²¿Àà±äÁ¿
+		ä¸Šé¢ä»£ç å¯æ”¹ä¸ºå¦‚ä¸‹ä¸‰è¡Œä»£ç ï¼š
+		ä½¿ç”¨OutterClass.InnerClassçš„å½¢å¼å®šä¹‰å†…éƒ¨ç±»å˜é‡
 		Out.In in;
-		´´½¨Íâ²¿ÀàÊµÀı£¬·Ç¾²Ì¬ÄÚ²¿ÀàÊµÀı½«¼Ä´æÔÚ¸ÃÊµÀıÖĞ
+		åˆ›å»ºå¤–éƒ¨ç±»å®ä¾‹ï¼Œéé™æ€å†…éƒ¨ç±»å®ä¾‹å°†å¯„å­˜åœ¨è¯¥å®ä¾‹ä¸­
 		Out out = new Out();
-		Í¨¹ıÍâ²¿ÀàÊµÀıºÍnewÀ´µ÷ÓÃÄÚ²¿Àà¹¹ÔìÆ÷´´½¨·Ç¾²Ì¬ÄÚ²¿ÀàÊµÀı
-		in = out.new In("²âÊÔĞÅÏ¢");
+		é€šè¿‡å¤–éƒ¨ç±»å®ä¾‹å’Œnewæ¥è°ƒç”¨å†…éƒ¨ç±»æ„é€ å™¨åˆ›å»ºéé™æ€å†…éƒ¨ç±»å®ä¾‹
+		in = out.new In("æµ‹è¯•ä¿¡æ¯");
 		*/
 	}
 }

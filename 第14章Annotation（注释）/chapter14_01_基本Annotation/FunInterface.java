@@ -1,8 +1,8 @@
-package chapter14_01_»ù±¾Annotation;
+package chapter14_01_åŸºæœ¬Annotation;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,15 +16,15 @@ public interface FunInterface
 
 	static void foo()
 	{
-		System.out.println("fooÀà·½·¨");
+		System.out.println("fooç±»æ–¹æ³•");
 	}
 	default void bar()
 	{
-		System.out.println("barÄ¬ÈÏ·½·¨");
+		System.out.println("baré»˜è®¤æ–¹æ³•");
 	}
 	
 
-	void test(); // Ö»¶¨ÒåÒ»¸ö³éÏó·½·¨
+	void test(); // åªå®šä¹‰ä¸€ä¸ªæŠ½è±¡æ–¹æ³•
 	
 //	void abc();
 	

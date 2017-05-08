@@ -1,10 +1,10 @@
-package chapter15_04_ÊäÈëÊä³öÁ÷ÌåÏµ;
+package chapter15_04_è¾“å…¥è¾“å‡ºæµä½“ç³»;
 
 
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,18 +16,18 @@ public class StringNodeTest
 {
 	public static void main(String[] args)
 	{
-		String src = "´ÓÃ÷ÌìÆğ£¬×öÒ»¸öĞÒ¸£µÄÈË\n"
-			+ "Î¹Âí£¬Åü²ñ£¬ÖÜÓÎÊÀ½ç\n"
-			+ "´ÓÃ÷ÌìÆğ£¬¹ØĞÄÁ¸Ê³ºÍÊß²Ë\n"
-			+ "ÎÒÓĞÒ»Ëù·¿×Ó£¬Ãæ³¯´óº££¬´ºÅ¯»¨¿ª\n"
-			+ "´ÓÃ÷ÌìÆğ£¬ºÍÃ¿Ò»¸öÇ×ÈËÍ¨ĞÅ\n"
-			+ "¸æËßËûÃÇÎÒµÄĞÒ¸£\n";
+		String src = "ä»æ˜å¤©èµ·ï¼Œåšä¸€ä¸ªå¹¸ç¦çš„äºº\n"
+			+ "å–‚é©¬ï¼ŒåŠˆæŸ´ï¼Œå‘¨æ¸¸ä¸–ç•Œ\n"
+			+ "ä»æ˜å¤©èµ·ï¼Œå…³å¿ƒç²®é£Ÿå’Œè”¬èœ\n"
+			+ "æˆ‘æœ‰ä¸€æ‰€æˆ¿å­ï¼Œé¢æœå¤§æµ·ï¼Œæ˜¥æš–èŠ±å¼€\n"
+			+ "ä»æ˜å¤©èµ·ï¼Œå’Œæ¯ä¸€ä¸ªäº²äººé€šä¿¡\n"
+			+ "å‘Šè¯‰ä»–ä»¬æˆ‘çš„å¹¸ç¦\n";
 		char[] buffer = new char[32];
 		int hasRead = 0;
 		try(
 			StringReader sr = new StringReader(src))
 		{
-			// ²ÉÓÃÑ­»·¶ÁÈ¡µÄ·ÃÎÊ¶ÁÈ¡×Ö·û´®
+			// é‡‡ç”¨å¾ªç¯è¯»å–çš„è®¿é—®è¯»å–å­—ç¬¦ä¸²
 			while((hasRead = sr.read(buffer)) > 0)
 			{
 				System.out.print(new String(buffer ,0 , hasRead));
@@ -40,17 +40,17 @@ public class StringNodeTest
 		
 		
 		try(
-			// ´´½¨StringWriterÊ±£¬Êµ¼ÊÉÏÒÔÒ»¸öStringBuffer×÷ÎªÊä³ö½Úµã
-			// ÏÂÃæÖ¸¶¨µÄ20¾ÍÊÇStringBufferµÄ³õÊ¼³¤¶È
+			// åˆ›å»ºStringWriteræ—¶ï¼Œå®é™…ä¸Šä»¥ä¸€ä¸ªStringBufferä½œä¸ºè¾“å‡ºèŠ‚ç‚¹
+			// ä¸‹é¢æŒ‡å®šçš„20å°±æ˜¯StringBufferçš„åˆå§‹é•¿åº¦
 			StringWriter sw = new StringWriter())
 		{
-			// µ÷ÓÃStringWriterµÄ·½·¨Ö´ĞĞÊä³ö
-			sw.write("ÓĞÒ»¸öÃÀÀöµÄĞÂÊÀ½ç£¬\n");
-			sw.write("ËıÔÚÔ¶·½µÈÎÒ,\n");
-			sw.write("ÄÄÀïÓĞÌìÕæµÄº¢×Ó£¬\n");
-			sw.write("»¹ÓĞ¹ÃÄïµÄ¾ÆÎÑ\n");
-			System.out.println("----ÏÂÃæÊÇswµÄ×Ö·û´®½ÚµãÀïµÄÄÚÈİ----");
-			// Ê¹ÓÃtoString()·½·¨·µ»ØStringWriterµÄ×Ö·û´®½ÚµãµÄÄÚÈİ
+			// è°ƒç”¨StringWriterçš„æ–¹æ³•æ‰§è¡Œè¾“å‡º
+			sw.write("æœ‰ä¸€ä¸ªç¾ä¸½çš„æ–°ä¸–ç•Œï¼Œ\n");
+			sw.write("å¥¹åœ¨è¿œæ–¹ç­‰æˆ‘,\n");
+			sw.write("å“ªé‡Œæœ‰å¤©çœŸçš„å­©å­ï¼Œ\n");
+			sw.write("è¿˜æœ‰å§‘å¨˜çš„é…’çª\n");
+			System.out.println("----ä¸‹é¢æ˜¯swçš„å­—ç¬¦ä¸²èŠ‚ç‚¹é‡Œçš„å†…å®¹----");
+			// ä½¿ç”¨toString()æ–¹æ³•è¿”å›StringWriterçš„å­—ç¬¦ä¸²èŠ‚ç‚¹çš„å†…å®¹
 			System.out.println(sw.toString());
 		}
 		catch (IOException ex)

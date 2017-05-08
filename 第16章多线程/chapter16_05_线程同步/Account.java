@@ -1,8 +1,8 @@
-package chapter16_05_线程同步;
+package chapter16_05_绾跨▼鍚屾;
 
 /**
- * Description: //银行的账户类<br/>
- * 网站: <a href="http://www.crazyit.org">疯狂Java联盟</a> <br/>
+ * Description: //閾惰鐨勮处鎴风被<br/>
+ * 缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -12,20 +12,20 @@ package chapter16_05_线程同步;
  * @version 1.0
  */
 public class Account {
-	// 封装账户编号、账户余额的两个成员变量
+	// 灏佽璐︽埛缂栧彿銆佽处鎴蜂綑棰濈殑涓や釜鎴愬憳鍙橀噺
 	private String accountNo;
 	private double balance;
 
 	public Account() {
 	}
 
-	// 构造器
+	// 鏋勯�犲櫒
 	public Account(String accountNo, double balance) {
 		this.accountNo = accountNo;
 		this.balance = balance;
 	}
 
-	// accountNo的setter和getter方法
+	// accountNo鐨剆etter鍜実etter鏂规硶
 	public void setAccountNo(String accountNo) {
 		this.accountNo = accountNo;
 	}
@@ -34,7 +34,7 @@ public class Account {
 		return this.accountNo;
 	}
 
-	// balance的setter和getter方法
+	// balance鐨剆etter鍜実etter鏂规硶
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
@@ -43,7 +43,7 @@ public class Account {
 		return this.balance;
 	}
 
-	// 下面两个方法根据accountNo来重写hashCode()和equals()方法
+	// 涓嬮潰涓や釜鏂规硶鏍规嵁accountNo鏉ラ噸鍐檋ashCode()鍜宔quals()鏂规硶
 	public int hashCode() {
 		return accountNo.hashCode();
 	}

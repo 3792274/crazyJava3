@@ -1,10 +1,10 @@
-package chapter05_06_ÀàµÄ¼Ì³Ğ;
+package chapter05_06_ç±»çš„ç»§æ‰¿;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -27,14 +27,14 @@ public class Sub extends Base
 	public String color;
 	public Sub(double size , String name , String color)
 	{
-		// Í¨¹ısuperµ÷ÓÃÀ´µ÷ÓÃ¸¸Àà¹¹ÔìÆ÷µÄ³õÊ¼»¯¹ı³Ì
+		// é€šè¿‡superè°ƒç”¨æ¥è°ƒç”¨çˆ¶ç±»æ„é€ å™¨çš„åˆå§‹åŒ–è¿‡ç¨‹
 		super(size , name);
 		this.color = color;
 	}
 	public static void main(String[] args)
 	{
-		Sub s = new Sub(5.6 , "²âÊÔ¶ÔÏó" , "ºìÉ«");
-		// Êä³öSub¶ÔÏóµÄÈı¸öÊµÀı±äÁ¿
+		Sub s = new Sub(5.6 , "æµ‹è¯•å¯¹è±¡" , "çº¢è‰²");
+		// è¾“å‡ºSubå¯¹è±¡çš„ä¸‰ä¸ªå®ä¾‹å˜é‡
 		System.out.println(s.size + "--" + s.name
 			+ "--" + s.color);
 	}

@@ -1,10 +1,10 @@
-package chapter06_04_finalĞŞÊÎ·û;
+package chapter06_04_finalä¿®é¥°ç¬¦;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,10 +15,10 @@ package chapter06_04_finalĞŞÊÎ·û;
 class CacheImmutale
 {
 	private static int MAX_SIZE = 10;
-	// Ê¹ÓÃÊı×éÀ´»º´æÒÑÓĞµÄÊµÀı
+	// ä½¿ç”¨æ•°ç»„æ¥ç¼“å­˜å·²æœ‰çš„å®ä¾‹
 	private static CacheImmutale[] cache
 		= new CacheImmutale[MAX_SIZE];
-	// ¼ÇÂ¼»º´æÊµÀıÔÚ»º´æÖĞµÄÎ»ÖÃ,cache[pos-1]ÊÇ×îĞÂ»º´æµÄÊµÀı
+	// è®°å½•ç¼“å­˜å®ä¾‹åœ¨ç¼“å­˜ä¸­çš„ä½ç½®,cache[pos-1]æ˜¯æœ€æ–°ç¼“å­˜çš„å®ä¾‹
 	private static int pos = 0;
 	private final String name;
 	private CacheImmutale(String name)
@@ -31,27 +31,27 @@ class CacheImmutale
 	}
 	public static CacheImmutale valueOf(String name)
 	{
-		// ±éÀúÒÑ»º´æµÄ¶ÔÏó£¬
+		// éå†å·²ç¼“å­˜çš„å¯¹è±¡ï¼Œ
 		for (int i = 0 ; i < MAX_SIZE; i++)
 		{
-			// Èç¹ûÒÑÓĞÏàÍ¬ÊµÀı£¬Ö±½Ó·µ»Ø¸Ã»º´æµÄÊµÀı
+			// å¦‚æœå·²æœ‰ç›¸åŒå®ä¾‹ï¼Œç›´æ¥è¿”å›è¯¥ç¼“å­˜çš„å®ä¾‹
 			if (cache[i] != null
 				&& cache[i].getName().equals(name))
 			{
 				return cache[i];
 			}
 		}
-		// Èç¹û»º´æ³ØÒÑÂú
+		// å¦‚æœç¼“å­˜æ± å·²æ»¡
 		if (pos == MAX_SIZE)
 		{
-			// °Ñ»º´æµÄµÚÒ»¸ö¶ÔÏó¸²¸Ç£¬¼´°Ñ¸Õ¸ÕÉú³ÉµÄ¶ÔÏó·ÅÔÚ»º´æ³ØµÄ×î¿ªÊ¼Î»ÖÃ¡£
+			// æŠŠç¼“å­˜çš„ç¬¬ä¸€ä¸ªå¯¹è±¡è¦†ç›–ï¼Œå³æŠŠåˆšåˆšç”Ÿæˆçš„å¯¹è±¡æ”¾åœ¨ç¼“å­˜æ± çš„æœ€å¼€å§‹ä½ç½®ã€‚
 			cache[0] = new CacheImmutale(name);
-			// °ÑposÉèÎª1
+			// æŠŠposè®¾ä¸º1
 			pos = 1;
 		}
 		else
 		{
-			// °ÑĞÂ´´½¨µÄ¶ÔÏó»º´æÆğÀ´£¬pos¼Ó1
+			// æŠŠæ–°åˆ›å»ºçš„å¯¹è±¡ç¼“å­˜èµ·æ¥ï¼ŒposåŠ 1
 			cache[pos++] = new CacheImmutale(name);
 		}
 		return cache[pos - 1];
@@ -81,7 +81,7 @@ public class CacheImmutaleTest
 	{
 		CacheImmutale c1 = CacheImmutale.valueOf("hello");
 		CacheImmutale c2 = CacheImmutale.valueOf("hello");
-		// ÏÂÃæ´úÂë½«Êä³ötrue
+		// ä¸‹é¢ä»£ç å°†è¾“å‡ºtrue
 		System.out.println(c1 == c2);
 	}
 }

@@ -1,9 +1,9 @@
-package chapter06_08_Java8ĞÂÔöµÄLambda±í´ïÊ½;
+package chapter06_08_Java8æ–°å¢çš„Lambdaè¡¨è¾¾å¼;
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,7 +13,7 @@ package chapter06_08_Java8ĞÂÔöµÄLambda±í´ïÊ½;
  */
 public class ProcessArray02
 {
-	//ÃüÁîÄ£Ê½£¬¾ßÌå´¦ÀíÀà¡£
+	//å‘½ä»¤æ¨¡å¼ï¼Œå…·ä½“å¤„ç†ç±»ã€‚
 	public void process(int[] target , Command cmd)
 	{
 		cmd.process(target);

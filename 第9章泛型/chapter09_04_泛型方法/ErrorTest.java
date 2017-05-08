@@ -1,10 +1,10 @@
-package chapter09_04_·ºĞÍ·½·¨;
+package chapter09_04_æ³›å‹æ–¹æ³•;
 
 
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,7 +14,7 @@ import java.util.*;
  */
 public class ErrorTest
 {
-	// ÉùÃ÷Ò»¸ö·ºĞÍ·½·¨£¬¸Ã·ºĞÍ·½·¨ÖĞ´øÒ»¸öTÀàĞÍĞÎ²Î
+	// å£°æ˜ä¸€ä¸ªæ³›å‹æ–¹æ³•ï¼Œè¯¥æ³›å‹æ–¹æ³•ä¸­å¸¦ä¸€ä¸ªTç±»å‹å½¢å‚
 	static <T> void test(Collection<T> from, Collection<T> to)
 	{
 		for (T ele : from)
@@ -28,7 +28,7 @@ public class ErrorTest
 		List<Object> as = new ArrayList<>();
 		List<String> ao = new ArrayList<>();
 	
-		// ÏÂÃæ´úÂë½«²úÉú±àÒë´íÎó£¬ÀàĞÍÃÔ»ó¡£
+		// ä¸‹é¢ä»£ç å°†äº§ç”Ÿç¼–è¯‘é”™è¯¯ï¼Œç±»å‹è¿·æƒ‘ã€‚
 //		test(as , ao);
 	}
 }

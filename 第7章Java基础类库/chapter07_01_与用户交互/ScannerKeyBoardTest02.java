@@ -1,10 +1,10 @@
-package chapter07_01_ÓëÓÃ»§½»»¥;
+package chapter07_01_ä¸ç”¨æˆ·äº¤äº’;
 
 import java.util.*;
 
 /**
- * Description:Scanner ÊÇ»ùÓÚÕıÔò±í´ïÊ½µÄÉ¨ÃèÆ÷£¬½ÓÊÕÎÄ±¾£¬ÊäÈëÁ÷£¬×Ö·û´®×÷ÎªÊı¾İÔ´¡£ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:Scanner æ˜¯åŸºäºæ­£åˆ™è¡¨è¾¾å¼çš„æ‰«æå™¨ï¼Œæ¥æ”¶æ–‡æœ¬ï¼Œè¾“å…¥æµï¼Œå­—ç¬¦ä¸²ä½œä¸ºæ•°æ®æºã€‚ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,16 +15,16 @@ import java.util.*;
  */
 public class ScannerKeyBoardTest02 {
 	public static void main(String[] args) {
-		// System.in´ú±í±ê×¼ÊäÈë£¬¾ÍÊÇ¼üÅÌÊäÈë
+		// System.inä»£è¡¨æ ‡å‡†è¾“å…¥ï¼Œå°±æ˜¯é”®ç›˜è¾“å…¥
 		Scanner sc = new Scanner(System.in);
 
-		// Ôö¼ÓÏÂÃæÒ»ĞĞ½«Ö»°Ñ»Ø³µ×÷Îª·Ö¸ô·û
+		// å¢åŠ ä¸‹é¢ä¸€è¡Œå°†åªæŠŠå›è½¦ä½œä¸ºåˆ†éš”ç¬¦
 		//  sc.useDelimiter("\n");
 
-		// ÅĞ¶ÏÊÇ·ñ»¹ÓĞÏÂÒ»¸öÊäÈëÏî,ÓĞ¿ÉÄÜ×èÈû
+		// åˆ¤æ–­æ˜¯å¦è¿˜æœ‰ä¸‹ä¸€ä¸ªè¾“å…¥é¡¹,æœ‰å¯èƒ½é˜»å¡
 		while (sc.hasNext()) {
-			// Êä³öÊäÈëÏî
-			System.out.println("¼üÅÌÊäÈëµÄÄÚÈİÊÇ£º" + sc.next());
+			// è¾“å‡ºè¾“å…¥é¡¹
+			System.out.println("é”®ç›˜è¾“å…¥çš„å†…å®¹æ˜¯ï¼š" + sc.next());
 		}
 	}
 }

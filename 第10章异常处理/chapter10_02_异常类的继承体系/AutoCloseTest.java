@@ -1,25 +1,25 @@
-package chapter10_02_Òì³£ÀàµÄ¼Ì³ĞÌåÏµ;
+package chapter10_02_å¼‚å¸¸ç±»çš„ç»§æ‰¿ä½“ç³»;
 
 import java.io.*;
 
 /**
- * Description:java7ĞÂÔöµÄ×Ô¶¯¹Ø±Õ×ÊÔ´¡£
- * 1.Òª×Ô¶¯¹Ø±ÕµÄÕâĞ©×ÊÔ´±ØĞëÊµÏÖAutoCloseable»òCloseable½Ó¿Ú£¬ÊµÏÖÕâÁ½¸ö½Ó¿Ú±ØĞëÊµÏÖclose()·½·¨¡£
- * 2.CloseableÊÇAutoCloseableµÄ×Ó½Ó¿Ú£¬Å×³öIOException
- * 3.AutoCloseable£¬Å×³öException
- * 4.java7ÖØĞ´ÁË´ó²¿·ÖµÄ×ÊÔ´ĞèÒª¹Ø±ÕµÄÀà¡£Ò²¿ÉÒÔcatch finallyµÈ¡£
+ * Description:java7æ–°å¢çš„è‡ªåŠ¨å…³é—­èµ„æºã€‚
+ * 1.è¦è‡ªåŠ¨å…³é—­çš„è¿™äº›èµ„æºå¿…é¡»å®ç°AutoCloseableæˆ–Closeableæ¥å£ï¼Œå®ç°è¿™ä¸¤ä¸ªæ¥å£å¿…é¡»å®ç°close()æ–¹æ³•ã€‚
+ * 2.Closeableæ˜¯AutoCloseableçš„å­æ¥å£ï¼ŒæŠ›å‡ºIOException
+ * 3.AutoCloseableï¼ŒæŠ›å‡ºException
+ * 4.java7é‡å†™äº†å¤§éƒ¨åˆ†çš„èµ„æºéœ€è¦å…³é—­çš„ç±»ã€‚ä¹Ÿå¯ä»¥catch finallyç­‰ã€‚
  * 
  */
 public class AutoCloseTest {
 	public static void main(String[] args) throws IOException {
 		try (
-				// ÉùÃ÷¡¢³õÊ¼»¯Á½¸ö¿É¹Ø±ÕµÄ×ÊÔ´
-				// tryÓï¾ä»á×Ô¶¯¹Ø±ÕÕâÁ½¸ö×ÊÔ´¡£
-				BufferedReader br = new BufferedReader(new FileReader("µÚ10ÕÂÒì³£´¦Àí\\chapter10_02_Òì³£ÀàµÄ¼Ì³ĞÌåÏµ\\A0utoCloseTest.java")); 
-				PrintStream ps = new PrintStream(new FileOutputStream("µÚ10ÕÂÒì³£´¦Àí\\chapter10_02_Òì³£ÀàµÄ¼Ì³ĞÌåÏµ\\a.txt"))) {
-			// Ê¹ÓÃÁ½¸ö×ÊÔ´
+				// å£°æ˜ã€åˆå§‹åŒ–ä¸¤ä¸ªå¯å…³é—­çš„èµ„æº
+				// tryè¯­å¥ä¼šè‡ªåŠ¨å…³é—­è¿™ä¸¤ä¸ªèµ„æºã€‚
+				BufferedReader br = new BufferedReader(new FileReader("ç¬¬10ç« å¼‚å¸¸å¤„ç†\\chapter10_02_å¼‚å¸¸ç±»çš„ç»§æ‰¿ä½“ç³»\\A0utoCloseTest.java")); 
+				PrintStream ps = new PrintStream(new FileOutputStream("ç¬¬10ç« å¼‚å¸¸å¤„ç†\\chapter10_02_å¼‚å¸¸ç±»çš„ç»§æ‰¿ä½“ç³»\\a.txt"))) {
+			// ä½¿ç”¨ä¸¤ä¸ªèµ„æº
 			System.out.println(br.readLine());
-			ps.println("×¯ÉúÏşÃÎÃÔºûµû");
+			ps.println("åº„ç”Ÿæ™“æ¢¦è¿·è´è¶");
 		} 
 	}
 	

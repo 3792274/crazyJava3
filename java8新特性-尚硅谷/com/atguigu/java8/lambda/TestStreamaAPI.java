@@ -9,76 +9,76 @@ import java.util.stream.Stream;
 import org.junit.Test;
 
 /*
- * Ò»¡¢Stream API µÄ²Ù×÷²½Öè£º
+ * ä¸€ã€Stream API çš„æ“ä½œæ­¥éª¤ï¼š
  * 
- * 1. ´´½¨ Stream
+ * 1. åˆ›å»º Stream
  * 
- * 2. ÖĞ¼ä²Ù×÷
+ * 2. ä¸­é—´æ“ä½œ
  * 
- * 3. ÖÕÖ¹²Ù×÷(ÖÕ¶Ë²Ù×÷)
+ * 3. ç»ˆæ­¢æ“ä½œ(ç»ˆç«¯æ“ä½œ)
  */
 public class TestStreamaAPI {
     
-    //1. ´´½¨ Stream
+    //1. åˆ›å»º Stream
     @Test
     public void test1(){
-        //1. Collection Ìá¹©ÁËÁ½¸ö·½·¨  stream() Óë parallelStream()
+        //1. Collection æä¾›äº†ä¸¤ä¸ªæ–¹æ³•  stream() ä¸ parallelStream()
         List<String> list = new ArrayList<>();
-        Stream<String> stream = list.stream(); //»ñÈ¡Ò»¸öË³ĞòÁ÷
-        Stream<String> parallelStream = list.parallelStream(); //»ñÈ¡Ò»¸ö²¢ĞĞÁ÷
+        Stream<String> stream = list.stream(); //è·å–ä¸€ä¸ªé¡ºåºæµ
+        Stream<String> parallelStream = list.parallelStream(); //è·å–ä¸€ä¸ªå¹¶è¡Œæµ
         
-        //2. Í¨¹ı Arrays ÖĞµÄ stream() »ñÈ¡Ò»¸öÊı×éÁ÷
+        //2. é€šè¿‡ Arrays ä¸­çš„ stream() è·å–ä¸€ä¸ªæ•°ç»„æµ
         Integer[] nums = new Integer[10];
         Stream<Integer> stream1 = Arrays.stream(nums);
         
-        //3. Í¨¹ı Stream ÀàÖĞ¾²Ì¬·½·¨ of()
+        //3. é€šè¿‡ Stream ç±»ä¸­é™æ€æ–¹æ³• of()
         Stream<Integer> stream2 = Stream.of(1,2,3,4,5,6);
         
-        //4. ´´½¨ÎŞÏŞÁ÷
-        //µü´ú
+        //4. åˆ›å»ºæ— é™æµ
+        //è¿­ä»£
         Stream<Integer> stream3 = Stream.iterate(0, (x) -> x + 2).limit(10);
         stream3.forEach(System.out::println);
         
-        //Éú³É
+        //ç”Ÿæˆ
         Stream<Double> stream4 = Stream.generate(Math::random).limit(2);
         stream4.forEach(System.out::println);
         
     }
     
-    //2. ÖĞ¼ä²Ù×÷
+    //2. ä¸­é—´æ“ä½œ
     List<Employee> emps = Arrays.asList(
-            new Employee(102, "ÀîËÄ", 59, 6666.66),
-            new Employee(101, "ÕÅÈı", 18, 9999.99),
-            new Employee(103, "ÍõÎå", 28, 3333.33),
-            new Employee(104, "ÕÔÁù", 8, 7777.77),
-            new Employee(104, "ÕÔÁù", 8, 7777.77),
-            new Employee(104, "ÕÔÁù", 8, 7777.77),
-            new Employee(105, "ÌïÆß", 38, 5555.55)
+            new Employee(102, "æå››", 59, 6666.66),
+            new Employee(101, "å¼ ä¸‰", 18, 9999.99),
+            new Employee(103, "ç‹äº”", 28, 3333.33),
+            new Employee(104, "èµµå…­", 8, 7777.77),
+            new Employee(104, "èµµå…­", 8, 7777.77),
+            new Employee(104, "èµµå…­", 8, 7777.77),
+            new Employee(105, "ç”°ä¸ƒ", 38, 5555.55)
     );
     
     /*
-      É¸Ñ¡ÓëÇĞÆ¬
-        filter¡ª¡ª½ÓÊÕ Lambda £¬ ´ÓÁ÷ÖĞÅÅ³ıÄ³Ğ©ÔªËØ¡£
-        limit¡ª¡ª½Ø¶ÏÁ÷£¬Ê¹ÆäÔªËØ²»³¬¹ı¸ø¶¨ÊıÁ¿¡£
-        skip(n) ¡ª¡ª Ìø¹ıÔªËØ£¬·µ»ØÒ»¸öÈÓµôÁËÇ° n ¸öÔªËØµÄÁ÷¡£ÈôÁ÷ÖĞÔªËØ²»×ã n ¸ö£¬Ôò·µ»ØÒ»¸ö¿ÕÁ÷¡£Óë limit(n) »¥²¹
-        distinct¡ª¡ªÉ¸Ñ¡£¬Í¨¹ıÁ÷ËùÉú³ÉÔªËØµÄ hashCode() ºÍ equals() È¥³ıÖØ¸´ÔªËØ
+      ç­›é€‰ä¸åˆ‡ç‰‡
+        filterâ€”â€”æ¥æ”¶ Lambda ï¼Œ ä»æµä¸­æ’é™¤æŸäº›å…ƒç´ ã€‚
+        limitâ€”â€”æˆªæ–­æµï¼Œä½¿å…¶å…ƒç´ ä¸è¶…è¿‡ç»™å®šæ•°é‡ã€‚
+        skip(n) â€”â€” è·³è¿‡å…ƒç´ ï¼Œè¿”å›ä¸€ä¸ªæ‰”æ‰äº†å‰ n ä¸ªå…ƒç´ çš„æµã€‚è‹¥æµä¸­å…ƒç´ ä¸è¶³ n ä¸ªï¼Œåˆ™è¿”å›ä¸€ä¸ªç©ºæµã€‚ä¸ limit(n) äº’è¡¥
+        distinctâ€”â€”ç­›é€‰ï¼Œé€šè¿‡æµæ‰€ç”Ÿæˆå…ƒç´ çš„ hashCode() å’Œ equals() å»é™¤é‡å¤å…ƒç´ 
      */
     
-    //ÄÚ²¿µü´ú£ºµü´ú²Ù×÷ Stream API ÄÚ²¿Íê³É
+    //å†…éƒ¨è¿­ä»£ï¼šè¿­ä»£æ“ä½œ Stream API å†…éƒ¨å®Œæˆ
     @Test
     public void test2(){
-        //ËùÓĞµÄÖĞ¼ä²Ù×÷²»»á×öÈÎºÎµÄ´¦Àí
+        //æ‰€æœ‰çš„ä¸­é—´æ“ä½œä¸ä¼šåšä»»ä½•çš„å¤„ç†
         Stream<Employee> stream = emps.stream()
             .filter((e) -> {
-                System.out.println("²âÊÔÖĞ¼ä²Ù×÷");
+                System.out.println("æµ‹è¯•ä¸­é—´æ“ä½œ");
                 return e.getAge() <= 35;
             });
         
-        //Ö»ÓĞµ±×öÖÕÖ¹²Ù×÷Ê±£¬ËùÓĞµÄÖĞ¼ä²Ù×÷»áÒ»´ÎĞÔµÄÈ«²¿Ö´ĞĞ£¬³ÆÎª¡°¶èĞÔÇóÖµ¡±
+        //åªæœ‰å½“åšç»ˆæ­¢æ“ä½œæ—¶ï¼Œæ‰€æœ‰çš„ä¸­é—´æ“ä½œä¼šä¸€æ¬¡æ€§çš„å…¨éƒ¨æ‰§è¡Œï¼Œç§°ä¸ºâ€œæƒ°æ€§æ±‚å€¼â€
         stream.forEach(System.out::println);
     }
     
-    //Íâ²¿µü´ú
+    //å¤–éƒ¨è¿­ä»£
     @Test
     public void test3(){
         Iterator<Employee> it = emps.iterator();
@@ -92,7 +92,7 @@ public class TestStreamaAPI {
     public void test4(){
         emps.stream()
             .filter((e) -> {
-                System.out.println("¶ÌÂ·£¡"); // &&  ||
+                System.out.println("çŸ­è·¯ï¼"); // &&  ||
                 return e.getSalary() >= 5000;
             }).limit(3)
             .forEach(System.out::println);

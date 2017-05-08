@@ -1,4 +1,4 @@
-package chapter12_11_Ê¹ÓÃJTableºÍTableModel´´½¨±í¸ñ;
+package chapter12_11_ä½¿ç”¨JTableå’ŒTableModelåˆ›å»ºè¡¨æ ¼;
 
 
 import java.sql.*;
@@ -12,7 +12,7 @@ import javax.swing.event.*;
 import javax.swing.table.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -22,10 +22,10 @@ import javax.swing.table.*;
  */
 public class TableModelTest
 {
-	JFrame jf = new JFrame("Êı¾İ±í¹ÜÀí¹¤¾ß");
+	JFrame jf = new JFrame("æ•°æ®è¡¨ç®¡ç†å·¥å…·");
 	private JScrollPane scrollPane;
 	private ResultSetTableModel model;
-	// ÓÃÓÚ×°ÔØÊı¾İ±íµÄJComboBox
+	// ç”¨äºè£…è½½æ•°æ®è¡¨çš„JComboBox
 	private JComboBox<String> tableNames = new JComboBox<>();
 	private JTextArea changeMsg = new JTextArea(4, 80);
 	private ResultSet rs;
@@ -33,37 +33,37 @@ public class TableModelTest
 	private Statement stmt;
 	public void init()
 	{
-		// ÎªJComboBoxÌí¼ÓÊÂ¼ş¼àÌıÆ÷£¬µ±ÓÃ»§Ñ¡ÔñÄ³¸öÊı¾İ±íÊ±£¬´¥·¢¸Ã·½·¨
+		// ä¸ºJComboBoxæ·»åŠ äº‹ä»¶ç›‘å¬å™¨ï¼Œå½“ç”¨æˆ·é€‰æ‹©æŸä¸ªæ•°æ®è¡¨æ—¶ï¼Œè§¦å‘è¯¥æ–¹æ³•
 		tableNames.addActionListener(event -> {
 			try
 			{
-				// Èç¹û×°ÔØJTableµÄJScrollPane²»Îª¿Õ
+				// å¦‚æœè£…è½½JTableçš„JScrollPaneä¸ä¸ºç©º
 				if (scrollPane != null)
 				{
-					// ´ÓÖ÷´°¿ÚÖĞÉ¾³ı±í¸ñ
+					// ä»ä¸»çª—å£ä¸­åˆ é™¤è¡¨æ ¼
 					jf.remove(scrollPane);
 				}
-				// ´ÓJComboBoxÖĞÈ¡³öÓÃ»§ÊÔÍ¼¹ÜÀíµÄÊı¾İ±íµÄ±íÃû
+				// ä»JComboBoxä¸­å–å‡ºç”¨æˆ·è¯•å›¾ç®¡ç†çš„æ•°æ®è¡¨çš„è¡¨å
 				String tableName = (String) tableNames.getSelectedItem();
-				// Èç¹û½á¹û¼¯²»Îª¿Õ£¬Ôò¹Ø±Õ½á¹û¼¯
+				// å¦‚æœç»“æœé›†ä¸ä¸ºç©ºï¼Œåˆ™å…³é—­ç»“æœé›†
 				if (rs != null)
 				{
 					rs.close();
 				}
 				String query = "select * from " + tableName;
-				// ²éÑ¯ÓÃ»§Ñ¡ÔñµÄÊı¾İ±í
+				// æŸ¥è¯¢ç”¨æˆ·é€‰æ‹©çš„æ•°æ®è¡¨
 				rs = stmt.executeQuery(query);
-				// Ê¹ÓÃ²éÑ¯µ½µÄResultSet´´½¨TableModel¶ÔÏó
+				// ä½¿ç”¨æŸ¥è¯¢åˆ°çš„ResultSetåˆ›å»ºTableModelå¯¹è±¡
 				model = new ResultSetTableModel(rs);
-				// ÎªTableModelÌí¼Ó¼àÌıÆ÷£¬¼àÌıÓÃ»§µÄĞŞ¸Ä
+				// ä¸ºTableModelæ·»åŠ ç›‘å¬å™¨ï¼Œç›‘å¬ç”¨æˆ·çš„ä¿®æ”¹
 				model.addTableModelListener(evt -> {
 					int row = evt.getFirstRow();
 					int column = evt.getColumn();
-					changeMsg.append("ĞŞ¸ÄµÄÁĞ:" + column
-						+ ",ĞŞ¸ÄµÄĞĞ:" + row + "ĞŞ¸ÄºóµÄÖµ:"
+					changeMsg.append("ä¿®æ”¹çš„åˆ—:" + column
+						+ ",ä¿®æ”¹çš„è¡Œ:" + row + "ä¿®æ”¹åçš„å€¼:"
 						+ model.getValueAt(row , column));
 				});
-				// Ê¹ÓÃTableModel´´½¨JTable£¬²¢½«¶ÔÓ¦±í¸ñÌí¼Óµ½´°¿ÚÖĞ
+				// ä½¿ç”¨TableModelåˆ›å»ºJTableï¼Œå¹¶å°†å¯¹åº”è¡¨æ ¼æ·»åŠ åˆ°çª—å£ä¸­
 				JTable table = new JTable(model);
 				scrollPane = new JScrollPane(table);
 				jf.add(scrollPane, BorderLayout.CENTER);
@@ -80,17 +80,17 @@ public class TableModelTest
 		jf.add(new JScrollPane(changeMsg), BorderLayout.SOUTH);
 		try
 		{
-			// »ñÈ¡Êı¾İ¿âÁ¬½Ó
+			// è·å–æ•°æ®åº“è¿æ¥
 			conn = getConnection();
-			// »ñÈ¡Êı¾İ¿âµÄMetaData¶ÔÏó
+			// è·å–æ•°æ®åº“çš„MetaDataå¯¹è±¡
 			DatabaseMetaData meta = conn.getMetaData();
-			// ´´½¨Statement
+			// åˆ›å»ºStatement
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE
 				, ResultSet.CONCUR_UPDATABLE);
-			// ²éÑ¯µ±Ç°Êı¾İ¿âµÄÈ«²¿Êı¾İ±í
+			// æŸ¥è¯¢å½“å‰æ•°æ®åº“çš„å…¨éƒ¨æ•°æ®è¡¨
 			ResultSet tables = meta.getTables(null, null, null
 				, new String[] { "TABLE" });
-			// ½«È«²¿Êı¾İ±íÌí¼Óµ½JComboBoxÖĞ
+			// å°†å…¨éƒ¨æ•°æ®è¡¨æ·»åŠ åˆ°JComboBoxä¸­
 			while (tables.next())
 			{
 				tableNames.addItem(tables.getString(3));
@@ -126,7 +126,7 @@ public class TableModelTest
 	private static Connection getConnection()
 		throws SQLException, IOException , ClassNotFoundException
 	{
-		// Í¨¹ı¼ÓÔØconn.iniÎÄ¼şÀ´»ñÈ¡Êı¾İ¿âÁ¬½ÓµÄÏêÏ¸ĞÅÏ¢
+		// é€šè¿‡åŠ è½½conn.iniæ–‡ä»¶æ¥è·å–æ•°æ®åº“è¿æ¥çš„è¯¦ç»†ä¿¡æ¯
 		Properties props = new Properties();
 		FileInputStream in = new FileInputStream("conn.ini");
 		props.load(in);
@@ -135,9 +135,9 @@ public class TableModelTest
 		String url = props.getProperty("jdbc.url");
 		String username = props.getProperty("jdbc.username");
 		String password = props.getProperty("jdbc.password");
-		// ¼ÓÔØÊı¾İ¿âÇı¶¯
+		// åŠ è½½æ•°æ®åº“é©±åŠ¨
 		Class.forName(drivers);
-		// È¡µÃÊı¾İ¿âÁ¬½Ó
+		// å–å¾—æ•°æ®åº“è¿æ¥
 		return DriverManager.getConnection(url, username, password);
 	}
 	public static void main(String[] args)
@@ -145,12 +145,12 @@ public class TableModelTest
 		new TableModelTest().init();
 	}
 }
-// À©Õ¹AbstractTableModel£¬ÓÃÓÚ½«Ò»¸öResultSet°ü×°³ÉTableModel
-class ResultSetTableModel extends AbstractTableModel   // ¢Ù
+// æ‰©å±•AbstractTableModelï¼Œç”¨äºå°†ä¸€ä¸ªResultSetåŒ…è£…æˆTableModel
+class ResultSetTableModel extends AbstractTableModel   // â‘ 
 {
 	private ResultSet rs;
 	private ResultSetMetaData rsmd;
-	// ¹¹ÔìÆ÷£¬³õÊ¼»¯rsºÍrsmdÁ½¸öÊôĞÔ
+	// æ„é€ å™¨ï¼Œåˆå§‹åŒ–rså’Œrsmdä¸¤ä¸ªå±æ€§
 	public ResultSetTableModel(ResultSet aResultSet)
 	{
 		rs = aResultSet;
@@ -163,7 +163,7 @@ class ResultSetTableModel extends AbstractTableModel   // ¢Ù
 			e.printStackTrace();
 		}
 	}
-	// ÖØĞ´getColumnName·½·¨£¬ÓÃÓÚÎª¸ÃTableModelÉèÖÃÁĞÃû
+	// é‡å†™getColumnNameæ–¹æ³•ï¼Œç”¨äºä¸ºè¯¥TableModelè®¾ç½®åˆ—å
 	public String getColumnName(int c)
 	{
 		try
@@ -176,7 +176,7 @@ class ResultSetTableModel extends AbstractTableModel   // ¢Ù
 			return "";
 		}
 	}
-	// ÖØĞ´getColumnCount·½·¨£¬ÓÃÓÚÉèÖÃ¸ÃTableModelµÄÁĞÊı
+	// é‡å†™getColumnCountæ–¹æ³•ï¼Œç”¨äºè®¾ç½®è¯¥TableModelçš„åˆ—æ•°
 	public int getColumnCount()
 	{
 		try
@@ -189,7 +189,7 @@ class ResultSetTableModel extends AbstractTableModel   // ¢Ù
 			return 0;
 		}
 	}
-	// ÖØĞ´getValueAt·½·¨£¬ÓÃÓÚÉèÖÃ¸ÃTableModelÖ¸¶¨µ¥Ôª¸ñµÄÖµ
+	// é‡å†™getValueAtæ–¹æ³•ï¼Œç”¨äºè®¾ç½®è¯¥TableModelæŒ‡å®šå•å…ƒæ ¼çš„å€¼
 	public Object getValueAt(int r, int c)
 	{
 		try
@@ -203,7 +203,7 @@ class ResultSetTableModel extends AbstractTableModel   // ¢Ù
 			return null;
 		}
 	}
-	// ÖØĞ´getColumnCount·½·¨£¬ÓÃÓÚÉèÖÃ¸ÃTableModelµÄĞĞÊı
+	// é‡å†™getColumnCountæ–¹æ³•ï¼Œç”¨äºè®¾ç½®è¯¥TableModelçš„è¡Œæ•°
 	public int getRowCount()
 	{
 		try
@@ -217,23 +217,23 @@ class ResultSetTableModel extends AbstractTableModel   // ¢Ù
 			return 0;
 		}
 	}
-	// ÖØĞ´isCellEditable·µ»Øtrue£¬ÈÃÃ¿¸öµ¥Ôª¸ñ¿É±à¼­
+	// é‡å†™isCellEditableè¿”å›trueï¼Œè®©æ¯ä¸ªå•å…ƒæ ¼å¯ç¼–è¾‘
 	public boolean isCellEditable(int rowIndex, int columnIndex)
 	{
 		return true;
 	}
-	// ÖØĞ´setValueAt()·½·¨£¬µ±ÓÃ»§±à¼­µ¥Ôª¸ñÊ±£¬½«»á´¥·¢¸Ã·½·¨
+	// é‡å†™setValueAt()æ–¹æ³•ï¼Œå½“ç”¨æˆ·ç¼–è¾‘å•å…ƒæ ¼æ—¶ï¼Œå°†ä¼šè§¦å‘è¯¥æ–¹æ³•
 	public void setValueAt(Object aValue , int row,int column)
 	{
 		try
 		{
-			// ½á¹û¼¯¶¨Î»µ½¶ÔÓ¦µÄĞĞÊı
+			// ç»“æœé›†å®šä½åˆ°å¯¹åº”çš„è¡Œæ•°
 			rs.absolute(row + 1);
-			// ĞŞ¸Äµ¥Ôª¸ñ¶à¶ÔÓ¦µÄÖµ
+			// ä¿®æ”¹å•å…ƒæ ¼å¤šå¯¹åº”çš„å€¼
 			rs.updateObject(column + 1 , aValue);
-			// Ìá½»ĞŞ¸Ä
+			// æäº¤ä¿®æ”¹
 			rs.updateRow();
-			// ´¥·¢µ¥Ôª¸ñµÄĞŞ¸ÄÊÂ¼ş
+			// è§¦å‘å•å…ƒæ ¼çš„ä¿®æ”¹äº‹ä»¶
 			fireTableCellUpdated(row, column);
 		}
 		catch (SQLException evt)

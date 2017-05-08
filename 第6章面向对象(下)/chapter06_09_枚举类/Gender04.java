@@ -1,9 +1,9 @@
-package chapter06_09_Ã¶¾ÙÀà;
+package chapter06_09_æšä¸¾ç±»;
 
 
 /**
- * Description:Ã¶¾ÙÀàÊ¹ÓÃ
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:æšä¸¾ç±»ä½¿ç”¨
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,7 +14,7 @@ package chapter06_09_Ã¶¾ÙÀà;
 public enum Gender04
 {
 	MALE,FEMALE;
-	// ¶¨ÒåÒ»¸öpublicĞŞÊÎµÄÊµÀı±äÁ¿
+	// å®šä¹‰ä¸€ä¸ªpublicä¿®é¥°çš„å®ä¾‹å˜é‡
 	public String name;
 }
 

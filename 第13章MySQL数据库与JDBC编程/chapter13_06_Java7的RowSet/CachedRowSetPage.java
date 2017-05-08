@@ -1,4 +1,4 @@
-package chapter13_06_Java7µÄRowSet;
+package chapter13_06_Java7çš„RowSet;
 
 import java.util.*;
 import java.io.*;
@@ -8,7 +8,7 @@ import javax.sql.rowset.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -24,7 +24,7 @@ public class CachedRowSetPage {
 	private String pass;
 
 	public void initParam(String paramFile) throws Exception {
-		// Ê¹ÓÃPropertiesÀàÀ´¼ÓÔØÊôĞÔÎÄ¼ş
+		// ä½¿ç”¨Propertiesç±»æ¥åŠ è½½å±æ€§æ–‡ä»¶
 		Properties props = new Properties();
 		props.load(new FileInputStream(paramFile));
 		driver = props.getProperty("driver");
@@ -34,20 +34,20 @@ public class CachedRowSetPage {
 	}
 
 	public CachedRowSet query(String sql, int pageSize, int page) throws Exception {
-		// ¼ÓÔØÇı¶¯
+		// åŠ è½½é©±åŠ¨
 		Class.forName(driver);
 		try (
-				// »ñÈ¡Êı¾İ¿âÁ¬½Ó
+				// è·å–æ•°æ®åº“è¿æ¥
 				Connection conn = DriverManager.getConnection(url, user, pass);
 				Statement stmt = conn.createStatement(); 
 				ResultSet rs = stmt.executeQuery(sql)) {
-			// Ê¹ÓÃRowSetProvider´´½¨RowSetFactory
+			// ä½¿ç”¨RowSetProvideråˆ›å»ºRowSetFactory
 			RowSetFactory factory = RowSetProvider.newFactory();
-			// ´´½¨Ä¬ÈÏµÄCachedRowSetÊµÀı
+			// åˆ›å»ºé»˜è®¤çš„CachedRowSetå®ä¾‹
 			CachedRowSet cachedRs = factory.createCachedRowSet();
-			// ÉèÖÃÃ¿Ò³ÏÔÊ¾pageSizeÌõ¼ÇÂ¼
+			// è®¾ç½®æ¯é¡µæ˜¾ç¤ºpageSizeæ¡è®°å½•
 			cachedRs.setPageSize(pageSize);
-			// Ê¹ÓÃResultSet×°ÌîRowSet£¬ÉèÖÃ´ÓµÚ¼¸Ìõ¼ÇÂ¼¿ªÊ¼
+			// ä½¿ç”¨ResultSetè£…å¡«RowSetï¼Œè®¾ç½®ä»ç¬¬å‡ æ¡è®°å½•å¼€å§‹
 			cachedRs.populate(rs, (page - 1) * pageSize + 1);
 			return cachedRs;
 		}
@@ -55,9 +55,9 @@ public class CachedRowSetPage {
 
 	public static void main(String[] args) throws Exception {
 		CachedRowSetPage cp = new CachedRowSetPage();
-		cp.initParam("resource\\chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½\\mysql.ini");
-		CachedRowSet rs = cp.query("select * from student_table", 3, 2); // ¢Ù
-		// Ïòºó¹ö¶¯½á¹û¼¯
+		cp.initParam("resource\\chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼\\mysql.ini");
+		CachedRowSet rs = cp.query("select * from student_table", 3, 2); // â‘ 
+		// å‘åæ»šåŠ¨ç»“æœé›†
 		while (rs.next()) {
 			System.out.println(rs.getString(1) + "\t" + rs.getString(2) + "\t" + rs.getString(3));
 		}

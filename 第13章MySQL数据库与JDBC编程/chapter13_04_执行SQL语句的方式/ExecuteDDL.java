@@ -1,12 +1,12 @@
-package chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½;
+package chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼;
 
 
 import java.util.*;
 import java.io.*;
 import java.sql.*;
 /**
- * Description:Ö´ĞĞDDLÓï¾ä£¬·µ»Ø½á¹û0£¬DMLÓï¾ä·µ»ØÊÕÓ°ÏìµÄÊı¾İ¼ÇÂ¼Êı¡£
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:æ‰§è¡ŒDDLè¯­å¥ï¼Œè¿”å›ç»“æœ0ï¼ŒDMLè¯­å¥è¿”å›æ”¶å½±å“çš„æ•°æ®è®°å½•æ•°ã€‚
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -23,7 +23,7 @@ public class ExecuteDDL
 	public void initParam(String paramFile)
 		throws Exception
 	{
-		// Ê¹ÓÃPropertiesÀàÀ´¼ÓÔØÊôĞÔÎÄ¼ş
+		// ä½¿ç”¨Propertiesç±»æ¥åŠ è½½å±æ€§æ–‡ä»¶
 		Properties props = new Properties();
 		props.load(new FileInputStream(paramFile));
 		driver = props.getProperty("driver");
@@ -33,27 +33,27 @@ public class ExecuteDDL
 	}
 	public void createTable(String sql)throws Exception
 	{
-		// ¼ÓÔØÇı¶¯
+		// åŠ è½½é©±åŠ¨
 		Class.forName(driver);
 		try(
-		// »ñÈ¡Êı¾İ¿âÁ¬½Ó
+		// è·å–æ•°æ®åº“è¿æ¥
 		Connection conn = DriverManager.getConnection(url , user , pass);
-		// Ê¹ÓÃConnectionÀ´´´½¨Ò»¸öStatment¶ÔÏó
+		// ä½¿ç”¨Connectionæ¥åˆ›å»ºä¸€ä¸ªStatmentå¯¹è±¡
 		Statement stmt = conn.createStatement())
 		{
-			// Ö´ĞĞDDL,´´½¨Êı¾İ±í
+			// æ‰§è¡ŒDDL,åˆ›å»ºæ•°æ®è¡¨
 			stmt.executeUpdate(sql);
 		}
 	}
 	public static void main(String[] args) throws Exception
 	{
 		ExecuteDDL ed = new ExecuteDDL();
-		ed.initParam("resource\\chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½\\mysql.ini");
+		ed.initParam("resource\\chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼\\mysql.ini");
 		ed.createTable("create table jdbc_test "
 			+ "( jdbc_id int auto_increment primary key, "
 			+ "jdbc_name varchar(255), "
 			+ "jdbc_desc text);");
-		System.out.println("-----½¨±í³É¹¦-----");
+		System.out.println("-----å»ºè¡¨æˆåŠŸ-----");
 	}
 }
 

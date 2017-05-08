@@ -1,4 +1,4 @@
-package chapter12_03_SwingÖĞµÄÌØÊâÈİÆ÷;
+package chapter12_03_Swingä¸­çš„ç‰¹æ®Šå®¹å™¨;
 
 
 import java.awt.*;
@@ -7,7 +7,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -29,7 +29,7 @@ class Book
 		this.ico = ico;
 		this.desc = desc;
 	}
-	// nameµÄsetterºÍgetter·½·¨
+	// nameçš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name)
 	{
 		this.name = name;
@@ -39,7 +39,7 @@ class Book
 		 return this.name;
 	}
 
-	// icoµÄsetterºÍgetter·½·¨
+	// icoçš„setterå’Œgetteræ–¹æ³•
 	public void setIco(Icon ico)
 	{
 		this.ico = ico;
@@ -49,7 +49,7 @@ class Book
 		 return this.ico;
 	}
 
-	// descµÄsetterºÍgetter·½·¨
+	// descçš„setterå’Œgetteræ–¹æ³•
 	public void setDesc(String desc)
 	{
 		this.desc = desc;
@@ -66,41 +66,41 @@ class Book
 public class SplitPaneTest
 {
 	Book[] books = new Book[]{
-		new Book("·è¿ñJava½²Òå" , new ImageIcon("ico/java.png")
-			, "¹úÄÚ¹ØÓÚJava±à³Ì×îÈ«ÃæµÄÍ¼Êé\n¿´µÃ¶®£¬Ñ§µÃ»á")
-		, new Book("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½" , new ImageIcon("ico/ee.png")
-			, "SSHÕûºÏ¿ª·¢µÄ¾­µäÍ¼Êé£¬ÖµµÃÓµÓĞ")
-		, new Book("·è¿ñAndroid½²Òå" , new ImageIcon("ico/android.png")
-			, "È«Ãæ½éÉÜAndroidÆ½Ì¨Ó¦ÓÃ³ÌĞò\n¿ª·¢µÄ¸÷·½ÃæÖªÊ¶")
+		new Book("ç–¯ç‹‚Javaè®²ä¹‰" , new ImageIcon("ico/java.png")
+			, "å›½å†…å…³äºJavaç¼–ç¨‹æœ€å…¨é¢çš„å›¾ä¹¦\nçœ‹å¾—æ‡‚ï¼Œå­¦å¾—ä¼š")
+		, new Book("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜" , new ImageIcon("ico/ee.png")
+			, "SSHæ•´åˆå¼€å‘çš„ç»å…¸å›¾ä¹¦ï¼Œå€¼å¾—æ‹¥æœ‰")
+		, new Book("ç–¯ç‹‚Androidè®²ä¹‰" , new ImageIcon("ico/android.png")
+			, "å…¨é¢ä»‹ç»Androidå¹³å°åº”ç”¨ç¨‹åº\nå¼€å‘çš„å„æ–¹é¢çŸ¥è¯†")
 	};
-	JFrame jf = new JFrame("²âÊÔJSplitPane");
+	JFrame jf = new JFrame("æµ‹è¯•JSplitPane");
 	JList<Book> bookList = new JList<>(books);
 	JLabel bookCover = new JLabel();
 	JTextArea bookDesc = new JTextArea();
 	public void init()
 	{
-		// ÎªÈı¸ö×é¼şÉèÖÃ×î¼Ñ´óĞ¡
+		// ä¸ºä¸‰ä¸ªç»„ä»¶è®¾ç½®æœ€ä½³å¤§å°
 		bookList.setPreferredSize(new Dimension(150, 300));
 		bookCover.setPreferredSize(new Dimension(300, 150));
 		bookDesc.setPreferredSize(new Dimension(300, 150));
-		// ÎªÏÂÀ­ÁĞ±íÌí¼ÓÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºä¸‹æ‹‰åˆ—è¡¨æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
 		bookList.addListSelectionListener(event ->{
 			Book book = (Book)bookList.getSelectedValue();
 			bookCover.setIcon(book.getIco());
 			bookDesc.setText(book.getDesc());
 		});
-		// ´´½¨Ò»¸ö´¹Ö±µÄ·Ö¸îÃæ°å£¬
-		// ½«bookCover·ÅÔÚÉÏÃæ£¬½«bookDesc·ÅÔÚÏÂÃæ, Ö§³ÖÁ¬Ğø²¼¾Ö
+		// åˆ›å»ºä¸€ä¸ªå‚ç›´çš„åˆ†å‰²é¢æ¿ï¼Œ
+		// å°†bookCoveræ”¾åœ¨ä¸Šé¢ï¼Œå°†bookDescæ”¾åœ¨ä¸‹é¢, æ”¯æŒè¿ç»­å¸ƒå±€
 		JSplitPane left = new JSplitPane(JSplitPane.VERTICAL_SPLIT
 			, true , bookCover, new JScrollPane(bookDesc));
-		// ´ò¿ª¡°Ò»´¥¼´Õ¹¡±µÄÌØĞÔ
+		// æ‰“å¼€â€œä¸€è§¦å³å±•â€çš„ç‰¹æ€§
 		left.setOneTouchExpandable(true);
-		// ÏÂÃæ´úÂëÉèÖÃ·Ö¸îÌõµÄ´óĞ¡¡£
+		// ä¸‹é¢ä»£ç è®¾ç½®åˆ†å‰²æ¡çš„å¤§å°ã€‚
 		// left.setDividerSize(50);
-		// ÉèÖÃ¸Ã·Ö¸îÃæ°å¸ù¾İËù°üº¬×é¼şµÄ×î¼Ñ´óĞ¡À´µ÷Õû²¼¾Ö
+		// è®¾ç½®è¯¥åˆ†å‰²é¢æ¿æ ¹æ®æ‰€åŒ…å«ç»„ä»¶çš„æœ€ä½³å¤§å°æ¥è°ƒæ•´å¸ƒå±€
 		left.resetToPreferredSizes();
-		// ´´½¨Ò»¸öË®Æ½µÄ·Ö¸îÃæ°å
-		// ½«left×é¼ş·ÅÔÚ×ó±ß£¬½«bookList×é¼ş·ÅÔÚÓÒ±ß
+		// åˆ›å»ºä¸€ä¸ªæ°´å¹³çš„åˆ†å‰²é¢æ¿
+		// å°†leftç»„ä»¶æ”¾åœ¨å·¦è¾¹ï¼Œå°†bookListç»„ä»¶æ”¾åœ¨å³è¾¹
 		JSplitPane content = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT
 			, left, bookList);
 		jf.add(content);

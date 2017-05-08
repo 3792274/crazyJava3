@@ -1,10 +1,10 @@
-package chapter08_06_java8ÔöÇ¿µÄMap¼¯ºÏ;
+package chapter08_06_java8å¢å¼ºçš„Mapé›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,7 +20,7 @@ class A
 	{
 		this.count = count;
 	}
-	// ¸ù¾İcountµÄÖµÀ´ÅĞ¶ÏÁ½¸ö¶ÔÏóÊÇ·ñÏàµÈ¡£
+	// æ ¹æ®countçš„å€¼æ¥åˆ¤æ–­ä¸¤ä¸ªå¯¹è±¡æ˜¯å¦ç›¸ç­‰ã€‚
 	public boolean equals(Object obj)
 	{
 		if (obj == this)
@@ -32,7 +32,7 @@ class A
 		}
 		return false;
 	}
-	// ¸ù¾İcountÀ´¼ÆËãhashCodeÖµ¡£
+	// æ ¹æ®countæ¥è®¡ç®—hashCodeå€¼ã€‚
 	public int hashCode()
 	{
 		return this.count;
@@ -40,7 +40,7 @@ class A
 }
 class B
 {
-	// ÖØĞ´equals()·½·¨£¬B¶ÔÏóÓëÈÎºÎ¶ÔÏóÍ¨¹ıequals()·½·¨±È½Ï¶¼·µ»Øtrue
+	// é‡å†™equals()æ–¹æ³•ï¼ŒBå¯¹è±¡ä¸ä»»ä½•å¯¹è±¡é€šè¿‡equals()æ–¹æ³•æ¯”è¾ƒéƒ½è¿”å›true
 	public boolean equals(Object obj)
 	{
 		return true;
@@ -51,23 +51,23 @@ public class HashtableTest
 	public static void main(String[] args)
 	{
 		Hashtable ht = new Hashtable();
-		ht.put(new A(60000) , "·è¿ñJava½²Òå");
-		ht.put(new A(87563) , "ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
+		ht.put(new A(60000) , "ç–¯ç‹‚Javaè®²ä¹‰");
+		ht.put(new A(87563) , "è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
 		ht.put(new A(1232) , new B());
 		System.out.println(ht);
 		
-		// Ö»ÒªÁ½¸ö¶ÔÏóÍ¨¹ıequals±È½Ï·µ»Øtrue£¬
-		// Hashtable¾ÍÈÏÎªËüÃÇÊÇÏàµÈµÄvalue¡£
-		// ÓÉÓÚHashtableÖĞÓĞÒ»¸öB¶ÔÏó£¬
-		// ËüÓëÈÎºÎ¶ÔÏóÍ¨¹ıequals±È½Ï¶¼ÏàµÈ£¬ËùÒÔÏÂÃæÊä³ötrue¡£
-		System.out.println(ht.containsValue("²âÊÔ×Ö·û´®")); // ¢Ù Êä³ötrue
+		// åªè¦ä¸¤ä¸ªå¯¹è±¡é€šè¿‡equalsæ¯”è¾ƒè¿”å›trueï¼Œ
+		// Hashtableå°±è®¤ä¸ºå®ƒä»¬æ˜¯ç›¸ç­‰çš„valueã€‚
+		// ç”±äºHashtableä¸­æœ‰ä¸€ä¸ªBå¯¹è±¡ï¼Œ
+		// å®ƒä¸ä»»ä½•å¯¹è±¡é€šè¿‡equalsæ¯”è¾ƒéƒ½ç›¸ç­‰ï¼Œæ‰€ä»¥ä¸‹é¢è¾“å‡ºtrueã€‚
+		System.out.println(ht.containsValue("æµ‹è¯•å­—ç¬¦ä¸²")); // â‘  è¾“å‡ºtrue
 		
-		// Ö»ÒªÁ½¸öA¶ÔÏóµÄcountÏàµÈ£¬ËüÃÇÍ¨¹ıequals±È½Ï·µ»Øtrue£¬ÇÒhashCodeÏàµÈ
-		// Hashtable¼´ÈÏÎªËüÃÇÊÇÏàÍ¬µÄkey£¬ËùÒÔÏÂÃæÊä³ötrue¡£
-		System.out.println(ht.containsKey(new A(87563)));   // ¢Ú Êä³ötrue
+		// åªè¦ä¸¤ä¸ªAå¯¹è±¡çš„countç›¸ç­‰ï¼Œå®ƒä»¬é€šè¿‡equalsæ¯”è¾ƒè¿”å›trueï¼Œä¸”hashCodeç›¸ç­‰
+		// Hashtableå³è®¤ä¸ºå®ƒä»¬æ˜¯ç›¸åŒçš„keyï¼Œæ‰€ä»¥ä¸‹é¢è¾“å‡ºtrueã€‚
+		System.out.println(ht.containsKey(new A(87563)));   // â‘¡ è¾“å‡ºtrue
 	
-		// ÏÂÃæÓï¾ä¿ÉÒÔÉ¾³ı×îºóÒ»¸ökey-value¶Ô
-		ht.remove(new A(1232));    //¢Û
+		// ä¸‹é¢è¯­å¥å¯ä»¥åˆ é™¤æœ€åä¸€ä¸ªkey-valueå¯¹
+		ht.remove(new A(1232));    //â‘¢
 		System.out.println(ht);
 	}
 }

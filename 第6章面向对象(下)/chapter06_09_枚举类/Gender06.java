@@ -1,29 +1,29 @@
-package chapter06_09_Ã¶¾ÙÀà;
+package chapter06_09_æšä¸¾ç±»;
 
-//¸Ä½øµÄGenderÀà£¬ÔöÇ¿·â×°
+//æ”¹è¿›çš„Genderç±»ï¼Œå¢å¼ºå°è£…
 public enum Gender06{
 	MALE,FEMALE;
 	
 	private String name;
 	
 	
-	//ÅĞ¶ÏÃ¶¾ÙÀàĞÍÉèÖÃµÄÃû×ÖÊÇ·ñÒ»ÖÂ¡£
+	//åˆ¤æ–­æšä¸¾ç±»å‹è®¾ç½®çš„åå­—æ˜¯å¦ä¸€è‡´ã€‚
 	public void setName(String name){
 		switch (this) {
 		case MALE:
-			if(name().equals("ÄĞ"))
+			if(name().equals("ç”·"))
 				this.name = name;
 			else{
-				System.out.println("²ÎÊı´íÎó");
+				System.out.println("å‚æ•°é”™è¯¯");
 				return;
 			}
 			
 			break;
 		case FEMALE:
-			if(name.equals("Å®"))
+			if(name.equals("å¥³"))
 				this.name = name;
 			else {
-				System.out.println("²ÎÊı´íÎó");
+				System.out.println("å‚æ•°é”™è¯¯");
 				return;
 			}
 			break;
@@ -32,7 +32,7 @@ public enum Gender06{
 	}
 	
 	
-	//»ñµÃÃû×Ö
+	//è·å¾—åå­—
 	public String getName() {
 		return this.name;
 	}

@@ -1,5 +1,5 @@
 
-package chapter07_06_¹ú¼Ê»¯Óë¸ñÊ½»¯;
+package chapter07_06_å›½é™…åŒ–ä¸æ ¼å¼åŒ–;
 
 import java.text.MessageFormat;
 import java.util.Date;
@@ -7,7 +7,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -19,27 +19,27 @@ public class HelloArg02
 {
 	public static void main(String[] args)
 	{
-		// ¶¨ÒåÒ»¸öLocale±äÁ¿
+		// å®šä¹‰ä¸€ä¸ªLocaleå˜é‡
 		Locale currentLocale = null;
 	
-		// Èç¹ûÔËĞĞ³ÌĞòµÄÖ¸¶¨ÁËÁ½¸ö²ÎÊı
+		// å¦‚æœè¿è¡Œç¨‹åºçš„æŒ‡å®šäº†ä¸¤ä¸ªå‚æ•°
 		if (args.length == 2)
 		{
-			// Ê¹ÓÃÔËĞĞ³ÌĞòµÄÁ½¸ö²ÎÊı¹¹ÔìLocaleÊµÀı
+			// ä½¿ç”¨è¿è¡Œç¨‹åºçš„ä¸¤ä¸ªå‚æ•°æ„é€ Localeå®ä¾‹
 			currentLocale = new Locale(args[0] , args[1]);
 		}
 		else
 		{
-			// ·ñÔòÖ±½ÓÊ¹ÓÃÏµÍ³Ä¬ÈÏµÄLocale
+			// å¦åˆ™ç›´æ¥ä½¿ç”¨ç³»ç»Ÿé»˜è®¤çš„Locale
 			currentLocale = Locale.getDefault(Locale.Category.FORMAT);
 		}
-		// ¸ù¾İLocale¼ÓÔØÓïÑÔ×ÊÔ´
+		// æ ¹æ®LocaleåŠ è½½è¯­è¨€èµ„æº
 		ResourceBundle bundle = ResourceBundle .getBundle(HelloArg02.class.getPackage().toString().substring(8)+"\\myMess" , currentLocale);
 	
-		// È¡µÃÒÑ¼ÓÔØµÄÓïÑÔ×ÊÔ´ÎÄ¼şÖĞmsg¶ÔÓ¦ÏûÏ¢
+		// å–å¾—å·²åŠ è½½çš„è¯­è¨€èµ„æºæ–‡ä»¶ä¸­msgå¯¹åº”æ¶ˆæ¯
 		String msg = bundle.getString("msg");
 		
-		// Ê¹ÓÃMessageFormatÎª´øÕ¼Î»·ûµÄ×Ö·û´®´«Èë²ÎÊı
+		// ä½¿ç”¨MessageFormatä¸ºå¸¦å ä½ç¬¦çš„å­—ç¬¦ä¸²ä¼ å…¥å‚æ•°
 		System.out.println(MessageFormat.format(msg , "yeeku" , new Date()));
 	}
 }

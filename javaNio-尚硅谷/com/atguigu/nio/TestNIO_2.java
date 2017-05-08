@@ -19,7 +19,7 @@ import org.junit.Test;
 public class TestNIO_2 {
 	
 	
-	//×Ô¶¯×ÊÔ´¹ÜÀí£º×Ô¶¯¹Ø±ÕÊµÏÖ AutoCloseable ½Ó¿ÚµÄ×ÊÔ´
+	//è‡ªåŠ¨èµ„æºç®¡ç†ï¼šè‡ªåŠ¨å…³é—­å®ç° AutoCloseable æ¥å£çš„èµ„æº
 	@Test
 	public void test8(){
 		try(FileChannel inChannel = FileChannel.open(Paths.get("1.jpg"), StandardOpenOption.READ);
@@ -34,11 +34,11 @@ public class TestNIO_2 {
 	}
 	
 	/*
-		Files³£ÓÃ·½·¨£ºÓÃÓÚ²Ù×÷ÄÚÈİ
-			SeekableByteChannel newByteChannel(Path path, OpenOption¡­how) : »ñÈ¡ÓëÖ¸¶¨ÎÄ¼şµÄÁ¬½Ó£¬how Ö¸¶¨´ò¿ª·½Ê½¡£
-			DirectoryStream newDirectoryStream(Path path) : ´ò¿ª path Ö¸¶¨µÄÄ¿Â¼
-			InputStream newInputStream(Path path, OpenOption¡­how):»ñÈ¡ InputStream ¶ÔÏó
-			OutputStream newOutputStream(Path path, OpenOption¡­how) : »ñÈ¡ OutputStream ¶ÔÏó
+		Fileså¸¸ç”¨æ–¹æ³•ï¼šç”¨äºæ“ä½œå†…å®¹
+			SeekableByteChannel newByteChannel(Path path, OpenOptionâ€¦how) : è·å–ä¸æŒ‡å®šæ–‡ä»¶çš„è¿æ¥ï¼Œhow æŒ‡å®šæ‰“å¼€æ–¹å¼ã€‚
+			DirectoryStream newDirectoryStream(Path path) : æ‰“å¼€ path æŒ‡å®šçš„ç›®å½•
+			InputStream newInputStream(Path path, OpenOptionâ€¦how):è·å– InputStream å¯¹è±¡
+			OutputStream newOutputStream(Path path, OpenOptionâ€¦how) : è·å– OutputStream å¯¹è±¡
 	 */
 	@Test
 	public void test7() throws IOException{
@@ -52,15 +52,15 @@ public class TestNIO_2 {
 	}
 	
 	/*
-		Files³£ÓÃ·½·¨£ºÓÃÓÚÅĞ¶Ï
-			boolean exists(Path path, LinkOption ¡­ opts) : ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ
-			boolean isDirectory(Path path, LinkOption ¡­ opts) : ÅĞ¶ÏÊÇ·ñÊÇÄ¿Â¼
-			boolean isExecutable(Path path) : ÅĞ¶ÏÊÇ·ñÊÇ¿ÉÖ´ĞĞÎÄ¼ş
-			boolean isHidden(Path path) : ÅĞ¶ÏÊÇ·ñÊÇÒş²ØÎÄ¼ş
-			boolean isReadable(Path path) : ÅĞ¶ÏÎÄ¼şÊÇ·ñ¿É¶Á
-			boolean isWritable(Path path) : ÅĞ¶ÏÎÄ¼şÊÇ·ñ¿ÉĞ´
-			boolean notExists(Path path, LinkOption ¡­ opts) : ÅĞ¶ÏÎÄ¼şÊÇ·ñ²»´æÔÚ
-			public static <A extends BasicFileAttributes> A readAttributes(Path path,Class<A> type,LinkOption... options) : »ñÈ¡Óë path Ö¸¶¨µÄÎÄ¼şÏà¹ØÁªµÄÊôĞÔ¡£
+		Fileså¸¸ç”¨æ–¹æ³•ï¼šç”¨äºåˆ¤æ–­
+			boolean exists(Path path, LinkOption â€¦ opts) : åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨
+			boolean isDirectory(Path path, LinkOption â€¦ opts) : åˆ¤æ–­æ˜¯å¦æ˜¯ç›®å½•
+			boolean isExecutable(Path path) : åˆ¤æ–­æ˜¯å¦æ˜¯å¯æ‰§è¡Œæ–‡ä»¶
+			boolean isHidden(Path path) : åˆ¤æ–­æ˜¯å¦æ˜¯éšè—æ–‡ä»¶
+			boolean isReadable(Path path) : åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å¯è¯»
+			boolean isWritable(Path path) : åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å¯å†™
+			boolean notExists(Path path, LinkOption â€¦ opts) : åˆ¤æ–­æ–‡ä»¶æ˜¯å¦ä¸å­˜åœ¨
+			public static <A extends BasicFileAttributes> A readAttributes(Path path,Class<A> type,LinkOption... options) : è·å–ä¸ path æŒ‡å®šçš„æ–‡ä»¶ç›¸å…³è”çš„å±æ€§ã€‚
 	 */
 	@Test
 	public void test6() throws IOException{
@@ -77,13 +77,13 @@ public class TestNIO_2 {
 	}
 	
 	/*
-		Files³£ÓÃ·½·¨£º
-			Path copy(Path src, Path dest, CopyOption ¡­ how) : ÎÄ¼şµÄ¸´ÖÆ
-			Path createDirectory(Path path, FileAttribute<?> ¡­ attr) : ´´½¨Ò»¸öÄ¿Â¼
-			Path createFile(Path path, FileAttribute<?> ¡­ arr) : ´´½¨Ò»¸öÎÄ¼ş
-			void delete(Path path) : É¾³ıÒ»¸öÎÄ¼ş
-			Path move(Path src, Path dest, CopyOption¡­how) : ½« src ÒÆ¶¯µ½ dest Î»ÖÃ
-			long size(Path path) : ·µ»Ø path Ö¸¶¨ÎÄ¼şµÄ´óĞ¡
+		Fileså¸¸ç”¨æ–¹æ³•ï¼š
+			Path copy(Path src, Path dest, CopyOption â€¦ how) : æ–‡ä»¶çš„å¤åˆ¶
+			Path createDirectory(Path path, FileAttribute<?> â€¦ attr) : åˆ›å»ºä¸€ä¸ªç›®å½•
+			Path createFile(Path path, FileAttribute<?> â€¦ arr) : åˆ›å»ºä¸€ä¸ªæ–‡ä»¶
+			void delete(Path path) : åˆ é™¤ä¸€ä¸ªæ–‡ä»¶
+			Path move(Path src, Path dest, CopyOptionâ€¦how) : å°† src ç§»åŠ¨åˆ° dest ä½ç½®
+			long size(Path path) : è¿”å› path æŒ‡å®šæ–‡ä»¶çš„å¤§å°
 	 */
 	@Test
 	public void test5() throws IOException{
@@ -115,20 +115,20 @@ public class TestNIO_2 {
 	}
 	
 	/*
-		Paths Ìá¹©µÄ get() ·½·¨ÓÃÀ´»ñÈ¡ Path ¶ÔÏó£º
-			Path get(String first, String ¡­ more) : ÓÃÓÚ½«¶à¸ö×Ö·û´®´®Á¬³ÉÂ·¾¶¡£
-		Path ³£ÓÃ·½·¨£º
-			boolean endsWith(String path) : ÅĞ¶ÏÊÇ·ñÒÔ path Â·¾¶½áÊø
-			boolean startsWith(String path) : ÅĞ¶ÏÊÇ·ñÒÔ path Â·¾¶¿ªÊ¼
-			boolean isAbsolute() : ÅĞ¶ÏÊÇ·ñÊÇ¾ø¶ÔÂ·¾¶
-			Path getFileName() : ·µ»ØÓëµ÷ÓÃ Path ¶ÔÏó¹ØÁªµÄÎÄ¼şÃû
-			Path getName(int idx) : ·µ»ØµÄÖ¸¶¨Ë÷ÒıÎ»ÖÃ idx µÄÂ·¾¶Ãû³Æ
-			int getNameCount() : ·µ»ØPath ¸ùÄ¿Â¼ºóÃæÔªËØµÄÊıÁ¿
-			Path getParent() £º·µ»ØPath¶ÔÏó°üº¬Õû¸öÂ·¾¶£¬²»°üº¬ Path ¶ÔÏóÖ¸¶¨µÄÎÄ¼şÂ·¾¶
-			Path getRoot() £º·µ»Øµ÷ÓÃ Path ¶ÔÏóµÄ¸ùÂ·¾¶
-			Path resolve(Path p) :½«Ïà¶ÔÂ·¾¶½âÎöÎª¾ø¶ÔÂ·¾¶
-			Path toAbsolutePath() : ×÷Îª¾ø¶ÔÂ·¾¶·µ»Øµ÷ÓÃ Path ¶ÔÏó
-			String toString() £º ·µ»Øµ÷ÓÃ Path ¶ÔÏóµÄ×Ö·û´®±íÊ¾ĞÎÊ½
+		Paths æä¾›çš„ get() æ–¹æ³•ç”¨æ¥è·å– Path å¯¹è±¡ï¼š
+			Path get(String first, String â€¦ more) : ç”¨äºå°†å¤šä¸ªå­—ç¬¦ä¸²ä¸²è¿æˆè·¯å¾„ã€‚
+		Path å¸¸ç”¨æ–¹æ³•ï¼š
+			boolean endsWith(String path) : åˆ¤æ–­æ˜¯å¦ä»¥ path è·¯å¾„ç»“æŸ
+			boolean startsWith(String path) : åˆ¤æ–­æ˜¯å¦ä»¥ path è·¯å¾„å¼€å§‹
+			boolean isAbsolute() : åˆ¤æ–­æ˜¯å¦æ˜¯ç»å¯¹è·¯å¾„
+			Path getFileName() : è¿”å›ä¸è°ƒç”¨ Path å¯¹è±¡å…³è”çš„æ–‡ä»¶å
+			Path getName(int idx) : è¿”å›çš„æŒ‡å®šç´¢å¼•ä½ç½® idx çš„è·¯å¾„åç§°
+			int getNameCount() : è¿”å›Path æ ¹ç›®å½•åé¢å…ƒç´ çš„æ•°é‡
+			Path getParent() ï¼šè¿”å›Pathå¯¹è±¡åŒ…å«æ•´ä¸ªè·¯å¾„ï¼Œä¸åŒ…å« Path å¯¹è±¡æŒ‡å®šçš„æ–‡ä»¶è·¯å¾„
+			Path getRoot() ï¼šè¿”å›è°ƒç”¨ Path å¯¹è±¡çš„æ ¹è·¯å¾„
+			Path resolve(Path p) :å°†ç›¸å¯¹è·¯å¾„è§£æä¸ºç»å¯¹è·¯å¾„
+			Path toAbsolutePath() : ä½œä¸ºç»å¯¹è·¯å¾„è¿”å›è°ƒç”¨ Path å¯¹è±¡
+			String toString() ï¼š è¿”å›è°ƒç”¨ Path å¯¹è±¡çš„å­—ç¬¦ä¸²è¡¨ç¤ºå½¢å¼
 	 */
 	@Test
 	public void test2(){

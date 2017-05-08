@@ -11,24 +11,24 @@ import java.util.function.Supplier;
 import org.junit.Test;
 
 /*
- * Java8 ÄÚÖÃµÄËÄ´óºËĞÄº¯ÊıÊ½½Ó¿Ú
+ * Java8 å†…ç½®çš„å››å¤§æ ¸å¿ƒå‡½æ•°å¼æ¥å£
  * 
- * Consumer<T> : Ïû·ÑĞÍ½Ó¿Ú
+ * Consumer<T> : æ¶ˆè´¹å‹æ¥å£
  *      void accept(T t);
  * 
- * Supplier<T> : ¹©¸øĞÍ½Ó¿Ú
+ * Supplier<T> : ä¾›ç»™å‹æ¥å£
  *      T get(); 
  * 
- * Function<T, R> : º¯ÊıĞÍ½Ó¿Ú
+ * Function<T, R> : å‡½æ•°å‹æ¥å£
  *      R apply(T t);
  * 
- * Predicate<T> : ¶ÏÑÔĞÍ½Ó¿Ú
+ * Predicate<T> : æ–­è¨€å‹æ¥å£
  *      boolean test(T t);
  * 
  */
 public class TestLambda3 {
     
-    //Predicate<T> ¶ÏÑÔĞÍ½Ó¿Ú£º
+    //Predicate<T> æ–­è¨€å‹æ¥å£ï¼š
     @Test
     public void test4(){
         List<String> list = Arrays.asList("Hello", "atguigu", "Lambda", "www", "ok");
@@ -39,7 +39,7 @@ public class TestLambda3 {
         }
     }
     
-    //ĞèÇó£º½«Âú×ãÌõ¼şµÄ×Ö·û´®£¬·ÅÈë¼¯ºÏÖĞ
+    //éœ€æ±‚ï¼šå°†æ»¡è¶³æ¡ä»¶çš„å­—ç¬¦ä¸²ï¼Œæ”¾å…¥é›†åˆä¸­
     public List<String> filterStr(List<String> list, Predicate<String> pre){
         List<String> strList = new ArrayList<>();
         
@@ -52,22 +52,22 @@ public class TestLambda3 {
         return strList;
     }
     
-    //Function<T, R> º¯ÊıĞÍ½Ó¿Ú£º
+    //Function<T, R> å‡½æ•°å‹æ¥å£ï¼š
     @Test
     public void test3(){
-        String newStr = strHandler("\t\t\t ÎÒ´óÉĞ¹è¹ÈÍşÎä   ", (str) -> str.trim());
+        String newStr = strHandler("\t\t\t æˆ‘å¤§å°šç¡…è°·å¨æ­¦   ", (str) -> str.trim());
         System.out.println(newStr);
         
-        String subStr = strHandler("ÎÒ´óÉĞ¹è¹ÈÍşÎä", (str) -> str.substring(2, 5));
+        String subStr = strHandler("æˆ‘å¤§å°šç¡…è°·å¨æ­¦", (str) -> str.substring(2, 5));
         System.out.println(subStr);
     }
     
-    //ĞèÇó£ºÓÃÓÚ´¦Àí×Ö·û´®
+    //éœ€æ±‚ï¼šç”¨äºå¤„ç†å­—ç¬¦ä¸²
     public String strHandler(String str, Function<String, String> fun){
         return fun.apply(str);
     }
     
-    //Supplier<T> ¹©¸øĞÍ½Ó¿Ú :
+    //Supplier<T> ä¾›ç»™å‹æ¥å£ :
     @Test
     public void test2(){
         List<Integer> numList = getNumList(10, () -> (int)(Math.random() * 100));
@@ -77,7 +77,7 @@ public class TestLambda3 {
         }
     }
     
-    //ĞèÇó£º²úÉúÖ¸¶¨¸öÊıµÄÕûÊı£¬²¢·ÅÈë¼¯ºÏÖĞ
+    //éœ€æ±‚ï¼šäº§ç”ŸæŒ‡å®šä¸ªæ•°çš„æ•´æ•°ï¼Œå¹¶æ”¾å…¥é›†åˆä¸­
     public List<Integer> getNumList(int num, Supplier<Integer> sup){
         List<Integer> list = new ArrayList<>();
         
@@ -89,10 +89,10 @@ public class TestLambda3 {
         return list;
     }
     
-    //Consumer<T> Ïû·ÑĞÍ½Ó¿Ú :
+    //Consumer<T> æ¶ˆè´¹å‹æ¥å£ :
     @Test
     public void test1(){
-        happy(10000, (m) -> System.out.println("ÄãÃÇ¸Õ¸çÏ²»¶´ó±¦½££¬Ã¿´ÎÏû·Ñ£º" + m + "Ôª"));
+        happy(10000, (m) -> System.out.println("ä½ ä»¬åˆšå“¥å–œæ¬¢å¤§å®å‰‘ï¼Œæ¯æ¬¡æ¶ˆè´¹ï¼š" + m + "å…ƒ"));
     } 
     
     public void happy(double money, Consumer<Double> con){

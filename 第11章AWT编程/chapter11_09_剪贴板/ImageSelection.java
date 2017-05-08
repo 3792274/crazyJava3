@@ -1,11 +1,11 @@
-package chapter11_09_¼ôÌù°å;
+package chapter11_09_å‰ªè´´æ¿;
 
 
 import java.awt.*;
 import java.awt.datatransfer.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,17 +16,17 @@ import java.awt.datatransfer.*;
 public class ImageSelection implements Transferable
 {
 	private Image image;
-	// ¹¹ÔìÆ÷£¬¸ºÔğ³ÖÓĞÒ»¸öImage¶ÔÏó
+	// æ„é€ å™¨ï¼Œè´Ÿè´£æŒæœ‰ä¸€ä¸ªImageå¯¹è±¡
 	public ImageSelection(Image image)
 	{
 		this.image = image;
 	}
-	// ·µ»Ø¸ÃTransferable¶ÔÏóËùÖ§³ÖµÄËùÓĞDataFlavor
+	// è¿”å›è¯¥Transferableå¯¹è±¡æ‰€æ”¯æŒçš„æ‰€æœ‰DataFlavor
 	public DataFlavor[] getTransferDataFlavors()
 	{
 		return new DataFlavor[]{DataFlavor.imageFlavor};
 	}
-	// È¡³ö¸ÃTransferable¶ÔÏóÀïÊµ¼ÊµÄÊı¾İ
+	// å–å‡ºè¯¥Transferableå¯¹è±¡é‡Œå®é™…çš„æ•°æ®
 	public Object getTransferData(DataFlavor flavor)
 		throws UnsupportedFlavorException
 	{
@@ -39,7 +39,7 @@ public class ImageSelection implements Transferable
 			throw new UnsupportedFlavorException(flavor);
 		}
 	}
-	// ·µ»Ø¸ÃTransferable¶ÔÏóÊÇ·ñÖ§³ÖÖ¸¶¨µÄDataFlavor
+	// è¿”å›è¯¥Transferableå¯¹è±¡æ˜¯å¦æ”¯æŒæŒ‡å®šçš„DataFlavor
 	public boolean isDataFlavorSupported(DataFlavor flavor)
 	{
 		return flavor.equals(DataFlavor.imageFlavor);

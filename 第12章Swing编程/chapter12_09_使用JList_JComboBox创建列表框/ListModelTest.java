@@ -1,4 +1,4 @@
-package chapter12_09_Ê¹ÓÃJList_JComboBox´´½¨ÁĞ±í¿ò;
+package chapter12_09_ä½¿ç”¨JList_JComboBoxåˆ›å»ºåˆ—è¡¨æ¡†;
 
 
 import java.math.BigDecimal;
@@ -10,7 +10,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,51 +20,51 @@ import javax.swing.event.*;
  */
 public class ListModelTest
 {
-	private JFrame mainWin = new JFrame("²âÊÔListModel");
-	// ¸ù¾İNumberListModel¶ÔÏóÀ´´´½¨Ò»¸öJList¶ÔÏó
+	private JFrame mainWin = new JFrame("æµ‹è¯•ListModel");
+	// æ ¹æ®NumberListModelå¯¹è±¡æ¥åˆ›å»ºä¸€ä¸ªJListå¯¹è±¡
 	private JList<BigDecimal> numScopeList = new JList<>(
 		new NumberListModel(1 , 21 , 2));
-	// ¸ù¾İNumberComboBoxModel¶ÔÏóÀ´´´½¨JComboBox¶ÔÏó
+	// æ ¹æ®NumberComboBoxModelå¯¹è±¡æ¥åˆ›å»ºJComboBoxå¯¹è±¡
 	private JComboBox<BigDecimal> numScopeSelector = new JComboBox<>(
 		new NumberComboBoxModel(0.1 , 1.2 , 0.1));
 	private JTextField showVal = new JTextField(10);
 	public void init()
 	{
-		// JListµÄ¿ÉÊÓ¸ß¶È¿ÉÍ¬Ê±ÏÔÊ¾4¸öÁĞ±íÏî
+		// JListçš„å¯è§†é«˜åº¦å¯åŒæ—¶æ˜¾ç¤º4ä¸ªåˆ—è¡¨é¡¹
 		numScopeList.setVisibleRowCount(4);
-		// Ä¬ÈÏÑ¡ÖĞµÚÈıÏîµ½µÚÎåÏî£¨µÚÒ»ÏîµÄË÷ÒıÊÇ0£©
+		// é»˜è®¤é€‰ä¸­ç¬¬ä¸‰é¡¹åˆ°ç¬¬äº”é¡¹ï¼ˆç¬¬ä¸€é¡¹çš„ç´¢å¼•æ˜¯0ï¼‰
 		numScopeList.setSelectionInterval(2, 4);
-		// ÉèÖÃÃ¿¸öÁĞ±íÏî¾ßÓĞÖ¸¶¨µÄ¸ß¶ÈºÍ¿í¶È¡£
+		// è®¾ç½®æ¯ä¸ªåˆ—è¡¨é¡¹å…·æœ‰æŒ‡å®šçš„é«˜åº¦å’Œå®½åº¦ã€‚
 		numScopeList.setFixedCellHeight(30);
 		numScopeList.setFixedCellWidth(90);
-		// ÎªnumScopeListÌí¼Ó¼àÌıÆ÷
+		// ä¸ºnumScopeListæ·»åŠ ç›‘å¬å™¨
 		numScopeList.addListSelectionListener(e ->
 		{
-			// »ñÈ¡ÓÃ»§ËùÑ¡ÖĞµÄËùÓĞÊı×Ö
+			// è·å–ç”¨æˆ·æ‰€é€‰ä¸­çš„æ‰€æœ‰æ•°å­—
 			List<BigDecimal> nums = numScopeList.getSelectedValuesList();
 			showVal.setText("");
-			// °ÑÓÃ»§Ñ¡ÖĞµÄÊı×ÖÌí¼Óµ½µ¥ĞĞÎÄ±¾¿òÖĞ
+			// æŠŠç”¨æˆ·é€‰ä¸­çš„æ•°å­—æ·»åŠ åˆ°å•è¡Œæ–‡æœ¬æ¡†ä¸­
 			for (BigDecimal num : nums )
 			{
 				showVal.setText(showVal.getText()
 					+ num.toString() + ", ");
 			}
 		});
-		// ÉèÖÃÁĞ±íÏîµÄ¿ÉÊÓ¸ß¶È¿ÉÏÔÊ¾5¸öÁĞ±íÏî
+		// è®¾ç½®åˆ—è¡¨é¡¹çš„å¯è§†é«˜åº¦å¯æ˜¾ç¤º5ä¸ªåˆ—è¡¨é¡¹
 		numScopeSelector.setMaximumRowCount(5);
 		Box box = new Box(BoxLayout.X_AXIS);
 		box.add(new JScrollPane(numScopeList));
 		JPanel p = new JPanel();
 		p.add(numScopeSelector);
 		box.add(p);
-		// ÎªnumScopeSelectorÌí¼Ó¼àÌıÆ÷
+		// ä¸ºnumScopeSelectoræ·»åŠ ç›‘å¬å™¨
 		numScopeSelector.addItemListener(e -> {
-			// »ñÈ¡JComboBoxÖĞÑ¡ÖĞµÄÊı×Ö
+			// è·å–JComboBoxä¸­é€‰ä¸­çš„æ•°å­—
 			Object num = numScopeSelector.getSelectedItem();
 			showVal.setText(num.toString());
 		});
 		JPanel bottom = new JPanel();
-		bottom.add(new JLabel("ÄúÑ¡ÔñµÄÖµÊÇ£º"));
+		bottom.add(new JLabel("æ‚¨é€‰æ‹©çš„å€¼æ˜¯ï¼š"));
 		bottom.add(showVal);
 		mainWin.add(box);
 		mainWin.add(bottom , BorderLayout.SOUTH);
@@ -89,13 +89,13 @@ class NumberListModel extends AbstractListModel<BigDecimal>
 		this.end = BigDecimal.valueOf(end);
 		this.step = BigDecimal.valueOf(step);
 	}
-	// ·µ»ØÁĞ±íÏîµÄ¸öÊı
+	// è¿”å›åˆ—è¡¨é¡¹çš„ä¸ªæ•°
 	public int getSize()
 	{
 		return (int)Math.floor(end.subtract(start)
 			.divide(step).doubleValue()) + 1;
 	}
-	// ·µ»ØÖ¸¶¨Ë÷Òı´¦µÄÁĞ±íÏî
+	// è¿”å›æŒ‡å®šç´¢å¼•å¤„çš„åˆ—è¡¨é¡¹
 	public BigDecimal getElementAt(int index)
 	{
 		return BigDecimal.valueOf(index)
@@ -105,28 +105,28 @@ class NumberListModel extends AbstractListModel<BigDecimal>
 class NumberComboBoxModel extends NumberListModel
 	implements ComboBoxModel<BigDecimal>
 {
-	// ÓÃÓÚ±£´æÓÃ»§Ñ¡ÖĞÏîµÄË÷Òı
+	// ç”¨äºä¿å­˜ç”¨æˆ·é€‰ä¸­é¡¹çš„ç´¢å¼•
 	private int selectId = 0;
 	public NumberComboBoxModel(double start
 		, double end , double step)
 	{
 		super(start , end , step);
 	}
-	// ÉèÖÃÑ¡ÖĞ¡°Ñ¡ÔñÏî¡±
+	// è®¾ç½®é€‰ä¸­â€œé€‰æ‹©é¡¹â€
 	public void setSelectedItem(Object anItem)
 	{
 		if (anItem instanceof BigDecimal)
 		{
 			BigDecimal target = (BigDecimal)anItem;
-			// ¸ù¾İÑ¡ÖĞµÄÖµÀ´ĞŞ¸ÄÑ¡ÖĞÏîµÄË÷Òı
+			// æ ¹æ®é€‰ä¸­çš„å€¼æ¥ä¿®æ”¹é€‰ä¸­é¡¹çš„ç´¢å¼•
 			selectId = target.subtract(super.start)
 				.divide(step).intValue();
 		}
 	}
-	// »ñÈ¡¡°Ñ¡ÔñÏî¡±µÄÖµ
+	// è·å–â€œé€‰æ‹©é¡¹â€çš„å€¼
 	public BigDecimal getSelectedItem()
 	{
-		// ¸ù¾İÑ¡ÖĞÏîµÄË÷ÒıÀ´È¡µÃÑ¡ÖĞÏî
+		// æ ¹æ®é€‰ä¸­é¡¹çš„ç´¢å¼•æ¥å–å¾—é€‰ä¸­é¡¹
 		return BigDecimal.valueOf(selectId)
 			.multiply(step).add(start);
 	}

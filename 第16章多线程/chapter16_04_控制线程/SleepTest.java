@@ -1,10 +1,10 @@
-package chapter16_04_¿ØÖÆÏß³Ì;
+package chapter16_04_æ§åˆ¶çº¿ç¨‹;
 
 import java.util.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,8 +16,8 @@ import java.util.*;
 public class SleepTest {
 	public static void main(String[] args) throws Exception {
 		for (int i = 0; i < 10; i++) {
-			System.out.println("µ±Ç°Ê±¼ä: " + new Date());
-			// µ÷ÓÃsleep·½·¨ÈÃµ±Ç°Ïß³ÌÔİÍ£1s¡£
+			System.out.println("å½“å‰æ—¶é—´: " + new Date());
+			// è°ƒç”¨sleepæ–¹æ³•è®©å½“å‰çº¿ç¨‹æš‚åœ1sã€‚
 			Thread.sleep(1000);
 		}
 	}

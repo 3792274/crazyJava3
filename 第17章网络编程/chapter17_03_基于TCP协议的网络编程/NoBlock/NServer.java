@@ -1,4 +1,4 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.NoBlock;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.NoBlock;
 
 import java.net.*;
 import java.io.*;
@@ -7,7 +7,7 @@ import java.nio.channels.*;
 import java.nio.charset.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,51 +17,51 @@ import java.nio.charset.*;
  */
 public class NServer
 {
-	// ÓÃÓÚ¼ì²âËùÓĞChannel×´Ì¬µÄSelector
+	// ç”¨äºæ£€æµ‹æ‰€æœ‰ChannelçŠ¶æ€çš„Selector
 	private Selector selector = null;
 	static final int PORT = 30000;
-	// ¶¨ÒåÊµÏÖ±àÂë¡¢½âÂëµÄ×Ö·û¼¯¶ÔÏó
+	// å®šä¹‰å®ç°ç¼–ç ã€è§£ç çš„å­—ç¬¦é›†å¯¹è±¡
 	private Charset charset = Charset.forName("UTF-8");
 	public void init()throws IOException
 	{
 		selector = Selector.open();
-		// Í¨¹ıopen·½·¨À´´ò¿ªÒ»¸öÎ´°ó¶¨µÄServerSocketChannelÊµÀı
+		// é€šè¿‡openæ–¹æ³•æ¥æ‰“å¼€ä¸€ä¸ªæœªç»‘å®šçš„ServerSocketChannelå®ä¾‹
 		ServerSocketChannel server = ServerSocketChannel.open();
 		InetSocketAddress isa = new InetSocketAddress("127.0.0.1", PORT);
-		// ½«¸ÃServerSocketChannel°ó¶¨µ½Ö¸¶¨IPµØÖ·
+		// å°†è¯¥ServerSocketChannelç»‘å®šåˆ°æŒ‡å®šIPåœ°å€
 		server.bind(isa);
-		// ÉèÖÃServerSocketÒÔ·Ç×èÈû·½Ê½¹¤×÷
+		// è®¾ç½®ServerSocketä»¥éé˜»å¡æ–¹å¼å·¥ä½œ
 		server.configureBlocking(false);
-		// ½«server×¢²áµ½Ö¸¶¨Selector¶ÔÏó
+		// å°†serveræ³¨å†Œåˆ°æŒ‡å®šSelectorå¯¹è±¡
 		server.register(selector, SelectionKey.OP_ACCEPT);
 		while (selector.select() > 0)
 		{
-			// ÒÀ´Î´¦ÀíselectorÉÏµÄÃ¿¸öÒÑÑ¡ÔñµÄSelectionKey
+			// ä¾æ¬¡å¤„ç†selectorä¸Šçš„æ¯ä¸ªå·²é€‰æ‹©çš„SelectionKey
 			for (SelectionKey sk : selector.selectedKeys())
 			{
-				// ´ÓselectorÉÏµÄÒÑÑ¡ÔñKey¼¯ÖĞÉ¾³ıÕıÔÚ´¦ÀíµÄSelectionKey
-				selector.selectedKeys().remove(sk);      // ¢Ù
-				// Èç¹ûsk¶ÔÓ¦µÄChannel°üº¬¿Í»§¶ËµÄÁ¬½ÓÇëÇó
-				if (sk.isAcceptable())        // ¢Ú
+				// ä»selectorä¸Šçš„å·²é€‰æ‹©Keyé›†ä¸­åˆ é™¤æ­£åœ¨å¤„ç†çš„SelectionKey
+				selector.selectedKeys().remove(sk);      // â‘ 
+				// å¦‚æœskå¯¹åº”çš„ChannelåŒ…å«å®¢æˆ·ç«¯çš„è¿æ¥è¯·æ±‚
+				if (sk.isAcceptable())        // â‘¡
 				{
-					// µ÷ÓÃaccept·½·¨½ÓÊÜÁ¬½Ó£¬²úÉú·şÎñÆ÷¶ËµÄSocketChannel
+					// è°ƒç”¨acceptæ–¹æ³•æ¥å—è¿æ¥ï¼Œäº§ç”ŸæœåŠ¡å™¨ç«¯çš„SocketChannel
 					SocketChannel sc = server.accept();
-					// ÉèÖÃ²ÉÓÃ·Ç×èÈûÄ£Ê½
+					// è®¾ç½®é‡‡ç”¨éé˜»å¡æ¨¡å¼
 					sc.configureBlocking(false);
-					// ½«¸ÃSocketChannelÒ²×¢²áµ½selector
+					// å°†è¯¥SocketChannelä¹Ÿæ³¨å†Œåˆ°selector
 					sc.register(selector, SelectionKey.OP_READ);
-					// ½«sk¶ÔÓ¦µÄChannelÉèÖÃ³É×¼±¸½ÓÊÜÆäËûÇëÇó
+					// å°†skå¯¹åº”çš„Channelè®¾ç½®æˆå‡†å¤‡æ¥å—å…¶ä»–è¯·æ±‚
 					sk.interestOps(SelectionKey.OP_ACCEPT);
 				}
-				// Èç¹ûsk¶ÔÓ¦µÄChannelÓĞÊı¾İĞèÒª¶ÁÈ¡
-				if (sk.isReadable())     // ¢Û
+				// å¦‚æœskå¯¹åº”çš„Channelæœ‰æ•°æ®éœ€è¦è¯»å–
+				if (sk.isReadable())     // â‘¢
 				{
-					// »ñÈ¡¸ÃSelectionKey¶ÔÓ¦µÄChannel£¬¸ÃChannelÖĞÓĞ¿É¶ÁµÄÊı¾İ
+					// è·å–è¯¥SelectionKeyå¯¹åº”çš„Channelï¼Œè¯¥Channelä¸­æœ‰å¯è¯»çš„æ•°æ®
 					SocketChannel sc = (SocketChannel)sk.channel();
-					// ¶¨Òå×¼±¸Ö´ĞĞ¶ÁÈ¡Êı¾İµÄByteBuffer
+					// å®šä¹‰å‡†å¤‡æ‰§è¡Œè¯»å–æ•°æ®çš„ByteBuffer
 					ByteBuffer buff = ByteBuffer.allocate(1024);
 					String content = "";
-					// ¿ªÊ¼¶ÁÈ¡Êı¾İ
+					// å¼€å§‹è¯»å–æ•°æ®
 					try
 					{
 						while(sc.read(buff) > 0)
@@ -69,34 +69,34 @@ public class NServer
 							buff.flip();
 							content += charset.decode(buff);
 						}
-						// ´òÓ¡´Ó¸Ãsk¶ÔÓ¦µÄChannelÀï¶ÁÈ¡µ½µÄÊı¾İ
-						System.out.println("¶ÁÈ¡µÄÊı¾İ£º" + content);
-						// ½«sk¶ÔÓ¦µÄChannelÉèÖÃ³É×¼±¸ÏÂÒ»´Î¶ÁÈ¡
+						// æ‰“å°ä»è¯¥skå¯¹åº”çš„Channelé‡Œè¯»å–åˆ°çš„æ•°æ®
+						System.out.println("è¯»å–çš„æ•°æ®ï¼š" + content);
+						// å°†skå¯¹åº”çš„Channelè®¾ç½®æˆå‡†å¤‡ä¸‹ä¸€æ¬¡è¯»å–
 						sk.interestOps(SelectionKey.OP_READ);
 					}
-					// Èç¹û²¶×½µ½¸Ãsk¶ÔÓ¦µÄChannel³öÏÖÁËÒì³££¬¼´±íÃ÷¸ÃChannel
-					// ¶ÔÓ¦µÄClient³öÏÖÁËÎÊÌâ£¬ËùÒÔ´ÓSelectorÖĞÈ¡ÏûskµÄ×¢²á
+					// å¦‚æœæ•æ‰åˆ°è¯¥skå¯¹åº”çš„Channelå‡ºç°äº†å¼‚å¸¸ï¼Œå³è¡¨æ˜è¯¥Channel
+					// å¯¹åº”çš„Clientå‡ºç°äº†é—®é¢˜ï¼Œæ‰€ä»¥ä»Selectorä¸­å–æ¶ˆskçš„æ³¨å†Œ
 					catch (IOException ex)
 					{
-						// ´ÓSelectorÖĞÉ¾³ıÖ¸¶¨µÄSelectionKey
+						// ä»Selectorä¸­åˆ é™¤æŒ‡å®šçš„SelectionKey
 						sk.cancel();
 						if (sk.channel() != null)
 						{
 							sk.channel().close();
 						}
 					}
-					// Èç¹ûcontentµÄ³¤¶È´óÓÚ0£¬¼´ÁÄÌìĞÅÏ¢²»Îª¿Õ
+					// å¦‚æœcontentçš„é•¿åº¦å¤§äº0ï¼Œå³èŠå¤©ä¿¡æ¯ä¸ä¸ºç©º
 					if (content.length() > 0)
 					{
-						// ±éÀú¸ÃselectorÀï×¢²áµÄËùÓĞSelectionKey
+						// éå†è¯¥selectoré‡Œæ³¨å†Œçš„æ‰€æœ‰SelectionKey
 						for (SelectionKey key : selector.keys())
 						{
-							// »ñÈ¡¸Ãkey¶ÔÓ¦µÄChannel
+							// è·å–è¯¥keyå¯¹åº”çš„Channel
 							Channel targetChannel = key.channel();
-							// Èç¹û¸ÃchannelÊÇSocketChannel¶ÔÏó
+							// å¦‚æœè¯¥channelæ˜¯SocketChannelå¯¹è±¡
 							if (targetChannel instanceof SocketChannel)
 							{
-								// ½«¶Áµ½µÄÄÚÈİĞ´Èë¸ÃChannelÖĞ
+								// å°†è¯»åˆ°çš„å†…å®¹å†™å…¥è¯¥Channelä¸­
 								SocketChannel dest = (SocketChannel)targetChannel;
 								dest.write(charset.encode(content));
 							}

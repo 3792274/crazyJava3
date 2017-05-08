@@ -1,11 +1,11 @@
-package chapter12_04_Swing¼ò»¯µÄÍÏ·Å¹¦ÄÜ;
+package chapter12_04_Swingç®€åŒ–çš„æ‹–æ”¾åŠŸèƒ½;
 
 
 import java.awt.*;
 import javax.swing.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,18 +15,18 @@ import javax.swing.*;
  */
 public class TransferHandlerTest
 {
-	private JFrame jf = new JFrame("²âÊÔTransferHandler");
+	private JFrame jf = new JFrame("æµ‹è¯•TransferHandler");
 	JColorChooser chooser = new JColorChooser();
-	JTextArea txt = new JTextArea("²âÊÔTransferHandler\n"
-		+ "Ö±½Ó½«ÉÏÃæÑÕÉ«ÍÏÈëÒÔ¸Ä±äÎÄ±¾ÑÕÉ«");
+	JTextArea txt = new JTextArea("æµ‹è¯•TransferHandler\n"
+		+ "ç›´æ¥å°†ä¸Šé¢é¢œè‰²æ‹–å…¥ä»¥æ”¹å˜æ–‡æœ¬é¢œè‰²");
 	public void init()
 	{
-		// Æô¶¯ÑÕÉ«Ñ¡ÔñÆ÷Ãæ°åºÍÎÄ±¾ÓòµÄÍÏ·Å¹¦ÄÜ
+		// å¯åŠ¨é¢œè‰²é€‰æ‹©å™¨é¢æ¿å’Œæ–‡æœ¬åŸŸçš„æ‹–æ”¾åŠŸèƒ½
 		chooser.setDragEnabled(true);
 		txt.setDragEnabled(true);
 		jf.add(chooser, BorderLayout.SOUTH);
-		// ÔÊĞíÖ±½Ó½«Ò»¸öColor¶ÔÏóÍÏÈë¸ÃJTextArea¶ÔÏó
-		// ²¢¸³¸øËüµÄforegroundÊôĞÔ
+		// å…è®¸ç›´æ¥å°†ä¸€ä¸ªColorå¯¹è±¡æ‹–å…¥è¯¥JTextAreaå¯¹è±¡
+		// å¹¶èµ‹ç»™å®ƒçš„foregroundå±æ€§
 		txt.setTransferHandler(new TransferHandler("foreground"));
 		jf.add(new JScrollPane(txt));
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

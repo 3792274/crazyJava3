@@ -1,8 +1,8 @@
-package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
+package chapter06_06_Java8æ”¹è¿›çš„æ¥å£;
  
 /**
- * Description:¼òµ¥¹¤³§Ä£Ê½
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:ç®€å•å·¥å‚æ¨¡å¼
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -11,10 +11,10 @@ package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
  * @version 1.0
  */
 
-//computerÀàÍêÈ«ÓëprintÀà·ÖÀë
+//computerç±»å®Œå…¨ä¸printç±»åˆ†ç¦»
 public class Computer
 {
-	//×éºÏÒ»¸öout¶ÔÏó¸üºÃ¡£ÃæÏò½Ó¿Ú±à³Ì
+	//ç»„åˆä¸€ä¸ªoutå¯¹è±¡æ›´å¥½ã€‚é¢å‘æ¥å£ç¼–ç¨‹
 	private Output out;
 	
 	public Computer(Output out)
@@ -22,12 +22,12 @@ public class Computer
 		this.out = out;
 	}
 	
-	// ¶¨ÒåÒ»¸öÄ£Äâ»ñÈ¡×Ö·û´®ÊäÈëµÄ·½·¨
+	// å®šä¹‰ä¸€ä¸ªæ¨¡æ‹Ÿè·å–å­—ç¬¦ä¸²è¾“å…¥çš„æ–¹æ³•
 	public void keyIn(String msg)
 	{
 		out.putData(msg);
 	}
-	// ¶¨ÒåÒ»¸öÄ£Äâ´òÓ¡µÄ·½·¨
+	// å®šä¹‰ä¸€ä¸ªæ¨¡æ‹Ÿæ‰“å°çš„æ–¹æ³•
 	public void print()
 	{
 		out.out();

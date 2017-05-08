@@ -1,10 +1,10 @@
-package chapter14_03_×Ô¶¨ÒåAnnotation.one;
+package chapter14_03_è‡ªå®šä¹‰Annotation.one;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,7 +14,7 @@ package chapter14_03_×Ô¶¨ÒåAnnotation.one;
  */
 public class MyTest
 {
-	// Ê¹ÓÃ@Testable×¢½âÖ¸¶¨¸Ã·½·¨ÊÇ¿É²âÊÔµÄ
+	// ä½¿ç”¨@Testableæ³¨è§£æŒ‡å®šè¯¥æ–¹æ³•æ˜¯å¯æµ‹è¯•çš„
 	
 	@Testable
 	public static void m1()
@@ -26,11 +26,11 @@ public class MyTest
 	}
 	
 	
-	// Ê¹ÓÃ@Testable×¢½âÖ¸¶¨¸Ã·½·¨ÊÇ¿É²âÊÔµÄ
+	// ä½¿ç”¨@Testableæ³¨è§£æŒ‡å®šè¯¥æ–¹æ³•æ˜¯å¯æµ‹è¯•çš„
 	@Testable
 	public static void m3()
 	{
-		throw new IllegalArgumentException("²ÎÊı³ö´íÁË£¡");
+		throw new IllegalArgumentException("å‚æ•°å‡ºé”™äº†ï¼");
 	}
 
 	public static void m4()
@@ -38,7 +38,7 @@ public class MyTest
 	}
 	
 	
-	// Ê¹ÓÃ@Testable×¢½âÖ¸¶¨¸Ã·½·¨ÊÇ¿É²âÊÔµÄ
+	// ä½¿ç”¨@Testableæ³¨è§£æŒ‡å®šè¯¥æ–¹æ³•æ˜¯å¯æµ‹è¯•çš„
 	@Testable
 	public static void m5()
 	{
@@ -48,11 +48,11 @@ public class MyTest
 	{
 	}
 	
-	// Ê¹ÓÃ@Testable×¢½âÖ¸¶¨¸Ã·½·¨ÊÇ¿É²âÊÔµÄ
+	// ä½¿ç”¨@Testableæ³¨è§£æŒ‡å®šè¯¥æ–¹æ³•æ˜¯å¯æµ‹è¯•çš„
 	@Testable
 	public static void m7()
 	{
-		throw new RuntimeException("³ÌĞòÒµÎñ³öÏÖÒì³££¡");
+		throw new RuntimeException("ç¨‹åºä¸šåŠ¡å‡ºç°å¼‚å¸¸ï¼");
 	}
 	
 	

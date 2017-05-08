@@ -1,8 +1,8 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 /**
- * Description:Àí½âÍâ²¿Àà¡¢ÄÚ²¿Àà¡¢¾Ö²¿±äÁ¿ this <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:ç†è§£å¤–éƒ¨ç±»ã€å†…éƒ¨ç±»ã€å±€éƒ¨å˜é‡ this <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -12,19 +12,19 @@ package chapter06_07_ÄÚ²¿Àà;
  * @version 1.0
  */
 public class DiscernVariable {
-	private String prop = "Íâ²¿ÀàµÄÊµÀı±äÁ¿";
+	private String prop = "å¤–éƒ¨ç±»çš„å®ä¾‹å˜é‡";
 
 	private class InClass {
-		private String prop = "ÄÚ²¿ÀàµÄÊµÀı±äÁ¿";
+		private String prop = "å†…éƒ¨ç±»çš„å®ä¾‹å˜é‡";
 
 		public void info() {
-			String prop = "¾Ö²¿±äÁ¿";
-			// Í¨¹ı Íâ²¿ÀàÀàÃû.this.varName ·ÃÎÊÍâ²¿ÀàÊµÀı±äÁ¿
-			System.out.println("Íâ²¿ÀàµÄÊµÀı±äÁ¿Öµ£º" + DiscernVariable.this.prop);
-			// Í¨¹ı this.varName ·ÃÎÊÄÚ²¿ÀàÊµÀıµÄ±äÁ¿
-			System.out.println("ÄÚ²¿ÀàµÄÊµÀı±äÁ¿Öµ£º" + this.prop);
-			// Ö±½Ó·ÃÎÊ¾Ö²¿±äÁ¿
-			System.out.println("¾Ö²¿±äÁ¿µÄÖµ£º" + prop);
+			String prop = "å±€éƒ¨å˜é‡";
+			// é€šè¿‡ å¤–éƒ¨ç±»ç±»å.this.varName è®¿é—®å¤–éƒ¨ç±»å®ä¾‹å˜é‡
+			System.out.println("å¤–éƒ¨ç±»çš„å®ä¾‹å˜é‡å€¼ï¼š" + DiscernVariable.this.prop);
+			// é€šè¿‡ this.varName è®¿é—®å†…éƒ¨ç±»å®ä¾‹çš„å˜é‡
+			System.out.println("å†…éƒ¨ç±»çš„å®ä¾‹å˜é‡å€¼ï¼š" + this.prop);
+			// ç›´æ¥è®¿é—®å±€éƒ¨å˜é‡
+			System.out.println("å±€éƒ¨å˜é‡çš„å€¼ï¼š" + prop);
 		}
 	}
 

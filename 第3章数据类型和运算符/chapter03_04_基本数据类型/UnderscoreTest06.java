@@ -1,9 +1,9 @@
-package chapter03_04_»ù±¾Êı¾İÀàĞÍ;
+package chapter03_04_åŸºæœ¬æ•°æ®ç±»å‹;
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,10 +13,10 @@ package chapter03_04_»ù±¾Êı¾İÀàĞÍ;
  */
 public class UnderscoreTest06
 {
-	//Java7 ÒıÈëµÄ£¬ÔÚÊıÖµÖĞ»®Ïß£¬ºÜºÃ½â¾öÁËÊıÖµµÄÎ»Êı¡£
+	//Java7 å¼•å…¥çš„ï¼Œåœ¨æ•°å€¼ä¸­åˆ’çº¿ï¼Œå¾ˆå¥½è§£å†³äº†æ•°å€¼çš„ä½æ•°ã€‚
 	public static void main(String[] args)
 	{
-		// ¶¨ÒåÒ»¸ö32Î»µÄ¶ş½øÖÆÊı,×î¸ßÎ»ÊÇ·ûºÅÎ»¡£
+		// å®šä¹‰ä¸€ä¸ª32ä½çš„äºŒè¿›åˆ¶æ•°,æœ€é«˜ä½æ˜¯ç¬¦å·ä½ã€‚
 		int binVal = 0B1000_0000_0000_0000_0000_0000_0000_0011;
 		double pi = 3.14_15_92_65_36;
 		System.out.println(binVal);

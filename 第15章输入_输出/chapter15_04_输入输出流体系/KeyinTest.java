@@ -1,10 +1,10 @@
-package chapter15_04_ÊäÈëÊä³öÁ÷ÌåÏµ;
+package chapter15_04_è¾“å…¥è¾“å‡ºæµä½“ç³»;
 
 import java.io.*;
 
 /**
- * Description:×Ö½ÚÊäÈëÁ÷ ×ª»» ×Ö·ûÊäÈëÁ÷ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:å­—èŠ‚è¾“å…¥æµ è½¬æ¢ å­—ç¬¦è¾“å…¥æµ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,19 +16,19 @@ import java.io.*;
 public class KeyinTest {
 	public static void main(String[] args) {
 		try (
-				// ½«Sytem.in¶ÔÏó×ª»»³ÉReader¶ÔÏó
+				// å°†Sytem.inå¯¹è±¡è½¬æ¢æˆReaderå¯¹è±¡
 				InputStreamReader reader = new InputStreamReader(System.in);
-				// ½«ÆÕÍ¨Reader°ü×°³ÉBufferedReader
+				// å°†æ™®é€šReaderåŒ…è£…æˆBufferedReader
 				BufferedReader br = new BufferedReader(reader)) {
 			String line = null;
-			// ²ÉÓÃÑ­»··½Ê½À´Ò»ĞĞÒ»ĞĞµÄ¶ÁÈ¡
+			// é‡‡ç”¨å¾ªç¯æ–¹å¼æ¥ä¸€è¡Œä¸€è¡Œçš„è¯»å–
 			while ((line = br.readLine()) != null) {
-				// Èç¹û¶ÁÈ¡µÄ×Ö·û´®Îª"exit"£¬³ÌĞòÍË³ö
+				// å¦‚æœè¯»å–çš„å­—ç¬¦ä¸²ä¸º"exit"ï¼Œç¨‹åºé€€å‡º
 				if (line.equals("exit")) {
 					System.exit(1);
 				}
-				// ´òÓ¡¶ÁÈ¡µÄÄÚÈİ
-				System.out.println("ÊäÈëÄÚÈİÎª:" + line);
+				// æ‰“å°è¯»å–çš„å†…å®¹
+				System.out.println("è¾“å…¥å†…å®¹ä¸º:" + line);
 			}
 		} catch (IOException ioe) {
 			ioe.printStackTrace();

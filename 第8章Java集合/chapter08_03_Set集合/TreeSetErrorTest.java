@@ -1,17 +1,17 @@
-package chapter08_03_Set¼¯ºÏ;
+package chapter08_03_Seté›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * 1.×ÔÈ»ÅÅĞò¡£
- * 1.TreeSet»áµ÷ÓÃ¼¯ºÏÔªËØµÄcompareTo(Object obj)±È½ÏÔªËØ´óĞ¡¡£
- * 2.BigDecimal/BigInteger¼°ËùÓĞÊıÖµÀàĞÍ°ü×°Àà£¬ÒÑÊµÏÖ
- * 3.Character °´×Ö·ûµÄUNICODEÖµ½øĞĞ±È½Ï¡£
- * 4.Boolean:true ¶ÔÓ¦µÄ°ü×°ÀàÊµÀı´óÓÚfalse¶ÔÓ¦µÄ°ü×°ÀàÊµÀı
- * 5.String£¬°´×Ö·û´®ÖĞ×Ö·ûµÄUNICODE±È½Ï
- * 6.Date¡¢TimeºóÃæµÄÊ±¼ä¡¢ÈÕÆÚ±ÈÇ°ÃæµÄÈÕÆÚÊ±¼ä´ó¡£
- * 7.Èç¹û°ÑÒ»¸ö¶ÔÏóÌí¼ÓTreeSet,Ôò¸Ã¶ÔÏó±ØĞëÊµÏÖcompareTo½Ó¿Ú
+ * 1.è‡ªç„¶æ’åºã€‚
+ * 1.TreeSetä¼šè°ƒç”¨é›†åˆå…ƒç´ çš„compareTo(Object obj)æ¯”è¾ƒå…ƒç´ å¤§å°ã€‚
+ * 2.BigDecimal/BigIntegeråŠæ‰€æœ‰æ•°å€¼ç±»å‹åŒ…è£…ç±»ï¼Œå·²å®ç°
+ * 3.Character æŒ‰å­—ç¬¦çš„UNICODEå€¼è¿›è¡Œæ¯”è¾ƒã€‚
+ * 4.Boolean:true å¯¹åº”çš„åŒ…è£…ç±»å®ä¾‹å¤§äºfalseå¯¹åº”çš„åŒ…è£…ç±»å®ä¾‹
+ * 5.Stringï¼ŒæŒ‰å­—ç¬¦ä¸²ä¸­å­—ç¬¦çš„UNICODEæ¯”è¾ƒ
+ * 6.Dateã€Timeåé¢çš„æ—¶é—´ã€æ—¥æœŸæ¯”å‰é¢çš„æ—¥æœŸæ—¶é—´å¤§ã€‚
+ * 7.å¦‚æœæŠŠä¸€ä¸ªå¯¹è±¡æ·»åŠ TreeSet,åˆ™è¯¥å¯¹è±¡å¿…é¡»å®ç°compareToæ¥å£
  * 
  */
 class Err{}
@@ -20,8 +20,8 @@ public class TreeSetErrorTest
 	public static void main(String[] args)
 	{
 		TreeSet ts = new TreeSet();
-		// ÏòTreeSet¼¯ºÏÖĞÌí¼ÓÁ½¸öErr¶ÔÏó£¬ÓÉÓÚÃ»ÓĞÊµÏÖcompare½Ó¿Ú£¬±¨´í¡£
+		// å‘TreeSeté›†åˆä¸­æ·»åŠ ä¸¤ä¸ªErrå¯¹è±¡ï¼Œç”±äºæ²¡æœ‰å®ç°compareæ¥å£ï¼ŒæŠ¥é”™ã€‚
 		ts.add(new Err());
-		ts.add(new Err());  //¢Ù
+		ts.add(new Err());  //â‘ 
 	}
 }

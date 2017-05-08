@@ -1,10 +1,10 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -21,7 +21,7 @@ abstract class Device
 	{
 		this.name = name;
 	}
-	// ´Ë´¦Ê¡ÂÔÁËnameµÄsetterºÍgetter·½·¨
+	// æ­¤å¤„çœç•¥äº†nameçš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name)
 	{
 		this.name = name;
@@ -35,36 +35,36 @@ public class AnonymousInner
 {
 	public void test(Device d)
 	{
-		System.out.println("¹ºÂòÁËÒ»¸ö" + d.getName()
-			+ "£¬»¨µôÁË" + d.getPrice());
+		System.out.println("è´­ä¹°äº†ä¸€ä¸ª" + d.getName()
+			+ "ï¼ŒèŠ±æ‰äº†" + d.getPrice());
 	}
 	public static void main(String[] args)
 	{
 		AnonymousInner ai = new AnonymousInner();
-		// µ÷ÓÃÓĞ²ÎÊıµÄ¹¹ÔìÆ÷´´½¨DeviceÄäÃûÊµÏÖÀàµÄ¶ÔÏó
-		ai.test(new Device("µç×ÓÊ¾²¨Æ÷")
+		// è°ƒç”¨æœ‰å‚æ•°çš„æ„é€ å™¨åˆ›å»ºDeviceåŒ¿åå®ç°ç±»çš„å¯¹è±¡
+		ai.test(new Device("ç”µå­ç¤ºæ³¢å™¨")
 		{
 			public double getPrice()
 			{
 				return 67.8;
 			}
 		});
-		// µ÷ÓÃÎŞ²ÎÊıµÄ¹¹ÔìÆ÷´´½¨DeviceÄäÃûÊµÏÖÀàµÄ¶ÔÏó
+		// è°ƒç”¨æ— å‚æ•°çš„æ„é€ å™¨åˆ›å»ºDeviceåŒ¿åå®ç°ç±»çš„å¯¹è±¡
 		Device d = new Device()
 		{
-			// ³õÊ¼»¯¿é
+			// åˆå§‹åŒ–å—
 			{
-				System.out.println("ÄäÃûÄÚ²¿ÀàµÄ³õÊ¼»¯¿é...");
+				System.out.println("åŒ¿åå†…éƒ¨ç±»çš„åˆå§‹åŒ–å—...");
 			}
-			// ÊµÏÖ³éÏó·½·¨
+			// å®ç°æŠ½è±¡æ–¹æ³•
 			public double getPrice()
 			{
 				return 56.2;
 			}
-			// ÖØĞ´¸¸ÀàµÄÊµÀı·½·¨
+			// é‡å†™çˆ¶ç±»çš„å®ä¾‹æ–¹æ³•
 			public String getName()
 			{
-				return "¼üÅÌ";
+				return "é”®ç›˜";
 			}
 		};
 		ai.test(d);

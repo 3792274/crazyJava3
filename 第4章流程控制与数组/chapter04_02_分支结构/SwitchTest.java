@@ -1,8 +1,8 @@
-package chapter04_02_·ÖÖ§½á¹¹;
+package chapter04_02_åˆ†æ”¯ç»“æ„;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,27 +13,27 @@ package chapter04_02_·ÖÖ§½á¹¹;
  */
 public class SwitchTest {
 	public static void main(String[] args) {
-		// ÉùÃ÷±äÁ¿score£¬²¢ÎªÆä¸³ÖµÎª'C'
+		// å£°æ˜å˜é‡scoreï¼Œå¹¶ä¸ºå…¶èµ‹å€¼ä¸º'C'
 		char score = 'C';
-		// Ö´ĞĞswicth·ÖÖ§Óï¾ä
+		// æ‰§è¡Œswicthåˆ†æ”¯è¯­å¥
 		switch (score) {
 		case 'A':
-			System.out.println("ÓÅĞã");
+			System.out.println("ä¼˜ç§€");
 			break;
 		case 'B':
-			System.out.println("Á¼ºÃ");
+			System.out.println("è‰¯å¥½");
 			break;
 		case 'C':
-			System.out.println("ÖĞ");
+			System.out.println("ä¸­");
 			break;
 		case 'D':
-			System.out.println("¼°¸ñ");
+			System.out.println("åŠæ ¼");
 			break;
 		case 'F':
-			System.out.println("²»¼°¸ñ");
+			System.out.println("ä¸åŠæ ¼");
 			break;
 		default:
-			System.out.println("³É¼¨ÊäÈë´íÎó");
+			System.out.println("æˆç»©è¾“å…¥é”™è¯¯");
 		}
 	}
 }

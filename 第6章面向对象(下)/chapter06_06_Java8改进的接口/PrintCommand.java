@@ -1,8 +1,8 @@
-package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
+package chapter06_06_Java8æ”¹è¿›çš„æ¥å£;
 
 /**
- * Description:ÃüÁîÄ£Ê½£¬Êµ¼ÊµÄÊı×é´¦ÀíÃüÁî
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:å‘½ä»¤æ¨¡å¼ï¼Œå®é™…çš„æ•°ç»„å¤„ç†å‘½ä»¤
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -19,7 +19,7 @@ public class PrintCommand implements Command
 	{
 		for (int tmp : target )
 		{
-			System.out.println("µü´úÊä³öÄ¿±êÊı×éµÄÔªËØ:" + tmp);
+			System.out.println("è¿­ä»£è¾“å‡ºç›®æ ‡æ•°ç»„çš„å…ƒç´ :" + tmp);
 		}
 	}
 }

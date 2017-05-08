@@ -1,21 +1,21 @@
-package chapter08_06_java8ÔöÇ¿µÄMap¼¯ºÏ;
+package chapter08_06_java8å¢žå¼ºçš„Mapé›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * Ë«ÏòÁÐ±í£¬¿ÉÒÔ¼Ç×¡Ìí¼ÓË³Ðò£¬ÊÇÓÐÐòµÄ
+ * åŒå‘åˆ—è¡¨ï¼Œå¯ä»¥è®°ä½æ·»åŠ é¡ºåºï¼Œæ˜¯æœ‰åºçš„
  */
 public class LinkedHashMapTest
 {
 	public static void main(String[] args)
 	{
 		LinkedHashMap scores = new LinkedHashMap();
-		scores.put("ÓïÎÄ" , 80);
-		scores.put("Ó¢ÎÄ" , 82);
-		scores.put("ÊýÑ§" , 76);
+		scores.put("è¯­æ–‡" , 80);
+		scores.put("è‹±æ–‡" , 82);
+		scores.put("æ•°å­¦" , 76);
 	
-		// µ÷ÓÃforEach·½·¨±éÀúscoresÀïµÄËùÓÐkey-value¶Ô
+		// è°ƒç”¨forEachæ–¹æ³•éåŽ†scoresé‡Œçš„æ‰€æœ‰key-valueå¯¹
 		scores.forEach((key, value) -> System.out.println(key + "-->" + value));
 	}
 }

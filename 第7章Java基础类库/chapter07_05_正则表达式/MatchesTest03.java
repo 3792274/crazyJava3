@@ -1,9 +1,9 @@
-package chapter07_05_ÕıÔò±í´ïÊ½;
+package chapter07_05_æ­£åˆ™è¡¨è¾¾å¼;
 
 import java.util.regex.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -25,7 +25,7 @@ public class MatchesTest03
 		
 		
 		//1.
-		"kongyeeku@163.com".matches("\\w{3,20}@\\w+\\.(com|org|cn|net|gov)"); //·µ»Øtrue
+		"kongyeeku@163.com".matches("\\w{3,20}@\\w+\\.(com|org|cn|net|gov)"); //è¿”å›true
 		
 		//2.
 		String mailRegEx = "\\w{3,20}@\\w+\\.(com|org|cn|net|gov)";
@@ -41,7 +41,7 @@ public class MatchesTest03
 			{
 				matcher.reset(mail);
 			}
-			String result = mail + (matcher.matches() ? "ÊÇ" : "²»ÊÇ") + "Ò»¸öÓĞĞ§µÄÓÊ¼şµØÖ·£¡";
+			String result = mail + (matcher.matches() ? "æ˜¯" : "ä¸æ˜¯") + "ä¸€ä¸ªæœ‰æ•ˆçš„é‚®ä»¶åœ°å€ï¼";
 			System.out.println(result);
 		}
 	}

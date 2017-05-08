@@ -1,10 +1,10 @@
-package chapter07_03_³£ÓÃÀà;
+package chapter07_03_å¸¸ç”¨ç±»;
 
 import java.util.Objects;
 
 /**
- * Description:java7ĞÂÔöµÄ·½·¨£¬¿ÕÖ¸Õë°²È«µÄ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:java7æ–°å¢çš„æ–¹æ³•ï¼Œç©ºæŒ‡é’ˆå®‰å…¨çš„ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -14,15 +14,15 @@ import java.util.Objects;
  * @version 1.0
  */
 public class ObjectsTest02 {
-	// ¶¨ÒåÒ»¸öobj±äÁ¿£¬ËüµÄÄ¬ÈÏÖµÊÇnull
+	// å®šä¹‰ä¸€ä¸ªobjå˜é‡ï¼Œå®ƒçš„é»˜è®¤å€¼æ˜¯null
 	static ObjectsTest02 obj;
 
 	public static void main(String[] args) {
-		// Êä³öÒ»¸önull¶ÔÏóµÄhashCodeÖµ£¬Êä³ö0
+		// è¾“å‡ºä¸€ä¸ªnullå¯¹è±¡çš„hashCodeå€¼ï¼Œè¾“å‡º0
 		System.out.println(Objects.hashCode(obj));
-		// Êä³öÒ»¸önull¶ÔÏóµÄtoString£¬Êä³önull
+		// è¾“å‡ºä¸€ä¸ªnullå¯¹è±¡çš„toStringï¼Œè¾“å‡ºnull
 		System.out.println(Objects.toString(obj));
-		// ÒªÇóobj²»ÄÜÎªnull£¬Èç¹ûobjÎªnullÔòÒı·¢Òì³£
-		System.out.println(Objects.requireNonNull(obj, "obj²ÎÊı²»ÄÜÊÇnull£¡"));
+		// è¦æ±‚objä¸èƒ½ä¸ºnullï¼Œå¦‚æœobjä¸ºnullåˆ™å¼•å‘å¼‚å¸¸
+		System.out.println(Objects.requireNonNull(obj, "objå‚æ•°ä¸èƒ½æ˜¯nullï¼"));
 	}
 }

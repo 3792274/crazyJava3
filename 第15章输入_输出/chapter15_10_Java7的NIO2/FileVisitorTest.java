@@ -1,12 +1,12 @@
-package chapter15_10_Java7µÄNIO2;
+package chapter15_10_Java7çš„NIO2;
 
 import java.io.*;
 import java.nio.file.*;
 import java.nio.file.attribute.*;
 
 /**
- * Description: ±éÀúÎÄ¼şºÍÄ¿Â¼¡£<br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description: éå†æ–‡ä»¶å’Œç›®å½•ã€‚<br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -17,31 +17,31 @@ import java.nio.file.attribute.*;
  */
 public class FileVisitorTest {
 	public static void main(String[] args) throws Exception {
-		// ±éÀúg:\publish\codes\15Ä¿Â¼ÏÂµÄËùÓĞÎÄ¼şºÍ×ÓÄ¿Â¼
-		Path path = Files.walkFileTree(Paths.get("F:", "workspace","01","·è¿ñJava½²Òå£¨µÚ3°æ£©","µÚ15ÕÂÊäÈë_Êä³ö"), new SimpleFileVisitor<Path>() {
-			// ·ÃÎÊÎÄ¼şÊ±ºò´¥·¢¸Ã·½·¨
+		// éå†g:\publish\codes\15ç›®å½•ä¸‹çš„æ‰€æœ‰æ–‡ä»¶å’Œå­ç›®å½•
+		Path path = Files.walkFileTree(Paths.get("F:", "workspace","01","ç–¯ç‹‚Javaè®²ä¹‰ï¼ˆç¬¬3ç‰ˆï¼‰","ç¬¬15ç« è¾“å…¥_è¾“å‡º"), new SimpleFileVisitor<Path>() {
+			// è®¿é—®æ–‡ä»¶æ—¶å€™è§¦å‘è¯¥æ–¹æ³•
 			@Override
 			public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-				System.err.println("ÕıÔÚ·ÃÎÊÎÄ¼ş£º" + file + "ÎÄ¼ş");
-				// ÕÒµ½ÁËFileInputStreamTest.javaÎÄ¼ş
+				System.err.println("æ­£åœ¨è®¿é—®æ–‡ä»¶ï¼š" + file + "æ–‡ä»¶");
+				// æ‰¾åˆ°äº†FileInputStreamTest.javaæ–‡ä»¶
 				if (file.endsWith("FileInputStreamTest.java")) {
-					System.err.println("--ÒÑ¾­ÕÒµ½Ä¿±êÎÄ¼ş--");
-					return FileVisitResult.TERMINATE;  //ÖÕÖ¹ºóĞòµÄ·ÃÎÊĞĞÎª
+					System.err.println("--å·²ç»æ‰¾åˆ°ç›®æ ‡æ–‡ä»¶--");
+					return FileVisitResult.TERMINATE;  //ç»ˆæ­¢ååºçš„è®¿é—®è¡Œä¸º
 				}
 				return FileVisitResult.CONTINUE;
 			}
 
-			// ¿ªÊ¼·ÃÎÊÄ¿Â¼Ê±´¥·¢¸Ã·½·¨
+			// å¼€å§‹è®¿é—®ç›®å½•æ—¶è§¦å‘è¯¥æ–¹æ³•
 			@Override
 			public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
-				System.out.println("ÕıÔÚ·ÃÎÊÄ¿Â¼£º" + dir + " Â·¾¶");
+				System.out.println("æ­£åœ¨è®¿é—®ç›®å½•ï¼š" + dir + " è·¯å¾„");
 				return FileVisitResult.CONTINUE;
 			}
 		});
 	
 	
 		
-		System.out.println("Files.walkFileTree()·½·¨·µ»ØÖµ£º "+path);
+		System.out.println("Files.walkFileTree()æ–¹æ³•è¿”å›å€¼ï¼š "+path);
 	
 	}
 }

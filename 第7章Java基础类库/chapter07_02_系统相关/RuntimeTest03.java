@@ -1,9 +1,9 @@
 
-package chapter07_02_ÏµÍ³Ïà¹Ø;
+package chapter07_02_ç³»ç»Ÿç›¸å…³;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -14,11 +14,11 @@ package chapter07_02_ÏµÍ³Ïà¹Ø;
  */
 public class RuntimeTest03 {
 	public static void main(String[] args) {
-		// »ñÈ¡Java³ÌĞò¹ØÁªµÄÔËĞĞÊ±¶ÔÏó
+		// è·å–Javaç¨‹åºå…³è”çš„è¿è¡Œæ—¶å¯¹è±¡
 		Runtime rt = Runtime.getRuntime();
-		System.out.println("´¦ÀíÆ÷ÊıÁ¿£º" + rt.availableProcessors());
-		System.out.println("¿ÕÏĞÄÚ´æÊı£º" + rt.freeMemory());
-		System.out.println("×ÜÄÚ´æÊı£º" + rt.totalMemory());
-		System.out.println("¿ÉÓÃ×î´óÄÚ´æÊı£º" + rt.maxMemory());
+		System.out.println("å¤„ç†å™¨æ•°é‡ï¼š" + rt.availableProcessors());
+		System.out.println("ç©ºé—²å†…å­˜æ•°ï¼š" + rt.freeMemory());
+		System.out.println("æ€»å†…å­˜æ•°ï¼š" + rt.totalMemory());
+		System.out.println("å¯ç”¨æœ€å¤§å†…å­˜æ•°ï¼š" + rt.maxMemory());
 	}
 }

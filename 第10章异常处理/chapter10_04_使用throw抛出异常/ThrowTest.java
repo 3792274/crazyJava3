@@ -1,10 +1,10 @@
-package chapter10_04_Ê¹ÓÃthrowÅ×³öÒì³£;
+package chapter10_04_ä½¿ç”¨throwæŠ›å‡ºå¼‚å¸¸;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -18,34 +18,34 @@ public class ThrowTest
 	{
 		try
 		{
-			// µ÷ÓÃÉùÃ÷Å×³öCheckedÒì³£µÄ·½·¨£¬ÒªÃ´ÏÔÊ½²¶»ñ¸ÃÒì³£
-			// ÒªÃ´ÔÚmain·½·¨ÖĞÔÙ´ÎÉùÃ÷Å×³ö
+			// è°ƒç”¨å£°æ˜æŠ›å‡ºCheckedå¼‚å¸¸çš„æ–¹æ³•ï¼Œè¦ä¹ˆæ˜¾å¼æ•è·è¯¥å¼‚å¸¸
+			// è¦ä¹ˆåœ¨mainæ–¹æ³•ä¸­å†æ¬¡å£°æ˜æŠ›å‡º
 			throwChecked(-3);
 		}
 		catch (Exception e)
 		{
 			System.out.println(e.getMessage());
 		}
-		// µ÷ÓÃÉùÃ÷Å×³öRuntimeÒì³£µÄ·½·¨¼È¿ÉÒÔÏÔÊ½²¶»ñ¸ÃÒì³££¬
-		// Ò²¿É²»Àí»á¸ÃÒì³£
+		// è°ƒç”¨å£°æ˜æŠ›å‡ºRuntimeå¼‚å¸¸çš„æ–¹æ³•æ—¢å¯ä»¥æ˜¾å¼æ•è·è¯¥å¼‚å¸¸ï¼Œ
+		// ä¹Ÿå¯ä¸ç†ä¼šè¯¥å¼‚å¸¸
 		throwRuntime(3);
 	}
 	public static void throwChecked(int a)throws Exception
 	{
 		if (a > 0)
 		{
-			// ×ÔĞĞÅ×³öExceptionÒì³£
-			// ¸Ã´úÂë±ØĞë´¦ÓÚtry¿éÀï£¬»ò´¦ÓÚ´øthrowsÉùÃ÷µÄ·½·¨ÖĞ
-			throw new Exception("throwChecked--aµÄÖµ´óÓÚ0£¬²»·ûºÏÒªÇó");
+			// è‡ªè¡ŒæŠ›å‡ºExceptionå¼‚å¸¸
+			// è¯¥ä»£ç å¿…é¡»å¤„äºtryå—é‡Œï¼Œæˆ–å¤„äºå¸¦throwså£°æ˜çš„æ–¹æ³•ä¸­
+			throw new Exception("throwChecked--açš„å€¼å¤§äº0ï¼Œä¸ç¬¦åˆè¦æ±‚");
 		}
 	}
 	public static void throwRuntime(int a)
 	{
 		if (a > 0)
 		{
-			// ×ÔĞĞÅ×³öRuntimeExceptionÒì³££¬¼È¿ÉÒÔÏÔÊ½²¶»ñ¸ÃÒì³£
-			// Ò²¿ÉÍêÈ«²»Àí»á¸ÃÒì³££¬°Ñ¸ÃÒì³£½»¸ø¸Ã·½·¨µ÷ÓÃÕß´¦Àí
-			throw new RuntimeException("throwRuntime--aµÄÖµ´óÓÚ0£¬²»·ûºÏÒªÇó");
+			// è‡ªè¡ŒæŠ›å‡ºRuntimeExceptionå¼‚å¸¸ï¼Œæ—¢å¯ä»¥æ˜¾å¼æ•è·è¯¥å¼‚å¸¸
+			// ä¹Ÿå¯å®Œå…¨ä¸ç†ä¼šè¯¥å¼‚å¸¸ï¼ŒæŠŠè¯¥å¼‚å¸¸äº¤ç»™è¯¥æ–¹æ³•è°ƒç”¨è€…å¤„ç†
+			throw new RuntimeException("throwRuntime--açš„å€¼å¤§äº0ï¼Œä¸ç¬¦åˆè¦æ±‚");
 		}
 	}
 }

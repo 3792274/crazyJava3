@@ -1,13 +1,13 @@
-package chapter08_06_java8ÔöÇ¿µÄMap¼¯ºÏ;
+package chapter08_06_java8å¢å¼ºçš„Mapé›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * 1.EnumMapÄÚ²¿ÒÔÊı×é±£´æ£¬½ô´Õ¡¢¸ßĞ§
- * 2.keyÊÇ×ÔÈ»Ë³Ğò(Ã¶¾ÙÖµÔÚÃ¶¾ÙÀàÖĞ¶¨ÒåµÄË³Ğò)À´Î¬»¤key-valueµÄË³Ğò£¬Í¨¹ıkeySet()/entrySet()/values()¿ÉÒÔ¿´µ½
- * 3.²»ÔÊĞínull×÷Îªkey,¿ÉÒÔ×÷Îªvalue,²éÑ¯»òÉ¾³ıÖµÎªnullµÄkey²»»áÅ×³öÒì³£¡£
- * 4.Óë´´½¨ÆÕÍ¨MapÇø±ğ£¬´´½¨EnumMapÊ±±ØĞëÖÆ¶¨Ò»¸öÃ¶¾ÙÀà£¬´Ó¶ø½«¸ÃEnumMapºÍÖ¸¶¨µÄÃ¶¾ÙÀà¹ØÁªÆğÀ´¡£
+ * 1.EnumMapå†…éƒ¨ä»¥æ•°ç»„ä¿å­˜ï¼Œç´§å‡‘ã€é«˜æ•ˆ
+ * 2.keyæ˜¯è‡ªç„¶é¡ºåº(æšä¸¾å€¼åœ¨æšä¸¾ç±»ä¸­å®šä¹‰çš„é¡ºåº)æ¥ç»´æŠ¤key-valueçš„é¡ºåºï¼Œé€šè¿‡keySet()/entrySet()/values()å¯ä»¥çœ‹åˆ°
+ * 3.ä¸å…è®¸nullä½œä¸ºkey,å¯ä»¥ä½œä¸ºvalue,æŸ¥è¯¢æˆ–åˆ é™¤å€¼ä¸ºnullçš„keyä¸ä¼šæŠ›å‡ºå¼‚å¸¸ã€‚
+ * 4.ä¸åˆ›å»ºæ™®é€šMapåŒºåˆ«ï¼Œåˆ›å»ºEnumMapæ—¶å¿…é¡»åˆ¶å®šä¸€ä¸ªæšä¸¾ç±»ï¼Œä»è€Œå°†è¯¥EnumMapå’ŒæŒ‡å®šçš„æšä¸¾ç±»å…³è”èµ·æ¥ã€‚
  */
 enum Season
 {
@@ -19,10 +19,10 @@ public class EnumMapTest
 {
 	public static void main(String[] args)
 	{
-		// ´´½¨EnumMap¶ÔÏó£¬¸ÃEnumMapµÄËùÓĞkey¶¼ÊÇSeasonÃ¶¾ÙÀàµÄÃ¶¾ÙÖµ
+		// åˆ›å»ºEnumMapå¯¹è±¡ï¼Œè¯¥EnumMapçš„æ‰€æœ‰keyéƒ½æ˜¯Seasonæšä¸¾ç±»çš„æšä¸¾å€¼
 		EnumMap enumMap = new EnumMap(Season.class);
-		enumMap.put(Season.SUMMER , "ÏÄÈÕÑ×Ñ×");
-		enumMap.put(Season.SPRING , "´ºÅ¯»¨¿ª");
+		enumMap.put(Season.SUMMER , "å¤æ—¥ç‚ç‚");
+		enumMap.put(Season.SPRING , "æ˜¥æš–èŠ±å¼€");
 		System.out.println(enumMap);
 	}
 }

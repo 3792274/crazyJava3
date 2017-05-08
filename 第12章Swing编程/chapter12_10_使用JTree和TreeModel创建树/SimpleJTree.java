@@ -1,11 +1,11 @@
-package chapter12_10_Ê¹ÓÃJTreeºÍTreeModel´´½¨Ê÷;
+package chapter12_10_ä½¿ç”¨JTreeå’ŒTreeModelåˆ›å»ºæ ‘;
 
 
 import javax.swing.*;
 import javax.swing.tree.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,7 +15,7 @@ import javax.swing.tree.*;
  */
 public class SimpleJTree
 {
-	JFrame jf = new JFrame("¼òµ¥Ê÷");
+	JFrame jf = new JFrame("ç®€å•æ ‘");
 	JTree tree;
 	DefaultMutableTreeNode root;
 	DefaultMutableTreeNode guangdong;
@@ -26,23 +26,23 @@ public class SimpleJTree
 	DefaultMutableTreeNode nanning;
 	public void init()
 	{
-		// ÒÀ´Î´´½¨Ê÷ÖĞËùÓĞ½Úµã
-		root = new DefaultMutableTreeNode("ÖĞ¹ú");
-		guangdong = new DefaultMutableTreeNode("¹ã¶«");
-		guangxi = new DefaultMutableTreeNode("¹ãÎ÷");
-		foshan = new DefaultMutableTreeNode("·ğÉ½");
-		shantou = new DefaultMutableTreeNode("ÉÇÍ·");
-		guilin = new DefaultMutableTreeNode("¹ğÁÖ");
-		nanning = new DefaultMutableTreeNode("ÄÏÄş");
-		// Í¨¹ıadd()·½·¨½¨Á¢Ê÷½ÚµãÖ®¼äµÄ¸¸×Ó¹ØÏµ
+		// ä¾æ¬¡åˆ›å»ºæ ‘ä¸­æ‰€æœ‰èŠ‚ç‚¹
+		root = new DefaultMutableTreeNode("ä¸­å›½");
+		guangdong = new DefaultMutableTreeNode("å¹¿ä¸œ");
+		guangxi = new DefaultMutableTreeNode("å¹¿è¥¿");
+		foshan = new DefaultMutableTreeNode("ä½›å±±");
+		shantou = new DefaultMutableTreeNode("æ±•å¤´");
+		guilin = new DefaultMutableTreeNode("æ¡‚æ—");
+		nanning = new DefaultMutableTreeNode("å—å®");
+		// é€šè¿‡add()æ–¹æ³•å»ºç«‹æ ‘èŠ‚ç‚¹ä¹‹é—´çš„çˆ¶å­å…³ç³»
 		guangdong.add(foshan);
 		guangdong.add(shantou);
 		guangxi.add(guilin);
 		guangxi.add(nanning);
 		root.add(guangdong);
 		root.add(guangxi);
-		// ÒÔ¸ù½Úµã´´½¨Ê÷
-		tree = new JTree(root);   // ¢Ù
+		// ä»¥æ ¹èŠ‚ç‚¹åˆ›å»ºæ ‘
+		tree = new JTree(root);   // â‘ 
 		jf.add(new JScrollPane(tree));
 		jf.pack();
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

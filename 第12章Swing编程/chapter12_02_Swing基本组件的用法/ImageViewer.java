@@ -1,4 +1,4 @@
-package chapter12_02_Swing»ù±¾×é¼şµÄÓÃ·¨;
+package chapter12_02_SwingåŸºæœ¬ç»„ä»¶çš„ç”¨æ³•;
 
 
 import java.io.File;
@@ -10,7 +10,7 @@ import javax.swing.*;
 import javax.swing.filechooser.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,86 +20,86 @@ import javax.swing.filechooser.*;
  */
 public class ImageViewer
 {
-	// ¶¨ÒåÍ¼Æ¬Ô¤ÀÀ×é¼şµÄ´óĞ¡
+	// å®šä¹‰å›¾ç‰‡é¢„è§ˆç»„ä»¶çš„å¤§å°
 	final int PREVIEW_SIZE = 100;
-	JFrame jf = new JFrame("¼òµ¥Í¼Æ¬²é¿´Æ÷");
+	JFrame jf = new JFrame("ç®€å•å›¾ç‰‡æŸ¥çœ‹å™¨");
 	JMenuBar menuBar = new JMenuBar();
-	// ¸ÃlabelÓÃÓÚÏÔÊ¾Í¼Æ¬
+	// è¯¥labelç”¨äºæ˜¾ç¤ºå›¾ç‰‡
 	JLabel label = new JLabel();
-	// ÒÔµ±Ç°Â·¾¶´´½¨ÎÄ¼şÑ¡ÔñÆ÷
+	// ä»¥å½“å‰è·¯å¾„åˆ›å»ºæ–‡ä»¶é€‰æ‹©å™¨
 	JFileChooser chooser = new JFileChooser(".");
 	JLabel accessory = new JLabel();
-	// ¶¨ÒåÎÄ¼ş¹ıÂËÆ÷
+	// å®šä¹‰æ–‡ä»¶è¿‡æ»¤å™¨
 	ExtensionFileFilter filter = new ExtensionFileFilter();
 	public void init()
 	{
-		// --------ÏÂÃæ¿ªÊ¼³õÊ¼»¯JFileChooserµÄÏà¹ØÊôĞÔ--------
-		//  ´´½¨Ò»¸öFileFilter
+		// --------ä¸‹é¢å¼€å§‹åˆå§‹åŒ–JFileChooserçš„ç›¸å…³å±æ€§--------
+		//  åˆ›å»ºä¸€ä¸ªFileFilter
 		filter.addExtension("jpg");
 		filter.addExtension("jpeg");
 		filter.addExtension("gif");
 		filter.addExtension("png");
-		filter.setDescription("Í¼Æ¬ÎÄ¼ş(*.jpg,*.jpeg,*.gif,*.png)");
+		filter.setDescription("å›¾ç‰‡æ–‡ä»¶(*.jpg,*.jpeg,*.gif,*.png)");
 		chooser.addChoosableFileFilter(filter);
-		// ½ûÖ¹¡°ÎÄ¼şÀàĞÍ¡±ÏÂÀ­ÁĞ±íÖĞÏÔÊ¾¡°ËùÓĞÎÄ¼ş¡±Ñ¡Ïî¡£
-		chooser.setAcceptAllFileFilterUsed(false);   // ¢Ù
-		// ÎªÎÄ¼şÑ¡ÔñÆ÷Ö¸¶¨×Ô¶¨ÒåµÄFileView¶ÔÏó
+		// ç¦æ­¢â€œæ–‡ä»¶ç±»å‹â€ä¸‹æ‹‰åˆ—è¡¨ä¸­æ˜¾ç¤ºâ€œæ‰€æœ‰æ–‡ä»¶â€é€‰é¡¹ã€‚
+		chooser.setAcceptAllFileFilterUsed(false);   // â‘ 
+		// ä¸ºæ–‡ä»¶é€‰æ‹©å™¨æŒ‡å®šè‡ªå®šä¹‰çš„FileViewå¯¹è±¡
 		chooser.setFileView(new FileIconView(filter));
-		// ÎªÎÄ¼şÑ¡ÔñÆ÷Ö¸¶¨Ò»¸öÔ¤ÀÀÍ¼Æ¬µÄ¸½¼ş
-		chooser.setAccessory(accessory);     // ¢Ú
-		// ÉèÖÃÔ¤ÀÀÍ¼Æ¬×é¼şµÄ´óĞ¡ºÍ±ß¿ò
+		// ä¸ºæ–‡ä»¶é€‰æ‹©å™¨æŒ‡å®šä¸€ä¸ªé¢„è§ˆå›¾ç‰‡çš„é™„ä»¶
+		chooser.setAccessory(accessory);     // â‘¡
+		// è®¾ç½®é¢„è§ˆå›¾ç‰‡ç»„ä»¶çš„å¤§å°å’Œè¾¹æ¡†
 		accessory.setPreferredSize(new Dimension(PREVIEW_SIZE, PREVIEW_SIZE));
 		accessory.setBorder(BorderFactory.createEtchedBorder());
-		// ÓÃÓÚ¼ì²â±»Ñ¡ÔñÎÄ¼şµÄ¸Ä±äÊÂ¼ş
+		// ç”¨äºæ£€æµ‹è¢«é€‰æ‹©æ–‡ä»¶çš„æ”¹å˜äº‹ä»¶
 		chooser.addPropertyChangeListener(event -> {
-			// JFileChooserµÄ±»Ñ¡ÎÄ¼şÒÑ¾­·¢ÉúÁË¸Ä±ä
+			// JFileChooserçš„è¢«é€‰æ–‡ä»¶å·²ç»å‘ç”Ÿäº†æ”¹å˜
 			if (event.getPropertyName() ==
 				JFileChooser.SELECTED_FILE_CHANGED_PROPERTY)
 			{
-				// »ñÈ¡ÓÃ»§Ñ¡ÔñµÄĞÂÎÄ¼ş
+				// è·å–ç”¨æˆ·é€‰æ‹©çš„æ–°æ–‡ä»¶
 				File f = (File) event.getNewValue();
 				if (f == null)
 				{
 					accessory.setIcon(null);
 					return;
 				}
-				// ½«ËùÑ¡ÎÄ¼ş¶ÁÈëImageIcon¶ÔÏóÖĞ
+				// å°†æ‰€é€‰æ–‡ä»¶è¯»å…¥ImageIconå¯¹è±¡ä¸­
 				ImageIcon icon = new ImageIcon(f.getPath());
-				// Èç¹ûÍ¼ÏñÌ«´ó£¬ÔòËõĞ¡Ëü
+				// å¦‚æœå›¾åƒå¤ªå¤§ï¼Œåˆ™ç¼©å°å®ƒ
 				if(icon.getIconWidth() > PREVIEW_SIZE)
 				{
 					icon = new ImageIcon(icon.getImage().getScaledInstance
 						(PREVIEW_SIZE, -1, Image.SCALE_DEFAULT));
 				}
-				// ¸Ä±äaccessory LabelµÄÍ¼±ê
+				// æ”¹å˜accessory Labelçš„å›¾æ ‡
 				accessory.setIcon(icon);
 			}
 		});
-		// ------ÏÂÃæ´úÂë¿ªÊ¼Îª¸Ã´°¿Ú°²×°²Ëµ¥------
-		JMenu menu = new JMenu("ÎÄ¼ş");
+		// ------ä¸‹é¢ä»£ç å¼€å§‹ä¸ºè¯¥çª—å£å®‰è£…èœå•------
+		JMenu menu = new JMenu("æ–‡ä»¶");
 		menuBar.add(menu);
-		JMenuItem openItem = new JMenuItem("´ò¿ª");
+		JMenuItem openItem = new JMenuItem("æ‰“å¼€");
 		menu.add(openItem);
-		// µ¥»÷openItem²Ëµ¥ÏîÏÔÊ¾¡°´ò¿ªÎÄ¼ş¡±µÄ¶Ô»°¿ò
+		// å•å‡»openItemèœå•é¡¹æ˜¾ç¤ºâ€œæ‰“å¼€æ–‡ä»¶â€çš„å¯¹è¯æ¡†
 		openItem.addActionListener(event -> {
-			// ÉèÖÃÎÄ¼ş¶Ô»°¿òµÄµ±Ç°Â·¾¶
+			// è®¾ç½®æ–‡ä»¶å¯¹è¯æ¡†çš„å½“å‰è·¯å¾„
 			// chooser.setCurrentDirectory(new File("."));
-			// ÏÔÊ¾ÎÄ¼ş¶Ô»°¿ò
-			int result = chooser.showDialog(jf , "´ò¿ªÍ¼Æ¬ÎÄ¼ş");
-			// Èç¹ûÓÃ»§Ñ¡ÔñÁËAPPROVE£¨Í¬Òâ£©°´Å¥£¬¼´´ò¿ª£¬±£´æµÄµÈĞ§°´Å¥
+			// æ˜¾ç¤ºæ–‡ä»¶å¯¹è¯æ¡†
+			int result = chooser.showDialog(jf , "æ‰“å¼€å›¾ç‰‡æ–‡ä»¶");
+			// å¦‚æœç”¨æˆ·é€‰æ‹©äº†APPROVEï¼ˆåŒæ„ï¼‰æŒ‰é’®ï¼Œå³æ‰“å¼€ï¼Œä¿å­˜çš„ç­‰æ•ˆæŒ‰é’®
 			if(result == JFileChooser.APPROVE_OPTION)
 			{
 				String name = chooser.getSelectedFile().getPath();
-				// ÏÔÊ¾Ö¸¶¨Í¼Æ¬
+				// æ˜¾ç¤ºæŒ‡å®šå›¾ç‰‡
 				label.setIcon(new ImageIcon(name));
 			}
 		});
 		JMenuItem exitItem = new JMenuItem("Exit");
 		menu.add(exitItem);
-		// ÎªÍË³ö²Ëµ¥°ó¶¨ÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºé€€å‡ºèœå•ç»‘å®šäº‹ä»¶ç›‘å¬å™¨
 		exitItem.addActionListener(event -> System.exit(0));
 		jf.setJMenuBar(menuBar);
-		// Ìí¼ÓÓÃÓÚÏÔÊ¾Í¼Æ¬µÄJLabel×é¼ş¡£
+		// æ·»åŠ ç”¨äºæ˜¾ç¤ºå›¾ç‰‡çš„JLabelç»„ä»¶ã€‚
 		jf.add(new JScrollPane(label));
 		jf.pack();
 		jf.setVisible(true);
@@ -109,12 +109,12 @@ public class ImageViewer
 		new ImageViewer().init();
 	}
 }
-// ´´½¨FileFilterµÄ×ÓÀà£¬ÓÃÒÔÊµÏÖÎÄ¼ş¹ıÂË¹¦ÄÜ
+// åˆ›å»ºFileFilterçš„å­ç±»ï¼Œç”¨ä»¥å®ç°æ–‡ä»¶è¿‡æ»¤åŠŸèƒ½
 class ExtensionFileFilter extends FileFilter
 {
 	private String description;
 	private ArrayList<String> extensions = new ArrayList<>();
-	// ×Ô¶¨Òå·½·¨£¬ÓÃÓÚÌí¼ÓÎÄ¼şÀ©Õ¹Ãû
+	// è‡ªå®šä¹‰æ–¹æ³•ï¼Œç”¨äºæ·»åŠ æ–‡ä»¶æ‰©å±•å
 	public void addExtension(String extension)
 	{
 		if (!extension.startsWith("."))
@@ -123,24 +123,24 @@ class ExtensionFileFilter extends FileFilter
 			extensions.add(extension.toLowerCase());
 		}
 	}
-	// ÓÃÓÚÉèÖÃ¸ÃÎÄ¼ş¹ıÂËÆ÷µÄÃèÊöÎÄ±¾
+	// ç”¨äºè®¾ç½®è¯¥æ–‡ä»¶è¿‡æ»¤å™¨çš„æè¿°æ–‡æœ¬
 	public void setDescription(String aDescription)
 	{
 		description = aDescription;
 	}
-	// ¼Ì³ĞFileFilterÀà±ØĞëÊµÏÖµÄ³éÏó·½·¨£¬·µ»Ø¸ÃÎÄ¼ş¹ıÂËÆ÷µÄÃèÊöÎÄ±¾
+	// ç»§æ‰¿FileFilterç±»å¿…é¡»å®ç°çš„æŠ½è±¡æ–¹æ³•ï¼Œè¿”å›è¯¥æ–‡ä»¶è¿‡æ»¤å™¨çš„æè¿°æ–‡æœ¬
 	public String getDescription()
 	{
 		return description;
 	}
-	// ¼Ì³ĞFileFilterÀà±ØĞëÊµÏÖµÄ³éÏó·½·¨£¬ÅĞ¶Ï¸ÃÎÄ¼ş¹ıÂËÆ÷ÊÇ·ñ½ÓÊÜ¸ÃÎÄ¼ş
+	// ç»§æ‰¿FileFilterç±»å¿…é¡»å®ç°çš„æŠ½è±¡æ–¹æ³•ï¼Œåˆ¤æ–­è¯¥æ–‡ä»¶è¿‡æ»¤å™¨æ˜¯å¦æ¥å—è¯¥æ–‡ä»¶
 	public boolean accept(File f)
 	{
-		// Èç¹û¸ÃÎÄ¼şÊÇÂ·¾¶£¬½ÓÊÜ¸ÃÎÄ¼ş
+		// å¦‚æœè¯¥æ–‡ä»¶æ˜¯è·¯å¾„ï¼Œæ¥å—è¯¥æ–‡ä»¶
 		if (f.isDirectory()) return true;
-		// ½«ÎÄ¼şÃû×ªÎªĞ¡Ğ´£¨È«²¿×ªÎªĞ¡Ğ´ºó±È½Ï£¬ÓÃÓÚºöÂÔÎÄ¼şÃû´óĞ¡Ğ´£©
+		// å°†æ–‡ä»¶åè½¬ä¸ºå°å†™ï¼ˆå…¨éƒ¨è½¬ä¸ºå°å†™åæ¯”è¾ƒï¼Œç”¨äºå¿½ç•¥æ–‡ä»¶åå¤§å°å†™ï¼‰
 		String name = f.getName().toLowerCase();
-		// ±éÀúËùÓĞ¿É½ÓÊÜµÄÀ©Õ¹Ãû£¬Èç¹ûÀ©Õ¹ÃûÏàÍ¬£¬¸ÃÎÄ¼ş¾Í¿É½ÓÊÜ¡£
+		// éå†æ‰€æœ‰å¯æ¥å—çš„æ‰©å±•åï¼Œå¦‚æœæ‰©å±•åç›¸åŒï¼Œè¯¥æ–‡ä»¶å°±å¯æ¥å—ã€‚
 		for (String extension : extensions)
 		{
 			if (name.endsWith(extension))
@@ -151,7 +151,7 @@ class ExtensionFileFilter extends FileFilter
 		return false;
 	}
 }
-// ×Ô¶¨ÒåÒ»¸öFileViewÀà£¬ÓÃÓÚÎªÖ¸¶¨ÀàĞÍµÄÎÄ¼ş»òÎÄ¼ş¼ĞÉèÖÃÍ¼±ê
+// è‡ªå®šä¹‰ä¸€ä¸ªFileViewç±»ï¼Œç”¨äºä¸ºæŒ‡å®šç±»å‹çš„æ–‡ä»¶æˆ–æ–‡ä»¶å¤¹è®¾ç½®å›¾æ ‡
 class FileIconView extends FileView
 {
 	private FileFilter filter;
@@ -159,7 +159,7 @@ class FileIconView extends FileView
 	{
 		this.filter = filter;
 	}
-	// ÖØĞ´¸Ã·½·¨£¬ÎªÎÄ¼ş¼Ğ¡¢ÎÄ¼şÉèÖÃÍ¼±ê
+	// é‡å†™è¯¥æ–¹æ³•ï¼Œä¸ºæ–‡ä»¶å¤¹ã€æ–‡ä»¶è®¾ç½®å›¾æ ‡
 	public Icon getIcon(File f)
 	{
 		if (!f.isDirectory() && filter.accept(f))
@@ -168,11 +168,11 @@ class FileIconView extends FileView
 		}
 		else if (f.isDirectory())
 		{
-			// »ñÈ¡ËùÓĞ¸ùÂ·¾¶
+			// è·å–æ‰€æœ‰æ ¹è·¯å¾„
 			File[] fList = File.listRoots();
 			for (File tmp : fList)
 			{
-				// Èç¹û¸ÃÂ·¾¶ÊÇ¸ùÂ·¾¶
+				// å¦‚æœè¯¥è·¯å¾„æ˜¯æ ¹è·¯å¾„
 				if (tmp.equals(f))
 				{
 					return  new ImageIcon("ico/dsk.png");
@@ -180,7 +180,7 @@ class FileIconView extends FileView
 			}
 			return new ImageIcon("ico/folder.png");
 		}
-		// Ê¹ÓÃÄ¬ÈÏÍ¼±ê
+		// ä½¿ç”¨é»˜è®¤å›¾æ ‡
 		else
 		{
 			return null;

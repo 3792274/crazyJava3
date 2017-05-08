@@ -1,10 +1,10 @@
-package chapter06_04_finalĞŞÊÎ·û;
+package chapter06_04_finalä¿®é¥°ç¬¦;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,7 +16,7 @@ public class Address
 {
 	private final String detail;
 	private final String postCode;
-	// ÔÚ¹¹ÔìÆ÷Àï³õÊ¼»¯Á½¸öÊµÀı±äÁ¿
+	// åœ¨æ„é€ å™¨é‡Œåˆå§‹åŒ–ä¸¤ä¸ªå®ä¾‹å˜é‡
 	public Address()
 	{
 		this.detail = "";
@@ -27,7 +27,7 @@ public class Address
 		this.detail = detail;
 		this.postCode = postCode;
 	}
-	// ½öÎªÁ½¸öÊµÀı±äÁ¿Ìá¹©getter·½·¨
+	// ä»…ä¸ºä¸¤ä¸ªå®ä¾‹å˜é‡æä¾›getteræ–¹æ³•
 	public String getDetail()
 	{
 		return this.detail;
@@ -36,7 +36,7 @@ public class Address
 	{
 		return this.postCode;
 	}
-	//ÖØĞ´equals()·½·¨£¬ÅĞ¶ÏÁ½¸ö¶ÔÏóÊÇ·ñÏàµÈ¡£
+	//é‡å†™equals()æ–¹æ³•ï¼Œåˆ¤æ–­ä¸¤ä¸ªå¯¹è±¡æ˜¯å¦ç›¸ç­‰ã€‚
 	public boolean equals(Object obj)
 	{
 		if (this == obj)
@@ -46,7 +46,7 @@ public class Address
 		if(obj != null && obj.getClass() == Address.class)
 		{
 			Address ad = (Address)obj;
-			// µ±detailºÍpostCodeÏàµÈÊ±£¬¿ÉÈÏÎªÁ½¸öAddress¶ÔÏóÏàµÈ¡£
+			// å½“detailå’ŒpostCodeç›¸ç­‰æ—¶ï¼Œå¯è®¤ä¸ºä¸¤ä¸ªAddresså¯¹è±¡ç›¸ç­‰ã€‚
 			if (this.getDetail().equals(ad.getDetail())
 				&& this.getPostCode().equals(ad.getPostCode()))
 			{

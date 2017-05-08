@@ -1,10 +1,10 @@
-package chapter05_01_ÀàºÍ¶ÔÏó;
+package chapter05_01_ç±»å’Œå¯¹è±¡;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,19 +14,19 @@ package chapter05_01_ÀàºÍ¶ÔÏó;
  */
 public class Dog
 {
-	// ¶¨ÒåÒ»¸öjump()·½·¨
+	// å®šä¹‰ä¸€ä¸ªjump()æ–¹æ³•
 	public void jump()
 	{
-		System.out.println("ÕıÔÚÖ´ĞĞjump·½·¨");
+		System.out.println("æ­£åœ¨æ‰§è¡Œjumpæ–¹æ³•");
 	}
-	// ¶¨ÒåÒ»¸örun()·½·¨£¬run()·½·¨ĞèÒª½èÖújump()·½·¨
+	// å®šä¹‰ä¸€ä¸ªrun()æ–¹æ³•ï¼Œrun()æ–¹æ³•éœ€è¦å€ŸåŠ©jump()æ–¹æ³•
 	public void run()
 	{
 //		Dog d = new Dog();
 //		d.jump();
-		// Ê¹ÓÃthisÒıÓÃµ÷ÓÃrun()·½·¨µÄ¶ÔÏó
+		// ä½¿ç”¨thiså¼•ç”¨è°ƒç”¨run()æ–¹æ³•çš„å¯¹è±¡
 		this.jump();
-		System.out.println("ÕıÔÚÖ´ĞĞrun·½·¨");
+		System.out.println("æ­£åœ¨æ‰§è¡Œrunæ–¹æ³•");
 	}
 }
 

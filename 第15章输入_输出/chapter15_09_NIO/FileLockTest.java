@@ -5,8 +5,8 @@ import java.nio.*;
 import java.nio.channels.*;
 
 /**
- * Description:×èÈû£¬·Ç×èÈûÇø±ğ£¬ÅÅËüËø <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:é˜»å¡ï¼Œéé˜»å¡åŒºåˆ«ï¼Œæ’å®ƒé” <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -19,13 +19,13 @@ public class FileLockTest {
 	public static void main(String[] args) throws Exception {
 
 		try (
-				// Ê¹ÓÃFileOutputStream»ñÈ¡FileChannel
+				// ä½¿ç”¨FileOutputStreamè·å–FileChannel
 				FileChannel channel = new FileOutputStream("D:/a.txt").getChannel()) {
-			// Ê¹ÓÃ·Ç×èÈûÊ½·½Ê½¶ÔÖ¸¶¨ÎÄ¼ş¼ÓËø
+			// ä½¿ç”¨éé˜»å¡å¼æ–¹å¼å¯¹æŒ‡å®šæ–‡ä»¶åŠ é”
 			FileLock lock = channel.tryLock();
-			// ³ÌĞòÔİÍ£10s
+			// ç¨‹åºæš‚åœ10s
 			Thread.sleep(10000);
-			// ÊÍ·ÅËø
+			// é‡Šæ”¾é”
 			lock.release();
 		}
 	}

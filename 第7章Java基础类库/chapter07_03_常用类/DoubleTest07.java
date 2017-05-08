@@ -1,10 +1,10 @@
-package chapter07_03_³£ÓÃÀà;
+package chapter07_03_å¸¸ç”¨ç±»;
 
 /**
  * Description: <br/>
- * 1.Á½¸ö»ù±¾ÀàĞÍµÄ¸¡µãÊıÈİÒ×¾«¶È¶ªÊ§¡£
+ * 1.ä¸¤ä¸ªåŸºæœ¬ç±»å‹çš„æµ®ç‚¹æ•°å®¹æ˜“ç²¾åº¦ä¸¢å¤±ã€‚
  * 
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>

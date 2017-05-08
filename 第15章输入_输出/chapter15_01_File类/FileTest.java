@@ -1,4 +1,4 @@
-package chapter15_01_FileÀà;
+package chapter15_01_Fileç±»;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,45 +7,45 @@ public class FileTest {
 
 	public static void main(String[] args) throws IOException {
 		
-		//ÒÔµ±Ç°Â·¾¶´´½¨Ò»¸öfile¶ÔÏó
+		//ä»¥å½“å‰è·¯å¾„åˆ›å»ºä¸€ä¸ªfileå¯¹è±¡
 		File file = new java.io.File(".");
 		
-		//Ö±½Ó»ñÈ¡ÎÄ¼şÃû£¬Êä³öÒ»¸ö.
+		//ç›´æ¥è·å–æ–‡ä»¶åï¼Œè¾“å‡ºä¸€ä¸ª.
 		System.out.println(file.getName());
 		
-		//Êä³öÏà¶ÔÂ·¾¶µÄ¸¸Â·¾¶£¬¿ÉÄÜ³ö´í£¬null,Ê¹ÓÃÏà¶ÔÂ·¾¶µÄFile»ñÈ¡¸¸Â·¾¶¿ÉÄÜÒıÆğ´íÎó
+		//è¾“å‡ºç›¸å¯¹è·¯å¾„çš„çˆ¶è·¯å¾„ï¼Œå¯èƒ½å‡ºé”™ï¼Œnull,ä½¿ç”¨ç›¸å¯¹è·¯å¾„çš„Fileè·å–çˆ¶è·¯å¾„å¯èƒ½å¼•èµ·é”™è¯¯
 		System.out.println(file.getParent());
 		
-		//»ñÈ¡¾ø¶ÔÂ·¾¶
+		//è·å–ç»å¯¹è·¯å¾„
 		System.out.println(file.getAbsoluteFile());
 		
-		//»ñÈ¡ÉÏÒ»¼¶Â·¾¶
+		//è·å–ä¸Šä¸€çº§è·¯å¾„
 		System.out.println(file.getAbsoluteFile().getParent());
 
-		//ÔÚµ±Ç°Â·¾¶ÏÂ´´½¨Ò»¸öÁÙÊ±ÎÄ¼ş
+		//åœ¨å½“å‰è·¯å¾„ä¸‹åˆ›å»ºä¸€ä¸ªä¸´æ—¶æ–‡ä»¶
 		File tmpFile = File.createTempFile("aaa", ".txt",file);
-		//Ö¸¶¨jvmÍË³öÊ±É¾³ı¸ÃÎÄ¼ş
+		//æŒ‡å®šjvmé€€å‡ºæ—¶åˆ é™¤è¯¥æ–‡ä»¶
 		tmpFile.deleteOnExit();
 		
-		//ÒÔÏµÍ³Ê±¼äÎªÎÄ¼şÃû´´½¨ÎÄ¼ş
+		//ä»¥ç³»ç»Ÿæ—¶é—´ä¸ºæ–‡ä»¶ååˆ›å»ºæ–‡ä»¶
 		File newFile= new File(System.currentTimeMillis()+"");
-		System.out.println("newFileÎÄ¼şÊÇ·ñ´æÔÚ£º "+ newFile.exists());
+		System.out.println("newFileæ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼š "+ newFile.exists());
 		
-		//ÒÔnewFile¶ÔÏó´´½¨Ò»¸öÎÄ¼ş
+		//ä»¥newFileå¯¹è±¡åˆ›å»ºä¸€ä¸ªæ–‡ä»¶
 		newFile.createNewFile();
 		
-		//ÒÔnewFile¶ÔÏó´´½¨Ò»¸öÄ¿Â¼£¬ÒòÎªnewFileÒÑ¾­´æÔÚ£¬·µ»Øfalse ÎŞ·¨´´½¨
+		//ä»¥newFileå¯¹è±¡åˆ›å»ºä¸€ä¸ªç›®å½•ï¼Œå› ä¸ºnewFileå·²ç»å­˜åœ¨ï¼Œè¿”å›false æ— æ³•åˆ›å»º
 		System.out.println(newFile.mkdir());
 		
-		//ÁĞ³öµ±Ç°Â·¾¶ÏÂËùÓĞÎÄ¼şºÍÂ·¾¶
+		//åˆ—å‡ºå½“å‰è·¯å¾„ä¸‹æ‰€æœ‰æ–‡ä»¶å’Œè·¯å¾„
 		String [] fileList = file.list();
-		System.out.println("========µ±Ç°Â·¾¶ÏÂËùÓĞÎÄ¼şºÍÂ·¾¶========");
+		System.out.println("========å½“å‰è·¯å¾„ä¸‹æ‰€æœ‰æ–‡ä»¶å’Œè·¯å¾„========");
 		for(String fileName:fileList)
 			System.out.println(fileName);
 		
-		//listRoot()¾²Ì¬·½·¨£¬ÁĞ³öËùÓĞ´ÅÅÌ¸ùÂ·¾¶
+		//listRoot()é™æ€æ–¹æ³•ï¼Œåˆ—å‡ºæ‰€æœ‰ç£ç›˜æ ¹è·¯å¾„
 		File [] roots = File.listRoots();
-		System.out.println("==========ÏµÍ³ËùÓĞ¸úÂ·¾¶ÈçÏÂ");
+		System.out.println("==========ç³»ç»Ÿæ‰€æœ‰è·Ÿè·¯å¾„å¦‚ä¸‹");
 		for(File root:roots)
 			System.out.println(root);
 	

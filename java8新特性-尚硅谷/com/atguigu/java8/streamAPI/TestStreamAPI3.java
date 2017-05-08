@@ -17,19 +17,19 @@ import com.atguigu.java8.streamAPI.Employee.Status;
 public class TestStreamAPI3 {
 	
 	List<Employee> emps = Arrays.asList(
-			new Employee(102, "ÀîËÄ", 79, 6666.66, Status.BUSY),
-			new Employee(101, "ÕÅÈı", 18, 9999.99, Status.FREE),
-			new Employee(103, "ÍõÎå", 28, 3333.33, Status.VOCATION),
-			new Employee(104, "ÕÔÁù", 8, 7777.77, Status.BUSY),
-			new Employee(104, "ÕÔÁù", 8, 7777.77, Status.FREE),
-			new Employee(104, "ÕÔÁù", 8, 7777.77, Status.FREE),
-			new Employee(105, "ÌïÆß", 38, 5555.55, Status.BUSY)
+			new Employee(102, "æå››", 79, 6666.66, Status.BUSY),
+			new Employee(101, "å¼ ä¸‰", 18, 9999.99, Status.FREE),
+			new Employee(103, "ç‹äº”", 28, 3333.33, Status.VOCATION),
+			new Employee(104, "èµµå…­", 8, 7777.77, Status.BUSY),
+			new Employee(104, "èµµå…­", 8, 7777.77, Status.FREE),
+			new Employee(104, "èµµå…­", 8, 7777.77, Status.FREE),
+			new Employee(105, "ç”°ä¸ƒ", 38, 5555.55, Status.BUSY)
 	);
 	
-	//3. ÖÕÖ¹²Ù×÷
+	//3. ç»ˆæ­¢æ“ä½œ
 	/*
-		¹éÔ¼
-		reduce(T identity, BinaryOperator) / reduce(BinaryOperator) ¡ª¡ª¿ÉÒÔ½«Á÷ÖĞÔªËØ·´¸´½áºÏÆğÀ´£¬µÃµ½Ò»¸öÖµ¡£
+		å½’çº¦
+		reduce(T identity, BinaryOperator) / reduce(BinaryOperator) â€”â€”å¯ä»¥å°†æµä¸­å…ƒç´ åå¤ç»“åˆèµ·æ¥ï¼Œå¾—åˆ°ä¸€ä¸ªå€¼ã€‚
 	 */
 	@Test
 	public void test1(){
@@ -49,14 +49,14 @@ public class TestStreamAPI3 {
 		System.out.println(op.get());
 	}
 	
-	//ĞèÇó£ºËÑË÷Ãû×ÖÖĞ ¡°Áù¡± ³öÏÖµÄ´ÎÊı
+	//éœ€æ±‚ï¼šæœç´¢åå­—ä¸­ â€œå…­â€ å‡ºç°çš„æ¬¡æ•°
 	@Test
 	public void test2(){
 		Optional<Integer> sum = emps.stream()
 			.map(Employee::getName)
 			.flatMap(TestStreamAPI1::filterCharacter)
 			.map((ch) -> {
-				if(ch.equals('Áù'))
+				if(ch.equals('å…­'))
 					return 1;
 				else 
 					return 0;
@@ -65,7 +65,7 @@ public class TestStreamAPI3 {
 		System.out.println(sum.get());
 	}
 	
-	//collect¡ª¡ª½«Á÷×ª»»ÎªÆäËûĞÎÊ½¡£½ÓÊÕÒ»¸ö Collector½Ó¿ÚµÄÊµÏÖ£¬ÓÃÓÚ¸øStreamÖĞÔªËØ×ö»ã×ÜµÄ·½·¨
+	//collectâ€”â€”å°†æµè½¬æ¢ä¸ºå…¶ä»–å½¢å¼ã€‚æ¥æ”¶ä¸€ä¸ª Collectoræ¥å£çš„å®ç°ï¼Œç”¨äºç»™Streamä¸­å…ƒç´ åšæ±‡æ€»çš„æ–¹æ³•
 	@Test
 	public void test3(){
 		List<String> list = emps.stream()
@@ -127,7 +127,7 @@ public class TestStreamAPI3 {
 		System.out.println(dss.getMax());
 	}
 	
-	//·Ö×é
+	//åˆ†ç»„
 	@Test
 	public void test5(){
 		Map<Status, List<Employee>> map = emps.stream()
@@ -136,23 +136,23 @@ public class TestStreamAPI3 {
 		System.out.println(map);
 	}
 	
-	//¶à¼¶·Ö×é
+	//å¤šçº§åˆ†ç»„
 	@Test
 	public void test6(){
 		Map<Status, Map<String, List<Employee>>> map = emps.stream()
 			.collect(Collectors.groupingBy(Employee::getStatus, Collectors.groupingBy((e) -> {
 				if(e.getAge() >= 60)
-					return "ÀÏÄê";
+					return "è€å¹´";
 				else if(e.getAge() >= 35)
-					return "ÖĞÄê";
+					return "ä¸­å¹´";
 				else
-					return "³ÉÄê";
+					return "æˆå¹´";
 			})));
 		
 		System.out.println(map);
 	}
 	
-	//·ÖÇø
+	//åˆ†åŒº
 	@Test
 	public void test7(){
 		Map<Boolean, List<Employee>> map = emps.stream()

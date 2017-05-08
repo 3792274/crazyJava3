@@ -31,7 +31,7 @@ public class TestTransaction {
         );
     }
     
-    //1. ÕÒ³ö2011Äê·¢ÉúµÄËùÓĞ½»Ò×£¬ ²¢°´½»Ò×¶îÅÅĞò£¨´ÓµÍµ½¸ß£©
+    //1. æ‰¾å‡º2011å¹´å‘ç”Ÿçš„æ‰€æœ‰äº¤æ˜“ï¼Œ å¹¶æŒ‰äº¤æ˜“é¢æ’åºï¼ˆä»ä½åˆ°é«˜ï¼‰
     @Test
     public void test1(){
         transactions.stream()
@@ -40,7 +40,7 @@ public class TestTransaction {
                     .forEach(System.out::println);
     }
     
-    //2. ½»Ò×Ô±¶¼ÔÚÄÄĞ©²»Í¬µÄ³ÇÊĞ¹¤×÷¹ı£¿
+    //2. äº¤æ˜“å‘˜éƒ½åœ¨å“ªäº›ä¸åŒçš„åŸå¸‚å·¥ä½œè¿‡ï¼Ÿ
     @Test
     public void test2(){
         transactions.stream()
@@ -49,7 +49,7 @@ public class TestTransaction {
                     .forEach(System.out::println);
     }
     
-    //3. ²éÕÒËùÓĞÀ´×Ô½£ÇÅµÄ½»Ò×Ô±£¬²¢°´ĞÕÃûÅÅĞò
+    //3. æŸ¥æ‰¾æ‰€æœ‰æ¥è‡ªå‰‘æ¡¥çš„äº¤æ˜“å‘˜ï¼Œå¹¶æŒ‰å§“åæ’åº
     @Test
     public void test3(){
         transactions.stream()
@@ -60,7 +60,7 @@ public class TestTransaction {
                     .forEach(System.out::println);
     }
     
-    //4. ·µ»ØËùÓĞ½»Ò×Ô±µÄĞÕÃû×Ö·û´®£¬°´×ÖÄ¸Ë³ĞòÅÅĞò
+    //4. è¿”å›æ‰€æœ‰äº¤æ˜“å‘˜çš„å§“åå­—ç¬¦ä¸²ï¼ŒæŒ‰å­—æ¯é¡ºåºæ’åº
     @Test
     public void test4(){
         transactions.stream()
@@ -96,7 +96,7 @@ public class TestTransaction {
         return list.stream();
     }
     
-    //5. ÓĞÃ»ÓĞ½»Ò×Ô±ÊÇÔÚÃ×À¼¹¤×÷µÄ£¿
+    //5. æœ‰æ²¡æœ‰äº¤æ˜“å‘˜æ˜¯åœ¨ç±³å…°å·¥ä½œçš„ï¼Ÿ
     @Test
     public void test5(){
         boolean bl = transactions.stream()
@@ -106,7 +106,7 @@ public class TestTransaction {
     }
     
     
-    //6. ´òÓ¡Éú»îÔÚ½£ÇÅµÄ½»Ò×Ô±µÄËùÓĞ½»Ò×¶î
+    //6. æ‰“å°ç”Ÿæ´»åœ¨å‰‘æ¡¥çš„äº¤æ˜“å‘˜çš„æ‰€æœ‰äº¤æ˜“é¢
     @Test
     public void test6(){
         Optional<Integer> sum = transactions.stream()
@@ -118,7 +118,7 @@ public class TestTransaction {
     }
     
     
-    //7. ËùÓĞ½»Ò×ÖĞ£¬×î¸ßµÄ½»Ò×¶îÊÇ¶àÉÙ
+    //7. æ‰€æœ‰äº¤æ˜“ä¸­ï¼Œæœ€é«˜çš„äº¤æ˜“é¢æ˜¯å¤šå°‘
     @Test
     public void test7(){
         Optional<Integer> max = transactions.stream()
@@ -128,7 +128,7 @@ public class TestTransaction {
         System.out.println(max.get());
     }
     
-    //8. ÕÒµ½½»Ò×¶î×îĞ¡µÄ½»Ò×
+    //8. æ‰¾åˆ°äº¤æ˜“é¢æœ€å°çš„äº¤æ˜“
     @Test
     public void test8(){
         Optional<Transaction> op = transactions.stream()

@@ -1,10 +1,10 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -19,23 +19,23 @@ public class TeachableProgrammer extends Programmer
 	{
 		super(name);
 	}
-	//½ÌÑ§¹¤×÷ÒÀÈ»ÓÉTeachableProgrammerÀà¶¨Òå
+	//æ•™å­¦å·¥ä½œä¾ç„¶ç”±TeachableProgrammerç±»å®šä¹‰
 	private void teach()
 	{
-		System.out.println(getName() + "½ÌÊ¦ÔÚ½²Ì¨ÉÏ½²½â...");
+		System.out.println(getName() + "æ•™å¸ˆåœ¨è®²å°ä¸Šè®²è§£...");
 	}
 	private class Closure implements Teachable
 	{
 		/*
-		·Ç¾²Ì¬ÄÚ²¿Àà»Øµ÷Íâ²¿ÀàÊµÏÖwork·½·¨£¬·Ç¾²Ì¬ÄÚ²¿ÀàÒıÓÃµÄ×÷ÓÃ½ö½öÊÇ
-		Ïò¿Í»§ÀàÌá¹©Ò»¸ö»Øµ÷Íâ²¿ÀàµÄÍ¾¾¶
+		éé™æ€å†…éƒ¨ç±»å›è°ƒå¤–éƒ¨ç±»å®ç°workæ–¹æ³•ï¼Œéé™æ€å†…éƒ¨ç±»å¼•ç”¨çš„ä½œç”¨ä»…ä»…æ˜¯
+		å‘å®¢æˆ·ç±»æä¾›ä¸€ä¸ªå›è°ƒå¤–éƒ¨ç±»çš„é€”å¾„
 		*/
 		public void work()
 		{
 			teach();
 		}
 	}
-	//·µ»ØÒ»¸ö·Ç¾²Ì¬ÄÚ²¿ÀàÒıÓÃ£¬ÔÊĞíÍâ²¿ÀàÍ¨¹ı¸Ã·Ç¾²Ì¬ÄÚ²¿ÀàÒıÓÃÀ´»Øµ÷Íâ²¿ÀàµÄ·½·¨
+	//è¿”å›ä¸€ä¸ªéé™æ€å†…éƒ¨ç±»å¼•ç”¨ï¼Œå…è®¸å¤–éƒ¨ç±»é€šè¿‡è¯¥éé™æ€å†…éƒ¨ç±»å¼•ç”¨æ¥å›è°ƒå¤–éƒ¨ç±»çš„æ–¹æ³•
 	public Teachable getCallbackReference()
 	{
 		return new Closure();

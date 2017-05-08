@@ -1,11 +1,11 @@
-package chapter11_05_ÊÂ¼ş´¦Àí;
+package chapter11_05_äº‹ä»¶å¤„ç†;
 
 
 import java.awt.*;
 import java.awt.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,7 +15,7 @@ import java.awt.event.*;
  */
 public class MailerListener implements ActionListener
 {
-	// ¸ÃTextFieldÎÄ±¾¿òÓÃÓÚÊäÈë·¢ËÍÓÊ¼şµÄµØÖ·
+	// è¯¥TextFieldæ–‡æœ¬æ¡†ç”¨äºè¾“å…¥å‘é€é‚®ä»¶çš„åœ°å€
 	private TextField mailAddress;
 	public MailerListener(){}
 	public MailerListener(TextField mailAddress)
@@ -26,12 +26,12 @@ public class MailerListener implements ActionListener
 	{
 		this.mailAddress = mailAddress;
 	}
-	// ÊµÏÖ·¢ËÍÓÊ¼ş
+	// å®ç°å‘é€é‚®ä»¶
 	public void actionPerformed(ActionEvent e)
 	{
-		System.out.println("³ÌĞòÏò¡°"
-			+ mailAddress.getText() + "¡±·¢ËÍÓÊ¼ş...");
-		// ·¢ËÍÓÊ¼şµÄÕæÊµÊµÏÖ
+		System.out.println("ç¨‹åºå‘â€œ"
+			+ mailAddress.getText() + "â€å‘é€é‚®ä»¶...");
+		// å‘é€é‚®ä»¶çš„çœŸå®å®ç°
 	}
 }
 

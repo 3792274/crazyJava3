@@ -1,37 +1,37 @@
-package chapter08_02_CollectionºÍIterator½Ó¿Ú;
+package chapter08_02_Collectionå’ŒIteratoræ¥å£;
 
 import java.util.*;
 /**
  * Description:
- * Java8 ÔöÇ¿µÄIterator±éÀú¼¯ºÏÔªËØ
+ * Java8 å¢å¼ºçš„Iteratoréå†é›†åˆå…ƒç´ 
  */
 public class IteratorTest03
 {
 	public static void main(String[] args)
 	{
-		// ´´½¨¼¯ºÏ¡¢Ìí¼ÓÔªËØµÄ´úÂëÓëÇ°Ò»¸ö³ÌĞòÏàÍ¬
+		// åˆ›å»ºé›†åˆã€æ·»åŠ å…ƒç´ çš„ä»£ç ä¸å‰ä¸€ä¸ªç¨‹åºç›¸åŒ
 		Collection books = new HashSet();
 	
-		books.add("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
-		books.add("·è¿ñJava½²Òå");
-		books.add("·è¿ñAndroid½²Òå");
+		books.add("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
+		books.add("ç–¯ç‹‚Javaè®²ä¹‰");
+		books.add("ç–¯ç‹‚Androidè®²ä¹‰");
 		
-		// »ñÈ¡books¼¯ºÏ¶ÔÓ¦µÄµü´úÆ÷
+		// è·å–booksé›†åˆå¯¹åº”çš„è¿­ä»£å™¨
 		Iterator it = books.iterator();
 	
 		while(it.hasNext())
 		{
-			// it.next()·½·¨·µ»ØµÄÊı¾İÀàĞÍÊÇObjectÀàĞÍ£¬Òò´ËĞèÒªÇ¿ÖÆÀàĞÍ×ª»»
+			// it.next()æ–¹æ³•è¿”å›çš„æ•°æ®ç±»å‹æ˜¯Objectç±»å‹ï¼Œå› æ­¤éœ€è¦å¼ºåˆ¶ç±»å‹è½¬æ¢
 			String book = (String)it.next();
 			System.out.println(book);
 			
-			if (book.equals("·è¿ñJava½²Òå"))
+			if (book.equals("ç–¯ç‹‚Javaè®²ä¹‰"))
 			{
-				// ´Ó¼¯ºÏÖĞÉ¾³ıÉÏÒ»´Înext·½·¨·µ»ØµÄÔªËØ
+				// ä»é›†åˆä¸­åˆ é™¤ä¸Šä¸€æ¬¡nextæ–¹æ³•è¿”å›çš„å…ƒç´ 
 				it.remove();
 			}
-			// ¶Ôbook±äÁ¿¸³Öµ£¬²»»á¸Ä±ä¼¯ºÏÔªËØ±¾Éí£¬Iterator²¢²»°Ñ¼¯ºÏÔªËØ±¾Éí´«µİ¸øµü´ú±äÁ¿£¬¶øÊÇ°ÑÖµ´«µİ¸ø±äÁ¿¡£
-			book = "²âÊÔ×Ö·û´®";   //¢Ù
+			// å¯¹bookå˜é‡èµ‹å€¼ï¼Œä¸ä¼šæ”¹å˜é›†åˆå…ƒç´ æœ¬èº«ï¼ŒIteratorå¹¶ä¸æŠŠé›†åˆå…ƒç´ æœ¬èº«ä¼ é€’ç»™è¿­ä»£å˜é‡ï¼Œè€Œæ˜¯æŠŠå€¼ä¼ é€’ç»™å˜é‡ã€‚
+			book = "æµ‹è¯•å­—ç¬¦ä¸²";   //â‘ 
 		}
 		
 		System.out.println(books);

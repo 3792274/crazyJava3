@@ -1,10 +1,10 @@
-package chapter05_02_·½·¨Ïê½â;
+package chapter05_02_æ–¹æ³•è¯¦è§£;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -21,16 +21,16 @@ public class ReferenceTransferTest
 {
 	public static void swap(DataWrap dw)
 	{
-		// ÏÂÃæÈıĞĞ´úÂëÊµÏÖdwµÄa¡¢bÁ½¸ö³ÉÔ±±äÁ¿µÄÖµ½»»»¡£
-		// ¶¨ÒåÒ»¸öÁÙÊ±±äÁ¿À´±£´ædw¶ÔÏóµÄa³ÉÔ±±äÁ¿µÄÖµ
+		// ä¸‹é¢ä¸‰è¡Œä»£ç å®ç°dwçš„aã€bä¸¤ä¸ªæˆå‘˜å˜é‡çš„å€¼äº¤æ¢ã€‚
+		// å®šä¹‰ä¸€ä¸ªä¸´æ—¶å˜é‡æ¥ä¿å­˜dwå¯¹è±¡çš„aæˆå‘˜å˜é‡çš„å€¼
 		int tmp = dw.a;
-		// °Ñdw¶ÔÏóµÄb³ÉÔ±±äÁ¿Öµ¸³¸øa³ÉÔ±±äÁ¿
+		// æŠŠdwå¯¹è±¡çš„bæˆå‘˜å˜é‡å€¼èµ‹ç»™aæˆå‘˜å˜é‡
 		dw.a = dw.b;
-		// °ÑÁÙÊ±±äÁ¿tmpµÄÖµ¸³¸ødw¶ÔÏóµÄb³ÉÔ±±äÁ¿
+		// æŠŠä¸´æ—¶å˜é‡tmpçš„å€¼èµ‹ç»™dwå¯¹è±¡çš„bæˆå‘˜å˜é‡
 		dw.b = tmp;
-		System.out.println("swap·½·¨Àï£¬a³ÉÔ±±äÁ¿µÄÖµÊÇ"
-			+ dw.a + "£»b³ÉÔ±±äÁ¿µÄÖµÊÇ" + dw.b);
-		// °ÑdwÖ±½Ó¸³Îªnull£¬ÈÃËü²»ÔÙÖ¸ÏòÈÎºÎÓĞĞ§µØÖ·¡£
+		System.out.println("swapæ–¹æ³•é‡Œï¼Œaæˆå‘˜å˜é‡çš„å€¼æ˜¯"
+			+ dw.a + "ï¼›bæˆå‘˜å˜é‡çš„å€¼æ˜¯" + dw.b);
+		// æŠŠdwç›´æ¥èµ‹ä¸ºnullï¼Œè®©å®ƒä¸å†æŒ‡å‘ä»»ä½•æœ‰æ•ˆåœ°å€ã€‚
 		dw = null;
 	}
 	public static void main(String[] args)
@@ -39,7 +39,7 @@ public class ReferenceTransferTest
 		dw.a = 6;
 		dw.b = 9;
 		swap(dw);
-		System.out.println("½»»»½áÊøºó£¬a³ÉÔ±±äÁ¿µÄÖµÊÇ"
-			+ dw.a + "£»b³ÉÔ±±äÁ¿µÄÖµÊÇ" + dw.b);
+		System.out.println("äº¤æ¢ç»“æŸåï¼Œaæˆå‘˜å˜é‡çš„å€¼æ˜¯"
+			+ dw.a + "ï¼›bæˆå‘˜å˜é‡çš„å€¼æ˜¯" + dw.b);
 	}
 }

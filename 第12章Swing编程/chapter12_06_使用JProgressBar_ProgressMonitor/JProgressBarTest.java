@@ -1,4 +1,4 @@
-package chapter12_06_Ê¹ÓÃJProgressBar_ProgressMonitor;
+package chapter12_06_ä½¿ç”¨JProgressBar_ProgressMonitor;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -6,7 +6,7 @@ import javax.swing.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,11 +16,11 @@ import javax.swing.*;
  * @version 1.0
  */
 public class JProgressBarTest {
-	JFrame frame = new JFrame("²âÊÔ½ø¶ÈÌõ");
-	// ´´½¨Ò»Ìõ´¹Ö±½ø¶ÈÌõ
+	JFrame frame = new JFrame("æµ‹è¯•è¿›åº¦æ¡");
+	// åˆ›å»ºä¸€æ¡å‚ç›´è¿›åº¦æ¡
 	JProgressBar bar = new JProgressBar(JProgressBar.VERTICAL);
-	JCheckBox indeterminate = new JCheckBox("²»È·¶¨½ø¶È");
-	JCheckBox noBorder = new JCheckBox("²»»æÖÆ±ß¿ò");
+	JCheckBox indeterminate = new JCheckBox("ä¸ç¡®å®šè¿›åº¦");
+	JCheckBox noBorder = new JCheckBox("ä¸ç»˜åˆ¶è¾¹æ¡†");
 
 	public void init() {
 		Box box = new Box(BoxLayout.Y_AXIS);
@@ -28,29 +28,29 @@ public class JProgressBarTest {
 		box.add(noBorder);
 		frame.setLayout(new FlowLayout());
 		frame.add(box);
-		// °Ñ½ø¶ÈÌõÌí¼Óµ½JFrame´°¿ÚÖĞ
+		// æŠŠè¿›åº¦æ¡æ·»åŠ åˆ°JFrameçª—å£ä¸­
 		frame.add(bar);
-		// ÉèÖÃ½ø¶ÈÌõµÄ×î´óÖµºÍ×îĞ¡Öµ
+		// è®¾ç½®è¿›åº¦æ¡çš„æœ€å¤§å€¼å’Œæœ€å°å€¼
 		bar.setMinimum(0);
 		bar.setMaximum(100);
-		// ÉèÖÃÔÚ½ø¶ÈÌõÖĞ»æÖÆÍê³É°Ù·Ö±È
+		// è®¾ç½®åœ¨è¿›åº¦æ¡ä¸­ç»˜åˆ¶å®Œæˆç™¾åˆ†æ¯”
 		bar.setStringPainted(true);
-		// ¸ù¾İ¸ÃÑ¡Ôñ¿ò¾ö¶¨ÊÇ·ñ»æÖÆ½ø¶ÈÌõµÄ±ß¿ò
+		// æ ¹æ®è¯¥é€‰æ‹©æ¡†å†³å®šæ˜¯å¦ç»˜åˆ¶è¿›åº¦æ¡çš„è¾¹æ¡†
 		noBorder.addActionListener(event -> bar.setBorderPainted(!noBorder.isSelected()));
 		indeterminate.addActionListener(event -> {
-			// ÉèÖÃ¸Ã½ø¶ÈÌõµÄ½ø¶ÈÊÇ·ñÈ·¶¨
+			// è®¾ç½®è¯¥è¿›åº¦æ¡çš„è¿›åº¦æ˜¯å¦ç¡®å®š
 			bar.setIndeterminate(indeterminate.isSelected());
 			bar.setStringPainted(!indeterminate.isSelected());
 		});
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
-		// ²ÉÓÃÑ­»··½Ê½À´²»¶Ï¸Ä±ä½ø¶ÈÌõµÄÍê³É½ø¶È
+		// é‡‡ç”¨å¾ªç¯æ–¹å¼æ¥ä¸æ–­æ”¹å˜è¿›åº¦æ¡çš„å®Œæˆè¿›åº¦
 		for (int i = 0; i <= 100; i++) {
-			// ¸Ä±ä½ø¶ÈÌõµÄÍê³É½ø¶È
+			// æ”¹å˜è¿›åº¦æ¡çš„å®Œæˆè¿›åº¦
 			bar.setValue(i);
 			try {
-				// ³ÌĞòÔİÍ£0.1Ãë
+				// ç¨‹åºæš‚åœ0.1ç§’
 				Thread.sleep(100);
 			} catch (Exception e) {
 				e.printStackTrace();

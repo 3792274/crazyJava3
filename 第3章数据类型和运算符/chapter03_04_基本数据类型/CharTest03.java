@@ -1,9 +1,9 @@
-package chapter03_04_»ù±¾Êı¾İÀàĞÍ;
+package chapter03_04_åŸºæœ¬æ•°æ®ç±»å‹;
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,26 +15,26 @@ public class CharTest03
 {
 	public static void main(String[] args)
 	{
-		// Ö±½ÓÖ¸¶¨µ¥¸ö×Ö·û×÷Îª×Ö·ûÖµ
+		// ç›´æ¥æŒ‡å®šå•ä¸ªå­—ç¬¦ä½œä¸ºå­—ç¬¦å€¼
 		char aChar = 'a';
 		
-		// Ê¹ÓÃ×ªÒå×Ö·ûÀ´×÷Îª×Ö·ûÖµ
+		// ä½¿ç”¨è½¬ä¹‰å­—ç¬¦æ¥ä½œä¸ºå­—ç¬¦å€¼
 		char enterChar = '\r';
 		
-		// Ê¹ÓÃUnicode±àÂëÖµÀ´Ö¸¶¨×Ö·ûÖµ
+		// ä½¿ç”¨Unicodeç¼–ç å€¼æ¥æŒ‡å®šå­—ç¬¦å€¼
 		char ch = '\u9999';
 		
-		// ½«Êä³öÒ»¸ö'Ïã'×Ö·û
+		// å°†è¾“å‡ºä¸€ä¸ª'é¦™'å­—ç¬¦
 		System.out.println(ch);
 		
-		// ¶¨ÒåÒ»¸ö'·è'×Ö·ûÖµ
-		char zhong = '·è';
+		// å®šä¹‰ä¸€ä¸ª'ç–¯'å­—ç¬¦å€¼
+		char zhong = 'ç–¯';
 		
-		// Ö±½Ó½«Ò»¸öchar±äÁ¿µ±³ÉintÀàĞÍ±äÁ¿Ê¹ÓÃ
+		// ç›´æ¥å°†ä¸€ä¸ªcharå˜é‡å½“æˆintç±»å‹å˜é‡ä½¿ç”¨
 		int zhongValue = zhong;
 		System.out.println(zhongValue);
 		
-		// Ö±½Ó°ÑÒ»¸ö0¡«65535·¶Î§ÄÚµÄintÕûÊı¸³¸øÒ»¸öchar±äÁ¿
+		// ç›´æ¥æŠŠä¸€ä¸ª0ï½65535èŒƒå›´å†…çš„intæ•´æ•°èµ‹ç»™ä¸€ä¸ªcharå˜é‡
 		char c = 97;
 		System.out.println(c);
 	}

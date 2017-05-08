@@ -1,10 +1,10 @@
-package chapter05_06_ÀàµÄ¼Ì³Ğ;
+package chapter05_06_ç±»çš„ç»§æ‰¿;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,22 +14,22 @@ package chapter05_06_ÀàµÄ¼Ì³Ğ;
  */
 public class Ostrich extends Bird
 {
-	// ÖØĞ´BirdÀàµÄfly()·½·¨
+	// é‡å†™Birdç±»çš„fly()æ–¹æ³•
 	public void fly()
 	{
-		System.out.println("ÎÒÖ»ÄÜÔÚµØÉÏ±¼ÅÜ...");
+		System.out.println("æˆ‘åªèƒ½åœ¨åœ°ä¸Šå¥”è·‘...");
 	}
 	public void callOverridedMethod()
 	{
-		// ÔÚ×ÓÀà·½·¨ÖĞÍ¨¹ısuperÀ´ÏÔÊ½µ÷ÓÃ¸¸Àà±»¸²¸ÇµÄ·½·¨¡£
+		// åœ¨å­ç±»æ–¹æ³•ä¸­é€šè¿‡superæ¥æ˜¾å¼è°ƒç”¨çˆ¶ç±»è¢«è¦†ç›–çš„æ–¹æ³•ã€‚
 		super.fly();
 	}
 
 	public static void main(String[] args)
 	{
-		// ´´½¨Ostrich¶ÔÏó
+		// åˆ›å»ºOstrichå¯¹è±¡
 		Ostrich os = new Ostrich();
-		// Ö´ĞĞOstrich¶ÔÏóµÄfly()·½·¨£¬½«Êä³ö"ÎÒÖ»ÄÜÔÚµØÉÏ±¼ÅÜ..."
+		// æ‰§è¡ŒOstrichå¯¹è±¡çš„fly()æ–¹æ³•ï¼Œå°†è¾“å‡º"æˆ‘åªèƒ½åœ¨åœ°ä¸Šå¥”è·‘..."
 		os.fly();
 	}
 }

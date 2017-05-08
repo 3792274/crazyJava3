@@ -1,10 +1,10 @@
-package chapter05_06_类的继承;
+package chapter05_06_绫荤殑缁ф壙;
 
 
 
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,12 +16,12 @@ public class Apple extends Fruit
 {
 	public static void main(String[] args)
 	{
-		// 创建Apple对象
+		// 鍒涘缓Apple瀵硅薄
 		Apple a = new Apple();
-		// Apple对象本身没有weight成员变量
-		// 因为Apple的父类有weight成员变量，也可以访问Apple对象的weight成员变量
+		// Apple瀵硅薄鏈韩娌℃湁weight鎴愬憳鍙橀噺
+		// 鍥犱负Apple鐨勭埗绫绘湁weight鎴愬憳鍙橀噺锛屼篃鍙互璁块棶Apple瀵硅薄鐨剋eight鎴愬憳鍙橀噺
 		a.weight = 56;
-		// 调用Apple对象的info()方法
+		// 璋冪敤Apple瀵硅薄鐨刬nfo()鏂规硶
 		a.info();
 	}
 }

@@ -1,4 +1,4 @@
-package chapter14_01_»ù±¾Annotation;
+package chapter14_01_åŸºæœ¬Annotation;
 
 
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,12 +20,12 @@ public class ErrorUtils
 	@SafeVarargs
 	public static void faultyMethod(List<String>... listStrArray)
 	{
-		// JavaÓïÑÔ²»ÔÊĞí´´½¨·ºĞÍÊı×é£¬Òò´ËlistArrayÖ»ÄÜ±»µ±³ÉList[]´¦Àí
-		// ´ËÊ±Ïàµ±ÓÚ°ÑList<String>¸³¸øÁËList£¬ÒÑ¾­·¢ÉúÁË¡°²Á³ı¡±
+		// Javaè¯­è¨€ä¸å…è®¸åˆ›å»ºæ³›å‹æ•°ç»„ï¼Œå› æ­¤listArrayåªèƒ½è¢«å½“æˆList[]å¤„ç†
+		// æ­¤æ—¶ç›¸å½“äºæŠŠList<String>èµ‹ç»™äº†Listï¼Œå·²ç»å‘ç”Ÿäº†â€œæ“¦é™¤â€
 		List[] listArray = listStrArray;
 		List<Integer> myList = new ArrayList<Integer>();
 		myList.add(new Random().nextInt(100));
-		// °ÑlistArrayµÄµÚÒ»¸öÔªËØ¸³ÎªmyList
+		// æŠŠlistArrayçš„ç¬¬ä¸€ä¸ªå…ƒç´ èµ‹ä¸ºmyList
 		listArray[0] = myList;
 		String s = listStrArray[0].get(0);
 		System.out.println(s);

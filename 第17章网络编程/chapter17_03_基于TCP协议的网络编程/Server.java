@@ -1,11 +1,11 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹;
 
 import java.net.*;
 import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,19 +16,19 @@ import java.io.*;
  */
 public class Server {
 	public static void main(String[] args) throws IOException {
-		// ´´½¨Ò»¸öServerSocket£¬ÓÃÓÚ¼àÌı¿Í»§¶ËSocketµÄÁ¬½ÓÇëÇó
+		// åˆ›å»ºä¸€ä¸ªServerSocketï¼Œç”¨äºç›‘å¬å®¢æˆ·ç«¯Socketçš„è¿æ¥è¯·æ±‚
 		ServerSocket ss = new ServerSocket(30000);
-		// ²ÉÓÃÑ­»·²»¶Ï½ÓÊÜÀ´×Ô¿Í»§¶ËµÄÇëÇó
+		// é‡‡ç”¨å¾ªç¯ä¸æ–­æ¥å—æ¥è‡ªå®¢æˆ·ç«¯çš„è¯·æ±‚
 	
 		while (true) {
-			// Ã¿µ±½ÓÊÜµ½¿Í»§¶ËSocketµÄÇëÇó£¬·şÎñÆ÷¶ËÒ²¶ÔÓ¦²úÉúÒ»¸öSocket
+			// æ¯å½“æ¥å—åˆ°å®¢æˆ·ç«¯Socketçš„è¯·æ±‚ï¼ŒæœåŠ¡å™¨ç«¯ä¹Ÿå¯¹åº”äº§ç”Ÿä¸€ä¸ªSocket
 			Socket s = ss.accept();
-			System.out.println("·şÎñ¶ËSocketÒÑ¾­Á¬½Ó£º"+s.isConnected());
-			// ½«Socket¶ÔÓ¦µÄÊä³öÁ÷°ü×°³ÉPrintStream
+			System.out.println("æœåŠ¡ç«¯Socketå·²ç»è¿æ¥ï¼š"+s.isConnected());
+			// å°†Socketå¯¹åº”çš„è¾“å‡ºæµåŒ…è£…æˆPrintStream
 			PrintStream ps = new PrintStream(s.getOutputStream());
-			// ½øĞĞÆÕÍ¨IO²Ù×÷
-			ps.println("ÄúºÃ£¬ÄúÊÕµ½ÁË·şÎñÆ÷µÄĞÂÄê×£¸££¡");
-			// ¹Ø±ÕÊä³öÁ÷£¬¹Ø±ÕSocket
+			// è¿›è¡Œæ™®é€šIOæ“ä½œ
+			ps.println("æ‚¨å¥½ï¼Œæ‚¨æ”¶åˆ°äº†æœåŠ¡å™¨çš„æ–°å¹´ç¥ç¦ï¼");
+			// å…³é—­è¾“å‡ºæµï¼Œå…³é—­Socket
 			ps.close();
 			s.close();
 		}

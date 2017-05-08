@@ -4,7 +4,7 @@ import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -24,27 +24,27 @@ public class InsertContent {
 		
 		try (
 				RandomAccessFile raf = new RandomAccessFile(fileName, "rw");
-				// Ê¹ÓÃÁÙÊ±ÎÄ¼şÀ´±£´æ²åÈëµãºóµÄÊı¾İ
+				// ä½¿ç”¨ä¸´æ—¶æ–‡ä»¶æ¥ä¿å­˜æ’å…¥ç‚¹åçš„æ•°æ®
 				FileOutputStream tmpOut = new FileOutputStream(tmp);
 				FileInputStream tmpIn = new FileInputStream(tmp)) 
 		
 		{
 			raf.seek(pos);
-			// ------ÏÂÃæ´úÂë½«²åÈëµãºóµÄÄÚÈİ¶ÁÈëÁÙÊ±ÎÄ¼şÖĞ±£´æ------
+			// ------ä¸‹é¢ä»£ç å°†æ’å…¥ç‚¹åçš„å†…å®¹è¯»å…¥ä¸´æ—¶æ–‡ä»¶ä¸­ä¿å­˜------
 			byte[] bbuf = new byte[64];
-			// ÓÃÓÚ±£´æÊµ¼Ê¶ÁÈ¡µÄ×Ö½ÚÊı
+			// ç”¨äºä¿å­˜å®é™…è¯»å–çš„å­—èŠ‚æ•°
 			int hasRead = 0;
-			// Ê¹ÓÃÑ­»··½Ê½¶ÁÈ¡²åÈëµãºóµÄÊı¾İ
+			// ä½¿ç”¨å¾ªç¯æ–¹å¼è¯»å–æ’å…¥ç‚¹åçš„æ•°æ®
 			while ((hasRead = raf.read(bbuf)) > 0) {
-				// ½«¶ÁÈ¡µÄÊı¾İĞ´ÈëÁÙÊ±ÎÄ¼ş
+				// å°†è¯»å–çš„æ•°æ®å†™å…¥ä¸´æ—¶æ–‡ä»¶
 				tmpOut.write(bbuf, 0, hasRead);
 			}
-			// ----------ÏÂÃæ´úÂë²åÈëÄÚÈİ----------
-			// °ÑÎÄ¼ş¼ÇÂ¼Ö¸ÕëÖØĞÂ¶¨Î»µ½posÎ»ÖÃ
+			// ----------ä¸‹é¢ä»£ç æ’å…¥å†…å®¹----------
+			// æŠŠæ–‡ä»¶è®°å½•æŒ‡é’ˆé‡æ–°å®šä½åˆ°posä½ç½®
 			raf.seek(pos);
-			// ×·¼ÓĞèÒª²åÈëµÄÄÚÈİ
+			// è¿½åŠ éœ€è¦æ’å…¥çš„å†…å®¹
 			raf.write(insertContent.getBytes());
-			// ×·¼ÓÁÙÊ±ÎÄ¼şÖĞµÄÄÚÈİ
+			// è¿½åŠ ä¸´æ—¶æ–‡ä»¶ä¸­çš„å†…å®¹
 			while ((hasRead = tmpIn.read(bbuf)) > 0) {
 				raf.write(bbuf, 0, hasRead);
 			}
@@ -52,6 +52,6 @@ public class InsertContent {
 	}
 
 	public static void main(String[] args) throws IOException {
-		insert("µÚ15ÕÂÊäÈë_Êä³ö/chapter15_07_RandomAccessFile/InsertContent.java", 45, "²åÈëµÄÄÚÈİ\r\n");
+		insert("ç¬¬15ç« è¾“å…¥_è¾“å‡º/chapter15_07_RandomAccessFile/InsertContent.java", 45, "æ’å…¥çš„å†…å®¹\r\n");
 	}
 }

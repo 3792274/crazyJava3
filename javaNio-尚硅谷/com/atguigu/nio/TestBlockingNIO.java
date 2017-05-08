@@ -12,11 +12,11 @@ import java.nio.file.StandardOpenOption;
 import org.junit.Test;
 
 /*
- * Ò»¡¢Ê¹ÓÃ NIO Íê³ÉÍøÂçÍ¨ĞÅµÄÈı¸öºËĞÄ£º
+ * ä¸€ã€ä½¿ç”¨ NIO å®Œæˆç½‘ç»œé€šä¿¡çš„ä¸‰ä¸ªæ ¸å¿ƒï¼š
  * 
- * 1. Í¨µÀ£¨Channel£©£º¸ºÔğÁ¬½Ó
+ * 1. é€šé“ï¼ˆChannelï¼‰ï¼šè´Ÿè´£è¿æ¥
  * 		
- * 	   java.nio.channels.Channel ½Ó¿Ú£º
+ * 	   java.nio.channels.Channel æ¥å£ï¼š
  * 			|--SelectableChannel
  * 				|--SocketChannel
  * 				|--ServerSocketChannel
@@ -25,61 +25,61 @@ import org.junit.Test;
  * 				|--Pipe.SinkChannel
  * 				|--Pipe.SourceChannel
  * 
- * 2. »º³åÇø£¨Buffer£©£º¸ºÔğÊı¾İµÄ´æÈ¡
+ * 2. ç¼“å†²åŒºï¼ˆBufferï¼‰ï¼šè´Ÿè´£æ•°æ®çš„å­˜å–
  * 
- * 3. Ñ¡ÔñÆ÷£¨Selector£©£ºÊÇ SelectableChannel µÄ¶àÂ·¸´ÓÃÆ÷¡£ÓÃÓÚ¼à¿Ø SelectableChannel µÄ IO ×´¿ö
+ * 3. é€‰æ‹©å™¨ï¼ˆSelectorï¼‰ï¼šæ˜¯ SelectableChannel çš„å¤šè·¯å¤ç”¨å™¨ã€‚ç”¨äºç›‘æ§ SelectableChannel çš„ IO çŠ¶å†µ
  * 
  */
 public class TestBlockingNIO {
 
-	//¿Í»§¶Ë
+	//å®¢æˆ·ç«¯
 	@Test
 	public void client() throws IOException{
-		//1. »ñÈ¡Í¨µÀ
+		//1. è·å–é€šé“
 		SocketChannel sChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 9898));
 		
 		FileChannel inChannel = FileChannel.open(Paths.get("1.jpg"), StandardOpenOption.READ);
 		
-		//2. ·ÖÅäÖ¸¶¨´óĞ¡µÄ»º³åÇø
+		//2. åˆ†é…æŒ‡å®šå¤§å°çš„ç¼“å†²åŒº
 		ByteBuffer buf = ByteBuffer.allocate(1024);
 		
-		//3. ¶ÁÈ¡±¾µØÎÄ¼ş£¬²¢·¢ËÍµ½·şÎñ¶Ë
+		//3. è¯»å–æœ¬åœ°æ–‡ä»¶ï¼Œå¹¶å‘é€åˆ°æœåŠ¡ç«¯
 		while(inChannel.read(buf) != -1){
 			buf.flip();
 			sChannel.write(buf);
 			buf.clear();
 		}
 		
-		//4. ¹Ø±ÕÍ¨µÀ
+		//4. å…³é—­é€šé“
 		inChannel.close();
 		sChannel.close();
 	}
 	
-	//·şÎñ¶Ë
+	//æœåŠ¡ç«¯
 	@Test
 	public void server() throws IOException{
-		//1. »ñÈ¡Í¨µÀ
+		//1. è·å–é€šé“
 		ServerSocketChannel ssChannel = ServerSocketChannel.open();
 		
 		FileChannel outChannel = FileChannel.open(Paths.get("2.jpg"), StandardOpenOption.WRITE, StandardOpenOption.CREATE);
 		
-		//2. °ó¶¨Á¬½Ó
+		//2. ç»‘å®šè¿æ¥
 		ssChannel.bind(new InetSocketAddress(9898));
 		
-		//3. »ñÈ¡¿Í»§¶ËÁ¬½ÓµÄÍ¨µÀ
+		//3. è·å–å®¢æˆ·ç«¯è¿æ¥çš„é€šé“
 		SocketChannel sChannel = ssChannel.accept();
 		
-		//4. ·ÖÅäÖ¸¶¨´óĞ¡µÄ»º³åÇø
+		//4. åˆ†é…æŒ‡å®šå¤§å°çš„ç¼“å†²åŒº
 		ByteBuffer buf = ByteBuffer.allocate(1024);
 		
-		//5. ½ÓÊÕ¿Í»§¶ËµÄÊı¾İ£¬²¢±£´æµ½±¾µØ
+		//5. æ¥æ”¶å®¢æˆ·ç«¯çš„æ•°æ®ï¼Œå¹¶ä¿å­˜åˆ°æœ¬åœ°
 		while(sChannel.read(buf) != -1){
 			buf.flip();
 			outChannel.write(buf);
 			buf.clear();
 		}
 		
-		//6. ¹Ø±ÕÍ¨µÀ
+		//6. å…³é—­é€šé“
 		sChannel.close();
 		outChannel.close();
 		ssChannel.close();

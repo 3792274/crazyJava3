@@ -1,10 +1,10 @@
-package chapter05_07_¶àÌ¬;
+package chapter05_07_å¤šæ€;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -20,19 +20,19 @@ public class ConversionTest
 		long l = (long)d;
 		System.out.println(l);
 		int in = 5;
-		// ÊÔÍ¼°ÑÒ»¸öÊıÖµÀàĞÍµÄ±äÁ¿×ª»»ÎªbooleanÀàĞÍ£¬ÏÂÃæ´úÂë±àÒë³ö´í
-		// ±àÒëÊ±ºò»áÌáÊ¾: ²»¿É×ª»»µÄÀàĞÍ
+		// è¯•å›¾æŠŠä¸€ä¸ªæ•°å€¼ç±»å‹çš„å˜é‡è½¬æ¢ä¸ºbooleanç±»å‹ï¼Œä¸‹é¢ä»£ç ç¼–è¯‘å‡ºé”™
+		// ç¼–è¯‘æ—¶å€™ä¼šæç¤º: ä¸å¯è½¬æ¢çš„ç±»å‹
 		// boolean b = (boolean)in;
 		Object obj = "Hello";
-		// obj±äÁ¿µÄ±àÒëÀàĞÍÎªObject£¬ObjectÓëString´æÔÚ¼Ì³Ğ¹ØÏµ£¬¿ÉÒÔÇ¿ÖÆÀàĞÍ×ª»»
-		// ¶øÇÒobj±äÁ¿Êµ¼ÊÉÏÀàĞÍÊÇStringÀàĞÍ£¬ËùÒÔÔËĞĞÊ±Ò²¿ÉÍ¨¹ı
+		// objå˜é‡çš„ç¼–è¯‘ç±»å‹ä¸ºObjectï¼ŒObjectä¸Stringå­˜åœ¨ç»§æ‰¿å…³ç³»ï¼Œå¯ä»¥å¼ºåˆ¶ç±»å‹è½¬æ¢
+		// è€Œä¸”objå˜é‡å®é™…ä¸Šç±»å‹æ˜¯Stringç±»å‹ï¼Œæ‰€ä»¥è¿è¡Œæ—¶ä¹Ÿå¯é€šè¿‡
 		String objStr = (String)obj;
 		System.out.println(objStr);
-		// ¶¨ÒåÒ»¸öobjPri±äÁ¿£¬±àÒëÀàĞÍÎªObject£¬Êµ¼ÊÀàĞÍÎªInteger
+		// å®šä¹‰ä¸€ä¸ªobjPriå˜é‡ï¼Œç¼–è¯‘ç±»å‹ä¸ºObjectï¼Œå®é™…ç±»å‹ä¸ºInteger
 		Object objPri = new Integer(5);
-		// objPri±äÁ¿µÄ±àÒëÊ±ÀàĞÍÎªObject£¬objPriµÄÔËĞĞÊ±ÀàĞÍÎªInteger£¬ObjectÓëInteger´æÔÚ¼Ì³Ğ¹ØÏµ
-		// ¿ÉÒÔÇ¿ÖÆÀàĞÍ×ª»»£¬¶øobjPri±äÁ¿Êµ¼ÊÉÏÀàĞÍÊÇIntegerÀàĞÍ£¬
-		// ËùÒÔÏÂÃæ´úÂëÔËĞĞÊ±Òı·¢ClassCastExceptionÒì³£
+		// objPriå˜é‡çš„ç¼–è¯‘æ—¶ç±»å‹ä¸ºObjectï¼ŒobjPriçš„è¿è¡Œæ—¶ç±»å‹ä¸ºIntegerï¼ŒObjectä¸Integerå­˜åœ¨ç»§æ‰¿å…³ç³»
+		// å¯ä»¥å¼ºåˆ¶ç±»å‹è½¬æ¢ï¼Œè€ŒobjPriå˜é‡å®é™…ä¸Šç±»å‹æ˜¯Integerç±»å‹ï¼Œ
+		// æ‰€ä»¥ä¸‹é¢ä»£ç è¿è¡Œæ—¶å¼•å‘ClassCastExceptionå¼‚å¸¸
 		String str = (String)objPri;
 	}
 }

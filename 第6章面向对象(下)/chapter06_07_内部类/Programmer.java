@@ -1,10 +1,10 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -19,13 +19,13 @@ interface Teachable
 public class Programmer
 {
 	private String name;
-	//ProgrammerÀàµÄÁ½¸ö¹¹ÔìÆ÷
+	//Programmerç±»çš„ä¸¤ä¸ªæ„é€ å™¨
 	public Programmer(){}
 	public Programmer(String name)
 	{
 		this.name = name;
 	}
-	//´Ë´¦Ê¡ÂÔÁËnameµÄsetterºÍgetter·½·¨
+	//æ­¤å¤„çœç•¥äº†nameçš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name)
 	{
 		this.name = name;
@@ -36,6 +36,6 @@ public class Programmer
 	}
 	public void work()
 	{
-		System.out.println(name + "ÔÚµÆÏÂÈÏÕæÇÃ¼üÅÌ...");
+		System.out.println(name + "åœ¨ç¯ä¸‹è®¤çœŸæ•²é”®ç›˜...");
 	}
 }

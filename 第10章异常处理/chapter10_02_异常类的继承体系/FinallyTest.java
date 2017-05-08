@@ -1,10 +1,10 @@
-package chapter10_02_Òì³£ÀàµÄ¼Ì³ĞÌåÏµ;
+package chapter10_02_å¼‚å¸¸ç±»çš„ç»§æ‰¿ä½“ç³»;
 
 
 import java.io.*;
 /**
- * Description:returnÒ²¿ÉÒÔÖ´ĞĞfinally
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:returnä¹Ÿå¯ä»¥æ‰§è¡Œfinally
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -19,19 +19,19 @@ public class FinallyTest
 		FileInputStream fis = null;
 		try
 		{
-			fis = new FileInputStream("µÚ10ÕÂÒì³£´¦Àí\\chapter10_02_Òì³£ÀàµÄ¼Ì³ĞÌåÏµ\\a.txt");
+			fis = new FileInputStream("ç¬¬10ç« å¼‚å¸¸å¤„ç†\\chapter10_02_å¼‚å¸¸ç±»çš„ç»§æ‰¿ä½“ç³»\\a.txt");
 		}
 		catch (IOException ioe)
 		{
 			System.out.println(ioe.getMessage());
-			// returnÓï¾äÇ¿ÖÆ·½·¨·µ»Ø
-			return ;       // ¢Ù
-			// Ê¹ÓÃexitÀ´ÍË³öĞéÄâ»ú
-			// System.exit(1);     // ¢Ú finally¿ì½«µÃ²»µ½Ö´ĞĞµÄ»ú»á¡£
+			// returnè¯­å¥å¼ºåˆ¶æ–¹æ³•è¿”å›
+			return ;       // â‘ 
+			// ä½¿ç”¨exitæ¥é€€å‡ºè™šæ‹Ÿæœº
+			// System.exit(1);     // â‘¡ finallyå¿«å°†å¾—ä¸åˆ°æ‰§è¡Œçš„æœºä¼šã€‚
 		}
 		finally
 		{
-			// ¹Ø±Õ´ÅÅÌÎÄ¼ş£¬»ØÊÕ×ÊÔ´
+			// å…³é—­ç£ç›˜æ–‡ä»¶ï¼Œå›æ”¶èµ„æº
 			if (fis != null)
 			{
 				try
@@ -42,9 +42,9 @@ public class FinallyTest
 				{
 					ioe.printStackTrace();
 				}
-				System.out.println("ÕıÔÚ»ØÊÕ");
+				System.out.println("æ­£åœ¨å›æ”¶");
 			}
-			System.out.println("Ö´ĞĞfinally¿éÀïµÄ×ÊÔ´»ØÊÕ!");
+			System.out.println("æ‰§è¡Œfinallyå—é‡Œçš„èµ„æºå›æ”¶!");
 		}
 	}
 }

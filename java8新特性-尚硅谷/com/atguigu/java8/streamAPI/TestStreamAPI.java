@@ -12,8 +12,8 @@ import com.atguigu.java8.streamAPI.Employee.Status;
 public class TestStreamAPI {
     
     /*
-        1.  ¸ø¶¨Ò»¸öÊı×ÖÁĞ±í£¬ÈçºÎ·µ»ØÒ»¸öÓÉÃ¿¸öÊıµÄÆ½·½¹¹³ÉµÄÁĞ±íÄØ£¿
-        £¬¸ø¶¨¡¾1£¬2£¬3£¬4£¬5¡¿£¬ Ó¦¸Ã·µ»Ø¡¾1£¬4£¬9£¬16£¬25¡¿¡£
+        1.  ç»™å®šä¸€ä¸ªæ•°å­—åˆ—è¡¨ï¼Œå¦‚ä½•è¿”å›ä¸€ä¸ªç”±æ¯ä¸ªæ•°çš„å¹³æ–¹æ„æˆçš„åˆ—è¡¨å‘¢ï¼Ÿ
+        ï¼Œç»™å®šã€1ï¼Œ2ï¼Œ3ï¼Œ4ï¼Œ5ã€‘ï¼Œ åº”è¯¥è¿”å›ã€1ï¼Œ4ï¼Œ9ï¼Œ16ï¼Œ25ã€‘ã€‚
      */
     @Test
     public void test1(){
@@ -25,16 +25,16 @@ public class TestStreamAPI {
     }
 
     /*
-     2. ÔõÑùÓÃ map ºÍ reduce ·½·¨ÊıÒ»ÊıÁ÷ÖĞÓĞ¶àÉÙ¸öEmployeeÄØ£¿
+     2. æ€æ ·ç”¨ map å’Œ reduce æ–¹æ³•æ•°ä¸€æ•°æµä¸­æœ‰å¤šå°‘ä¸ªEmployeeå‘¢ï¼Ÿ
      */
     List<Employee> emps = Arrays.asList(
-            new Employee(102, "ÀîËÄ", 59, 6666.66, Status.BUSY),
-            new Employee(101, "ÕÅÈı", 18, 9999.99, Status.FREE),
-            new Employee(103, "ÍõÎå", 28, 3333.33, Status.VOCATION),
-            new Employee(104, "ÕÔÁù", 8, 7777.77, Status.BUSY),
-            new Employee(104, "ÕÔÁù", 8, 7777.77, Status.FREE),
-            new Employee(104, "ÕÔÁù", 8, 7777.77, Status.FREE),
-            new Employee(105, "ÌïÆß", 38, 5555.55, Status.BUSY)
+            new Employee(102, "æå››", 59, 6666.66, Status.BUSY),
+            new Employee(101, "å¼ ä¸‰", 18, 9999.99, Status.FREE),
+            new Employee(103, "ç‹äº”", 28, 3333.33, Status.VOCATION),
+            new Employee(104, "èµµå…­", 8, 7777.77, Status.BUSY),
+            new Employee(104, "èµµå…­", 8, 7777.77, Status.FREE),
+            new Employee(104, "èµµå…­", 8, 7777.77, Status.FREE),
+            new Employee(105, "ç”°ä¸ƒ", 38, 5555.55, Status.BUSY)
     );
     
     @Test

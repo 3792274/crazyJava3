@@ -1,8 +1,8 @@
-package chapter04_03_Ñ­»·½á¹¹;
+package chapter04_03_å¾ªç¯ç»“æ„;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,32 +14,32 @@ public class WhileTest
 {
 	public static void main(String[] args)
 	{
-//		// Ñ­»·µÄ³õÊ¼»¯Ìõ¼ş
+//		// å¾ªç¯çš„åˆå§‹åŒ–æ¡ä»¶
 //		int count = 0;
-//		// µ±countĞ¡ÓÚ10Ê±£¬Ö´ĞĞÑ­»·Ìå
+//		// å½“countå°äº10æ—¶ï¼Œæ‰§è¡Œå¾ªç¯ä½“
 //		while (count < 10)
 //		{
 //			System.out.println(count);
-//			// µü´úÓï¾ä
+//			// è¿­ä»£è¯­å¥
 //			count++;
 //		}
-//		System.out.println("Ñ­»·½áÊø!");
+//		System.out.println("å¾ªç¯ç»“æŸ!");
 
 
-//		// ÏÂÃæÊÇÒ»¸öËÀÑ­»·
+//		// ä¸‹é¢æ˜¯ä¸€ä¸ªæ­»å¾ªç¯
 //		int count = 0;
 //		while (count < 10)
 //		{
-//			System.out.println("²»Í£Ö´ĞĞµÄËÀÑ­»· " + count);
+//			System.out.println("ä¸åœæ‰§è¡Œçš„æ­»å¾ªç¯ " + count);
 //			count--;
 //		}
-//		System.out.println("ÓÀÔ¶ÎŞ·¨Ìø³öµÄÑ­»·Ìå");
+//		System.out.println("æ°¸è¿œæ— æ³•è·³å‡ºçš„å¾ªç¯ä½“");
 
 
 		int count = 0;
-		// whileºó½ô¸úÒ»¸ö·ÖºÅ£¬±íÃ÷Ñ­»·ÌåÊÇÒ»¸ö·ÖºÅ£¨¿ÕÓï¾ä£©
+		// whileåç´§è·Ÿä¸€ä¸ªåˆ†å·ï¼Œè¡¨æ˜å¾ªç¯ä½“æ˜¯ä¸€ä¸ªåˆ†å·ï¼ˆç©ºè¯­å¥ï¼‰
 		while (count < 10);
-		// ÏÂÃæµÄ´úÂë¿éÓëwhileÑ­»·ÒÑ¾­Ã»ÓĞÈÎºÎ¹ØÏµ
+		// ä¸‹é¢çš„ä»£ç å—ä¸whileå¾ªç¯å·²ç»æ²¡æœ‰ä»»ä½•å…³ç³»
 		{
 			System.out.println("------" + count);
 			count++;

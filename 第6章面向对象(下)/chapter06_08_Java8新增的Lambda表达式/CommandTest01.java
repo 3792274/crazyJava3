@@ -1,8 +1,8 @@
-package chapter06_08_Java8ĞÂÔöµÄLambda±í´ïÊ½;
+package chapter06_08_Java8æ–°å¢çš„Lambdaè¡¨è¾¾å¼;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,7 +15,7 @@ public class CommandTest01 {
 	public static void main(String[] args) {
 		ProcessArray02 pa = new ProcessArray02();
 		int[] array = { 3, -4, 6, 4 };
-		// ´¦ÀíÊı×é£¬¾ßÌå´¦ÀíĞĞÎªÈ¡¾öÓÚÄäÃûÄÚ²¿Àà
+		// å¤„ç†æ•°ç»„ï¼Œå…·ä½“å¤„ç†è¡Œä¸ºå–å†³äºåŒ¿åå†…éƒ¨ç±»
 		pa.process(array, new Command() {
 			@Override
 			public void process(int[] target) {
@@ -23,7 +23,7 @@ public class CommandTest01 {
 				for (int tmp : target) {
 					sum += tmp;
 				}
-				System.out.println("Êı×éÔªËØµÄ×ÜºÍÊÇ:" + sum);
+				System.out.println("æ•°ç»„å…ƒç´ çš„æ€»å’Œæ˜¯:" + sum);
 			}
 		});
 	}

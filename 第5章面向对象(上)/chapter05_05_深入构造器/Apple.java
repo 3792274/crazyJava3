@@ -1,10 +1,10 @@
-package chapter05_05_深入构造器;
+package chapter05_05_娣卞叆鏋勯�犲櫒;
 
 
 
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -18,18 +18,18 @@ public class Apple
 	public String color;
 	public double weight;
 	public Apple(){}
-	// 两个参数的构造器
+	// 涓や釜鍙傛暟鐨勬瀯閫犲櫒
 	public Apple(String name , String color)
 	{
 		this.name = name;
 		this.color = color;
 	}
-	// 三个参数的构造器
+	// 涓変釜鍙傛暟鐨勬瀯閫犲櫒
 	public Apple(String name , String color , double weight)
 	{
-		// 通过this调用另一个重载的构造器的初始化代码
+		// 閫氳繃this璋冪敤鍙︿竴涓噸杞界殑鏋勯�犲櫒鐨勫垵濮嬪寲浠ｇ爜
 		this(name , color);
-		// 下面this引用该构造器正在初始化的Java对象
+		// 涓嬮潰this寮曠敤璇ユ瀯閫犲櫒姝ｅ湪鍒濆鍖栫殑Java瀵硅薄
 		this.weight = weight;
 	}
 }

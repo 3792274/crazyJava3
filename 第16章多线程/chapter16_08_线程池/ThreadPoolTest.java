@@ -1,10 +1,10 @@
-package chapter16_08_Ïß³Ì³Ø;
+package chapter16_08_çº¿ç¨‹æ± ;
 
 import java.util.concurrent.*;
 
 /**
- * Description: Ê¹ÓÃÏß³Ì³ØÀ´Ö´ĞĞÏß³ÌÈÎÎñ¡£<br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description: ä½¿ç”¨çº¿ç¨‹æ± æ¥æ‰§è¡Œçº¿ç¨‹ä»»åŠ¡ã€‚<br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,22 +16,22 @@ import java.util.concurrent.*;
 public class ThreadPoolTest {
 	public static void main(String[] args) throws Exception {
 		
-		// ´´½¨×ã¹»µÄÏß³ÌÀ´Ö§³Ö4¸öCPU²¢ĞĞµÄÏß³Ì³Ø
-		// ´´½¨Ò»¸ö¾ßÓĞ¹Ì¶¨Ïß³ÌÊı£¨6£©µÄÏß³Ì³Ø
+		// åˆ›å»ºè¶³å¤Ÿçš„çº¿ç¨‹æ¥æ”¯æŒ4ä¸ªCPUå¹¶è¡Œçš„çº¿ç¨‹æ± 
+		// åˆ›å»ºä¸€ä¸ªå…·æœ‰å›ºå®šçº¿ç¨‹æ•°ï¼ˆ6ï¼‰çš„çº¿ç¨‹æ± 
 		ExecutorService pool = Executors.newFixedThreadPool(6);
 		
-		// Ê¹ÓÃLambda±í´ïÊ½´´½¨Runnable¶ÔÏó£¬Ïß³ÌÀà
+		// ä½¿ç”¨Lambdaè¡¨è¾¾å¼åˆ›å»ºRunnableå¯¹è±¡ï¼Œçº¿ç¨‹ç±»
 		Runnable target = () -> {
 			for (int i = 0; i < 100; i++) {
-				System.out.println(Thread.currentThread().getName() + "µÄiÖµÎª:" + i);
+				System.out.println(Thread.currentThread().getName() + "çš„iå€¼ä¸º:" + i);
 			}
 		};
 		
-		// ÏòÏß³Ì³ØÖĞÌá½»Á½¸öÏß³Ì
+		// å‘çº¿ç¨‹æ± ä¸­æäº¤ä¸¤ä¸ªçº¿ç¨‹
 		pool.submit(target);
 		pool.submit(target);
 		
-		// ¹Ø±ÕÏß³Ì³Ø
+		// å…³é—­çº¿ç¨‹æ± 
 		pool.shutdown();
 	}
 }

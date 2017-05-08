@@ -1,10 +1,10 @@
-package chapter14_03_自定义Annotation;
+package chapter14_03_鑷畾涔堿nnotation;
 
 
 import java.lang.annotation.*;
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -12,11 +12,11 @@ import java.lang.annotation.*;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// 指定该注解信息会保留到运行时
+// 鎸囧畾璇ユ敞瑙ｄ俊鎭細淇濈暀鍒拌繍琛屾椂
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface FkTags
 {
-	// 定义value成员变量，该成员变量可接受多个@FkTag注解
+	// 瀹氫箟value鎴愬憳鍙橀噺锛岃鎴愬憳鍙橀噺鍙帴鍙楀涓狜FkTag娉ㄨВ
 	FkTag[] value();
 }

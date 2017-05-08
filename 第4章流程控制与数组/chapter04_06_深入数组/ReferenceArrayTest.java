@@ -1,8 +1,8 @@
-package chapter04_06_ÉîÈëÊı×é;
+package chapter04_06_æ·±å…¥æ•°ç»„;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,37 +13,37 @@ package chapter04_06_ÉîÈëÊı×é;
  */
 
 class Person {
-	public int age; // ÄêÁä
-	public double height; // Éí¸ß
-	// ¶¨ÒåÒ»¸öinfo·½·¨
+	public int age; // å¹´é¾„
+	public double height; // èº«é«˜
+	// å®šä¹‰ä¸€ä¸ªinfoæ–¹æ³•
 
 	public void info() {
-		System.out.println("ÎÒµÄÄêÁäÊÇ£º" + age + "£¬ÎÒµÄÉí¸ßÊÇ£º" + height);
+		System.out.println("æˆ‘çš„å¹´é¾„æ˜¯ï¼š" + age + "ï¼Œæˆ‘çš„èº«é«˜æ˜¯ï¼š" + height);
 	}
 }
 
 public class ReferenceArrayTest {
 	public static void main(String[] args) {
-		// ¶¨ÒåÒ»¸östudentsÊı×é±äÁ¿£¬ÆäÀàĞÍÊÇPerson[]
+		// å®šä¹‰ä¸€ä¸ªstudentsæ•°ç»„å˜é‡ï¼Œå…¶ç±»å‹æ˜¯Person[]
 		Person[] students;
-		// Ö´ĞĞ¶¯Ì¬³õÊ¼»¯
+		// æ‰§è¡ŒåŠ¨æ€åˆå§‹åŒ–
 		students = new Person[2];
-		// ´´½¨Ò»¸öPersonÊµÀı£¬²¢½«Õâ¸öPersonÊµÀı¸³¸øzhang±äÁ¿
+		// åˆ›å»ºä¸€ä¸ªPersonå®ä¾‹ï¼Œå¹¶å°†è¿™ä¸ªPersonå®ä¾‹èµ‹ç»™zhangå˜é‡
 		Person zhang = new Person();
-		// ÎªzhangËùÒıÓÃµÄPerson¶ÔÏóµÄage¡¢height¸³Öµ
+		// ä¸ºzhangæ‰€å¼•ç”¨çš„Personå¯¹è±¡çš„ageã€heightèµ‹å€¼
 		zhang.age = 15;
 		zhang.height = 158;
-		// ´´½¨Ò»¸öPersonÊµÀı£¬²¢½«Õâ¸öPersonÊµÀı¸³¸ølee±äÁ¿
+		// åˆ›å»ºä¸€ä¸ªPersonå®ä¾‹ï¼Œå¹¶å°†è¿™ä¸ªPersonå®ä¾‹èµ‹ç»™leeå˜é‡
 		Person lee = new Person();
-		// ÎªleeËùÒıÓÃµÄPerson¶ÔÏóµÄage¡¢height¸³Öµ
+		// ä¸ºleeæ‰€å¼•ç”¨çš„Personå¯¹è±¡çš„ageã€heightèµ‹å€¼
 		lee.age = 16;
 		lee.height = 161;
-		// ½«zhang±äÁ¿µÄÖµ¸³¸øµÚÒ»¸öÊı×éÔªËØ
+		// å°†zhangå˜é‡çš„å€¼èµ‹ç»™ç¬¬ä¸€ä¸ªæ•°ç»„å…ƒç´ 
 		students[0] = zhang;
-		// ½«lee±äÁ¿µÄÖµ¸³¸øµÚ¶ş¸öÊı×éÔªËØ
+		// å°†leeå˜é‡çš„å€¼èµ‹ç»™ç¬¬äºŒä¸ªæ•°ç»„å…ƒç´ 
 		students[1] = lee;
-		// ÏÂÃæÁ½ĞĞ´úÂëµÄ½á¹ûÍêÈ«Ò»Ñù£¬ÒòÎªlee
-		// ºÍstudents[1]Ö¸ÏòµÄÊÇÍ¬Ò»¸öPersonÊµÀı¡£
+		// ä¸‹é¢ä¸¤è¡Œä»£ç çš„ç»“æœå®Œå…¨ä¸€æ ·ï¼Œå› ä¸ºlee
+		// å’Œstudents[1]æŒ‡å‘çš„æ˜¯åŒä¸€ä¸ªPersonå®ä¾‹ã€‚
 		lee.info();
 		students[1].info();
 	}

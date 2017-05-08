@@ -11,31 +11,31 @@ import java.util.function.Supplier;
 import org.junit.Test;
 
 /*
- * Ò»¡¢·½·¨ÒıÓÃ£ºÈô Lambda ÌåÖĞµÄ¹¦ÄÜ£¬ÒÑ¾­ÓĞ·½·¨Ìá¹©ÁËÊµÏÖ£¬¿ÉÒÔÊ¹ÓÃ·½·¨ÒıÓÃ
- *            £¨¿ÉÒÔ½«·½·¨ÒıÓÃÀí½âÎª Lambda ±í´ïÊ½µÄÁíÍâÒ»ÖÖ±íÏÖĞÎÊ½£©
+ * ä¸€ã€æ–¹æ³•å¼•ç”¨ï¼šè‹¥ Lambda ä½“ä¸­çš„åŠŸèƒ½ï¼Œå·²ç»æœ‰æ–¹æ³•æä¾›äº†å®ç°ï¼Œå¯ä»¥ä½¿ç”¨æ–¹æ³•å¼•ç”¨
+ *            ï¼ˆå¯ä»¥å°†æ–¹æ³•å¼•ç”¨ç†è§£ä¸º Lambda è¡¨è¾¾å¼çš„å¦å¤–ä¸€ç§è¡¨ç°å½¢å¼ï¼‰
  * 
- * 1. ¶ÔÏóµÄÒıÓÃ :: ÊµÀı·½·¨Ãû
+ * 1. å¯¹è±¡çš„å¼•ç”¨ :: å®ä¾‹æ–¹æ³•å
  * 
- * 2. ÀàÃû :: ¾²Ì¬·½·¨Ãû
+ * 2. ç±»å :: é™æ€æ–¹æ³•å
  * 
- * 3. ÀàÃû :: ÊµÀı·½·¨Ãû
+ * 3. ç±»å :: å®ä¾‹æ–¹æ³•å
  * 
- * ×¢Òâ£º
- *   ¢Ù·½·¨ÒıÓÃËùÒıÓÃµÄ·½·¨µÄ²ÎÊıÁĞ±íÓë·µ»ØÖµÀàĞÍ£¬ĞèÒªÓëº¯ÊıÊ½½Ó¿ÚÖĞ³éÏó·½·¨µÄ²ÎÊıÁĞ±íºÍ·µ»ØÖµÀàĞÍ±£³ÖÒ»ÖÂ£¡
- *   ¢ÚÈôLambda µÄ²ÎÊıÁĞ±íµÄµÚÒ»¸ö²ÎÊı£¬ÊÇÊµÀı·½·¨µÄµ÷ÓÃÕß£¬µÚ¶ş¸ö²ÎÊı(»òÎŞ²Î)ÊÇÊµÀı·½·¨µÄ²ÎÊıÊ±£¬¸ñÊ½£º ClassName::MethodName
+ * æ³¨æ„ï¼š
+ *   â‘ æ–¹æ³•å¼•ç”¨æ‰€å¼•ç”¨çš„æ–¹æ³•çš„å‚æ•°åˆ—è¡¨ä¸è¿”å›å€¼ç±»å‹ï¼Œéœ€è¦ä¸å‡½æ•°å¼æ¥å£ä¸­æŠ½è±¡æ–¹æ³•çš„å‚æ•°åˆ—è¡¨å’Œè¿”å›å€¼ç±»å‹ä¿æŒä¸€è‡´ï¼
+ *   â‘¡è‹¥Lambda çš„å‚æ•°åˆ—è¡¨çš„ç¬¬ä¸€ä¸ªå‚æ•°ï¼Œæ˜¯å®ä¾‹æ–¹æ³•çš„è°ƒç”¨è€…ï¼Œç¬¬äºŒä¸ªå‚æ•°(æˆ–æ— å‚)æ˜¯å®ä¾‹æ–¹æ³•çš„å‚æ•°æ—¶ï¼Œæ ¼å¼ï¼š ClassName::MethodName
  * 
- * ¶ş¡¢¹¹ÔìÆ÷ÒıÓÃ :¹¹ÔìÆ÷µÄ²ÎÊıÁĞ±í£¬ĞèÒªÓëº¯ÊıÊ½½Ó¿ÚÖĞ²ÎÊıÁĞ±í±£³ÖÒ»ÖÂ£¡
+ * äºŒã€æ„é€ å™¨å¼•ç”¨ :æ„é€ å™¨çš„å‚æ•°åˆ—è¡¨ï¼Œéœ€è¦ä¸å‡½æ•°å¼æ¥å£ä¸­å‚æ•°åˆ—è¡¨ä¿æŒä¸€è‡´ï¼
  * 
- * 1. ÀàÃû :: new
+ * 1. ç±»å :: new
  * 
- * Èı¡¢Êı×éÒıÓÃ
+ * ä¸‰ã€æ•°ç»„å¼•ç”¨
  * 
- *  ÀàĞÍ[] :: new;
+ *  ç±»å‹[] :: new;
  * 
  * 
  */
 public class TestMethodRef {
-    //Êı×éÒıÓÃ
+    //æ•°ç»„å¼•ç”¨
     @Test
     public void test8(){
         Function<Integer, String[]> fun = (args) -> new String[args];
@@ -49,7 +49,7 @@ public class TestMethodRef {
         System.out.println(emps.length);
     }
     
-    //¹¹ÔìÆ÷ÒıÓÃ
+    //æ„é€ å™¨å¼•ç”¨
     @Test
     public void test7(){
         Function<String, Employee> fun = Employee::new;
@@ -68,7 +68,7 @@ public class TestMethodRef {
         System.out.println(sup2.get());
     }
     
-    //ÀàÃû :: ÊµÀı·½·¨Ãû
+    //ç±»å :: å®ä¾‹æ–¹æ³•å
     @Test
     public void test5(){
         BiPredicate<String, String> bp = (x, y) -> x.equals(y);
@@ -92,7 +92,7 @@ public class TestMethodRef {
         
     }
     
-    //ÀàÃû :: ¾²Ì¬·½·¨Ãû
+    //ç±»å :: é™æ€æ–¹æ³•å
     @Test
     public void test4(){
         Comparator<Integer> com = (x, y) -> Integer.compare(x, y);
@@ -113,10 +113,10 @@ public class TestMethodRef {
         System.out.println(fun2.apply(1.2, 1.5));
     }
 
-    //¶ÔÏóµÄÒıÓÃ :: ÊµÀı·½·¨Ãû
+    //å¯¹è±¡çš„å¼•ç”¨ :: å®ä¾‹æ–¹æ³•å
     @Test
     public void test2(){
-        Employee emp = new Employee(101, "ÕÅÈı", 18, 9999.99);
+        Employee emp = new Employee(101, "å¼ ä¸‰", 18, 9999.99);
         
         Supplier<String> sup = () -> emp.getName();
         System.out.println(sup.get());
@@ -131,12 +131,12 @@ public class TestMethodRef {
     public void test1(){
         PrintStream ps = System.out;
         Consumer<String> con = (str) -> ps.println(str);
-        con.accept("Hello World£¡");
+        con.accept("Hello Worldï¼");
         
         System.out.println("--------------------------------");
         
         Consumer<String> con2 = ps::println;
-        con2.accept("Hello Java8£¡");
+        con2.accept("Hello Java8ï¼");
         
         Consumer<String> con3 = System.out::println;
     }

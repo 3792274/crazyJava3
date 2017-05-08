@@ -1,11 +1,11 @@
-package chapter08_06_java8ÔöÇ¿µÄMap¼¯ºÏ;
+package chapter08_06_java8å¢å¼ºçš„Mapé›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- *ÓëHashSetÀàËÆ£¬Èç¹û¿É±ä¶ÔÏó×÷ÎªHashMap/HashtableµÄkey,²¢ÇÒ³ÌĞòĞŞ¸ÄÁË×÷Îªkey µÄ¿É±ä¶ÔÏó
- *³ÌĞòÔÙÒ²ÎŞ·¨×¼È··ÃÎÊµ½MapÖĞ±»ĞŞ¸Ä¹ıµ±µØkey
+ *ä¸HashSetç±»ä¼¼ï¼Œå¦‚æœå¯å˜å¯¹è±¡ä½œä¸ºHashMap/Hashtableçš„key,å¹¶ä¸”ç¨‹åºä¿®æ”¹äº†ä½œä¸ºkey çš„å¯å˜å¯¹è±¡
+ *ç¨‹åºå†ä¹Ÿæ— æ³•å‡†ç¡®è®¿é—®åˆ°Mapä¸­è¢«ä¿®æ”¹è¿‡å½“åœ°key
  */
 public class HashMapErrorTest
 {
@@ -13,27 +13,27 @@ public class HashMapErrorTest
 	{
 		HashMap ht = new HashMap();
 	
-		// ´Ë´¦µÄAÀàÓëÇ°Ò»¸ö³ÌĞòµÄAÀàÊÇÍ¬Ò»¸öÀà
-		ht.put(new A(60000) , "·è¿ñJava½²Òå");
-		ht.put(new A(87563) , "ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
+		// æ­¤å¤„çš„Aç±»ä¸å‰ä¸€ä¸ªç¨‹åºçš„Aç±»æ˜¯åŒä¸€ä¸ªç±»
+		ht.put(new A(60000) , "ç–¯ç‹‚Javaè®²ä¹‰");
+		ht.put(new A(87563) , "è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
 	
-		// »ñµÃHashtableµÄkey Set¼¯ºÏ¶ÔÓ¦µÄIteratorµü´úÆ÷
+		// è·å¾—Hashtableçš„key Seté›†åˆå¯¹åº”çš„Iteratorè¿­ä»£å™¨
 		Iterator it = ht.keySet().iterator();
 		
-		// È¡³öMapÖĞµÚÒ»¸ökey£¬²¢ĞŞ¸ÄËüµÄcountÖµ
+		// å–å‡ºMapä¸­ç¬¬ä¸€ä¸ªkeyï¼Œå¹¶ä¿®æ”¹å®ƒçš„countå€¼
 		A first = (A)it.next();
-		first.count = 87563;   // ¢Ù
+		first.count = 87563;   // â‘ 
 		
-		// Êä³ö{A@1560b=·è¿ñJava½²Òå, A@1560b=ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½}
+		// è¾“å‡º{A@1560b=ç–¯ç‹‚Javaè®²ä¹‰, A@1560b=è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜}
 		System.out.println(ht);
 		
-		// Ö»ÄÜÉ¾³ıÃ»ÓĞ±»ĞŞ¸Ä¹ıµÄkeyËù¶ÔÓ¦µÄkey-value¶Ô
+		// åªèƒ½åˆ é™¤æ²¡æœ‰è¢«ä¿®æ”¹è¿‡çš„keyæ‰€å¯¹åº”çš„key-valueå¯¹
 		ht.remove(new A(87563));
 		System.out.println(ht);
 	
-		// ÎŞ·¨»ñÈ¡Ê£ÏÂµÄvalue£¬ÏÂÃæÁ½ĞĞ´úÂë¶¼½«Êä³önull¡£
-		System.out.println(ht.get(new A(87563)));   // ¢Ú Êä³önull
-		System.out.println(ht.get(new A(60000)));   // ¢Û Êä³önull
+		// æ— æ³•è·å–å‰©ä¸‹çš„valueï¼Œä¸‹é¢ä¸¤è¡Œä»£ç éƒ½å°†è¾“å‡ºnullã€‚
+		System.out.println(ht.get(new A(87563)));   // â‘¡ è¾“å‡ºnull
+		System.out.println(ht.get(new A(60000)));   // â‘¢ è¾“å‡ºnull
 	}
 }
 

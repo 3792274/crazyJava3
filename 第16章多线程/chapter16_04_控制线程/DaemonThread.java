@@ -1,8 +1,8 @@
-package chapter16_04_¿ØÖÆÏß³Ì;
+package chapter16_04_æ§åˆ¶çº¿ç¨‹;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,7 +13,7 @@ package chapter16_04_¿ØÖÆÏß³Ì;
  */
 public class DaemonThread extends Thread {
 	
-	// ¶¨ÒåºóÌ¨Ïß³ÌµÄÏß³ÌÖ´ĞĞÌåÓëÆÕÍ¨Ïß³ÌÃ»ÓĞÈÎºÎÇø±ğ
+	// å®šä¹‰åå°çº¿ç¨‹çš„çº¿ç¨‹æ‰§è¡Œä½“ä¸æ™®é€šçº¿ç¨‹æ²¡æœ‰ä»»ä½•åŒºåˆ«
 	@Override
 	public void run() {
 		for (int i = 0; i < 1000; i++) {
@@ -24,16 +24,16 @@ public class DaemonThread extends Thread {
 	public static void main(String[] args) {
 		DaemonThread t = new DaemonThread();
 		
-		// ½«´ËÏß³ÌÉèÖÃ³ÉºóÌ¨Ïß³Ì
+		// å°†æ­¤çº¿ç¨‹è®¾ç½®æˆåå°çº¿ç¨‹
 		t.setDaemon(true);
 		
-		// Æô¶¯ºóÌ¨Ïß³Ì
+		// å¯åŠ¨åå°çº¿ç¨‹
 		t.start();
 		
 		for (int i = 0; i < 10; i++) {
 			System.out.println(Thread.currentThread().getName() + "  " + i);
 		}
-		// -----³ÌĞòÖ´ĞĞµ½´Ë´¦£¬Ç°Ì¨Ïß³Ì£¨mainÏß³Ì£©½áÊø------
-		// ºóÌ¨Ïß³ÌÒ²Ó¦¸ÃËæÖ®½áÊø,thread-0 ²¢²»»áÖ´ĞĞµ½999
+		// -----ç¨‹åºæ‰§è¡Œåˆ°æ­¤å¤„ï¼Œå‰å°çº¿ç¨‹ï¼ˆmainçº¿ç¨‹ï¼‰ç»“æŸ------
+		// åå°çº¿ç¨‹ä¹Ÿåº”è¯¥éšä¹‹ç»“æŸ,thread-0 å¹¶ä¸ä¼šæ‰§è¡Œåˆ°999
 	}
 }

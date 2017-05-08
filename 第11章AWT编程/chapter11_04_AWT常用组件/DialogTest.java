@@ -1,11 +1,11 @@
-package chapter11_04_AWT³£ÓÃ×é¼ş;
+package chapter11_04_AWTå¸¸ç”¨ç»„ä»¶;
 
 
 import java.awt.*;
 import java.awt.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,11 +15,11 @@ import java.awt.event.*;
  */
 public class DialogTest
 {
-	Frame f = new Frame("²âÊÔ");
-	Dialog d1 = new Dialog(f, "Ä£Ê½¶Ô»°¿ò" , true);
-	Dialog d2 = new Dialog(f, "·ÇÄ£Ê½¶Ô»°¿ò" , false);
-	Button b1 = new Button("´ò¿ªÄ£Ê½¶Ô»°¿ò");
-	Button b2 = new Button("´ò¿ª·ÇÄ£Ê½¶Ô»°¿ò");
+	Frame f = new Frame("æµ‹è¯•");
+	Dialog d1 = new Dialog(f, "æ¨¡å¼å¯¹è¯æ¡†" , true);
+	Dialog d2 = new Dialog(f, "éæ¨¡å¼å¯¹è¯æ¡†" , false);
+	Button b1 = new Button("æ‰“å¼€æ¨¡å¼å¯¹è¯æ¡†");
+	Button b2 = new Button("æ‰“å¼€éæ¨¡å¼å¯¹è¯æ¡†");
 	public void init()
 	{
 		d1.setBounds(20 , 30 , 300, 400);

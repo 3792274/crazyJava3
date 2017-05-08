@@ -1,8 +1,8 @@
-package chapter04_06_ÉîÈëÊı×é;
+package chapter04_06_æ·±å…¥æ•°ç»„;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,26 +14,26 @@ public class ArrayInRam
 {
 	public static void main(String[] args)
 	{
-		// ¶¨Òå²¢³õÊ¼»¯Êı×é£¬Ê¹ÓÃ¾²Ì¬³õÊ¼»¯
+		// å®šä¹‰å¹¶åˆå§‹åŒ–æ•°ç»„ï¼Œä½¿ç”¨é™æ€åˆå§‹åŒ–
 		int[] a = {5, 7 , 20};
-		// ¶¨Òå²¢³õÊ¼»¯Êı×é£¬Ê¹ÓÃ¶¯Ì¬³õÊ¼»¯
+		// å®šä¹‰å¹¶åˆå§‹åŒ–æ•°ç»„ï¼Œä½¿ç”¨åŠ¨æ€åˆå§‹åŒ–
 		int[] b = new int[4];
-		// Êä³öbÊı×éµÄ³¤¶È
-		System.out.println("bÊı×éµÄ³¤¶ÈÎª£º" + b.length);
-		// Ñ­»·Êä³öaÊı×éµÄÔªËØ
+		// è¾“å‡ºbæ•°ç»„çš„é•¿åº¦
+		System.out.println("bæ•°ç»„çš„é•¿åº¦ä¸ºï¼š" + b.length);
+		// å¾ªç¯è¾“å‡ºaæ•°ç»„çš„å…ƒç´ 
 		for (int i = 0 ,len = a.length; i < len ; i++ )
 		{
 			System.out.println(a[i]);
 		}
-		// Ñ­»·Êä³öbÊı×éµÄÔªËØ
+		// å¾ªç¯è¾“å‡ºbæ•°ç»„çš„å…ƒç´ 
 		for (int i = 0 , len = b.length; i < len ; i++ )
 		{
 			System.out.println(b[i]);
 		}
-		// ÒòÎªaÊÇint[]ÀàĞÍ£¬bÒ²ÊÇint[]ÀàĞÍ£¬ËùÒÔ¿ÉÒÔ½«aµÄÖµ¸³¸øb¡£
-		// Ò²¾ÍÊÇÈÃbÒıÓÃÖ¸ÏòaÒıÓÃÖ¸ÏòµÄÊı×é
+		// å› ä¸ºaæ˜¯int[]ç±»å‹ï¼Œbä¹Ÿæ˜¯int[]ç±»å‹ï¼Œæ‰€ä»¥å¯ä»¥å°†açš„å€¼èµ‹ç»™bã€‚
+		// ä¹Ÿå°±æ˜¯è®©bå¼•ç”¨æŒ‡å‘aå¼•ç”¨æŒ‡å‘çš„æ•°ç»„
 		b = a;
-		// ÔÙ´ÎÊä³öbÊı×éµÄ³¤¶È
-		System.out.println("bÊı×éµÄ³¤¶ÈÎª£º" + b.length);
+		// å†æ¬¡è¾“å‡ºbæ•°ç»„çš„é•¿åº¦
+		System.out.println("bæ•°ç»„çš„é•¿åº¦ä¸ºï¼š" + b.length);
 	}
 }

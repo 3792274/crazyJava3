@@ -1,10 +1,10 @@
-package chapter07_04_java8µÄÈÕÆÚÊ±¼äÀà;
+package chapter07_04_java8çš„æ—¥æœŸæ—¶é—´ç±»;
 
 import java.util.*;
 
 /**
- * Description: ÍÆ¼öÊ¹ÓÃCalendarÀà£¬²»Ê¹ÓÃDate<br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description: æ¨èä½¿ç”¨Calendarç±»ï¼Œä¸ä½¿ç”¨Date<br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -17,7 +17,7 @@ public class DateTest01 {
 	public static void main(String[] args) {
 		Date d1 = new Date();
 		
-		// »ñÈ¡µ±Ç°Ê±¼äÖ®ºó100msµÄÊ±¼ä
+		// è·å–å½“å‰æ—¶é—´ä¹‹å100msçš„æ—¶é—´
 		Date d2 = new Date(System.currentTimeMillis() + 100L);
 		
 		System.out.println(d2);

@@ -1,10 +1,10 @@
-package chapter09_01_·ºĞÍÈëÃÅ;
+package chapter09_01_æ³›å‹å…¥é—¨;
 
 
 import java.util.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,13 +16,13 @@ public class GenericList
 {
 	public static void main(String[] args)
 	{
-		// ´´½¨Ò»¸öÖ»Ïë±£´æ×Ö·û´®µÄList¼¯ºÏ
-		List<String> strList = new ArrayList<String>();  // ¢Ù
-		strList.add("·è¿ñJava½²Òå");
-		strList.add("·è¿ñAndroid½²Òå");
-		// ÏÂÃæ´úÂë½«ÒıÆğ±àÒë´íÎó
-//		strList.add(5);    // ¢Ú
-		strList.forEach(str -> System.out.println(str.length())); // ¢Û
+		// åˆ›å»ºä¸€ä¸ªåªæƒ³ä¿å­˜å­—ç¬¦ä¸²çš„Listé›†åˆ
+		List<String> strList = new ArrayList<String>();  // â‘ 
+		strList.add("ç–¯ç‹‚Javaè®²ä¹‰");
+		strList.add("ç–¯ç‹‚Androidè®²ä¹‰");
+		// ä¸‹é¢ä»£ç å°†å¼•èµ·ç¼–è¯‘é”™è¯¯
+//		strList.add(5);    // â‘¡
+		strList.forEach(str -> System.out.println(str.length())); // â‘¢
 	}
 }
 

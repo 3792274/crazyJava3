@@ -1,12 +1,12 @@
-package chapter08_02_CollectionºÍIterator½Ó¿Ú;
+package chapter08_02_Collectionå’ŒIteratoræ¥å£;
 
 import java.util.Collection;
 import java.util.HashSet;
 /**
  * Description:
  * 
- * Java8£¬ÎªIterable½Ó¿ÚÔö¼ÓÁËÒ»¸öforEach(Consumer action)µÄÄ¬ÈÏ·½·¨
- * ËùĞè²ÎÊıÎªÒ»¸öº¯ÊıÊ½½Ó¿Ú¡£
+ * Java8ï¼Œä¸ºIterableæ¥å£å¢åŠ äº†ä¸€ä¸ªforEach(Consumer action)çš„é»˜è®¤æ–¹æ³•
+ * æ‰€éœ€å‚æ•°ä¸ºä¸€ä¸ªå‡½æ•°å¼æ¥å£ã€‚
   
 default void forEach(Consumer<? super T> action) {
         Objects.requireNonNull(action);
@@ -21,12 +21,12 @@ public class CollectionEach02
 {
 	public static void main(String[] args)
 	{
-		// ´´½¨Ò»¸ö¼¯ºÏ
+		// åˆ›å»ºä¸€ä¸ªé›†åˆ
 		Collection books = new HashSet();
-		books.add("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
-		books.add("·è¿ñJava½²Òå");
-		books.add("·è¿ñAndroid½²Òå");
-		// µ÷ÓÃforEach()·½·¨±éÀú¼¯ºÏ
-		books.forEach(obj -> System.out.println("µü´ú¼¯ºÏÔªËØ£º" + obj));
+		books.add("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
+		books.add("ç–¯ç‹‚Javaè®²ä¹‰");
+		books.add("ç–¯ç‹‚Androidè®²ä¹‰");
+		// è°ƒç”¨forEach()æ–¹æ³•éå†é›†åˆ
+		books.forEach(obj -> System.out.println("è¿­ä»£é›†åˆå…ƒç´ ï¼š" + obj));
 	}
 }

@@ -1,7 +1,7 @@
 package com.atguigu.java8.streamAPI;
 import java.util.Optional;
 
-//注意：Optional 不能被序列化
+//娉ㄦ剰锛歄ptional 涓嶈兘琚簭鍒楀寲
 public class NewMan {
 
 	private Optional<Godness> godness = Optional.empty();

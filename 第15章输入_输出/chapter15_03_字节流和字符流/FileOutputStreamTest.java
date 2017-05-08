@@ -1,11 +1,11 @@
-package chapter15_03_×Ö½ÚÁ÷ºÍ×Ö·ûÁ÷;
+package chapter15_03_å­—èŠ‚æµå’Œå­—ç¬¦æµ;
 
 
 import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -17,16 +17,16 @@ import java.io.*;
 public class FileOutputStreamTest {
 	public static void main(String[] args) {
 		try (
-				// ´´½¨×Ö½ÚÊäÈëÁ÷
+				// åˆ›å»ºå­—èŠ‚è¾“å…¥æµ
 				FileInputStream fis = new FileInputStream("FileOutputStreamTest.java");
-				// ´´½¨×Ö½ÚÊä³öÁ÷
+				// åˆ›å»ºå­—èŠ‚è¾“å‡ºæµ
 				FileOutputStream fos = new FileOutputStream("newFile.txt"))
 		{
 			byte[] bbuf = new byte[32];
 			int hasRead = 0;
-			// Ñ­»·´ÓÊäÈëÁ÷ÖĞÈ¡³öÊı¾İ
+			// å¾ªç¯ä»è¾“å…¥æµä¸­å–å‡ºæ•°æ®
 			while ((hasRead = fis.read(bbuf)) > 0) {
-				// Ã¿¶ÁÈ¡Ò»´Î£¬¼´Ğ´ÈëÎÄ¼şÊä³öÁ÷£¬¶ÁÁË¶àÉÙ£¬¾ÍĞ´¶àÉÙ¡£
+				// æ¯è¯»å–ä¸€æ¬¡ï¼Œå³å†™å…¥æ–‡ä»¶è¾“å‡ºæµï¼Œè¯»äº†å¤šå°‘ï¼Œå°±å†™å¤šå°‘ã€‚
 				fos.write(bbuf, 0, hasRead);
 			}
 		} catch (IOException ioe) {

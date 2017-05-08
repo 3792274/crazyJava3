@@ -1,9 +1,9 @@
-package chapter18_04_Ê¹ÓÃ·´ÉäÉú³É²¢²Ù×÷¶ÔÏó;
+package chapter18_04_ä½¿ç”¨åå°„ç”Ÿæˆå¹¶æ“ä½œå¯¹è±¡;
 
 import java.lang.reflect.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,14 +16,14 @@ public class CreateJFrame
 	public static void main(String[] args)
 		throws Exception
 	{
-		// »ñÈ¡JFrame¶ÔÓ¦µÄClass¶ÔÏó
+		// è·å–JFrameå¯¹åº”çš„Classå¯¹è±¡
 		Class<?> jframeClazz = Class.forName("javax.swing.JFrame");
-		// »ñÈ¡JFrameÖĞ´øÒ»¸ö×Ö·û´®²ÎÊıµÄ¹¹ÔìÆ÷
+		// è·å–JFrameä¸­å¸¦ä¸€ä¸ªå­—ç¬¦ä¸²å‚æ•°çš„æ„é€ å™¨
 		Constructor ctor = jframeClazz
 			.getConstructor(String.class);
-		// µ÷ÓÃConstructorµÄnewInstance·½·¨´´½¨¶ÔÏó
-		Object obj = ctor.newInstance("²âÊÔ´°¿Ú");
-		// Êä³öJFrame¶ÔÏó
+		// è°ƒç”¨Constructorçš„newInstanceæ–¹æ³•åˆ›å»ºå¯¹è±¡
+		Object obj = ctor.newInstance("æµ‹è¯•çª—å£");
+		// è¾“å‡ºJFrameå¯¹è±¡
 		System.out.println(obj);
 	}
 }

@@ -1,4 +1,4 @@
-package chapter13_06_Java7µÄRowSet;
+package chapter13_06_Java7çš„RowSet;
 
 
 import java.util.*;
@@ -8,7 +8,7 @@ import javax.sql.rowset.*;
 import com.sun.rowset.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -24,7 +24,7 @@ public class JdbcRowSetTest
 	private String pass;
 	public void initParam(String paramFile)throws Exception
 	{
-		// Ê¹ÓÃPropertiesÀàÀ´¼ÓÔØÊôĞÔÎÄ¼ş
+		// ä½¿ç”¨Propertiesç±»æ¥åŠ è½½å±æ€§æ–‡ä»¶
 		Properties props = new Properties();
 		props.load(new FileInputStream(paramFile));
 		driver = props.getProperty("driver");
@@ -35,20 +35,20 @@ public class JdbcRowSetTest
 
 	public void update(String sql)throws Exception
 	{
-		// ¼ÓÔØÇı¶¯
+		// åŠ è½½é©±åŠ¨
 		Class.forName(driver);
 		try(
-			// »ñÈ¡Êı¾İ¿âÁ¬½Ó
+			// è·å–æ•°æ®åº“è¿æ¥
 			Connection conn = DriverManager.getConnection(url , user , pass);
-			// ´´½¨JdbcRowSetImpl¶ÔÏó
-			JdbcRowSet jdbcRs = new JdbcRowSetImpl(conn))   // ¢ÙÓëÄÚ²¿API°ó¶¨²»ºÃ£¬ÔÙjava7ÖĞ¸ü¸ÄFactory
+			// åˆ›å»ºJdbcRowSetImplå¯¹è±¡
+			JdbcRowSet jdbcRs = new JdbcRowSetImpl(conn))   // â‘ ä¸å†…éƒ¨APIç»‘å®šä¸å¥½ï¼Œå†java7ä¸­æ›´æ”¹Factory
 		{
-			// ÉèÖÃSQL²éÑ¯Óï¾ä
+			// è®¾ç½®SQLæŸ¥è¯¢è¯­å¥
 			jdbcRs.setCommand(sql);
-			// Ö´ĞĞ²éÑ¯
+			// æ‰§è¡ŒæŸ¥è¯¢
 			jdbcRs.execute();
 			jdbcRs.afterLast();
-			// ÏòÇ°¹ö¶¯½á¹û¼¯
+			// å‘å‰æ»šåŠ¨ç»“æœé›†
 			while (jdbcRs.previous())
 			{
 				System.out.println(jdbcRs.getString(1)
@@ -56,8 +56,8 @@ public class JdbcRowSetTest
 					+ "\t" + jdbcRs.getString(3));
 				if (jdbcRs.getInt("student_id") == 3)
 				{
-					// ĞŞ¸ÄÖ¸¶¨¼ÇÂ¼ĞĞ
-					jdbcRs.updateString("student_name", "ËïÎò¿Õ");
+					// ä¿®æ”¹æŒ‡å®šè®°å½•è¡Œ
+					jdbcRs.updateString("student_name", "å­™æ‚Ÿç©º");
 					jdbcRs.updateRow();
 				}
 			}
@@ -66,7 +66,7 @@ public class JdbcRowSetTest
 	public static void main(String[] args)throws Exception
 	{
 		JdbcRowSetTest jt = new JdbcRowSetTest();
-		jt.initParam("resource\\chapter13_04_Ö´ĞĞSQLÓï¾äµÄ·½Ê½\\mysql.ini");
+		jt.initParam("resource\\chapter13_04_æ‰§è¡ŒSQLè¯­å¥çš„æ–¹å¼\\mysql.ini");
 		jt.update("select * from student_table");
 	}
 }

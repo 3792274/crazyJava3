@@ -2,7 +2,7 @@ package test;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -12,9 +12,9 @@ package test;
  * @version 1.0
  */
 public class HelloWorld {
-	// Java³ÌĞòµÄÈë¿Ú·½·¨£¬³ÌĞò½«´ÓÕâÀï¿ªÊ¼Ö´ĞĞ
+	// Javaç¨‹åºçš„å…¥å£æ–¹æ³•ï¼Œç¨‹åºå°†ä»è¿™é‡Œå¼€å§‹æ‰§è¡Œ
 	public static void main(String[] args) {
-		// Ïò¿ØÖÆÌ¨´òÓ¡Ò»ÌõÓï¾ä
+		// å‘æ§åˆ¶å°æ‰“å°ä¸€æ¡è¯­å¥
 		System.out.println("Hello World!");
 	}
 }

@@ -1,4 +1,4 @@
-package chapter07_03_³£ÓÃÀà;
+package chapter07_03_å¸¸ç”¨ç±»;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -6,8 +6,8 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * Description: <br/>
  * 
- * ThreadLocalRandom ÊÇjdk 7Ìá¹©µÄ£¬ÔöÇ¿µÄrandom,¿ÉÒÔÊ¹ÓÃÏß³Ì°²È«
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ThreadLocalRandom æ˜¯jdk 7æä¾›çš„ï¼Œå¢å¼ºçš„random,å¯ä»¥ä½¿ç”¨çº¿ç¨‹å®‰å…¨
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -19,21 +19,21 @@ import java.util.concurrent.ThreadLocalRandom;
 public class RandomTest05 {
 	public static void main(String[] args) {
 		Random rand = new Random();
-		System.out.println("rand.nextBoolean()£º" + rand.nextBoolean());
+		System.out.println("rand.nextBoolean()ï¼š" + rand.nextBoolean());
 		byte[] buffer = new byte[16];
 		rand.nextBytes(buffer);
 		System.out.println(Arrays.toString(buffer));
-		// Éú³É0.0~1.0Ö®¼äµÄÎ±Ëæ»údoubleÊı
-		System.out.println("rand.nextDouble()£º" + rand.nextDouble());
-		// Éú³É0.0~1.0Ö®¼äµÄÎ±Ëæ»úfloatÊı
-		System.out.println("rand.nextFloat()£º" + rand.nextFloat());
-		// Éú³ÉÆ½¾ùÖµÊÇ 0.0£¬±ê×¼²îÊÇ 1.0µÄÎ±¸ßË¹Êı
-		System.out.println("rand.nextGaussian()£º" + rand.nextGaussian());
-		// Éú³ÉÒ»¸ö´¦ÓÚintÕûÊıÈ¡Öµ·¶Î§µÄÎ±Ëæ»úÕûÊı
-		System.out.println("rand.nextInt()£º" + rand.nextInt());
-		// Éú³É0~26Ö®¼äµÄÎ±Ëæ»úÕûÊı
-		System.out.println("rand.nextInt(26)£º" + rand.nextInt(26));
-		// Éú³ÉÒ»¸ö´¦ÓÚlongÕûÊıÈ¡Öµ·¶Î§µÄÎ±Ëæ»úÕûÊı
-		System.out.println("rand.nextLong()£º" + rand.nextLong());
+		// ç”Ÿæˆ0.0~1.0ä¹‹é—´çš„ä¼ªéšæœºdoubleæ•°
+		System.out.println("rand.nextDouble()ï¼š" + rand.nextDouble());
+		// ç”Ÿæˆ0.0~1.0ä¹‹é—´çš„ä¼ªéšæœºfloatæ•°
+		System.out.println("rand.nextFloat()ï¼š" + rand.nextFloat());
+		// ç”Ÿæˆå¹³å‡å€¼æ˜¯ 0.0ï¼Œæ ‡å‡†å·®æ˜¯ 1.0çš„ä¼ªé«˜æ–¯æ•°
+		System.out.println("rand.nextGaussian()ï¼š" + rand.nextGaussian());
+		// ç”Ÿæˆä¸€ä¸ªå¤„äºintæ•´æ•°å–å€¼èŒƒå›´çš„ä¼ªéšæœºæ•´æ•°
+		System.out.println("rand.nextInt()ï¼š" + rand.nextInt());
+		// ç”Ÿæˆ0~26ä¹‹é—´çš„ä¼ªéšæœºæ•´æ•°
+		System.out.println("rand.nextInt(26)ï¼š" + rand.nextInt(26));
+		// ç”Ÿæˆä¸€ä¸ªå¤„äºlongæ•´æ•°å–å€¼èŒƒå›´çš„ä¼ªéšæœºæ•´æ•°
+		System.out.println("rand.nextLong()ï¼š" + rand.nextLong());
 	}
 }

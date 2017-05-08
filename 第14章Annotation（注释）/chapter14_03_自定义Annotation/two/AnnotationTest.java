@@ -1,11 +1,11 @@
-package chapter14_03_×Ô¶¨ÒåAnnotation.two;
+package chapter14_03_è‡ªå®šä¹‰Annotation.two;
 
 
 import java.awt.event.*;
 import javax.swing.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,25 +15,25 @@ import javax.swing.*;
  */
 public class AnnotationTest
 {
-	private JFrame mainWin = new JFrame("Ê¹ÓÃ×¢½â°ó¶¨ÊÂ¼ş¼àÌıÆ÷");
+	private JFrame mainWin = new JFrame("ä½¿ç”¨æ³¨è§£ç»‘å®šäº‹ä»¶ç›‘å¬å™¨");
 	
-	// Ê¹ÓÃAnnotationÎªok°´Å¥°ó¶¨ÊÂ¼ş¼àÌıÆ÷
+	// ä½¿ç”¨Annotationä¸ºokæŒ‰é’®ç»‘å®šäº‹ä»¶ç›‘å¬å™¨
 	@ActionListenerFor(listener=OkListener.class)
-	private JButton ok = new JButton("È·¶¨");
+	private JButton ok = new JButton("ç¡®å®š");
 	
-	// Ê¹ÓÃAnnotationÎªcancel°´Å¥°ó¶¨ÊÂ¼ş¼àÌıÆ÷
+	// ä½¿ç”¨Annotationä¸ºcancelæŒ‰é’®ç»‘å®šäº‹ä»¶ç›‘å¬å™¨
 	@ActionListenerFor(listener=CancelListener.class)
-	private JButton cancel = new JButton("È¡Ïû");
+	private JButton cancel = new JButton("å–æ¶ˆ");
 	
 	public void init()
 	{
 		System.out.println("init()->begin");
-		// ³õÊ¼»¯½çÃæµÄ·½·¨
+		// åˆå§‹åŒ–ç•Œé¢çš„æ–¹æ³•
 		JPanel jp = new JPanel();
 		jp.add(ok);
 		jp.add(cancel);
 		mainWin.add(jp);
-		ActionListenerInstaller.processAnnotations(this);     // ¢ÙÊ¹ÓÃ×¢½â´¦ÀíÀàActionListenerinstaller½«°´Å¥°ó¶¨ÉÏ¶¯×÷¡£
+		ActionListenerInstaller.processAnnotations(this);     // â‘ ä½¿ç”¨æ³¨è§£å¤„ç†ç±»ActionListenerinstallerå°†æŒ‰é’®ç»‘å®šä¸ŠåŠ¨ä½œã€‚
 		mainWin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainWin.pack();
 		mainWin.setVisible(true);
@@ -49,23 +49,23 @@ public class AnnotationTest
 }
 
 
-// ¶¨Òåok°´Å¥µÄÊÂ¼ş¼àÌıÆ÷ÊµÏÖÀà
+// å®šä¹‰okæŒ‰é’®çš„äº‹ä»¶ç›‘å¬å™¨å®ç°ç±»
 class OkListener implements ActionListener
 {
 	@Override
 	public void actionPerformed(ActionEvent evt)
 	{
-		JOptionPane.showMessageDialog(null , "µ¥»÷ÁËÈ·ÈÏ°´Å¥");
+		JOptionPane.showMessageDialog(null , "å•å‡»äº†ç¡®è®¤æŒ‰é’®");
 	}
 }
 
 
-// ¶¨Òåcancel°´Å¥µÄÊÂ¼ş¼àÌıÆ÷ÊµÏÖÀà
+// å®šä¹‰cancelæŒ‰é’®çš„äº‹ä»¶ç›‘å¬å™¨å®ç°ç±»
 class CancelListener implements ActionListener
 {
 	@Override
 	public void actionPerformed(ActionEvent evt)
 	{
-		JOptionPane.showMessageDialog(null , "µ¥»÷ÁËÈ¡Ïû°´Å¥");
+		JOptionPane.showMessageDialog(null , "å•å‡»äº†å–æ¶ˆæŒ‰é’®");
 	}
 }

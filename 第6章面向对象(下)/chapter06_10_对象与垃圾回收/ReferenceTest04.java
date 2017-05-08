@@ -1,10 +1,10 @@
-package chapter06_10_¶ÔÏóÓëÀ¬»ø»ØÊÕ;
+package chapter06_10_å¯¹è±¡ä¸åƒåœ¾å›æ”¶;
 
 import java.lang.ref.*;
 
 /**
- * Description:Ê¾·¶ÈõÒıÓÃ±»À¬»ø»ØÊÕµÄ¹ı³Ì <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:ç¤ºèŒƒå¼±å¼•ç”¨è¢«åƒåœ¾å›æ”¶çš„è¿‡ç¨‹ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,23 +16,23 @@ import java.lang.ref.*;
 public class ReferenceTest04 {
 	public static void main(String[] args) throws Exception {
 		
-		// ´´½¨Ò»¸ö×Ö·û´®¶ÔÏó£¬¶¨Òå×Ö·û´®String str="·è¿ñJava½²Òå"£¬ÔòÊÇÇ¿ÒıÓÃ£¬»á·ÅÈë×Ö·û´®³Ø£¬²¢²»»á»ØÊÕ¡£
-		String str = new String("·è¿ñJava½²Òå");
+		// åˆ›å»ºä¸€ä¸ªå­—ç¬¦ä¸²å¯¹è±¡ï¼Œå®šä¹‰å­—ç¬¦ä¸²String str="ç–¯ç‹‚Javaè®²ä¹‰"ï¼Œåˆ™æ˜¯å¼ºå¼•ç”¨ï¼Œä¼šæ”¾å…¥å­—ç¬¦ä¸²æ± ï¼Œå¹¶ä¸ä¼šå›æ”¶ã€‚
+		String str = new String("ç–¯ç‹‚Javaè®²ä¹‰");
 		
-		// ´´½¨Ò»¸öÈõÒıÓÃ£¬ÈÃ´ËÈõÒıÓÃÒıÓÃµ½"·è¿ñJava½²Òå"×Ö·û´®£¬ºÍstrÒ»ÑùÒıÓÃµ½¸Ã¶ÔÏó£¬
-		WeakReference wr = new WeakReference(str); // ¢Ù
+		// åˆ›å»ºä¸€ä¸ªå¼±å¼•ç”¨ï¼Œè®©æ­¤å¼±å¼•ç”¨å¼•ç”¨åˆ°"ç–¯ç‹‚Javaè®²ä¹‰"å­—ç¬¦ä¸²ï¼Œå’Œsträ¸€æ ·å¼•ç”¨åˆ°è¯¥å¯¹è±¡ï¼Œ
+		WeakReference wr = new WeakReference(str); // â‘ 
 		
-		// ÇĞ¶ÏstrÒıÓÃºÍ"·è¿ñJava½²Òå"×Ö·û´®Ö®¼äµÄÒıÓÃ
-		str = null; // ¢Ú
+		// åˆ‡æ–­strå¼•ç”¨å’Œ"ç–¯ç‹‚Javaè®²ä¹‰"å­—ç¬¦ä¸²ä¹‹é—´çš„å¼•ç”¨
+		str = null; // â‘¡
 		
-		// È¡³öÈõÒıÓÃËùÒıÓÃµÄ¶ÔÏó
-		System.out.println(wr.get()); // ¢Û ÈõÒıÓÃ»á±£Áô¸Ã×Ö·û´®
+		// å–å‡ºå¼±å¼•ç”¨æ‰€å¼•ç”¨çš„å¯¹è±¡
+		System.out.println(wr.get()); // â‘¢ å¼±å¼•ç”¨ä¼šä¿ç•™è¯¥å­—ç¬¦ä¸²
 		
-		// Ç¿ÖÆÀ¬»ø»ØÊÕ
+		// å¼ºåˆ¶åƒåœ¾å›æ”¶
 		System.gc();
 		System.runFinalization();
 		
-		// ÔÙ´ÎÈ¡³öÈõÒıÓÃËùÒıÓÃµÄ¶ÔÏó
-		System.out.println(wr.get()); // ¢Ü
+		// å†æ¬¡å–å‡ºå¼±å¼•ç”¨æ‰€å¼•ç”¨çš„å¯¹è±¡
+		System.out.println(wr.get()); // â‘£
 	}
 }

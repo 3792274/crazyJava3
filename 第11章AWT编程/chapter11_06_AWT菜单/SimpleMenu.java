@@ -1,11 +1,11 @@
-package chapter11_06_AWT²Ëµ¥;
+package chapter11_06_AWTèœå•;
 
 
 import java.awt.*;
 import java.awt.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,62 +15,62 @@ import java.awt.event.*;
  */
 public class SimpleMenu
 {
-	private Frame f = new Frame("²âÊÔ");
+	private Frame f = new Frame("æµ‹è¯•");
 	private MenuBar mb = new MenuBar();
-	Menu file = new Menu("ÎÄ¼ş");
-	Menu edit = new Menu("±à¼­");
-	MenuItem newItem = new MenuItem("ĞÂ½¨");
-	MenuItem saveItem = new MenuItem("±£´æ");
-	// ´´½¨exitItem²Ëµ¥Ïî£¬Ö¸¶¨Ê¹ÓÃ Ctrl+X ¿ì½İ¼ü
-	MenuItem exitItem = new MenuItem("ÍË³ö"
+	Menu file = new Menu("æ–‡ä»¶");
+	Menu edit = new Menu("ç¼–è¾‘");
+	MenuItem newItem = new MenuItem("æ–°å»º");
+	MenuItem saveItem = new MenuItem("ä¿å­˜");
+	// åˆ›å»ºexitItemèœå•é¡¹ï¼ŒæŒ‡å®šä½¿ç”¨ Ctrl+X å¿«æ·é”®
+	MenuItem exitItem = new MenuItem("é€€å‡º"
 		, new MenuShortcut(KeyEvent.VK_X));
-	CheckboxMenuItem autoWrap = new CheckboxMenuItem("×Ô¶¯»»ĞĞ");
-	MenuItem copyItem = new MenuItem("¸´ÖÆ");
-	MenuItem pasteItem = new MenuItem("Õ³Ìù");
-	Menu format = new Menu("¸ñÊ½");
-	// ´´½¨commentItem²Ëµ¥Ïî£¬Ö¸¶¨Ê¹ÓÃ Ctrl+Shift+/ ¿ì½İ¼ü
-	MenuItem commentItem = new MenuItem("×¢ÊÍ" ,
+	CheckboxMenuItem autoWrap = new CheckboxMenuItem("è‡ªåŠ¨æ¢è¡Œ");
+	MenuItem copyItem = new MenuItem("å¤åˆ¶");
+	MenuItem pasteItem = new MenuItem("ç²˜è´´");
+	Menu format = new Menu("æ ¼å¼");
+	// åˆ›å»ºcommentItemèœå•é¡¹ï¼ŒæŒ‡å®šä½¿ç”¨ Ctrl+Shift+/ å¿«æ·é”®
+	MenuItem commentItem = new MenuItem("æ³¨é‡Š" ,
 		new MenuShortcut(KeyEvent.VK_SLASH , true));
-	MenuItem cancelItem = new MenuItem("È¡Ïû×¢ÊÍ");
+	MenuItem cancelItem = new MenuItem("å–æ¶ˆæ³¨é‡Š");
 	private TextArea ta = new TextArea(6 , 40);
 	public void init()
 	{
-		// ÒÔLambda±í´ïÊ½´´½¨²Ëµ¥ÊÂ¼ş¼àÌıÆ÷
+		// ä»¥Lambdaè¡¨è¾¾å¼åˆ›å»ºèœå•äº‹ä»¶ç›‘å¬å™¨
 		ActionListener menuListener = e ->
 		{
 			String cmd = e.getActionCommand();
-			ta.append("µ¥»÷¡°" + cmd + "¡±²Ëµ¥" + "\n");
-			if (cmd.equals("ÍË³ö"))
+			ta.append("å•å‡»â€œ" + cmd + "â€èœå•" + "\n");
+			if (cmd.equals("é€€å‡º"))
 			{
 				System.exit(0);
 			}
 		};
-		// ÎªcommentItem²Ëµ¥ÏîÌí¼ÓÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºcommentItemèœå•é¡¹æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
 		commentItem.addActionListener(menuListener);
 		exitItem.addActionListener(menuListener);
-		// Îªfile²Ëµ¥Ìí¼Ó²Ëµ¥Ïî
+		// ä¸ºfileèœå•æ·»åŠ èœå•é¡¹
 		file.add(newItem);
 		file.add(saveItem);
 		file.add(exitItem);
-		// Îªedit²Ëµ¥Ìí¼Ó²Ëµ¥Ïî
+		// ä¸ºeditèœå•æ·»åŠ èœå•é¡¹
 		edit.add(autoWrap);
-		// Ê¹ÓÃaddSeparator·½·¨À´Ìí¼Ó²Ëµ¥·Ö¸ôÏß
+		// ä½¿ç”¨addSeparatoræ–¹æ³•æ¥æ·»åŠ èœå•åˆ†éš”çº¿
 		edit.addSeparator();
 		edit.add(copyItem);
 		edit.add(pasteItem);
-		// Îªformat²Ëµ¥Ìí¼Ó²Ëµ¥Ïî
+		// ä¸ºformatèœå•æ·»åŠ èœå•é¡¹
 		format.add(commentItem);
 		format.add(cancelItem);
-		// Ê¹ÓÃÌí¼Ónew MenuItem("-")µÄ·½Ê½Ìí¼Ó²Ëµ¥·Ö¸ôÏß
+		// ä½¿ç”¨æ·»åŠ new MenuItem("-")çš„æ–¹å¼æ·»åŠ èœå•åˆ†éš”çº¿
 		edit.add(new MenuItem("-"));
-		// ½«format²Ëµ¥×éºÏµ½edit²Ëµ¥ÖĞ£¬´Ó¶øĞÎ³É¶ş¼¶²Ëµ¥
+		// å°†formatèœå•ç»„åˆåˆ°editèœå•ä¸­ï¼Œä»è€Œå½¢æˆäºŒçº§èœå•
 		edit.add(format);
-		// ½«file¡¢edit²Ëµ¥Ìí¼Óµ½mb²Ëµ¥ÌõÖĞ
+		// å°†fileã€editèœå•æ·»åŠ åˆ°mbèœå•æ¡ä¸­
 		mb.add(file);
 		mb.add(edit);
-		// Îªf´°¿ÚÉèÖÃ²Ëµ¥Ìõ
+		// ä¸ºfçª—å£è®¾ç½®èœå•æ¡
 		f.setMenuBar(mb);
-		// ÒÔÄäÃûÄÚ²¿ÀàµÄĞÎÊ½À´´´½¨ÊÂ¼ş¼àÌıÆ÷¶ÔÏó
+		// ä»¥åŒ¿åå†…éƒ¨ç±»çš„å½¢å¼æ¥åˆ›å»ºäº‹ä»¶ç›‘å¬å™¨å¯¹è±¡
 		f.addWindowListener(new WindowAdapter()
 		{
 			public void windowClosing(WindowEvent e)

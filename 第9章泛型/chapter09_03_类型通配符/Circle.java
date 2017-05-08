@@ -1,9 +1,9 @@
-package chapter09_03_ÀàĞÍÍ¨Åä·û;
+package chapter09_03_ç±»å‹é€šé…ç¬¦;
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -11,12 +11,12 @@ package chapter09_03_ÀàĞÍÍ¨Åä·û;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// ¶¨ÒåShapeµÄ×ÓÀàCircle
+// å®šä¹‰Shapeçš„å­ç±»Circle
 public class Circle extends Shape
 {
-	// ÊµÏÖ»­Í¼·½·¨£¬ÒÔ´òÓ¡×Ö·û´®À´Ä£Äâ»­Í¼·½·¨ÊµÏÖ
+	// å®ç°ç”»å›¾æ–¹æ³•ï¼Œä»¥æ‰“å°å­—ç¬¦ä¸²æ¥æ¨¡æ‹Ÿç”»å›¾æ–¹æ³•å®ç°
 	public void draw(Canvas c)
 	{
-		System.out.println("ÔÚ»­²¼" + c + "ÉÏ»­Ò»¸öÔ²");
+		System.out.println("åœ¨ç”»å¸ƒ" + c + "ä¸Šç”»ä¸€ä¸ªåœ†");
 	}
 }

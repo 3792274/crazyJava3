@@ -1,11 +1,11 @@
-package chapter06_08_Java8ĞÂÔöµÄLambda±í´ïÊ½;
+package chapter06_08_Java8æ–°å¢çš„Lambdaè¡¨è¾¾å¼;
 
 
 /**
- * Description:º¯ÊıÊ½½Ó¿Ú£¬Ê¹ÓÃ@FunctionalInterface,
- * ±àÒëÆ÷Ö´ĞĞ¸üÑÏ¸ñµÄ¼ì²é
- * Lambda±íÊ¾µÄ½á¹û¾Í±»µ±×ö¶ÓĞÎ£¬Òò´Ë³ÌĞòÖĞÍêÈ«¿ÉÒÔÊ¹ÓÃlambda±í´ïÊ½½øĞĞ¸³Öµ¡£
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:å‡½æ•°å¼æ¥å£ï¼Œä½¿ç”¨@FunctionalInterface,
+ * ç¼–è¯‘å™¨æ‰§è¡Œæ›´ä¸¥æ ¼çš„æ£€æŸ¥
+ * Lambdaè¡¨ç¤ºçš„ç»“æœå°±è¢«å½“åšé˜Ÿå½¢ï¼Œå› æ­¤ç¨‹åºä¸­å®Œå…¨å¯ä»¥ä½¿ç”¨lambdaè¡¨è¾¾å¼è¿›è¡Œèµ‹å€¼ã€‚
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -23,16 +23,16 @@ public class LambdaTest05
 {
 	public static void main(String[] args)
 	{
-		// Runnable½Ó¿ÚÖĞÖ»°üº¬Ò»¸öÎŞ²ÎÊıµÄ·½·¨
-		// Lambda±í´ïÊ½´ú±íµÄÄäÃû·½·¨ÊµÏÖÁËRunnable½Ó¿ÚÖĞÎ¨Ò»µÄ¡¢ÎŞ²ÎÊıµÄ·½·¨
-		// Òò´ËÏÂÃæµÄLambda±í´ïÊ½´´½¨ÁËÒ»¸öRunnable¶ÔÏó
+		// Runnableæ¥å£ä¸­åªåŒ…å«ä¸€ä¸ªæ— å‚æ•°çš„æ–¹æ³•
+		// Lambdaè¡¨è¾¾å¼ä»£è¡¨çš„åŒ¿åæ–¹æ³•å®ç°äº†Runnableæ¥å£ä¸­å”¯ä¸€çš„ã€æ— å‚æ•°çš„æ–¹æ³•
+		// å› æ­¤ä¸‹é¢çš„Lambdaè¡¨è¾¾å¼åˆ›å»ºäº†ä¸€ä¸ªRunnableå¯¹è±¡
 		Runnable r = () -> {
 			for(int i = 0 ; i < 100 ; i ++)
 			{
 				System.out.println();
 			}
 		};
-//		// ÏÂÃæ´úÂë±¨´í: ²»¼æÈİµÄÀàĞÍ: Object²»ÊÇº¯Êı½Ó¿Ú
+//		// ä¸‹é¢ä»£ç æŠ¥é”™: ä¸å…¼å®¹çš„ç±»å‹: Objectä¸æ˜¯å‡½æ•°æ¥å£
 //		Object obj = () -> {
 //			for(int i = 0 ; i < 100 ; i ++)
 //			{
@@ -47,8 +47,8 @@ public class LambdaTest05
 			}
 		};
 
-		// Í¬ÑùµÄLambda±í´ïÊ½¿ÉÒÔ±»µ±³É²»Í¬µÄÄ¿±êÀàĞÍ£¬Î¨Ò»µÄÒªÇóÊÇ£º
-		// Lambda±í´ïÊ½µÄĞÎ²ÎÁĞ±íÓëº¯ÊıÊ½½Ó¿ÚÖĞÎ¨Ò»µÄ³éÏó·½·¨µÄĞÎ²ÎÁĞ±íÏàÍ¬
+		// åŒæ ·çš„Lambdaè¡¨è¾¾å¼å¯ä»¥è¢«å½“æˆä¸åŒçš„ç›®æ ‡ç±»å‹ï¼Œå”¯ä¸€çš„è¦æ±‚æ˜¯ï¼š
+		// Lambdaè¡¨è¾¾å¼çš„å½¢å‚åˆ—è¡¨ä¸å‡½æ•°å¼æ¥å£ä¸­å”¯ä¸€çš„æŠ½è±¡æ–¹æ³•çš„å½¢å‚åˆ—è¡¨ç›¸åŒ
 		Object obj2 = (FkTest)() -> {
 			for(int i = 0 ; i < 100 ; i ++)
 			{

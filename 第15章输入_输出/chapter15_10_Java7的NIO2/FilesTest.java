@@ -1,4 +1,4 @@
-package chapter15_10_Java7µÄNIO2;
+package chapter15_10_Java7çš„NIO2;
 
 import java.nio.file.*;
 import java.nio.charset.*;
@@ -7,7 +7,7 @@ import java.util.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -19,34 +19,34 @@ import java.util.*;
 public class FilesTest {
 	public static void main(String[] args) throws Exception {
 		
-		// ¸´ÖÆÎÄ¼ş
-		Files.copy(Paths.get("µÚ15ÕÂÊäÈë_Êä³ö/chapter15_10_Java7µÄNIO2/FilesTest.java"), new FileOutputStream("µÚ15ÕÂÊäÈë_Êä³ö/chapter15_10_Java7µÄNIO2/a.txt"));
+		// å¤åˆ¶æ–‡ä»¶
+		Files.copy(Paths.get("ç¬¬15ç« è¾“å…¥_è¾“å‡º/chapter15_10_Java7çš„NIO2/FilesTest.java"), new FileOutputStream("ç¬¬15ç« è¾“å…¥_è¾“å‡º/chapter15_10_Java7çš„NIO2/a.txt"));
 		
-		// ÅĞ¶ÏFilesTest.javaÎÄ¼şÊÇ·ñÎªÒş²ØÎÄ¼ş
-		System.out.println("FilesTest.javaÊÇ·ñÎªÒş²ØÎÄ¼ş£º" + Files.isHidden(Paths.get("µÚ15ÕÂÊäÈë_Êä³ö/chapter15_10_Java7µÄNIO2/FilesTest.java")));
+		// åˆ¤æ–­FilesTest.javaæ–‡ä»¶æ˜¯å¦ä¸ºéšè—æ–‡ä»¶
+		System.out.println("FilesTest.javaæ˜¯å¦ä¸ºéšè—æ–‡ä»¶ï¼š" + Files.isHidden(Paths.get("ç¬¬15ç« è¾“å…¥_è¾“å‡º/chapter15_10_Java7çš„NIO2/FilesTest.java")));
 		
-		// Ò»´ÎĞÔ¶ÁÈ¡FilesTest.javaÎÄ¼şµÄËùÓĞĞĞ
-		List<String> lines = Files.readAllLines(Paths.get("µÚ15ÕÂÊäÈë_Êä³ö/chapter15_10_Java7µÄNIO2/FilesTest.java"), Charset.forName("gbk"));
+		// ä¸€æ¬¡æ€§è¯»å–FilesTest.javaæ–‡ä»¶çš„æ‰€æœ‰è¡Œ
+		List<String> lines = Files.readAllLines(Paths.get("ç¬¬15ç« è¾“å…¥_è¾“å‡º/chapter15_10_Java7çš„NIO2/FilesTest.java"), Charset.forName("gbk"));
 		System.out.println(lines);
 	
-		// ÅĞ¶ÏÖ¸¶¨ÎÄ¼şµÄ´óĞ¡
-		System.out.println("FilesTest.javaµÄ´óĞ¡Îª£º" + Files.size(Paths.get("µÚ15ÕÂÊäÈë_Êä³ö/chapter15_10_Java7µÄNIO2/FilesTest.java")));
+		// åˆ¤æ–­æŒ‡å®šæ–‡ä»¶çš„å¤§å°
+		System.out.println("FilesTest.javaçš„å¤§å°ä¸ºï¼š" + Files.size(Paths.get("ç¬¬15ç« è¾“å…¥_è¾“å‡º/chapter15_10_Java7çš„NIO2/FilesTest.java")));
 		List<String> poem = new ArrayList<>();
-		poem.add("Ë®¾§Ì¶µ×ÒøÓãÔ¾");
-		poem.add("ÇåĞì·çÖĞ±Ì¸Íºá");
+		poem.add("æ°´æ™¶æ½­åº•é“¶é±¼è·ƒ");
+		poem.add("æ¸…å¾é£ä¸­ç¢§ç«¿æ¨ª");
 	
-		// Ö±½Ó½«¶à¸ö×Ö·û´®ÄÚÈİĞ´ÈëÖ¸¶¨ÎÄ¼şÖĞ
-		Files.write(Paths.get("µÚ15ÕÂÊäÈë_Êä³ö/chapter15_10_Java7µÄNIO2/pome.txt"), poem, Charset.forName("gbk"));
+		// ç›´æ¥å°†å¤šä¸ªå­—ç¬¦ä¸²å†…å®¹å†™å…¥æŒ‡å®šæ–‡ä»¶ä¸­
+		Files.write(Paths.get("ç¬¬15ç« è¾“å…¥_è¾“å‡º/chapter15_10_Java7çš„NIO2/pome.txt"), poem, Charset.forName("gbk"));
 		
-		// Ê¹ÓÃJava 8ĞÂÔöµÄStream APIÁĞ³öµ±Ç°Ä¿Â¼ÏÂËùÓĞÎÄ¼şºÍ×ÓÄ¿Â¼
+		// ä½¿ç”¨Java 8æ–°å¢çš„Stream APIåˆ—å‡ºå½“å‰ç›®å½•ä¸‹æ‰€æœ‰æ–‡ä»¶å’Œå­ç›®å½•
 		Files.list(Paths.get(".")).forEach(path -> System.out.println(path));
 		
-		// Ê¹ÓÃJava 8ĞÂÔöµÄStream API¶ÁÈ¡ÎÄ¼şÄÚÈİ  Stream<String>
-		Files.lines(Paths.get("µÚ15ÕÂÊäÈë_Êä³ö/chapter15_10_Java7µÄNIO2/FilesTest.java"), Charset.forName("gbk")).forEach(line -> System.out.println(line));
+		// ä½¿ç”¨Java 8æ–°å¢çš„Stream APIè¯»å–æ–‡ä»¶å†…å®¹  Stream<String>
+		Files.lines(Paths.get("ç¬¬15ç« è¾“å…¥_è¾“å‡º/chapter15_10_Java7çš„NIO2/FilesTest.java"), Charset.forName("gbk")).forEach(line -> System.out.println(line));
 		FileStore cStore = Files.getFileStore(Paths.get("C:"));
 		
-		// ÅĞ¶ÏCÅÌµÄ×Ü¿Õ¼ä£¬¿ÉÓÃ¿Õ¼ä
-		System.out.println("C:¹²ÓĞ¿Õ¼ä£º" + cStore.getTotalSpace());
-		System.out.println("C:¿ÉÓÃ¿Õ¼ä£º" + cStore.getUsableSpace());
+		// åˆ¤æ–­Cç›˜çš„æ€»ç©ºé—´ï¼Œå¯ç”¨ç©ºé—´
+		System.out.println("C:å…±æœ‰ç©ºé—´ï¼š" + cStore.getTotalSpace());
+		System.out.println("C:å¯ç”¨ç©ºé—´ï¼š" + cStore.getUsableSpace());
 	}
 }

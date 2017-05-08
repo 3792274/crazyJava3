@@ -1,13 +1,13 @@
-package chapter08_02_CollectionºÍIterator½Ó¿Ú;
+package chapter08_02_Collectionå’ŒIteratoræ¥å£;
 
 import java.util.*;
 /**
  * Description:
  * Collection
- * 1.Set ÎŞĞò£¬²»¿ÉÖØ¸´
- * 2.List ÓĞĞò£¬¿ÉÖØ¸´
+ * 1.Set æ— åºï¼Œä¸å¯é‡å¤
+ * 2.List æœ‰åºï¼Œå¯é‡å¤
  * 
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -21,38 +21,38 @@ public class CollectionTest01
 	{
 		Collection c = new ArrayList();
 		
-		// Ìí¼ÓÔªËØ
-		c.add("ËïÎò¿Õ");
+		// æ·»åŠ å…ƒç´ 
+		c.add("å­™æ‚Ÿç©º");
 		
-		// ËäÈ»¼¯ºÏÀï²»ÄÜ·Å»ù±¾ÀàĞÍµÄÖµ£¬µ«JavaÖ§³Ö×Ô¶¯×°Ïä
+		// è™½ç„¶é›†åˆé‡Œä¸èƒ½æ”¾åŸºæœ¬ç±»å‹çš„å€¼ï¼Œä½†Javaæ”¯æŒè‡ªåŠ¨è£…ç®±
 		c.add(6);
-		System.out.println("c¼¯ºÏµÄÔªËØ¸öÊıÎª:" + c.size()); // Êä³ö2
+		System.out.println("cé›†åˆçš„å…ƒç´ ä¸ªæ•°ä¸º:" + c.size()); // è¾“å‡º2
 		
-		// É¾³ıÖ¸¶¨ÔªËØ
+		// åˆ é™¤æŒ‡å®šå…ƒç´ 
 		c.remove(6);
-		System.out.println("c¼¯ºÏµÄÔªËØ¸öÊıÎª:" + c.size()); // Êä³ö1
+		System.out.println("cé›†åˆçš„å…ƒç´ ä¸ªæ•°ä¸º:" + c.size()); // è¾“å‡º1
 		
-		// ÅĞ¶ÏÊÇ·ñ°üº¬Ö¸¶¨×Ö·û´®
-		System.out.println("c¼¯ºÏµÄÊÇ·ñ°üº¬\"ËïÎò¿Õ\"×Ö·û´®:" + c.contains("ËïÎò¿Õ")); // Êä³ötrue
-		c.add("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
-		System.out.println("c¼¯ºÏµÄÔªËØ£º" + c);
+		// åˆ¤æ–­æ˜¯å¦åŒ…å«æŒ‡å®šå­—ç¬¦ä¸²
+		System.out.println("cé›†åˆçš„æ˜¯å¦åŒ…å«\"å­™æ‚Ÿç©º\"å­—ç¬¦ä¸²:" + c.contains("å­™æ‚Ÿç©º")); // è¾“å‡ºtrue
+		c.add("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
+		System.out.println("cé›†åˆçš„å…ƒç´ ï¼š" + c);
 		
 		
 		Collection books = new HashSet();
-		books.add("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
-		books.add("·è¿ñJava½²Òå");
-		System.out.println("c¼¯ºÏÊÇ·ñÍêÈ«°üº¬books¼¯ºÏ£¿" + c.containsAll(books)); // Êä³öfalse
+		books.add("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
+		books.add("ç–¯ç‹‚Javaè®²ä¹‰");
+		System.out.println("cé›†åˆæ˜¯å¦å®Œå…¨åŒ…å«booksé›†åˆï¼Ÿ" + c.containsAll(books)); // è¾“å‡ºfalse
 		
-		// ÓÃc¼¯ºÏ¼õÈ¥books¼¯ºÏÀïµÄÔªËØ
+		// ç”¨cé›†åˆå‡å»booksé›†åˆé‡Œçš„å…ƒç´ 
 		c.removeAll(books);
-		System.out.println("c¼¯ºÏµÄÔªËØ£º" + c);
+		System.out.println("cé›†åˆçš„å…ƒç´ ï¼š" + c);
 		
-		// É¾³ıc¼¯ºÏÀïËùÓĞÔªËØ
+		// åˆ é™¤cé›†åˆé‡Œæ‰€æœ‰å…ƒç´ 
 		c.clear();
-		System.out.println("c¼¯ºÏµÄÔªËØ£º" + c);
+		System.out.println("cé›†åˆçš„å…ƒç´ ï¼š" + c);
 		
-		// ¿ØÖÆbooks¼¯ºÏÀïÖ»Ê£ÏÂc¼¯ºÏÀïÒ²°üº¬µÄÔªËØ,½»¼¯¡£
+		// æ§åˆ¶booksé›†åˆé‡Œåªå‰©ä¸‹cé›†åˆé‡Œä¹ŸåŒ…å«çš„å…ƒç´ ,äº¤é›†ã€‚
 		books.retainAll(c);
-		System.out.println("books¼¯ºÏµÄÔªËØ:" + books);
+		System.out.println("booksé›†åˆçš„å…ƒç´ :" + books);
 	}
 }

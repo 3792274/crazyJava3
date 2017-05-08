@@ -1,11 +1,11 @@
-package chapter06_09_Ã¶¾ÙÀà;
+package chapter06_09_æšä¸¾ç±»;
 
 
 /**
- * Description:Ã¶¾ÙÀàÊµÏÖ plus,minus,times,divide
+ * Description:æšä¸¾ç±»å®ç° plus,minus,times,divide
  * 
  * 
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -57,8 +57,8 @@ public enum Operation11
 	
 	
 	
-	// ÎªÃ¶¾ÙÀà¶¨ÒåÒ»¸ö³éÏó·½·¨
-	// Õâ¸ö³éÏó·½·¨ÓÉ²»Í¬µÄÃ¶¾ÙÖµÌá¹©²»Í¬µÄÊµÏÖ
+	// ä¸ºæšä¸¾ç±»å®šä¹‰ä¸€ä¸ªæŠ½è±¡æ–¹æ³•
+	// è¿™ä¸ªæŠ½è±¡æ–¹æ³•ç”±ä¸åŒçš„æšä¸¾å€¼æä¾›ä¸åŒçš„å®ç°
 	public abstract double eval(double x, double y);
 	
 	

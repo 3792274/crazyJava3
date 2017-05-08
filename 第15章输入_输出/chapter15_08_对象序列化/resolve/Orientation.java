@@ -1,10 +1,10 @@
-package chapter15_08_¶ÔÏóĞòÁĞ»¯.resolve;
+package chapter15_08_å¯¹è±¡åºåˆ—åŒ–.resolve;
 
 import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -22,7 +22,7 @@ public class Orientation implements java.io.Serializable {
 		this.value = value;
 	}
 
-	// ÎªÃ¶¾ÙÀàÔö¼ÓreadResolve()·½·¨,·µ»Ø¶ÔÏóÖ®Ç°µ÷ÓÃµÄ·½·¨£¬µ¥ÊµÀıºÍÃ¶¾ÙĞèÒª±£Ö¤Î¨Ò»ĞÔĞèÒªÖØĞ´¸Ã·½·¨¡£
+	// ä¸ºæšä¸¾ç±»å¢åŠ readResolve()æ–¹æ³•,è¿”å›å¯¹è±¡ä¹‹å‰è°ƒç”¨çš„æ–¹æ³•ï¼Œå•å®ä¾‹å’Œæšä¸¾éœ€è¦ä¿è¯å”¯ä¸€æ€§éœ€è¦é‡å†™è¯¥æ–¹æ³•ã€‚
 	private Object readResolve() throws ObjectStreamException {
 		if (value == 1) {
 			return HORIZONTAL;

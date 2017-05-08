@@ -1,9 +1,9 @@
-package chapter08_05_Queue¼¯ºÏ;
+package chapter08_05_Queueé›†åˆ;
 
 
 import java.util.*;
 /**
- * Description: FIFO,ÏÈ½øÏÈ³ö
+ * Description: FIFO,å…ˆè¿›å…ˆå‡º
  */
 public class ArrayDequeQueue
 {
@@ -11,24 +11,24 @@ public class ArrayDequeQueue
 	{
 		ArrayDeque queue = new ArrayDeque();
 		
-		// ÒÀ´Î½«Èı¸öÔªËØ¼ÓÈë¶ÓÁĞ
-		queue.offer("·è¿ñJava½²Òå");
-		queue.offer("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
-		queue.offer("·è¿ñAndroid½²Òå");
+		// ä¾æ¬¡å°†ä¸‰ä¸ªå…ƒç´ åŠ å…¥é˜Ÿåˆ—
+		queue.offer("ç–¯ç‹‚Javaè®²ä¹‰");
+		queue.offer("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
+		queue.offer("ç–¯ç‹‚Androidè®²ä¹‰");
 		
-		// Êä³ö£º[·è¿ñJava½²Òå, ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½, ·è¿ñAndroid½²Òå]
+		// è¾“å‡ºï¼š[ç–¯ç‹‚Javaè®²ä¹‰, è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜, ç–¯ç‹‚Androidè®²ä¹‰]
 		System.out.println(queue);
 		
-		// ·ÃÎÊ¶ÓÁĞÍ·²¿µÄÔªËØ£¬µ«²¢²»½«Æäpoll³ö¶ÓÁĞ"Õ»"£¬Êä³ö£º·è¿ñJava½²Òå
+		// è®¿é—®é˜Ÿåˆ—å¤´éƒ¨çš„å…ƒç´ ï¼Œä½†å¹¶ä¸å°†å…¶pollå‡ºé˜Ÿåˆ—"æ ˆ"ï¼Œè¾“å‡ºï¼šç–¯ç‹‚Javaè®²ä¹‰
 		System.out.println(queue.peek());
 		
-		// ÒÀÈ»Êä³ö£º[·è¿ñJava½²Òå, ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½, ·è¿ñAndroid½²Òå]
+		// ä¾ç„¶è¾“å‡ºï¼š[ç–¯ç‹‚Javaè®²ä¹‰, è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜, ç–¯ç‹‚Androidè®²ä¹‰]
 		System.out.println(queue);
 		
-		// poll³öµÚÒ»¸öÔªËØ£¬Êä³ö£º·è¿ñJava½²Òå
+		// pollå‡ºç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œè¾“å‡ºï¼šç–¯ç‹‚Javaè®²ä¹‰
 		System.out.println(queue.poll());
 		
-		// Êä³ö£º[ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½, ·è¿ñAndroid½²Òå]
+		// è¾“å‡ºï¼š[è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜, ç–¯ç‹‚Androidè®²ä¹‰]
 		System.out.println(queue);
 	}
 }

@@ -1,10 +1,10 @@
-package chapter06_04_finalĞŞÊÎ·û;
+package chapter06_04_finalä¿®é¥°ç¬¦;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -22,7 +22,7 @@ class Name
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
-	// Ê¡ÂÔfirstName¡¢lastNameµÄsetterºÍgetter·½·¨
+	// çœç•¥firstNameã€lastNameçš„setterå’Œgetteræ–¹æ³•
 	public void setFirstName(String firstName)
 	{
 		this.firstName = firstName;
@@ -53,13 +53,13 @@ public class Person
 	}
 	public static void main(String[] args)
 	{
-		Name n = new Name("Îò¿Õ", "Ëï");
+		Name n = new Name("æ‚Ÿç©º", "å­™");
 		Person p = new Person(n);
-		// Person¶ÔÏóµÄnameµÄfirstNameÖµÎª"Îò¿Õ"
+		// Personå¯¹è±¡çš„nameçš„firstNameå€¼ä¸º"æ‚Ÿç©º"
 		System.out.println(p.getName().getFirstName());
-		// ¸Ä±äPerson¶ÔÏónameµÄfirstNameÖµ
-		n.setFirstName("°Ë½ä");
-		// Person¶ÔÏóµÄnameµÄfirstNameÖµ±»¸ÄÎª"°Ë½ä"
+		// æ”¹å˜Personå¯¹è±¡nameçš„firstNameå€¼
+		n.setFirstName("å…«æˆ’");
+		// Personå¯¹è±¡çš„nameçš„firstNameå€¼è¢«æ”¹ä¸º"å…«æˆ’"
 		System.out.println(p.getName().getFirstName());
 	}
 }

@@ -1,8 +1,8 @@
-package chapter03_07_ÔËËã·û;
+package chapter03_07_è¿ç®—ç¬¦;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2010, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,17 +13,17 @@ package chapter03_07_ÔËËã·û;
  */
 public class ThreeTest {
 	public static void main(String[] args) {
-		String str = 5 > 3 ? "5´óÓÚ3" : "5²»´óÓÚ3";
-		System.out.println(str); // Êä³ö"5´óÓÚ3"
+		String str = 5 > 3 ? "5å¤§äº3" : "5ä¸å¤§äº3";
+		System.out.println(str); // è¾“å‡º"5å¤§äº3"
 		String str2 = null;
 		if (5 > 3) {
-			str2 = "5´óÓÚ3";
+			str2 = "5å¤§äº3";
 		} else {
-			str2 = "5²»´óÓÚ3";
+			str2 = "5ä¸å¤§äº3";
 		}
 		int a = 11;
 		int b = 12;
-		// ÈıÄ¿ÔËËã·ûÖ§³ÖÇ¶Ì×
-		System.out.println(a > b ? "a´óÓÚb" : (a < b ? "aĞ¡ÓÚb" : "aµÈÓÚb"));
+		// ä¸‰ç›®è¿ç®—ç¬¦æ”¯æŒåµŒå¥—
+		System.out.println(a > b ? "aå¤§äºb" : (a < b ? "aå°äºb" : "aç­‰äºb"));
 	}
 }

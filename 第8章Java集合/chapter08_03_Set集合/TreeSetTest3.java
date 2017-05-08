@@ -1,12 +1,12 @@
-package chapter08_03_Set¼¯ºÏ;
+package chapter08_03_Seté›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * Èç¹ûÏòtreeSetÖĞÌí¼ÓÒ»¸ö¿É±ä¶ÔÏóºó£¬²¢ÇÒºóÃæµÄ³ÌĞòĞŞ¸ÄÁË¸Ã¿É±ä¶ÔÏóµÄÊµÀı±äÁ¿£¬½«µ¼ÖÂËüÓëÆäËû¶ÔÏóµÄ´óĞ¡Ë³Ğò
- * ·¢Éú¸Ä±ä£¬µ¥treeSet²»»áÔÙ´Îµ÷ÕûËûÃÇµÄË³Ğò£¬ÉõÖÁ¿ÉÄÜµ¼ÖÂtreeSetÖĞ±£´æµÄÕâÁ¬¸ö¶ÔÏóÍ¨¹ıcompareTo·½·¨±È½Ï
- * ·µ»ØÖµ0
+ * å¦‚æœå‘treeSetä¸­æ·»åŠ ä¸€ä¸ªå¯å˜å¯¹è±¡åï¼Œå¹¶ä¸”åé¢çš„ç¨‹åºä¿®æ”¹äº†è¯¥å¯å˜å¯¹è±¡çš„å®ä¾‹å˜é‡ï¼Œå°†å¯¼è‡´å®ƒä¸å…¶ä»–å¯¹è±¡çš„å¤§å°é¡ºåº
+ * å‘ç”Ÿæ”¹å˜ï¼Œå•treeSetä¸ä¼šå†æ¬¡è°ƒæ•´ä»–ä»¬çš„é¡ºåºï¼Œç”šè‡³å¯èƒ½å¯¼è‡´treeSetä¸­ä¿å­˜çš„è¿™è¿ä¸ªå¯¹è±¡é€šè¿‡compareToæ–¹æ³•æ¯”è¾ƒ
+ * è¿”å›å€¼0
  */
 
 class RR implements Comparable
@@ -20,7 +20,7 @@ class RR implements Comparable
 	{
 		return "RR[count:" + count + "]";
 	}
-	// ÖØĞ´equals·½·¨£¬¸ù¾İcountÀ´ÅĞ¶ÏÊÇ·ñÏàµÈ
+	// é‡å†™equalsæ–¹æ³•ï¼Œæ ¹æ®countæ¥åˆ¤æ–­æ˜¯å¦ç›¸ç­‰
 	public boolean equals(Object obj)
 	{
 		if (this == obj)
@@ -34,7 +34,7 @@ class RR implements Comparable
 		}
 		return false;
 	}
-	// ÖØĞ´compareTo·½·¨£¬¸ù¾İcountÀ´±È½Ï´óĞ¡
+	// é‡å†™compareToæ–¹æ³•ï¼Œæ ¹æ®countæ¥æ¯”è¾ƒå¤§å°
 	public int compareTo(Object obj)
 	{
 		RR r = (RR)obj;
@@ -51,23 +51,23 @@ public class TreeSetTest3
 		ts.add(new RR(-3));
 		ts.add(new RR(9));
 		ts.add(new RR(-2));
-		// ´òÓ¡TreeSet¼¯ºÏ£¬¼¯ºÏÔªËØÊÇÓĞĞòÅÅÁĞµÄ
-		System.out.println(ts);    // ¢Ù
-		// È¡³öµÚÒ»¸öÔªËØ
+		// æ‰“å°TreeSeté›†åˆï¼Œé›†åˆå…ƒç´ æ˜¯æœ‰åºæ’åˆ—çš„
+		System.out.println(ts);    // â‘ 
+		// å–å‡ºç¬¬ä¸€ä¸ªå…ƒç´ 
 		RR first = (RR)ts.first();
-		// ¶ÔµÚÒ»¸öÔªËØµÄcount¸³Öµ
+		// å¯¹ç¬¬ä¸€ä¸ªå…ƒç´ çš„countèµ‹å€¼
 		first.count = 20;
-		// È¡³ö×îºóÒ»¸öÔªËØ
+		// å–å‡ºæœ€åä¸€ä¸ªå…ƒç´ 
 		RR last = (RR)ts.last();
-		// ¶Ô×îºóÒ»¸öÔªËØµÄcount¸³Öµ£¬ÓëµÚ¶ş¸öÔªËØµÄcountÏàÍ¬
+		// å¯¹æœ€åä¸€ä¸ªå…ƒç´ çš„countèµ‹å€¼ï¼Œä¸ç¬¬äºŒä¸ªå…ƒç´ çš„countç›¸åŒ
 		last.count = -2;
-		// ÔÙ´ÎÊä³ö½«¿´µ½TreeSetÀïµÄÔªËØ´¦ÓÚÎŞĞò×´Ì¬£¬ÇÒÓĞÖØ¸´ÔªËØ
-		System.out.println(ts);   // ¢Ú
-		// É¾³ıÊµÀı±äÁ¿±»¸Ä±äµÄÔªËØ£¬É¾³ıÊ§°Ü
-		System.out.println(ts.remove(new RR(-2)));   // ¢Û
+		// å†æ¬¡è¾“å‡ºå°†çœ‹åˆ°TreeSeté‡Œçš„å…ƒç´ å¤„äºæ— åºçŠ¶æ€ï¼Œä¸”æœ‰é‡å¤å…ƒç´ 
+		System.out.println(ts);   // â‘¡
+		// åˆ é™¤å®ä¾‹å˜é‡è¢«æ”¹å˜çš„å…ƒç´ ï¼Œåˆ é™¤å¤±è´¥
+		System.out.println(ts.remove(new RR(-2)));   // â‘¢
 		System.out.println(ts);
-		// É¾³ıÊµÀı±äÁ¿Ã»ÓĞ±»¸Ä±äµÄÔªËØ£¬É¾³ı³É¹¦£¬Ö´ĞĞºótreeSet»á¶ÔÔªËØ½øĞĞÖØĞÂË÷Òı£¨·ÇÅÅĞò£©£¬½ÓÏÂÀ´¾Í¿ÉÒÔÉ¾³ıÔªËØÁË
-		System.out.println(ts.remove(new RR(5)));    // ¢Ü
+		// åˆ é™¤å®ä¾‹å˜é‡æ²¡æœ‰è¢«æ”¹å˜çš„å…ƒç´ ï¼Œåˆ é™¤æˆåŠŸï¼Œæ‰§è¡ŒåtreeSetä¼šå¯¹å…ƒç´ è¿›è¡Œé‡æ–°ç´¢å¼•ï¼ˆéæ’åºï¼‰ï¼Œæ¥ä¸‹æ¥å°±å¯ä»¥åˆ é™¤å…ƒç´ äº†
+		System.out.println(ts.remove(new RR(5)));    // â‘£
 		System.out.println(ts);
 	}
 }

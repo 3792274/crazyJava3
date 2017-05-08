@@ -1,4 +1,4 @@
-package chapter12_03_SwingÖĞµÄÌØÊâÈİÆ÷;
+package chapter12_03_Swingä¸­çš„ç‰¹æ®Šå®¹å™¨;
 
 
 import java.util.*;
@@ -9,7 +9,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -19,74 +19,74 @@ import javax.swing.event.*;
  */
 public class JTabbedPaneTest
 {
-	JFrame jf = new JFrame("²âÊÔTabÒ³Ãæ");
-	// ´´½¨Ò»¸öTabÒ³ÃæµÄ±êÇ©·ÅÔÚ×ó±ß£¬²ÉÓÃ»»ĞĞ²¼¾Ö²ßÂÔµÄJTabbedPane
+	JFrame jf = new JFrame("æµ‹è¯•Tabé¡µé¢");
+	// åˆ›å»ºä¸€ä¸ªTabé¡µé¢çš„æ ‡ç­¾æ”¾åœ¨å·¦è¾¹ï¼Œé‡‡ç”¨æ¢è¡Œå¸ƒå±€ç­–ç•¥çš„JTabbedPane
 	JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT
 		, JTabbedPane.WRAP_TAB_LAYOUT);
 	ImageIcon icon = new ImageIcon("ico/close.gif");
-	String[] layouts = {"»»ĞĞ²¼¾Ö" , "¹ö¶¯Ìõ²¼¾Ö"};
-	String[] positions = {"×ó±ß" , "¶¥²¿" , "ÓÒ±ß" , "µ×²¿"};
+	String[] layouts = {"æ¢è¡Œå¸ƒå±€" , "æ»šåŠ¨æ¡å¸ƒå±€"};
+	String[] positions = {"å·¦è¾¹" , "é¡¶éƒ¨" , "å³è¾¹" , "åº•éƒ¨"};
 	Map<String , String> books = new LinkedHashMap<>();
 	public void init()
 	{
-		books.put("·è¿ñJava½²Òå" , "java.png");
-		books.put("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½" , "ee.png");
-		books.put("·è¿ñAjax½²Òå" , "ajax.png");
-		books.put("·è¿ñAndroid½²Òå" , "android.png");
-		books.put("¾­µäJava EEÆóÒµÓ¦ÓÃÊµÕ½" , "classic.png");
-		String tip = "¿É¿´µ½±¾ÊéµÄ·âÃæÕÕÆ¬";
-		// ÏòJTabbedPaneÖĞÌí¼Ó5¸ö±êÇ©Ò³Ãæ£¬Ö¸¶¨ÁË±êÌâ¡¢Í¼±êºÍÌáÊ¾
-		// µ«¸Ã±êÇ©Ò³ÃæµÄ×é¼şÎªnull
+		books.put("ç–¯ç‹‚Javaè®²ä¹‰" , "java.png");
+		books.put("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜" , "ee.png");
+		books.put("ç–¯ç‹‚Ajaxè®²ä¹‰" , "ajax.png");
+		books.put("ç–¯ç‹‚Androidè®²ä¹‰" , "android.png");
+		books.put("ç»å…¸Java EEä¼ä¸šåº”ç”¨å®æˆ˜" , "classic.png");
+		String tip = "å¯çœ‹åˆ°æœ¬ä¹¦çš„å°é¢ç…§ç‰‡";
+		// å‘JTabbedPaneä¸­æ·»åŠ 5ä¸ªæ ‡ç­¾é¡µé¢ï¼ŒæŒ‡å®šäº†æ ‡é¢˜ã€å›¾æ ‡å’Œæç¤º
+		// ä½†è¯¥æ ‡ç­¾é¡µé¢çš„ç»„ä»¶ä¸ºnull
 		for (String bookName : books.keySet())
 		{
 			tabbedPane.addTab(bookName, icon, null , tip);
 		}
 		jf.add(tabbedPane, BorderLayout.CENTER);
-		// ÎªJTabbedPaneÌí¼ÓÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºJTabbedPaneæ·»åŠ äº‹ä»¶ç›‘å¬å™¨
 		tabbedPane.addChangeListener(event -> {
-			// Èç¹û±»Ñ¡ÔñµÄ×é¼şÒÀÈ»ÊÇ¿Õ
+			// å¦‚æœè¢«é€‰æ‹©çš„ç»„ä»¶ä¾ç„¶æ˜¯ç©º
 			if (tabbedPane.getSelectedComponent() == null)
 			{
-				// »ñÈ¡ËùÑ¡±êÇ©Ò³
+				// è·å–æ‰€é€‰æ ‡ç­¾é¡µ
 				int n = tabbedPane.getSelectedIndex();
-				// ÎªÖ¸¶¨±êÇ°Ò³¼ÓÔØÄÚÈİ
+				// ä¸ºæŒ‡å®šæ ‡å‰é¡µåŠ è½½å†…å®¹
 				loadTab(n);
 			}
 		});
-		// ÏµÍ³Ä¬ÈÏÑ¡ÔñµÚÒ»Ò³£¬¼ÓÔØµÚÒ»Ò³ÄÚÈİ
+		// ç³»ç»Ÿé»˜è®¤é€‰æ‹©ç¬¬ä¸€é¡µï¼ŒåŠ è½½ç¬¬ä¸€é¡µå†…å®¹
 		loadTab(0);
 		tabbedPane.setPreferredSize(new Dimension(500 , 300));
-		// Ôö¼Ó¿ØÖÆ±êÇ©²¼¾Ö¡¢±êÇ©Î»ÖÃµÄµ¥Ñ¡°´Å¥
+		// å¢åŠ æ§åˆ¶æ ‡ç­¾å¸ƒå±€ã€æ ‡ç­¾ä½ç½®çš„å•é€‰æŒ‰é’®
 		JPanel buttonPanel = new JPanel();
 		ChangeAction action = new ChangeAction();
 		buttonPanel.add(new ButtonPanel(action
-			, "Ñ¡Ôñ±êÇ©²¼¾Ö²ßÂÔ" , layouts));
+			, "é€‰æ‹©æ ‡ç­¾å¸ƒå±€ç­–ç•¥" , layouts));
 		buttonPanel.add (new ButtonPanel(action
-			, "Ñ¡Ôñ±êÇ©Î»ÖÃ" , positions));
+			, "é€‰æ‹©æ ‡ç­¾ä½ç½®" , positions));
 		jf.add(buttonPanel, BorderLayout.SOUTH);
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.pack();
 		jf.setVisible(true);
 	}
-	// ÎªÖ¸¶¨±êÇ©Ò³¼ÓÔØÄÚÈİ
+	// ä¸ºæŒ‡å®šæ ‡ç­¾é¡µåŠ è½½å†…å®¹
 	private void loadTab(int n)
 	{
 		String title = tabbedPane.getTitleAt(n);
-		// ¸ù¾İ±êÇ©Ò³µÄ±êÌâ»ñÈ¡¶ÔÓ¦Í¼Êé·âÃæ
+		// æ ¹æ®æ ‡ç­¾é¡µçš„æ ‡é¢˜è·å–å¯¹åº”å›¾ä¹¦å°é¢
 		ImageIcon bookImage = new ImageIcon("ico/"
 			+ books.get(title));
 		tabbedPane.setComponentAt(n , new JLabel(bookImage));
-		// ¸Ä±ä±êÇ©Ò³µÄÍ¼±ê
+		// æ”¹å˜æ ‡ç­¾é¡µçš„å›¾æ ‡
 		tabbedPane.setIconAt(n, new ImageIcon("ico/open.gif"));
 	}
-	// ¶¨Òå¸Ä±ä±êÇ©Ò³µÄ²¼¾Ö²ßÂÔ£¬·ÅÖÃÎ»ÖÃµÄ¼àÌıÆ÷
+	// å®šä¹‰æ”¹å˜æ ‡ç­¾é¡µçš„å¸ƒå±€ç­–ç•¥ï¼Œæ”¾ç½®ä½ç½®çš„ç›‘å¬å™¨
 	class ChangeAction implements ActionListener
 	{
 		public void actionPerformed(ActionEvent event)
 		{
 			JRadioButton source = (JRadioButton)event.getSource();
 			String selection = source.getActionCommand();
-			// ÉèÖÃ±êÇ©Ò³µÄ±êÌâµÄ²¼¾Ö²ßÂÔ
+			// è®¾ç½®æ ‡ç­¾é¡µçš„æ ‡é¢˜çš„å¸ƒå±€ç­–ç•¥
 			if (selection.equals(layouts[0]))
 			{
 				tabbedPane.setTabLayoutPolicy(
@@ -97,7 +97,7 @@ public class JTabbedPaneTest
 				tabbedPane.setTabLayoutPolicy(
 					JTabbedPane.SCROLL_TAB_LAYOUT);
 			}
-			// ÉèÖÃ±êÇ©Ò³ÉÏµÄ±êÌâµÄ·ÅÖÃÎ»ÖÃ
+			// è®¾ç½®æ ‡ç­¾é¡µä¸Šçš„æ ‡é¢˜çš„æ”¾ç½®ä½ç½®
 			else if (selection.equals(positions[0]))
 			{
 				tabbedPane.setTabPlacement(JTabbedPane.LEFT);
@@ -121,8 +121,8 @@ public class JTabbedPaneTest
 		new JTabbedPaneTest().init();
 	}
 }
-// ¶¨ÒåÒ»¸öJPanelÀàÀ©Õ¹Àà£¬¸ÃÀàµÄ¶ÔÏó°üº¬¶à¸ö×İÏòÅÅÁĞµÄJRadioButton¿Ø¼ş
-// ÇÒJPanelÀ©Õ¹Àà¿ÉÒÔÖ¸¶¨Ò»¸ö×Ö·û´®×÷ÎªTitledBorder
+// å®šä¹‰ä¸€ä¸ªJPanelç±»æ‰©å±•ç±»ï¼Œè¯¥ç±»çš„å¯¹è±¡åŒ…å«å¤šä¸ªçºµå‘æ’åˆ—çš„JRadioButtonæ§ä»¶
+// ä¸”JPanelæ‰©å±•ç±»å¯ä»¥æŒ‡å®šä¸€ä¸ªå­—ç¬¦ä¸²ä½œä¸ºTitledBorder
 class ButtonPanel extends JPanel
 {
 	private ButtonGroup group;
@@ -138,7 +138,7 @@ class ButtonPanel extends JPanel
 			JRadioButton b = new JRadioButton(labels[i]);
 			b.setActionCommand(labels[i]);
 			add(b);
-			// Ìí¼ÓÊÂ¼ş¼àÌıÆ÷
+			// æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
 			b.addActionListener(action);
 			group.add(b);
 			b.setSelected(i == 0);

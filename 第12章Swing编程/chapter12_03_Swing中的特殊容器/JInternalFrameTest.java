@@ -1,4 +1,4 @@
-package chapter12_03_SwingÖĞµÄÌØÊâÈİÆ÷;
+package chapter12_03_Swingä¸­çš„ç‰¹æ®Šå®¹å™¨;
 
 
 import java.beans.*;
@@ -9,7 +9,7 @@ import javax.swing.*;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -22,46 +22,46 @@ public class JInternalFrameTest
 	final int DESKTOP_WIDTH = 480;
 	final int DESKTOP_HEIGHT = 360;
 	final int FRAME_DISTANCE = 30;
-	JFrame jf = new JFrame("MDI½çÃæ");
-	// ¶¨ÒåÒ»¸öĞéÄâ×ÀÃæ
+	JFrame jf = new JFrame("MDIç•Œé¢");
+	// å®šä¹‰ä¸€ä¸ªè™šæ‹Ÿæ¡Œé¢
 	private MyJDesktopPane desktop = new MyJDesktopPane();
-	// ±£´æÏÂÒ»¸öÄÚ²¿´°¿ÚµÄ×ø±êµã
+	// ä¿å­˜ä¸‹ä¸€ä¸ªå†…éƒ¨çª—å£çš„åæ ‡ç‚¹
 	private int nextFrameX;
 	private int nextFrameY;
-	// ¶¨ÒåÄÚ²¿´°¿ÚÎªĞéÄâ×ÀÃæµÄ1/2´óĞ¡
+	// å®šä¹‰å†…éƒ¨çª—å£ä¸ºè™šæ‹Ÿæ¡Œé¢çš„1/2å¤§å°
 	private int width = DESKTOP_WIDTH / 2;
 	private int height = DESKTOP_HEIGHT / 2;
-	// ÎªÖ÷´°¿Ú¶¨ÒåÁ½¸ö²Ëµ¥
-	JMenu fileMenu = new JMenu("ÎÄ¼ş");
-	JMenu windowMenu = new JMenu("´°¿Ú");
-	// ¶¨ÒånewActionÓÃÓÚ´´½¨²Ëµ¥ºÍ¹¤¾ß°´Å¥
-	Action newAction = new AbstractAction("ĞÂ½¨"
+	// ä¸ºä¸»çª—å£å®šä¹‰ä¸¤ä¸ªèœå•
+	JMenu fileMenu = new JMenu("æ–‡ä»¶");
+	JMenu windowMenu = new JMenu("çª—å£");
+	// å®šä¹‰newActionç”¨äºåˆ›å»ºèœå•å’Œå·¥å…·æŒ‰é’®
+	Action newAction = new AbstractAction("æ–°å»º"
 		, new ImageIcon("ico/new.png"))
 	{
 		public void actionPerformed(ActionEvent event)
 		{
-			// ´´½¨ÄÚ²¿´°¿Ú
-			final JInternalFrame iframe = new JInternalFrame("ĞÂÎÄµµ",
-				true, // ¿É¸Ä±ä´óĞ¡
-				true, // ¿É¹Ø±Õ
-				true, // ¿É×î´ó»¯
-				true); // ¿É×îĞ¡»¯
+			// åˆ›å»ºå†…éƒ¨çª—å£
+			final JInternalFrame iframe = new JInternalFrame("æ–°æ–‡æ¡£",
+				true, // å¯æ”¹å˜å¤§å°
+				true, // å¯å…³é—­
+				true, // å¯æœ€å¤§åŒ–
+				true); // å¯æœ€å°åŒ–
 			iframe.add(new JScrollPane(new JTextArea(8, 40)));
-			// ½«ÄÚ²¿´°¿ÚÌí¼Óµ½ĞéÄâ×ÀÃæÖĞ
+			// å°†å†…éƒ¨çª—å£æ·»åŠ åˆ°è™šæ‹Ÿæ¡Œé¢ä¸­
 			desktop.add(iframe);
-			// ÉèÖÃÄÚ²¿´°¿ÚµÄÔ­Ê¼Î»ÖÃ£¨ÄÚ²¿´°¿ÚÄ¬ÈÏ´óĞ¡ÊÇ0X0£¬·ÅÔÚ0,0Î»ÖÃ£©
+			// è®¾ç½®å†…éƒ¨çª—å£çš„åŸå§‹ä½ç½®ï¼ˆå†…éƒ¨çª—å£é»˜è®¤å¤§å°æ˜¯0X0ï¼Œæ”¾åœ¨0,0ä½ç½®ï¼‰
 			iframe.reshape(nextFrameX, nextFrameY, width, height);
-			// Ê¹¸Ã´°¿Ú¿É¼û£¬²¢³¢ÊÔÑ¡ÖĞËü
+			// ä½¿è¯¥çª—å£å¯è§ï¼Œå¹¶å°è¯•é€‰ä¸­å®ƒ
 			iframe.show();
-			// ¼ÆËãÏÂÒ»¸öÄÚ²¿´°¿ÚµÄÎ»ÖÃ
+			// è®¡ç®—ä¸‹ä¸€ä¸ªå†…éƒ¨çª—å£çš„ä½ç½®
 			nextFrameX += FRAME_DISTANCE;
 			nextFrameY += FRAME_DISTANCE;
 			if (nextFrameX + width > desktop.getWidth()) nextFrameX = 0;
 			if (nextFrameY + height > desktop.getHeight()) nextFrameY = 0;
 		}
 	};
-	// ¶¨ÒåexitActionÓÃÓÚ´´½¨²Ëµ¥ºÍ¹¤¾ß°´Å¥
-	Action exitAction = new AbstractAction("ÍË³ö"
+	// å®šä¹‰exitActionç”¨äºåˆ›å»ºèœå•å’Œå·¥å…·æŒ‰é’®
+	Action exitAction = new AbstractAction("é€€å‡º"
 		, new ImageIcon("ico/exit.png"))
 	{
 		public void actionPerformed(ActionEvent event)
@@ -71,7 +71,7 @@ public class JInternalFrameTest
 	};
 	public void init()
 	{
-		// Îª´°¿Ú°²×°²Ëµ¥ÌõºÍ¹¤¾ßÌõ
+		// ä¸ºçª—å£å®‰è£…èœå•æ¡å’Œå·¥å…·æ¡
 		JMenuBar menuBar = new JMenuBar();
 		JToolBar toolBar = new JToolBar();
 		jf.setJMenuBar(menuBar);
@@ -81,28 +81,28 @@ public class JInternalFrameTest
 		toolBar.add(newAction);
 		toolBar.add(exitAction);
 		menuBar.add(windowMenu);
-		JMenuItem nextItem = new JMenuItem("ÏÂÒ»¸ö");
+		JMenuItem nextItem = new JMenuItem("ä¸‹ä¸€ä¸ª");
 		nextItem.addActionListener(event -> desktop.selectNextWindow());
 		windowMenu.add(nextItem);
-		JMenuItem cascadeItem = new JMenuItem("¼¶Áª");
+		JMenuItem cascadeItem = new JMenuItem("çº§è”");
 		cascadeItem.addActionListener(event ->
-			// ¼¶ÁªÏÔÊ¾´°¿Ú£¬ÄÚ²¿´°¿ÚµÄ´óĞ¡ÊÇÍâ²¿´°¿ÚµÄ0.75
+			// çº§è”æ˜¾ç¤ºçª—å£ï¼Œå†…éƒ¨çª—å£çš„å¤§å°æ˜¯å¤–éƒ¨çª—å£çš„0.75
 			desktop.cascadeWindows(FRAME_DISTANCE , 0.75));
 		windowMenu.add(cascadeItem);
-		JMenuItem tileItem = new JMenuItem("Æ½ÆÌ");
-		// Æ½ÆÌÏÔÊ¾ËùÓĞÄÚ²¿´°¿Ú
+		JMenuItem tileItem = new JMenuItem("å¹³é“º");
+		// å¹³é“ºæ˜¾ç¤ºæ‰€æœ‰å†…éƒ¨çª—å£
 		tileItem.addActionListener(event -> desktop.tileWindows());
 		windowMenu.add(tileItem);
 		final JCheckBoxMenuItem dragOutlineItem = new
-			JCheckBoxMenuItem("½öÏÔÊ¾ÍÏ¶¯´°¿ÚµÄÂÖÀª");
+			JCheckBoxMenuItem("ä»…æ˜¾ç¤ºæ‹–åŠ¨çª—å£çš„è½®å»“");
 		dragOutlineItem.addActionListener(event ->
-			// ¸ù¾İ¸Ã²Ëµ¥ÏîÊÇ·ñÑ¡ÔñÀ´¾ö¶¨²ÉÓÃÄÄÖÖÍÏ¶¯Ä£Ê½
+			// æ ¹æ®è¯¥èœå•é¡¹æ˜¯å¦é€‰æ‹©æ¥å†³å®šé‡‡ç”¨å“ªç§æ‹–åŠ¨æ¨¡å¼
 			desktop.setDragMode(dragOutlineItem.isSelected()
 				? JDesktopPane.OUTLINE_DRAG_MODE
-				: JDesktopPane.LIVE_DRAG_MODE));    // ¢Ù
+				: JDesktopPane.LIVE_DRAG_MODE));    // â‘ 
 		windowMenu.add(dragOutlineItem);
 		desktop.setPreferredSize(new Dimension(480, 360));
-		// ½«ĞéÄâ×ÀÃæÌí¼Óµ½¶¥¼¶JFrameÈİÆ÷ÖĞ
+		// å°†è™šæ‹Ÿæ¡Œé¢æ·»åŠ åˆ°é¡¶çº§JFrameå®¹å™¨ä¸­
 		jf.add(desktop);
 		jf.add(toolBar , BorderLayout.NORTH);
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -116,29 +116,29 @@ public class JInternalFrameTest
 }
 class MyJDesktopPane extends JDesktopPane
 {
-	// ½«ËùÓĞ´°¿ÚÒÔ¼¶Áª·½Ê½ÏÔÊ¾,
-	// ÆäÖĞoffsetÊÇÁ½¸ö´°¿ÚµÄÎ»ÒÆ¾àÀë, s
-	// caleÊÇÄÚ²¿´°¿ÚÓëJDesktopPaneµÄ´óĞ¡±ÈÀı
+	// å°†æ‰€æœ‰çª—å£ä»¥çº§è”æ–¹å¼æ˜¾ç¤º,
+	// å…¶ä¸­offsetæ˜¯ä¸¤ä¸ªçª—å£çš„ä½ç§»è·ç¦», s
+	// caleæ˜¯å†…éƒ¨çª—å£ä¸JDesktopPaneçš„å¤§å°æ¯”ä¾‹
 	public void cascadeWindows(int offset , double scale)
 	{
-		// ¶¨Òå¼¶ÁªÏÔÊ¾´°¿ÚÊ±ÄÚ²¿´°¿ÚµÄ´óĞ¡
+		// å®šä¹‰çº§è”æ˜¾ç¤ºçª—å£æ—¶å†…éƒ¨çª—å£çš„å¤§å°
 		int width = (int)(getWidth() * scale);
 		int height = (int)(getHeight() * scale);
-		// ÓÃÓÚ±£´æ¼¶Áª´°¿ÚÊ±Ã¿¸ö´°¿ÚµÄÎ»ÖÃ
+		// ç”¨äºä¿å­˜çº§è”çª—å£æ—¶æ¯ä¸ªçª—å£çš„ä½ç½®
 		int x = 0;
 		int y = 0;
 		for (JInternalFrame frame : getAllFrames())
 		{
 			try
 			{
-				// È¡ÏûÄÚ²¿´°¿ÚµÄ×î´ó»¯,×îĞ¡»¯
+				// å–æ¶ˆå†…éƒ¨çª—å£çš„æœ€å¤§åŒ–,æœ€å°åŒ–
 				frame.setMaximum(false);
 				frame.setIcon(false);
-				// °Ñ´°¿ÚÖØĞÂ·ÅÖÃÔÚÖ¸¶¨Î»ÖÃ
+				// æŠŠçª—å£é‡æ–°æ”¾ç½®åœ¨æŒ‡å®šä½ç½®
 				frame.reshape(x, y, width, height);
 				x += offset;
 				y += offset;
-				// Èç¹ûµ½ÁËĞéÄâ×ÀÃæ±ß½ç
+				// å¦‚æœåˆ°äº†è™šæ‹Ÿæ¡Œé¢è¾¹ç•Œ
 				if (x + width > getWidth()) x = 0;
 				if (y + height > getHeight()) y = 0;
 			}
@@ -146,44 +146,44 @@ class MyJDesktopPane extends JDesktopPane
 			{}
 		}
 	}
-	// ½«ËùÓĞ´°¿ÚÒÔÆ½ÆÌ·½Ê½ÏÔÊ¾
+	// å°†æ‰€æœ‰çª—å£ä»¥å¹³é“ºæ–¹å¼æ˜¾ç¤º
 	public void tileWindows()
 	{
-		// Í³¼ÆËùÓĞ´°¿Ú
+		// ç»Ÿè®¡æ‰€æœ‰çª—å£
 		int frameCount = 0;
 		for (JInternalFrame frame : getAllFrames())
 		{
 			frameCount++;
 		}
-		// ¼ÆËãĞèÒª¶àÉÙĞĞ¡¢¶àÉÙÁĞ²Å¿ÉÒÔÆ½ÆÌËùÓĞ´°¿Ú
+		// è®¡ç®—éœ€è¦å¤šå°‘è¡Œã€å¤šå°‘åˆ—æ‰å¯ä»¥å¹³é“ºæ‰€æœ‰çª—å£
 		int rows = (int) Math.sqrt(frameCount);
 		int cols = frameCount / rows;
-		// ĞèÒª¶îÍâÔö¼Óµ½ÆäËûÁĞÖĞµÄ´°¿Ú
+		// éœ€è¦é¢å¤–å¢åŠ åˆ°å…¶ä»–åˆ—ä¸­çš„çª—å£
 		int extra = frameCount % rows;
-		// ¼ÆËãÆ½ÆÌÊ±ÄÚ²¿´°¿ÚµÄ´óĞ¡
+		// è®¡ç®—å¹³é“ºæ—¶å†…éƒ¨çª—å£çš„å¤§å°
 		int width = getWidth() / cols;
 		int height = getHeight() / rows;
-		// ÓÃÓÚ±£´æÆ½ÆÌ´°¿ÚÊ±Ã¿¸ö´°¿ÚÔÚºáÏò¡¢×İÏòÉÏµÄË÷Òı
+		// ç”¨äºä¿å­˜å¹³é“ºçª—å£æ—¶æ¯ä¸ªçª—å£åœ¨æ¨ªå‘ã€çºµå‘ä¸Šçš„ç´¢å¼•
 		int x = 0;
 		int y = 0;
 		for (JInternalFrame frame : getAllFrames())
 		{
 			try
 			{
-				// È¡ÏûÄÚ²¿´°¿ÚµÄ×î´ó»¯,×îĞ¡»¯
+				// å–æ¶ˆå†…éƒ¨çª—å£çš„æœ€å¤§åŒ–,æœ€å°åŒ–
 				frame.setMaximum(false);
 				frame.setIcon(false);
-				// ½«´°¿Ú·ÅÔÚÖ¸¶¨Î»ÖÃ
+				// å°†çª—å£æ”¾åœ¨æŒ‡å®šä½ç½®
 				frame.reshape(x * width, y * height, width, height);
 				y++;
-				// Ã¿ÅÅÍêÒ»ÁĞ´°¿Ú
+				// æ¯æ’å®Œä¸€åˆ—çª—å£
 				if (y == rows)
 				{
-					// ¿ªÊ¼ÅÅ·ÅÏÂÒ»ÁĞ´°¿Ú
+					// å¼€å§‹æ’æ”¾ä¸‹ä¸€åˆ—çª—å£
 					y = 0;
 					x++;
-					// Èç¹û¶îÍâ¶à³öµÄ´°¿ÚÓëÊ£ÏÂµÄÁĞÊıÏàµÈ£¬
-					// ÔòºóÃæËùÓĞÁĞ¶¼ĞèÒª¶àÅÅÁĞÒ»¸ö´°¿Ú
+					// å¦‚æœé¢å¤–å¤šå‡ºçš„çª—å£ä¸å‰©ä¸‹çš„åˆ—æ•°ç›¸ç­‰ï¼Œ
+					// åˆ™åé¢æ‰€æœ‰åˆ—éƒ½éœ€è¦å¤šæ’åˆ—ä¸€ä¸ªçª—å£
 					if (extra == cols - x)
 					{
 						rows++;
@@ -195,7 +195,7 @@ class MyJDesktopPane extends JDesktopPane
 			{}
 		}
 	}
-	// Ñ¡ÖĞÏÂÒ»¸ö·ÇÍ¼±ê´°¿Ú
+	// é€‰ä¸­ä¸‹ä¸€ä¸ªéå›¾æ ‡çª—å£
 	public void selectNextWindow()
 	{
 		JInternalFrame[] frames = getAllFrames();
@@ -203,12 +203,12 @@ class MyJDesktopPane extends JDesktopPane
 		{
 			if (frames[i].isSelected())
 			{
-				//  ÕÒ³öÏÂÒ»¸ö·Ç×îĞ¡»¯µÄ´°¿Ú£¬³¢ÊÔÑ¡ÖĞËü£¬
-				// Èç¹ûÑ¡ÖĞÊ§°Ü£¬Ôò¼ÌĞø³¢ÊÔÑ¡ÖĞÏÂÒ»¸ö´°¿Ú
+				//  æ‰¾å‡ºä¸‹ä¸€ä¸ªéæœ€å°åŒ–çš„çª—å£ï¼Œå°è¯•é€‰ä¸­å®ƒï¼Œ
+				// å¦‚æœé€‰ä¸­å¤±è´¥ï¼Œåˆ™ç»§ç»­å°è¯•é€‰ä¸­ä¸‹ä¸€ä¸ªçª—å£
 				int next = (i + 1) % frames.length;
 				while (next != i)
 				{
-					// Èç¹û¸Ã´°¿Ú²»ÊÇ´¦ÓÚ×îĞ¡»¯×´Ì¬
+					// å¦‚æœè¯¥çª—å£ä¸æ˜¯å¤„äºæœ€å°åŒ–çŠ¶æ€
 					if (!frames[next].isIcon())
 					{
 						try

@@ -1,4 +1,4 @@
-package chapter12_12_Ê¹ÓÃJFormattedTextFieldºÍJtextPane;
+package chapter12_12_ä½¿ç”¨JFormattedTextFieldå’ŒJtextPane;
 
 
 import java.util.*;
@@ -13,7 +13,7 @@ import javax.swing.border.*;
 import javax.swing.text.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -23,9 +23,9 @@ import javax.swing.text.*;
  */
 public class JFormattedTextFieldTest
 {
-	private JFrame mainWin = new JFrame("²âÊÔ¸ñÊ½»¯ÎÄ±¾¿ò");
-	private JButton okButton = new JButton("È·¶¨");
-	// ¶¨ÒåÓÃÓÚÌí¼Ó¸ñÊ½»¯ÎÄ±¾¿òµÄÈİÆ÷
+	private JFrame mainWin = new JFrame("æµ‹è¯•æ ¼å¼åŒ–æ–‡æœ¬æ¡†");
+	private JButton okButton = new JButton("ç¡®å®š");
+	// å®šä¹‰ç”¨äºæ·»åŠ æ ¼å¼åŒ–æ–‡æœ¬æ¡†çš„å®¹å™¨
 	private JPanel mainPanel = new JPanel();
 	JFormattedTextField[] fields = new JFormattedTextField[6];
 	String[] behaviorLabels = new String[]
@@ -45,42 +45,42 @@ public class JFormattedTextFieldTest
 	ButtonGroup bg = new ButtonGroup();
 	public void init()
 	{
-		// Ìí¼Ó°´Å¥
+		// æ·»åŠ æŒ‰é’®
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.add(okButton);
 		mainPanel.setLayout(new GridLayout(0, 3));
 		mainWin.add(mainPanel, BorderLayout.CENTER);
-		// Ê¹ÓÃNumberFormatµÄintegerInstance´´½¨Ò»¸öJFormattedTextField
+		// ä½¿ç”¨NumberFormatçš„integerInstanceåˆ›å»ºä¸€ä¸ªJFormattedTextField
 		fields[0] = new JFormattedTextField(NumberFormat
 			.getIntegerInstance());
-		// ÉèÖÃ³õÊ¼Öµ
+		// è®¾ç½®åˆå§‹å€¼
 		fields[0].setValue(100);
-		addRow("ÕûÊı¸ñÊ½ÎÄ±¾¿ò :", fields[0]);
-		// Ê¹ÓÃNumberFormatµÄcurrencyInstance´´½¨Ò»¸öJFormattedTextField
+		addRow("æ•´æ•°æ ¼å¼æ–‡æœ¬æ¡† :", fields[0]);
+		// ä½¿ç”¨NumberFormatçš„currencyInstanceåˆ›å»ºä¸€ä¸ªJFormattedTextField
 		fields[1] = new JFormattedTextField(NumberFormat
 			.getCurrencyInstance());
 		fields[1].setValue(100.0);
-		addRow("»õ±Ò¸ñÊ½ÎÄ±¾¿ò:", fields[1]);
-		// Ê¹ÓÃÄ¬ÈÏµÄÈÕÆÚ¸ñÊ½´´½¨Ò»¸öJFormattedTextField¶ÔÏó
+		addRow("è´§å¸æ ¼å¼æ–‡æœ¬æ¡†:", fields[1]);
+		// ä½¿ç”¨é»˜è®¤çš„æ—¥æœŸæ ¼å¼åˆ›å»ºä¸€ä¸ªJFormattedTextFieldå¯¹è±¡
 		fields[2] = new JFormattedTextField(DateFormat.getDateInstance());
 		fields[2].setValue(new Date());
-		addRow("Ä¬ÈÏµÄÈÕÆÚ¸ñÊ½Æ÷:", fields[2]);
-		// Ê¹ÓÃSHORTÀàĞÍµÄÈÕÆÚ¸ñÊ½´´½¨Ò»¸öJFormattedTextField¶ÔÏó£¬
-		// ÇÒÒªÇó²ÉÓÃÑÏ¸ñÈÕÆÚ¸ñÊ½
+		addRow("é»˜è®¤çš„æ—¥æœŸæ ¼å¼å™¨:", fields[2]);
+		// ä½¿ç”¨SHORTç±»å‹çš„æ—¥æœŸæ ¼å¼åˆ›å»ºä¸€ä¸ªJFormattedTextFieldå¯¹è±¡ï¼Œ
+		// ä¸”è¦æ±‚é‡‡ç”¨ä¸¥æ ¼æ—¥æœŸæ ¼å¼
 		DateFormat format = DateFormat.getDateInstance(DateFormat.SHORT);
-		// ÒªÇó²ÉÓÃÑÏ¸ñµÄÈÕÆÚ¸ñÊ½Óï·¨
+		// è¦æ±‚é‡‡ç”¨ä¸¥æ ¼çš„æ—¥æœŸæ ¼å¼è¯­æ³•
 		format.setLenient(false);
 		fields[3] = new JFormattedTextField(format);
 		fields[3].setValue(new Date());
-		addRow("SHORTÀàĞÍµÄÈÕÆÚ¸ñÊ½Æ÷£¨Óï·¨ÑÏ¸ñ£©:", fields[3]);
+		addRow("SHORTç±»å‹çš„æ—¥æœŸæ ¼å¼å™¨ï¼ˆè¯­æ³•ä¸¥æ ¼ï¼‰:", fields[3]);
 		try
 		{
-			// ´´½¨Ä¬ÈÏµÄDefaultFormatter¶ÔÏó
+			// åˆ›å»ºé»˜è®¤çš„DefaultFormatterå¯¹è±¡
 			DefaultFormatter formatter = new DefaultFormatter();
-			// ¹Ø±Õoverwrite×´Ì¬
+			// å…³é—­overwriteçŠ¶æ€
 			formatter.setOverwriteMode(false);
 			fields[4] = new JFormattedTextField(formatter);
-			// Ê¹ÓÃDefaultFormatterÀ´¸ñÊ½»¯URL
+			// ä½¿ç”¨DefaultFormatteræ¥æ ¼å¼åŒ–URL
 			fields[4].setValue(new URL("http://www.crazyit.org"));
 			addRow("URL:", fields[4]);
 		}
@@ -91,12 +91,12 @@ public class JFormattedTextFieldTest
 		try
 		{
 			MaskFormatter formatter = new MaskFormatter("020-########");
-			// ÉèÖÃÕ¼Î»·û
-			formatter.setPlaceholderCharacter('¡õ');
+			// è®¾ç½®å ä½ç¬¦
+			formatter.setPlaceholderCharacter('â–¡');
 			fields[5] = new JFormattedTextField(formatter);
-			// ÉèÖÃ³õÊ¼Öµ
+			// è®¾ç½®åˆå§‹å€¼
 			fields[5].setValue("020-28309378");
-			addRow("µç»°ºÅÂë£º", fields[5]);
+			addRow("ç”µè¯å·ç ï¼š", fields[5]);
 		}
 		catch (ParseException ex)
 		{
@@ -104,24 +104,24 @@ public class JFormattedTextFieldTest
 		}
 
 		JPanel focusLostPanel = new JPanel();
-		// ²ÉÓÃÑ­»··½Ê½¼ÓÈëÊ§È¥½¹µãĞĞÎªµÄµ¥Ñ¡°´Å¥
+		// é‡‡ç”¨å¾ªç¯æ–¹å¼åŠ å…¥å¤±å»ç„¦ç‚¹è¡Œä¸ºçš„å•é€‰æŒ‰é’®
 		for (int i = 0; i < behaviorLabels.length ; i++ )
 		{
 			final int index = i;
 			final JRadioButton radio = new JRadioButton(behaviorLabels[i]);
-			// Ä¬ÈÏÑ¡ÖĞµÚ¶ş¸öµ¥Ñ¡°´Å¥
+			// é»˜è®¤é€‰ä¸­ç¬¬äºŒä¸ªå•é€‰æŒ‰é’®
 			if (i == 1)
 			{
 				radio.setSelected(true);
 			}
 			focusLostPanel.add(radio);
 			bg.add(radio);
-			// ÎªËùÓĞµ¥Ñ¡°´Å¥Ìí¼ÓÊÂ¼ş¼àÌıÆ÷
+			// ä¸ºæ‰€æœ‰å•é€‰æŒ‰é’®æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
 			radio.addActionListener(e -> {
-				// Èç¹ûµ±Ç°¸Ãµ¥Ñ¡°´Å¥´¦ÓÚÑ¡ÖĞ×´Ì¬£¬
+				// å¦‚æœå½“å‰è¯¥å•é€‰æŒ‰é’®å¤„äºé€‰ä¸­çŠ¶æ€ï¼Œ
 				if (radio.isSelected())
 				{
-					// ÉèÖÃËùÓĞµÄ¸ñÊ½»¯ÎÄ±¾¿òµÄÊ§È¥½¹µãµÄĞĞÎª
+					// è®¾ç½®æ‰€æœ‰çš„æ ¼å¼åŒ–æ–‡æœ¬æ¡†çš„å¤±å»ç„¦ç‚¹çš„è¡Œä¸º
 					for (int j = 0 ; j < fields.length ; j++)
 					{
 						fields[j].setFocusLostBehavior(behaviors[index]);
@@ -130,7 +130,7 @@ public class JFormattedTextFieldTest
 			});
 		}
 		focusLostPanel.setBorder(new TitledBorder(new EtchedBorder(),
-			"ÇëÑ¡Ôñ½¹µãÊ§È¥ºóµÄĞĞÎª"));
+			"è¯·é€‰æ‹©ç„¦ç‚¹å¤±å»åçš„è¡Œä¸º"));
 		JPanel p = new JPanel();
 		p.setLayout(new BorderLayout());
 		p.add(focusLostPanel , BorderLayout.NORTH);
@@ -141,18 +141,18 @@ public class JFormattedTextFieldTest
 		mainWin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainWin.setVisible(true);
 	}
-	// ¶¨ÒåÌí¼ÓÒ»ĞĞ¸ñÊ½»¯ÎÄ±¾¿òµÄ·½·¨
+	// å®šä¹‰æ·»åŠ ä¸€è¡Œæ ¼å¼åŒ–æ–‡æœ¬æ¡†çš„æ–¹æ³•
 	private void addRow(String labelText, final JFormattedTextField field)
 	{
 		mainPanel.add(new JLabel(labelText));
 		mainPanel.add(field);
 		final JLabel valueLabel = new JLabel();
 		mainPanel.add(valueLabel);
-		// Îª"È·¶¨"°´Å¥Ìí¼ÓÊÂ¼ş¼àÌıÆ÷
-		// µ±ÓÃ»§µ¥»÷¡°È·¶¨¡±°´Å¥Ê±£¬ÎÄ±¾¿òºó
+		// ä¸º"ç¡®å®š"æŒ‰é’®æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
+		// å½“ç”¨æˆ·å•å‡»â€œç¡®å®šâ€æŒ‰é’®æ—¶ï¼Œæ–‡æœ¬æ¡†å
 		okButton.addActionListener(event -> {
 			Object value = field.getValue();
-			// Êä³ö¸ñÊ½»¯ÎÄ±¾¿òµÄÖµ
+			// è¾“å‡ºæ ¼å¼åŒ–æ–‡æœ¬æ¡†çš„å€¼
 			valueLabel.setText(value.toString());
 		});
 	}

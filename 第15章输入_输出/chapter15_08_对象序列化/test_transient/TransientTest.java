@@ -1,10 +1,10 @@
-package chapter15_08_¶ÔÏóĞòÁĞ»¯.test_transient;
+package chapter15_08_å¯¹è±¡åºåˆ—åŒ–.test_transient;
 
 import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,12 +16,12 @@ import java.io.*;
 public class TransientTest {
 	public static void main(String[] args) {
 		try (
-				// ´´½¨Ò»¸öObjectOutputStreamÊä³öÁ÷
+				// åˆ›å»ºä¸€ä¸ªObjectOutputStreamè¾“å‡ºæµ
 				ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("transient.txt"));
-				// ´´½¨Ò»¸öObjectInputStreamÊäÈëÁ÷
+				// åˆ›å»ºä¸€ä¸ªObjectInputStreamè¾“å…¥æµ
 				ObjectInputStream ois = new ObjectInputStream(new FileInputStream("transient.txt"))) {
-			Person per = new Person("ËïÎò¿Õ", 500);
-			// ÏµÍ³»áper¶ÔÏó×ª»»×Ö½ÚĞòÁĞ²¢Êä³ö
+			Person per = new Person("å­™æ‚Ÿç©º", 500);
+			// ç³»ç»Ÿä¼šperå¯¹è±¡è½¬æ¢å­—èŠ‚åºåˆ—å¹¶è¾“å‡º
 			oos.writeObject(per);
 			Person p = (Person) ois.readObject();
 			System.out.println(p.getAge());

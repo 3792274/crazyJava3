@@ -1,9 +1,9 @@
-package chapter18_05_Ê¹ÓÃ·´ÉäÉú³ÉJDK¶¯Ì¬´úÀí.DynaProxy;
+package chapter18_05_ä½¿ç”¨åå°„ç”ŸæˆJDKåŠ¨æ€ä»£ç†.DynaProxy;
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,14 +13,14 @@ package chapter18_05_Ê¹ÓÃ·´ÉäÉú³ÉJDK¶¯Ì¬´úÀí.DynaProxy;
  */
 public class DogUtil
 {
-	// µÚÒ»¸öÀ¹½ØÆ÷·½·¨
+	// ç¬¬ä¸€ä¸ªæ‹¦æˆªå™¨æ–¹æ³•
 	public void method1()
 	{
-		System.out.println("=====Ä£ÄâµÚÒ»¸öÍ¨ÓÃ·½·¨=====");
+		System.out.println("=====æ¨¡æ‹Ÿç¬¬ä¸€ä¸ªé€šç”¨æ–¹æ³•=====");
 	}
-	// µÚ¶ş¸öÀ¹½ØÆ÷·½·¨
+	// ç¬¬äºŒä¸ªæ‹¦æˆªå™¨æ–¹æ³•
 	public void method2()
 	{
-		System.out.println("=====Ä£ÄâÍ¨ÓÃ·½·¨¶ş=====");
+		System.out.println("=====æ¨¡æ‹Ÿé€šç”¨æ–¹æ³•äºŒ=====");
 	}
 }

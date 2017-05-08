@@ -1,4 +1,4 @@
-package chapter17_02_JavaµÄ»ù±¾ÍøÂçÖ§³Ö;
+package chapter17_02_Javaçš„åŸºæœ¬ç½‘ç»œæ”¯æŒ;
 
 import java.io.*;
 import java.net.*;
@@ -6,7 +6,7 @@ import java.util.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -17,13 +17,13 @@ import java.util.*;
  */
 public class GetPostTest {
 	/**
-	 * ÏòÖ¸¶¨URL·¢ËÍGET·½·¨µÄÇëÇó
+	 * å‘æŒ‡å®šURLå‘é€GETæ–¹æ³•çš„è¯·æ±‚
 	 * 
 	 * @param url
-	 *            ·¢ËÍÇëÇóµÄURL
+	 *            å‘é€è¯·æ±‚çš„URL
 	 * @param param
-	 *            ÇëÇó²ÎÊı£¬¸ñÊ½Âú×ãname1=value1&name2=value2µÄĞÎÊ½¡£
-	 * @return URLËù´ú±íÔ¶³Ì×ÊÔ´µÄÏìÓ¦
+	 *            è¯·æ±‚å‚æ•°ï¼Œæ ¼å¼æ»¡è¶³name1=value1&name2=value2çš„å½¢å¼ã€‚
+	 * @return URLæ‰€ä»£è¡¨è¿œç¨‹èµ„æºçš„å“åº”
 	 */
 	public static String sendGet(String url, String param) {
 		String result = "";
@@ -33,26 +33,26 @@ public class GetPostTest {
 		
 		try {
 			URL realUrl = new URL(urlName);
-			// ´ò¿ªºÍURLÖ®¼äµÄÁ¬½Ó
+			// æ‰“å¼€å’ŒURLä¹‹é—´çš„è¿æ¥
 			URLConnection conn = realUrl.openConnection();
-			// ÉèÖÃÍ¨ÓÃµÄÇëÇóÊôĞÔ
+			// è®¾ç½®é€šç”¨çš„è¯·æ±‚å±æ€§
 			conn.setRequestProperty("accept", "*/*");
 			conn.setRequestProperty("connection", "Keep-Alive");
 			conn.setRequestProperty("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)");
-			// ½¨Á¢Êµ¼ÊµÄÁ¬½Ó
+			// å»ºç«‹å®é™…çš„è¿æ¥
 			conn.connect();
 			
-			// »ñÈ¡ËùÓĞÏìÓ¦Í·×Ö¶Î
+			// è·å–æ‰€æœ‰å“åº”å¤´å­—æ®µ
 			Map<String, List<String>> map = conn.getHeaderFields();
 		
-			// ±éÀúËùÓĞµÄÏìÓ¦Í·×Ö¶Î
+			// éå†æ‰€æœ‰çš„å“åº”å¤´å­—æ®µ
 			for (String key : map.keySet()) {
 				System.out.println(key + "--->" + map.get(key));
 			}
 			
 			
 			try (
-					// ¶¨ÒåBufferedReaderÊäÈëÁ÷À´¶ÁÈ¡URLµÄÏìÓ¦
+					// å®šä¹‰BufferedReaderè¾“å…¥æµæ¥è¯»å–URLçš„å“åº”
 					BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"))
 				){
 					String line;
@@ -61,49 +61,49 @@ public class GetPostTest {
 				  }
 			}
 		} catch (Exception e) {
-			System.out.println("·¢ËÍGETÇëÇó³öÏÖÒì³££¡" + e);
+			System.out.println("å‘é€GETè¯·æ±‚å‡ºç°å¼‚å¸¸ï¼" + e);
 			e.printStackTrace();
 		}
 		return result;
 	}
 
 	/**
-	 * ÏòÖ¸¶¨URL·¢ËÍPOST·½·¨µÄÇëÇó
+	 * å‘æŒ‡å®šURLå‘é€POSTæ–¹æ³•çš„è¯·æ±‚
 	 * 
 	 * @param url
-	 *            ·¢ËÍÇëÇóµÄURL
+	 *            å‘é€è¯·æ±‚çš„URL
 	 * @param param
-	 *            ÇëÇó²ÎÊı£¬¸ñÊ½Ó¦¸ÃÂú×ãname1=value1&name2=value2µÄĞÎÊ½¡£
-	 * @return URLËù´ú±íÔ¶³Ì×ÊÔ´µÄÏìÓ¦
+	 *            è¯·æ±‚å‚æ•°ï¼Œæ ¼å¼åº”è¯¥æ»¡è¶³name1=value1&name2=value2çš„å½¢å¼ã€‚
+	 * @return URLæ‰€ä»£è¡¨è¿œç¨‹èµ„æºçš„å“åº”
 	 */
 	public static String sendPost(String url, String param) {
 		String result = "";
 		
 		try {
 			URL realUrl = new URL(url);
-			// ´ò¿ªºÍURLÖ®¼äµÄÁ¬½Ó
+			// æ‰“å¼€å’ŒURLä¹‹é—´çš„è¿æ¥
 			URLConnection conn = realUrl.openConnection();
-			// ÉèÖÃÍ¨ÓÃµÄÇëÇóÊôĞÔ
+			// è®¾ç½®é€šç”¨çš„è¯·æ±‚å±æ€§
 			conn.setRequestProperty("accept", "*/*");
 			conn.setRequestProperty("connection", "Keep-Alive");
 			conn.setRequestProperty("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)");
 			
-			// ·¢ËÍPOSTÇëÇó±ØĞëÉèÖÃÈçÏÂÁ½ĞĞ
+			// å‘é€POSTè¯·æ±‚å¿…é¡»è®¾ç½®å¦‚ä¸‹ä¸¤è¡Œ
 			conn.setDoOutput(true);
 			conn.setDoInput(true);
 			
 			
 			try (
-					// »ñÈ¡URLConnection¶ÔÏó¶ÔÓ¦µÄÊä³öÁ÷
+					// è·å–URLConnectionå¯¹è±¡å¯¹åº”çš„è¾“å‡ºæµ
 					PrintWriter out = new PrintWriter(conn.getOutputStream())
 				){
-					// ·¢ËÍÇëÇó²ÎÊı
+					// å‘é€è¯·æ±‚å‚æ•°
 					out.print(param);
-					// flushÊä³öÁ÷µÄ»º³å
+					// flushè¾“å‡ºæµçš„ç¼“å†²
 					out.flush();
 			}
 			try (
-					// ¶¨ÒåBufferedReaderÊäÈëÁ÷À´¶ÁÈ¡URLµÄÏìÓ¦
+					// å®šä¹‰BufferedReaderè¾“å…¥æµæ¥è¯»å–URLçš„å“åº”
 					BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"))
 				){
 					String line;
@@ -112,18 +112,18 @@ public class GetPostTest {
 				}
 			}
 		} catch (Exception e) {
-			System.out.println("·¢ËÍPOSTÇëÇó³öÏÖÒì³££¡" + e);
+			System.out.println("å‘é€POSTè¯·æ±‚å‡ºç°å¼‚å¸¸ï¼" + e);
 			e.printStackTrace();
 		}
 		return result;
 	}
 
-	// Ìá¹©Ö÷·½·¨£¬²âÊÔ·¢ËÍGETÇëÇóºÍPOSTÇëÇó
+	// æä¾›ä¸»æ–¹æ³•ï¼Œæµ‹è¯•å‘é€GETè¯·æ±‚å’ŒPOSTè¯·æ±‚
 	public static void main(String args[]) {
-		// ·¢ËÍGETÇëÇó
+		// å‘é€GETè¯·æ±‚
 		String s = GetPostTest.sendGet("http://www.baidu.com/", null);
 		System.out.println(s);
-		// ·¢ËÍPOSTÇëÇó
+		// å‘é€POSTè¯·æ±‚
 		String s1 = GetPostTest.sendPost("http://www.baidu.com/", "name=crazyit.org&pass=leegang");
 		System.out.println(s1);
 	}

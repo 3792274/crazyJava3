@@ -1,10 +1,10 @@
-package chapter06_03_Àà³ÉÔ±;
+package chapter06_03_ç±»æˆå‘˜;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,13 +16,13 @@ public class NullAccessStatic
 {
 	private static void test()
 	{
-		System.out.println("staticĞŞÊÎµÄÀà·½·¨");
+		System.out.println("staticä¿®é¥°çš„ç±»æ–¹æ³•");
 	}
 	public static void main(String[] args)
 	{
-		// ¶¨ÒåÒ»¸öNullAccessStatic±äÁ¿£¬ÆäÖµÎªnull
+		// å®šä¹‰ä¸€ä¸ªNullAccessStaticå˜é‡ï¼Œå…¶å€¼ä¸ºnull
 		NullAccessStatic nas = null;
-		// Ê¹ÓÃnull¶ÔÏóµ÷ÓÃËùÊôÀàµÄ¾²Ì¬·½·¨
+		// ä½¿ç”¨nullå¯¹è±¡è°ƒç”¨æ‰€å±ç±»çš„é™æ€æ–¹æ³•
 		nas.test();
 	}
 }

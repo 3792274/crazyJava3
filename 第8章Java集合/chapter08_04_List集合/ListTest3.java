@@ -1,32 +1,32 @@
-package chapter08_04_List¼¯ºÏ;
+package chapter08_04_Listé›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * java8ÐÂÔö¼Ó 
- * void replaceAll(UnaryOperator operator) ¸ù¾ÝÖ¸¶¨¹æÔòÖØÐÂÉèÖÃList¼¯ºÏµÄËùÓÐÔªËØ
- * void  sort(Comparator c)                ¸ù¾ÝComparator²ÎÊý¶ÔList¼¯ºÏµÄÔªËØÅÅÐò£¬¿ÉÒÔÓÃlambda×÷Îª²ÎÊý
+ * java8æ–°å¢žåŠ  
+ * void replaceAll(UnaryOperator operator) æ ¹æ®æŒ‡å®šè§„åˆ™é‡æ–°è®¾ç½®Listé›†åˆçš„æ‰€æœ‰å…ƒç´ 
+ * void  sort(Comparator c)                æ ¹æ®Comparatorå‚æ•°å¯¹Listé›†åˆçš„å…ƒç´ æŽ’åºï¼Œå¯ä»¥ç”¨lambdaä½œä¸ºå‚æ•°
  */
 public class ListTest3
 {
 	public static void main(String[] args)
 	{
 		List books = new ArrayList();
-		// Ïòbooks¼¯ºÏÖÐÌí¼Ó4¸öÔªËØ
-		books.add(new String("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½"));
-		books.add(new String("·è¿ñJava½²Òå"));
-		books.add(new String("·è¿ñAndroid½²Òå"));
-		books.add(new String("·è¿ñiOS½²Òå"));
+		// å‘booksé›†åˆä¸­æ·»åŠ 4ä¸ªå…ƒç´ 
+		books.add(new String("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®žæˆ˜"));
+		books.add(new String("ç–¯ç‹‚Javaè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚Androidè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚iOSè®²ä¹‰"));
 		
-		// Ê¹ÓÃÄ¿±êÀàÐÍÎªComparatorµÄLambda±í´ïÊ½¶ÔList¼¯ºÏÅÅÐò
+		// ä½¿ç”¨ç›®æ ‡ç±»åž‹ä¸ºComparatorçš„Lambdaè¡¨è¾¾å¼å¯¹Listé›†åˆæŽ’åº
 		books.sort((o1, o2)->((String)o1).length() - ((String)o2).length());
 		System.out.println(books);
 		
-		// Ê¹ÓÃÄ¿±êÀàÐÍÎªUnaryOperatorµÄLambda±í´ïÊ½À´Ìæ»»¼¯ºÏÖÐËùÓÐÔªËØ
-		// ¸ÃLambda±í´ïÊ½¿ØÖÆÊ¹ÓÃÃ¿¸ö×Ö·û´®µÄ³¤¶È×÷ÎªÐÂµÄ¼¯ºÏÔªËØ
+		// ä½¿ç”¨ç›®æ ‡ç±»åž‹ä¸ºUnaryOperatorçš„Lambdaè¡¨è¾¾å¼æ¥æ›¿æ¢é›†åˆä¸­æ‰€æœ‰å…ƒç´ 
+		// è¯¥Lambdaè¡¨è¾¾å¼æŽ§åˆ¶ä½¿ç”¨æ¯ä¸ªå­—ç¬¦ä¸²çš„é•¿åº¦ä½œä¸ºæ–°çš„é›†åˆå…ƒç´ 
 		books.replaceAll(ele->((String)ele).length());
-		System.out.println(books); // Êä³ö[7, 8, 11, 16]
+		System.out.println(books); // è¾“å‡º[7, 8, 11, 16]
 
 	}
 }

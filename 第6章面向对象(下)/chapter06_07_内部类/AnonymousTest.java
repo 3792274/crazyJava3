@@ -1,10 +1,10 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -21,14 +21,14 @@ public class AnonymousTest
 {
 	public void test(Product p)
 	{
-		System.out.println("¹ºÂòÁËÒ»¸ö" + p.getName()
-			+ "£¬»¨µôÁË" + p.getPrice());
+		System.out.println("è´­ä¹°äº†ä¸€ä¸ª" + p.getName()
+			+ "ï¼ŒèŠ±æ‰äº†" + p.getPrice());
 	}
 	public static void main(String[] args)
 	{
 		AnonymousTest ta = new AnonymousTest();
-		// µ÷ÓÃtest()·½·¨Ê±£¬ĞèÒª´«ÈëÒ»¸öProduct²ÎÊı£¬
-		// ´Ë´¦´«ÈëÆäÄäÃûÊµÏÖÀàµÄÊµÀı
+		// è°ƒç”¨test()æ–¹æ³•æ—¶ï¼Œéœ€è¦ä¼ å…¥ä¸€ä¸ªProductå‚æ•°ï¼Œ
+		// æ­¤å¤„ä¼ å…¥å…¶åŒ¿åå®ç°ç±»çš„å®ä¾‹
 		ta.test(new Product()
 		{
 			public double getPrice()
@@ -37,7 +37,7 @@ public class AnonymousTest
 			}
 			public String getName()
 			{
-				return "AGPÏÔ¿¨";
+				return "AGPæ˜¾å¡";
 			}
 		});
 	}

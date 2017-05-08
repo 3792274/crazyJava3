@@ -1,8 +1,8 @@
-package chapter03_01_×¢ÊÍ;
+package chapter03_01_æ³¨é‡Š;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,11 +13,11 @@ package chapter03_01_×¢ÊÍ;
  */
 public class CommentTest01 {
 	/*
-	 * ÕâÀïÃæµÄÄÚÈİÈ«²¿ÊÇ¶àĞĞ×¢ÊÍ JavaÓïÑÔÕæµÄºÜÓĞÈ¤£¬
+	 * è¿™é‡Œé¢çš„å†…å®¹å…¨éƒ¨æ˜¯å¤šè¡Œæ³¨é‡Š Javaè¯­è¨€çœŸçš„å¾ˆæœ‰è¶£ï¼Œ
 	 */
 	public static void main(String[] args) {
-		// ÕâÊÇÒ»ĞĞ¼òµ¥µÄ×¢ÊÍ
+		// è¿™æ˜¯ä¸€è¡Œç®€å•çš„æ³¨é‡Š
 		System.out.println("Hello World!");
-		// System.out.println("ÕâĞĞ´úÂë±»×¢ÊÍÁË£¬½«²»»á±»±àÒë¡¢Ö´ĞĞ!");
+		// System.out.println("è¿™è¡Œä»£ç è¢«æ³¨é‡Šäº†ï¼Œå°†ä¸ä¼šè¢«ç¼–è¯‘ã€æ‰§è¡Œ!");
 	}
 }

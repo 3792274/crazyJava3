@@ -1,10 +1,10 @@
-package chapter11_03_²¼¾Ö¹ÜÀíÆ÷;
+package chapter11_03_å¸ƒå±€ç®¡ç†å™¨;
 
 
 import java.awt.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,17 +16,17 @@ public class FlowLayoutTest
 {
 	public static void main(String[] args)
 	{
-		Frame f = new Frame("²âÊÔ´°¿Ú");
-		// ÉèÖÃFrameÈİÆ÷Ê¹ÓÃFlowLayout²¼¾Ö¹ÜÀíÆ÷£¬×ó¶ÔÆë£¬Ë®Æ½¼ä¾à20£¬´¹Ö±¼ä¾à5
+		Frame f = new Frame("æµ‹è¯•çª—å£");
+		// è®¾ç½®Frameå®¹å™¨ä½¿ç”¨FlowLayoutå¸ƒå±€ç®¡ç†å™¨ï¼Œå·¦å¯¹é½ï¼Œæ°´å¹³é—´è·20ï¼Œå‚ç›´é—´è·5
 		f.setLayout(new FlowLayout(FlowLayout.LEFT , 20, 5));
-		// Ïò´°¿ÚÖĞÌí¼Ó10¸ö°´Å¥
+		// å‘çª—å£ä¸­æ·»åŠ 10ä¸ªæŒ‰é’®
 		for (int i = 0; i < 10 ; i++ )
 		{
-			f.add(new Button("°´Å¥" + i));
+			f.add(new Button("æŒ‰é’®" + i));
 		}
-		// ÉèÖÃ´°¿ÚÎª×î¼Ñ´óĞ¡
+		// è®¾ç½®çª—å£ä¸ºæœ€ä½³å¤§å°
 		f.pack();
-		// ½«´°¿ÚÏÔÊ¾³öÀ´£¨Frame¶ÔÏóÄ¬ÈÏ´¦ÓÚÒş²Ø×´Ì¬£©
+		// å°†çª—å£æ˜¾ç¤ºå‡ºæ¥ï¼ˆFrameå¯¹è±¡é»˜è®¤å¤„äºéšè—çŠ¶æ€ï¼‰
 		f.setVisible(true);
 	}
 }

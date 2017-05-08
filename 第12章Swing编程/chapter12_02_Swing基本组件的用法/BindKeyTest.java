@@ -1,4 +1,4 @@
-package chapter12_02_Swing»ù±¾×é¼şµÄÓÃ·¨;
+package chapter12_02_SwingåŸºæœ¬ç»„ä»¶çš„ç”¨æ³•;
 
 
 import java.awt.*;
@@ -6,7 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,9 +16,9 @@ import javax.swing.*;
  */
 public class BindKeyTest
 {
-	JFrame jf = new JFrame("²âÊÔ¼üÅÌ°ó¶¨");
+	JFrame jf = new JFrame("æµ‹è¯•é”®ç›˜ç»‘å®š");
 	JTextArea jta = new JTextArea(5, 30);
-	JButton jb = new JButton("·¢ËÍ");
+	JButton jb = new JButton("å‘é€");
 	JTextField jtf = new JTextField(15);
 	public void init()
 	{
@@ -27,7 +27,7 @@ public class BindKeyTest
 		jp.add(jtf);
 		jp.add(jb);
 		jf.add(jp , BorderLayout.SOUTH);
-		// ·¢ËÍÏûÏ¢µÄAction,ActionÊÇActionListenerµÄ×Ó½Ó¿Ú
+		// å‘é€æ¶ˆæ¯çš„Action,Actionæ˜¯ActionListenerçš„å­æ¥å£
 		Action sendMsg = new AbstractAction()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -36,12 +36,12 @@ public class BindKeyTest
 				jtf.setText("");
 			}
 		};
-		// Ìí¼ÓÊÂ¼ş¼àÌıÆ÷
+		// æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
 		jb.addActionListener(sendMsg);
-		// ½«Ctrl+Enter¼üºÍ"send"¹ØÁª
+		// å°†Ctrl+Enteré”®å’Œ"send"å…³è”
 		jtf.getInputMap().put(KeyStroke.getKeyStroke('\n'
 			, java.awt.event.InputEvent.CTRL_MASK) , "send");
-		// ½«"send"ºÍsendMsg Action¹ØÁª
+		// å°†"send"å’ŒsendMsg Actionå…³è”
 		jtf.getActionMap().put("send", sendMsg);
 		jf.pack();
 		jf.setVisible(true);

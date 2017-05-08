@@ -1,11 +1,11 @@
-package chapter11_05_ÊÂ¼ş´¦Àí;
+package chapter11_05_äº‹ä»¶å¤„ç†;
 
 
 import java.awt.*;
 import java.awt.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,23 +13,23 @@ import java.awt.event.*;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// GUI½çÃæÀà¼Ì³ĞWindowAdapter×÷ÎªÊÂ¼ş¼àÌıÆ÷Àà
+// GUIç•Œé¢ç±»ç»§æ‰¿WindowAdapterä½œä¸ºäº‹ä»¶ç›‘å¬å™¨ç±»
 public class SimpleEventHandler extends WindowAdapter
 {
-	private Frame f = new Frame("²âÊÔ");
+	private Frame f = new Frame("æµ‹è¯•");
 	private TextArea ta = new TextArea(6 , 40);
 	public void init()
 	{
-		// ½«¸ÃÀàµÄÄ¬ÈÏ¶ÔÏó×÷ÎªÊÂ¼ş¼àÌıÆ÷¶ÔÏó
+		// å°†è¯¥ç±»çš„é»˜è®¤å¯¹è±¡ä½œä¸ºäº‹ä»¶ç›‘å¬å™¨å¯¹è±¡
 		f.addWindowListener(this);
 		f.add(ta);
 		f.pack();
 		f.setVisible(true);
 	}
-	// GUI½çÃæÀàÖ±½Ó°üº¬ÊÂ¼ş´¦ÀíÆ÷·½·¨
+	// GUIç•Œé¢ç±»ç›´æ¥åŒ…å«äº‹ä»¶å¤„ç†å™¨æ–¹æ³•
 	public void windowClosing(WindowEvent e)
 	{
-		System.out.println("ÓÃ»§¹Ø±Õ´°¿Ú£¡\n");
+		System.out.println("ç”¨æˆ·å…³é—­çª—å£ï¼\n");
 		System.exit(0);
 	}
 	public static void main(String[] args)

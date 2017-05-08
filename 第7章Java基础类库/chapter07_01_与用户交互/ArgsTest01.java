@@ -1,8 +1,8 @@
-package chapter07_01_ÓëÓÃ»§½»»¥;
+package chapter07_01_ä¸ç”¨æˆ·äº¤äº’;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,9 +13,9 @@ package chapter07_01_ÓëÓÃ»§½»»¥;
  */
 public class ArgsTest01 {
 	public static void main(String... args) {
-		// Êä³öargsÊı×éµÄ³¤¶È
+		// è¾“å‡ºargsæ•°ç»„çš„é•¿åº¦
 		System.out.println(args.length);
-		// ±éÀúargsÊı×éµÄÃ¿¸öÔªËØ
+		// éå†argsæ•°ç»„çš„æ¯ä¸ªå…ƒç´ 
 		for (String arg : args) {
 			System.out.println(arg);
 		}

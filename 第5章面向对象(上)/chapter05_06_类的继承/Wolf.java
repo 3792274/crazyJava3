@@ -1,10 +1,10 @@
-package chapter05_06_ÀàµÄ¼Ì³Ğ;
+package chapter05_06_ç±»çš„ç»§æ‰¿;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,31 +16,31 @@ class Creature
 {
 	public Creature()
 	{
-		System.out.println("CreatureÎŞ²ÎÊıµÄ¹¹ÔìÆ÷");
+		System.out.println("Creatureæ— å‚æ•°çš„æ„é€ å™¨");
 	}
 }
 class Animal extends Creature
 {
 	public Animal(String name)
 	{
-		System.out.println("Animal´øÒ»¸ö²ÎÊıµÄ¹¹ÔìÆ÷£¬"
-			+ "¸Ã¶¯ÎïµÄnameÎª" + name);
+		System.out.println("Animalå¸¦ä¸€ä¸ªå‚æ•°çš„æ„é€ å™¨ï¼Œ"
+			+ "è¯¥åŠ¨ç‰©çš„nameä¸º" + name);
 	}
 	public Animal(String name , int age)
 	{
-		// Ê¹ÓÃthisµ÷ÓÃÍ¬Ò»¸öÖØÔØµÄ¹¹ÔìÆ÷
+		// ä½¿ç”¨thisè°ƒç”¨åŒä¸€ä¸ªé‡è½½çš„æ„é€ å™¨
 		this(name);
-		System.out.println("Animal´øÁ½¸ö²ÎÊıµÄ¹¹ÔìÆ÷£¬"
-			+ "ÆäageÎª" + age);
+		System.out.println("Animalå¸¦ä¸¤ä¸ªå‚æ•°çš„æ„é€ å™¨ï¼Œ"
+			+ "å…¶ageä¸º" + age);
 	}
 }
 public class Wolf extends Animal
 {
 	public Wolf()
 	{
-		// ÏÔÊ½µ÷ÓÃ¸¸ÀàÓĞÁ½¸ö²ÎÊıµÄ¹¹ÔìÆ÷
-		super("»ÒÌ«ÀÇ", 3);
-		System.out.println("WolfÎŞ²ÎÊıµÄ¹¹ÔìÆ÷");
+		// æ˜¾å¼è°ƒç”¨çˆ¶ç±»æœ‰ä¸¤ä¸ªå‚æ•°çš„æ„é€ å™¨
+		super("ç°å¤ªç‹¼", 3);
+		System.out.println("Wolfæ— å‚æ•°çš„æ„é€ å™¨");
 	}
 	public static void main(String[] args)
 	{

@@ -4,8 +4,8 @@ package chapter15_09_NIO;
 import java.nio.charset.*;
 import java.util.*;
 /**
- * Description:获取JDK支持的全部字符集
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * Description:鑾峰彇JDK鏀寔鐨勫叏閮ㄥ瓧绗﹂泦
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -18,13 +18,13 @@ public class CharsetTest
 	public static void main(String[] args)
 	{
 		String fileEncoding = System.getProperty("file.encoding");
-		System.out.println("本地系统的文件编码格式： "+fileEncoding);
+		System.out.println("鏈湴绯荤粺鐨勬枃浠剁紪鐮佹牸寮忥細 "+fileEncoding);
 		
-		// 获取Java支持的全部字符集
+		// 鑾峰彇Java鏀寔鐨勫叏閮ㄥ瓧绗﹂泦
 		SortedMap<String,Charset>  map = Charset.availableCharsets();
 		for (String alias : map.keySet())
 		{
-			// 输出字符集的别名和对应的Charset对象
+			// 杈撳嚭瀛楃闆嗙殑鍒悕鍜屽搴旂殑Charset瀵硅薄
 			System.out.println(alias + "----->"+ map.get(alias));
 		}
 	}

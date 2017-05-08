@@ -1,22 +1,22 @@
-package chapter11_03_²¼¾Ö¹ÜÀíÆ÷;
+package chapter11_03_å¸ƒå±€ç®¡ç†å™¨;
 
 
 import java.awt.*;
 /**
- * Description:¾ø¶Ô¶¨Î»
+ * Description:ç»å¯¹å®šä½
  */
 public class NullLayoutTest
 {
-	Frame f = new Frame("²âÊÔ´°¿Ú");
+	Frame f = new Frame("æµ‹è¯•çª—å£");
 	
-	Button b1 = new Button("µÚÒ»¸ö°´Å¥");
-	Button b2 = new Button("µÚ¶ş¸ö°´Å¥");
+	Button b1 = new Button("ç¬¬ä¸€ä¸ªæŒ‰é’®");
+	Button b2 = new Button("ç¬¬äºŒä¸ªæŒ‰é’®");
 	
 	public void init()
 	{
-		// ÉèÖÃÊ¹ÓÃnull²¼¾Ö¹ÜÀíÆ÷
+		// è®¾ç½®ä½¿ç”¨nullå¸ƒå±€ç®¡ç†å™¨
 		f.setLayout(null);
-		// ÏÂÃæÇ¿ÖÆÉèÖÃÃ¿¸ö°´Å¥µÄ´óĞ¡¡¢Î»ÖÃ
+		// ä¸‹é¢å¼ºåˆ¶è®¾ç½®æ¯ä¸ªæŒ‰é’®çš„å¤§å°ã€ä½ç½®
 		b1.setBounds(20, 30, 90, 28);
 		f.add(b1);
 		

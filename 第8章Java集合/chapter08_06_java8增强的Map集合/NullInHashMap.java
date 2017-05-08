@@ -1,12 +1,12 @@
-package chapter08_06_java8ÔöÇ¿µÄMap¼¯ºÏ;
+package chapter08_06_java8å¢å¼ºçš„Mapé›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * 1.HashTable:¹ıÊ±µÄ£¬Ïß³Ì°²È«£¬²»ÔÊĞínull×÷Îªkey ºÍvalue
- * 2.HashMap,Ïß³Ì²»°²È«µÄ£¬ÔÊĞínullÎªkey ºÍ Value£¬ÔªËØkey²»ÄÜÖØ¸´£¬set
- * 3.±ØĞëÖØĞ´hashCode/equal
+ * 1.HashTable:è¿‡æ—¶çš„ï¼Œçº¿ç¨‹å®‰å…¨ï¼Œä¸å…è®¸nullä½œä¸ºkey å’Œvalue
+ * 2.HashMap,çº¿ç¨‹ä¸å®‰å…¨çš„ï¼Œå…è®¸nullä¸ºkey å’Œ Valueï¼Œå…ƒç´ keyä¸èƒ½é‡å¤ï¼Œset
+ * 3.å¿…é¡»é‡å†™hashCode/equal
  */
 public class NullInHashMap
 {
@@ -14,14 +14,14 @@ public class NullInHashMap
 	{
 		HashMap hm = new HashMap();
 		
-		// ÊÔÍ¼½«Á½¸ökeyÎªnullµÄkey-value¶Ô·ÅÈëHashMapÖĞ
+		// è¯•å›¾å°†ä¸¤ä¸ªkeyä¸ºnullçš„key-valueå¯¹æ”¾å…¥HashMapä¸­
 		hm.put(null , null);
-		hm.put(null , null);    // ¢Ù
+		hm.put(null , null);    // â‘ 
 		
-		// ½«Ò»¸övalueÎªnullµÄkey-value¶Ô·ÅÈëHashMapÖĞ
-		hm.put("a" , null);    // ¢Ú
+		// å°†ä¸€ä¸ªvalueä¸ºnullçš„key-valueå¯¹æ”¾å…¥HashMapä¸­
+		hm.put("a" , null);    // â‘¡
 		
-		// Êä³öMap¶ÔÏó
+		// è¾“å‡ºMapå¯¹è±¡
 		System.out.println(hm);
 	}
 }

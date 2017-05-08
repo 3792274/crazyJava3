@@ -1,4 +1,4 @@
-package chapter12_05_java7ĞÂÔöµÄSwing¹¦ÄÜ;
+package chapter12_05_java7æ–°å¢çš„SwingåŠŸèƒ½;
 
 
 import java.beans.*;
@@ -10,7 +10,7 @@ import javax.swing.*;
 import javax.swing.plaf.LayerUI;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -22,37 +22,37 @@ class WaitingLayerUI extends LayerUI<JComponent>
 {
 	private boolean isRunning;
 	private Timer timer;
-	// ¼ÇÂ¼×ª¹ıµÄ½Ç¶È
-	private int angle;      // ¢Ù
+	// è®°å½•è½¬è¿‡çš„è§’åº¦
+	private int angle;      // â‘ 
 	public void paint(Graphics g, JComponent c)
 	{
 		super.paint(g, c);
 		int w = c.getWidth();
 		int h = c.getHeight();
-		// ÒÑ¾­Í£Ö¹ÔËĞĞ£¬Ö±½Ó·µ»Ø
+		// å·²ç»åœæ­¢è¿è¡Œï¼Œç›´æ¥è¿”å›
 		if (!isRunning)
 			return;
 		Graphics2D g2 = (Graphics2D)g.create();
 		Composite urComposite = g2.getComposite();
 		g2.setComposite(AlphaComposite.getInstance(
 			AlphaComposite.SRC_OVER, .5f));
-		// Ìî³ä¾ØĞÎ
+		// å¡«å……çŸ©å½¢
 		g2.fillRect(0, 0, w, h);
 		g2.setComposite(urComposite);
-		// -----ÏÂÃæ´úÂë¿ªÊ¼»æÖÆ×ª¶¯ÖĞµÄ¡°³İÂÖ¡±----
-		// ¼ÆËãµÃµ½¿í¡¢¸ßÖĞ½ÏĞ¡ÖµµÄ1/5
+		// -----ä¸‹é¢ä»£ç å¼€å§‹ç»˜åˆ¶è½¬åŠ¨ä¸­çš„â€œé½¿è½®â€----
+		// è®¡ç®—å¾—åˆ°å®½ã€é«˜ä¸­è¾ƒå°å€¼çš„1/5
 		int s = Math.min(w , h) / 5;
 		int cx = w / 2;
 		int cy = h / 2;
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING
 			, RenderingHints.VALUE_ANTIALIAS_ON);
-		// ÉèÖÃ±Ê´¥
+		// è®¾ç½®ç¬”è§¦
 		g2.setStroke( new BasicStroke(s / 2
 			, BasicStroke.CAP_ROUND , BasicStroke.JOIN_ROUND));
 		g2.setPaint(Color.BLUE);
-		// »­±ÊÈÆ±»×°ÊÎ×é¼şµÄÖĞĞÄ×ª¹ıangle¶È
+		// ç”»ç¬”ç»•è¢«è£…é¥°ç»„ä»¶çš„ä¸­å¿ƒè½¬è¿‡angleåº¦
 		g2.rotate(Math.PI * angle / 180, cx, cy);
-		// Ñ­»·»æÖÆ12ÌõÏßÌõ£¬ĞÎ³É¡°³İÂÖ¡±
+		// å¾ªç¯ç»˜åˆ¶12æ¡çº¿æ¡ï¼Œå½¢æˆâ€œé½¿è½®â€
 		for (int i = 0; i < 12; i++)
 		{
 			float scale = (11.0f - (float)i) / 11.0f;
@@ -63,41 +63,41 @@ class WaitingLayerUI extends LayerUI<JComponent>
 		}
 		g2.dispose();
 	}
-	// ¿ØÖÆµÈ´ı£¨³İÂÖ¿ªÊ¼×ª¶¯£©µÄ·½·¨
+	// æ§åˆ¶ç­‰å¾…ï¼ˆé½¿è½®å¼€å§‹è½¬åŠ¨ï¼‰çš„æ–¹æ³•
 	public void start()
 	{
-		// Èç¹ûÒÑ¾­ÔÚÔËĞĞÖĞ£¬Ö±½Ó·µ»Ø
+		// å¦‚æœå·²ç»åœ¨è¿è¡Œä¸­ï¼Œç›´æ¥è¿”å›
 		if (isRunning)
 			return;
 		isRunning = true;
-		// Ã¿¸ô0.1ÃëÖØ»æÒ»´Î
+		// æ¯éš”0.1ç§’é‡ç»˜ä¸€æ¬¡
 		timer = new Timer(100, e -> {
 			if (isRunning)
 			{
-				// ´¥·¢applyPropertyChange()·½·¨£¬ÈÃJLayerÖØ»æ¡£
-				// ÔÚÕâĞĞ´úÂëÖĞ£¬ºóÃæÁ½¸ö²ÎÊıÃ»ÓĞÒâÒå¡£
+				// è§¦å‘applyPropertyChange()æ–¹æ³•ï¼Œè®©JLayeré‡ç»˜ã€‚
+				// åœ¨è¿™è¡Œä»£ç ä¸­ï¼Œåé¢ä¸¤ä¸ªå‚æ•°æ²¡æœ‰æ„ä¹‰ã€‚
 				firePropertyChange("crazyitFlag", 0 , 1);
-				// ½Ç¶È¼Ó6
-				angle += 6;      // ¢Ú
-				// µ½´ï360ºóÔÙ´Ó0¿ªÊ¼
+				// è§’åº¦åŠ 6
+				angle += 6;      // â‘¡
+				// åˆ°è¾¾360åå†ä»0å¼€å§‹
 				if (angle >= 360)
 					angle = 0;
 			}
 		});
 		timer.start();
 	}
-	// ¿ØÖÆÍ£Ö¹µÈ´ı£¨³İÂÖÍ£Ö¹×ª¶¯£©µÄ·½·¨
+	// æ§åˆ¶åœæ­¢ç­‰å¾…ï¼ˆé½¿è½®åœæ­¢è½¬åŠ¨ï¼‰çš„æ–¹æ³•
 	public void stop()
 	{
 		isRunning = false;
-		// ×îºóÍ¨ÖªJLayerÖØ»æÒ»´Î£¬Çå³ıÔø¾­»æÖÆµÄÍ¼ĞÎ
+		// æœ€åé€šçŸ¥JLayeré‡ç»˜ä¸€æ¬¡ï¼Œæ¸…é™¤æ›¾ç»ç»˜åˆ¶çš„å›¾å½¢
 		firePropertyChange("crazyitFlag", 0 , 1);
 		timer.stop();
 	}
 	public void applyPropertyChange(PropertyChangeEvent pce
 		, JLayer layer)
 	{
-		// ¿ØÖÆJLayerÖØ»æ
+		// æ§åˆ¶JLayeré‡ç»˜
 		if (pce.getPropertyName().equals("crazyitFlag"))
 		{
 			layer.repaint();
@@ -108,42 +108,42 @@ public class WaitingJLayerTest
 {
 	public void init()
 	{
-		JFrame f = new JFrame("×ª¶¯µÄ¡°³İÂÖ¡±");
+		JFrame f = new JFrame("è½¬åŠ¨çš„â€œé½¿è½®â€");
 		JPanel p = new JPanel();
 		ButtonGroup group = new ButtonGroup();
 		JRadioButton radioButton;
-		// ´´½¨3¸öRadioButton£¬²¢½«ËüÃÇÌí¼Ó³ÉÒ»×é
-		p.add(radioButton = new JRadioButton("Íø¹º¹ºÂò", true));
+		// åˆ›å»º3ä¸ªRadioButtonï¼Œå¹¶å°†å®ƒä»¬æ·»åŠ æˆä¸€ç»„
+		p.add(radioButton = new JRadioButton("ç½‘è´­è´­ä¹°", true));
 		group.add(radioButton);
-		p.add(radioButton = new JRadioButton("Êéµê¹ºÂò"));
+		p.add(radioButton = new JRadioButton("ä¹¦åº—è´­ä¹°"));
 		group.add(radioButton);
-		p.add(radioButton = new JRadioButton("Í¼Êé¹İ½èÔÄ"));
+		p.add(radioButton = new JRadioButton("å›¾ä¹¦é¦†å€Ÿé˜…"));
 		group.add(radioButton);
-		// Ìí¼Ó3¸öJCheckBox
-		p.add(new JCheckBox("·è¿ñJava½²Òå"));
-		p.add(new JCheckBox("·è¿ñAndroid½²Òå"));
-		p.add(new JCheckBox("·è¿ñAjax½²Òå"));
-		p.add(new JCheckBox("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃ"));
-		JButton orderButton = new JButton("Í¶Æ±");
+		// æ·»åŠ 3ä¸ªJCheckBox
+		p.add(new JCheckBox("ç–¯ç‹‚Javaè®²ä¹‰"));
+		p.add(new JCheckBox("ç–¯ç‹‚Androidè®²ä¹‰"));
+		p.add(new JCheckBox("ç–¯ç‹‚Ajaxè®²ä¹‰"));
+		p.add(new JCheckBox("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨"));
+		JButton orderButton = new JButton("æŠ•ç¥¨");
 		p.add(orderButton);
-		// ´´½¨LayerUI¶ÔÏó
+		// åˆ›å»ºLayerUIå¯¹è±¡
 		final WaitingLayerUI layerUI = new WaitingLayerUI();
-		// Ê¹ÓÃlayerUIÀ´×°ÊÎÖ¸¶¨JPanel×é¼ş
+		// ä½¿ç”¨layerUIæ¥è£…é¥°æŒ‡å®šJPanelç»„ä»¶
 		JLayer<JComponent> layer = new JLayer<JComponent>(p, layerUI);
-		// ÉèÖÃ4ÃëÖ®ºóÖ´ĞĞÖ¸¶¨¶¯×÷£ºµ÷ÓÃlayerUIµÄstop()·½·¨
+		// è®¾ç½®4ç§’ä¹‹åæ‰§è¡ŒæŒ‡å®šåŠ¨ä½œï¼šè°ƒç”¨layerUIçš„stop()æ–¹æ³•
 		final Timer stopper = new Timer(4000, ae -> layerUI.stop());
-		// ÉèÖÃstopper¶¨Ê±Æ÷Ö»´¥·¢Ò»´Î¡£
+		// è®¾ç½®stopperå®šæ—¶å™¨åªè§¦å‘ä¸€æ¬¡ã€‚
 		stopper.setRepeats(false);
-		// ÎªorderButton°ó¶¨ÊÂ¼ş¼àÌıÆ÷£ºµ¥»÷¸Ã°´Å¥Ê±:µ÷ÓÃlayerUIµÄstart()·½·¨
+		// ä¸ºorderButtonç»‘å®šäº‹ä»¶ç›‘å¬å™¨ï¼šå•å‡»è¯¥æŒ‰é’®æ—¶:è°ƒç”¨layerUIçš„start()æ–¹æ³•
 		orderButton.addActionListener(ae -> {
 			layerUI.start();
-			// Èç¹ûstopper¶¨Ê±Æ÷ÒÑÍ£Ö¹£¬Æô¶¯Ëü
+			// å¦‚æœstopperå®šæ—¶å™¨å·²åœæ­¢ï¼Œå¯åŠ¨å®ƒ
 			if (!stopper.isRunning())
 			{
 				stopper.start();
 			}
 		});
-		// ½«×°ÊÎºóµÄJPanel×é¼şÌí¼Óµ½ÈİÆ÷ÖĞ
+		// å°†è£…é¥°åçš„JPanelç»„ä»¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 		f.add(layer);
 		f.setSize(300, 170);
 		f.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);

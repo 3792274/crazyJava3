@@ -1,8 +1,8 @@
-package chapter04_03_循环结构;
+package chapter04_03_寰幆缁撴瀯;
 
 /**
  * Description: <br/>
- * 网站: <a href="http://www.crazyit.org">疯狂Java联盟</a> <br/>
+ * 缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,11 +13,11 @@ package chapter04_03_循环结构;
  */
 public class NestedLoopTest {
 	public static void main(String[] args) {
-		// 外层循环
+		// 澶栧眰寰幆
 		for (int i = 0; i < 5; i++) {
-			// 内层循环
+			// 鍐呭眰寰幆
 			for (int j = 0; j < 3; j++) {
-				System.out.println("i的值为:" + i + "  j的值为:" + j);
+				System.out.println("i鐨勫�间负:" + i + "  j鐨勫�间负:" + j);
 			}
 		}
 	}

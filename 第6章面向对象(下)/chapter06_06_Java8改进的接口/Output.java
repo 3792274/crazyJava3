@@ -1,8 +1,8 @@
-package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
+package chapter06_06_Java8æ”¹è¿›çš„æ¥å£;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -12,28 +12,28 @@ package chapter06_06_Java8¸Ä½øµÄ½Ó¿Ú;
  * @version 1.0
  */
 public interface Output {
-	// ½Ó¿ÚÀï¶¨ÒåµÄ³ÉÔ±±äÁ¿Ö»ÄÜÊÇ³£Á¿ ,Ä¬ÈÏÎª public static final 
+	// æ¥å£é‡Œå®šä¹‰çš„æˆå‘˜å˜é‡åªèƒ½æ˜¯å¸¸é‡ ,é»˜è®¤ä¸º public static final 
 	int MAX_CACHE_LINE = 50;
 
-	// ½Ó¿ÚÀï¶¨ÒåµÄÆÕÍ¨·½·¨Ö»ÄÜÊÇpublicµÄ³éÏó·½·¨
+	// æ¥å£é‡Œå®šä¹‰çš„æ™®é€šæ–¹æ³•åªèƒ½æ˜¯publicçš„æŠ½è±¡æ–¹æ³•
 	void out();
 
 	void putData(String msg);
 
-	// ÔÚ½Ó¿ÚÖĞ¶¨ÒåÄ¬ÈÏ·½·¨£¬ĞèÒªÊ¹ÓÃdefaultĞŞÊÎ,Ä¬ÈÏpublic ,²»ÄÜ¶¨Òåstatic,ĞèÒª½Ó¿ÚÊµÏÖÀàÀ´µ÷ÓÃ
+	// åœ¨æ¥å£ä¸­å®šä¹‰é»˜è®¤æ–¹æ³•ï¼Œéœ€è¦ä½¿ç”¨defaultä¿®é¥°,é»˜è®¤public ,ä¸èƒ½å®šä¹‰static,éœ€è¦æ¥å£å®ç°ç±»æ¥è°ƒç”¨
 	default void print(String... msgs) {
 		for (String msg : msgs) {
 			System.out.println(msg);
 		}
 	}
 
-	// ÔÚ½Ó¿ÚÖĞ¶¨ÒåÄ¬ÈÏ·½·¨£¬ĞèÒªÊ¹ÓÃdefaultĞŞÊÎ
+	// åœ¨æ¥å£ä¸­å®šä¹‰é»˜è®¤æ–¹æ³•ï¼Œéœ€è¦ä½¿ç”¨defaultä¿®é¥°
 	default void test() {
-		System.out.println("Ä¬ÈÏµÄtest()·½·¨");
+		System.out.println("é»˜è®¤çš„test()æ–¹æ³•");
 	}
 
-	// ÔÚ½Ó¿ÚÖĞ¶¨ÒåÀà·½·¨£¬ĞèÒªÊ¹ÓÃstaticĞŞÊÎ,²»ÄÜdefault À´ĞŞÊÎ£¬Ä¬ÈÏpublic ,Àà·½·¨¿ÉÒÔÊ¹ÓÃ½Ó¿ÚÖ±½Óµ÷ÓÃ¡£
+	// åœ¨æ¥å£ä¸­å®šä¹‰ç±»æ–¹æ³•ï¼Œéœ€è¦ä½¿ç”¨staticä¿®é¥°,ä¸èƒ½default æ¥ä¿®é¥°ï¼Œé»˜è®¤public ,ç±»æ–¹æ³•å¯ä»¥ä½¿ç”¨æ¥å£ç›´æ¥è°ƒç”¨ã€‚
 	   static String staticTest() {
-		return "½Ó¿ÚÀïµÄÀà·½·¨";
+		return "æ¥å£é‡Œçš„ç±»æ–¹æ³•";
 	}
 }

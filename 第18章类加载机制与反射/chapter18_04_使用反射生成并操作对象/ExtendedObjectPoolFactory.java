@@ -1,11 +1,11 @@
-package chapter18_04_Ê¹ÓÃ·´ÉäÉú³É²¢²Ù×÷¶ÔÏó;
+package chapter18_04_ä½¿ç”¨åå°„ç”Ÿæˆå¹¶æ“ä½œå¯¹è±¡;
 
 import java.util.*;
 import java.io.*;
 import java.lang.reflect.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,10 +15,10 @@ import java.lang.reflect.*;
  */
 public class ExtendedObjectPoolFactory
 {
-	// ¶¨ÒåÒ»¸ö¶ÔÏó³Ø,Ç°ÃæÊÇ¶ÔÏóÃû£¬ºóÃæÊÇÊµ¼Ê¶ÔÏó
+	// å®šä¹‰ä¸€ä¸ªå¯¹è±¡æ± ,å‰é¢æ˜¯å¯¹è±¡åï¼Œåé¢æ˜¯å®é™…å¯¹è±¡
 	private Map<String ,Object> objectPool = new HashMap<>();
 	private Properties config = new Properties();
-	// ´ÓÖ¸¶¨ÊôĞÔÎÄ¼şÖĞ³õÊ¼»¯Properties¶ÔÏó
+	// ä»æŒ‡å®šå±æ€§æ–‡ä»¶ä¸­åˆå§‹åŒ–Propertieså¯¹è±¡
 	public void init(String fileName)
 	{
 		try(
@@ -28,30 +28,30 @@ public class ExtendedObjectPoolFactory
 		}
 		catch (IOException ex)
 		{
-			System.out.println("¶ÁÈ¡" + fileName + "Òì³£");
+			System.out.println("è¯»å–" + fileName + "å¼‚å¸¸");
 		}
 	}
-	// ¶¨ÒåÒ»¸ö´´½¨¶ÔÏóµÄ·½·¨£¬
-	// ¸Ã·½·¨Ö»Òª´«ÈëÒ»¸ö×Ö·û´®ÀàÃû£¬³ÌĞò¿ÉÒÔ¸ù¾İ¸ÃÀàÃûÉú³ÉJava¶ÔÏó
+	// å®šä¹‰ä¸€ä¸ªåˆ›å»ºå¯¹è±¡çš„æ–¹æ³•ï¼Œ
+	// è¯¥æ–¹æ³•åªè¦ä¼ å…¥ä¸€ä¸ªå­—ç¬¦ä¸²ç±»åï¼Œç¨‹åºå¯ä»¥æ ¹æ®è¯¥ç±»åç”ŸæˆJavaå¯¹è±¡
 	private Object createObject(String clazzName)
 		throws InstantiationException
 		, IllegalAccessException , ClassNotFoundException
 	{
-		// ¸ù¾İ×Ö·û´®À´»ñÈ¡¶ÔÓ¦µÄClass¶ÔÏó
+		// æ ¹æ®å­—ç¬¦ä¸²æ¥è·å–å¯¹åº”çš„Classå¯¹è±¡
 		Class<?> clazz =Class.forName(clazzName);
-		// Ê¹ÓÃclazz¶ÔÓ¦ÀàµÄÄ¬ÈÏ¹¹ÔìÆ÷´´½¨ÊµÀı
+		// ä½¿ç”¨clazzå¯¹åº”ç±»çš„é»˜è®¤æ„é€ å™¨åˆ›å»ºå®ä¾‹
 		return clazz.newInstance();
 	}
-	// ¸Ã·½·¨¸ù¾İÖ¸¶¨ÎÄ¼şÀ´³õÊ¼»¯¶ÔÏó³Ø£¬
-	// Ëü»á¸ù¾İÅäÖÃÎÄ¼şÀ´´´½¨¶ÔÏó
+	// è¯¥æ–¹æ³•æ ¹æ®æŒ‡å®šæ–‡ä»¶æ¥åˆå§‹åŒ–å¯¹è±¡æ± ï¼Œ
+	// å®ƒä¼šæ ¹æ®é…ç½®æ–‡ä»¶æ¥åˆ›å»ºå¯¹è±¡
 	public void initPool()throws InstantiationException
 		,IllegalAccessException , ClassNotFoundException
 	{
 		for (String name : config.stringPropertyNames())
 		{
-			// Ã¿È¡³öÒ»¶Ôkey-value¶Ô£¬Èç¹ûkeyÖĞ²»°üº¬°Ù·ÖºÅ£¨%£©
-			// Õâ¾Í±êÃ÷ÊÇ¸ù¾İvalueÀ´´´½¨Ò»¸ö¶ÔÏó
-			// µ÷ÓÃcreateObject´´½¨¶ÔÏó£¬²¢½«¶ÔÏóÌí¼Óµ½¶ÔÏó³ØÖĞ
+			// æ¯å–å‡ºä¸€å¯¹key-valueå¯¹ï¼Œå¦‚æœkeyä¸­ä¸åŒ…å«ç™¾åˆ†å·ï¼ˆ%ï¼‰
+			// è¿™å°±æ ‡æ˜æ˜¯æ ¹æ®valueæ¥åˆ›å»ºä¸€ä¸ªå¯¹è±¡
+			// è°ƒç”¨createObjectåˆ›å»ºå¯¹è±¡ï¼Œå¹¶å°†å¯¹è±¡æ·»åŠ åˆ°å¯¹è±¡æ± ä¸­
 			if (!name.contains("%"))
 			{
 				objectPool.put(name ,
@@ -59,38 +59,38 @@ public class ExtendedObjectPoolFactory
 			}
 		}
 	}
-	// ¸Ã·½·¨½«»á¸ù¾İÊôĞÔÎÄ¼şÀ´µ÷ÓÃÖ¸¶¨¶ÔÏóµÄsetter·½·¨
+	// è¯¥æ–¹æ³•å°†ä¼šæ ¹æ®å±æ€§æ–‡ä»¶æ¥è°ƒç”¨æŒ‡å®šå¯¹è±¡çš„setteræ–¹æ³•
 	public void initProperty()throws InvocationTargetException
 		,IllegalAccessException,NoSuchMethodException
 	{
 		for (String name : config.stringPropertyNames())
 		{
-			// Ã¿È¡³öÒ»¶Ôkey-value¶Ô£¬Èç¹ûkeyÖĞ°üº¬°Ù·ÖºÅ£¨%£©
-			// ¼´¿ÉÈÏÎª¸ÃkeyÓÃÓÚ¿ØÖÆµ÷ÓÃ¶ÔÏóµÄsetter·½·¨ÉèÖÃÖµ£¬
-			// %Ç°°ëÎª¶ÔÏóÃû×Ö£¬ºó°ë¿ØÖÆsetter·½·¨Ãû
+			// æ¯å–å‡ºä¸€å¯¹key-valueå¯¹ï¼Œå¦‚æœkeyä¸­åŒ…å«ç™¾åˆ†å·ï¼ˆ%ï¼‰
+			// å³å¯è®¤ä¸ºè¯¥keyç”¨äºæ§åˆ¶è°ƒç”¨å¯¹è±¡çš„setteræ–¹æ³•è®¾ç½®å€¼ï¼Œ
+			// %å‰åŠä¸ºå¯¹è±¡åå­—ï¼ŒååŠæ§åˆ¶setteræ–¹æ³•å
 			if (name.contains("%"))
 			{
-				// ½«ÅäÖÃÎÄ¼şÖĞkey°´%·Ö¸î
+				// å°†é…ç½®æ–‡ä»¶ä¸­keyæŒ‰%åˆ†å‰²
 				String[] objAndProp = name.split("%");
-				// È¡³öµ÷ÓÃsetter·½·¨µÄ²ÎÊıÖµ
+				// å–å‡ºè°ƒç”¨setteræ–¹æ³•çš„å‚æ•°å€¼
 				Object target = getObject(objAndProp[0]);
-				// »ñÈ¡setter·½·¨Ãû:set + "Ê××ÖÄ¸´óĞ´" + Ê£ÏÂ²¿·Ö
+				// è·å–setteræ–¹æ³•å:set + "é¦–å­—æ¯å¤§å†™" + å‰©ä¸‹éƒ¨åˆ†
 				String mtdName = "set" +
 				objAndProp[1].substring(0 , 1).toUpperCase()
 					+ objAndProp[1].substring(1);
-				// Í¨¹ıtargetµÄgetClass()»ñÈ¡ËüÊµÏÖÀàËù¶ÔÓ¦µÄClass¶ÔÏó
+				// é€šè¿‡targetçš„getClass()è·å–å®ƒå®ç°ç±»æ‰€å¯¹åº”çš„Classå¯¹è±¡
 				Class<?> targetClass = target.getClass();
-				// »ñÈ¡Ï£Íûµ÷ÓÃµÄsetter·½·¨
+				// è·å–å¸Œæœ›è°ƒç”¨çš„setteræ–¹æ³•
 				Method mtd = targetClass.getMethod(mtdName , String.class);
-				// Í¨¹ıMethodµÄinvoke·½·¨Ö´ĞĞsetter·½·¨£¬
-				// ½«config.getProperty(name)µÄÖµ×÷Îªµ÷ÓÃsetterµÄ·½·¨µÄ²ÎÊı
+				// é€šè¿‡Methodçš„invokeæ–¹æ³•æ‰§è¡Œsetteræ–¹æ³•ï¼Œ
+				// å°†config.getProperty(name)çš„å€¼ä½œä¸ºè°ƒç”¨setterçš„æ–¹æ³•çš„å‚æ•°
 				mtd.invoke(target , config.getProperty(name));
 			}
 		}
 	}
 	public Object getObject(String name)
 	{
-		// ´ÓobjectPoolÖĞÈ¡³öÖ¸¶¨name¶ÔÓ¦µÄ¶ÔÏó¡£
+		// ä»objectPoolä¸­å–å‡ºæŒ‡å®šnameå¯¹åº”çš„å¯¹è±¡ã€‚
 		return objectPool.get(name);
 	}
 	public static void main(String[] args)

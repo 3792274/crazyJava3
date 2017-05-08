@@ -1,10 +1,10 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,11 +16,11 @@ public class TeachableProgrammerTest
 {
 	public static void main(String[] args)
 	{
-		TeachableProgrammer tp = new TeachableProgrammer("Àî¸Õ");
-		//Ö±½Óµ÷ÓÃTeachableProgrammerÀà´ÓProgrammerÀà¼Ì³Ğµ½µÄwork·½·¨
+		TeachableProgrammer tp = new TeachableProgrammer("æåˆš");
+		//ç›´æ¥è°ƒç”¨TeachableProgrammerç±»ä»Programmerç±»ç»§æ‰¿åˆ°çš„workæ–¹æ³•
 		tp.work();
-		//±íÃæÉÏµ÷ÓÃµÄÊÇClosureµÄwork·½·¨£¬
-		//Êµ¼ÊÉÏÊÇ»Øµ÷TeachableProgrammerµÄteach·½·¨
+		//è¡¨é¢ä¸Šè°ƒç”¨çš„æ˜¯Closureçš„workæ–¹æ³•ï¼Œ
+		//å®é™…ä¸Šæ˜¯å›è°ƒTeachableProgrammerçš„teachæ–¹æ³•
 		tp.getCallbackReference().work();
 	}
 }

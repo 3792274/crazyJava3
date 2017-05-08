@@ -77,7 +77,7 @@ public class Employee {
     }
 
     public String show() {
-        return "²âÊÔ·½·¨ÒıÓÃ£¡";
+        return "æµ‹è¯•æ–¹æ³•å¼•ç”¨ï¼";
     }
 
     @Override

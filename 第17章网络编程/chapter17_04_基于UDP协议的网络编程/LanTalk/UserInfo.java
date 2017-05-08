@@ -1,9 +1,9 @@
-package chapter17_04_»ùÓÚUDPĞ­ÒéµÄÍøÂç±à³Ì.LanTalk;
+package chapter17_04_åŸºäºUDPåè®®çš„ç½‘ç»œç¼–ç¨‹.LanTalk;
 
 import java.net.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -13,18 +13,18 @@ import java.net.*;
  */
 public class UserInfo
 {
-	// ¸ÃÓÃ»§µÄÍ¼±ê
+	// è¯¥ç”¨æˆ·çš„å›¾æ ‡
 	private String icon;
-	// ¸ÃÓÃ»§µÄÃû×Ö
+	// è¯¥ç”¨æˆ·çš„åå­—
 	private String name;
-	// ¸ÃÓÃ»§µÄMulitcastSocketËùÔÚµÄIPºÍ¶Ë¿Ú
+	// è¯¥ç”¨æˆ·çš„MulitcastSocketæ‰€åœ¨çš„IPå’Œç«¯å£
 	private SocketAddress address;
-	// ¸ÃÓÃ»§Ê§È¥ÁªÏµµÄ´ÎÊı
+	// è¯¥ç”¨æˆ·å¤±å»è”ç³»çš„æ¬¡æ•°
 	private int lost;
-	// ¸ÃÓÃ»§¶ÔÓ¦µÄ½»Ì¸´°¿Ú
+	// è¯¥ç”¨æˆ·å¯¹åº”çš„äº¤è°ˆçª—å£
 	private ChatFrame chatFrame;
 	public UserInfo(){}
-	// ÓĞ²ÎÊıµÄ¹¹ÔìÆ÷
+	// æœ‰å‚æ•°çš„æ„é€ å™¨
 	public UserInfo(String icon , String name
 		, SocketAddress address , int lost)
 	{
@@ -34,9 +34,9 @@ public class UserInfo
 		this.lost = lost;
 	}
 
-	// Ê¡ÂÔËùÓĞ³ÉÔ±±äÁ¿µÄsetterºÍgetter·½·¨
+	// çœç•¥æ‰€æœ‰æˆå‘˜å˜é‡çš„setterå’Œgetteræ–¹æ³•
 
-	// iconµÄsetterºÍgetter·½·¨
+	// iconçš„setterå’Œgetteræ–¹æ³•
 	public void setIcon(String icon)
 	{
 		this.icon = icon;
@@ -46,7 +46,7 @@ public class UserInfo
 		return this.icon;
 	}
 
-	// nameµÄsetterºÍgetter·½·¨
+	// nameçš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name)
 	{
 		this.name = name;
@@ -56,7 +56,7 @@ public class UserInfo
 		return this.name;
 	}
 
-	// addressµÄsetterºÍgetter·½·¨
+	// addressçš„setterå’Œgetteræ–¹æ³•
 	public void setAddress(SocketAddress address)
 	{
 		this.address = address;
@@ -66,7 +66,7 @@ public class UserInfo
 		return this.address;
 	}
 
-	// lostµÄsetterºÍgetter·½·¨
+	// lostçš„setterå’Œgetteræ–¹æ³•
 	public void setLost(int lost)
 	{
 		this.lost = lost;
@@ -76,7 +76,7 @@ public class UserInfo
 		return this.lost;
 	}
 
-	// chatFrameµÄsetterºÍgetter·½·¨
+	// chatFrameçš„setterå’Œgetteræ–¹æ³•
 	public void setChatFrame(ChatFrame chatFrame)
 	{
 		this.chatFrame = chatFrame;
@@ -86,8 +86,8 @@ public class UserInfo
 		return this.chatFrame;
 	}
 
-	// Ê¹ÓÃaddress×÷Îª¸ÃÓÃ»§µÄ±êÊ¶£¬ËùÒÔ¸ù¾İaddress×÷Îª
-	// ÖØĞ´hashCode()ºÍequals·½·¨µÄ±ê×¼
+	// ä½¿ç”¨addressä½œä¸ºè¯¥ç”¨æˆ·çš„æ ‡è¯†ï¼Œæ‰€ä»¥æ ¹æ®addressä½œä¸º
+	// é‡å†™hashCode()å’Œequalsæ–¹æ³•çš„æ ‡å‡†
 	public int hashCode()
 	{
 		return address.hashCode();

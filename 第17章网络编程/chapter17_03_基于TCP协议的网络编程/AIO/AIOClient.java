@@ -1,4 +1,4 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì.AIO;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹.AIO;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -10,7 +10,7 @@ import java.nio.charset.*;
 import java.util.concurrent.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -22,12 +22,12 @@ public class AIOClient
 {
 	final static String UTF_8 = "utf-8";
 	final static int PORT = 30000;
-	// Óë·şÎñÆ÷¶ËÍ¨ĞÅµÄÒì²½Channel
+	// ä¸æœåŠ¡å™¨ç«¯é€šä¿¡çš„å¼‚æ­¥Channel
 	AsynchronousSocketChannel clientChannel;
-	JFrame mainWin = new JFrame("¶àÈËÁÄÌì");
+	JFrame mainWin = new JFrame("å¤šäººèŠå¤©");
 	JTextArea jta = new JTextArea(16 , 48);
 	JTextField jtf = new JTextField(40);
-	JButton sendBn = new JButton("·¢ËÍ");
+	JButton sendBn = new JButton("å‘é€");
 	public void init()
 	{
 		mainWin.setLayout(new BorderLayout());
@@ -36,7 +36,7 @@ public class AIOClient
 		JPanel jp = new JPanel();
 		jp.add(jtf);
 		jp.add(sendBn);
-		// ·¢ËÍÏûÏ¢µÄAction,ActionÊÇActionListenerµÄ×Ó½Ó¿Ú
+		// å‘é€æ¶ˆæ¯çš„Action,Actionæ˜¯ActionListenerçš„å­æ¥å£
 		Action sendAction = new AbstractAction()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -46,24 +46,24 @@ public class AIOClient
 				{
 					try
 					{
-						// ½«contentÄÚÈİĞ´ÈëChannelÖĞ
+						// å°†contentå†…å®¹å†™å…¥Channelä¸­
 						clientChannel.write(ByteBuffer.wrap(content
-							.trim().getBytes(UTF_8))).get();    //¢Ù
+							.trim().getBytes(UTF_8))).get();    //â‘ 
 					}
 					catch (Exception ex)
 					{
 						ex.printStackTrace();
 					}
 				}
-				// Çå¿ÕÊäÈë¿ò
+				// æ¸…ç©ºè¾“å…¥æ¡†
 				jtf.setText("");
 			}
 		};
 		sendBn.addActionListener(sendAction);
-		// ½«Ctrl+Enter¼üºÍ"send"¹ØÁª
+		// å°†Ctrl+Enteré”®å’Œ"send"å…³è”
 		jtf.getInputMap().put(KeyStroke.getKeyStroke('\n'
 			, java.awt.event.InputEvent.CTRL_MASK) , "send");
-		// ½«"send"ºÍsendAction¹ØÁª
+		// å°†"send"å’ŒsendActionå…³è”
 		jtf.getActionMap().put("send", sendAction);
 		mainWin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainWin.add(jp , BorderLayout.SOUTH);
@@ -73,39 +73,39 @@ public class AIOClient
 	public void connect()
 		throws Exception
 	{
-		// ¶¨ÒåÒ»¸öByteBuffer×¼±¸¶ÁÈ¡Êı¾İ
+		// å®šä¹‰ä¸€ä¸ªByteBufferå‡†å¤‡è¯»å–æ•°æ®
 		final ByteBuffer buff = ByteBuffer.allocate(1024);
-		// ´´½¨Ò»¸öÏß³Ì³Ø
+		// åˆ›å»ºä¸€ä¸ªçº¿ç¨‹æ± 
 		ExecutorService executor = Executors.newFixedThreadPool(80);
-		// ÒÔÖ¸¶¨Ïß³Ì³ØÀ´´´½¨Ò»¸öAsynchronousChannelGroup
+		// ä»¥æŒ‡å®šçº¿ç¨‹æ± æ¥åˆ›å»ºä¸€ä¸ªAsynchronousChannelGroup
 		AsynchronousChannelGroup channelGroup =
 			AsynchronousChannelGroup.withThreadPool(executor);
-		// ÒÔchannelGroup×÷Îª×é¹ÜÀíÆ÷À´´´½¨AsynchronousSocketChannel
+		// ä»¥channelGroupä½œä¸ºç»„ç®¡ç†å™¨æ¥åˆ›å»ºAsynchronousSocketChannel
 		clientChannel = AsynchronousSocketChannel.open(channelGroup);
-		// ÈÃAsynchronousSocketChannelÁ¬½Óµ½Ö¸¶¨IP¡¢Ö¸¶¨¶Ë¿Ú
+		// è®©AsynchronousSocketChannelè¿æ¥åˆ°æŒ‡å®šIPã€æŒ‡å®šç«¯å£
 		clientChannel.connect(new InetSocketAddress("127.0.0.1"
 			, PORT)).get();
-		jta.append("---Óë·şÎñÆ÷Á¬½Ó³É¹¦---\n");
+		jta.append("---ä¸æœåŠ¡å™¨è¿æ¥æˆåŠŸ---\n");
 		buff.clear();
 		clientChannel.read(buff, null
-			, new CompletionHandler<Integer,Object>()   //¢Ú
+			, new CompletionHandler<Integer,Object>()   //â‘¡
 		{
 			@Override
 			public void completed(Integer result, Object attachment)
 			{
 				buff.flip();
-				// ½«buffÖĞÄÚÈİ×ª»»Îª×Ö·û´®
+				// å°†buffä¸­å†…å®¹è½¬æ¢ä¸ºå­—ç¬¦ä¸²
 				String content = StandardCharsets.UTF_8
 					.decode(buff).toString();
-				// ÏÔÊ¾´Ó·şÎñÆ÷¶Ë¶ÁÈ¡µÄÊı¾İ
-				jta.append("Ä³ÈËËµ£º" + content + "\n");
+				// æ˜¾ç¤ºä»æœåŠ¡å™¨ç«¯è¯»å–çš„æ•°æ®
+				jta.append("æŸäººè¯´ï¼š" + content + "\n");
 				buff.clear();
 				clientChannel.read(buff , null , this);
 			}
 			@Override
 			public void failed(Throwable ex, Object attachment)
 			{
-				System.out.println("¶ÁÈ¡Êı¾İÊ§°Ü: " + ex);
+				System.out.println("è¯»å–æ•°æ®å¤±è´¥: " + ex);
 			}
 		});
 	}

@@ -1,14 +1,14 @@
-package chapter06_09_Ã¶¾ÙÀà;
+package chapter06_09_æšä¸¾ç±»;
 
 public class GenderTest07 {
 public static void main(String[] args) {
 	Gender06 g  = Gender06.valueOf("FEMALE");
-	g.setName("Å®");
-	System.out.println(g+"´ú±í£º "+g.getName());
+	g.setName("å¥³");
+	System.out.println(g+"ä»£è¡¨ï¼š "+g.getName());
 	
-	//´ËÊ±ÉèÖÃnameÖµ£¬½«»áÌáÊ¾²ÎÊı´íÎó
-	g.setName("ÄĞ");
-	System.out.println(g+"´ú±í£º "+g.getName());
+	//æ­¤æ—¶è®¾ç½®nameå€¼ï¼Œå°†ä¼šæç¤ºå‚æ•°é”™è¯¯
+	g.setName("ç”·");
+	System.out.println(g+"ä»£è¡¨ï¼š "+g.getName());
 
 }
 }

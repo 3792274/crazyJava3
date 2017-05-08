@@ -1,11 +1,11 @@
-package chapter07_02_ÏµÍ³Ïà¹Ø;
+package chapter07_02_ç³»ç»Ÿç›¸å…³;
 
 import java.io.*;
 import java.util.*;
 
 /**
- * Description: javaÊ¹ÓÃnative·½·¨²½Öè <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description: javaä½¿ç”¨nativeæ–¹æ³•æ­¥éª¤ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,35 +16,35 @@ import java.util.*;
  */
 
 /**
- * 1.javaÖĞÉùÃ÷nativeĞŞÊÎµÄ·½·¨£¬ÀàËÆÓÚabstract·½·¨£¬Ö»ÓĞÇ©Ãû£¬Ã»ÓĞÊµÏÖ£¬±àÒë³ÉclassÎÄ¼ş<br>
- * 2.ÓÃjavah ±àÒëÉÏ²½Éú²úµÄclassÎÄ¼ş£¬½«²úÉúÒ»¸ö.hÎÄ¼ş<br>
- * 3.Ğ´Ò»¸öcppÊµÏÖnative·½·¨£¬ĞèÒªÉÏ²½µÄ.hÎÄ¼ş ¼° JDK×Ô´øµÄjni.hÎÄ¼ş<br>
- * 4.½«cppÎÄ¼ş±àÒë³ö¶¯Ì¬Á´½Ó¿âÎÄ¼ş<br>
- * 5.ÔÚJavaÖĞÊ¹ÓÃSystemÀàµÄloadLibrary()»òÕßRuntimeµÄloadLibrary()¼ÓÔØÀà¿â<br>
- * µÚ4²½²úÉúµÄ¶¯Ì¬Á´½Ó¿âÎÄ¼ş£¬java³ÌĞòÖĞ¾Í¿ÉÒÔµ÷ÓÃÕâ¸önative·½·¨ÁË¡£<br>
+ * 1.javaä¸­å£°æ˜nativeä¿®é¥°çš„æ–¹æ³•ï¼Œç±»ä¼¼äºabstractæ–¹æ³•ï¼Œåªæœ‰ç­¾åï¼Œæ²¡æœ‰å®ç°ï¼Œç¼–è¯‘æˆclassæ–‡ä»¶<br>
+ * 2.ç”¨javah ç¼–è¯‘ä¸Šæ­¥ç”Ÿäº§çš„classæ–‡ä»¶ï¼Œå°†äº§ç”Ÿä¸€ä¸ª.hæ–‡ä»¶<br>
+ * 3.å†™ä¸€ä¸ªcppå®ç°nativeæ–¹æ³•ï¼Œéœ€è¦ä¸Šæ­¥çš„.hæ–‡ä»¶ åŠ JDKè‡ªå¸¦çš„jni.hæ–‡ä»¶<br>
+ * 4.å°†cppæ–‡ä»¶ç¼–è¯‘å‡ºåŠ¨æ€é“¾æ¥åº“æ–‡ä»¶<br>
+ * 5.åœ¨Javaä¸­ä½¿ç”¨Systemç±»çš„loadLibrary()æˆ–è€…Runtimeçš„loadLibrary()åŠ è½½ç±»åº“<br>
+ * ç¬¬4æ­¥äº§ç”Ÿçš„åŠ¨æ€é“¾æ¥åº“æ–‡ä»¶ï¼Œjavaç¨‹åºä¸­å°±å¯ä»¥è°ƒç”¨è¿™ä¸ªnativeæ–¹æ³•äº†ã€‚<br>
  *
  */
 
 public class SystemTest01 {
 	public static void main(String[] args) throws Exception {
 		
-		// »ñÈ¡ÏµÍ³ËùÓĞµÄ»·¾³±äÁ¿
+		// è·å–ç³»ç»Ÿæ‰€æœ‰çš„ç¯å¢ƒå˜é‡
 		Map<String, String> env = System.getenv();
 		for (String name : env.keySet()) {
 			System.out.println(name + " ---> " + env.get(name));
 		}
 		
 		
-		// »ñÈ¡Ö¸¶¨»·¾³±äÁ¿µÄÖµ
+		// è·å–æŒ‡å®šç¯å¢ƒå˜é‡çš„å€¼
 		System.out.println(System.getenv("JAVA_HOME"));
 	
-		// »ñÈ¡ËùÓĞµÄÏµÍ³ÊôĞÔ
+		// è·å–æ‰€æœ‰çš„ç³»ç»Ÿå±æ€§
 		Properties props = System.getProperties();
 		
-		// ½«ËùÓĞÏµÍ³ÊôĞÔ±£´æµ½props.txtÎÄ¼şÖĞ
+		// å°†æ‰€æœ‰ç³»ç»Ÿå±æ€§ä¿å­˜åˆ°props.txtæ–‡ä»¶ä¸­
 		props.store(new FileOutputStream("props.txt"), "System Properties");
 		
-		// Êä³öÌØ¶¨µÄÏµÍ³ÊôĞÔ
+		// è¾“å‡ºç‰¹å®šçš„ç³»ç»Ÿå±æ€§
 		System.out.println(System.getProperty("os.name"));
 	}
 }

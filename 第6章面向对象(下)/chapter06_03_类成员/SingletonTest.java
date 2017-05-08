@@ -1,10 +1,10 @@
-package chapter06_03_Àà³ÉÔ±;
+package chapter06_03_ç±»æˆå‘˜;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,20 +14,20 @@ package chapter06_03_Àà³ÉÔ±;
  */
 class Singleton
 {
-	// Ê¹ÓÃÒ»¸öÀà±äÁ¿À´»º´æÔø¾­´´½¨µÄÊµÀı
+	// ä½¿ç”¨ä¸€ä¸ªç±»å˜é‡æ¥ç¼“å­˜æ›¾ç»åˆ›å»ºçš„å®ä¾‹
 	private static Singleton instance;
-	// ½«¹¹ÔìÆ÷Ê¹ÓÃprivateĞŞÊÎ£¬Òş²Ø¸Ã¹¹ÔìÆ÷
+	// å°†æ„é€ å™¨ä½¿ç”¨privateä¿®é¥°ï¼Œéšè—è¯¥æ„é€ å™¨
 	private Singleton(){}
-	// Ìá¹©Ò»¸ö¾²Ì¬·½·¨£¬ÓÃÓÚ·µ»ØSingletonÊµÀı
-	// ¸Ã·½·¨¿ÉÒÔ¼ÓÈë×Ô¶¨ÒåµÄ¿ØÖÆ£¬±£Ö¤Ö»²úÉúÒ»¸öSingleton¶ÔÏó
+	// æä¾›ä¸€ä¸ªé™æ€æ–¹æ³•ï¼Œç”¨äºè¿”å›Singletonå®ä¾‹
+	// è¯¥æ–¹æ³•å¯ä»¥åŠ å…¥è‡ªå®šä¹‰çš„æ§åˆ¶ï¼Œä¿è¯åªäº§ç”Ÿä¸€ä¸ªSingletonå¯¹è±¡
 	public static Singleton getInstance()
 	{
-		// Èç¹ûinstanceÎªnull£¬±íÃ÷»¹²»Ôø´´½¨Singleton¶ÔÏó
-		// Èç¹ûinstance²»Îªnull£¬Ôò±íÃ÷ÒÑ¾­´´½¨ÁËSingleton¶ÔÏó£¬
-		// ½«²»»áÖØĞÂ´´½¨ĞÂµÄÊµÀı
+		// å¦‚æœinstanceä¸ºnullï¼Œè¡¨æ˜è¿˜ä¸æ›¾åˆ›å»ºSingletonå¯¹è±¡
+		// å¦‚æœinstanceä¸ä¸ºnullï¼Œåˆ™è¡¨æ˜å·²ç»åˆ›å»ºäº†Singletonå¯¹è±¡ï¼Œ
+		// å°†ä¸ä¼šé‡æ–°åˆ›å»ºæ–°çš„å®ä¾‹
 		if (instance == null)
 		{
-			// ´´½¨Ò»¸öSingleton¶ÔÏó£¬²¢½«Æä»º´æÆğÀ´
+			// åˆ›å»ºä¸€ä¸ªSingletonå¯¹è±¡ï¼Œå¹¶å°†å…¶ç¼“å­˜èµ·æ¥
 			instance = new Singleton();
 		}
 		return instance;
@@ -37,10 +37,10 @@ public class SingletonTest
 {
 	public static void main(String[] args)
 	{
-		// ´´½¨Singleton¶ÔÏó²»ÄÜÍ¨¹ı¹¹ÔìÆ÷£¬
-		// Ö»ÄÜÍ¨¹ıgetInstance·½·¨À´µÃµ½ÊµÀı
+		// åˆ›å»ºSingletonå¯¹è±¡ä¸èƒ½é€šè¿‡æ„é€ å™¨ï¼Œ
+		// åªèƒ½é€šè¿‡getInstanceæ–¹æ³•æ¥å¾—åˆ°å®ä¾‹
 		Singleton s1 = Singleton.getInstance();
 		Singleton s2 = Singleton.getInstance();
-		System.out.println(s1 == s2); // ½«Êä³ötrue
+		System.out.println(s1 == s2); // å°†è¾“å‡ºtrue
 	}
 }

@@ -11,36 +11,36 @@ import com.atguigu.java8.streamAPI.Employee.Status;
 
 
 /*
- * Ò»¡¢ Stream µÄ²Ù×÷²½Öè
+ * ä¸€ã€ Stream çš„æ“ä½œæ­¥éª¤
  * 
- * 1. ´´½¨ Stream
+ * 1. åˆ›å»º Stream
  * 
- * 2. ÖĞ¼ä²Ù×÷
+ * 2. ä¸­é—´æ“ä½œ
  * 
- * 3. ÖÕÖ¹²Ù×÷
+ * 3. ç»ˆæ­¢æ“ä½œ
  */
 public class TestStreamAPI2 {
 	
 	List<Employee> emps = Arrays.asList(
-			new Employee(102, "ÀîËÄ", 59, 6666.66, Status.BUSY),
-			new Employee(101, "ÕÅÈı", 18, 9999.99, Status.FREE),
-			new Employee(103, "ÍõÎå", 28, 3333.33, Status.VOCATION),
-			new Employee(104, "ÕÔÁù", 8, 7777.77, Status.BUSY),
-			new Employee(104, "ÕÔÁù", 8, 7777.77, Status.FREE),
-			new Employee(104, "ÕÔÁù", 8, 7777.77, Status.FREE),
-			new Employee(105, "ÌïÆß", 38, 5555.55, Status.BUSY)
+			new Employee(102, "æå››", 59, 6666.66, Status.BUSY),
+			new Employee(101, "å¼ ä¸‰", 18, 9999.99, Status.FREE),
+			new Employee(103, "ç‹äº”", 28, 3333.33, Status.VOCATION),
+			new Employee(104, "èµµå…­", 8, 7777.77, Status.BUSY),
+			new Employee(104, "èµµå…­", 8, 7777.77, Status.FREE),
+			new Employee(104, "èµµå…­", 8, 7777.77, Status.FREE),
+			new Employee(105, "ç”°ä¸ƒ", 38, 5555.55, Status.BUSY)
 	);
 	
-	//3. ÖÕÖ¹²Ù×÷
+	//3. ç»ˆæ­¢æ“ä½œ
 	/*
-		allMatch¡ª¡ª¼ì²éÊÇ·ñÆ¥ÅäËùÓĞÔªËØ
-		anyMatch¡ª¡ª¼ì²éÊÇ·ñÖÁÉÙÆ¥ÅäÒ»¸öÔªËØ
-		noneMatch¡ª¡ª¼ì²éÊÇ·ñÃ»ÓĞÆ¥ÅäµÄÔªËØ
-		findFirst¡ª¡ª·µ»ØµÚÒ»¸öÔªËØ
-		findAny¡ª¡ª·µ»Øµ±Ç°Á÷ÖĞµÄÈÎÒâÔªËØ
-		count¡ª¡ª·µ»ØÁ÷ÖĞÔªËØµÄ×Ü¸öÊı
-		max¡ª¡ª·µ»ØÁ÷ÖĞ×î´óÖµ
-		min¡ª¡ª·µ»ØÁ÷ÖĞ×îĞ¡Öµ
+		allMatchâ€”â€”æ£€æŸ¥æ˜¯å¦åŒ¹é…æ‰€æœ‰å…ƒç´ 
+		anyMatchâ€”â€”æ£€æŸ¥æ˜¯å¦è‡³å°‘åŒ¹é…ä¸€ä¸ªå…ƒç´ 
+		noneMatchâ€”â€”æ£€æŸ¥æ˜¯å¦æ²¡æœ‰åŒ¹é…çš„å…ƒç´ 
+		findFirstâ€”â€”è¿”å›ç¬¬ä¸€ä¸ªå…ƒç´ 
+		findAnyâ€”â€”è¿”å›å½“å‰æµä¸­çš„ä»»æ„å…ƒç´ 
+		countâ€”â€”è¿”å›æµä¸­å…ƒç´ çš„æ€»ä¸ªæ•°
+		maxâ€”â€”è¿”å›æµä¸­æœ€å¤§å€¼
+		minâ€”â€”è¿”å›æµä¸­æœ€å°å€¼
 	 */
 	@Test
 	public void test1(){
@@ -97,7 +97,7 @@ public class TestStreamAPI2 {
 		System.out.println(op2.get());
 	}
 	
-	//×¢Òâ£ºÁ÷½øĞĞÁËÖÕÖ¹²Ù×÷ºó£¬²»ÄÜÔÙ´ÎÊ¹ÓÃ
+	//æ³¨æ„ï¼šæµè¿›è¡Œäº†ç»ˆæ­¢æ“ä½œåï¼Œä¸èƒ½å†æ¬¡ä½¿ç”¨
 	@Test
 	public void test4(){
 		Stream<Employee> stream = emps.stream()

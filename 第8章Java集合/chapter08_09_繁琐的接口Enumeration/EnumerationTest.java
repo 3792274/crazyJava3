@@ -1,21 +1,21 @@
-package chapter08_09_·±ËöµÄ½Ó¿ÚEnumeration;
+package chapter08_09_ç¹ççš„æ¥å£Enumeration;
 
 
 import java.util.*;
 /**
- * Description:»ù±¾²»ÓÃ¿´£¬Ì«Ôç¹ıÊ±µÄ
+ * Description:åŸºæœ¬ä¸ç”¨çœ‹ï¼Œå¤ªæ—©è¿‡æ—¶çš„
  */
 public class EnumerationTest
 {
 	public static void main(String[] args)
 	{
 		Vector v = new Vector();
-		v.add("·è¿ñJava½²Òå");
-		v.add("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½");
+		v.add("ç–¯ç‹‚Javaè®²ä¹‰");
+		v.add("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜");
 	
 		Hashtable scores = new Hashtable();
-		scores.put("ÓïÎÄ" , 78);
-		scores.put("ÊıÑ§" , 88);
+		scores.put("è¯­æ–‡" , 78);
+		scores.put("æ•°å­¦" , 88);
 		
 		Enumeration em = v.elements();
 		while (em.hasMoreElements())

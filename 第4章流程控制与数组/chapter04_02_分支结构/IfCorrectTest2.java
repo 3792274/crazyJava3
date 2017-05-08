@@ -1,8 +1,8 @@
-package chapter04_02_·ÖÖ§½á¹¹;
+package chapter04_02_åˆ†æ”¯ç»“æ„;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,17 +17,17 @@ public class IfCorrectTest2
 		int age = 45;
 		if (age > 60)
 		{
-			System.out.println("ÀÏÄêÈË");
+			System.out.println("è€å¹´äºº");
 		}
-		// ÔÚÔ­±¾µÄifÌõ¼şÖĞÔö¼ÓÁËelseµÄÒşº¬Ìõ¼ş
+		// åœ¨åŸæœ¬çš„ifæ¡ä»¶ä¸­å¢åŠ äº†elseçš„éšå«æ¡ä»¶
 		if (age > 40 && !(age >60))
 		{
-			System.out.println("ÖĞÄêÈË");
+			System.out.println("ä¸­å¹´äºº");
 		}
-		// ÔÚÔ­±¾µÄifÌõ¼şÖĞÔö¼ÓÁËelseµÄÒşº¬Ìõ¼ş
+		// åœ¨åŸæœ¬çš„ifæ¡ä»¶ä¸­å¢åŠ äº†elseçš„éšå«æ¡ä»¶
 		if (age > 20 && !(age > 60) && !(age > 40 && !(age >60)))
 		{
-			System.out.println("ÇàÄêÈË");
+			System.out.println("é’å¹´äºº");
 		}
 	}
 }

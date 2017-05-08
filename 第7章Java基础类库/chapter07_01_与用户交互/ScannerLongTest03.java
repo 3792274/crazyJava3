@@ -1,10 +1,10 @@
-package chapter07_01_ÓëÓÃ»§½»»¥;
+package chapter07_01_ä¸ç”¨æˆ·äº¤äº’;
 
 import java.util.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,12 +15,12 @@ import java.util.*;
  */
 public class ScannerLongTest03 {
 	public static void main(String[] args) {
-		// System.in´ú±í±ê×¼ÊäÈë£¬¾ÍÊÇ¼üÅÌÊäÈë
+		// System.inä»£è¡¨æ ‡å‡†è¾“å…¥ï¼Œå°±æ˜¯é”®ç›˜è¾“å…¥
 		Scanner sc = new Scanner(System.in);
-		// ÅĞ¶ÏÊÇ·ñ»¹ÓĞÏÂÒ»¸ölongĞÍÕûÊı£¬¼üÈëµÄ±ØĞëÊÇÕûÊı·ñÔò»áÍË³ö
+		// åˆ¤æ–­æ˜¯å¦è¿˜æœ‰ä¸‹ä¸€ä¸ªlongå‹æ•´æ•°ï¼Œé”®å…¥çš„å¿…é¡»æ˜¯æ•´æ•°å¦åˆ™ä¼šé€€å‡º
 		while (sc.hasNextLong()) {
-			// Êä³öÊäÈëÏî
-			System.out.println("¼üÅÌÊäÈëµÄÄÚÈİÊÇ£º" + sc.nextLong());
+			// è¾“å‡ºè¾“å…¥é¡¹
+			System.out.println("é”®ç›˜è¾“å…¥çš„å†…å®¹æ˜¯ï¼š" + sc.nextLong());
 		}
 	}
 }

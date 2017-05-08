@@ -1,8 +1,8 @@
-package chapter04_03_Ñ­»·½á¹¹;
+package chapter04_03_å¾ªç¯ç»“æ„;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,25 +14,25 @@ public class DoWhileTest
 {
 	public static void main(String[] args)
 	{
-		// ¶¨Òå±äÁ¿count
+		// å®šä¹‰å˜é‡count
 		int count = 1;
-		// Ö´ĞĞdo whileÑ­»·
+		// æ‰§è¡Œdo whileå¾ªç¯
 		do
 		{
 			System.out.println(count);
-			// Ñ­»·µü´úÓï¾ä
+			// å¾ªç¯è¿­ä»£è¯­å¥
 			count++;
-			// Ñ­»·Ìõ¼ş½ô¸úwhile¹Ø¼ü×Ö
+			// å¾ªç¯æ¡ä»¶ç´§è·Ÿwhileå…³é”®å­—
 		}while (count < 10);
-		System.out.println("Ñ­»·½áÊø!");
+		System.out.println("å¾ªç¯ç»“æŸ!");
 
-		// ¶¨Òå±äÁ¿count2
+		// å®šä¹‰å˜é‡count2
 		int count2 = 20;
-		// Ö´ĞĞdo whileÑ­»·
+		// æ‰§è¡Œdo whileå¾ªç¯
 		do
-			// ÕâĞĞ´úÂë°ÑÑ­»·ÌåºÍµü´ú²¿·ÖºÏ²¢³ÉÁËÒ»ĞĞ´úÂë
+			// è¿™è¡Œä»£ç æŠŠå¾ªç¯ä½“å’Œè¿­ä»£éƒ¨åˆ†åˆå¹¶æˆäº†ä¸€è¡Œä»£ç 
 			System.out.println(count2++);
 		while (count2 < 10);
-		System.out.println("Ñ­»·½áÊø!");
+		System.out.println("å¾ªç¯ç»“æŸ!");
 	}
 }

@@ -10,18 +10,18 @@ public class TestPipe {
 
 	@Test
 	public void test1() throws IOException{
-		//1. »ñÈ¡¹ÜµÀ
+		//1. è·å–ç®¡é“
 		Pipe pipe = Pipe.open();
 		
-		//2. ½«»º³åÇøÖĞµÄÊı¾İĞ´Èë¹ÜµÀ
+		//2. å°†ç¼“å†²åŒºä¸­çš„æ•°æ®å†™å…¥ç®¡é“
 		ByteBuffer buf = ByteBuffer.allocate(1024);
 		
 		Pipe.SinkChannel sinkChannel = pipe.sink();
-		buf.put("Í¨¹ıµ¥Ïò¹ÜµÀ·¢ËÍÊı¾İ".getBytes());
+		buf.put("é€šè¿‡å•å‘ç®¡é“å‘é€æ•°æ®".getBytes());
 		buf.flip();
 		sinkChannel.write(buf);
 		
-		//3. ¶ÁÈ¡»º³åÇøÖĞµÄÊı¾İ
+		//3. è¯»å–ç¼“å†²åŒºä¸­çš„æ•°æ®
 		Pipe.SourceChannel sourceChannel = pipe.source();
 		buf.flip();
 		int len = sourceChannel.read(buf);

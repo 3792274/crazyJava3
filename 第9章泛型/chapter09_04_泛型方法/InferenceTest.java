@@ -1,10 +1,10 @@
-package chapter09_04_·ºĞÍ·½·¨;
+package chapter09_04_æ³›å‹æ–¹æ³•;
 
 
 
 /**
- * Description:Java8¸Ä½øµÄÀàĞÍÅĞ¶Ï
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:Java8æ”¹è¿›çš„ç±»å‹åˆ¤æ–­
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -33,20 +33,20 @@ public class InferenceTest
 {
 	public static void main(String[] args)
 	{
-		// ¿ÉÒÔÍ¨¹ı·½·¨¸³ÖµµÄÄ¿±ê²ÎÊıÀ´ÍÆ¶ÏÀàĞÍ²ÎÊıÎªString
+		// å¯ä»¥é€šè¿‡æ–¹æ³•èµ‹å€¼çš„ç›®æ ‡å‚æ•°æ¥æ¨æ–­ç±»å‹å‚æ•°ä¸ºString
 		MyUtil<String> ls = MyUtil.nil();
 		
-		// ÎŞĞèÊ¹ÓÃÏÂÃæÓï¾äÔÚµ÷ÓÃnil()·½·¨Ê±Ö¸¶¨ÀàĞÍ²ÎÊıµÄÀàĞÍ
+		// æ— éœ€ä½¿ç”¨ä¸‹é¢è¯­å¥åœ¨è°ƒç”¨nil()æ–¹æ³•æ—¶æŒ‡å®šç±»å‹å‚æ•°çš„ç±»å‹
 		MyUtil<String> mu = MyUtil.<String>nil();
 		
-		// ¿Éµ÷ÓÃcons·½·¨ËùĞèµÄ²ÎÊıÀàĞÍÀ´ÍÆ¶ÏÀàĞÍ²ÎÊıÎªInteger
+		// å¯è°ƒç”¨consæ–¹æ³•æ‰€éœ€çš„å‚æ•°ç±»å‹æ¥æ¨æ–­ç±»å‹å‚æ•°ä¸ºInteger
 		MyUtil.cons(42, MyUtil.nil());
 		
-		// ÎŞĞèÊ¹ÓÃÏÂÃæÓï¾äÔÚµ÷ÓÃnil()·½·¨Ê±Ö¸¶¨ÀàĞÍ²ÎÊıµÄÀàĞÍ
+		// æ— éœ€ä½¿ç”¨ä¸‹é¢è¯­å¥åœ¨è°ƒç”¨nil()æ–¹æ³•æ—¶æŒ‡å®šç±»å‹å‚æ•°çš„ç±»å‹
 		MyUtil.cons(42, MyUtil.<Integer>nil());
 
-		// Ï£ÍûÏµÍ³ÄÜÍÆ¶Ï³öµ÷ÓÃnil()·½·¨ÀàĞÍ²ÎÊıÎªStringÀàĞÍ£¬
-		// µ«Êµ¼ÊÉÏJava 8ÒÀÈ»ÍÆ¶Ï²»³öÀ´£¬ËùÒÔÏÂÃæ´úÂë±¨´í
+		// å¸Œæœ›ç³»ç»Ÿèƒ½æ¨æ–­å‡ºè°ƒç”¨nil()æ–¹æ³•ç±»å‹å‚æ•°ä¸ºStringç±»å‹ï¼Œ
+		// ä½†å®é™…ä¸ŠJava 8ä¾ç„¶æ¨æ–­ä¸å‡ºæ¥ï¼Œæ‰€ä»¥ä¸‹é¢ä»£ç æŠ¥é”™
 //		String s = MyUtil.nil().head();
 		String s = MyUtil.<String>nil().head();
 	}

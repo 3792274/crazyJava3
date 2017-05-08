@@ -1,5 +1,5 @@
 package com.atguigu.java8.streamAPI;
-//交易员类
+//浜ゆ槗鍛樼被
 public class Trader {
 
 	private String name;

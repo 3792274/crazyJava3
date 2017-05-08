@@ -1,8 +1,8 @@
-package chapter03_07_ÔËËã·û;
+package chapter03_07_è¿ç®—ç¬¦;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,14 +13,14 @@ package chapter03_07_ÔËËã·û;
  */
 public class EnhanceAssignTest {
 	public static void main(String[] args) {
-		// ¶¨ÒåÒ»¸öbyteÀàĞÍµÄ±äÁ¿
+		// å®šä¹‰ä¸€ä¸ªbyteç±»å‹çš„å˜é‡
 		byte a = 5;
-		// ÏÂÃæÓï¾ä³ö´í£¬ÒòÎª5Ä¬ÈÏÊÇintÀàĞÍ£¬a + 5¾ÍÊÇintÀàĞÍ¡£
-		// °ÑintÀàĞÍ¸³¸øbyteÀàĞÍµÄ±äÁ¿£¬ËùÒÔ³ö´í
+		// ä¸‹é¢è¯­å¥å‡ºé”™ï¼Œå› ä¸º5é»˜è®¤æ˜¯intç±»å‹ï¼Œa + 5å°±æ˜¯intç±»å‹ã€‚
+		// æŠŠintç±»å‹èµ‹ç»™byteç±»å‹çš„å˜é‡ï¼Œæ‰€ä»¥å‡ºé”™
 		// a = a + 5;
-		// ¶¨ÒåÒ»¸öbyteÀàĞÍµÄ±äÁ¿
+		// å®šä¹‰ä¸€ä¸ªbyteç±»å‹çš„å˜é‡
 		byte b = 5;
-		// ÏÂÃæÓï¾ä²»»á³öÏÖ´íÎó,ÔËËã·û¾­¹ıÓÅ»¯´¦Àí¡£
+		// ä¸‹é¢è¯­å¥ä¸ä¼šå‡ºç°é”™è¯¯,è¿ç®—ç¬¦ç»è¿‡ä¼˜åŒ–å¤„ç†ã€‚
 		b += 5;
 	}
 }

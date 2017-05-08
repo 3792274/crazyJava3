@@ -1,11 +1,11 @@
-package chapter11_10_ÍÏ·Å¹¦ÄÜ;
+package chapter11_10_æ‹–æ”¾åŠŸèƒ½;
 import java.awt.*;
 import java.awt.dnd.*;
 import java.awt.datatransfer.*;
 import javax.swing.*;
 /**
- * Description:SwingµÄÍÏ·ÅÖ§³Ö.½«¸ÃÎÄ±¾ÓòµÄÄÚÈİÍÏÈëÆäËû³ÌĞò.
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * Description:Swingçš„æ‹–æ”¾æ”¯æŒ.å°†è¯¥æ–‡æœ¬åŸŸçš„å†…å®¹æ‹–å…¥å…¶ä»–ç¨‹åº.
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,20 +17,20 @@ import javax.swing.*;
 
 public class DragSourceTest
 {
-	JFrame jf = new JFrame("SwingµÄÍÏ·ÅÖ§³Ö");
-	JLabel srcLabel = new JLabel("SwingµÄÍÏ·ÅÖ§³Ö.\n"
-		+"½«¸ÃÎÄ±¾ÓòµÄÄÚÈİÍÏÈëÆäËû³ÌĞò.\n");
+	JFrame jf = new JFrame("Swingçš„æ‹–æ”¾æ”¯æŒ");
+	JLabel srcLabel = new JLabel("Swingçš„æ‹–æ”¾æ”¯æŒ.\n"
+		+"å°†è¯¥æ–‡æœ¬åŸŸçš„å†…å®¹æ‹–å…¥å…¶ä»–ç¨‹åº.\n");
 	public void init()
 	{
 		DragSource dragSource = DragSource.getDefaultDragSource();
-		// ½«srcLabel×ª»»³ÉÍÏ·ÅÔ´£¬ËüÄÜ½ÓÊÜ¸´ÖÆ¡¢ÒÆ¶¯Á½ÖÖ²Ù×÷
+		// å°†srcLabelè½¬æ¢æˆæ‹–æ”¾æºï¼Œå®ƒèƒ½æ¥å—å¤åˆ¶ã€ç§»åŠ¨ä¸¤ç§æ“ä½œ
 		dragSource.createDefaultDragGestureRecognizer(srcLabel
 			, DnDConstants.ACTION_COPY_OR_MOVE
 			, event -> {
-			// ½«JLabelÀïµÄÎÄ±¾ĞÅÏ¢°ü×°³ÉTransferable¶ÔÏó
+			// å°†JLabelé‡Œçš„æ–‡æœ¬ä¿¡æ¯åŒ…è£…æˆTransferableå¯¹è±¡
 			String txt = srcLabel.getText();
 			Transferable transferable = new StringSelection(txt);
-			// ¼ÌĞøÍÏ·Å²Ù×÷,ÍÏ·Å¹ı³ÌÖĞÊ¹ÓÃÊÖ×´¹â±ê
+			// ç»§ç»­æ‹–æ”¾æ“ä½œ,æ‹–æ”¾è¿‡ç¨‹ä¸­ä½¿ç”¨æ‰‹çŠ¶å…‰æ ‡
 			event.startDrag(Cursor.getPredefinedCursor(Cursor
 				.HAND_CURSOR), transferable);
 		});

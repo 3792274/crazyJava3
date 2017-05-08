@@ -1,11 +1,11 @@
-package chapter11_04_AWT³£ÓÃ×é¼ş;
+package chapter11_04_AWTå¸¸ç”¨ç»„ä»¶;
 
 
 import java.awt.*;
 import javax.swing.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,52 +15,52 @@ import javax.swing.*;
  */
 public class CommonComponent
 {
-	Frame f = new Frame("²âÊÔ");
-	// ¶¨ÒåÒ»¸ö°´Å¥
-	Button ok = new Button("È·ÈÏ");
+	Frame f = new Frame("æµ‹è¯•");
+	// å®šä¹‰ä¸€ä¸ªæŒ‰é’®
+	Button ok = new Button("ç¡®è®¤");
 	CheckboxGroup cbg = new CheckboxGroup();
-	// ¶¨ÒåÒ»¸öµ¥Ñ¡¿ò£¨´¦ÓÚcbg×é£©£¬³õÊ¼´¦ÓÚ±»Ñ¡ÖĞ×´Ì¬
-	Checkbox male = new Checkbox("ÄĞ" , cbg , true);
-	// ¶¨ÒåÒ»¸öµ¥Ñ¡¿ò£¨´¦ÓÚcbg×é£©£¬³õÊ¼´¦ÓÚÃ»ÓĞÑ¡ÖĞ×´Ì¬
-	Checkbox female = new Checkbox("Å®" , cbg , false);
-	// ¶¨ÒåÒ»¸ö¸´Ñ¡¿ò£¬³õÊ¼´¦ÓÚÃ»ÓĞÑ¡ÖĞ×´Ì¬
-	Checkbox married = new Checkbox("ÊÇ·ñÒÑ»é£¿" , false);
-	// ¶¨ÒåÒ»¸öÏÂÀ­Ñ¡Ôñ¿ò
+	// å®šä¹‰ä¸€ä¸ªå•é€‰æ¡†ï¼ˆå¤„äºcbgç»„ï¼‰ï¼Œåˆå§‹å¤„äºè¢«é€‰ä¸­çŠ¶æ€
+	Checkbox male = new Checkbox("ç”·" , cbg , true);
+	// å®šä¹‰ä¸€ä¸ªå•é€‰æ¡†ï¼ˆå¤„äºcbgç»„ï¼‰ï¼Œåˆå§‹å¤„äºæ²¡æœ‰é€‰ä¸­çŠ¶æ€
+	Checkbox female = new Checkbox("å¥³" , cbg , false);
+	// å®šä¹‰ä¸€ä¸ªå¤é€‰æ¡†ï¼Œåˆå§‹å¤„äºæ²¡æœ‰é€‰ä¸­çŠ¶æ€
+	Checkbox married = new Checkbox("æ˜¯å¦å·²å©šï¼Ÿ" , false);
+	// å®šä¹‰ä¸€ä¸ªä¸‹æ‹‰é€‰æ‹©æ¡†
 	Choice colorChooser = new Choice();
-	// ¶¨ÒåÒ»¸öÁĞ±íÑ¡Ôñ¿ò
+	// å®šä¹‰ä¸€ä¸ªåˆ—è¡¨é€‰æ‹©æ¡†
 	List colorList = new List(6, true);
-	// ¶¨ÒåÒ»¸ö5ĞĞ¡¢20ÁĞµÄ¶àĞĞÎÄ±¾Óò
+	// å®šä¹‰ä¸€ä¸ª5è¡Œã€20åˆ—çš„å¤šè¡Œæ–‡æœ¬åŸŸ
 	TextArea ta = new TextArea(5, 20);
-	// ¶¨ÒåÒ»¸ö50ÁĞµÄµ¥ĞĞÎÄ±¾Óò
+	// å®šä¹‰ä¸€ä¸ª50åˆ—çš„å•è¡Œæ–‡æœ¬åŸŸ
 	TextField name = new TextField(50);
 	public void init()
 	{
-		colorChooser.add("ºìÉ«");
-		colorChooser.add("ÂÌÉ«");
-		colorChooser.add("À¶É«");
-		colorList.add("ºìÉ«");
-		colorList.add("ÂÌÉ«");
-		colorList.add("À¶É«");
-		// ´´½¨Ò»¸ö×°ÔØÁËÎÄ±¾¿ò¡¢°´Å¥µÄPanel
+		colorChooser.add("çº¢è‰²");
+		colorChooser.add("ç»¿è‰²");
+		colorChooser.add("è“è‰²");
+		colorList.add("çº¢è‰²");
+		colorList.add("ç»¿è‰²");
+		colorList.add("è“è‰²");
+		// åˆ›å»ºä¸€ä¸ªè£…è½½äº†æ–‡æœ¬æ¡†ã€æŒ‰é’®çš„Panel
 		Panel bottom = new Panel();
 		bottom.add(name);
 		bottom.add(ok);
 		f.add(bottom , BorderLayout.SOUTH);
-		// ´´½¨Ò»¸ö×°ÔØÁËÏÂÀ­Ñ¡Ôñ¿ò¡¢Èı¸öCheckboxµÄPanel
+		// åˆ›å»ºä¸€ä¸ªè£…è½½äº†ä¸‹æ‹‰é€‰æ‹©æ¡†ã€ä¸‰ä¸ªCheckboxçš„Panel
 		Panel checkPanel = new Panel();
 		checkPanel.add(colorChooser);
 		checkPanel.add(male);
 		checkPanel.add(female);
 		checkPanel.add(married);
-		// ´´½¨Ò»¸ö´¹Ö±ÅÅÁĞ×é¼şµÄBox£¬Ê¢×°¶àĞĞÎÄ±¾Óò¡¢Panel
+		// åˆ›å»ºä¸€ä¸ªå‚ç›´æ’åˆ—ç»„ä»¶çš„Boxï¼Œç››è£…å¤šè¡Œæ–‡æœ¬åŸŸã€Panel
 		Box topLeft = Box.createVerticalBox();
 		topLeft.add(ta);
 		topLeft.add(checkPanel);
-		// ´´½¨Ò»¸öË®Æ½ÅÅÁĞ×é¼şµÄBox£¬Ê¢×°topLeft¡¢colorList
+		// åˆ›å»ºä¸€ä¸ªæ°´å¹³æ’åˆ—ç»„ä»¶çš„Boxï¼Œç››è£…topLeftã€colorList
 		Box top = Box.createHorizontalBox();
 		top.add(topLeft);
 		top.add(colorList);
-		// ½«top BoxÈİÆ÷Ìí¼Óµ½´°¿ÚµÄÖĞ¼ä
+		// å°†top Boxå®¹å™¨æ·»åŠ åˆ°çª—å£çš„ä¸­é—´
 		f.add(top);
 		f.pack();
 		f.setVisible(true);

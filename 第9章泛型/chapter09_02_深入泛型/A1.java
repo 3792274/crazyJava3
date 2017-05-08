@@ -1,4 +1,4 @@
-package chapter09_02_ÉîÈë·ºĞÍ;
+package chapter09_02_æ·±å…¥æ³›å‹;
 
 
 
@@ -7,19 +7,19 @@ package chapter09_02_ÉîÈë·ºĞÍ;
  */
 public class A1 extends Apple<String>
 {
-	// ÕıÈ·ÖØĞ´ÁË¸¸ÀàµÄ·½·¨£¬·µ»ØÖµ
-	// Óë¸¸ÀàApple<String>µÄ·µ»ØÖµÍêÈ«ÏàÍ¬
+	// æ­£ç¡®é‡å†™äº†çˆ¶ç±»çš„æ–¹æ³•ï¼Œè¿”å›å€¼
+	// ä¸çˆ¶ç±»Apple<String>çš„è¿”å›å€¼å®Œå…¨ç›¸åŒ
 	public String getInfo()
 	{
-		return "×ÓÀà" + super.getInfo();
+		return "å­ç±»" + super.getInfo();
 	}
 	
 
 	/*
-	// ÏÂÃæ·½·¨ÊÇ´íÎóµÄ£¬ÖØĞ´¸¸Àà·½·¨Ê±·µ»ØÖµÀàĞÍ²»Ò»ÖÂ
+	// ä¸‹é¢æ–¹æ³•æ˜¯é”™è¯¯çš„ï¼Œé‡å†™çˆ¶ç±»æ–¹æ³•æ—¶è¿”å›å€¼ç±»å‹ä¸ä¸€è‡´
 	public Object getInfo()
 	{
-		return "×ÓÀà";
+		return "å­ç±»";
 	}
 	*/
 	

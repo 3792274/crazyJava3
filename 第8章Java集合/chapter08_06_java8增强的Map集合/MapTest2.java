@@ -1,10 +1,10 @@
-package chapter08_06_java8ÔöÇ¿µÄMap¼¯ºÏ;
+package chapter08_06_java8å¢å¼ºçš„Mapé›†åˆ;
 
 
 import java.util.*;
 /**
  * Description:
- * java8ÖĞĞÂÔöµÄ¶ÔMap²Ù×÷µÄ·½·¨
+ * java8ä¸­æ–°å¢çš„å¯¹Mapæ“ä½œçš„æ–¹æ³•
  */
 public class MapTest2
 {
@@ -12,28 +12,28 @@ public class MapTest2
 	{
 		Map map = new HashMap();
 		
-		// ³É¶Ô·ÅÈë¶à¸ökey-value¶Ô
-		map.put("·è¿ñJava½²Òå" , 109);
-		map.put("·è¿ñiOS½²Òå" , 99);
-		map.put("·è¿ñAjax½²Òå" , 79);
+		// æˆå¯¹æ”¾å…¥å¤šä¸ªkey-valueå¯¹
+		map.put("ç–¯ç‹‚Javaè®²ä¹‰" , 109);
+		map.put("ç–¯ç‹‚iOSè®²ä¹‰" , 99);
+		map.put("ç–¯ç‹‚Ajaxè®²ä¹‰" , 79);
 	
-		// ³¢ÊÔÌæ»»keyÎª"·è¿ñXML½²Òå"µÄvalue£¬ÓÉÓÚÔ­MapÖĞÃ»ÓĞ¶ÔÓ¦µÄkey£¬
-		// Òò´Ë¶ÔMapÃ»ÓĞ¸Ä±ä£¬²»»áÌí¼ÓĞÂµÄkey-value¶Ô
-		map.replace("·è¿ñXML½²Òå" , 66);
+		// å°è¯•æ›¿æ¢keyä¸º"ç–¯ç‹‚XMLè®²ä¹‰"çš„valueï¼Œç”±äºåŸMapä¸­æ²¡æœ‰å¯¹åº”çš„keyï¼Œ
+		// å› æ­¤å¯¹Mapæ²¡æœ‰æ”¹å˜ï¼Œä¸ä¼šæ·»åŠ æ–°çš„key-valueå¯¹
+		map.replace("ç–¯ç‹‚XMLè®²ä¹‰" , 66);
 		System.out.println(map);
 		
-		// Ê¹ÓÃÔ­valueÓë²ÎÊı¼ÆËã³öÀ´µÄ½á¹û¸²¸ÇÔ­ÓĞµÄvalue
-		map.merge("·è¿ñiOS½²Òå" , 10 ,
+		// ä½¿ç”¨åŸvalueä¸å‚æ•°è®¡ç®—å‡ºæ¥çš„ç»“æœè¦†ç›–åŸæœ‰çš„value
+		map.merge("ç–¯ç‹‚iOSè®²ä¹‰" , 10 ,
 			(oldVal , param) -> (Integer)oldVal + (Integer)param);
-		System.out.println(map); // "·è¿ñiOS½²Òå"µÄvalueÔö´óÁË10
+		System.out.println(map); // "ç–¯ç‹‚iOSè®²ä¹‰"çš„valueå¢å¤§äº†10
 	
-		// µ±keyÎª"Java"¶ÔÓ¦µÄvalueÎªnull£¨»ò²»´æÔÚÊ±£©£¬Ê¹ÓÃ¼ÆËãµÄ½á¹û×÷ÎªĞÂvalue
+		// å½“keyä¸º"Java"å¯¹åº”çš„valueä¸ºnullï¼ˆæˆ–ä¸å­˜åœ¨æ—¶ï¼‰ï¼Œä½¿ç”¨è®¡ç®—çš„ç»“æœä½œä¸ºæ–°value
 		map.computeIfAbsent("Java" , (key)->((String)key).length());
-		System.out.println(map); // mapÖĞÌí¼ÓÁË Java=4 Õâ×ékey-value¶Ô
+		System.out.println(map); // mapä¸­æ·»åŠ äº† Java=4 è¿™ç»„key-valueå¯¹
 	
-		// µ±keyÎª"Java"¶ÔÓ¦µÄvalue´æÔÚÊ±£¬Ê¹ÓÃ¼ÆËãµÄ½á¹û×÷ÎªĞÂvalue
+		// å½“keyä¸º"Java"å¯¹åº”çš„valueå­˜åœ¨æ—¶ï¼Œä½¿ç”¨è®¡ç®—çš„ç»“æœä½œä¸ºæ–°value
 		map.computeIfPresent("Java",
 			(key , value) -> (Integer)value * (Integer)value);
-		System.out.println(map); // mapÖĞ Java=4 ±ä³É Java=16
+		System.out.println(map); // mapä¸­ Java=4 å˜æˆ Java=16
 	}
 }

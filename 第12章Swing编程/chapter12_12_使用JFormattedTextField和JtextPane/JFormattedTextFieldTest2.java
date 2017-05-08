@@ -1,4 +1,4 @@
-package chapter12_12_Ê¹ÓÃJFormattedTextFieldºÍJtextPane;
+package chapter12_12_ä½¿ç”¨JFormattedTextFieldå’ŒJtextPane;
 
 
 import java.text.*;
@@ -12,7 +12,7 @@ import javax.swing.text.*;
 import javax.swing.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -22,13 +22,13 @@ import javax.swing.event.*;
  */
 public class JFormattedTextFieldTest2
 {
-	private JFrame mainWin = new JFrame("²âÊÔ¸ñÊ½»¯ÎÄ±¾¿ò");
-	private JButton okButton = new JButton("È·¶¨");
-	// ¶¨ÒåÓÃÓÚÌí¼Ó¸ñÊ½»¯ÎÄ±¾¿òµÄÈİÆ÷
+	private JFrame mainWin = new JFrame("æµ‹è¯•æ ¼å¼åŒ–æ–‡æœ¬æ¡†");
+	private JButton okButton = new JButton("ç¡®å®š");
+	// å®šä¹‰ç”¨äºæ·»åŠ æ ¼å¼åŒ–æ–‡æœ¬æ¡†çš„å®¹å™¨
 	private JPanel mainPanel = new JPanel();
 	public void init()
 	{
-		// Ìí¼Ó°´Å¥
+		// æ·»åŠ æŒ‰é’®
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.add(okButton);
 		mainPanel.setLayout(new GridLayout(0, 3));
@@ -42,37 +42,37 @@ public class JFormattedTextFieldTest2
 				}
 			});
 		intField0.setValue(100);
-		addRow("Ö»½ÓÊÜÊı×ÖµÄÎÄ±¾¿ò", intField0);
+		addRow("åªæ¥å—æ•°å­—çš„æ–‡æœ¬æ¡†", intField0);
 		JFormattedTextField intField1 = new JFormattedTextField
 			(NumberFormat.getIntegerInstance());
 		intField1.setValue(100);
-		// Ìí¼ÓÊäÈëĞ£ÑéÆ÷
+		// æ·»åŠ è¾“å…¥æ ¡éªŒå™¨
 		intField1.setInputVerifier(new FormattedTextFieldVerifier());
-		addRow("´øÊäÈëĞ£ÑéÆ÷µÄÎÄ±¾¿ò", intField1);
-		// ´´½¨×Ô¶¨Òå¸ñÊ½Æ÷¶ÔÏó
+		addRow("å¸¦è¾“å…¥æ ¡éªŒå™¨çš„æ–‡æœ¬æ¡†", intField1);
+		// åˆ›å»ºè‡ªå®šä¹‰æ ¼å¼å™¨å¯¹è±¡
 		IPAddressFormatter ipFormatter = new IPAddressFormatter();
 		ipFormatter.setOverwriteMode(false);
-		// ÒÔ×Ô¶¨Òå¸ñÊ½Æ÷¶ÔÏó´´½¨¸ñÊ½»¯ÎÄ±¾¿ò
+		// ä»¥è‡ªå®šä¹‰æ ¼å¼å™¨å¯¹è±¡åˆ›å»ºæ ¼å¼åŒ–æ–‡æœ¬æ¡†
 		JFormattedTextField ipField = new JFormattedTextField(ipFormatter);
 		ipField.setValue(new byte[]{(byte)192, (byte)168, 4, 1});
-		addRow("IPµØÖ·¸ñÊ½", ipField);
+		addRow("IPåœ°å€æ ¼å¼", ipField);
 		mainWin.add(buttonPanel , BorderLayout.SOUTH);
 		mainWin.pack();
 		mainWin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainWin.setVisible(true);
 	}
-	// ¶¨ÒåÌí¼ÓÒ»ĞĞ¸ñÊ½»¯ÎÄ±¾¿òµÄ·½·¨
+	// å®šä¹‰æ·»åŠ ä¸€è¡Œæ ¼å¼åŒ–æ–‡æœ¬æ¡†çš„æ–¹æ³•
 	private void addRow(String labelText, final JFormattedTextField field)
 	{
 		mainPanel.add(new JLabel(labelText));
 		mainPanel.add(field);
 		final JLabel valueLabel = new JLabel();
 		mainPanel.add(valueLabel);
-		// Îª"È·¶¨"°´Å¥Ìí¼ÓÊÂ¼ş¼àÌıÆ÷
-		// µ±ÓÃ»§µ¥»÷¡°È·¶¨¡±°´Å¥Ê±£¬ÎÄ±¾¿òºóÏÔÊ¾ÎÄ±¾¿òÄÚµÄÖµ
+		// ä¸º"ç¡®å®š"æŒ‰é’®æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
+		// å½“ç”¨æˆ·å•å‡»â€œç¡®å®šâ€æŒ‰é’®æ—¶ï¼Œæ–‡æœ¬æ¡†åæ˜¾ç¤ºæ–‡æœ¬æ¡†å†…çš„å€¼
 		okButton.addActionListener(event -> {
 			Object value = field.getValue();
-			// Èç¹û¸ÃÖµÊÇÊı×é£¬Ê¹ÓÃArraysµÄtoString·½·¨Êä³öÊı×é
+			// å¦‚æœè¯¥å€¼æ˜¯æ•°ç»„ï¼Œä½¿ç”¨Arraysçš„toStringæ–¹æ³•è¾“å‡ºæ•°ç»„
 			if (value.getClass().isArray())
 			{
 				StringBuilder builder = new StringBuilder();
@@ -88,7 +88,7 @@ public class JFormattedTextFieldTest2
 			}
 			else
 			{
-				// Êä³ö¸ñÊ½»¯ÎÄ±¾¿òµÄÖµ
+				// è¾“å‡ºæ ¼å¼åŒ–æ–‡æœ¬æ¡†çš„å€¼
 				valueLabel.setText(value.toString());
 			}
 		});
@@ -98,25 +98,25 @@ public class JFormattedTextFieldTest2
 		new JFormattedTextFieldTest2().init();
 	}
 }
-// ÊäÈëĞ£ÑéÆ÷
+// è¾“å…¥æ ¡éªŒå™¨
 class FormattedTextFieldVerifier extends InputVerifier
 {
-	// µ±ÊäÈë×é¼şÊ§È¥½¹µãÊ±£¬¸Ã·½·¨±»´¥·¢
+	// å½“è¾“å…¥ç»„ä»¶å¤±å»ç„¦ç‚¹æ—¶ï¼Œè¯¥æ–¹æ³•è¢«è§¦å‘
 	public boolean verify(JComponent component)
 	{
 		JFormattedTextField field = (JFormattedTextField)component;
-		// ·µ»ØÓÃ»§ÊäÈëÊÇ·ñÓĞĞ§
+		// è¿”å›ç”¨æˆ·è¾“å…¥æ˜¯å¦æœ‰æ•ˆ
 		return field.isEditValid();
 	}
 }
-// Êı×Ö¹ıÂËÆ÷
+// æ•°å­—è¿‡æ»¤å™¨
 class NumberFilter extends DocumentFilter
 {
 	public void insertString(FilterBypass fb , int offset
 		, String string , AttributeSet attr)throws BadLocationException
 	{
 		StringBuilder builder = new StringBuilder(string);
-		// ¹ıÂËÓÃ»§ÊäÈëµÄËùÓĞ×Ö·û
+		// è¿‡æ»¤ç”¨æˆ·è¾“å…¥çš„æ‰€æœ‰å­—ç¬¦
 		filterInt(builder);
 		super.insertString(fb, offset, builder.toString(), attr);
 	}
@@ -126,13 +126,13 @@ class NumberFilter extends DocumentFilter
 		if (string != null)
 		{
 			StringBuilder builder = new StringBuilder(string);
-			// ¹ıÂËÓÃ»§Ìæ»»µÄËùÓĞ×Ö·û
+			// è¿‡æ»¤ç”¨æˆ·æ›¿æ¢çš„æ‰€æœ‰å­—ç¬¦
 			filterInt(builder);
 			string = builder.toString();
 		}
 		super.replace(fb, offset, length, string, attr);
 	}
-	// ¹ıÂËÕûÊı×Ö·û£¬°ÑËùÓĞ·Ç0¡«9µÄ×Ö·ûÈ«²¿É¾³ı
+	// è¿‡æ»¤æ•´æ•°å­—ç¬¦ï¼ŒæŠŠæ‰€æœ‰é0ï½9çš„å­—ç¬¦å…¨éƒ¨åˆ é™¤
 	private void filterInt(StringBuilder builder)
 	{
 		for (int i = builder.length() - 1; i >= 0; i--)
@@ -152,12 +152,12 @@ class IPAddressFormatter extends DefaultFormatter
 	{
 		if (!(value instanceof byte[]))
 		{
-			throw new ParseException("¸ÃIPµØÖ·µÄÖµÖ»ÄÜÊÇ×Ö½ÚÊı×é", 0);
+			throw new ParseException("è¯¥IPåœ°å€çš„å€¼åªèƒ½æ˜¯å­—èŠ‚æ•°ç»„", 0);
 		}
 		byte[] a = (byte[])value;
 		if (a.length != 4)
 		{
-			throw new ParseException("IPµØÖ·±ØĞëÊÇËÄ¸öÕûÊı", 0);
+			throw new ParseException("IPåœ°å€å¿…é¡»æ˜¯å››ä¸ªæ•´æ•°", 0);
 		}
 		StringBuilder builder = new StringBuilder();
 		for (int i = 0; i < 4; i++)
@@ -171,11 +171,11 @@ class IPAddressFormatter extends DefaultFormatter
 	}
 	public Object stringToValue(String text) throws ParseException
 	{
-		// ½«¸ñÊ½»¯ÎÄ±¾¿òÄÚµÄ×Ö·û´®ÒÔµãºÅ£¨.£©·Ö³ÉËÄ½Ú¡£
+		// å°†æ ¼å¼åŒ–æ–‡æœ¬æ¡†å†…çš„å­—ç¬¦ä¸²ä»¥ç‚¹å·ï¼ˆ.ï¼‰åˆ†æˆå››èŠ‚ã€‚
 		String[] nums = text.split("\\.");
 		if (nums.length != 4)
 		{
-			throw new ParseException("IPµØÖ·±ØĞëÊÇËÄ¸öÕûÊı", 0);
+			throw new ParseException("IPåœ°å€å¿…é¡»æ˜¯å››ä¸ªæ•´æ•°", 0);
 		}
 		byte[] a = new byte[4];
 		for (int i = 0; i < 4; i++)
@@ -187,11 +187,11 @@ class IPAddressFormatter extends DefaultFormatter
 			}
 			catch (NumberFormatException e)
 			{
-				throw new ParseException("IPµØÖ·±ØĞëÊÇÕûÊı", 0);
+				throw new ParseException("IPåœ°å€å¿…é¡»æ˜¯æ•´æ•°", 0);
 			}
 			if (b < 0 || b >= 256)
 			{
-				throw new ParseException("IPµØÖ·ÖµÖ»ÄÜÔÚ0~255Ö®¼ä", 0);
+				throw new ParseException("IPåœ°å€å€¼åªèƒ½åœ¨0~255ä¹‹é—´", 0);
 			}
 			a[i] = (byte) b;
 		}

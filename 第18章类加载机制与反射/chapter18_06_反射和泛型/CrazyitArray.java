@@ -1,11 +1,11 @@
-package chapter18_06_·´ÉäºÍ·ºĞÍ;
+package chapter18_06_åå°„å’Œæ³›å‹;
 
 import java.lang.reflect.*;
 import java.lang.annotation.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -15,21 +15,21 @@ import java.lang.annotation.*;
  * @version 1.0
  */
 public class CrazyitArray {
-	// ¶ÔArrayµÄnewInstance·½·¨½øĞĞ°ü×°
+	// å¯¹Arrayçš„newInstanceæ–¹æ³•è¿›è¡ŒåŒ…è£…
 	@SuppressWarnings("unchecked")
 	public static <T> T[] newInstance(Class<T> componentType, int length) {
-		return (T[]) Array.newInstance(componentType, length); // ¢Ù
+		return (T[]) Array.newInstance(componentType, length); // â‘ 
 	}
 
 	public static void main(String[] args) {
-		// Ê¹ÓÃCrazyitArrayµÄnewInstance()´´½¨Ò»Î¬Êı×é
+		// ä½¿ç”¨CrazyitArrayçš„newInstance()åˆ›å»ºä¸€ç»´æ•°ç»„
 		String[] arr = CrazyitArray.newInstance(String.class, 10);
-		// Ê¹ÓÃCrazyitArrayµÄnewInstance()´´½¨¶şÎ¬Êı×é
-		// ÔÚÕâÖÖÇé¿öÏÂ£¬Ö»ÒªÉèÖÃÊı×éÔªËØµÄÀàĞÍÊÇint[]¼´¿É¡£
+		// ä½¿ç”¨CrazyitArrayçš„newInstance()åˆ›å»ºäºŒç»´æ•°ç»„
+		// åœ¨è¿™ç§æƒ…å†µä¸‹ï¼Œåªè¦è®¾ç½®æ•°ç»„å…ƒç´ çš„ç±»å‹æ˜¯int[]å³å¯ã€‚
 		int[][] intArr = CrazyitArray.newInstance(int[].class, 5);
-		arr[5] = "·è¿ñJava½²Òå";
-		// intArrÊÇ¶şÎ¬Êı×é£¬³õÊ¼»¯¸ÃÊı×éµÄµÚ¶ş¸öÊı×éÔªËØ
-		// ¶şÎ¬Êı×éµÄÔªËØ±ØĞëÊÇÒ»Î¬Êı×é
+		arr[5] = "ç–¯ç‹‚Javaè®²ä¹‰";
+		// intArræ˜¯äºŒç»´æ•°ç»„ï¼Œåˆå§‹åŒ–è¯¥æ•°ç»„çš„ç¬¬äºŒä¸ªæ•°ç»„å…ƒç´ 
+		// äºŒç»´æ•°ç»„çš„å…ƒç´ å¿…é¡»æ˜¯ä¸€ç»´æ•°ç»„
 		intArr[1] = new int[] { 23, 12 };
 		System.out.println(arr[5]);
 		System.out.println(intArr[1][1]);

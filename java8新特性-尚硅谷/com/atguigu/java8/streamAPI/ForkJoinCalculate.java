@@ -11,7 +11,7 @@ public class ForkJoinCalculate extends RecursiveTask<Long>{
 	private long start;
 	private long end;
 	
-	private static final long THRESHOLD = 10000L; //ÁÙ½çÖµ
+	private static final long THRESHOLD = 10000L; //ä¸´ç•Œå€¼
 	
 	public ForkJoinCalculate(long start, long end) {
 		this.start = start;
@@ -34,7 +34,7 @@ public class ForkJoinCalculate extends RecursiveTask<Long>{
 			long middle = (start + end) / 2;
 			
 			ForkJoinCalculate left = new ForkJoinCalculate(start, middle);
-			left.fork(); //²ğ·Ö£¬²¢½«¸Ã×ÓÈÎÎñÑ¹ÈëÏß³Ì¶ÓÁĞ
+			left.fork(); //æ‹†åˆ†ï¼Œå¹¶å°†è¯¥å­ä»»åŠ¡å‹å…¥çº¿ç¨‹é˜Ÿåˆ—
 			
 			ForkJoinCalculate right = new ForkJoinCalculate(middle+1, end);
 			right.fork();

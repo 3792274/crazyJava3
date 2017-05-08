@@ -1,8 +1,8 @@
-package chapter04_05_数组类型;
+package chapter04_05_鏁扮粍绫诲瀷;
 
 /**
  * Description: <br/>
- * 网站: <a href="http://www.crazyit.org">疯狂Java联盟</a> <br/>
+ * 缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,9 +13,9 @@ package chapter04_05_数组类型;
  */
 public class ForEachTest {
 	public static void main(String[] args) {
-		String[] books = { "轻量级Java EE企业应用实战", "疯狂Java讲义", "疯狂Android讲义" };
-		// 使用foreach循环来遍历数组元素，
-		// 其中book将会自动迭代每个数组元素
+		String[] books = { "杞婚噺绾ava EE浼佷笟搴旂敤瀹炴垬", "鐤媯Java璁蹭箟", "鐤媯Android璁蹭箟" };
+		// 浣跨敤foreach寰幆鏉ラ亶鍘嗘暟缁勫厓绱狅紝
+		// 鍏朵腑book灏嗕細鑷姩杩唬姣忎釜鏁扮粍鍏冪礌
 		for (String book : books) {
 			System.out.println(book);
 		}

@@ -1,9 +1,9 @@
-package chapter06_08_Java8ĞÂÔöµÄLambda±í´ïÊ½;
+package chapter06_08_Java8æ–°å¢çš„Lambdaè¡¨è¾¾å¼;
 
 
 /**
- * Description:lambda ±í´ïÊ½ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:lambda è¡¨è¾¾å¼ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,6 +13,6 @@ package chapter06_08_Java8ĞÂÔöµÄLambda±í´ïÊ½;
  * @version 1.0
  */
 public interface Command {
-	// ½Ó¿ÚÀï¶¨ÒåµÄprocess()·½·¨ÓÃÓÚ·â×°¡°´¦ÀíĞĞÎª¡±
+	// æ¥å£é‡Œå®šä¹‰çš„process()æ–¹æ³•ç”¨äºå°è£…â€œå¤„ç†è¡Œä¸ºâ€
 	void process(int[] target);
 }

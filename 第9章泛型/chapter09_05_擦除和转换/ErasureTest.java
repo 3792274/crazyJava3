@@ -1,8 +1,8 @@
-package chapter09_05_²Á³ıºÍ×ª»»;
+package chapter09_05_æ“¦é™¤å’Œè½¬æ¢;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -33,18 +33,18 @@ public class ErasureTest
 {
 	public static void main(String[] args)
 	{
-		Apple<Integer> a = new Apple<>(6);    // ¢Ù
+		Apple<Integer> a = new Apple<>(6);    // â‘ 
 		
-		// aµÄgetSize·½·¨·µ»ØInteger¶ÔÏó
+		// açš„getSizeæ–¹æ³•è¿”å›Integerå¯¹è±¡
 		Integer as = a.getSize();
 	
-		// °Ña¶ÔÏó¸³¸øApple±äÁ¿£¬¶ªÊ§¼âÀ¨ºÅÀïµÄÀàĞÍĞÅÏ¢
-		Apple b = a;      // ¢Ú
+		// æŠŠaå¯¹è±¡èµ‹ç»™Appleå˜é‡ï¼Œä¸¢å¤±å°–æ‹¬å·é‡Œçš„ç±»å‹ä¿¡æ¯
+		Apple b = a;      // â‘¡
 	
-		// bÖ»ÖªµÀsizeµÄÀàĞÍÊÇNumber
+		// båªçŸ¥é“sizeçš„ç±»å‹æ˜¯Number
 		Number size1 = b.getSize();
 		
-		// ÏÂÃæ´úÂëÒıÆğ±àÒë´íÎó
-//		Integer size2 = b.getSize();  // ¢Û
+		// ä¸‹é¢ä»£ç å¼•èµ·ç¼–è¯‘é”™è¯¯
+//		Integer size2 = b.getSize();  // â‘¢
 	}
 }

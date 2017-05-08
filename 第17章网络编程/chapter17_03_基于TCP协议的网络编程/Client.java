@@ -1,4 +1,4 @@
-package chapter17_03_»ùÓÚTCPĞ­ÒéµÄÍøÂç±à³Ì;
+package chapter17_03_åŸºäºTCPåè®®çš„ç½‘ç»œç¼–ç¨‹;
 
 import java.net.*;
 
@@ -8,7 +8,7 @@ import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -21,36 +21,36 @@ import java.io.*;
  */
 public class Client {
 	public static void main(String[] args) throws IOException {
-		//´´½¨Ò»¸öÎŞÁ¬½ÓµÄsocket
-		Socket socket = new Socket(); // ¢Ù
-		//ÈÃsocketÁ¬½Ó·şÎñÆ÷£¬Èç¹û³¬¹ı10ÃëÃ»Á¬½ÓÉÏÔò³¬Ê±£¬1ÃëµÄ´íÎóÊÇ£ºconnect timed out 2ÃëµÄ´íÎóÊÇ£ºConnection refused: connec
-		//ÎŞÂÛserver¶ËÊÇ·ñserverSocket.accept();¶¼»á·µ»Øsocket.isConnected()true
+		//åˆ›å»ºä¸€ä¸ªæ— è¿æ¥çš„socket
+		Socket socket = new Socket(); // â‘ 
+		//è®©socketè¿æ¥æœåŠ¡å™¨ï¼Œå¦‚æœè¶…è¿‡10ç§’æ²¡è¿æ¥ä¸Šåˆ™è¶…æ—¶ï¼Œ1ç§’çš„é”™è¯¯æ˜¯ï¼šconnect timed out 2ç§’çš„é”™è¯¯æ˜¯ï¼šConnection refused: connec
+		//æ— è®ºserverç«¯æ˜¯å¦serverSocket.accept();éƒ½ä¼šè¿”å›socket.isConnected()true
 		socket.connect(new InetSocketAddress("127.0.0.1", 30000), 0);
 		System.out.println(socket.isConnected());
 		
 
-		// ÉèÖÃ³¬Ê±Ê±¼ä,È·ÈÏÒÑ¾­Á¬½ÓÉÏÒÔºó£¬¿ªÊ¼¹¤×÷ÁË£¬Èç¹û¹¤×÷Ê±¼ä³¬¹ıÕâ¸öÊ±¼ä£¬¾ÍÅ×³öÒì³£¡£
+		// è®¾ç½®è¶…æ—¶æ—¶é—´,ç¡®è®¤å·²ç»è¿æ¥ä¸Šä»¥åï¼Œå¼€å§‹å·¥ä½œäº†ï¼Œå¦‚æœå·¥ä½œæ—¶é—´è¶…è¿‡è¿™ä¸ªæ—¶é—´ï¼Œå°±æŠ›å‡ºå¼‚å¸¸ã€‚
 //		socket.setSoTimeout(4000);
 		
 		try {
-			// Ê¹ÓÃScanner¶ÁÈ¡ÍøÂçÖĞµÄÊı¾İÁ÷
+			// ä½¿ç”¨Scannerè¯»å–ç½‘ç»œä¸­çš„æ•°æ®æµ
 			java.util.Scanner scan = new java.util.Scanner(socket.getInputStream());
 			String line = scan.nextLine();
-			System.out.println("Scan ÖĞ»ñÈ¡µÄÊı¾İ£º" + line);
+			System.out.println("Scan ä¸­è·å–çš„æ•°æ®ï¼š" + line);
 		} catch (SocketTimeoutException ex) {
-			// ¶Ô³¬Ê±µÄÒì³£´¦Àí
+			// å¯¹è¶…æ—¶çš„å¼‚å¸¸å¤„ç†
 
 		}
 		
 		
 		
 
-		// ½«Socket¶ÔÓ¦µÄÊäÈëÁ÷°ü×°³ÉBufferedReader
+		// å°†Socketå¯¹åº”çš„è¾“å…¥æµåŒ…è£…æˆBufferedReader
 		BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-		// ½øĞĞÆÕÍ¨IO²Ù×÷
+		// è¿›è¡Œæ™®é€šIOæ“ä½œ
 		String line = br.readLine();
-		System.out.println("À´×Ô·şÎñÆ÷µÄÊı¾İ£º" + line);
-		// ¹Ø±ÕÊäÈëÁ÷¡¢socket
+		System.out.println("æ¥è‡ªæœåŠ¡å™¨çš„æ•°æ®ï¼š" + line);
+		// å…³é—­è¾“å…¥æµã€socket
 		br.close();
 		socket.close();
 	}

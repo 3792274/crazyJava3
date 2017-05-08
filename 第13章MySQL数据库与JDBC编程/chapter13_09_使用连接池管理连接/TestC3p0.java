@@ -1,4 +1,4 @@
-package chapter13_09_Ê¹ÓÃÁ¬½Ó³Ø¹ÜÀíÁ¬½Ó;
+package chapter13_09_ä½¿ç”¨è¿æ¥æ± ç®¡ç†è¿æ¥;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,26 +9,26 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 public class TestC3p0 {
 
 	public static void main(String[] args) throws Exception {
-		//´´½¨Êı¾İÔ´¶ÔÏó
+		//åˆ›å»ºæ•°æ®æºå¯¹è±¡
 		ComboPooledDataSource ds = new ComboPooledDataSource();
-		//ÉèÖÃÁ¬½Ó³ØËùĞèÒªµÄÇı¶¯
+		//è®¾ç½®è¿æ¥æ± æ‰€éœ€è¦çš„é©±åŠ¨
 		ds.setDriverClass("com.mysql.jdbc.Driver");
-		//ÉèÖÃÊı¾İ¿âÁ¬½ÓµÄURL¡¢ÓÃ»§Ãû¡¢ÃÜÂë
-		ds.setJdbcUrl("jdbc:mysql://localhost:3306/select_test?characterEncoding=utf8&useSSL=true");
+		//è®¾ç½®æ•°æ®åº“è¿æ¥çš„URLã€ç”¨æˆ·åã€å¯†ç 
+		ds.setJdbcUrl("jdbc:mysql://localhost:3306/mysql?characterEncoding=utf8&useSSL=true");
 		ds.setUser("root");
 		ds.setPassword("12369");
 		
-		//ÉèÖÃÁ¬½Ó³ØµÄ³õÊ¼»¯²ÎÊı
+		//è®¾ç½®è¿æ¥æ± çš„åˆå§‹åŒ–å‚æ•°
 		ds.setMaxPoolSize(40);
 		ds.setMinPoolSize(2);
 		ds.setInitialPoolSize(10);  
-		ds.setMaxStatements(180);//ÉèÖÃ»º´æStatement×î´óÊı
+		ds.setMaxStatements(180);//è®¾ç½®ç¼“å­˜Statementæœ€å¤§æ•°
 		
 		
-		//Ê¹ÓÃÁ¬½Ó
+		//ä½¿ç”¨è¿æ¥
 		Connection connection = ds.getConnection();
 		Statement stmt = connection.createStatement();
-		ResultSet rs = stmt.executeQuery("select s.* ,teacher_name from student_table s,teacher_table t where t.teacher_id=s.java_teacher") ;
+		ResultSet rs = stmt.executeQuery("select * from help_topic") ;
 		while (rs.next()) {
 			System.out.println(rs.getInt(1) + "\t" + rs.getString(2) + "\t" + rs.getString(3) + "\t" + rs.getString(4));
 	
@@ -36,7 +36,7 @@ public class TestC3p0 {
  
 		
 		
-		connection.close(); //¹é»¹Á¬½Ó£¬²»Õæ¹Ø±Õ
+		connection.close(); //å½’è¿˜è¿æ¥ï¼Œä¸çœŸå…³é—­
 		
 		
 	}

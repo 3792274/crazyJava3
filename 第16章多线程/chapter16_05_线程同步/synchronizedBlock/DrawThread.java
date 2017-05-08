@@ -1,8 +1,8 @@
-package chapter16_05_Ïß³ÌÍ¬²½.synchronizedBlock;
+package chapter16_05_çº¿ç¨‹åŒæ­¥.synchronizedBlock;
 
 /**
- * Description: Ê¹ÓÃÍ¬²½¼àÊÓÆ÷±£Ö¤²¢·¢ <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description: ä½¿ç”¨åŒæ­¥ç›‘è§†å™¨ä¿è¯å¹¶å‘ <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -12,9 +12,9 @@ package chapter16_05_Ïß³ÌÍ¬²½.synchronizedBlock;
  * @version 1.0
  */
 public class DrawThread extends Thread {
-	// Ä£ÄâÓÃ»§ÕË»§
+	// æ¨¡æ‹Ÿç”¨æˆ·è´¦æˆ·
 	private Account account;
-	// µ±Ç°È¡Ç®Ïß³ÌËùÏ£ÍûÈ¡µÄÇ®Êı
+	// å½“å‰å–é’±çº¿ç¨‹æ‰€å¸Œæœ›å–çš„é’±æ•°
 	private double drawAmount;
 
 	public DrawThread(String name, Account account, double drawAmount) {
@@ -23,18 +23,18 @@ public class DrawThread extends Thread {
 		this.drawAmount = drawAmount;
 	}
 
-	// µ±¶àÌõÏß³ÌĞŞ¸ÄÍ¬Ò»¸ö¹²ÏíÊı¾İÊ±£¬½«Éæ¼°Êı¾İ°²È«ÎÊÌâ¡£
+	// å½“å¤šæ¡çº¿ç¨‹ä¿®æ”¹åŒä¸€ä¸ªå…±äº«æ•°æ®æ—¶ï¼Œå°†æ¶‰åŠæ•°æ®å®‰å…¨é—®é¢˜ã€‚
 	@Override
 	public void run() {
-		// Ê¹ÓÃaccount×÷ÎªÍ¬²½¼àÊÓÆ÷£¬ÈÎºÎÏß³Ì½øÈëÏÂÃæÍ¬²½´úÂë¿éÖ®Ç°£¬
-		// ±ØĞëÏÈ»ñµÃ¶ÔaccountÕË»§µÄËø¶¨¡ª¡ªÆäËûÏß³ÌÎŞ·¨»ñµÃËø£¬Ò²¾ÍÎŞ·¨ĞŞ¸ÄËü
-		// ÕâÖÖ×ö·¨·ûºÏ£º¡°¼ÓËø ¡ú ĞŞ¸Ä ¡ú ÊÍ·ÅËø¡±µÄÂß¼­
+		// ä½¿ç”¨accountä½œä¸ºåŒæ­¥ç›‘è§†å™¨ï¼Œä»»ä½•çº¿ç¨‹è¿›å…¥ä¸‹é¢åŒæ­¥ä»£ç å—ä¹‹å‰ï¼Œ
+		// å¿…é¡»å…ˆè·å¾—å¯¹accountè´¦æˆ·çš„é”å®šâ€”â€”å…¶ä»–çº¿ç¨‹æ— æ³•è·å¾—é”ï¼Œä¹Ÿå°±æ— æ³•ä¿®æ”¹å®ƒ
+		// è¿™ç§åšæ³•ç¬¦åˆï¼šâ€œåŠ é” â†’ ä¿®æ”¹ â†’ é‡Šæ”¾é”â€çš„é€»è¾‘
 	
 		synchronized (account) {
-			// ÕË»§Óà¶î´óÓÚÈ¡Ç®ÊıÄ¿
+			// è´¦æˆ·ä½™é¢å¤§äºå–é’±æ•°ç›®
 			if (account.getBalance() >= drawAmount) {
-				// ÍÂ³ö³®Æ±
-				System.out.println(getName() + "È¡Ç®³É¹¦£¡ÍÂ³ö³®Æ±:" + drawAmount);
+				// åå‡ºé’ç¥¨
+				System.out.println(getName() + "å–é’±æˆåŠŸï¼åå‡ºé’ç¥¨:" + drawAmount);
 			
 			
 				try {
@@ -44,19 +44,19 @@ public class DrawThread extends Thread {
 				}
 				
 				
-				// ĞŞ¸ÄÓà¶î
+				// ä¿®æ”¹ä½™é¢
 				account.setBalance(account.getBalance() - drawAmount);
 			
-				System.out.println("\tÓà¶îÎª: " + account.getBalance());
+				System.out.println("\tä½™é¢ä¸º: " + account.getBalance());
 			
 			} else {
 				
-				System.out.println(getName() + "È¡Ç®Ê§°Ü£¡Óà¶î²»×ã£¡");
+				System.out.println(getName() + "å–é’±å¤±è´¥ï¼ä½™é¢ä¸è¶³ï¼");
 			}
 		}
 		
 		
 		
-		// Í¬²½´úÂë¿é½áÊø£¬¸ÃÏß³ÌÊÍ·ÅÍ¬²½Ëø
+		// åŒæ­¥ä»£ç å—ç»“æŸï¼Œè¯¥çº¿ç¨‹é‡Šæ”¾åŒæ­¥é”
 	}
 }

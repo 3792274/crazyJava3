@@ -1,8 +1,8 @@
-package chapter06_07_ÄÚ²¿Àà;
+package chapter06_07_å†…éƒ¨ç±»;
 
 /**
- * Description:²»ÔÊĞíÔÚÍâ²¿ÀàµÄ¾²Ì¬³ÉÔ±ÖĞ·ÃÎÊ·Ç¾²Ì¬ÄÚ²¿Àà <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * Description:ä¸å…è®¸åœ¨å¤–éƒ¨ç±»çš„é™æ€æˆå‘˜ä¸­è®¿é—®éé™æ€å†…éƒ¨ç±» <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -12,14 +12,14 @@ package chapter06_07_ÄÚ²¿Àà;
  * @version 1.0
  */
 public class StaticTest {
-	// ¶¨ÒåÒ»¸ö·Ç¾²Ì¬µÄÄÚ²¿Àà£¬ÊÇÒ»¸ö¿ÕÀà
+	// å®šä¹‰ä¸€ä¸ªéé™æ€çš„å†…éƒ¨ç±»ï¼Œæ˜¯ä¸€ä¸ªç©ºç±»
 	private class In {
 	}
 
-	// Íâ²¿ÀàµÄ¾²Ì¬·½·¨
+	// å¤–éƒ¨ç±»çš„é™æ€æ–¹æ³•
 	public static void main(String[] args) {
-		// ÏÂÃæ´úÂëÒı·¢±àÒëÒì³££¬ÒòÎª¾²Ì¬³ÉÔ±£¨main()·½·¨£©
-		// ÎŞ·¨·ÃÎÊ·Ç¾²Ì¬³ÉÔ±£¨InÀà£©
+		// ä¸‹é¢ä»£ç å¼•å‘ç¼–è¯‘å¼‚å¸¸ï¼Œå› ä¸ºé™æ€æˆå‘˜ï¼ˆmain()æ–¹æ³•ï¼‰
+		// æ— æ³•è®¿é—®éé™æ€æˆå‘˜ï¼ˆInç±»ï¼‰
 		//new In();
 	}
 }

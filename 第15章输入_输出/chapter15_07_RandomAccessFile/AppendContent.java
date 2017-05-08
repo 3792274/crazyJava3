@@ -4,7 +4,7 @@ import java.io.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,12 +16,12 @@ import java.io.*;
 public class AppendContent {
 	public static void main(String[] args) {
 		try (
-				// ÒÔ¶Á¡¢Ğ´·½Ê½´ò¿ªÒ»¸öRandomAccessFile¶ÔÏó
-				RandomAccessFile raf = new RandomAccessFile("µÚ15ÕÂÊäÈë_Êä³ö/chapter15_07_RandomAccessFile/out.txt", "rw"))
+				// ä»¥è¯»ã€å†™æ–¹å¼æ‰“å¼€ä¸€ä¸ªRandomAccessFileå¯¹è±¡
+				RandomAccessFile raf = new RandomAccessFile("ç¬¬15ç« è¾“å…¥_è¾“å‡º/chapter15_07_RandomAccessFile/out.txt", "rw"))
 		{
-			// ½«¼ÇÂ¼Ö¸ÕëÒÆ¶¯µ½out.txtÎÄ¼şµÄ×îºó
+			// å°†è®°å½•æŒ‡é’ˆç§»åŠ¨åˆ°out.txtæ–‡ä»¶çš„æœ€å
 			raf.seek(raf.length());
-			raf.write("×·¼ÓµÄÄÚÈİ£¡\r\n".getBytes());
+			raf.write("è¿½åŠ çš„å†…å®¹ï¼\r\n".getBytes());
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}

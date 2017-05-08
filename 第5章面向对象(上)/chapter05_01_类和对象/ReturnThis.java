@@ -1,10 +1,10 @@
-package chapter05_01_ÀàºÍ¶ÔÏó;
+package chapter05_01_ç±»å’Œå¯¹è±¡;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -18,17 +18,17 @@ public class ReturnThis
 	public ReturnThis grow()
 	{
 		age++;
-		// return this·µ»Øµ÷ÓÃ¸Ã·½·¨µÄ¶ÔÏó
+		// return thisè¿”å›è°ƒç”¨è¯¥æ–¹æ³•çš„å¯¹è±¡
 		return this;
 	}
 	public static void main(String[] args)
 	{
 		ReturnThis rt = new ReturnThis();
-		// ¿ÉÒÔÁ¬Ğøµ÷ÓÃÍ¬Ò»¸ö·½·¨
+		// å¯ä»¥è¿ç»­è°ƒç”¨åŒä¸€ä¸ªæ–¹æ³•
 		rt.grow()
 			.grow()
 			.grow();
-		System.out.println("rtµÄage³ÉÔ±±äÁ¿ÖµÊÇ:" + rt.age);
+		System.out.println("rtçš„ageæˆå‘˜å˜é‡å€¼æ˜¯:" + rt.age);
 	}
 }
 

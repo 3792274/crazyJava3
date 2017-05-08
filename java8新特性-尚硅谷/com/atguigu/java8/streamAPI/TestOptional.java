@@ -5,21 +5,21 @@ import java.util.Optional;
 import org.junit.Test;
 
 /*
- * Ò»¡¢Optional ÈİÆ÷Àà£ºÓÃÓÚ¾¡Á¿±ÜÃâ¿ÕÖ¸ÕëÒì³£
- * 	Optional.of(T t) : ´´½¨Ò»¸ö Optional ÊµÀı
- * 	Optional.empty() : ´´½¨Ò»¸ö¿ÕµÄ Optional ÊµÀı
- * 	Optional.ofNullable(T t):Èô t ²»Îª null,´´½¨ Optional ÊµÀı,·ñÔò´´½¨¿ÕÊµÀı
- * 	isPresent() : ÅĞ¶ÏÊÇ·ñ°üº¬Öµ
- * 	orElse(T t) :  Èç¹ûµ÷ÓÃ¶ÔÏó°üº¬Öµ£¬·µ»Ø¸ÃÖµ£¬·ñÔò·µ»Øt
- * 	orElseGet(Supplier s) :Èç¹ûµ÷ÓÃ¶ÔÏó°üº¬Öµ£¬·µ»Ø¸ÃÖµ£¬·ñÔò·µ»Ø s »ñÈ¡µÄÖµ
- * 	map(Function f): Èç¹ûÓĞÖµ¶ÔÆä´¦Àí£¬²¢·µ»Ø´¦ÀíºóµÄOptional£¬·ñÔò·µ»Ø Optional.empty()
- * 	flatMap(Function mapper):Óë map ÀàËÆ£¬ÒªÇó·µ»ØÖµ±ØĞëÊÇOptional
+ * ä¸€ã€Optional å®¹å™¨ç±»ï¼šç”¨äºå°½é‡é¿å…ç©ºæŒ‡é’ˆå¼‚å¸¸
+ * 	Optional.of(T t) : åˆ›å»ºä¸€ä¸ª Optional å®ä¾‹
+ * 	Optional.empty() : åˆ›å»ºä¸€ä¸ªç©ºçš„ Optional å®ä¾‹
+ * 	Optional.ofNullable(T t):è‹¥ t ä¸ä¸º null,åˆ›å»º Optional å®ä¾‹,å¦åˆ™åˆ›å»ºç©ºå®ä¾‹
+ * 	isPresent() : åˆ¤æ–­æ˜¯å¦åŒ…å«å€¼
+ * 	orElse(T t) :  å¦‚æœè°ƒç”¨å¯¹è±¡åŒ…å«å€¼ï¼Œè¿”å›è¯¥å€¼ï¼Œå¦åˆ™è¿”å›t
+ * 	orElseGet(Supplier s) :å¦‚æœè°ƒç”¨å¯¹è±¡åŒ…å«å€¼ï¼Œè¿”å›è¯¥å€¼ï¼Œå¦åˆ™è¿”å› s è·å–çš„å€¼
+ * 	map(Function f): å¦‚æœæœ‰å€¼å¯¹å…¶å¤„ç†ï¼Œå¹¶è¿”å›å¤„ç†åçš„Optionalï¼Œå¦åˆ™è¿”å› Optional.empty()
+ * 	flatMap(Function mapper):ä¸ map ç±»ä¼¼ï¼Œè¦æ±‚è¿”å›å€¼å¿…é¡»æ˜¯Optional
  */
 public class TestOptional {
 	
 	@Test
 	public void test4(){
-		Optional<Employee> op = Optional.of(new Employee(101, "ÕÅÈı", 18, 9999.99));
+		Optional<Employee> op = Optional.of(new Employee(101, "å¼ ä¸‰", 18, 9999.99));
 		
 		Optional<String> op2 = op.map(Employee::getName);
 		System.out.println(op2.get());
@@ -36,7 +36,7 @@ public class TestOptional {
 			System.out.println(op.get());
 		}
 		
-		Employee emp = op.orElse(new Employee("ÕÅÈı"));
+		Employee emp = op.orElse(new Employee("å¼ ä¸‰"));
 		System.out.println(emp);
 		
 		Employee emp2 = op.orElseGet(() -> new Employee());
@@ -67,7 +67,7 @@ public class TestOptional {
 		System.out.println(name);
 	}
 	
-	//ĞèÇó£º»ñÈ¡Ò»¸öÄĞÈËĞÄÖĞÅ®ÉñµÄÃû×Ö
+	//éœ€æ±‚ï¼šè·å–ä¸€ä¸ªç”·äººå¿ƒä¸­å¥³ç¥çš„åå­—
 	public String getGodnessName(Man man){
 		if(man != null){
 			Godness g = man.getGod();
@@ -77,13 +77,13 @@ public class TestOptional {
 			}
 		}
 		
-		return "²ÔÀÏÊ¦";
+		return "è‹è€å¸ˆ";
 	}
 	
-	//ÔËÓÃ Optional µÄÊµÌåÀà
+	//è¿ç”¨ Optional çš„å®ä½“ç±»
 	@Test
 	public void test6(){
-		Optional<Godness> godness = Optional.ofNullable(new Godness("ÁÖÖ¾Áá"));
+		Optional<Godness> godness = Optional.ofNullable(new Godness("æ—å¿—ç²"));
 		
 		Optional<NewMan> op = Optional.ofNullable(new NewMan(godness));
 		String name = getGodnessName2(op);
@@ -93,7 +93,7 @@ public class TestOptional {
 	public String getGodnessName2(Optional<NewMan> man){
 		return man.orElse(new NewMan())
 				  .getGodness()
-				  .orElse(new Godness("²ÔÀÏÊ¦"))
+				  .orElse(new Godness("è‹è€å¸ˆ"))
 				  .getName();
 	}
 }

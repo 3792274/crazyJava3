@@ -38,7 +38,7 @@ public class TestSimpleDateFormat {
 		
 		pool.shutdown();*/
 		
-		//½â¾ö¶àÏß³Ì°²È«ÎÊÌâ
+		//è§£å†³å¤šçº¿ç¨‹å®‰å…¨é—®é¢˜
 		/*Callable<Date> task = new Callable<Date>() {
 
 			@Override

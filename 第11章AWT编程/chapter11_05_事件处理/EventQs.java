@@ -1,11 +1,11 @@
-package chapter11_05_ÊÂ¼ş´¦Àí;
+package chapter11_05_äº‹ä»¶å¤„ç†;
 
 
 import java.awt.*;
 import java.awt.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,25 +15,25 @@ import java.awt.event.*;
  */
 public class EventQs
 {
-	private Frame f = new Frame("²âÊÔÊÂ¼ş");
-	private Button ok = new Button("È·¶¨");
+	private Frame f = new Frame("æµ‹è¯•äº‹ä»¶");
+	private Button ok = new Button("ç¡®å®š");
 	private TextField tf = new TextField(30);
 	public void init()
 	{
-		// ×¢²áÊÂ¼ş¼àÌıÆ÷
-		ok.addActionListener(new OkListener());   //¢Ù
+		// æ³¨å†Œäº‹ä»¶ç›‘å¬å™¨
+		ok.addActionListener(new OkListener());   //â‘ 
 		f.add(tf);
 		f.add(ok , BorderLayout.SOUTH);
 		f.pack();
 		f.setVisible(true);
 	}
-	// ¶¨ÒåÊÂ¼ş¼àÌıÆ÷Àà
-	class OkListener implements ActionListener   //¢Ú
+	// å®šä¹‰äº‹ä»¶ç›‘å¬å™¨ç±»
+	class OkListener implements ActionListener   //â‘¡
 	{
-		// ÏÂÃæ¶¨ÒåµÄ·½·¨¾ÍÊÇÊÂ¼ş´¦ÀíÆ÷£¬ÓÃÓÚÏìÓ¦ÌØ¶¨µÄÊÂ¼ş
-		public void actionPerformed(ActionEvent e)      //¢Û
+		// ä¸‹é¢å®šä¹‰çš„æ–¹æ³•å°±æ˜¯äº‹ä»¶å¤„ç†å™¨ï¼Œç”¨äºå“åº”ç‰¹å®šçš„äº‹ä»¶
+		public void actionPerformed(ActionEvent e)      //â‘¢
 		{
-			System.out.println("ÓÃ»§µ¥»÷ÁËok°´Å¥");
+			System.out.println("ç”¨æˆ·å•å‡»äº†okæŒ‰é’®");
 			tf.setText("Hello World");
 		}
 	}

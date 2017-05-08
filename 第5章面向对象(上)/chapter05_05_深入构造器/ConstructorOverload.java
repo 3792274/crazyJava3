@@ -1,10 +1,10 @@
-package chapter05_05_ÉîÈë¹¹ÔìÆ÷;
+package chapter05_05_æ·±å…¥æ„é€ å™¨;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,10 +16,10 @@ public class ConstructorOverload
 {
 	public String name;
 	public int count;
-	// Ìá¹©ÎŞ²ÎÊıµÄ¹¹ÔìÆ÷
+	// æä¾›æ— å‚æ•°çš„æ„é€ å™¨
 	public ConstructorOverload(){}
-	// Ìá¹©´øÁ½¸ö²ÎÊıµÄ¹¹ÔìÆ÷£¬
-	// ¶Ô¸Ã¹¹ÔìÆ÷·µ»ØµÄ¶ÔÏóÖ´ĞĞ³õÊ¼»¯
+	// æä¾›å¸¦ä¸¤ä¸ªå‚æ•°çš„æ„é€ å™¨ï¼Œ
+	// å¯¹è¯¥æ„é€ å™¨è¿”å›çš„å¯¹è±¡æ‰§è¡Œåˆå§‹åŒ–
 	public ConstructorOverload(String name , int count)
 	{
 		this.name = name;
@@ -27,11 +27,11 @@ public class ConstructorOverload
 	}
 	public static void main(String[] args)
 	{
-		// Í¨¹ıÎŞ²ÎÊı¹¹ÔìÆ÷´´½¨ConstructorOverload¶ÔÏó
+		// é€šè¿‡æ— å‚æ•°æ„é€ å™¨åˆ›å»ºConstructorOverloadå¯¹è±¡
 		ConstructorOverload oc1 = new ConstructorOverload();
-		// Í¨¹ıÓĞ²ÎÊı¹¹ÔìÆ÷´´½¨ConstructorOverload¶ÔÏó
+		// é€šè¿‡æœ‰å‚æ•°æ„é€ å™¨åˆ›å»ºConstructorOverloadå¯¹è±¡
 		ConstructorOverload oc2 = new ConstructorOverload(
-			"ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½", 300000);
+			"è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜", 300000);
 		System.out.println(oc1.name + " " +  oc1.count);
 		System.out.println(oc2.name + " " +  oc2.count);
 	}

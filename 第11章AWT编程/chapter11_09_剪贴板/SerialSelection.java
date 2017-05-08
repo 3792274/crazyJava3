@@ -1,11 +1,11 @@
-package chapter11_09_¼ôÌù°å;
+package chapter11_09_å‰ªè´´æ¿;
 
 
 import java.awt.datatransfer.*;
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,9 +15,9 @@ import java.io.*;
  */
 public class SerialSelection implements Transferable
 {
-	// ³ÖÓĞÒ»¸ö¿ÉĞòÁĞ»¯µÄ¶ÔÏó
+	// æŒæœ‰ä¸€ä¸ªå¯åºåˆ—åŒ–çš„å¯¹è±¡
 	private Serializable obj;
-	// ´´½¨¸ÃÀàµÄ¶ÔÏóÊ±´«Èë±»³ÖÓĞµÄ¶ÔÏó
+	// åˆ›å»ºè¯¥ç±»çš„å¯¹è±¡æ—¶ä¼ å…¥è¢«æŒæœ‰çš„å¯¹è±¡
 	public SerialSelection(Serializable obj)
 	{
 		this.obj = obj;
@@ -25,7 +25,7 @@ public class SerialSelection implements Transferable
 	public DataFlavor[] getTransferDataFlavors()
 	{
 		DataFlavor[] flavors = new DataFlavor[2];
-		// »ñÈ¡±»·â×°¶ÔÏóµÄÀàĞÍ
+		// è·å–è¢«å°è£…å¯¹è±¡çš„ç±»å‹
 		Class clazz = obj.getClass();
 		try
 		{

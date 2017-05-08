@@ -1,8 +1,8 @@
-package chapter03_05_»ù±¾ÀàĞÍµÄÀàĞÍ×ª»»;
+package chapter03_05_åŸºæœ¬ç±»å‹çš„ç±»å‹è½¬æ¢;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,16 +13,16 @@ package chapter03_05_»ù±¾ÀàĞÍµÄÀàĞÍ×ª»»;
  */
 public class PrimitiveAndString {
 	public static void main(String[] args) {
-		// ÏÂÃæ´úÂëÊÇ´íµÄ£¬ÒòÎª5ÊÇÒ»¸öÕûÊı£¬²»ÄÜÖ±½Ó¸³¸øÒ»¸ö×Ö·û´®
+		// ä¸‹é¢ä»£ç æ˜¯é”™çš„ï¼Œå› ä¸º5æ˜¯ä¸€ä¸ªæ•´æ•°ï¼Œä¸èƒ½ç›´æ¥èµ‹ç»™ä¸€ä¸ªå­—ç¬¦ä¸²
 		// String str1 = 5;
-		// Ò»¸ö»ù±¾ÀàĞÍÖµºÍ×Ö·û´®½øĞĞÁ¬½ÓÔËËãÊ±£¬»ù±¾ÀàĞÍÖµ×Ô¶¯×ª»»Îª×Ö·û´®
+		// ä¸€ä¸ªåŸºæœ¬ç±»å‹å€¼å’Œå­—ç¬¦ä¸²è¿›è¡Œè¿æ¥è¿ç®—æ—¶ï¼ŒåŸºæœ¬ç±»å‹å€¼è‡ªåŠ¨è½¬æ¢ä¸ºå­—ç¬¦ä¸²
 		String str2 = 3.5f + "";
-		// ÏÂÃæÊä³ö3.5
+		// ä¸‹é¢è¾“å‡º3.5
 		System.out.println(str2);
-		// ÏÂÃæÓï¾äÊä³ö7Hello!
-		System.out.println(3 + 4 + "Hello£¡");
-		// ÏÂÃæÓï¾äÊä³öHello!34£¬ÒòÎªHello! + 3»á°Ñ3µ±³É×Ö·û´®´¦Àí£¬
-		// ¶øºóÔÙ°Ñ4µ±³É×Ö·û´®´¦Àí
-		System.out.println("Hello£¡" + 3 + 4);
+		// ä¸‹é¢è¯­å¥è¾“å‡º7Hello!
+		System.out.println(3 + 4 + "Helloï¼");
+		// ä¸‹é¢è¯­å¥è¾“å‡ºHello!34ï¼Œå› ä¸ºHello! + 3ä¼šæŠŠ3å½“æˆå­—ç¬¦ä¸²å¤„ç†ï¼Œ
+		// è€Œåå†æŠŠ4å½“æˆå­—ç¬¦ä¸²å¤„ç†
+		System.out.println("Helloï¼" + 3 + 4);
 	}
 }

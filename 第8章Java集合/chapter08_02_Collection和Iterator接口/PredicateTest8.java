@@ -1,11 +1,11 @@
-package chapter08_02_CollectionºÍIterator½Ó¿Ú;
+package chapter08_02_Collectionå’ŒIteratoræ¥å£;
 
 import java.util.*;
 import java.util.function.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -16,28 +16,28 @@ import java.util.function.*;
  */
 public class PredicateTest8 {
 	public static void main(String[] args) {
-		// ´´½¨books¼¯ºÏ¡¢Îªbooks¼¯ºÏÌí¼ÓÔªËØµÄ´úÂëÓëÇ°Ò»¸ö³ÌĞòÏàÍ¬¡£
+		// åˆ›å»ºbooksé›†åˆã€ä¸ºbooksé›†åˆæ·»åŠ å…ƒç´ çš„ä»£ç ä¸å‰ä¸€ä¸ªç¨‹åºç›¸åŒã€‚
 		Collection books = new HashSet();
-		books.add(new String("ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½"));
-		books.add(new String("·è¿ñJava½²Òå"));
-		books.add(new String("·è¿ñiOS½²Òå"));
-		books.add(new String("·è¿ñAjax½²Òå"));
-		books.add(new String("·è¿ñAndroid½²Òå"));
+		books.add(new String("è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜"));
+		books.add(new String("ç–¯ç‹‚Javaè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚iOSè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚Ajaxè®²ä¹‰"));
+		books.add(new String("ç–¯ç‹‚Androidè®²ä¹‰"));
 
-		// Í³¼ÆÊéÃû°üº¬¡°·è¿ñ¡±×Ó´®µÄÍ¼ÊéÊıÁ¿
-		System.out.println(calAll(books, ele -> ((String) ele).contains("·è¿ñ")));
+		// ç»Ÿè®¡ä¹¦ååŒ…å«â€œç–¯ç‹‚â€å­ä¸²çš„å›¾ä¹¦æ•°é‡
+		System.out.println(calAll(books, ele -> ((String) ele).contains("ç–¯ç‹‚")));
 
-		// Í³¼ÆÊéÃû°üº¬¡°Java¡±×Ó´®µÄÍ¼ÊéÊıÁ¿
+		// ç»Ÿè®¡ä¹¦ååŒ…å«â€œJavaâ€å­ä¸²çš„å›¾ä¹¦æ•°é‡
 		System.out.println(calAll(books, ele -> ((String) ele).contains("Java")));
 	
-		// Í³¼ÆÊéÃû×Ö·û´®³¤¶È´óÓÚ10µÄÍ¼ÊéÊıÁ¿
+		// ç»Ÿè®¡ä¹¦åå­—ç¬¦ä¸²é•¿åº¦å¤§äº10çš„å›¾ä¹¦æ•°é‡
 		System.out.println(calAll(books, ele -> ((String) ele).length() > 10));
 	}
 
 	public static int calAll(Collection books, Predicate p) {
 		int total = 0;
 		for (Object obj : books) {
-			// Ê¹ÓÃPredicateµÄtest()·½·¨ÅĞ¶Ï¸Ã¶ÔÏóÊÇ·ñÂú×ãPredicateÖ¸¶¨µÄÌõ¼ş
+			// ä½¿ç”¨Predicateçš„test()æ–¹æ³•åˆ¤æ–­è¯¥å¯¹è±¡æ˜¯å¦æ»¡è¶³PredicateæŒ‡å®šçš„æ¡ä»¶
 			if (p.test(obj)) {
 				total++;
 			}

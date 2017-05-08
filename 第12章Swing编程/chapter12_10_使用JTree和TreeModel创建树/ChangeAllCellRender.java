@@ -1,4 +1,4 @@
-package chapter12_10_Ê¹ÓÃJTreeºÍTreeModel´´½¨Ê÷;
+package chapter12_10_ä½¿ç”¨JTreeå’ŒTreeModelåˆ›å»ºæ ‘;
 
 
 import java.awt.*;
@@ -6,7 +6,7 @@ import javax.swing.*;
 import javax.swing.tree.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -16,52 +16,52 @@ import javax.swing.tree.*;
  */
 public class ChangeAllCellRender
 {
-	JFrame jf = new JFrame("¸Ä±äËùÓĞ½ÚµãµÄÍâ¹Û");
+	JFrame jf = new JFrame("æ”¹å˜æ‰€æœ‰èŠ‚ç‚¹çš„å¤–è§‚");
 	JTree tree;
-	// ¶¨Òå¼¸¸ö³õÊ¼½Úµã
-	DefaultMutableTreeNode root = new DefaultMutableTreeNode("ÖĞ¹ú");
-	DefaultMutableTreeNode guangdong = new DefaultMutableTreeNode("¹ã¶«");
-	DefaultMutableTreeNode guangxi = new DefaultMutableTreeNode("¹ãÎ÷");
-	DefaultMutableTreeNode foshan = new DefaultMutableTreeNode("·ğÉ½");
-	DefaultMutableTreeNode shantou = new DefaultMutableTreeNode("ÉÇÍ·");
-	DefaultMutableTreeNode guilin = new DefaultMutableTreeNode("¹ğÁÖ");
-	DefaultMutableTreeNode nanning = new DefaultMutableTreeNode("ÄÏÄş");
+	// å®šä¹‰å‡ ä¸ªåˆå§‹èŠ‚ç‚¹
+	DefaultMutableTreeNode root = new DefaultMutableTreeNode("ä¸­å›½");
+	DefaultMutableTreeNode guangdong = new DefaultMutableTreeNode("å¹¿ä¸œ");
+	DefaultMutableTreeNode guangxi = new DefaultMutableTreeNode("å¹¿è¥¿");
+	DefaultMutableTreeNode foshan = new DefaultMutableTreeNode("ä½›å±±");
+	DefaultMutableTreeNode shantou = new DefaultMutableTreeNode("æ±•å¤´");
+	DefaultMutableTreeNode guilin = new DefaultMutableTreeNode("æ¡‚æ—");
+	DefaultMutableTreeNode nanning = new DefaultMutableTreeNode("å—å®");
 	public void init()
 	{
-		// Í¨¹ıadd()·½·¨½¨Á¢Ê÷½ÚµãÖ®¼äµÄ¸¸×Ó¹ØÏµ
+		// é€šè¿‡add()æ–¹æ³•å»ºç«‹æ ‘èŠ‚ç‚¹ä¹‹é—´çš„çˆ¶å­å…³ç³»
 		guangdong.add(foshan);
 		guangdong.add(shantou);
 		guangxi.add(guilin);
 		guangxi.add(nanning);
 		root.add(guangdong);
 		root.add(guangxi);
-		// ÒÔ¸ù½Úµã´´½¨Ê÷
+		// ä»¥æ ¹èŠ‚ç‚¹åˆ›å»ºæ ‘
 		tree = new JTree(root);
-		// ´´½¨Ò»¸öDefaultTreeCellRender¶ÔÏó
+		// åˆ›å»ºä¸€ä¸ªDefaultTreeCellRenderå¯¹è±¡
 		DefaultTreeCellRenderer cellRender = new DefaultTreeCellRenderer();
-		// ÉèÖÃ·ÇÑ¡¶¨½ÚµãµÄ±³¾°É«¡£
+		// è®¾ç½®éé€‰å®šèŠ‚ç‚¹çš„èƒŒæ™¯è‰²ã€‚
 		cellRender.setBackgroundNonSelectionColor(new
 			Color(220 , 220 , 220));
-		// ÉèÖÃ½ÚµãÔÚÑ¡ÖĞ×´Ì¬ÏÂµÄ±³¾°ÑÕÉ«¡£
+		// è®¾ç½®èŠ‚ç‚¹åœ¨é€‰ä¸­çŠ¶æ€ä¸‹çš„èƒŒæ™¯é¢œè‰²ã€‚
 		cellRender.setBackgroundSelectionColor(new Color(140 , 140, 140));
-		// ÉèÖÃÑ¡ÖĞ×´Ì¬ÏÂ½ÚµãµÄ±ß¿òÑÕÉ«¡£
+		// è®¾ç½®é€‰ä¸­çŠ¶æ€ä¸‹èŠ‚ç‚¹çš„è¾¹æ¡†é¢œè‰²ã€‚
 		cellRender.setBorderSelectionColor(Color.BLACK);
-		// ÉèÖÃ´¦ÓÚÕÛµş×´Ì¬ÏÂ·ÇÒ¶×Ó½ÚµãµÄÍ¼±ê¡£
+		// è®¾ç½®å¤„äºæŠ˜å çŠ¶æ€ä¸‹éå¶å­èŠ‚ç‚¹çš„å›¾æ ‡ã€‚
 		cellRender.setClosedIcon(new ImageIcon("icon/close.gif"));
-		// ÉèÖÃ½ÚµãÎÄ±¾µÄ×ÖÌå¡£
+		// è®¾ç½®èŠ‚ç‚¹æ–‡æœ¬çš„å­—ä½“ã€‚
 		cellRender.setFont(new Font("SansSerif" , Font.BOLD , 16));
-		// ÉèÖÃÒ¶×Ó½ÚµãµÄÍ¼±ê¡£
+		// è®¾ç½®å¶å­èŠ‚ç‚¹çš„å›¾æ ‡ã€‚
 		cellRender.setLeafIcon(new ImageIcon("icon/leaf.png"));
-		// ÉèÖÃ´¦ÓÚÕ¹¿ª×´Ì¬ÏÂ·ÇÒ¶×Ó½ÚµãµÄÍ¼±ê¡£
+		// è®¾ç½®å¤„äºå±•å¼€çŠ¶æ€ä¸‹éå¶å­èŠ‚ç‚¹çš„å›¾æ ‡ã€‚
 		cellRender.setOpenIcon(new ImageIcon("icon/open.gif"));
-		// ÉèÖÃ»æÖÆ·ÇÑ¡ÖĞ×´Ì¬ÏÂ½ÚµãÎÄ±¾µÄÑÕÉ«¡£
+		// è®¾ç½®ç»˜åˆ¶éé€‰ä¸­çŠ¶æ€ä¸‹èŠ‚ç‚¹æ–‡æœ¬çš„é¢œè‰²ã€‚
 		cellRender.setTextNonSelectionColor(new Color(255 , 0 , 0));
-		// ÉèÖÃ»æÖÆÑ¡ÖĞ×´Ì¬ÏÂ½ÚµãÎÄ±¾µÄÑÕÉ«¡£
+		// è®¾ç½®ç»˜åˆ¶é€‰ä¸­çŠ¶æ€ä¸‹èŠ‚ç‚¹æ–‡æœ¬çš„é¢œè‰²ã€‚
 		cellRender.setTextSelectionColor(new Color(0 , 0 , 255));
 		tree.setCellRenderer(cellRender);
-		// ÉèÖÃÊÇ·ñÏÔÊ¾¸ù½ÚµãµÄ¡°Õ¹¿ª/ÕÛµş¡±Í¼±ê,Ä¬ÈÏÊÇfalse
+		// è®¾ç½®æ˜¯å¦æ˜¾ç¤ºæ ¹èŠ‚ç‚¹çš„â€œå±•å¼€/æŠ˜å â€å›¾æ ‡,é»˜è®¤æ˜¯false
 		tree.setShowsRootHandles(true);
-		// ÉèÖÃ½ÚµãÊÇ·ñ¿É¼û,Ä¬ÈÏÊÇtrue
+		// è®¾ç½®èŠ‚ç‚¹æ˜¯å¦å¯è§,é»˜è®¤æ˜¯true
 		tree.setRootVisible(true);
 		jf.add(new JScrollPane(tree));
 		jf.pack();

@@ -1,4 +1,4 @@
-package chapter07_06_¹ú¼Ê»¯Óë¸ñÊ½»¯;
+package chapter07_06_å›½é™…åŒ–ä¸æ ¼å¼åŒ–;
 
 import java.util.*;
 import java.text.*;
@@ -6,7 +6,7 @@ import static java.text.DateFormat.*;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -18,14 +18,14 @@ import static java.text.DateFormat.*;
 public class DateFormatTest04 {
 	public static void main(String[] args) throws ParseException {
 		
-		// ĞèÒª±»¸ñÊ½»¯µÄÊ±¼ä
+		// éœ€è¦è¢«æ ¼å¼åŒ–çš„æ—¶é—´
 		Date dt = new Date();
 		
-		// ´´½¨Á½¸öLocale£¬·Ö±ğ´ú±íÖĞ¹ú¡¢ÃÀ¹ú
+		// åˆ›å»ºä¸¤ä¸ªLocaleï¼Œåˆ†åˆ«ä»£è¡¨ä¸­å›½ã€ç¾å›½
 		Locale[] locales = { Locale.CHINA, Locale.US };
 		DateFormat[] df = new DateFormat[16];
 		
-		// ÎªÉÏÃæÁ½¸öLocale´´½¨16¸öDateFormat¶ÔÏó
+		// ä¸ºä¸Šé¢ä¸¤ä¸ªLocaleåˆ›å»º16ä¸ªDateFormatå¯¹è±¡
 		for (int i = 0; i < locales.length; i++) {
 			df[i * 8] = DateFormat.getDateInstance(SHORT, locales[i]);
 			df[i * 8 + 1] = DateFormat.getDateInstance(MEDIUM, locales[i]);
@@ -38,33 +38,33 @@ public class DateFormatTest04 {
 		}
 		
 		for (int i = 0; i < locales.length; i++) {
-			String tip = i == 0 ? "----ÖĞ¹úÈÕÆÚ¸ñÊ½----" : "----ÃÀ¹úÈÕÆÚ¸ñÊ½----";
+			String tip = i == 0 ? "----ä¸­å›½æ—¥æœŸæ ¼å¼----" : "----ç¾å›½æ—¥æœŸæ ¼å¼----";
 			System.out.println(tip);
-			System.out.println("SHORT¸ñÊ½µÄÈÕÆÚ¸ñÊ½£º" + df[i * 8].format(dt));
-			System.out.println("MEDIUM¸ñÊ½µÄÈÕÆÚ¸ñÊ½£º" + df[i * 8 + 1].format(dt));
-			System.out.println("LONG¸ñÊ½µÄÈÕÆÚ¸ñÊ½£º" + df[i * 8 + 2].format(dt));
-			System.out.println("FULL¸ñÊ½µÄÈÕÆÚ¸ñÊ½£º" + df[i * 8 + 3].format(dt));
-			System.out.println("SHORT¸ñÊ½µÄÊ±¼ä¸ñÊ½£º" + df[i * 8 + 4].format(dt));
-			System.out.println("MEDIUM¸ñÊ½µÄÊ±¼ä¸ñÊ½£º" + df[i * 8 + 5].format(dt));
-			System.out.println("LONG¸ñÊ½µÄÊ±¼ä¸ñÊ½£º" + df[i * 8 + 6].format(dt));
-			System.out.println("FULL¸ñÊ½µÄÊ±¼ä¸ñÊ½£º" + df[i * 8 + 7].format(dt));
+			System.out.println("SHORTæ ¼å¼çš„æ—¥æœŸæ ¼å¼ï¼š" + df[i * 8].format(dt));
+			System.out.println("MEDIUMæ ¼å¼çš„æ—¥æœŸæ ¼å¼ï¼š" + df[i * 8 + 1].format(dt));
+			System.out.println("LONGæ ¼å¼çš„æ—¥æœŸæ ¼å¼ï¼š" + df[i * 8 + 2].format(dt));
+			System.out.println("FULLæ ¼å¼çš„æ—¥æœŸæ ¼å¼ï¼š" + df[i * 8 + 3].format(dt));
+			System.out.println("SHORTæ ¼å¼çš„æ—¶é—´æ ¼å¼ï¼š" + df[i * 8 + 4].format(dt));
+			System.out.println("MEDIUMæ ¼å¼çš„æ—¶é—´æ ¼å¼ï¼š" + df[i * 8 + 5].format(dt));
+			System.out.println("LONGæ ¼å¼çš„æ—¶é—´æ ¼å¼ï¼š" + df[i * 8 + 6].format(dt));
+			System.out.println("FULLæ ¼å¼çš„æ—¶é—´æ ¼å¼ï¼š" + df[i * 8 + 7].format(dt));
 		}
 
 		
 		String str1 = "2014-12-12";
-		String str2 = "2014Äê12ÔÂ10ÈÕ";
+		String str2 = "2014å¹´12æœˆ10æ—¥";
 		
-		// ÏÂÃæÊä³ö Fri Dec 12 00:00:00 CST 2014
+		// ä¸‹é¢è¾“å‡º Fri Dec 12 00:00:00 CST 2014
 		System.out.println(DateFormat.getDateInstance().parse(str1));
 		
-		// ÏÂÃæÊä³ö Wed Dec 10 00:00:00 CST 2014
+		// ä¸‹é¢è¾“å‡º Wed Dec 10 00:00:00 CST 2014
 		System.out.println(DateFormat.getDateInstance(LONG).parse(str2));
 		
-		// ÏÂÃæÅ×³ö ParseExceptionÒì³£
+		// ä¸‹é¢æŠ›å‡º ParseExceptionå¼‚å¸¸
 		// System.out.println(DateFormat.getDateInstance().parse(str2));
 		
 		
-		//¸ñÊ½Æ÷²ÉÓÃ²»ÑÏ¸ñÓï·¨(true)ºó£¬2004-2-31»á2004Äê3ÔÂ2ÈÕ£¬Èç¹û²ÉÓÃÑÏ¸ñÓï·¨½âÊÍÊ±»áÅ×³öÒì³£¡£
+		//æ ¼å¼å™¨é‡‡ç”¨ä¸ä¸¥æ ¼è¯­æ³•(true)åï¼Œ2004-2-31ä¼š2004å¹´3æœˆ2æ—¥ï¼Œå¦‚æœé‡‡ç”¨ä¸¥æ ¼è¯­æ³•è§£é‡Šæ—¶ä¼šæŠ›å‡ºå¼‚å¸¸ã€‚
 		 DateFormat df2=DateFormat.getDateInstance(MEDIUM, Locale.CHINA);
 		 df2.setLenient(true);
 		 Date dd = df2.parse("2004-2-31");

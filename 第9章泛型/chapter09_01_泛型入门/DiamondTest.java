@@ -1,32 +1,32 @@
-package chapter09_01_·ºĞÍÈëÃÅ;
+package chapter09_01_æ³›å‹å…¥é—¨;
 
 
 import java.util.*;
 /**
- * Description:java 1.7ÒÔºóµÄÁâĞÎÓï·¨
+ * Description:java 1.7ä»¥åçš„è±å½¢è¯­æ³•
  */
 public class DiamondTest
 {
 	public static void main(String[] args)
 	{
-		// Java×Ô¶¯ÍÆ¶Ï³öArrayListµÄ<>ÀïÓ¦¸ÃÊÇString
-		List<String> books = new ArrayList<>();  //1.5Ö®Ç° new ArrayList<String>();
-		books.add("·è¿ñJava½²Òå");
-		books.add("·è¿ñAndroid½²Òå");
+		// Javaè‡ªåŠ¨æ¨æ–­å‡ºArrayListçš„<>é‡Œåº”è¯¥æ˜¯String
+		List<String> books = new ArrayList<>();  //1.5ä¹‹å‰ new ArrayList<String>();
+		books.add("ç–¯ç‹‚Javaè®²ä¹‰");
+		books.add("ç–¯ç‹‚Androidè®²ä¹‰");
 	
-		// ±éÀúbooks¼¯ºÏ£¬¼¯ºÏÔªËØ¾ÍÊÇStringÀàĞÍ
+		// éå†booksé›†åˆï¼Œé›†åˆå…ƒç´ å°±æ˜¯Stringç±»å‹
 		books.forEach(ele -> System.out.println(ele.length()));
 	
-		// Java×Ô¶¯ÍÆ¶Ï³öHashMapµÄ<>ÀïÓ¦¸ÃÊÇString , List<String>
+		// Javaè‡ªåŠ¨æ¨æ–­å‡ºHashMapçš„<>é‡Œåº”è¯¥æ˜¯String , List<String>
 		Map<String , List<String>> schoolsInfo = new HashMap<>();
 		
-		// Java×Ô¶¯ÍÆ¶Ï³öArrayListµÄ<>ÀïÓ¦¸ÃÊÇString
+		// Javaè‡ªåŠ¨æ¨æ–­å‡ºArrayListçš„<>é‡Œåº”è¯¥æ˜¯String
 		List<String> schools = new ArrayList<>();
-		schools.add("Ğ±ÔÂÈıĞÇ¶´");
-		schools.add("Î÷ÌìÈ¡¾­Â·");
-		schoolsInfo.put("ËïÎò¿Õ" , schools);
+		schools.add("æ–œæœˆä¸‰æ˜Ÿæ´");
+		schools.add("è¥¿å¤©å–ç»è·¯");
+		schoolsInfo.put("å­™æ‚Ÿç©º" , schools);
 	
-		// ±éÀúMapÊ±£¬MapµÄkeyÊÇStringÀàĞÍ£¬valueÊÇList<String>ÀàĞÍ
+		// éå†Mapæ—¶ï¼ŒMapçš„keyæ˜¯Stringç±»å‹ï¼Œvalueæ˜¯List<String>ç±»å‹
 		schoolsInfo.forEach((key , value) -> System.out.println(key + "-->" + value));
 	}
 }

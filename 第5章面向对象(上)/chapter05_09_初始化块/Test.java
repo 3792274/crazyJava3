@@ -1,10 +1,10 @@
-package chapter05_09_³õÊ¼»¯¿é;
+package chapter05_09_åˆå§‹åŒ–å—;
 
 
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,49 +15,49 @@ package chapter05_09_³õÊ¼»¯¿é;
 class Root
 {
 	static{
-		System.out.println("RootµÄ¾²Ì¬³õÊ¼»¯¿é");
+		System.out.println("Rootçš„é™æ€åˆå§‹åŒ–å—");
 	}
 	{
-		System.out.println("RootµÄÆÕÍ¨³õÊ¼»¯¿é");
+		System.out.println("Rootçš„æ™®é€šåˆå§‹åŒ–å—");
 	}
 	public Root()
 	{
-		System.out.println("RootµÄÎŞ²ÎÊıµÄ¹¹ÔìÆ÷");
+		System.out.println("Rootçš„æ— å‚æ•°çš„æ„é€ å™¨");
 	}
 }
 class Mid extends Root
 {
 	static{
-		System.out.println("MidµÄ¾²Ì¬³õÊ¼»¯¿é");
+		System.out.println("Midçš„é™æ€åˆå§‹åŒ–å—");
 	}
 	{
-		System.out.println("MidµÄÆÕÍ¨³õÊ¼»¯¿é");
+		System.out.println("Midçš„æ™®é€šåˆå§‹åŒ–å—");
 	}
 	public Mid()
 	{
-		System.out.println("MidµÄÎŞ²ÎÊıµÄ¹¹ÔìÆ÷");
+		System.out.println("Midçš„æ— å‚æ•°çš„æ„é€ å™¨");
 	}
 	public Mid(String msg)
 	{
-		// Í¨¹ıthisµ÷ÓÃÍ¬Ò»ÀàÖĞÖØÔØµÄ¹¹ÔìÆ÷
+		// é€šè¿‡thisè°ƒç”¨åŒä¸€ç±»ä¸­é‡è½½çš„æ„é€ å™¨
 		this();
-		System.out.println("MidµÄ´ø²ÎÊı¹¹ÔìÆ÷£¬Æä²ÎÊıÖµ£º"
+		System.out.println("Midçš„å¸¦å‚æ•°æ„é€ å™¨ï¼Œå…¶å‚æ•°å€¼ï¼š"
 			+ msg);
 	}
 }
 class Leaf extends Mid
 {
 	static{
-		System.out.println("LeafµÄ¾²Ì¬³õÊ¼»¯¿é");
+		System.out.println("Leafçš„é™æ€åˆå§‹åŒ–å—");
 	}
 	{
-		System.out.println("LeafµÄÆÕÍ¨³õÊ¼»¯¿é");
+		System.out.println("Leafçš„æ™®é€šåˆå§‹åŒ–å—");
 	}
 	public Leaf()
 	{
-		// Í¨¹ısuperµ÷ÓÃ¸¸ÀàÖĞÓĞÒ»¸ö×Ö·û´®²ÎÊıµÄ¹¹ÔìÆ÷
-		super("·è¿ñJava½²Òå");
-		System.out.println("Ö´ĞĞLeafµÄ¹¹ÔìÆ÷");
+		// é€šè¿‡superè°ƒç”¨çˆ¶ç±»ä¸­æœ‰ä¸€ä¸ªå­—ç¬¦ä¸²å‚æ•°çš„æ„é€ å™¨
+		super("ç–¯ç‹‚Javaè®²ä¹‰");
+		System.out.println("æ‰§è¡ŒLeafçš„æ„é€ å™¨");
 	}
 }
 public class Test

@@ -1,10 +1,10 @@
-package chapter15_03_×Ö½ÚÁ÷ºÍ×Ö·ûÁ÷;
+package chapter15_03_å­—èŠ‚æµå’Œå­—ç¬¦æµ;
 
 
 import java.io.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -19,11 +19,11 @@ public class FileWriterTest
 		try(
 			FileWriter fw = new FileWriter("poem.txt"))
 		{
-			fw.write("½õÉª - ÀîÉÌÒş\r\n");
-			fw.write("½õÉªÎŞ¶ËÎåÊ®ÏÒ£¬Ò»ÏÒÒ»ÖùË¼»ªÄê¡£\r\n");
-			fw.write("×¯ÉúÏşÃÎÃÔºûµû£¬ÍûµÛ´ºĞÄÍĞ¶Å¾é¡£\r\n");
-			fw.write("²×º£ÔÂÃ÷ÖéÓĞÀá£¬À¶ÌïÈÕÅ¯ÓñÉúÑÌ¡£\r\n");
-			fw.write("´ËÇé¿É´ı³É×·Òä£¬Ö»ÊÇµ±Ê±ÒÑã¯È»¡£\r\n");
+			fw.write("é”¦ç‘Ÿ - æå•†éš\r\n");
+			fw.write("é”¦ç‘Ÿæ— ç«¯äº”åå¼¦ï¼Œä¸€å¼¦ä¸€æŸ±æ€åå¹´ã€‚\r\n");
+			fw.write("åº„ç”Ÿæ™“æ¢¦è¿·è´è¶ï¼Œæœ›å¸æ˜¥å¿ƒæ‰˜æœé¹ƒã€‚\r\n");
+			fw.write("æ²§æµ·æœˆæ˜ç æœ‰æ³ªï¼Œè“ç”°æ—¥æš–ç‰ç”ŸçƒŸã€‚\r\n");
+			fw.write("æ­¤æƒ…å¯å¾…æˆè¿½å¿†ï¼Œåªæ˜¯å½“æ—¶å·²æƒ˜ç„¶ã€‚\r\n");
 		}
 		catch (IOException ioe)
 		{

@@ -1,4 +1,4 @@
-package chapter17_04_»ùÓÚUDPĞ­ÒéµÄÍøÂç±à³Ì.LanTalk;
+package chapter17_04_åŸºäºUDPåè®®çš„ç½‘ç»œç¼–ç¨‹.LanTalk;
 
 import java.util.*;
 import java.net.*;
@@ -6,7 +6,7 @@ import java.io.*;
 import javax.swing.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,113 +14,113 @@ import javax.swing.*;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// ÁÄÌì½»»»ĞÅÏ¢µÄ¹¤¾ßÀà
+// èŠå¤©äº¤æ¢ä¿¡æ¯çš„å·¥å…·ç±»
 public class ComUtil
 {
-	// ¶¨Òå±¾³ÌĞòÍ¨ĞÅËùÊ¹ÓÃµÄ×Ö·û¼¯
+	// å®šä¹‰æœ¬ç¨‹åºé€šä¿¡æ‰€ä½¿ç”¨çš„å­—ç¬¦é›†
 	public static final String CHARSET = "utf-8";
-	// Ê¹ÓÃ³£Á¿×÷Îª±¾³ÌĞòµÄ¶àµã¹ã²¥IPµØÖ·
+	// ä½¿ç”¨å¸¸é‡ä½œä¸ºæœ¬ç¨‹åºçš„å¤šç‚¹å¹¿æ’­IPåœ°å€
 	private static final String BROADCAST_IP
 		= "230.0.0.1";
-	// Ê¹ÓÃ³£Á¿×÷Îª±¾³ÌĞòµÄ¶àµã¹ã²¥Ä¿µÄµÄ¶Ë¿Ú
-	// DatagramSocketËùÓÃµÄµÄ¶Ë¿ÚÎª¸Ã¶Ë¿Ú+1¡£
+	// ä½¿ç”¨å¸¸é‡ä½œä¸ºæœ¬ç¨‹åºçš„å¤šç‚¹å¹¿æ’­ç›®çš„çš„ç«¯å£
+	// DatagramSocketæ‰€ç”¨çš„çš„ç«¯å£ä¸ºè¯¥ç«¯å£+1ã€‚
 	public static final int BROADCAST_PORT = 30000;
-	// ¶¨ÒåÃ¿¸öÊı¾İ±¨µÄ×î´ó´óĞ¡Îª4K
+	// å®šä¹‰æ¯ä¸ªæ•°æ®æŠ¥çš„æœ€å¤§å¤§å°ä¸º4K
 	private static final int DATA_LEN = 4096;
-	// ¶¨Òå±¾³ÌĞòµÄMulticastSocketÊµÀı
+	// å®šä¹‰æœ¬ç¨‹åºçš„MulticastSocketå®ä¾‹
 	private MulticastSocket socket = null;
-	// ¶¨Òå±¾³ÌĞòË½ÁÄµÄSocketÊµÀı
+	// å®šä¹‰æœ¬ç¨‹åºç§èŠçš„Socketå®ä¾‹
 	private DatagramSocket singleSocket = null;
-	// ¶¨Òå¹ã²¥µÄIPµØÖ·
+	// å®šä¹‰å¹¿æ’­çš„IPåœ°å€
 	private InetAddress broadcastAddress = null;
-	// ¶¨Òå½ÓÊÕÍøÂçÊı¾İµÄ×Ö½ÚÊı×é
+	// å®šä¹‰æ¥æ”¶ç½‘ç»œæ•°æ®çš„å­—èŠ‚æ•°ç»„
 	byte[] inBuff = new byte[DATA_LEN];
-	// ÒÔÖ¸¶¨×Ö½ÚÊı×é´´½¨×¼±¸½ÓÊÜÊı¾İµÄDatagramPacket¶ÔÏó
+	// ä»¥æŒ‡å®šå­—èŠ‚æ•°ç»„åˆ›å»ºå‡†å¤‡æ¥å—æ•°æ®çš„DatagramPacketå¯¹è±¡
 	private DatagramPacket inPacket =
 		new DatagramPacket(inBuff , inBuff.length);
-	// ¶¨ÒåÒ»¸öÓÃÓÚ·¢ËÍµÄDatagramPacket¶ÔÏó
+	// å®šä¹‰ä¸€ä¸ªç”¨äºå‘é€çš„DatagramPacketå¯¹è±¡
 	private DatagramPacket outPacket = null;
-	// ÁÄÌìµÄÖ÷½çÃæ³ÌĞò
+	// èŠå¤©çš„ä¸»ç•Œé¢ç¨‹åº
 	private LanTalk lanTalk;
-	// ¹¹ÔìÆ÷£¬³õÊ¼»¯×ÊÔ´
+	// æ„é€ å™¨ï¼Œåˆå§‹åŒ–èµ„æº
 	public ComUtil(LanTalk lanTalk) throws Exception
 	{
 		this.lanTalk = lanTalk;
-		// ´´½¨ÓÃÓÚ·¢ËÍ¡¢½ÓÊÕÊı¾İµÄMulticastSocket¶ÔÏó
-		// ÒòÎª¸ÃMulticastSocket¶ÔÏóĞèÒª½ÓÊÕ£¬ËùÒÔÓĞÖ¸¶¨¶Ë¿Ú
+		// åˆ›å»ºç”¨äºå‘é€ã€æ¥æ”¶æ•°æ®çš„MulticastSocketå¯¹è±¡
+		// å› ä¸ºè¯¥MulticastSocketå¯¹è±¡éœ€è¦æ¥æ”¶ï¼Œæ‰€ä»¥æœ‰æŒ‡å®šç«¯å£
 		socket = new MulticastSocket(BROADCAST_PORT);
-		// ´´½¨Ë½ÁÄÓÃµÄDatagramSocket¶ÔÏó
+		// åˆ›å»ºç§èŠç”¨çš„DatagramSocketå¯¹è±¡
 		singleSocket = new DatagramSocket(BROADCAST_PORT + 1);
 		broadcastAddress = InetAddress.getByName(BROADCAST_IP);
-		// ½«¸Ãsocket¼ÓÈëÖ¸¶¨µÄ¶àµã¹ã²¥µØÖ·
+		// å°†è¯¥socketåŠ å…¥æŒ‡å®šçš„å¤šç‚¹å¹¿æ’­åœ°å€
 		socket.joinGroup(broadcastAddress);
-		// ÉèÖÃ±¾MulticastSocket·¢ËÍµÄÊı¾İ±¨±»»ØËÍµ½×ÔÉí
+		// è®¾ç½®æœ¬MulticastSocketå‘é€çš„æ•°æ®æŠ¥è¢«å›é€åˆ°è‡ªèº«
 		socket.setLoopbackMode(false);
-		// ³õÊ¼»¯·¢ËÍÓÃµÄDatagramSocket£¬Ëü°üº¬Ò»¸ö³¤¶ÈÎª0µÄ×Ö½ÚÊı×é
+		// åˆå§‹åŒ–å‘é€ç”¨çš„DatagramSocketï¼Œå®ƒåŒ…å«ä¸€ä¸ªé•¿åº¦ä¸º0çš„å­—èŠ‚æ•°ç»„
 		outPacket = new DatagramPacket(new byte[0]
 			, 0 , broadcastAddress , BROADCAST_PORT);
-		// Æô¶¯Á½¸ö¶ÁÈ¡ÍøÂçÊı¾İµÄÏß³Ì
+		// å¯åŠ¨ä¸¤ä¸ªè¯»å–ç½‘ç»œæ•°æ®çš„çº¿ç¨‹
 		new ReadBroad().start();
 		Thread.sleep(1);
 		new ReadSingle().start();
 	}
-	// ¹ã²¥ÏûÏ¢µÄ¹¤¾ß·½·¨
+	// å¹¿æ’­æ¶ˆæ¯çš„å·¥å…·æ–¹æ³•
 	public void broadCast(String msg)
 	{
 		try
 		{
-			// ½«msg×Ö·û´®×ª»»×Ö½ÚÊı×é
+			// å°†msgå­—ç¬¦ä¸²è½¬æ¢å­—èŠ‚æ•°ç»„
 			byte[] buff = msg.getBytes(CHARSET);
-			// ÉèÖÃ·¢ËÍÓÃµÄDatagramPacketÀïµÄ×Ö½ÚÊı¾İ
+			// è®¾ç½®å‘é€ç”¨çš„DatagramPacketé‡Œçš„å­—èŠ‚æ•°æ®
 			outPacket.setData(buff);
-			// ·¢ËÍÊı¾İ±¨
+			// å‘é€æ•°æ®æŠ¥
 			socket.send(outPacket);
 		}
-		// ²¶×½Òì³£
+		// æ•æ‰å¼‚å¸¸
 		catch (IOException ex)
 		{
 			ex.printStackTrace();
 			if (socket != null)
 			{
-				// ¹Ø±Õ¸ÃSocket¶ÔÏó
+				// å…³é—­è¯¥Socketå¯¹è±¡
 				socket.close();
 			}
 			JOptionPane.showMessageDialog(null
-				, "·¢ËÍĞÅÏ¢Òì³££¬ÇëÈ·ÈÏ30000¶Ë¿Ú¿ÕÏĞ£¬ÇÒÍøÂçÁ¬½ÓÕı³££¡"
-				, "ÍøÂçÒì³£", JOptionPane.ERROR_MESSAGE);
+				, "å‘é€ä¿¡æ¯å¼‚å¸¸ï¼Œè¯·ç¡®è®¤30000ç«¯å£ç©ºé—²ï¼Œä¸”ç½‘ç»œè¿æ¥æ­£å¸¸ï¼"
+				, "ç½‘ç»œå¼‚å¸¸", JOptionPane.ERROR_MESSAGE);
 			System.exit(1);
 		}
 	}
-	// ¶¨ÒåÏòµ¥¶ÀÓÃ»§·¢ËÍÏûÏ¢µÄ·½·¨
+	// å®šä¹‰å‘å•ç‹¬ç”¨æˆ·å‘é€æ¶ˆæ¯çš„æ–¹æ³•
 	public void sendSingle(String msg , SocketAddress dest)
 	{
 		try
 		{
-			// ½«msg×Ö·û´®×ª»»×Ö½ÚÊı×é
+			// å°†msgå­—ç¬¦ä¸²è½¬æ¢å­—èŠ‚æ•°ç»„
 			byte[] buff = msg.getBytes(CHARSET);
 			DatagramPacket packet = new DatagramPacket(buff
 				, buff.length , dest);
 			singleSocket.send(packet);
 		}
-		// ²¶×½Òì³£
+		// æ•æ‰å¼‚å¸¸
 		catch (IOException ex)
 		{
 			ex.printStackTrace();
 			if (singleSocket != null)
 			{
-				// ¹Ø±Õ¸ÃSocket¶ÔÏó
+				// å…³é—­è¯¥Socketå¯¹è±¡
 				singleSocket.close();
 			}
 			JOptionPane.showMessageDialog(null
-				, "·¢ËÍĞÅÏ¢Òì³££¬ÇëÈ·ÈÏ30001¶Ë¿Ú¿ÕÏĞ£¬ÇÒÍøÂçÁ¬½ÓÕı³££¡"
-				, "ÍøÂçÒì³£", JOptionPane.ERROR_MESSAGE);
+				, "å‘é€ä¿¡æ¯å¼‚å¸¸ï¼Œè¯·ç¡®è®¤30001ç«¯å£ç©ºé—²ï¼Œä¸”ç½‘ç»œè¿æ¥æ­£å¸¸ï¼"
+				, "ç½‘ç»œå¼‚å¸¸", JOptionPane.ERROR_MESSAGE);
 			System.exit(1);
 		}
 	}
-	// ²»¶Ï´ÓDatagramSocketÖĞ¶ÁÈ¡Êı¾İµÄÏß³Ì
+	// ä¸æ–­ä»DatagramSocketä¸­è¯»å–æ•°æ®çš„çº¿ç¨‹
 	class ReadSingle extends Thread
 	{
-		// ¶¨Òå½ÓÊÕÍøÂçÊı¾İµÄ×Ö½ÚÊı×é
+		// å®šä¹‰æ¥æ”¶ç½‘ç»œæ•°æ®çš„å­—èŠ‚æ•°ç»„
 		byte[] singleBuff = new byte[DATA_LEN];
 		private DatagramPacket singlePacket =
 			new DatagramPacket(singleBuff , singleBuff.length);
@@ -130,29 +130,29 @@ public class ComUtil
 			{
 				try
 				{
-					// ¶ÁÈ¡SocketÖĞµÄÊı¾İ¡£
+					// è¯»å–Socketä¸­çš„æ•°æ®ã€‚
 					singleSocket.receive(singlePacket);
-					// ´¦Àí¶Áµ½µÄĞÅÏ¢
+					// å¤„ç†è¯»åˆ°çš„ä¿¡æ¯
 					lanTalk.processMsg(singlePacket , true);
 				}
-				// ²¶×½Òì³£
+				// æ•æ‰å¼‚å¸¸
 				catch (IOException ex)
 				{
 					ex.printStackTrace();
 					if (singleSocket != null)
 					{
-						// ¹Ø±Õ¸ÃSocket¶ÔÏó
+						// å…³é—­è¯¥Socketå¯¹è±¡
 						singleSocket.close();
 					}
 					JOptionPane.showMessageDialog(null
-						, "½ÓÊÕĞÅÏ¢Òì³££¬ÇëÈ·ÈÏ30001¶Ë¿Ú¿ÕÏĞ£¬ÇÒÍøÂçÁ¬½ÓÕı³££¡"
-						, "ÍøÂçÒì³£", JOptionPane.ERROR_MESSAGE);
+						, "æ¥æ”¶ä¿¡æ¯å¼‚å¸¸ï¼Œè¯·ç¡®è®¤30001ç«¯å£ç©ºé—²ï¼Œä¸”ç½‘ç»œè¿æ¥æ­£å¸¸ï¼"
+						, "ç½‘ç»œå¼‚å¸¸", JOptionPane.ERROR_MESSAGE);
 					System.exit(1);
 				}
 			}
 		}
 	}
-	// ³ÖĞø¶ÁÈ¡MulticastSocketµÄÏß³Ì
+	// æŒç»­è¯»å–MulticastSocketçš„çº¿ç¨‹
 	class ReadBroad extends Thread
 	{
 		public void run()
@@ -161,12 +161,12 @@ public class ComUtil
 			{
 				try
 				{
-					// ¶ÁÈ¡SocketÖĞµÄÊı¾İ¡£
+					// è¯»å–Socketä¸­çš„æ•°æ®ã€‚
 					socket.receive(inPacket);
-					// ´òÓ¡Êä³ö´ÓsocketÖĞ¶ÁÈ¡µÄÄÚÈİ
+					// æ‰“å°è¾“å‡ºä»socketä¸­è¯»å–çš„å†…å®¹
 					String msg = new String(inBuff , 0
 						, inPacket.getLength() , CHARSET);
-					// ¶Áµ½µÄÄÚÈİÊÇÔÚÏßĞÅÏ¢
+					// è¯»åˆ°çš„å†…å®¹æ˜¯åœ¨çº¿ä¿¡æ¯
 					if (msg.startsWith(YeekuProtocol.PRESENCE)
 						&& msg.endsWith(YeekuProtocol.PRESENCE))
 					{
@@ -176,20 +176,20 @@ public class ComUtil
 							.SPLITTER);
 						UserInfo user = new UserInfo(userInfo[1]
 							, userInfo[0] , inPacket.getSocketAddress(), 0);
-						// ¿ØÖÆÊÇ·ñĞèÒªÌí¼Ó¸ÃÓÃ»§µÄÆì±ê
+						// æ§åˆ¶æ˜¯å¦éœ€è¦æ·»åŠ è¯¥ç”¨æˆ·çš„æ——æ ‡
 						boolean addFlag = true;
 						ArrayList<Integer> delList = new ArrayList<>();
-						// ±éÀúÏµÍ³ÖĞÒÑÓĞµÄËùÓĞÓÃ»§,¸ÃÑ­»·±ØĞëÑ­»·Íê³É
+						// éå†ç³»ç»Ÿä¸­å·²æœ‰çš„æ‰€æœ‰ç”¨æˆ·,è¯¥å¾ªç¯å¿…é¡»å¾ªç¯å®Œæˆ
 						for (int i = 1 ; i < lanTalk.getUserNum() ; i++ )
 						{
 							UserInfo current = lanTalk.getUser(i);
-							// ½«ËùÓĞÓÃ»§Ê§È¥ÁªÏµµÄ´ÎÊı¼Ó1
+							// å°†æ‰€æœ‰ç”¨æˆ·å¤±å»è”ç³»çš„æ¬¡æ•°åŠ 1
 							current.setLost(current.getLost() + 1);
-							// Èç¹û¸ÃĞÅÏ¢ÓÉÖ¸¶¨ÓÃ»§·¢ËÍ¹ıÀ´
+							// å¦‚æœè¯¥ä¿¡æ¯ç”±æŒ‡å®šç”¨æˆ·å‘é€è¿‡æ¥
 							if (current.equals(user))
 							{
 								current.setLost(0);
-								// ÉèÖÃ¸ÃÓÃ»§ÎŞĞëÌí¼Ó
+								// è®¾ç½®è¯¥ç”¨æˆ·æ— é¡»æ·»åŠ 
 								addFlag = false;
 							}
 							if (current.getLost() > 2)
@@ -197,36 +197,36 @@ public class ComUtil
 								delList.add(i);
 							}
 						}
-						// É¾³ıdelListÖĞµÄËùÓĞË÷Òı¶ÔÓ¦µÄÓÃ»§
+						// åˆ é™¤delListä¸­çš„æ‰€æœ‰ç´¢å¼•å¯¹åº”çš„ç”¨æˆ·
 						for (int i = 0; i < delList.size() ; i++)
 						{
 							lanTalk.removeUser(delList.get(i));
 						}
 						if (addFlag)
 						{
-							// Ìí¼ÓĞÂÓÃ»§
+							// æ·»åŠ æ–°ç”¨æˆ·
 							lanTalk.addUser(user);
 						}
 					}
-					// ¶Áµ½µÄÄÚÈİÊÇ¹«ÁÄĞÅÏ¢
+					// è¯»åˆ°çš„å†…å®¹æ˜¯å…¬èŠä¿¡æ¯
 					else
 					{
-						// ´¦Àí¶Áµ½µÄĞÅÏ¢
+						// å¤„ç†è¯»åˆ°çš„ä¿¡æ¯
 						lanTalk.processMsg(inPacket , false);
 					}
 				}
-				// ²¶×½Òì³£
+				// æ•æ‰å¼‚å¸¸
 				catch (IOException ex)
 				{
 					ex.printStackTrace();
 					if (socket != null)
 					{
-						// ¹Ø±Õ¸ÃSocket¶ÔÏó
+						// å…³é—­è¯¥Socketå¯¹è±¡
 						socket.close();
 					}
 					JOptionPane.showMessageDialog(null
-						, "½ÓÊÕĞÅÏ¢Òì³££¬ÇëÈ·ÈÏ30000¶Ë¿Ú¿ÕÏĞ£¬ÇÒÍøÂçÁ¬½ÓÕı³££¡"
-						, "ÍøÂçÒì³£", JOptionPane.ERROR_MESSAGE);
+						, "æ¥æ”¶ä¿¡æ¯å¼‚å¸¸ï¼Œè¯·ç¡®è®¤30000ç«¯å£ç©ºé—²ï¼Œä¸”ç½‘ç»œè¿æ¥æ­£å¸¸ï¼"
+						, "ç½‘ç»œå¼‚å¸¸", JOptionPane.ERROR_MESSAGE);
 					System.exit(1);
 				}
 			}

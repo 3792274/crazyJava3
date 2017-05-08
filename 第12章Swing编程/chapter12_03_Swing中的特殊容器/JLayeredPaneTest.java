@@ -1,11 +1,11 @@
-package chapter12_03_SwingÖĞµÄÌØÊâÈİÆ÷;
+package chapter12_03_Swingä¸­çš„ç‰¹æ®Šå®¹å™¨;
 
 
 import java.awt.*;
 import javax.swing.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,17 +15,17 @@ import javax.swing.*;
  */
 public class JLayeredPaneTest
 {
-	JFrame jf = new JFrame("²âÊÔJLayeredPane");
+	JFrame jf = new JFrame("æµ‹è¯•JLayeredPane");
 	JLayeredPane layeredPane = new JLayeredPane();
 	public void init()
 	{
-		// ÏòlayeredPaneÖĞÌí¼Ó3¸ö×é¼ş
-		layeredPane.add(new ContentPanel(10 , 20 , "·è¿ñJava½²Òå"
+		// å‘layeredPaneä¸­æ·»åŠ 3ä¸ªç»„ä»¶
+		layeredPane.add(new ContentPanel(10 , 20 , "ç–¯ç‹‚Javaè®²ä¹‰"
 			, "ico/java.png"), JLayeredPane.MODAL_LAYER);
-		layeredPane.add(new ContentPanel(100 , 60 , "·è¿ñAndroid½²Òå"
+		layeredPane.add(new ContentPanel(100 , 60 , "ç–¯ç‹‚Androidè®²ä¹‰"
 			, "ico/android.png"), JLayeredPane.DEFAULT_LAYER);
 		layeredPane.add(new ContentPanel(190 , 100
-			, "ÇáÁ¿¼¶Java EEÆóÒµÓ¦ÓÃÊµÕ½", "ico/ee.png"), 4);
+			, "è½»é‡çº§Java EEä¼ä¸šåº”ç”¨å®æˆ˜", "ico/ee.png"), 4);
 		layeredPane.setPreferredSize(new Dimension(400, 300));
 		layeredPane.setVisible(true);
 		jf.add(layeredPane);
@@ -38,8 +38,8 @@ public class JLayeredPaneTest
 		new JLayeredPaneTest().init();
 	}
 }
-// À©Õ¹ÁËJPanelÀà£¬¿ÉÒÔÖ±½Ó´´½¨Ò»¸ö·ÅÔÚÖ¸¶¨Î»ÖÃ£¬
-// ÇÒÓĞÖ¸¶¨±êÌâ¡¢·ÅÖÃÖ¸¶¨Í¼±êµÄJPanel¶ÔÏó
+// æ‰©å±•äº†JPanelç±»ï¼Œå¯ä»¥ç›´æ¥åˆ›å»ºä¸€ä¸ªæ”¾åœ¨æŒ‡å®šä½ç½®ï¼Œ
+// ä¸”æœ‰æŒ‡å®šæ ‡é¢˜ã€æ”¾ç½®æŒ‡å®šå›¾æ ‡çš„JPanelå¯¹è±¡
 class ContentPanel extends JPanel
 {
 	public ContentPanel(int xPos , int yPos
@@ -49,7 +49,7 @@ class ContentPanel extends JPanel
 			BorderFactory.createEtchedBorder(), title));
 		JLabel label = new JLabel(new ImageIcon(ico));
 		add(label);
-		setBounds(xPos , yPos , 160, 220);    // ¢Ù
+		setBounds(xPos , yPos , 160, 220);    // â‘ 
 	}
 }
 

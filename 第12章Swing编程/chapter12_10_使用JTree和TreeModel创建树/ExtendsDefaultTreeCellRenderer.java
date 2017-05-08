@@ -1,4 +1,4 @@
-package chapter12_10_Ê¹ÓÃJTreeºÍTreeModel´´½¨Ê÷;
+package chapter12_10_ä½¿ç”¨JTreeå’ŒTreeModelåˆ›å»ºæ ‘;
 
 
 import java.awt.*;
@@ -7,7 +7,7 @@ import javax.swing.*;
 import javax.swing.tree.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,33 +17,33 @@ import javax.swing.tree.*;
  */
 public class ExtendsDefaultTreeCellRenderer
 {
-	JFrame jf = new JFrame("¸ù¾İ½ÚµãÀàĞÍ¶¨ÒåÍ¼±ê");
+	JFrame jf = new JFrame("æ ¹æ®èŠ‚ç‚¹ç±»å‹å®šä¹‰å›¾æ ‡");
 	JTree tree;
-	// ¶¨Òå¼¸¸ö³õÊ¼½Úµã
+	// å®šä¹‰å‡ ä¸ªåˆå§‹èŠ‚ç‚¹
 	DefaultMutableTreeNode root = new DefaultMutableTreeNode(
-		new NodeData(DBObjectType.ROOT , "Êı¾İ¿âµ¼º½"));
+		new NodeData(DBObjectType.ROOT , "æ•°æ®åº“å¯¼èˆª"));
 	DefaultMutableTreeNode salaryDb = new DefaultMutableTreeNode(
-		new NodeData(DBObjectType.DATABASE , "¹«Ë¾¹¤×ÊÊı¾İ¿â"));
+		new NodeData(DBObjectType.DATABASE , "å…¬å¸å·¥èµ„æ•°æ®åº“"));
 	DefaultMutableTreeNode customerDb = new DefaultMutableTreeNode(
-		new NodeData(DBObjectType.DATABASE , "¹«Ë¾¿Í»§Êı¾İ¿â"));
-	// ¶¨ÒåsalaryDbµÄÁ½¸ö×Ó½Úµã
+		new NodeData(DBObjectType.DATABASE , "å…¬å¸å®¢æˆ·æ•°æ®åº“"));
+	// å®šä¹‰salaryDbçš„ä¸¤ä¸ªå­èŠ‚ç‚¹
 	DefaultMutableTreeNode employee = new DefaultMutableTreeNode(
-		new NodeData(DBObjectType.TABLE , "Ô±¹¤±í"));
+		new NodeData(DBObjectType.TABLE , "å‘˜å·¥è¡¨"));
 	DefaultMutableTreeNode attend = new DefaultMutableTreeNode(
-		new NodeData(DBObjectType.TABLE , "¿¼ÇÚ±í"));
-	// ¶¨ÒåcustomerDbµÄÒ»¸ö×Ó½Úµã
+		new NodeData(DBObjectType.TABLE , "è€ƒå‹¤è¡¨"));
+	// å®šä¹‰customerDbçš„ä¸€ä¸ªå­èŠ‚ç‚¹
 	DefaultMutableTreeNode contact = new DefaultMutableTreeNode(
-		new NodeData(DBObjectType.TABLE , "ÁªÏµ·½Ê½±í"));
-	// ¶¨ÒåemployeeµÄÈı¸ö×Ó½Úµã
+		new NodeData(DBObjectType.TABLE , "è”ç³»æ–¹å¼è¡¨"));
+	// å®šä¹‰employeeçš„ä¸‰ä¸ªå­èŠ‚ç‚¹
 	DefaultMutableTreeNode id = new DefaultMutableTreeNode(
-		new NodeData(DBObjectType.INDEX , "Ô±¹¤ID"));
+		new NodeData(DBObjectType.INDEX , "å‘˜å·¥ID"));
 	DefaultMutableTreeNode name = new DefaultMutableTreeNode(
-		new NodeData(DBObjectType.COLUMN , "ĞÕÃû"));
+		new NodeData(DBObjectType.COLUMN , "å§“å"));
 	DefaultMutableTreeNode gender = new DefaultMutableTreeNode(
-		new NodeData(DBObjectType.COLUMN , "ĞÔ±ğ"));
+		new NodeData(DBObjectType.COLUMN , "æ€§åˆ«"));
 	public void init()
 	{
-		// Í¨¹ıadd()·½·¨½¨Á¢Ê÷½ÚµãÖ®¼äµÄ¸¸×Ó¹ØÏµ
+		// é€šè¿‡add()æ–¹æ³•å»ºç«‹æ ‘èŠ‚ç‚¹ä¹‹é—´çš„çˆ¶å­å…³ç³»
 		root.add(salaryDb);
 		root.add(customerDb);
 		salaryDb.add(employee);
@@ -52,22 +52,22 @@ public class ExtendsDefaultTreeCellRenderer
 		employee.add(id);
 		employee.add(name);
 		employee.add(gender);
-		// ÒÔ¸ù½Úµã´´½¨Ê÷
+		// ä»¥æ ¹èŠ‚ç‚¹åˆ›å»ºæ ‘
 		tree = new JTree(root);
-		// ÉèÖÃ¸ÃJTreeÊ¹ÓÃ×Ô¶¨ÒåµÄ½Úµã»æÖÆÆ÷
+		// è®¾ç½®è¯¥JTreeä½¿ç”¨è‡ªå®šä¹‰çš„èŠ‚ç‚¹ç»˜åˆ¶å™¨
 		tree.setCellRenderer(new MyRenderer());
-		// ÉèÖÃÊÇ·ñÏÔÊ¾¸ù½ÚµãµÄ¡°Õ¹¿ª/ÕÛµş¡±Í¼±ê,Ä¬ÈÏÊÇfalse
+		// è®¾ç½®æ˜¯å¦æ˜¾ç¤ºæ ¹èŠ‚ç‚¹çš„â€œå±•å¼€/æŠ˜å â€å›¾æ ‡,é»˜è®¤æ˜¯false
 		tree.setShowsRootHandles(true);
-		// ÉèÖÃ½ÚµãÊÇ·ñ¿É¼û,Ä¬ÈÏÊÇtrue
+		// è®¾ç½®èŠ‚ç‚¹æ˜¯å¦å¯è§,é»˜è®¤æ˜¯true
 		tree.setRootVisible(true);
 		try
 		{
-			// ÉèÖÃÊ¹ÓÃWindows·ç¸ñÍâ¹Û
+			// è®¾ç½®ä½¿ç”¨Windowsé£æ ¼å¤–è§‚
 			UIManager.setLookAndFeel("com.sun.java.swing.plaf."
 				+ "windows.WindowsLookAndFeel");
 		}
 		catch (Exception ex){}
-		// ¸üĞÂJTreeµÄUIÍâ¹Û
+		// æ›´æ–°JTreeçš„UIå¤–è§‚
 		SwingUtilities.updateComponentTreeUI(tree);
 		jf.add(new JScrollPane(tree));
 		jf.pack();
@@ -79,7 +79,7 @@ public class ExtendsDefaultTreeCellRenderer
 		new ExtendsDefaultTreeCellRenderer().init();
 	}
 }
-// ¶¨ÒåÒ»¸öNodeDataÀà£¬ÓÃÓÚ·â×°½ÚµãÊı¾İ
+// å®šä¹‰ä¸€ä¸ªNodeDataç±»ï¼Œç”¨äºå°è£…èŠ‚ç‚¹æ•°æ®
 class NodeData
 {
 	public int nodeType;
@@ -94,7 +94,7 @@ class NodeData
 		return nodeData;
 	}
 }
-// ¶¨ÒåÒ»¸ö½Ó¿Ú£¬¸Ã½Ó¿ÚÀï°üº¬Êı¾İ¿â¶ÔÏóÀàĞÍµÄ³£Á¿
+// å®šä¹‰ä¸€ä¸ªæ¥å£ï¼Œè¯¥æ¥å£é‡ŒåŒ…å«æ•°æ®åº“å¯¹è±¡ç±»å‹çš„å¸¸é‡
 interface DBObjectType
 {
 	int ROOT = 0;
@@ -105,7 +105,7 @@ interface DBObjectType
 }
 class MyRenderer extends DefaultTreeCellRenderer
 {
-	// ³õÊ¼»¯5¸öÍ¼±ê
+	// åˆå§‹åŒ–5ä¸ªå›¾æ ‡
 	ImageIcon rootIcon = new ImageIcon("icon/root.gif");
 	ImageIcon databaseIcon = new ImageIcon("icon/database.gif");
 	ImageIcon tableIcon = new ImageIcon("icon/table.gif");
@@ -115,12 +115,12 @@ class MyRenderer extends DefaultTreeCellRenderer
 		, Object value , boolean sel , boolean expanded
 		, boolean leaf , int row , boolean hasFocus)
 	{
-		// Ö´ĞĞ¸¸ÀàÄ¬ÈÏµÄ½Úµã»æÖÆ²Ù×÷
+		// æ‰§è¡Œçˆ¶ç±»é»˜è®¤çš„èŠ‚ç‚¹ç»˜åˆ¶æ“ä½œ
 		super.getTreeCellRendererComponent(tree , value
 			, sel, expanded , leaf , row , hasFocus);
 		DefaultMutableTreeNode node = (DefaultMutableTreeNode)value;
 		NodeData data = (NodeData)node.getUserObject();
-		// ¸ù¾İÊı¾İ½ÚµãÀïµÄnodeTypeÊı¾İ¾ö¶¨½ÚµãÍ¼±ê
+		// æ ¹æ®æ•°æ®èŠ‚ç‚¹é‡Œçš„nodeTypeæ•°æ®å†³å®šèŠ‚ç‚¹å›¾æ ‡
 		ImageIcon icon = null;
 		switch(data.nodeType)
 		{
@@ -140,7 +140,7 @@ class MyRenderer extends DefaultTreeCellRenderer
 				icon = indexIcon;
 				break;
 		}
-		// ¸Ä±äÍ¼±ê
+		// æ”¹å˜å›¾æ ‡
 		this.setIcon(icon);
 		return this;
 	}

@@ -1,8 +1,8 @@
-package chapter04_03_Ñ­»·½á¹¹;
+package chapter04_03_å¾ªç¯ç»“æ„;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,13 +14,13 @@ public class ForErrorTest
 {
 	public static void main(String[] args)
 	{
-		// Ñ­»·µÄ³õÊ¼»¯Ìõ¼ş,Ñ­»·Ìõ¼ş£¬Ñ­»·µü´úÓï¾ä¶¼ÔÚÏÂÃæÒ»ĞĞ
+		// å¾ªç¯çš„åˆå§‹åŒ–æ¡ä»¶,å¾ªç¯æ¡ä»¶ï¼Œå¾ªç¯è¿­ä»£è¯­å¥éƒ½åœ¨ä¸‹é¢ä¸€è¡Œ
 		for (int count = 0 ; count < 10 ; count++)
 		{
 			System.out.println(count);
-			// ÔÙ´ÎĞŞ¸ÄÁËÑ­»·±äÁ¿,³ÌĞòÓÃÓÚÂú×ã²»ÁËcount <10;ËùÒÔ»áÒ»Ö±ÔËĞĞ
+			// å†æ¬¡ä¿®æ”¹äº†å¾ªç¯å˜é‡,ç¨‹åºç”¨äºæ»¡è¶³ä¸äº†count <10;æ‰€ä»¥ä¼šä¸€ç›´è¿è¡Œ
 			count *= 0.1;
 		}
-		System.out.println("Ñ­»·½áÊø!");
+		System.out.println("å¾ªç¯ç»“æŸ!");
 	}
 }

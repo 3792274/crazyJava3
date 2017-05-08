@@ -1,4 +1,4 @@
-package chapter14_03_×Ô¶¨ÒåAnnotation;
+package chapter14_03_è‡ªå®šä¹‰Annotation;
 
 
 import java.util.*;
@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.lang.annotation.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -15,25 +15,25 @@ import java.lang.annotation.*;
  * @author Yeeku.H.Lee kongyeeku@163.com
  * @version 1.0
  */
-// ¶¨ÒåÒ»¸ö¼òµ¥µÄType Annotation£¬²»´øÈÎºÎ³ÉÔ±±äÁ¿
+// å®šä¹‰ä¸€ä¸ªç®€å•çš„Type Annotationï¼Œä¸å¸¦ä»»ä½•æˆå‘˜å˜é‡
 @Target(ElementType.TYPE_USE)
 @interface NotNull{}
-// ¶¨ÒåÀàÊ±Ê¹ÓÃType Annotation
+// å®šä¹‰ç±»æ—¶ä½¿ç”¨Type Annotation
 @NotNull
 public class TypeAnnotationTest
-	implements @NotNull /* implementsÊ±Ê¹ÓÃType Annotation */ Serializable
+	implements @NotNull /* implementsæ—¶ä½¿ç”¨Type Annotation */ Serializable
 {
-	// ·½·¨ĞÎ²ÎÖĞÊ¹ÓÃType Annotation
+	// æ–¹æ³•å½¢å‚ä¸­ä½¿ç”¨Type Annotation
 	public static void main(@NotNull String[] args)
-		// throwsÊ±Ê¹ÓÃType Annotation
+		// throwsæ—¶ä½¿ç”¨Type Annotation
 		throws @NotNull FileNotFoundException
 	{
 		Object obj = "fkjava.org";
-		// Ç¿ÖÆÀàĞÍ×ª»»Ê±Ê¹ÓÃType Annotation
+		// å¼ºåˆ¶ç±»å‹è½¬æ¢æ—¶ä½¿ç”¨Type Annotation
 		String str = (@NotNull String)obj;
-		// ´´½¨¶ÔÏóÊ±Ê¹ÓÃType Annotation
-		Object win = new @NotNull JFrame("·è¿ñÈí¼ş");
+		// åˆ›å»ºå¯¹è±¡æ—¶ä½¿ç”¨Type Annotation
+		Object win = new @NotNull JFrame("ç–¯ç‹‚è½¯ä»¶");
 	}
-	// ·ºĞÍÖĞÊ¹ÓÃType Annotation
+	// æ³›å‹ä¸­ä½¿ç”¨Type Annotation
 	public void foo(List<@NotNull String> info){}
 }

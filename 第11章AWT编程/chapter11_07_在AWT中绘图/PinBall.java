@@ -1,4 +1,4 @@
-package chapter11_07_ÔÚAWTÖĞ»æÍ¼;
+package chapter11_07_åœ¨AWTä¸­ç»˜å›¾;
 
 
 import java.util.Random;
@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.event.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,46 +17,46 @@ import java.awt.event.*;
  */
 public class PinBall
 {
-	// ×ÀÃæµÄ¿í¶È
+	// æ¡Œé¢çš„å®½åº¦
 	private final int TABLE_WIDTH = 300;
-	// ×ÀÃæµÄ¸ß¶È
+	// æ¡Œé¢çš„é«˜åº¦
 	private final int TABLE_HEIGHT = 400;
-	// ÇòÅÄµÄ´¹Ö±Î»ÖÃ
+	// çƒæ‹çš„å‚ç›´ä½ç½®
 	private final int RACKET_Y = 340;
-	// ÏÂÃæ¶¨ÒåÇòÅÄµÄ¸ß¶ÈºÍ¿í¶È
+	// ä¸‹é¢å®šä¹‰çƒæ‹çš„é«˜åº¦å’Œå®½åº¦
 	private final int RACKET_HEIGHT = 20;
 	private final int RACKET_WIDTH = 60;
-	// Ğ¡ÇòµÄ´óĞ¡
+	// å°çƒçš„å¤§å°
 	private final int BALL_SIZE = 16;
-	private Frame f = new Frame("µ¯ÇòÓÎÏ·");
+	private Frame f = new Frame("å¼¹çƒæ¸¸æˆ");
 	Random rand = new Random();
-	// Ğ¡Çò×İÏòµÄÔËĞĞËÙ¶È
+	// å°çƒçºµå‘çš„è¿è¡Œé€Ÿåº¦
 	private int ySpeed = 10;
-	// ·µ»ØÒ»¸ö-0.5~0.5µÄ±ÈÂÊ£¬ÓÃÓÚ¿ØÖÆĞ¡ÇòµÄÔËĞĞ·½Ïò¡£
+	// è¿”å›ä¸€ä¸ª-0.5~0.5çš„æ¯”ç‡ï¼Œç”¨äºæ§åˆ¶å°çƒçš„è¿è¡Œæ–¹å‘ã€‚
 	private double xyRate = rand.nextDouble() - 0.5;
-	// Ğ¡ÇòºáÏòµÄÔËĞĞËÙ¶È
+	// å°çƒæ¨ªå‘çš„è¿è¡Œé€Ÿåº¦
 	private int xSpeed = (int)(ySpeed * xyRate * 2);
-	// ballXºÍballY´ú±íĞ¡ÇòµÄ×ø±ê
+	// ballXå’ŒballYä»£è¡¨å°çƒçš„åæ ‡
 	private int ballX = rand.nextInt(200) + 20;
 	private int ballY = rand.nextInt(10) + 20;
-	// racketX´ú±íÇòÅÄµÄË®Æ½Î»ÖÃ
+	// racketXä»£è¡¨çƒæ‹çš„æ°´å¹³ä½ç½®
 	private int racketX = rand.nextInt(200);
 	private MyCanvas tableArea = new MyCanvas();
 	Timer timer;
-	// ÓÎÏ·ÊÇ·ñ½áÊøµÄÆì±ê
+	// æ¸¸æˆæ˜¯å¦ç»“æŸçš„æ——æ ‡
 	private boolean isLose = false;
 	public void init()
 	{
-		// ÉèÖÃ×ÀÃæÇøÓòµÄ×î¼Ñ´óĞ¡
+		// è®¾ç½®æ¡Œé¢åŒºåŸŸçš„æœ€ä½³å¤§å°
 		tableArea.setPreferredSize(
 			new Dimension(TABLE_WIDTH , TABLE_HEIGHT));
 		f.add(tableArea);
-		// ¶¨Òå¼üÅÌ¼àÌıÆ÷
+		// å®šä¹‰é”®ç›˜ç›‘å¬å™¨
 		KeyAdapter keyProcessor = new KeyAdapter()
 		{
 			public void keyPressed(KeyEvent ke)
 			{
-				// °´ÏÂÏò×ó¡¢ÏòÓÒ¼üÊ±£¬ÇòÅÄË®Æ½×ø±ê·Ö±ğ¼õÉÙ¡¢Ôö¼Ó
+				// æŒ‰ä¸‹å‘å·¦ã€å‘å³é”®æ—¶ï¼Œçƒæ‹æ°´å¹³åæ ‡åˆ†åˆ«å‡å°‘ã€å¢åŠ 
 				if (ke.getKeyCode() == KeyEvent.VK_LEFT)
 				{
 					if (racketX > 0)
@@ -69,34 +69,34 @@ public class PinBall
 				}
 			}
 		};
-		// Îª´°¿ÚºÍtableArea¶ÔÏó·Ö±ğÌí¼Ó¼üÅÌ¼àÌıÆ÷
+		// ä¸ºçª—å£å’ŒtableAreaå¯¹è±¡åˆ†åˆ«æ·»åŠ é”®ç›˜ç›‘å¬å™¨
 		f.addKeyListener(keyProcessor);
 		tableArea.addKeyListener(keyProcessor);
-		// ¶¨ÒåÃ¿0.1ÃëÖ´ĞĞÒ»´ÎµÄÊÂ¼ş¼àÌıÆ÷¡£
+		// å®šä¹‰æ¯0.1ç§’æ‰§è¡Œä¸€æ¬¡çš„äº‹ä»¶ç›‘å¬å™¨ã€‚
 		ActionListener taskPerformer = evt ->
 		{
-			// Èç¹ûĞ¡ÇòÅöµ½×ó±ß±ß¿ò
+			// å¦‚æœå°çƒç¢°åˆ°å·¦è¾¹è¾¹æ¡†
 			if (ballX  <= 0 || ballX >= TABLE_WIDTH - BALL_SIZE)
 			{
 				xSpeed = -xSpeed;
 			}
-			// Èç¹ûĞ¡Çò¸ß¶È³¬³öÁËÇòÅÄÎ»ÖÃ£¬ÇÒºáÏò²»ÔÚÇòÅÄ·¶Î§Ö®ÄÚ£¬ÓÎÏ·½áÊø¡£
+			// å¦‚æœå°çƒé«˜åº¦è¶…å‡ºäº†çƒæ‹ä½ç½®ï¼Œä¸”æ¨ªå‘ä¸åœ¨çƒæ‹èŒƒå›´ä¹‹å†…ï¼Œæ¸¸æˆç»“æŸã€‚
 			if (ballY >= RACKET_Y - BALL_SIZE &&
 				(ballX < racketX || ballX > racketX + RACKET_WIDTH))
 			{
 				timer.stop();
-				// ÉèÖÃÓÎÏ·ÊÇ·ñ½áÊøµÄÆì±êÎªtrue¡£
+				// è®¾ç½®æ¸¸æˆæ˜¯å¦ç»“æŸçš„æ——æ ‡ä¸ºtrueã€‚
 				isLose = true;
 				tableArea.repaint();
 			}
-			// Èç¹ûĞ¡ÇòÎ»ÓÚÇòÅÄÖ®ÄÚ£¬ÇÒµ½´ïÇòÅÄÎ»ÖÃ£¬Ğ¡Çò·´µ¯
+			// å¦‚æœå°çƒä½äºçƒæ‹ä¹‹å†…ï¼Œä¸”åˆ°è¾¾çƒæ‹ä½ç½®ï¼Œå°çƒåå¼¹
 			else if (ballY  <= 0 ||
 				(ballY >= RACKET_Y - BALL_SIZE
 					&& ballX > racketX && ballX <= racketX + RACKET_WIDTH))
 			{
 				ySpeed = -ySpeed;
 			}
-			// Ğ¡Çò×ø±êÔö¼Ó
+			// å°çƒåæ ‡å¢åŠ 
 			ballY += ySpeed;
 			ballX += xSpeed;
 			tableArea.repaint();
@@ -112,23 +112,23 @@ public class PinBall
 	}
 	class MyCanvas extends Canvas
 	{
-		// ÖØĞ´CanvasµÄpaint·½·¨£¬ÊµÏÖ»æ»­
+		// é‡å†™Canvasçš„paintæ–¹æ³•ï¼Œå®ç°ç»˜ç”»
 		public void paint(Graphics g)
 		{
-			// Èç¹ûÓÎÏ·ÒÑ¾­½áÊø
+			// å¦‚æœæ¸¸æˆå·²ç»ç»“æŸ
 			if (isLose)
 			{
 				g.setColor(new Color(255, 0, 0));
 				g.setFont(new Font("Times" , Font.BOLD, 30));
-				g.drawString("ÓÎÏ·ÒÑ½áÊø£¡" , 50 ,200);
+				g.drawString("æ¸¸æˆå·²ç»“æŸï¼" , 50 ,200);
 			}
-			// Èç¹ûÓÎÏ·»¹Î´½áÊø
+			// å¦‚æœæ¸¸æˆè¿˜æœªç»“æŸ
 			else
 			{
-				// ÉèÖÃÑÕÉ«£¬²¢»æÖÆĞ¡Çò
+				// è®¾ç½®é¢œè‰²ï¼Œå¹¶ç»˜åˆ¶å°çƒ
 				g.setColor(new Color(240, 240, 80));
 				g.fillOval(ballX , ballY , BALL_SIZE, BALL_SIZE);
-				// ÉèÖÃÑÕÉ«£¬²¢»æÖÆÇòÅÄ
+				// è®¾ç½®é¢œè‰²ï¼Œå¹¶ç»˜åˆ¶çƒæ‹
 				g.setColor(new Color(80, 80, 200));
 				g.fillRect(racketX , RACKET_Y
 					, RACKET_WIDTH , RACKET_HEIGHT);

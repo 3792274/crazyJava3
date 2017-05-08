@@ -1,11 +1,11 @@
-package chapter11_03_²¼¾Ö¹ÜÀíÆ÷;
+package chapter11_03_å¸ƒå±€ç®¡ç†å™¨;
 
 
 import java.awt.*;
 import static java.awt.BorderLayout.*;
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -17,26 +17,26 @@ public class GridLayoutTest
 {
 	public static void main(String[] args)
 	{
-		Frame f = new Frame("¼ÆËãÆ÷");
+		Frame f = new Frame("è®¡ç®—å™¨");
 		Panel p1 = new Panel();
 		p1.add(new TextField(30));
 		f.add(p1 , NORTH);
 		Panel p2 = new Panel();
-		// ÉèÖÃPanelÊ¹ÓÃGridLayout²¼¾Ö¹ÜÀíÆ÷
+		// è®¾ç½®Panelä½¿ç”¨GridLayoutå¸ƒå±€ç®¡ç†å™¨
 		p2.setLayout(new GridLayout(3, 5 , 4, 4));
 		String[] name = {"0" , "1" , "2" , "3"
 			, "4" , "5" , "6" , "7" , "8" , "9"
 			, "+" , "-" , "*" , "/" , "."};
-		// ÏòPanelÖĞÒÀ´ÎÌí¼Ó15¸ö°´Å¥
+		// å‘Panelä¸­ä¾æ¬¡æ·»åŠ 15ä¸ªæŒ‰é’®
 		for (int i = 0 ; i < name.length; i++ )
 		{
 			p2.add(new Button(name[i]));
 		}
-		// Ä¬ÈÏ½«Panel¶ÔÏóÌí¼ÓFrame´°¿ÚµÄÖĞ¼ä
+		// é»˜è®¤å°†Panelå¯¹è±¡æ·»åŠ Frameçª—å£çš„ä¸­é—´
 		f.add(p2);
-		// ÉèÖÃ´°¿ÚÎª×î¼Ñ´óĞ¡
+		// è®¾ç½®çª—å£ä¸ºæœ€ä½³å¤§å°
 		f.pack();
-		// ½«´°¿ÚÏÔÊ¾³öÀ´£¨Frame¶ÔÏóÄ¬ÈÏ´¦ÓÚÒş²Ø×´Ì¬£©
+		// å°†çª—å£æ˜¾ç¤ºå‡ºæ¥ï¼ˆFrameå¯¹è±¡é»˜è®¤å¤„äºéšè—çŠ¶æ€ï¼‰
 		f.setVisible(true);
 	}
 }

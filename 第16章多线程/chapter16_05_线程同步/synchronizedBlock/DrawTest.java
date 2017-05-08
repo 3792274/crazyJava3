@@ -1,8 +1,8 @@
-package chapter16_05_Ïß³ÌÍ¬²½.synchronizedBlock;
+package chapter16_05_çº¿ç¨‹åŒæ­¥.synchronizedBlock;
 
 /**
  * Description: <br/>
- * ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> <br/>
+ * ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> <br/>
  * Copyright (C), 2001-2016, Yeeku.H.Lee <br/>
  * This program is protected by copyright laws. <br/>
  * Program Name: <br/>
@@ -13,10 +13,10 @@ package chapter16_05_Ïß³ÌÍ¬²½.synchronizedBlock;
  */
 public class DrawTest {
 	public static void main(String[] args) {
-		// ´´½¨Ò»¸öÕË»§
+		// åˆ›å»ºä¸€ä¸ªè´¦æˆ·
 		Account acct = new Account("1234567", 1000);
-		// Ä£ÄâÁ½¸öÏß³Ì¶ÔÍ¬Ò»¸öÕË»§È¡Ç®
-		new DrawThread("¼×", acct, 800).start();
-		new DrawThread("ÒÒ", acct, 800).start();
+		// æ¨¡æ‹Ÿä¸¤ä¸ªçº¿ç¨‹å¯¹åŒä¸€ä¸ªè´¦æˆ·å–é’±
+		new DrawThread("ç”²", acct, 800).start();
+		new DrawThread("ä¹™", acct, 800).start();
 	}
 }

@@ -1,10 +1,10 @@
-package chapter05_06_类的继承;
+package chapter05_06_绫荤殑缁ф壙;
 
 
 
 /**
  * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
+ * <br/>缃戠珯: <a href="http://www.crazyit.org">鐤媯Java鑱旂洘</a>
  * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -14,9 +14,9 @@ package chapter05_06_类的继承;
  */
 public class Bird
 {
-	// Bird类的fly()方法
+	// Bird绫荤殑fly()鏂规硶
 	public void fly()
 	{
-		System.out.println("我在天空里自由自在地飞翔...");
+		System.out.println("鎴戝湪澶╃┖閲岃嚜鐢辫嚜鍦ㄥ湴椋炵繑...");
 	}
 }
