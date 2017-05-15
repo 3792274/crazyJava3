@@ -20,3 +20,4 @@ out/
 .project
 .settings
 classes/
+bin/
